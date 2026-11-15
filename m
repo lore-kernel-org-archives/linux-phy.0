@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AD92B606A88F
-	for <linux-phy@archiver.kernel.org>; Sun, 15 Nov 2026 12:05:08 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F2F6D606A32C
+	for <linux-phy@archiver.kernel.org>; Sun, 15 Nov 2026 12:07:37 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=I9uNXhQr;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=WE2h+vfu
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=cCBFELav;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=ervdNN1H
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
@@ -14,72 +14,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ofqXEPgYKYSi1ZBNBZNDlokpp+e7cvH9NYmAXuSLkwc=; b=I9uNXhQrNrvy5fYhqBxAeHPzL1
-	vPqoq9ZBVOoc7W60wiaAAKjy+VauTdLTlJ5nC63eQiblTfnNyGjHjIkRUFT0igwAVL+34v5315hnp
-	VyEaAg54YkeBLKeEJGaKnwuMHOxrcrJlJK4nYSbjJY7Jv3gkN3MqMc5qEQf2EcsYqrVyuBCpDewau
-	C3xM0SeSAizbz1nfwDNY+kRUYiyat+R99QxrhsBy41AuqzEmFObVo0+RD1nr9onmM2zdmnq/cw5ym
-	xoA7ANAcrRQZJC8LnXB1zLp4YOFMb/TGLYOWSjw+5mJR3TzqeydYvMCXfBU4Jt4XngZONL2vt03PT
-	2OUGj1Yg==;
+	bh=rNEdlW3NUI7Uv4tPJJWJ94HV7aT/6GroVUd/qiID5XM=; b=cCBFELav7fM3hJ3OYQ4R1TdcJu
+	7KMAFIJ1fJa7OqmgObQBWSerbWbxvwSXWmLYkN3qACpYz349FlIT/tje3knSL8SOn32vKy++1yjKH
+	0qE7M4Sj3S/Q18apLaD9q+fLsNrqSldNl9eP7HHLhFQ0NzEY63aWQrVQqw71jsUO4qXoccYMHTUzw
+	DTptsDb5uP75vPEzHD9TX76Yfqhum/Rpx7eH1f+NxKSqmnMbuju+pBOrLUlj04yCLucTd7Ur4TYwX
+	NbNIJm0waIAXCNRQQgjHw09NOSs0Jh8hjFDz4x/zM2rJ2WAjC0xvl2GBRZyk3qu65aJY7q/fwIRrZ
+	DIa7QPww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSYyq-0000000HUT6-1qvy;
-	Sun, 15 Nov 2026 12:05:08 +0000
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
+	id 1xSZ1F-0000000HUWW-32PA;
+	Sun, 15 Nov 2026 12:07:37 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSYyo-0000000HUSU-0GEl
+	id 1xSZ1C-0000000HUWC-3Ptr
 	for linux-phy@lists.infradead.org;
-	Sun, 15 Nov 2026 12:05:07 +0000
-Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-4a2d6d01ecbso16822495e9.0
-        for <linux-phy@lists.infradead.org>; Sun, 15 Nov 2026 04:05:05 -0800 (PST)
+	Sun, 15 Nov 2026 12:07:36 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-4a35ac4475dso14410325e9.2
+        for <linux-phy@lists.infradead.org>; Sun, 15 Nov 2026 04:07:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1794744304; x=1795349104; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1794744453; x=1795349253; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=ZX7ZEhQfl7zn0ja70UCAxY+bTQCiZDULfmlHtdn9utU=;
-        b=WE2h+vfu29+/kUkv135sJ/yJxLwUm0HIAK7ACvlDP7iLQwjyqxDPRFs/T3U0SyXcIz
-         s1VEig8BROSqaiZiNdfpQxB21mXK/p5uDCUUYyZJNSTPoBMwbSGn6sm882l5DbuWYu5X
-         g9VgdnWCsEq0z14bKqD6Tkac2LapICrS9bfGl+nkLLJWLPjL1wgT+FDtnlVz3gYFgm7l
-         bc6lWeEfbVWVQ5qp2SARTzApRdEmmImLysSbJ8+ibOUJQqbK8XlHeT1DTwKJ1dZ7ouDh
-         7UGSZDQfzt4ZZmgHIbbLYTR7I5LXJkJgKTPA+JOBUo0UgYFG2c9za8axrrQmpa/P8vLq
-         q1nQ==
+        bh=r6K5yPNLQHHB0Nog8TnybL0n8K+O6sS9uh6jOz0Z75E=;
+        b=ervdNN1H1BzsumBaEr0EaI6ihbbNZW+JCzEDJMhDRYa5JJ86jq2dP4JKDT/TPI4hUi
+         W5rZ5ePrU4YExRYeAeQXskBSRGdr+KqHyFF0dwJC5ebS6vW9zRZbnzfHKW9y2U48JNkH
+         KqxxQvIpXqrTNrm+U4EyRf4d0V9t68TEO0aEHdItYFUwTBUHBwUi2xYdwMlCXHdUe5Q8
+         BYZW1LH7V8nTrMnAJBdvjUbXKJoPH8lnBCSRuSqMDCwvP9Ji+ciIJdeqX7bCmfjo8Guw
+         STPoNQBrBlxLk/0l85B/T/nLiL6y96OVihRW27APSYTQ4T2kkkwSytSK3aOT1d/WqWTw
+         QBtg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794744304; x=1795349104;
+        d=1e100.net; s=20260707; t=1794744453; x=1795349253;
         h=content-transfer-encoding:content-type:in-reply-to:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=ZX7ZEhQfl7zn0ja70UCAxY+bTQCiZDULfmlHtdn9utU=;
-        b=fx6ob5Tj67VL65yR19wI/4DINWKZCQkOtc+i/Eg8IzH/aZEVGZ2F3ZtTEDsLn+OmvE
-         UYl0Xt+7QcTWOjazwIi+I3lMR+y2U/c5qASezcYEmbeeXugCf0Vd0+rbwYNfQD+Mol5h
-         C9gIoQRi2Ca4wCCexGF7mBP4TauJZFV9G6gPsXH9vQ+QBkmqSZJj9xaVLlCbTsbgsIqX
-         0xs+uaYOBOWNncHuQkG8T/d4ZrMOMHfAidLozUUrx95N1Jt/RwM7h88GVrKOvgBb9kj1
-         a7TQDS1lq/hqWjTE+SKbIHkOe2emO9sm9a7IGLPNYR+kUihJkt5OWvT9lzC+lHgLisl+
-         k7vg==
-X-Gm-Message-State: APuU4Z/QTgjL8XClnbeglbvJdGvgldS1L1RurOlT0wlTWIiepmTb9emO
-	WSwNZJF0R+Xaiyi5RcL7jFpssZqRduDwuqqc+ig1ZctJD1PP6NLmW/3lLSlenkEuvio=
-X-Gm-Gg: AYBFou3C9RH8WykNwV65X3P3NQpagenLCqb88ckDu/v68dwepGPc3v0j4K5UU4WUjbT
-	AfLW1UhsWdyL2D4705kPBMJZofZAeh/Fp7jkcOmjmo2b+r0JCgd/KcawqCJYILzHvc1SuOFP58L
-	vKabuoHLiHGtxAOOoukRSqBouwznZQVsRiWeVcRGU3BTpUZ5uX7XJ07DK0UFE7Hrw95Sig9NtiO
-	2c67DPaGS22cCUxn3b7ny6gvkdba9mXEu5XvkpReXnocLUa78PF6HuJ5kKqUCq2dDZr3AwjN/KE
-	lTWz2kp1NV1NgIBG04HAXo4lxZhq9W7OfS7Qh7TKekUNejmq59GxEns2/N98BTqyR9OVPCCIFLM
-	T9xmu7fllwjIMhjIOv/vcJAq1hvy/8RQFgzov63c4SHAeMfjXqblvl2WrNqbv3ZBtlcXBHkLYGD
-	iia7zdLDpm87lLaziB4zzyrjwRiwsMIUm1lxJu8zLNRr3w5J4VWjAQXpfOhgv03ZCac5tR26BLt
-	cOGOUf4fj+5AU6Wbqdo2xbgdyrYelTSQZsTciY5DV1FIhwIrDL+Y+noYw1Q8Agvufe3O0UiGtSB
-	Wo6pj5K2pIoPy6DICzLagpRV0fRS2LB1qjB3P//fTqo=
-X-Received: by 2002:a05:600c:698d:b0:4bb:5de1:e92c with SMTP id 5b1f17b1804b1-4bb5de1f262mr108419295e9.26.1794744304054;
-        Sun, 15 Nov 2026 04:05:04 -0800 (PST)
+        bh=r6K5yPNLQHHB0Nog8TnybL0n8K+O6sS9uh6jOz0Z75E=;
+        b=NOo6G1l8UVPRJTD2k5qJ+JntmrP5X+FX1jF5OWpYwxoWjd/H4enp8K4gXmqbpOVbAY
+         tY9fOvlJV71ogE+ittlEbQTxWthqACJC0CQLcSPKixUUz1fto1uKqT7+9gMdyTf+PpET
+         /ZNnn4nuy0OcbB2Uv5OBFpi20TUIqfPE5kGJjdlmrtghXiF0yGkbpZrnzxYnYLft5/je
+         iNuuMU6P0s33cql8nWaQkXu94I6x2t2u9JQGOCh6wTtVrSdK/fR9CcPDYn1Vr1zpZywy
+         dPo8usvRgMz1JTeDFMUAG5YqQ/0pMIEexuO41UApAUpJt/oXsr95aIQf+kQ2S4ThC4SD
+         uw7g==
+X-Gm-Message-State: APuU4Z94iEWOgdQlvlWfjKkNAZ1u6kLAeFZbGJ9egMAsn9OQ/O0r7aPD
+	1jznV/D+hYlWgM+JJ5WRHE4v5NCHX5kUFLXTDDuCYrqPiIGnLGTGh0bL2e1UASiL1y0=
+X-Gm-Gg: AYBFou0OhYHI54VdpGocITPCcswjoV67G0KwYp/LElS+i2WJ01FdeplTaVJc2haEKqJ
+	77crw+IKXdLTBMxv6zeE1jlFGe4TuhroUxYn5cCjCQOyhXexe1mXTVJBthP2LN9gpoAJ9Qc6Yqb
+	nLNzubLtLO7/sx2fOtjDWb1RrBjj/8hOgsg9f+k0TmkUMwd1s94y3ivYdrSFslBqwpvPaaJk54J
+	dSMkGZqlZYFMGZXez3aJClhmyLHhEB37OuDX3dz5vsF3alPNHXZn2o3dp3gCTFS/7tCO42Lyiq1
+	QVwx/tEHxAExayIzTKGK1Fhsu5KkszU/l7/JCbjZsRW9UjwwmVWE8W8GJKD90CcEErjGyfg009S
+	KljCseilrmFa3xTp2rRAJnXujVp7LD6x2mMonY/NrsLYehPYovO3fWcfyV9q2HQLASweiVZ3lR/
+	9RJca08c50qmIPbMMjJoJfCRbkKWNy0NgX1WpVT3p8XuiacBt3Q3C/gtiAta2vL63QLMWUkV4S6
+	0+eenq1YJhwWcRvnzbHMUaJPwsr6GP+auoXetbUQWpuhXQOgbS/wO0mryanvpdDpnkbrAQCqhGX
+	0E106YzOQniRQZdQGgM8Y+kN893tKNrAgTdCAjEzkCEfPZdLDs8l3IlJfEVW6mQb
+X-Received: by 2002:a05:600c:3d92:b0:4bb:6c01:de81 with SMTP id 5b1f17b1804b1-4bb6c01e02fmr25950745e9.19.1794744452736;
+        Sun, 15 Nov 2026 04:07:32 -0800 (PST)
 Received: from [192.168.0.167] ([78.152.238.245])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb4e33ae5bsm267265565e9.3.2026.11.15.04.05.02
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb55ac1159sm189440575e9.4.2026.11.15.04.07.31
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 15 Nov 2026 04:05:03 -0800 (PST)
-Message-ID: <a4a3df2a-eb90-427f-8881-f857100779db@linaro.org>
-Date: Sun, 15 Nov 2026 12:05:02 +0000
+        Sun, 15 Nov 2026 04:07:32 -0800 (PST)
+Message-ID: <d4fcf0ac-571e-4d3e-ada6-a732d68dc18c@linaro.org>
+Date: Sun, 15 Nov 2026 12:07:31 +0000
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 01/23] dt-bindings: phy: qcom,x1e80100-csi2-phy: Add
- SM8750 CSI2 PHY
+Subject: Re: [PATCH v7 17/23] arm64: dts: qcom: sm8750-qrd: Enable S5KJN1
+ camera sensor
 To: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>,
  Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
  Neil Armstrong <neil.armstrong@linaro.org>,
@@ -97,13 +97,13 @@ Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
  linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org
 References: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
- <20261114-add-support-for-camss-on-sm8750-v7-1-8ff2a11835f6@oss.qualcomm.com>
+ <20261114-add-support-for-camss-on-sm8750-v7-17-8ff2a11835f6@oss.qualcomm.com>
 From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 Content-Language: en-GB
-In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-1-8ff2a11835f6@oss.qualcomm.com>
+In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-17-8ff2a11835f6@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261115_040506_148938_F194BD71 
-X-CRM114-Status: UNSURE (   6.46  )
+X-CRM114-CacheID: sfid-20261115_040734_875308_0B948FCF 
+X-CRM114-Status: UNSURE (   5.81  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
@@ -126,19 +126,12 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 On 14/11/2026 11:29, Wenmeng Liu wrote:
-> The SM8750 camera subsystem has six CSI2 D-PHY blocks. Describe them
-> with a standalone "qcom,sm8750-csi2-phy" compatible, so the CAMSS
-> binding can instantiate the CSIPHY nodes as separate phy devices.
-
-C-PHY, D-PHY and combo mode ?
-
-It would be nice to get an accurate description.
-
-> Signed-off-by: Hangxiang Ma<hangxiang.ma@oss.qualcomm.com>
-> Signed-off-by: Wenmeng Liu<wenmeng.liu@oss.qualcomm.com>
-
----
-bod
+> Enable CAMSS, CCI1 and CSIPHY3 on the SM8750 QRD board. The S5KJN1
+> camera sensor is connected to CCI1 I2C bus 0, uses MCLK3 at 24 MHz and
+> connects to CSIPHY3 over a 4-lane D-PHY link.
+> 
+> Signed-off-by: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
+Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 
 -- 
 linux-phy mailing list
