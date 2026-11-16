@@ -2,166 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 91500606A889
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Nov 2026 13:19:06 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8A08C606A31C
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Nov 2026 13:29:45 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=n8QqmXNv;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=KPlmW6Qj;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=kmMrTAqm
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=DEsIBRG5;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=VVAnmS5H
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=GNZGyDyz4yEx/ILOD/JFHE3GAcb5cKCQftrcs38xXTE=; b=n8QqmXNvGFR/tv3zAi9z7A1Lkp
-	/O5SpvSCU/+jN/Mwhrb4eWkJNhtkiVoEJ4nDtAS0UfpKv8N0i/kBqaeqrWvopXA2S/Jy/Ik54nObc
-	Nw3mdMzvs5m6nLt3n50hxOhsIkJG06hBIyg9iPf4UIhQ5yrU4GqDFLYHAkWUupLb/MhPCPWjoWuO4
-	FhygQATr+SKNvi/XkfeqtLfvBx4VRBQdlmrX+0p5amX0jaTNoTgpL0oOvlAY9BwoVUqSnsi9wWkue
-	RzYRvY4RdwJn2qI6kPGYqGJP5bmifxfNS5uVVfcyizC245TphSEGqyXw+Xc8mT0iEPKiioktEuEcH
-	7x08JGDw==;
+	bh=SR2Yb9BBGhUOxQKOQlaWPOPPCr9XgIvWsaoQD0a/k7M=; b=DEsIBRG5j1hbQTCOw6SRiYb2iU
+	ByyRVwCu5ID0x8fX91Cu7pLaeQEsaNzSiDLCyUTjHTwndttRM6B+A96F60MGMHcz0MDU3skUxGRn2
+	f9bNKnUu0jDXSw/N1JZZZp9iHWWr4V+5bUwxWlaUlquOKZGm4lxCVg73aLYrviiNgoBsuNyjiXKRR
+	PKfjOC9ZA5oQm6+wtPV9TE2p6y+OMZE8zMbrJ4TqvaBEyS6uMvIQa4cDWO5J1s1ktXQ49mwAYTUtV
+	AIHcJSmpf3NJqzXJuuQSUPz0oSC8I7FG7kLf15ZGQXsn3bIL9OnSwtO5lPtctqz9CQToGnCgQeCQR
+	cw9lAF7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSwby-00000002aIH-1LFh;
-	Mon, 16 Nov 2026 13:19:06 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xSwmH-00000002dTm-1GjV;
+	Mon, 16 Nov 2026 13:29:45 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSwbu-00000002aHL-2EVB
+	id 1xSwmF-00000002dSy-3H8w
 	for linux-phy@lists.infradead.org;
-	Mon, 16 Nov 2026 13:19:05 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AGC0pIu536243
-	for <linux-phy@lists.infradead.org>; Mon, 16 Nov 2026 13:19:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	FIVPnD50EX4S0ADQSI/wOp6ZVRAhbJD8QVbyPX8w2gY=; b=KPlmW6QjmfepMvGy
-	AqFuZYuZqe+SdBCkb9Q8TzIz2KeR+bmRF74k7Ncmwbq3aB0z5wzfoFbnKkq9meh2
-	+wXqzycPdSLn3SCirhKC66VCUnUuiDvxwH9j9dz6yEQU9xBIQFSOjIVhchrofQtK
-	d60fBNQzt7x0sDiNTXNRbYQWxFUY+4m00iqj0av1rEKXbz9L3jOOPFf85up7dg5R
-	v5kl3fXTfmOY5zIbVRNVUfhHtYb3U3Cixo7w3mw3N6mTzl8wof7RjhMGA5sckRAp
-	kvxWyti3Acg+WQYuVsWNxuXWXz2Y+NQr5TBTRrs29Gte+Evy8Lwt/KQwx2D5pkaL
-	y7Bnyg==
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4hyyqggp9u-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 16 Nov 2026 13:19:01 +0000 (GMT)
-Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-93f32050e72so986837985a.1
-        for <linux-phy@lists.infradead.org>; Mon, 16 Nov 2026 05:19:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794835141; x=1795439941; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=FIVPnD50EX4S0ADQSI/wOp6ZVRAhbJD8QVbyPX8w2gY=;
-        b=kmMrTAqmgm+mzhI94JnE+HE41NuagHf9JuXmEDHh1SJAJPV2BJAFQMKQV+KKS8m4z6
-         lz0IMfWWkEzk/AdcRI9gvTrpDnGFDZLtFvkSi8waQ6oTTzqaxnltgZQo50cF2a4lZlfA
-         XL6RsBfH/OVdvT4ARaYbUnpkHiQUxWHNL6fLwQViQiZlwQD8j6V/WGyhpJitEunL9Fy0
-         kpogmP3jTdh0Ib7wnN6+eJhITG7LoksapXDJjrfbbgjlmJkkU6+CfEaecT0uywbhEA/T
-         TLYs1lST9wV/cU8NU2gYJv7MSw/H66svC8iAz3pJDyMd0Ln/VDI7JNiNkXtf54Sx8+Zy
-         /ctg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794835141; x=1795439941;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=FIVPnD50EX4S0ADQSI/wOp6ZVRAhbJD8QVbyPX8w2gY=;
-        b=gAoJQ8e5McLEn6T2Nyn5B5g4BCEbIoBNrQstlFiB64Rkuxb5OIitBqtgFuTzZfwJ1Q
-         uYIYr+dojG3aNmwi8KT7Gu0LVKNNtOR3d378lAgehdUxkSRFVkJlSVkxyAS38azhDIKL
-         wVMWmRmAstbyf5UYeXNmD6NTsg5l02UN56TWTYfUmZwS+Vp6jXKO7GokbIiCR1pR/Mpv
-         fTgDjUwVjhetpa5J0QEg3azHJh2LIch24htshrbnBD49eeJglngKSQqxKDJug/Z4cq13
-         VbJj3rrnJ93ypbEP5EFuv1fro093hbr0mmdf4uZttq8e6+TooQx4wydflhqSIxToOjcl
-         /Hcg==
-X-Forwarded-Encrypted: i=1; AL+hErEOqNwzLjjGabLSpl5TPXOeMmPmYRQl2r9QV/klMABiocgFg7mZ7JcfPFqJ7MJ6go59B8ZnG6jsPuo=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+w2uZTlyA+ohY6nMh2/t1xH1kp6J+FxeAnrAe4t/+8r2t8mX1H
-	Cq9c7f+lX3zROOk7e6mKTkutLPN6U5+h1yujT2m28xFM4Il67PjqTk+ak0WS63gAeNshp7vLi6e
-	i8RMrnHytsPgpDb85/jTnaHkxTOmFKH1IVm+INdCNy4pyENTHyiNzCoLrS5LepxHGKerP
-X-Gm-Gg: AYBFou1gM6HoZxldRsU0nIt/0I5HDB0FdC3Bh072nGzfxScJU8Gl8o+FewoCGW22r+b
-	kAJBNlE5eBnJRg58iW9jTIGys2HIJc/FrIAlis9RfRMsEfAnDZqW/XjO5VSmuZjpIztkdIMBaMf
-	xK64lioC7nxM544GV5AUsWNb8gZ1j3WZ9O6UUwz5/y9d1ZMbwFK70zNMKHP/lXo2JguGLF0ojjx
-	vJ8H3O0YT/LHORlfhRBWjfKVo7cbKtjncE8AUIwvDzXxaoYhK/aqzS1ZP9Fe2/GDdwKnQYvCzA2
-	xdAn+5NoyETIg+U8Pa4ORRI9Qqkv9AretEsy6APDPE+21lYOKDoiEq6c2ILEI4nOTH9sA/BmFF9
-	3t5iXHeDOez2w3ylGNxJnZ3da1QCx++E5qtX/lQfAoRvyi0OA6gGRE6n25oTtRn9jEiu0YHAOMz
-	AA
-X-Received: by 2002:a05:620a:439b:b0:93f:35a7:cd4 with SMTP id af79cd13be357-9494bc708femr1447444185a.67.1794835140571;
-        Mon, 16 Nov 2026 05:19:00 -0800 (PST)
-X-Received: by 2002:a05:620a:439b:b0:93f:35a7:cd4 with SMTP id af79cd13be357-9494bc708femr1447439685a.67.1794835140037;
-        Mon, 16 Nov 2026 05:19:00 -0800 (PST)
-Received: from hu-naala-hyd.qualcomm.com ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-9494c8e1c94sm843927285a.39.2026.11.16.05.18.50
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Nov 2026 05:18:59 -0800 (PST)
-From: Nabige Aala <nabige.aala@oss.qualcomm.com>
-Date: Mon, 16 Nov 2026 18:46:50 +0530
-Subject: [PATCH v3 11/11] phy: qcom: edp: Add Nord eDP/DP PHY support
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Message-Id: <20261116-nord-drv-dt-v3-11-e3d3bf0e2c49@oss.qualcomm.com>
+	Mon, 16 Nov 2026 13:29:43 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 3A523456C8;
+	Mon, 16 Nov 2026 13:29:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 989CB1F000C4;
+	Mon, 16 Nov 2026 13:29:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794835783;
+	bh=ssAcmNAZ6RN1gnXKQZLC1kAwUmpHr5/zWN4C19jJBZM=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=VVAnmS5HucW555DGB0cnlLirQxX5V21JVSm76suMJtSGcBCCBtFY8iJQ3ffjH51ut
+	 2eObnuk99y7Q6LJw3pLygVqKHj0EXSRsjzWW9uyaygIFgDKqpgI3vIpdHRTwdI7AHt
+	 ilBpDZm99vZ2K4YGGQhxuvjqQyrNMytihC7kDSXzEq1FuzJ5Ul5E+qhSBNWqc8Br66
+	 ZII9/ThWX5SqmEFLy63bvifnPF12r5fU837+TJXaZqQK/Hr1NwEaOcQiBOvMQN3RY8
+	 MmnDeVciWx1iVhHwyoXTpCbspwfZSq+PcJA5pYOJBkEuFYkSEg4z3SID7xhVzfjQIC
+	 eaUzubUIY3Snw==
+Message-ID: <sashiko-outbox-217078@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v3 06/11] drm/msm/dpu: Fix DSI tear interrupts broken by
+ adding INTF_9 and INTF_10
+To: "Nabige Aala" <nabige.aala@oss.qualcomm.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261116-nord-drv-dt-v3-6-e3d3bf0e2c49@oss.qualcomm.com>
 References: <20261116-nord-drv-dt-v3-0-e3d3bf0e2c49@oss.qualcomm.com>
-In-Reply-To: <20261116-nord-drv-dt-v3-0-e3d3bf0e2c49@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Rob Clark <robin.clark@oss.qualcomm.com>,
-        Dmitry Baryshkov <lumag@kernel.org>,
-        Abhinav Kumar <abhinav.kumar@linux.dev>,
-        Jessica Zhang <jesszhan0024@gmail.com>, Sean Paul <sean@poorly.run>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-        Maxime Ripard <mripard@kernel.org>,
-        Thomas Zimmermann <tzimmermann@suse.de>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        Kuogee Hsieh <quic_khsieh@quicinc.com>,
-        Shawn Guo <shengchao.guo@oss.qualcomm.com>
-Cc: Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>,
-        Mahadevan P <mahadevan.p@oss.qualcomm.com>,
-        Nabige Aala <nabige.aala@oss.qualcomm.com>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794835013; l=10721;
- i=nabige.aala@oss.qualcomm.com; s=20260520; h=from:subject:message-id;
- bh=Eu0id8yu9Mzw5aOSnQtYz/XfuowTz3vy5rElr+dtuHg=;
- b=u2Eug5hdnMG0guprkqGEqoE0Gg3EQX09UXBDRfRETnd8rEGlzxeHXzkwS2TwR0LU34fk/eI/a
- mH16VHEtxrDDCXyt5Kuo+fQjq9itkT1nevf8dhTijeEMO4X6e5SAOaY
-X-Developer-Key: i=nabige.aala@oss.qualcomm.com; a=ed25519;
- pk=PYHJom8sPos1IGkrbCCsWiE7XTBQrQZd9jzAo051tgw=
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE2MDA1MiBTYWx0ZWRfX095NAx/c8i0b
- SfiZZSBzujh5FnCZfS1hHRDPSAkMU9Ml3W1w2UDGo1ZNwmMoDz8P+jA539ay1pluF49r+nf8goj
- 6Axm8r+s3HRFLfK8g5pd6WuTnZHhCaM=
-X-Authority-Analysis: v=2.4 cv=epRKXYpX c=1 sm=1 tr=0 ts=6afb02c5 cx=c_pps
- a=qKBjSQ1v91RyAK45QCPf5w==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
- a=EUspDBNiAAAA:8 a=USxDkvc5C5W9gJns0o8A:9 a=QEXdDO2ut3YA:10
- a=NFOGd7dJGGMPyQGDc5-O:22
-X-Proofpoint-ORIG-GUID: r0jTkTPCC82I5SD_t-eZ4wcar-bQnmpK
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE2MDA1MiBTYWx0ZWRfX1ToewQwCgjpO
- dV/CkE/f0caGT5CZJBODKa4+4iiBuqRSTzMwaBf/rINbabkl16SngKVYXZq+6Za1w5ksAhJbDqz
- /iICPKx4Vep/ubDT6pN69+WT6WUj9gR6Om+vfSITOG0H8UYw1ZG64kVPdE2+46VtJwU+W8zD1wS
- EP9HddlQc/xNim5kp7BYloQKJ9WT50qOvHGJeSuLbuqaFgocytCBRaOh/3qNToMcneZ31skG/do
- gcpRuICb/4JftFSCybJmHUFUNljgjWiMjRfDvdOrDwT0fsXoxX6voffJImxx3PAaQd8XBSrcUIh
- t3A0QuCmLdLGUUzhVXmwEtE1RKPyewfYkSP1c0dnjhfd/uynRE8yED0MysTgJvNmNnxqSgIDAZI
- HtPU1HLP9VY6gK48ORJLCudbx4RT5Yv0GISIsVw6LJeYthgCCMjOtiRTO6vPlwXv2AMxcOhNzGl
- NLZ44r+3gm3+j113ZSg==
-X-Proofpoint-GUID: r0jTkTPCC82I5SD_t-eZ4wcar-bQnmpK
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-16_04,2026-11-16_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 malwarescore=0 bulkscore=0 phishscore=0 adultscore=0
- priorityscore=1501 suspectscore=0 spamscore=0 clxscore=1015 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611160052
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261116_051904_467466_8AB3841C 
-X-CRM114-Status: GOOD (  15.26  )
-X-Spam-Score: -2.8 (--)
+ <20261116-nord-drv-dt-v3-6-e3d3bf0e2c49@oss.qualcomm.com>
+Date: Mon, 16 Nov 2026 13:29:42 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -171,326 +63,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>
-
-Add eDP/DP PHY support for the Qualcomm Nord SoC.  Nord uses a
-different QSERDES COM register layout from existing v8 SoCs, so
-dedicated NORD_DP_QSERDES_COM_* offsets are used throughout.
-
-Key additions:
-- SSC and PLL configuration per HPG Tables 2-8 and 2-9
-- Power-on and reset-SM callbacks polling the relocated COM status
-  registers
-- Voltage-swing and pre-emphasis tables for RBR/HBR and HBR2/HBR3
-- LDO, TX resistor calibration, and set_voltages callbacks
-- AUX channel and VCO divider config tables
-- 'qcom,nord-dp-phy' OF compatible
-
-Signed-off-by: Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>
-Signed-off-by: Nabige Aala <nabige.aala@oss.qualcomm.com>
----
- drivers/phy/qualcomm/phy-qcom-edp.c | 258 ++++++++++++++++++++++++++++++++++++
- 1 file changed, 258 insertions(+)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-index 41bcfffbb357..eb8beda84196 100644
---- a/drivers/phy/qualcomm/phy-qcom-edp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-@@ -27,6 +27,7 @@
- #include "phy-qcom-qmp-qserdes-com-v6.h"
- 
- #include "phy-qcom-qmp-qserdes-dp-com-v8.h"
-+#include "phy-qcom-qmp-qserdes-dp-com-v8-nord.h"
- 
- /* EDP_PHY registers */
- #define DP_PHY_CFG                              0x0010
-@@ -1514,6 +1515,262 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
- 	return PTR_ERR_OR_ZERO(phy_provider);
- }
- 
-+static const u8 nord_dp_pre_emp_hbr_rbr[4][4] = {
-+	{ 0x00, 0x0e, 0x15, 0x1a },
-+	{ 0x00, 0x0e, 0x15, 0xff },
-+	{ 0x00, 0x0e, 0xff, 0xff },
-+	{ 0x02, 0xff, 0xff, 0xff },
-+};
-+
-+static const struct qcom_edp_swing_pre_emph_cfg nord_dp_swing_pre_emph_cfg = {
-+	.swing_hbr_rbr		= &dp_swing_hbr_rbr,
-+	.swing_hbr3_hbr2	= &dp_swing_hbr2_hbr3,
-+	.pre_emphasis_hbr_rbr	= &nord_dp_pre_emp_hbr_rbr,
-+	.pre_emphasis_hbr3_hbr2	= &dp_pre_emp_hbr2_hbr3,
-+};
-+
-+/* Nord DP PHY register offsets (relocated from v8 base) */
-+#define DP_PHY_TX2_TX3_LANE_CTL_NORD		0x00c0
-+#define DP_PHY_STATUS_NORD			0x0110
-+#define DP_PHY_LDO_CFG_NORD			0x00f0
-+#define DP_PHY_TX_LN0_DRV_LVL_NORD		0x00e4
-+#define DP_PHY_TX_LN1_DRV_LVL_NORD		0x00e8
-+#define TXn_TX_BAND_NORD			0x0024
-+
-+static int qcom_edp_com_configure_ssc_nord(const struct qcom_edp *edp)
-+{
-+	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
-+	u32 step1;
-+	u32 step2;
-+
-+	switch (dp_opts->link_rate) {
-+	case 1620:
-+		step1 = 0x83;
-+		step2 = 0x02;
-+		break;
-+
-+	case 2700:
-+	case 5400:
-+		step1 = 0x18;
-+		step2 = 0x02;
-+		break;
-+
-+	case 8100:
-+		step1 = 0x5b;
-+		step2 = 0x02;
-+		break;
-+
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	writel(0x01, edp->pll + NORD_DP_QSERDES_COM_SSC_EN_CENTER);
-+	writel(0x00, edp->pll + NORD_DP_QSERDES_COM_SSC_ADJ_PER1);
-+	writel(0x6b, edp->pll + NORD_DP_QSERDES_COM_SSC_PER1);
-+	writel(0x02, edp->pll + NORD_DP_QSERDES_COM_SSC_PER2);
-+	writel(step1, edp->pll + NORD_DP_QSERDES_COM_SSC_STEP_SIZE1_MODE0);
-+	writel(step2, edp->pll + NORD_DP_QSERDES_COM_SSC_STEP_SIZE2_MODE0);
-+
-+	return 0;
-+}
-+
-+static int qcom_edp_com_configure_pll_nord(const struct qcom_edp *edp)
-+{
-+	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
-+	u32 div_frac_start2_mode0;
-+	u32 div_frac_start3_mode0;
-+	u32 dec_start_mode0;
-+	u32 lock_cmp1_mode0;
-+	u32 lock_cmp2_mode0;
-+	u32 lock_cmp_en;
-+	u32 hsclk_sel;
-+	u32 code1_mode0;
-+	u32 code2_mode0;
-+	u32 core_clk_div_mode0 = 0x14;
-+
-+	switch (dp_opts->link_rate) {
-+	case 1620:
-+		hsclk_sel = 0x0c;
-+		dec_start_mode0 = 0x54;
-+		div_frac_start2_mode0 = 0x00;
-+		div_frac_start3_mode0 = 0x06;
-+		lock_cmp1_mode0 = 0x37;
-+		lock_cmp2_mode0 = 0x04;
-+		lock_cmp_en = 0x04;
-+		code1_mode0 = 0x8d;
-+		code2_mode0 = 0x27;
-+		break;
-+
-+	case 2700:
-+		hsclk_sel = 0x04;
-+		dec_start_mode0 = 0x46;
-+		div_frac_start2_mode0 = 0x00;
-+		div_frac_start3_mode0 = 0x05;
-+		lock_cmp1_mode0 = 0x07;
-+		lock_cmp2_mode0 = 0x07;
-+		lock_cmp_en = 0x08;
-+		code1_mode0 = 0xf6;
-+		code2_mode0 = 0x20;
-+		break;
-+
-+	case 5400:
-+		hsclk_sel = 0x01;
-+		dec_start_mode0 = 0x46;
-+		div_frac_start2_mode0 = 0x00;
-+		div_frac_start3_mode0 = 0x05;
-+		lock_cmp1_mode0 = 0x0f;
-+		lock_cmp2_mode0 = 0x0e;
-+		lock_cmp_en = 0x08;
-+		code1_mode0 = 0xf6;
-+		code2_mode0 = 0x20;
-+		break;
-+
-+	case 8100:
-+		hsclk_sel = 0x03;
-+		dec_start_mode0 = 0x4f;
-+		div_frac_start2_mode0 = 0xa0;
-+		div_frac_start3_mode0 = 0x01;
-+		lock_cmp1_mode0 = 0x17;
-+		lock_cmp2_mode0 = 0x15;
-+		lock_cmp_en = 0x08;
-+		code1_mode0 = 0x14;
-+		code2_mode0 = 0x25;
-+		core_clk_div_mode0 = 0x0a;
-+		break;
-+
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	writel(0x01, edp->pll + NORD_DP_QSERDES_COM_SVS_MODE_CLK_SEL);
-+	writel(0x0b, edp->pll + NORD_DP_QSERDES_COM_SYSCLK_EN_SEL);
-+	writel(0x02, edp->pll + NORD_DP_QSERDES_COM_SYS_CLK_CTRL);
-+	writel(0x0c, edp->pll + NORD_DP_QSERDES_COM_CLK_ENABLE1);
-+	writel(0x06, edp->pll + NORD_DP_QSERDES_COM_SYSCLK_BUF_ENABLE);
-+	writel(0x30, edp->pll + NORD_DP_QSERDES_COM_CLK_SELECT);
-+	writel(hsclk_sel, edp->pll + NORD_DP_QSERDES_COM_HSCLK_SEL_1);
-+	writel(0x07, edp->pll + NORD_DP_QSERDES_COM_PLL_IVCO);
-+	writel(lock_cmp_en, edp->pll + NORD_DP_QSERDES_COM_LOCK_CMP_EN);
-+	writel(0x36, edp->pll + NORD_DP_QSERDES_COM_PLL_CCTRL_MODE0);
-+	writel(0x16, edp->pll + NORD_DP_QSERDES_COM_PLL_RCTRL_MODE0);
-+	writel(0x06, edp->pll + NORD_DP_QSERDES_COM_CP_CTRL_MODE0);
-+	writel(dec_start_mode0, edp->pll + NORD_DP_QSERDES_COM_DEC_START_MODE0);
-+	writel(0x00, edp->pll + NORD_DP_QSERDES_COM_DIV_FRAC_START1_MODE0);
-+	writel(div_frac_start2_mode0, edp->pll + NORD_DP_QSERDES_COM_DIV_FRAC_START2_MODE0);
-+	writel(div_frac_start3_mode0, edp->pll + NORD_DP_QSERDES_COM_DIV_FRAC_START3_MODE0);
-+	writel(0x12, edp->pll + NORD_DP_QSERDES_COM_CMN_CONFIG_1);
-+	writel(0x3f, edp->pll + NORD_DP_QSERDES_COM_INTEGLOOP_GAIN0_MODE0);
-+	writel(0x00, edp->pll + NORD_DP_QSERDES_COM_INTEGLOOP_GAIN1_MODE0);
-+	writel(0x00, edp->pll + NORD_DP_QSERDES_COM_VCO_TUNE_MAP);
-+	writel(lock_cmp1_mode0, edp->pll + NORD_DP_QSERDES_COM_LOCK_CMP1_MODE0);
-+	writel(lock_cmp2_mode0, edp->pll + NORD_DP_QSERDES_COM_LOCK_CMP2_MODE0);
-+	writel(0x0a, edp->pll + NORD_DP_QSERDES_COM_BG_TIMER);
-+	writel(core_clk_div_mode0, edp->pll + NORD_DP_QSERDES_COM_CORECLK_DIV_MODE0);
-+	writel(0x00, edp->pll + NORD_DP_QSERDES_COM_VCO_TUNE_CTRL);
-+	writel(0x1f, edp->pll + NORD_DP_QSERDES_COM_BIAS_EN_CLKBUFLR_EN);
-+	writel(0x0f, edp->pll + NORD_DP_QSERDES_COM_CORE_CLK_EN);
-+	writel(0xa0, edp->pll + NORD_DP_QSERDES_COM_VCO_TUNE1_MODE0);
-+	writel(0x01, edp->pll + NORD_DP_QSERDES_COM_VCO_TUNE2_MODE0);
-+	writel(code1_mode0, edp->pll + NORD_DP_QSERDES_COM_BIN_VCOCAL_CMP_CODE1_MODE0);
-+	writel(code2_mode0, edp->pll + NORD_DP_QSERDES_COM_BIN_VCOCAL_CMP_CODE2_MODE0);
-+
-+	return 0;
-+}
-+
-+static const u8 edp_phy_aux_cfg_nord[DP_AUX_CFG_SIZE] = {
-+	0x00, 0x13, 0xa4, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03, 0x02, 0x02, 0x04,
-+};
-+
-+static const u8 edp_phy_vco_div_cfg_nord[4] = {
-+	0x00, 0x00, 0x02, 0x01,
-+};
-+
-+static int qcom_edp_ldo_config_nord(const struct qcom_edp *edp)
-+{
-+	const struct phy_configure_opts_dp *dp_opts = &edp->dp_opts;
-+
-+	writel(0xd0, edp->tx0 + TXn_LDO_CONFIG);
-+	writel(dp_opts->lanes > 2 ? 0xd0 : 0x00, edp->tx1 + TXn_LDO_CONFIG);
-+	writel(0x03, edp->edp + DP_PHY_LDO_CFG_NORD);
-+
-+	return 0;
-+}
-+
-+static int qcom_edp_tx_res_config_nord(const struct qcom_edp *edp)
-+{
-+	writel(0x06, edp->tx0 + TXn_RES_CODE_LANE_OFFSET_TX0);
-+	writel(0x06, edp->tx0 + TXn_RES_CODE_LANE_OFFSET_TX1);
-+	writel(0x06, edp->tx1 + TXn_RES_CODE_LANE_OFFSET_TX0);
-+	writel(0x06, edp->tx1 + TXn_RES_CODE_LANE_OFFSET_TX1);
-+	writel(0x06, edp->tx0 + TXn_TX_EMP_POST1_LVL);
-+	writel(0x06, edp->tx1 + TXn_TX_EMP_POST1_LVL);
-+	writel(0x05, edp->tx0 + TXn_TX_BAND_NORD);
-+	writel(0x05, edp->tx1 + TXn_TX_BAND_NORD);
-+	writel(0x12, edp->edp + DP_PHY_TX_LN0_DRV_LVL_NORD);
-+	writel(0x12, edp->edp + DP_PHY_TX_LN1_DRV_LVL_NORD);
-+
-+	return 0;
-+}
-+
-+static int qcom_edp_phy_power_on_nord(const struct qcom_edp *edp)
-+{
-+	u32 val;
-+
-+	writel(DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
-+	       DP_PHY_PD_CTL_LANE_0_1_PWRDN | DP_PHY_PD_CTL_LANE_2_3_PWRDN |
-+	       DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN,
-+	       edp->edp + DP_PHY_PD_CTL);
-+	writel(0xfc, edp->edp + DP_PHY_MODE);
-+
-+	return readl_poll_timeout(edp->pll + NORD_DP_QSERDES_COM_CMN_STATUS,
-+				  val, val & BIT(7), 5, 200);
-+}
-+
-+static int qcom_edp_phy_com_resetsm_cntrl_nord(const struct qcom_edp *edp)
-+{
-+	u32 val;
-+
-+	writel(0x20, edp->pll + NORD_DP_QSERDES_COM_RESETSM_CNTRL);
-+
-+	return readl_poll_timeout(edp->pll + NORD_DP_QSERDES_COM_C_READY_STATUS,
-+				  val, val & BIT(0), 500, 10000);
-+}
-+
-+static int qcom_edp_set_voltages_nord(struct qcom_edp *edp, u8 swing, u8 emph)
-+{
-+	writel(swing, edp->edp + DP_PHY_TX_LN0_DRV_LVL_NORD);
-+	writel(emph, edp->tx0 + TXn_TX_EMP_POST1_LVL);
-+
-+	writel(swing, edp->edp + DP_PHY_TX_LN1_DRV_LVL_NORD);
-+	writel(emph, edp->tx1 + TXn_TX_EMP_POST1_LVL);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ver_ops qcom_edp_phy_ops_nord = {
-+	.com_power_on		= qcom_edp_phy_power_on_nord,
-+	.com_resetsm_cntrl	= qcom_edp_phy_com_resetsm_cntrl_nord,
-+	.com_bias_en_clkbuflr	= qcom_edp_com_bias_en_clkbuflr_v8,
-+	.com_clk_fwd_cfg	= qcom_edp_com_clk_fwd_cfg_v4,
-+	.com_configure_pll	= qcom_edp_com_configure_pll_nord,
-+	.com_configure_ssc	= qcom_edp_com_configure_ssc_nord,
-+	.com_ldo_config		= qcom_edp_ldo_config_nord,
-+	.tx_res_config		= qcom_edp_tx_res_config_nord,
-+	.set_voltages		= qcom_edp_set_voltages_nord,
-+};
-+
-+static const struct qcom_edp_phy_cfg nord_edp_phy_cfg = {
-+	.is_edp			= false,
-+	.aux_cfg		= edp_phy_aux_cfg_nord,
-+	.vco_div_cfg		= edp_phy_vco_div_cfg_nord,
-+	.dp_swing_pre_emph_cfg	= &nord_dp_swing_pre_emph_cfg,
-+	.edp_swing_pre_emph_cfg	= &edp_phy_swing_pre_emph_cfg,
-+	.ver_ops		= &qcom_edp_phy_ops_nord,
-+	.phy_status_reg		= DP_PHY_STATUS_NORD,
-+	.bias1_en_2lane		= 0x03,
-+	.tx2_tx3_lane_ctl	= DP_PHY_TX2_TX3_LANE_CTL_NORD,
-+};
-+
- static const struct of_device_id qcom_edp_phy_match_table[] = {
- 	{ .compatible = "qcom,glymur-dp-phy", .data = &glymur_phy_cfg, },
- 	{ .compatible = "qcom,sa8775p-edp-phy", .data = &sa8775p_dp_phy_cfg, },
-@@ -1522,6 +1779,7 @@ static const struct of_device_id qcom_edp_phy_match_table[] = {
- 	{ .compatible = "qcom,sc8280xp-dp-phy", .data = &sc8280xp_dp_phy_cfg, },
- 	{ .compatible = "qcom,sc8280xp-edp-phy", .data = &sc8280xp_edp_phy_cfg, },
- 	{ .compatible = "qcom,x1e80100-dp-phy", .data = &x1e80100_phy_cfg, },
-+	{ .compatible = "qcom,nord-dp-phy", .data = &nord_edp_phy_cfg, },
- 	{ }
- };
- MODULE_DEVICE_TABLE(of, qcom_edp_phy_match_table);
-
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwKaXNzdWUgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gZHJtL21zbS9kcHU6IElO
+VEZfOSBhbmQgSU5URl8xMCBhZGRlZCBhZnRlciB1c2UgaW4gTm9yZAogIGNhdGFsb2cKLS0KCmNv
+bW1pdCBjNWJkZmIwOWMyMDc3OTNmMzE1NWIzNDZiMzliYzhhMDIxMGZmOGYyCkF1dGhvcjogTmFi
+aWdlIEFhbGEgPG5hYmlnZS5hYWxhQG9zcy5xdWFsY29tbS5jb20+Cgo+IGRybS9tc20vZHB1OiBG
+aXggRFNJIHRlYXIgaW50ZXJydXB0cyBicm9rZW4gYnkgYWRkaW5nIElOVEZfOSBhbmQgSU5URl8x
+MAo+Cj4gTm9yZCByZXF1aXJlcyBJTlRGXzkgYW5kIElOVEZfMTAuIEhvd2V2ZXIsIGVudW0gZHB1
+X2h3X2ludHJfcmVnIHJlbGllcwo+IG9uIGFsbCBNRFBfSU5URm5fSU5UUiBlbnRyaWVzIGJlaW5n
+IHNlcXVlbnRpYWwg4oCUIE1EUF9JTlRGbl9JTlRSKCkgbWFjcm8KPiBjb21wdXRlcyB0aGUgaW50
+ZXJydXB0IGluZGV4IGFzIE1EUF9JTlRGMF9JTlRSICsgKGludGYgLSBJTlRGXzApLgo+IEFwcGVu
+ZGluZyBJTlRGXzkgYW5kIElOVEZfMTAgYWZ0ZXIgdGhlIHRlYXIgZW50cmllcyB3b3VsZCBicmVh
+ayB0aGlzCj4gYXNzdW1wdGlvbiwgY2F1c2luZyBEU0kgdGVhciBpbnRlcnJ1cHRzIG9uIGV4aXN0
+aW5nIHBsYXRmb3JtcyB0byBtYXAgdG8KPiB3cm9uZyBpbnRlcnJ1cHQgcmVnaXN0ZXJzLgo+Cj4g
+Rml4IHRoaXMgYnkgaW5zZXJ0aW5nIE1EUF9JTlRGOV9JTlRSIGFuZCBNRFBfSU5URjEwX0lOVFIg
+YmVmb3JlCj4gTURQX0lOVEYxX1RFQVJfSU5UUiBhbmQgTURQX0lOVEYyX1RFQVJfSU5UUiwga2Vl
+cGluZyB0aGUgc2VxdWVudGlhbAo+IGJsb2NrIGludGFjdC4gQWRkIHRoZSBjb3JyZXNwb25kaW5n
+IHJlZ2lzdGVyIGVudHJpZXMgdG8KPiBkcHVfaW50cl9zZXRfN3h4eCBhbmQgZHB1X2ludHJfc2V0
+XzEzeHguCj4KPiBTaWduZWQtb2ZmLWJ5OiBNYWhhZGV2YW4gUCA8bWFoYWRldmFuLnBAb3NzLnF1
+YWxjb21tLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBOYWJpZ2UgQWFsYSA8bmFiaWdlLmFhbGFAb3Nz
+LnF1YWxjb21tLmNvbT4KClsgLi4uIF0KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9t
+c20vZGlzcC9kcHUxL2RwdV9od19tZHNzLmggYi9kcml2ZXJzL2dwdS9kcm0vbXNtL2Rpc3AvZHB1
+MS9kcHVfaHdfbWRzcy5oCj4gaW5kZXggMGU2NWJmNWRkYzRhNi4uN2VjY2I0ZDJjNjVlZiAxMDA2
+NDQKPiAtLS0gYS9kcml2ZXJzL2dwdS9kcm0vbXNtL2Rpc3AvZHB1MS9kcHVfaHdfbWRzcy5oCj4g
+KysrIGIvZHJpdmVycy9ncHUvZHJtL21zbS9kaXNwL2RwdTEvZHB1X2h3X21kc3MuaAo+IEBAIC0y
+MjYsNiArMjI2LDggQEAgZW51bSBkcHVfaW50ZiB7Cj4gIAlJTlRGXzYsCj4gIAlJTlRGXzcsCj4g
+IAlJTlRGXzgsCj4gKwlJTlRGXzksCj4gKwlJTlRGXzEwLAo+ICAJSU5URl9NQVgKPiAgfTsKCltT
+ZXZlcml0eTogTWVkaXVtXQpTaG91bGQgdGhpcyBwYXRjaCBjb21lIGJlZm9yZSBjb21taXQgImRy
+bS9tc20vZHB1OiBBZGQgc3VwcG9ydCBmb3IgRFBVIDEyLjEKb24gTm9yZCI/CgpUaGF0IGVhcmxp
+ZXIgY29tbWl0IHVzZXMgSU5URl85IGFuZCBJTlRGXzEwIGluIG5vcmRfaW50ZltdIGJlZm9yZSB0
+aGV5IGFyZQpkZWZpbmVkIGhlcmUsIHdoaWNoIGJyZWFrcyB0aGUgYnVpbGQgYW5kIGdpdCBiaXNl
+Y3QgYXQgdGhhdCBwb2ludCBpbiB0aGUKc2VyaWVzLgoKQWxzbywgdGhlIGNvbW1pdCBzdWJqZWN0
+IGFuZCBtZXNzYWdlIGRlc2NyaWJlIHRoaXMgY2hhbmdlIGFzIGZpeGluZyBhIHByaW9yCmFkZGl0
+aW9uIG9mIElOVEZfOSBhbmQgSU5URl8xMCwgd2hlcmVhcyB0aGlzIHBhdGNoIGludHJvZHVjZXMg
+SU5URl85LApJTlRGXzEwLCBNRFBfSU5URjlfSU5UUiwgYW5kIE1EUF9JTlRGMTBfSU5UUiBmb3Ig
+dGhlIGZpcnN0IHRpbWUuCgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtv
+LmRldi8jL3BhdGNoc2V0LzIwMjYxMTE2LW5vcmQtZHJ2LWR0LXYzLTAtZTNkM2JmMGUyYzQ5QG9z
+cy5xdWFsY29tbS5jb20/cGFydD02CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
+aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1waHkK
