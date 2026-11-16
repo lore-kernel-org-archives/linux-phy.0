@@ -2,63 +2,57 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C15D1606A31C
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Nov 2026 16:24:25 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A73C8606A8AC
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Nov 2026 16:40:15 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=RLY+LPnC;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=dolcini.it header.i=@dolcini.it header.a=rsa-sha256 header.s=default header.b=uHKupJ25
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=oboOZ/7y;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=a3mhPa6J
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Py9+agZWDaNcAXNZ+huGvXQkFrqI862IKD6Waow7uqY=; b=RLY+LPnCiSMbWDO6KqGAH5S6f5
-	24JwIT7Z2bFTEeG+eLzrg6m6sDQNeW1Doird7NESBpfVFMPJhCcD9byHNYuLTbV7SEUQNwIB/UzD9
-	c5CzjBjl6yTjpnElQl7yt4xsDXXYzsWCKWkH/h34idVN5w72XlZ9US/B1m4boAwYQN57UA4CRWrB3
-	enMQPeMEWfi27DcAjARO1LroiY5u9X74o5bWGHtGMaD+3w9WpRpbhmFesPm6KJvAJwFy5pkzOARdL
-	89CAxTNt18SaBDvdi4AtikD1fFfQX2AjbVRSR4sYJJoZqZvR6YYY2i9b2LcWhuyC2+poPqqDJ/aK8
-	MSh+bzsQ==;
+	bh=nbusqyyrYGv/cUfk8Q2fOLc+1BtakzK+ei7iyfTukhY=; b=oboOZ/7yEk4X0YAi+lzWfUjugp
+	b0LwNf/KDyJNDepZvNt+JFtBq0lpFvCu8BkeXNTa+PwcZ+lCRTAIT1FrowC9JiYaczXGMsHm93vKm
+	Ib4dk+rnwDS3/moHxbfbGTq3sbz7RL1CKKfDE4JJhw/adnVhr77uKSy+mdyihrSJh5raBC/xtVrH4
+	yOw4IcX7o/AdJVgdxoPUklAeo9hrqzHL/KrM4ICgNa/xsO9p/vDRPjMFkzvvcQqK/zhZa+IiyPQDp
+	1NSuR6TWSUmGdx7ZYaDT3zCYc+eGqcUtuABzbkqJQyBeEwuhuAm8fo/UzLh5Rfyhbv5sCZ292bcKr
+	LjoPhx+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSzVJ-00000003DCP-1Srh;
-	Mon, 16 Nov 2026 16:24:25 +0000
-Received: from mail11.truemail.it ([2001:4b7e:0:8::81])
+	id 1xSzkd-00000003Hcw-1BoO;
+	Mon, 16 Nov 2026 16:40:15 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSzVB-00000003D8d-3ToE
+	id 1xSzkc-00000003Hci-2P17
 	for linux-phy@lists.infradead.org;
-	Mon, 16 Nov 2026 16:24:23 +0000
-Received: from francesco-nb.. (93-45-146-107.ip102.fastwebnet.it [93.45.146.107])
-	by mail11.truemail.it (Postfix) with ESMTPA id 67299221F8;
-	Mon, 16 Nov 2026 17:24:14 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dolcini.it;
-	s=default; t=1794846255;
-	bh=KNMrpE0c4t3yHoCPTNayHPyVehFylomG/8Vd0gBrhoM=; h=From:To:Subject;
-	b=uHKupJ25Lyucg3iduvRru64ARqjufAfVMbrCa5ZzLcCA3RSXYoY+vVTi8yM9INd5Q
-	 SeMpFTCoe5qxjn6NExt85CjxjJtqM+8HmiDvbKw8A84wI5Milfm4Lt3l1bbPs5jtRd
-	 yjtfCC0X3giJ1/Z4TfVq5HChOKm3rO6wbUA4si4wJcPJgdQpZWKAeQAR+yjB+0YOWd
-	 6AWc9UCfXeK1XUNujE340vX+09qFa3skdZrDFhQlwCxlmUfhdNqwbRRx7pHYBTi7x2
-	 Th0NCNcNqdgdBqx3Dy6gsj3NRQ91GTHzvIXmiElYuhqFpNG43PG/btYREJP7XaP6nR
-	 JzeS544h14uyA==
-From: Francesco Dolcini <francesco@dolcini.it>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>
-Cc: Francesco Dolcini <francesco.dolcini@toradex.com>,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Alexander Stein <alexander.stein@ew.tq-group.com>
-Subject: [PATCH v1] Revert "phy: freescale: fsl-samsung-hdmi: initialize default rate"
-Date: Mon, 16 Nov 2026 17:24:08 +0100
-Message-ID: <20261116162409.218059-1-francesco@dolcini.it>
-X-Mailer: git-send-email 2.47.3
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261116_082418_493710_B900FB5F 
-X-CRM114-Status: GOOD (  13.30  )
-X-Spam-Score: -2.1 (--)
+	Mon, 16 Nov 2026 16:40:14 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 0AB9C62762;
+	Mon, 16 Nov 2026 16:40:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 732911F000C4;
+	Mon, 16 Nov 2026 16:40:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794847213;
+	bh=kO10F3nLbO/yNDt0sYd/RxAWAiL2cgAOqquyADPiVqE=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=a3mhPa6JobDBKGAVoe1OpzEcUZzZGu96sVv830Txp6Pnixb30nidc2ShsrggO4bAj
+	 lUcvURpNiJejdq4MkxL7NXi/oaZlZHmWXTgzn6C7uFImczghB7LzQwx8l8RdP2paDQ
+	 eBZXAfiR7D+dw3zSDkzvc5VtAhznvdqDTEj4ObmLT1fw2h/MZ01pkbl0ccjUnrEMdQ
+	 4SJ40+Oc4P1R4aZFpQFBW3SQjFGT985NfJXZ4lYDfAX22nVvCa0a1BolKgm678z24o
+	 NwIFjvFnyKsnAjAFp1FQYG5v/XihOcQWe+dPJ6JW1PHHEi//2LUtOGF4eGrgF+2Gbr
+	 b3wPlJQuiY84w==
+Message-ID: <sashiko-outbox-217371@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v1] Revert "phy: freescale: fsl-samsung-hdmi: initialize
+ default rate"
+To: "Francesco Dolcini" <francesco@dolcini.it>
+Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261116162409.218059-1-francesco@dolcini.it>
+References: <20261116162409.218059-1-francesco@dolcini.it>
+Date: Mon, 16 Nov 2026 16:40:11 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,154 +62,94 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Francesco Dolcini <francesco.dolcini@toradex.com>
-
-This reverts commit c01ccf91b257741e9edc374a465126bae9ae4711.
-
-Programming the 74.25 MHz configuration at probe fails on i.MX8MP boards,
-the PHY probe aborts and HDMI is no longer available:
-
-  fsl-samsung-hdmi-phy 32fdff00.phy: PLL failed to lock
-  fsl-samsung-hdmi-phy 32fdff00.phy: error -ETIMEDOUT: failed to configure default rate
-  fsl-samsung-hdmi-phy 32fdff00.phy: probe with driver fsl-samsung-hdmi-phy failed with error -110
-
-Reported-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-Closes: https://lore.kernel.org/all/13219248.O9o76ZdvQC@steina-w/
-Fixes: c01ccf91b257 ("phy: freescale: fsl-samsung-hdmi: initialize default rate")
-Signed-off-by: Francesco Dolcini <francesco.dolcini@toradex.com>
----
- drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 59 +++++---------------
- 1 file changed, 15 insertions(+), 44 deletions(-)
-
-diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-index aaa651abcbc6..d7418c2197c9 100644
---- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-+++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-@@ -44,8 +44,6 @@
- #define MHZ	(1000UL * 1000UL)
- #endif
- 
--#define PHY_DEFAULT_RATE	74250000
--
- #define PHY_PLL_DIV_REGS_NUM 7
- 
- struct phy_config {
-@@ -491,6 +489,17 @@ static int fsl_samsung_hdmi_phy_configure(struct fsl_samsung_hdmi_phy *phy,
- 	return ret;
- }
- 
-+static unsigned long phy_clk_recalc_rate(struct clk_hw *hw,
-+					 unsigned long parent_rate)
-+{
-+	struct fsl_samsung_hdmi_phy *phy = to_fsl_samsung_hdmi_phy(hw);
-+
-+	if (!phy->cur_cfg)
-+		return 74250000;
-+
-+	return phy->cur_cfg->pixclk;
-+}
-+
- /* Helper function to lookup the available fractional-divider rate */
- static const struct phy_config *fsl_samsung_hdmi_phy_lookup_rate(unsigned long rate)
- {
-@@ -511,14 +520,6 @@ static const struct phy_config *fsl_samsung_hdmi_phy_lookup_rate(unsigned long r
- 		&phy_pll_cfg[i] : &phy_pll_cfg[i+1]);
- }
- 
--static unsigned long phy_clk_recalc_rate(struct clk_hw *hw,
--					 unsigned long parent_rate)
--{
--	struct fsl_samsung_hdmi_phy *phy = to_fsl_samsung_hdmi_phy(hw);
--
--	return phy->cur_cfg->pixclk;
--}
--
- static void fsl_samsung_hdmi_calculate_phy(struct phy_config *cal_phy, unsigned long rate,
- 				    u8 p, u16 m, u8 s)
- {
-@@ -639,7 +640,6 @@ static int phy_clk_register(struct fsl_samsung_hdmi_phy *phy)
- 
- static int fsl_samsung_hdmi_phy_probe(struct platform_device *pdev)
- {
--	const struct phy_config *default_cfg;
- 	struct fsl_samsung_hdmi_phy *phy;
- 	int ret;
- 
-@@ -664,23 +664,6 @@ static int fsl_samsung_hdmi_phy_probe(struct platform_device *pdev)
- 		return dev_err_probe(phy->dev, PTR_ERR(phy->refclk),
- 				     "failed to get ref clk\n");
- 
--	/*
--	 * Establish the rate reported by recalc_rate() before registering the
--	 * clock. Otherwise CCF may skip the first set_rate() when it requests
--	 * the assumed default rate, leaving the PHY unconfigured.
--	 */
--	ret = clk_prepare_enable(phy->refclk);
--	if (ret)
--		return dev_err_probe(phy->dev, ret,
--				     "failed to enable ref clk\n");
--
--	default_cfg = fsl_samsung_hdmi_phy_lookup_rate(PHY_DEFAULT_RATE);
--	ret = fsl_samsung_hdmi_phy_configure(phy, default_cfg);
--	clk_disable_unprepare(phy->refclk);
--	if (ret)
--		return dev_err_probe(phy->dev, ret,
--				     "failed to configure default rate\n");
--
- 	pm_runtime_get_noresume(phy->dev);
- 	pm_runtime_set_active(phy->dev);
- 	pm_runtime_enable(phy->dev);
-@@ -719,7 +702,7 @@ static int __maybe_unused fsl_samsung_hdmi_phy_suspend(struct device *dev)
- static int __maybe_unused fsl_samsung_hdmi_phy_resume(struct device *dev)
- {
- 	struct fsl_samsung_hdmi_phy *phy = dev_get_drvdata(dev);
--	int ret;
-+	int ret = 0;
- 
- 	ret = clk_prepare_enable(phy->apbclk);
- 	if (ret) {
-@@ -727,23 +710,11 @@ static int __maybe_unused fsl_samsung_hdmi_phy_resume(struct device *dev)
- 		return ret;
- 	}
- 
--	if (!phy->cur_cfg)
--		return 0;
--
--	ret = clk_prepare_enable(phy->refclk);
--	if (ret) {
--		dev_err(phy->dev, "failed to enable ref clk\n");
--		goto disable_apbclk;
--	}
--
--	ret = fsl_samsung_hdmi_phy_configure(phy, phy->cur_cfg);
--	clk_disable_unprepare(phy->refclk);
--	if (!ret)
--		return 0;
-+	if (phy->cur_cfg)
-+		ret = fsl_samsung_hdmi_phy_configure(phy, phy->cur_cfg);
- 
--disable_apbclk:
--	clk_disable_unprepare(phy->apbclk);
- 	return ret;
-+
- }
- 
- static DEFINE_RUNTIME_DEV_PM_OPS(fsl_samsung_hdmi_phy_pm_ops,
--- 
-2.47.3
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtNZWRpdW1dIHBoeTogZnJlZXNjYWxl
+OiBmc2wtc2Ftc3VuZy1oZG1pOiBhcGJjbGsgbGVhayBpbgogIGZzbF9zYW1zdW5nX2hkbWlfcGh5
+X3Jlc3VtZSgpCi0gW01lZGl1bV0gcGh5OiBmcmVlc2NhbGU6IGZzbC1zYW1zdW5nLWhkbWk6IE5V
+TEwgZGVyZWYgaW4KICBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9maW5kX3NldHRpbmdzKCkKLS0KCmNv
+bW1pdCA5NDgxMjkzZmZjZmM2ZDg2NWE1ZGYyMWRiNTgxYmJjNzJlNjkwM2ZjCkF1dGhvcjogRnJh
+bmNlc2NvIERvbGNpbmkgPGZyYW5jZXNjby5kb2xjaW5pQHRvcmFkZXguY29tPgoKUmV2ZXJ0ICJw
+aHk6IGZyZWVzY2FsZTogZnNsLXNhbXN1bmctaGRtaTogaW5pdGlhbGl6ZSBkZWZhdWx0IHJhdGUi
+CgpUaGlzIGNvbW1pdCByZXZlcnRzIGNvbW1pdCBjMDFjY2Y5MWIyNTcgKCJwaHk6IGZyZWVzY2Fs
+ZTogZnNsLXNhbXN1bmctaGRtaToKaW5pdGlhbGl6ZSBkZWZhdWx0IHJhdGUiKSBzbyB0aGF0IHRo
+ZSBkcml2ZXIgbm8gbG9uZ2VyIGNvbmZpZ3VyZXMgdGhlCjc0LjI1IE1IeiBkZWZhdWx0IHJhdGUg
+ZHVyaW5nIHByb2JlIG9yIHRvZ2dsZXMgcmVmY2xrIG9uIHJlc3VtZS4KCj4gZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jIGIvZHJpdmVycy9w
+aHkvZnJlZXNjYWxlL3BoeS1mc2wtc2Ftc3VuZy1oZG1pLmMKPiBpbmRleCAwMjUzOWFkMGIwZmVk
+Li5kZWQxNDIwMjBlNzI1IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHkt
+ZnNsLXNhbXN1bmctaGRtaS5jCj4gKysrIGIvZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wt
+c2Ftc3VuZy1oZG1pLmMKClsgLi4uIF0KCj4gQEAgLTY2NCwyMyArNjY0LDYgQEAgc3RhdGljIGlu
+dCBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2
+KQo+ICAJCXJldHVybiBkZXZfZXJyX3Byb2JlKHBoeS0+ZGV2LCBQVFJfRVJSKHBoeS0+cmVmY2xr
+KSwKPiAgCQkJCSAgICAgImZhaWxlZCB0byBnZXQgcmVmIGNsa1xuIik7Cj4gIAo+IC0JLyoKPiAt
+CSAqIEVzdGFibGlzaCB0aGUgcmF0ZSByZXBvcnRlZCBieSByZWNhbGNfcmF0ZSgpIGJlZm9yZSBy
+ZWdpc3RlcmluZyB0aGUKPiAtCSAqIGNsb2NrLiBPdGhlcndpc2UgQ0NGIG1heSBza2lwIHRoZSBm
+aXJzdCBzZXRfcmF0ZSgpIHdoZW4gaXQgcmVxdWVzdHMKPiAtCSAqIHRoZSBhc3N1bWVkIGRlZmF1
+bHQgcmF0ZSwgbGVhdmluZyB0aGUgUEhZIHVuY29uZmlndXJlZC4KPiAtCSAqLwo+IC0JcmV0ID0g
+Y2xrX3ByZXBhcmVfZW5hYmxlKHBoeS0+cmVmY2xrKTsKPiAtCWlmIChyZXQpCj4gLQkJcmV0dXJu
+IGRldl9lcnJfcHJvYmUocGh5LT5kZXYsIHJldCwKPiAtCQkJCSAgICAgImZhaWxlZCB0byBlbmFi
+bGUgcmVmIGNsa1xuIik7Cj4gLQo+IC0JZGVmYXVsdF9jZmcgPSBmc2xfc2Ftc3VuZ19oZG1pX3Bo
+eV9sb29rdXBfcmF0ZShQSFlfREVGQVVMVF9SQVRFKTsKPiAtCXJldCA9IGZzbF9zYW1zdW5nX2hk
+bWlfcGh5X2NvbmZpZ3VyZShwaHksIGRlZmF1bHRfY2ZnKTsKPiAtCWNsa19kaXNhYmxlX3VucHJl
+cGFyZShwaHktPnJlZmNsayk7Cj4gLQlpZiAocmV0KQo+IC0JCXJldHVybiBkZXZfZXJyX3Byb2Jl
+KHBoeS0+ZGV2LCByZXQsCj4gLQkJCQkgICAgICJmYWlsZWQgdG8gY29uZmlndXJlIGRlZmF1bHQg
+cmF0ZVxuIik7Cj4gLQo+ICAJcG1fcnVudGltZV9nZXRfbm9yZXN1bWUocGh5LT5kZXYpOwo+ICAJ
+cG1fcnVudGltZV9zZXRfYWN0aXZlKHBoeS0+ZGV2KTsKPiAgCXBtX3J1bnRpbWVfZW5hYmxlKHBo
+eS0+ZGV2KTsKCltTZXZlcml0eTogTWVkaXVtXQpXaXRoIHBoeS0+Y3VyX2NmZyBsZWZ0IE5VTEwg
+dW50aWwgdGhlIGZpcnN0IGZzbF9zYW1zdW5nX2hkbWlfcGh5X2NvbmZpZ3VyZSgpCmNhbGwsIGNh
+biBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9maW5kX3NldHRpbmdzKCkgZGVyZWZlcmVuY2UgYSBOVUxM
+CnBoeS0+Y3VyX2NmZyB3aGVuIGRlYnVnIGxvZ2dpbmcgaXMgZW5hYmxlZD8KCkJvdGggZnNsX3Nh
+bXN1bmdfaGRtaV9waHlfY2xrX2RldGVybWluZV9yYXRlKCkgYW5kCmZzbF9zYW1zdW5nX2hkbWlf
+cGh5X2Nsa19zZXRfcmF0ZSgpIGNhbGwgZnNsX3NhbXN1bmdfaGRtaV9waHlfZmluZF9zZXR0aW5n
+cygpCmJlZm9yZSBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9jb25maWd1cmUoKSBzZXRzIHBoeS0+Y3Vy
+X2NmZy4gIFdoZW4gdGhlCnJlcXVlc3RlZCByYXRlIGlzIG5vdCBhbiBleGFjdCBtYXRjaCBhbmQg
+aXMgY2xvc2VyIHRvIGZyYWN0X2Rpdl9waHktPnBpeGNsawp0aGFuIGludF9kaXZfY2xrLCBmc2xf
+c2Ftc3VuZ19oZG1pX3BoeV9maW5kX3NldHRpbmdzKCkgbG9ncwpwaHktPmN1cl9jZmctPnBpeGNs
+ayBpbnN0ZWFkIG9mIGZyYWN0X2Rpdl9waHktPnBpeGNsazoKCmRyaXZlcnMvcGh5L2ZyZWVzY2Fs
+ZS9waHktZnNsLXNhbXN1bmctaGRtaS5jOmZzbF9zYW1zdW5nX2hkbWlfcGh5X2ZpbmRfc2V0dGlu
+Z3MoKSB7CgkuLi4KCS8qIENhbGN1bGF0ZSB0aGUgYWJzb2x1dGUgdmFsdWUgb2YgdGhlIGRpZmZl
+cmVuY2VzIGFuZCByZXR1cm4gd2hpY2hldmVyIGlzIGNsb3Nlc3QgKi8KCWlmIChhYnMoKGxvbmcp
+cmF0ZSAtIChsb25nKWludF9kaXZfY2xrKSA8CgkgICAgYWJzKChsb25nKXJhdGUgLSAobG9uZylm
+cmFjdF9kaXZfcGh5LT5waXhjbGspKSB7CgkJZGV2X2RiZyhwaHktPmRldiwgImludGVnZXIgZGl2
+aWRlciA9ICV1XG4iLCBjYWxjdWxhdGVkX3BoeV9wbGxfY2ZnLnBpeGNsayk7CgkJcmV0dXJuICZj
+YWxjdWxhdGVkX3BoeV9wbGxfY2ZnOwoJfQoKCWRldl9kYmcocGh5LT5kZXYsICJmcmFjdGlvbmFs
+IGRpdmlkZXIgPSAldVxuIiwgcGh5LT5jdXJfY2ZnLT5waXhjbGspOwoKCXJldHVybiBmcmFjdF9k
+aXZfcGh5Owp9Cgo+IEBAIC03MTksNyArNzAyLDcgQEAgc3RhdGljIGludCBfX21heWJlX3VudXNl
+ZCBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9zdXNwZW5kKHN0cnVjdCBkZXZpY2UgKmRldikKPiAgc3Rh
+dGljIGludCBfX21heWJlX3VudXNlZCBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9yZXN1bWUoc3RydWN0
+IGRldmljZSAqZGV2KQo+ICB7Cj4gIAlzdHJ1Y3QgZnNsX3NhbXN1bmdfaGRtaV9waHkgKnBoeSA9
+IGRldl9nZXRfZHJ2ZGF0YShkZXYpOwo+IC0JaW50IHJldDsKPiArCWludCByZXQgPSAwOwo+ICAK
+PiAgCXJldCA9IGNsa19wcmVwYXJlX2VuYWJsZShwaHktPmFwYmNsayk7Cj4gIAlpZiAocmV0KSB7
+Cj4gQEAgLTcyNywyMyArNzEwLDExIEBAIHN0YXRpYyBpbnQgX19tYXliZV91bnVzZWQgZnNsX3Nh
+bXN1bmdfaGRtaV9waHlfcmVzdW1lKHN0cnVjdCBkZXZpY2UgKmRldikKPiAgCQlyZXR1cm4gcmV0
+Owo+ICAJfQo+ICAKPiAtCWlmICghcGh5LT5jdXJfY2ZnKQo+IC0JCXJldHVybiAwOwo+IC0KPiAt
+CXJldCA9IGNsa19wcmVwYXJlX2VuYWJsZShwaHktPnJlZmNsayk7Cj4gLQlpZiAocmV0KSB7Cj4g
+LQkJZGV2X2VycihwaHktPmRldiwgImZhaWxlZCB0byBlbmFibGUgcmVmIGNsa1xuIik7Cj4gLQkJ
+Z290byBkaXNhYmxlX2FwYmNsazsKPiAtCX0KPiAtCj4gLQlyZXQgPSBmc2xfc2Ftc3VuZ19oZG1p
+X3BoeV9jb25maWd1cmUocGh5LCBwaHktPmN1cl9jZmcpOwo+IC0JY2xrX2Rpc2FibGVfdW5wcmVw
+YXJlKHBoeS0+cmVmY2xrKTsKPiAtCWlmICghcmV0KQo+IC0JCXJldHVybiAwOwo+ICsJaWYgKHBo
+eS0+Y3VyX2NmZykKPiArCQlyZXQgPSBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9jb25maWd1cmUocGh5
+LCBwaHktPmN1cl9jZmcpOwo+ICAKPiAtZGlzYWJsZV9hcGJjbGs6Cj4gLQljbGtfZGlzYWJsZV91
+bnByZXBhcmUocGh5LT5hcGJjbGspOwo+ICAJcmV0dXJuIHJldDsKPiArCj4gIH0KCltTZXZlcml0
+eTogTWVkaXVtXQpEb2VzIGZzbF9zYW1zdW5nX2hkbWlfcGh5X3Jlc3VtZSgpIGxlYWsgdGhlIGVu
+YWJsZSBjb3VudCBvbiBwaHktPmFwYmNsayB3aGVuCmZzbF9zYW1zdW5nX2hkbWlfcGh5X2NvbmZp
+Z3VyZSgpIGZhaWxzPyAgSWYgdGhlIFBMTCBmYWlscyB0byBsb2NrIG9uIHJ1bnRpbWUKcmVzdW1l
+LCB0aGUgZGV2aWNlIHN0YXlzIHN1c3BlbmRlZCBpbiBydW50aW1lIFBNIGVycm9yIHN0YXRlIHdp
+dGhvdXQKZGlzYWJsaW5nIGFuZCB1bnByZXBhcmluZyBwaHktPmFwYmNsay4KCi0tIApTYXNoaWtv
+IEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjExMTYxNjI0
+MDkuMjE4MDU5LTEtZnJhbmNlc2NvQGRvbGNpbmkuaXQ/cGFydD0xCgotLSAKbGludXgtcGh5IG1h
+aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
