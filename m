@@ -2,77 +2,71 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DE3BD606A330
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Nov 2026 10:00:55 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8A569606A329
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Nov 2026 10:14:51 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=YoDsjbQ/;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=zohomail header.b=V/YBkTvq
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Kqs7Opv4;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jcm3NmAW
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=6CmR1j71o6F4qTfxfhd3VzOyO0ksXEbqxAg25UOPRkA=; b=YoDsjbQ/S2YdGlvK3TKOr1EFuI
-	w/3bubtKnpXKJvdPy6kwUQbAGah6s36POdmoKIJTL+CTTrCp0pfMcejpCQ57vbH5szarg2v6B39z6
-	tEe7QtT8AiTU/AilmazFbMfl0oSR1U+4mhxVPKQlCLquNetcn8Q4+U7TywJrd6ItISnm5p0BzWTZ9
-	/JfaArXLSA/k02AIv2vTgPKVoRyl+AbuevU8favjFl15c0nBoXbqzGByYT1rIbu0xZEkgvBODvmBk
-	EpOhElHcw5BSDYb4tCbn0mRQx7OMLkyP/ZjxJSMaq14Iz2cEP/6f5TVuVQ1LXKR6fIrfWIKIrrLfN
-	0+34jI3A==;
+	bh=rvBXKpva94B/rGxUA6G+CHccQpvh3Ai1IZmdByr/1qM=; b=Kqs7Opv4z63rVtftkEAJK5Ms8H
+	BQ0iTt9mIkve8Aq6OLaDEKyeycWkOW7peJgItp+o4CpzruQOM5cx09/ioux8PRcPzrVukV7C9K5xw
+	ee7f59Xefm/wYt2HWwpVjcq83wmKWQYAPXIRm+jXqEQDgUk8FJx1sAczhCAYkdNEzlZ+GE3NtYq2Z
+	I5KJu3dJj7hfJgL+t/3eawUQWqz8TI/BdqRAGuoPcv7Q2cjHO8hdQY7lQcr+LBS4681OAAQq+QQIp
+	O9KMWext9esTpiAPXBQe8x8Bjw4MUxnB+wE/y5SZTaFUcjvv2AvY2NT2tOGQ5OklgzzqQigM+ZJRt
+	EVIVUG4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xStWB-00000001sNZ-2djx;
-	Mon, 16 Nov 2026 10:00:55 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1xStjf-00000001vhe-1HlB;
+	Mon, 16 Nov 2026 10:14:51 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xStW9-00000001sLp-18zE;
-	Mon, 16 Nov 2026 10:00:55 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1794823239; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=CUf5+UwYhRfnn8buxQ8wPL6o5V1CqkFUd02zBuF3/3wUjfGTYXwyWaeMpZePi+Yb13asn+2aEkj1FffAl9A5YC+pYc33h7F0LdpND24zoOIOxoKBBHV38O5qFZkDnVNvbkLsaH58sCYbOCgqP9R3C0dl53LPZjJKeOdNeU3/7HY=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1794823239; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=+RGkjd/Qfb4Dw3SBbE+1NagLSuw1G0THfq1R7Ey/gug=; 
-	b=A84ZmGMlEkDQWkyxVnHmRSVcSvfABnfX5ksXn7JUP7RmXdhjWkMqV0qe6kB1Foe2XU6M8N+NiiDNRsbXjzgEFGXswvhifdhyozwBEcvMyyniZxJHOnEgs6fXXBhpFk/fjJX5ENoLNn7OImzQUTBYdegNJO5t+Aoz4xn4t3GSV3g=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=michael.riesch@collabora.com;
-	dmarc=pass header.from=<michael.riesch@collabora.com>
-DKIM-Signature: a=rsa-sha256; b=V/YBkTvq+AuWstlhlVzFK5LywsMcAB/lZUIDwgs66uK9j1v+qq3XqmX1RpQ7E36zCdf+5chq5/7sn1lm/i/0zJY9JjWvCWsh6JWRB6y8wP2e3D9qsM52I7O7T3DiK8eKQbSuono0eD8yej7CQtNF6bYfpFSOIsGFaA4dUmB/GOw=; c=relaxed/relaxed; s=zohomail; d=collabora.com; v=1; bh=+RGkjd/Qfb4Dw3SBbE+1NagLSuw1G0THfq1R7Ey/gug=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
-Received: by smtp.zohomail.com with SMTPS id 1794823237050288.840830608097;
-	Mon, 16 Nov 2026 02:00:37 -0800 (PST)
-Message-ID: <0d837fe2-e192-4fc6-a2e5-c23df40684ab@collabora.com>
-Date: Mon, 16 Nov 2026 11:00:22 +0100
+	id 1xStjd-00000001vh7-0k02
+	for linux-phy@lists.infradead.org;
+	Mon, 16 Nov 2026 10:14:49 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 5D67C626BD;
+	Mon, 16 Nov 2026 10:14:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0C9651F000C5;
+	Mon, 16 Nov 2026 10:14:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794824088;
+	bh=T030N8s2iM3qCbFH6IrWtzoTyw/pZ1cXkifyK3pJJbg=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=jcm3NmAWyKfMuUe2fQ9WMjsdJGzI8zu9Be35CHYChSzGxxcV0eZlryDP7s/Fd5CS/
+	 L4CSVHTZDH312gV3xC8UvRkuTMUsq/i1WcZYrEvWNezLhtXH49DwDE65pCNTBi+eu7
+	 kiLTzooUmcwNxhQiQmu52Tnilu1lS2YjH0rqqmz3+kt987bHLicuz3bXLyIPk/iT2x
+	 7MhfiSSDo+Fio2FGmbD6BOZKzNk8tJGEXujR9hZBcmpOy7D6M7byeww0LVv6ykXBJ4
+	 kFKN0tgc2aPsC7E4DCNX9KmJv8CDiX+89+Ohd6t7GrMQ7Yrv8zMe8yFWlqKYK0iFXO
+	 BL3X3VCXWhDfA==
+Date: Mon, 16 Nov 2026 11:14:43 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
+Cc: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
+	Loic Poulain <loic.poulain@oss.qualcomm.com>, Mauro Carvalho Chehab <mchehab@kernel.org>, 
+	Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>, Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
+	Robert Foss <rfoss@kernel.org>, Andi Shyti <andi.shyti@kernel.org>, 
+	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
+	Abel Vesa <abelvesa@kernel.org>, Frank Li <Frank.Li@nxp.com>, linux-phy@lists.infradead.org, 
+	linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org
+Subject: Re: [PATCH v7 03/23] dt-bindings: media: qcom,sm8750-camss: Add
+ SM8750 CAMSS
+Message-ID: <20261116-dangerous-nano-caterpillar-7052a6@quoll>
+References: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
+ <20261114-add-support-for-camss-on-sm8750-v7-3-8ff2a11835f6@oss.qualcomm.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 3/9] phy: rockchip-samsung-dcphy: Unwind power-on on
- PLL lock failure
-To: =?UTF-8?B?5qWK5pm65oiQ?= <jason98166@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Guochun Huang <hero.huang@rock-chips.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Sebastian Reichel <sebastian.reichel@collabora.com>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, Sashiko <sashiko-bot@kernel.org>
-References: <20261110-dcphy-rx-v1-v6-0-d681ba20b36a@gmail.com>
- <20261110-dcphy-rx-v1-v6-3-d681ba20b36a@gmail.com>
- <3ab93996-7e37-4143-aa4c-b4b4b0e025d8@collabora.com>
- <CAPwA33JHxsd=nr9F9_KFKWPx+HGaR8P3ee7hxMc8XCS6QY46gw@mail.gmail.com>
-Content-Language: en-US
-From: Michael Riesch <michael.riesch@collabora.com>
-In-Reply-To: <CAPwA33JHxsd=nr9F9_KFKWPx+HGaR8P3ee7hxMc8XCS6QY46gw@mail.gmail.com>
-X-ZohoMailClient: External
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261116_020053_560199_6277B385 
-X-CRM114-Status: GOOD (  22.08  )
-X-Spam-Score: -2.1 (--)
+Content-Disposition: inline
+In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-3-8ff2a11835f6@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,49 +76,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-SGkgSmFzb24sCgpPbiAxMS8xNi8yNiAwNDowMSwg5qWK5pm65oiQIHdyb3RlOgo+IEhpIE1pY2hh
-ZWwsCj4gCj4gT24gMTEvMTEvMjYgMTQ6MDIsIE1pY2hhZWwgUmllc2NoIHdyb3RlOgo+PiBJIHdv
-bmRlciB3aGV0aGVyIHRoaXMgc2hvdWxkIGJlIGhlcmUgaW4gdGhlIGZpcnN0IHBsYWNlLiBPbmx5
-IGp1ZGdpbmcgYnkKPj4gdGhlIG5hbWUsIHNhbXN1bmdfbWlwaV9kY3BoeV9wbGxfZW5hYmxlIGlz
-IHNvbWV0aGluZyB0aGF0IGFmZmVjdHMgdGhlCj4+IGNvbXBsZXRlIGxvZ2ljIGJsb2NrIGFuZCBw
-cm9iYWJseSBzaG91bGQgYmUga2VwdCBpbiBydW50aW1lIHJlc3VtZSB0bwo+PiBiZWdpbiB3aXRo
-Lgo+Pgo+PiBIb3dldmVyLCBzaW5jZSBfZHBoeV9yeF9wb3dlcl9vbiBkb2VzIG5vdCBjYWxsIHRo
-aXMgZnVuY2lvbiwgaXQgc2VlbXMgdG8KPj4gYmUgc29tZXRoaW5nIHJlbGF0ZWQgb25seSB0byB0
-aGUgVFggc2lkZSBvZiB0aGUgbG9naWMgYmxvY2ssIGJ1dCBmb3IKPj4gRC1QSFkgYW5kIEMtUEhZ
-LiBJbiB0aGlzIGNhc2UsIGl0IHByb2JhYmx5IHNob3VsZCBnbyBpbnRvCj4+IHNhbXN1bmdfbWlw
-aV9kY3BoeV90eF9wb3dlcl9vbi4KPj4KPj4gT24gdGhlIG9mZiBjaGFuY2UgdGhhdCB0aGlzIGlz
-IGFjdHVhbGx5IGZvciB0aGUgRC1QSFkgVFggb3BlcmF0aW9uLCB0aGUKPj4gZnVuY3Rpb24gc2hv
-dWxkIGJlIHJlbmFtZWQgIipfZGNwaHlfcGxsXyoiIC0+ICIqX2RwaHlfcGxsXyoiIG9yCj4+ICIq
-X2RwaHlfdHhfcGxsXyoiLgo+Pgo+PiBXaGF0IGRvIHlvdSB0aGluaz8KPiAKPiBUaGUgc2V0dGlu
-Z3MgaW4gdGhpcyBmdW5jdGlvbiBhcmUgaW5kZWVkIG9ubHkgZm9yIFRYLCBmb3IgYm90aCBELVBI
-WQo+IGFuZCBDLVBIWSwgc28gSSB3aWxsIHJlbmFtZSB0aGUgUExMIGhlbHBlcnMgdG8KPiBzYW1z
-dW5nX21pcGlfZGNwaHlfdHhfcGxsXyogaW4gdGhlIHJlbmFtaW5nIHBhdGNoICg2LzkpLgo+IAo+
-IHNhbXN1bmdfbWlwaV9kY3BoeV90eF9wb3dlcl9vbiBkb2VzIGxvb2sgbGlrZSBhIG1vcmUgc3Vp
-dGFibGUgcGxhY2UuCj4gSG93ZXZlciwgSSBkbyBub3QgaGF2ZSBhIEMtUEhZIGJvYXJkLCBhbmQg
-SSBvbmx5IGhhdmUgb25lIHBhbmVsIHdpdGgKPiBtYWlubGluZSBzdXBwb3J0LCBzbyBJIG1heSBu
-b3QgYmUgYWJsZSB0byB0ZXN0IHRoZSBEQy1QSFkgVFggc2lkZQo+IHRob3JvdWdobHkuIEZvciBu
-b3cgSSBhbSB0cnlpbmcgdG8gbGVhdmUgdGhlIFRYIGNvZGUgdW5jaGFuZ2VkIHVubGVzcwo+IG15
-IHNlcmllcyBhZmZlY3RzIHRoYXQgY29kZS4KPiAKPiBTaG91bGQgSSBtb3ZlIHRoZSBQTEwgZW5h
-YmxlIHRvIHNhbXN1bmdfbWlwaV9kY3BoeV90eF9wb3dlcl9vbiwgb3Iga2VlcAo+IHRoaXMgZXJy
-b3IgY2xlYW51cCBwYXRoIGFuZCB0aGUgcmVuYW1pbmcgY2hhbmdlIGZvciBub3c/CgpUaGFua3Mg
-Zm9yIHRoZSBjbGFyaWZpY2F0aW9uLgoKSSB0YWtlIGl0IHRoYXQgdGhlIHBhdGNoIGlzIG9ubHkg
-aGVyZSBiZWNhdXNlIHNhc2hpa28gY29tcGxhaW5lZCBhYm91dApzb21lIGV4aXN0aW5nIGJ1Zy4g
-WW91ciBwYXRjaCBmaXhlcyB0aGlzIGFzLWlzLCB0aGVyZWZvcmUKClJldmlld2VkLWJ5OiBNaWNo
-YWVsIFJpZXNjaCA8bWljaGFlbC5yaWVzY2hAY29sbGFib3JhLmNvbT4KClN0aWxsIHdoYXQgd2Ug
-ZGlzY3Vzc2VkIG1ha2VzIHNlbnNlLCBzbyBsZXQgdXMgZG8gc29tZSByZWZhY3RvcmluZyBpbiBh
-CmxhdGVyIHNlcmllcy4gSSBkb24ndCBoYXZlIGFueSBib2FyZCB3aXRoIGRpc3BsYXkgZWl0aGVy
-LCBidXQgSSB0aGluawpIZWlrbyBhbmQgUXVlbnRpbiBtaWdodCBoYXZlIG9uZSBmb3IgdGVzdGlu
-Zy4KCkJ1dCBhZ2FpbiwgbGV0J3MgZm9jdXMgb24gZ2V0dGluZyB5b3VyIHBhdGNoIHNlcmllcyBt
-ZXJnZWQgZmlyc3QuCgpCZXN0IHJlZ2FyZHMsCk1pY2hhZWwKCgo+IFRoYW5rcywKPiBKYXNvbgoK
-Ci0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Sat, Nov 14, 2026 at 07:29:20PM +0800, Wenmeng Liu wrote:
+> From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+> 
+> Add bindings for Camera Subsystem (CAMSS) on the Qualcomm SM8750 platform.
+> 
+> The SM8750 platform provides:
+> - 6 x CSIPHY (CSI Physical Layer)
+> - 3 x TPG (Test Pattern Generator)
+> - 3 x CSID (CSI Decoder)
+> - 2 x CSID Lite
+> - 3 x VFE (Video Front End), 5 RDI per VFE
+> - 2 x VFE Lite, 4 RDI per VFE Lite
+> 
+> Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
+> Signed-off-by: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
+> ---
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
