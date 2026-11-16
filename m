@@ -2,115 +2,93 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B20DF606A32A
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Nov 2026 07:38:23 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B537160A2627
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Nov 2026 07:40:19 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=uVsDvdXu
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=n0lfe/WW;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=ffroot-co-za.20260707.gappssmtp.com header.i=@ffroot-co-za.20260707.gappssmtp.com header.a=rsa-sha256 header.s=20260707 header.b=aRD+A9dn
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=w3h09K9q4s7RPqSG7h3IzgeJfSd1HYcGk/DkSD2ozAQ=; b=uVsDvdXu5S36U+ILj+QBc+Liui
-	/0Y30PLh+Me/hb1OJboIRsqm4Tym5po0s1cLkIrwMNUQUW1xdcXZ932h/WxABDjoVB+BPhluQ+wIt
-	3L0nLuwN+/J0N4/R0W81OCD3rh7BhSWTo9hFvj7YwdYnpReOd3cCIROM2/Y4FyHKJna1zVSZcZGVa
-	98qCJdZ8d2wVjO2CPNzBVByAyD4+QaBImeiqAAawXeEAWN/1oiM8I8+KDhbMIrp0GQXCr9+lhl8Cw
-	wX5AJPGiEmwgq8h4o16xlIw5gkalShRFPF0tfNoNyugC6AfWmAEMQTCL8AcD+ZIuRh+dA8LUbhna+
-	CO26XB7Q==;
+	bh=4xw/gRMlaAkkVPyt0b8bw+0uJujkc5j1YGjTHc1+pE8=; b=n0lfe/WWTx9YePi4oGoQzKkw9I
+	h7rRvNvTofPsmhfZnYc0L0F8bGVmK1bviClJ3U4s8KJQcXyEUj2UzdNpK95ao6iAPG0sdBDCTUuw7
+	uAONOQqawxjTFbvczfMxCoBnrVqhFxth3qpEgjvBI6fFhCB7j3sN3cPhFYvm0Mnk/mLm2rZUqECLw
+	tHMFpdC1cC2rUlIGWdhG50qIDRHa+ZCyunY4HO9wVgwyQZ5jNsffw0jZojy9qNRS3ZpEJIRfhNjDN
+	B3u08Q6ue5iJG3Tup5EJlY8l3GFogihw3JBtgHfWmsthm0BXLnJi0YfI1NFPXuKmWhMVAUYptE0vR
+	0EiBSPNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSrIF-00000001QNU-1pjL;
-	Mon, 16 Nov 2026 07:38:23 +0000
-Received: from mail-koreacentralazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c40f::6] helo=SEYPR02CU001.outbound.protection.outlook.com)
+	id 1xSrK7-00000001RIZ-1w7L;
+	Mon, 16 Nov 2026 07:40:19 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xSrI6-00000001QFh-3qRr;
-	Mon, 16 Nov 2026 07:38:16 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Y1trFaxR5m8zctd1cK4qRhzf4i/te0kBBE/qwdwprTZUslreV3jxxGzY3OAzMKf1BWgMgLyeivUAf8pGEZnzeeckxh2XyjCvl8CNXNE+ofoEEMYMehpw3RcIlhr9ZJVoZ/p63jrHoDAV2bDNK3I5H6k9+pfz7v8A0wthlx0FAW6dMq49c1UAtN7MJX0oPfbCdzM9kbHAZ5AEwKXpAxPT/daxROwDsFoi3tPGd06SNShf6jA8yYAA238BQ+W26SBzj2KQmINSBc40HchI2iVLFJUF2ca/jAuDcG5MaRyJWbXviEofXafk259LhOJpbpi8va0K3BN5yWy2ww0wH3j2wg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=V8BcBDsPk+eh+DBtfgGyO/UXvpH+SAIrb0kbnM4HFXc=;
- b=fLbFT670CFtTZWLWOo9Vt3w19xuJ+Zabbv4FZg/VOWwsoEdr4Rou/eoPtJthBnQwToTTDEf6Ar82q8hf337bf18vAvyj/T8ax5yf3/T636ReU1lGMQucNBXGWRE3FmS2F5ABtRI3TKSBlH5DUcRELBT/U04xiWIgLtv0335ycE3J/PxZWD716OUNYJyCgcDdcu9jZ2H0uwwAp45fAwRCuyFLk6uDw+FmDqLkOB3b29x0gOK1gWjoZPGUD2ZZRDTeqbHWO+iNfyhS5mCJXnhmD5NRoaRNiTjgB0rtd9kVxasMnWBQyL0KPGZp183lNTdO3dFZlqcYgolFXGkZYE01MA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 222.71.101.198) smtp.rcpttodomain=cixtech.com smtp.mailfrom=cixtech.com;
- dmarc=bestguesspass action=none header.from=cixtech.com; dkim=none (message
- not signed); arc=none (0)
-Received: from SI3PR03CA0009.apcprd03.prod.outlook.com (2603:1096:4:297::17)
- by JH0PR06MB6437.apcprd06.prod.outlook.com (2603:1096:990:2d::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.639.7; Mon, 16 Nov
- 2026 07:38:05 +0000
-Received: from SG2PEPF000B66D0.apcprd03.prod.outlook.com
- (2603:1096:4:297:cafe::23) by SI3PR03CA0009.outlook.office365.com
- (2603:1096:4:297::17) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.639.4 via Frontend Transport; Mon, 16
- Nov 2026 07:38:05 +0000
-X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
- is 222.71.101.198) smtp.mailfrom=cixtech.com; dkim=none (message not signed)
- header.d=none;dmarc=bestguesspass action=none header.from=cixtech.com;
-Received-SPF: Pass (protection.outlook.com: domain of cixtech.com designates
- 222.71.101.198 as permitted sender) receiver=protection.outlook.com;
- client-ip=222.71.101.198; helo=smtprelay.cixcomputing.com; pr=C
-Received: from smtprelay.cixcomputing.com (222.71.101.198) by
- SG2PEPF000B66D0.mail.protection.outlook.com (10.167.240.26) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.639.5 via Frontend Transport; Mon, 16 Nov 2026 07:38:04 +0000
-Received: from localhost.localdomain (unknown [172.16.64.56])
-	by smtprelay.cixcomputing.com (Postfix) with ESMTPSA id 11801427EFD0;
-	Mon, 16 Nov 2026 15:38:01 +0800 (CST)
-From: Luo Liu <Luo.Liu@cixtech.com>
-To: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	mani@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	gary.yang@cixtech.com,
-	fugang.duan@cixtech.com,
+	id 1xSrK4-00000001RGd-10gG
+	for linux-phy@lists.infradead.org;
+	Mon, 16 Nov 2026 07:40:18 +0000
+Received: by mail-wr1-x42d.google.com with SMTP id ffacd0b85a97d-4910b863b84so2257685f8f.0
+        for <linux-phy@lists.infradead.org>; Sun, 15 Nov 2026 23:40:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ffroot-co-za.20260707.gappssmtp.com; s=20260707; t=1794814813; x=1795419613; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=gJDbA51981icjHBqjlT3hA/4rMnBxzjkdpVdqxbzHpM=;
+        b=aRD+A9dn2ZN1RbThOmaIyv7wn6cQTXWEp1z7H+KPqYrj7htIhGIV6/0oljmO3VFipq
+         CKoDjA9OvBEFKELMibXAAlB8kCw0uXrCymKmg3kjXgaKwbtR1USaz5BXm/TqwVwTHIlR
+         hf1ng6nu96wKPCauFAUm4ZM6lcQ060ajFJmr/Hc/F4HzmQE8SMjVvCZIXDFtf3xYVBjo
+         68T6yWTI1pQ6SfJUJjDOQ+HVYoaA6oMEmw3LfzPku8T81rvZlmBY9AwAgoguvGeTHvBw
+         d6ddIlPpySmhZ57vlnOm9MLK2l07/RMujTCm9jKJ6SXrVB+v9OdY09E9GWpZyfxVPO2R
+         k9Dg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794814813; x=1795419613;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=gJDbA51981icjHBqjlT3hA/4rMnBxzjkdpVdqxbzHpM=;
+        b=mNgknfqL/CZn9nK1ec3V72BxG+VFmiCZYlbkZTf5W3Eb7zb6JgR29xzWSM28CgpEWb
+         rdxPgMfmPm20KMiK5k0JHK0UI0tVf/NUdPhVGlVQNMvQZosVGhmTDppDhprKt8sWROy4
+         xklhcdOZSa3I/MWsjvRG9rO2vCs0S4GY+v3Dm8SpJHBFzawQ/i3t8rJRbg8M+tH84bUK
+         FP8thG+Dxoibv3QHoQL2cgh7QLpDLUWg9pir6mRXv2OK6dtOPVaVkiFf45WgH7zJrd8/
+         j4c1rss32xZw4QTOD7VqgzHTENpW7eSVC7ydVvvDICSq7GyX+e5yh7iw6xlcDNEf1pAV
+         yPRg==
+X-Forwarded-Encrypted: i=1; AL+hErGeZbMUmTo9k5jZsu1hXN2gVK61OHoHcehUWBuA1eyZcCJIx7A8yvIN3dpiq9VFAwSaDtmN1vIiKyI=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/kD5T+5tPax4VfNplOJo9WuSr8hkozoH7UAAmC7k7RR0ZigtYi
+	GDF6AF67pw1v3wi18eLvjC1gvMYil9s3YHP/0Dkqi7onJ/06s7eDLS/kbSEJR5Z472U=
+X-Gm-Gg: AYBFou3bPJZ+YCjP9EVPLuS7L81Ys5KTgym2M9+vClgoBh9NM5kHu0T3WKPptvvkSlf
+	Ek9oBwJGDDMjoNZqsQ5mMliVHMta6AIb8hepSBHtn/CFsEcV1MPQxJy0YzQ6kNjpqnot3eNLs8C
+	j08eQHP9zomPz35z/k6o8w49JJzWQDffKNwmGqekB/PScY+ANBi53vgFDROCQPxdYAhJn6I6PeL
+	7hfRr3xZRQfBqi6J5EsnsHc0II6Bj6JCvY2hZWnJ7n1LpSleGMomkD98cSVl7eYxRCldc6IB1d5
+	n8t9KfZ5IcszGkXojwlopYibJBwiJLfskIGAhQaqGMu49hCbXRC2SAcpQy7SxvZD8GD/oICErTO
+	u9LCsVKvu5kMiByr19eBuVI+iCTGQKTkuKCq2oCgrijv6r6f3eRKE9dRRCC9VKea/B94RkeylIy
+	VF/B2SLQ23mBhprVYJpm4QYky23cFKb/xNV/kxYtQMb6bFWojEP3CkoW3zYge1AOlXeUxVVs+6l
+	6erqlAS8leKyx2DOXJbEl7elH09KM2ZzMEP6VdHNJ2nt+aB1cxXbnKxP4veolJmyhQDqJum/H4Q
+	Qp4FFqajuIsMMDgoS3eZ4H7CRGMWfGJe75nG5Q1YcKR7TdWXIvXf
+X-Received: by 2002:a05:6000:41d7:b0:491:e477:6820 with SMTP id ffacd0b85a97d-49c70824309mr21417195f8f.20.1794814812963;
+        Sun, 15 Nov 2026 23:40:12 -0800 (PST)
+Received: from localhost ([192.145.132.58])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-49c605e4a2asm20106374f8f.39.2026.11.15.23.40.10
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 15 Nov 2026 23:40:12 -0800 (PST)
+From: Andrew Gaylard <ag@ffroot.co.za>
+To: Vinod Koul <vkoul@kernel.org>,
+	Vincent Shih <vincent.sunplus@gmail.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
 	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Cc: cix-kernel-upstream@cixtech.com,
-	p.zabel@pengutronix.de,
-	linux-kernel@vger.kernel.org,
-	Luo.Liu@cixtech.com,
-	Wuyi.Shen@cixtech.com,
-	EastLake.Yang@cixtech.com
-Subject: [PATCH v5 1/3] dt-bindings: phy: Add CIX Sky1 DP PHY
-Date: Mon, 16 Nov 2026 15:37:58 +0800
-Message-Id: <20261116073800.2396894-2-Luo.Liu@cixtech.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20261116073800.2396894-1-Luo.Liu@cixtech.com>
-References: <20261116073800.2396894-1-Luo.Liu@cixtech.com>
+	linux-usb@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] phy: sunplus: don't read the disc_vol cell after nvmem_cell_get() fails
+Date: Mon, 16 Nov 2026 09:40:05 +0200
+Message-ID: <20261116074006.20357-1-ag@ffroot.co.za>
+X-Mailer: git-send-email 2.53.0
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SG2PEPF000B66D0:EE_|JH0PR06MB6437:EE_
-X-MS-Office365-Filtering-Correlation-Id: e7d52e7f-54bf-4145-0567-08df43b48d4c
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|36860700016|1800799024|23010399003|82310400026|42112799006|921020|10067099003|56012099006|261022105027099003|261026121527099003|261028144727099003|261026140227099003|261021135927099003|261021121427099003|261102123227099003|261009223027099003|18002099003|22082099003|3023799007;
-X-Microsoft-Antispam-Message-Info: 2u+fEFgXxgg8MDtfPM6yU8u7P4ImjPQblp0dG6kNZKWdVXSuDIgp99pBHI6ln5HwEQ9XhPj2f9q8bEU+5ZODRlshgqatHNx4mCmX4aYpruou4sOpxBX7AuTDYydHKMBUgLuxqN40b5WedF/EoZGiEjPWNjVfFnWGs1C0dFLdE6Amh2HOKcyXQXVJpQTiKNSxIRbCkeK4SGBazJZk6jcmIzWgFuyICMe5113HcMFjiBfpn/+bh7m6pSdbiHG7JHjYTlbMbA12al7qpuAD07Gooa3WVRBSGZwieX1E1d99y5EqcNJu6ak4KHf2ljBg09aRgsZ0VYqePncGosVzemb0U/zsA6LoaBwZ8wR4mgkfzPfL38XXMjN1gzZKan3308Ufa5C5WiKE5M5cakKeF6l0F9lhjU9sojE3hW5Z/FBo+MevmvoBdnBwtzWclCmaWfI33exO456WNQyRdRLHYYlmeSuKdTXKVIRZ9/kpp7zp2JuTsN/aUNb7fgI2JdRnid0tsQD9QfJLGOM4a2gSZKW/TXtm4kABInGIicpcTuyPoOfaGJy5Ye9UdBoNG2GCqLHLlZV4n1O+zz32ISt1DypGpLd/N8wsHeVFmhGBrvKysR/N2UCoiQqQP1ZvIigWl1LznN9t2Ap8SHNEAH/TF/XfpqKb+O7eISUhwdpnZlzhAnOA7vvylCYd9nXWRIIIx0U6
-X-Forefront-Antispam-Report: CIP:222.71.101.198;CTRY:CN;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtprelay.cixcomputing.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(7416014)(376014)(36860700016)(1800799024)(23010399003)(82310400026)(42112799006)(921020)(10067099003)(56012099006)(261022105027099003)(261026121527099003)(261028144727099003)(261026140227099003)(261021135927099003)(261021121427099003)(261102123227099003)(261009223027099003)(18002099003)(22082099003)(3023799007);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: RW58ocCZQAZl1BWpm0pos7Qx1BG2fmL9BcXsWhvplBefSk24VLdEEJWNmUG4P+3yqhbDWfrQbVt3APmby2DKXaQSd2cZZNtSQuvus4vB+3yj78REKp5ELzc7t61EQlDAHx8xfwTkf8mPdwF1Ahu0C2PvhYlzmn2WNeKf61gVkfRIiXLkvs1R+OMWrGZtDM8vjO7zVvTjlEdzRuT5GaY7Z+gOPV6yTuIPWg+KHAhb10chwZ+MChKdk97PFyuOSX67b30cGepDVjJg4uwY5OSinUMbfKben1ApvvJJtSeLvzmRdkMND5PUKKEb8Y088vmoB2T1p3kSlMsPCxRS7SR5SLYIBSRZY2gESSYOOaNrqFXb5dlSP+pmOXJjWfozebePJOxqaJo+Q8RkHDfjFJQGEJJFeE2hPmjCYG2EEHlvPEkyLccgvjXGiTnVrdqGznEE
-X-OriginatorOrg: cixtech.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Nov 2026 07:38:04.8294
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: e7d52e7f-54bf-4145-0567-08df43b48d4c
-X-MS-Exchange-CrossTenant-Id: 0409f77a-e53d-4d23-943e-ccade7cb4811
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=0409f77a-e53d-4d23-943e-ccade7cb4811;Ip=[222.71.101.198];Helo=[smtprelay.cixcomputing.com]
-X-MS-Exchange-CrossTenant-AuthSource: SG2PEPF000B66D0.apcprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: JH0PR06MB6437
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261115_233814_973720_D5523555 
-X-CRM114-Status: GOOD (  14.07  )
+X-CRM114-CacheID: sfid-20261115_234016_578090_896002A5 
+X-CRM114-Status: GOOD (  11.96  )
 X-Spam-Score: -1.9 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -131,117 +109,51 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Document the dedicated DisplayPort PHY on CIX Sky1, including the
-required APB clock shared with the DPTx controller, reset, and the
-optional cix,external-dp property to select the external DP swing
-table instead of the default low-voltage values.
-Add a MAINTAINERS entry for the binding and driver.
+update_disc_vol() returns early only when nvmem_cell_get() gives
+-EPROBE_DEFER. On any other error, such as -ENOENT for a device tree
+without a disc_vol cell, it passes the error pointer to
+nvmem_cell_read() and nvmem_cell_put(), which dereference it.
 
-Signed-off-by: Luo Liu <Luo.Liu@cixtech.com>
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Use the default disconnect-voltage level on these errors, as the function
+already does when the read fails. nvmem_cell_get() never returns NULL,
+so IS_ERR() is enough.
+
+Tested on a Tibbo LTPP3G2 board.
+
+Fixes: 99d9ccd97385 ("phy: usb: Add USB2.0 phy driver for Sunplus SP7021")
+Signed-off-by: Andrew Gaylard <ag@ffroot.co.za>
 ---
-Changes in v5:
-- No changes.
+ drivers/phy/sunplus/phy-sunplus-usb2.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
- .../bindings/phy/cix,sky1-dp-phy.yaml         | 67 +++++++++++++++++++
- MAINTAINERS                                   |  8 +++
- 2 files changed, 75 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
-
-diff --git a/Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml b/Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
-new file mode 100644
-index 000000000000..ea19f0aa0b1c
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
-@@ -0,0 +1,67 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/cix,sky1-dp-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: CIX Sky1 DisplayPort PHY
-+
-+maintainers:
-+  - Luo Liu <Luo.Liu@cixtech.com>
-+
-+description:
-+  The CIX Sky1 DP PHY provides the PMA/CDB register interface for the
-+  dedicated DisplayPort instance on CIX Sky1.
-+
-+  The PHY APB clock is physically shared with the DPTx controller.
-+
-+properties:
-+  compatible:
-+    const: cix,sky1-dp-phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+    description: APB register interface clock
-+
-+  clock-names:
-+    const: apb
-+
-+  resets:
-+    maxItems: 1
-+    description: PHY hardware reset
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  cix,external-dp:
-+    type: boolean
-+    description:
-+      Use voltage swing values suitable for an external DisplayPort
-+      connector instead of the default low-voltage values.
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+  - resets
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/cix,sky1.h>
-+    #include <dt-bindings/reset/cix,sky1-s5-system-control.h>
-+
-+    phy@1414c000 {
-+        compatible = "cix,sky1-dp-phy";
-+        reg = <0x1414c000 0x4000>;
-+        clocks = <&scmi_clk CLK_TREE_DPC2_APBCLK>;
-+        clock-names = "apb";
-+        resets = <&s5_syscon SKY1_DP_PHY_RST_N>;
-+        #phy-cells = <0>;
-+    };
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 93abbb315065..d05771fe5bb2 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -6522,6 +6522,14 @@ M:	Satish Kharat <satishkh@cisco.com>
- S:	Supported
- F:	drivers/infiniband/hw/usnic/
+diff --git a/drivers/phy/sunplus/phy-sunplus-usb2.c b/drivers/phy/sunplus/phy-sunplus-usb2.c
+index 0ad4c7160d17..52d80a06abdc 100644
+--- a/drivers/phy/sunplus/phy-sunplus-usb2.c
++++ b/drivers/phy/sunplus/phy-sunplus-usb2.c
+@@ -84,14 +84,15 @@ static int update_disc_vol(struct sp_usbphy *usbphy)
+ 	u32 val, set;
  
-+CIX SKY1 DISPLAYPORT PHY DRIVER
-+M:	Luo Liu <Luo.Liu@cixtech.com>
-+R:	CIX Linux Kernel Upstream Group <cix-kernel-upstream@cixtech.com>
-+L:	linux-phy@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/cix,sky1-dp-phy.yaml
-+F:	drivers/phy/cix/
-+
- CLANG CONTEXT ANALYSIS
- M:	Marco Elver <elver@google.com>
- R:	Bart Van Assche <bvanassche@acm.org>
+ 	cell = nvmem_cell_get(usbphy->dev, disc_name);
+-	if (IS_ERR_OR_NULL(cell)) {
++	if (IS_ERR(cell)) {
+ 		if (PTR_ERR(cell) == -EPROBE_DEFER)
+ 			return -EPROBE_DEFER;
++		otp_v = ERR_CAST(cell);
++	} else {
++		otp_v = nvmem_cell_read(cell, &otp_l);
++		nvmem_cell_put(cell);
+ 	}
+ 
+-	otp_v = nvmem_cell_read(cell, &otp_l);
+-	nvmem_cell_put(cell);
+-
+ 	if (!IS_ERR(otp_v)) {
+ 		set = *(otp_v + 1);
+ 		set = (set << (sizeof(char) * 8)) | *otp_v;
+
+base-commit: 6bdfbe223ed4735073c299a6645ebd3faac3f51f
 -- 
-2.25.1
+2.53.0
 
 
 -- 
