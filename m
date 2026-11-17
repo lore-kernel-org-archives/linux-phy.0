@@ -2,77 +2,90 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 50AC3606A339
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Nov 2026 15:23:22 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EF75A606A32C
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Nov 2026 17:31:10 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=q266pvI6;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=oC+uPw+o
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=19UmdvRd;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=WcnglDbx
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Unsubscribe-Post:List-Owner;
-	bh=ZHvdUpX0gvdwTmi7y5epybDN6Pyc+8eMGPHJCWsWEps=; b=q266pvI6DW/6ICM+6pnP1tH2DZ
-	i7yMR+3KLAzoXcfH/FgVmB4cIG4VtK9cGSqqwhKRRfpGwKAaFbBzvtoOvY2n0XngZ03/yM7PLbycn
-	01mXVU4XG/n0ixodFh28IxpsVC4lVH01kaifSl5EJ/QzLSBMUqNk7ht8ahwd6Vbyj1h5FS/vyWHC3
-	3sQ0vzY9+ZuN93LHY7PxM2MjBwCdXJ2XnBIdiqKI1qmjwCavKi4mi8THMTiBjTYvSPZCry428p3DX
-	SiwTpoL4+r3PFkdax85LAk8MsuXxXSlNjEeZ3mvi5BBKXue7cokZvLAgDDwtg3MkMIYE1IDUc/NCH
-	F0wiEI7Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Unsubscribe-Post:List-Owner;
+	bh=S4fC9UUhHrv7WIizok4ySbpfwWxMBuR3pBnGnVA9suQ=; b=19UmdvRd0lMU/baCsyujERHZ6k
+	l95Y0QxVDixQrXkiQEElHE71Hg3wPr75FJVT8VPUd4DEja3w0Yo4f65eA18F2p4sTNh2GbOmRgnzQ
+	BuprrlUS12U0EfXPbSKGEz3WbruMPDZnBtUgJ97LiFg65z1PMhpDZT7Nt3WnfwuZFd7L24oEJK7Yl
+	wGhihIPP85N4QD5aHMkam8DDZuvX6Wh1YkxljrjPwnFWY1bQbZfWhbJSUWC4o8Qb1lmyJMkxgCwgw
+	02gw20/qEHmcxstHgFT71SEEK6/GsAb62aoVsAvmsEAIuao38wHOVs0HGZOTDQmWgSVdMIehiBr9X
+	Gkv+IjQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTL1l-00000006I4A-3GPz;
-	Tue, 17 Nov 2026 15:23:21 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xTN1S-00000006Zvp-2qQa;
+	Tue, 17 Nov 2026 17:31:10 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTL1k-00000006I3q-47fs
-	for linux-phy@lists.infradead.org;
-	Tue, 17 Nov 2026 15:23:21 +0000
+	id 1xTN1R-00000006Zve-1ZDX;
+	Tue, 17 Nov 2026 17:31:09 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 161A46110C;
-	Tue, 17 Nov 2026 15:23:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 76B341F000C4;
-	Tue, 17 Nov 2026 15:23:19 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 83B17403CB;
+	Tue, 17 Nov 2026 17:31:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E3FB61F000C4;
+	Tue, 17 Nov 2026 17:31:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794928999;
-	bh=pj7Iutfia5o0YgMQ4W5M75M2wxBex2DT4HWlOgqEoUQ=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject;
-	b=oC+uPw+o0CJJcAQu/FtnCspGzEzNk2m+LS8rDRP9jk30eyRfY1sVemTh+nj8hg/zi
-	 1L2LHZ5OIUk1d9BI42yKOKBE7hEIxXD9bZ5gT6NI+A8IJn7mepdKAGpqnj1hj9U0uZ
-	 2TzmZPmC6sKjYu++VFs0lVcf0P7tbF6C1NvCwpNXTav1kd35xTyVPBFRbM2IqJqGka
-	 u1bWwlyXfBQpzYouOli/ckx8shkq/KmEYaWZVRWx+0QoAzCQWL5OS3Z1tLDlf8766u
-	 pDFi5WqgFK5YidRPxZJHEo5XkQLvRHiCoe0Ii+tKdR9QIEXbk0gjlVYhZxsaE0f6x8
-	 YW1jBmNNwKz8A==
-Date: Tue, 17 Nov 2026 09:23:17 -0600
+	s=k20260515; t=1794936668;
+	bh=LkTA2fZGKt54LgX0tsQgX09c7+dqTc8gL6HA9sc7mLs=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=WcnglDbxvWNx3BawIBmbTs6ZXBzryxbYuU6EJEGAOGS8UPG95ALzC/8nC5usZm/fM
+	 CIPGNaq3mNpdS3+L+IsX/68xcqFYhrR3+lOmCzvON8o1KJRoXCIyh24u/znihbQUlO
+	 G0dw42LOnRdcT5FM1u4uZ//DVzxUAo7c5d5pYgnjsebmEdw19rRvfcoWp2CeTbCCjn
+	 4QARIu4ZhvQ9wGj6PO4AKN1JfWnBdHwUmwjdd5X9sQTAdo98vw32OPf6vUoJRX4XUc
+	 hshP4bXmOKi05J1SyuJBd0sYRWpyIpRyrhNB2gxRky7p2usScFTOcjPlbXm+cBSaGC
+	 HGReg6oO5EyRw==
+Date: Tue, 17 Nov 2026 17:30:58 +0000
+From: Conor Dooley <conor@kernel.org>
+To: =?iso-8859-1?Q?Beno=EEt?= Monin <benoit.monin@bootlin.com>
+Cc: Mark Brown <broonie@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Jun Chang <jun.chang@metanoia-comm.com>,
+	Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Sebastian Reichel <sre@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Jonathan Cameron <jic23@kernel.org>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Thomas Gleixner <tglx@kernel.org>, Radu Rendec <radu@rendec.net>,
+	Samuel Holland <samuel.holland@sifive.com>,
+	Ben Zong-You Xie <ben717@andestech.com>,
+	Daniel Lezcano <daniel.lezcano@kernel.org>,
+	Ulf Hansson <ulfh@kernel.org>, Jisheng Zhang <jszhang@kernel.org>,
+	CL Wang <cl634@andestech.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Wim Van Sebroeck <wim@linux-watchdog.org>,
+	Guenter Roeck <linux@roeck-us.net>,
+	Adrian Hunter <adrian.hunter@intel.com>,
+	Minas Harutyunyan <hminas@synopsys.com>,
+	Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+	Randolph Sheng-Kai =?utf-8?B?TGluKOael+iBluWHsSk=?= <randolph@andestech.com>,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-riscv@lists.infradead.org, linux-pm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Paul Walmsley <paul.walmsley@sifive.com>, linux-mmc@vger.kernel.org,
+	linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-watchdog@vger.kernel.org
+Subject: Re: [PATCH 00/25] riscv: add support for the Metanoia MT2824 SoC and
+ MT5824 EVB
+Message-ID: <20261117-calamity-quiver-96d0d568b338@spud>
+References: <20261106-mt2824-v1-0-86087eaf5af4@bootlin.com>
+ <f6bb6461-c9d0-4685-8c93-7e62691a93b8@sirena.org.uk>
+ <_koitdIgQPmk89LDhlUlJQ@bootlin.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: freedreno@lists.freedesktop.org, David Airlie <airlied@gmail.com>, 
- devicetree@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, Simona Vetter <simona@ffwll.ch>, 
- Abhinav Kumar <abhinav.kumar@linux.dev>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Jessica Zhang <jesszhan0024@gmail.com>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>, 
- Mahadevan P <mahadevan.p@oss.qualcomm.com>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Bjorn Andersson <andersson@kernel.org>, dri-devel@lists.freedesktop.org, 
- Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>, 
- Dmitry Baryshkov <lumag@kernel.org>, 
- Rob Clark <robin.clark@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, 
- Kuogee Hsieh <quic_khsieh@quicinc.com>, 
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
- Shawn Guo <shengchao.guo@oss.qualcomm.com>, 
- Thomas Zimmermann <tzimmermann@suse.de>, Sean Paul <sean@poorly.run>, 
- Marijn Suijten <marijn.suijten@somainline.org>
-To: Nabige Aala <nabige.aala@oss.qualcomm.com>
-In-Reply-To: <20261116-nord-drv-dt-v3-3-e3d3bf0e2c49@oss.qualcomm.com>
-References: <20261116-nord-drv-dt-v3-0-e3d3bf0e2c49@oss.qualcomm.com>
- <20261116-nord-drv-dt-v3-3-e3d3bf0e2c49@oss.qualcomm.com>
-Message-Id: <179492860187.13563.669305827453272246.robh@kernel.org>
-Subject: Re: [PATCH v3 03/11] dt-bindings: display/msm: Document Nord MDSS
+In-Reply-To: <_koitdIgQPmk89LDhlUlJQ@bootlin.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,61 +95,110 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3641328601642140204=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
+--===============3641328601642140204==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="BcuOzLdY9wrmX3Fk"
+Content-Disposition: inline
 
-On Mon, 16 Nov 2026 18:46:42 +0530, Nabige Aala wrote:
-> From: Mahadevan P <mahadevan.p@oss.qualcomm.com>
-> 
-> Nord has a new MDSS 12.1 revision with DPU 1499A and two independent,
-> DP-only display interface controllers (no DSI), which no existing
-> schema describes. Add a dedicated qcom,nord-mdss binding to document.
-> 
-> Assisted-by: LLM
-> Signed-off-by: Mahadevan P <mahadevan.p@oss.qualcomm.com>
-> Signed-off-by: Nabige Aala <nabige.aala@oss.qualcomm.com>
-> ---
->  .../bindings/display/msm/qcom,nord-mdss.yaml       | 396 +++++++++++++++++++++
->  1 file changed, 396 insertions(+)
-> 
+--BcuOzLdY9wrmX3Fk
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-My bot found errors running 'make dt_binding_check' on your patch:
+On Tue, Nov 17, 2026 at 11:41:52AM +0100, Beno=EEt Monin wrote:
+> On Friday, 6 November 2026 at 12:15:09 CET, Mark Brown wrote:
+> > On Fri, Nov 06, 2026 at 10:29:57AM +0100, Beno=EEt Monin wrote:
+> >=20
+> > > The series is organised as:
+> >=20
+> > > - patches 1-14 add the device tree bindings, the Metanoia vendor pref=
+ix,
+> > >   the RISC-V board schema and the SoC block compatibles
+> > > - patch 15 adds ARCH_METANOIA and selects the AX45MP errata
+> > > - patches 16-23 add the reset, SPI, watchdog, MMC, PHY and USB changes
+> > >   needed to build and probe on this SoC
+> > > - patch 24 adds the MT2824 SoC and MT5824 EVB device trees
+> > > - patch 25 adds the MAINTAINERS entry
+> >=20
+> > This sort of thing tends to work better if you submit the patches for
+> > subsystems as separate serieses, it avoids enormous CC lists and keeps
+> > the individual serieses a managable size.
+> >=20
+> I agree, and I am reworking the series that way. Version 1 was intended
+> as an overview of the complete SoC support, but it ended up being too
+> big for a single series.
+>=20
+> So version 2 of this current series will be only the platform basics
+> (2 patches):
+>=20
+>   - dt-bindings: vendor-prefixes: add Metanoia Communications
 
-yamllint warnings/errors:
+>   - riscv: add ARCH_METANOIA Kconfig entry
 
-dtschema/dtc warnings/errors:
-Documentation/devicetree/bindings/display/msm/qcom,nord-mdss.example.dtb: displayport-controller@af54000 (qcom,nord-dp): compatible: ["qcom,nord-dp"] is not valid under any of the schemas listed in the 'oneOf' keyword
-	from schema $id: http://devicetree.org/schemas/display/msm/dp-controller.yaml
-Documentation/devicetree/bindings/display/msm/qcom,nord-mdss.example.dtb: displayport-controller@af5c000 (qcom,nord-dp): compatible: ["qcom,nord-dp"] is not valid under any of the schemas listed in the 'oneOf' keyword
-	from schema $id: http://devicetree.org/schemas/display/msm/dp-controller.yaml
+Realistically, this does not need to be a prereq either, because you'll
+have "depends on ARCH_METANIOA || COMPILE_TEST".
 
-doc reference errors (make refcheckdocs):
+>=20
+> It will act as a prerequisite for the following new series, one per
+> subsystem:
+>=20
+>   - reset: binding + reset-simple support (the separate reboot binding
+>     is dropped; the RST block is described as a single node)
+>   - SPI: optional DMA/IRQ binding, MT2824 compatible, atcspi200 IRQ
+>     support + Kconfig
+>   - watchdog: compatible + Kconfig
+>   - MMC: compatible + MT2824 support (split between SD, eMMC and
+>     auto-detection) + tuning/HS400
+>   - PHY: USB2 PHY binding + driver/Kconfig
+>   - USB DWC2: binding + params
+>=20
+> Finally, once the subsystem bindings are accepted and the drivers
+> are queued, I'll post the SoC DTS in its own series: board schema +
+> cache/PLIC/PLICSW/PLMT compatibles + the MT2824/MT5824 DTS and the
+> MAINTAINERS entry
+>=20
+> Thanks everyone for the reviews, I will integrate the feedback in the
+> next iterations of each series.
+>=20
+> Best regards,
+> Beno=EEt
+>=20
+>=20
+>=20
 
-See https://patchwork.kernel.org/project/devicetree/patch/20261116-nord-drv-dt-v3-3-e3d3bf0e2c49@oss.qualcomm.com
+--BcuOzLdY9wrmX3Fk
+Content-Type: application/pgp-signature; name=signature.asc
 
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
+-----BEGIN PGP SIGNATURE-----
 
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCavyPUgAKCRB4tDGHoIJi
+0u31AP0dJRd3avDcA8zq/be2KJLowwp03Bx+1e11P7wMqhKhSgD+NGQuQVH14+ta
+vo0nqDQxea6EE+XzXZ9SOeXFMg+dqQ0=
+=Y40v
+-----END PGP SIGNATURE-----
 
-pip3 install dtschema --upgrade
+--BcuOzLdY9wrmX3Fk--
 
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
 
+--===============3641328601642140204==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============3641328601642140204==--
+
