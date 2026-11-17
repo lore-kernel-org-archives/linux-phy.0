@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B2A7960A5BDC
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A299360A5BD7
 	for <linux-phy@archiver.kernel.org>; Tue, 17 Nov 2026 19:33:39 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=nmXbMX+c;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=KRmq79FJ
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=mzj+fVVB;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Sk/TKsda
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
@@ -14,70 +14,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=/mJ8GI7N6PXs1cvMXvXL3nfzB+wLYXLiFhwjb78ZZFk=; b=nmXbMX+clfX8fgCC1bNpo5eAgM
-	rkHuA2MY5TLrZMPl+cgvA0c12XKfMdvoxJ7XGMnUxfGY5DaRmHmt/atZDBaESUxh8t5HIybkYZuVI
-	qRjlkufSHvQ7ygs6MFp9IMgXJ+HLCzlVnXSvFR1nC0fIReP9bKPzGKoPhIXDxmLXXaff+nuACgZNb
-	2/dpZz58WGd2Jue73ngKpFcX0pH8W+PaJwdqKA2G1TlDvKZBJlo6A/5zZIwQUk73IIsxPmzksBYN6
-	eBCZqOz9gm2R76awoYihUNQKtPnZYDQ2j6WZo5ykLA9zLV+oHgSwiIHtqOgvrNAvL6vpX9ma6gNjx
-	TBR8/mAg==;
+	bh=wCnw9aCrNT1cmLRODMf4YIMpWRKWmHwzHq+b4qSxmUI=; b=mzj+fVVBw/q87K9Gry+PWoKVPs
+	hGN+SCw8TIbRq7AQ7A/uH8TIrCt5IJN19NAb1xjVzLLzYNwH6esOGvI0BkHIAHJCkCMB5ndCHdTDk
+	bxFMPcLZ1MX0y+UaXJmUHZLJJf3tloToxSFfOpVGLFoqkamZGW9Bm6dWzvLPcw4IDnr3dR3l5aC2Z
+	pdaFIwWO/sAZ7PaNR3XtbzhQUIFNpRD7L2ee6XJabKWqoRzOf9Tf/ENhZVJrtJrnEQgJJ+iPX/ALP
+	PEMvoJz6OgrbiQIGCGK9wYxXr1gpuDa4w4Ywau5NACxwvNELuAiSmOTPgvn8/TQlTVnrMdEKtkqao
+	hT2n4UKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTOvz-00000006tPO-1dc5;
+	id 1xTOvz-00000006tOw-0ypN;
 	Tue, 17 Nov 2026 19:33:39 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTOvx-00000006tLZ-2eXv;
+	id 1xTOvx-00000006tLW-1wFZ;
 	Tue, 17 Nov 2026 19:33:37 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id EEF7A43B5C;
-	Tue, 17 Nov 2026 19:33:36 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id BCC3944689;
+	Tue, 17 Nov 2026 19:33:35 +0000 (UTC)
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1794944016;
-	b=Ik0ZVJZIHLnV3ERSxySVsxhO1fVh1H/WdYRGfbvX8yrP1hZVKcuCYdbx0qaH9t/qsmml
-	 urcfHtnL7HrcmmrR+a6lFIRrm94ijxSsGFDS81GWU5p8JZA6FqxLWJqB/RDzns8WXgSyJ
-	 M/OFzi7lz295Q0xJsWU60e4cutPtktGki55DGFwFreafal/q+Gt6NZxsrO+n2xvw6Ra6T
-	 I6bXNjxFs0KMc0FUJ8qehK78sU0QUBotprrkrzYPS/ns3Q/OInbcO+NF6uUBHajWEvsg4
-	 xldg6boCJzXNfC+axrOVf7ZFFbn1UkQe7y5p4TzC40tBZfOg9SX2YEiaPZyU0RKGxYw==
+	t=1794944015;
+	b=wN6rrQR6HaktyrJEmMQ6hUHAntRRo/Cb3ETIAohpwFTj0gesaKg3lpueKxQ30pw3tVpB
+	 5Bmyv7N0rWjHZJd//XvCGoVggo31osawVm0wCzzJU2EMUwTktW67KUqGrEcoW6rXCko7o
+	 B7ziw/hioXgUx7y8De6vLwI/PMU6fKEDSuTlgngje296U0lTDaZhzRv/1qsvjKFJ5WdMz
+	 3n88rchP4koOs2i1iYazMEDF3PI7MNhQRBvNJt/zGzJKGAMH6Do3PoYDT3UuahloWJphU
+	 7aHKAgos4/kFDAakMRD5u2Ie0ywgE+Y9JaURh9TzerMzaIbQalGzpij+hiyPSFgN/XA==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1794944016;
+	c=relaxed/relaxed; t=1794944015;
 	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
 	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
 	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
 	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=MOO9XddMlUhs1P7+vLnGg3uK6LFJsgNZmkbrJDDfKLE=;
-	b=IvF1QrWK6NCE98RR4HVAxnHi6ugEl1n8WyKj/l6jvyP23CDj6kLlYLYElwC/xcJID5+H
-	 urrh8FZFrOLn/60hutYOfoL3+rbtI5IVNPKmnwuuWbvQkFjYQm5LR64MfqLl+eko4czD3
-	 1RhJNgaEWS2QkFR5C4pZvND0QH62YVzzD0SMyYyUWeJknZBQt/QNjixFqiC9IseqZmrpG
-	 0PosTQIig0x8zyi47uv7WS1zAb9uWzibGj8bfzJ8ntmp8jO1aeBFpwMARAh/i8e1yRVp+
-	 +JYvUtwRGl0Oe1rm8zDrXhMeij/wNF1ZK/+eaLxC7wBmVzP3pXrC6NXUXi28P16sqWg==
+	bh=wgP5+Qx5rmwplX6BT2iwRcVVB1V/mtirnLRhe/EU9Zo=;
+	b=r5g8SLaEswvDQ+zQGB3XPeqEDO0Ch1+WqxmuT2YHWc1OZLWQ97eKUfoNltM44HS4o16E
+	 qBoI/ys7yk/1IoDFbNRxtHeQuTpyahiIljeaDCdQl0VxC03dp7J+enycmjj28FkkOTJy9
+	 /ieK4wGYrbQqIDeMQubA3RLOp/NNmaDNeMhvrU1KG3MvTe/VRHcIOWq7fZ/TLvsGvOCxZ
+	 nSXRK/7HA5SHGTt0J6bnQiopNithJ22etCmTWTvBhCiSeVAIMjxSA32Yhg7au/PBha2E5
+	 Kdb3sKgmnH/6BjzzJ6idKh0ootzc9eJLfHt75Egs6fj3CX6rYmAcU3nkFagyKl3H0ww==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 9171D1F000CB;
-	Tue, 17 Nov 2026 19:33:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794944016;
-	bh=MOO9XddMlUhs1P7+vLnGg3uK6LFJsgNZmkbrJDDfKLE=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=KRmq79FJlbFBXFmEkNFjD0MZ9AfphKawLtxe3M6js8RfFNva37w5RMfENaFxE2nlR
-	 hNhdv5XnOIz+Ktts0E3VF152t4xQ15tfSNAwRLqBJTQumstL1HtKrCvgtYdy7vM//T
-	 0+IlGaQZIbS/WhZee23fOnEDP7IquJfcDT21tfWfPKxrRT/42J1s6JAg6kPQqTiXxb
-	 CSnH0XAiG9Qvi6Nok/EO15nlh4zfkpqHuBvTGD1gf2LsdyMXk/ZEIFFic5eELzv/Mq
-	 AMgVt0B+MOyQ2rHIZ03jwrokTrPriYtW1b1BMyHUUqZFdIZO+8oE8S6xRpzFfH7E33
-	 JTrZDDOju8S5Q==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 862C84AA92;
+	by smtp.kernel.org (Postfix) with ESMTPS id 69B391F000C6;
 	Tue, 17 Nov 2026 19:33:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1794944015;
+	bh=wgP5+Qx5rmwplX6BT2iwRcVVB1V/mtirnLRhe/EU9Zo=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
+	b=Sk/TKsdacaUOxsryjBPhje1pTCmTfnhb8m4m6Z9dm0m0an1ihAFWCygax/CGm8uLs
+	 3XMjfiuaRDFY637XeDlQW+KbyDc31mLOxo5RrkX9UsP86I6ejNF7wfmSN3XieoZ0T+
+	 NIn/m4/KMFaB5xHN9WGycuVowYSnZaamRtv+G0FD02lw1RZZFPenm4V6Qmc68tbDpw
+	 NER8yD/rq+8gLJZzdLkh7GNaBG3wjbsZvfjvX4KkO/xOZR/VXDXLk+jLTVrJ5RGPtN
+	 LgWBMiYAyvGRSmeYIpWQ5HIPIIhzgqpFK/EOvEs2hJp0tyYgf5DfQWeXAPPhw//+xB
+	 4zAzmIztqd9gw==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id E63D24AA7A;
+	Tue, 17 Nov 2026 19:33:33 +0000 (UTC)
 From: Ronald Claveau via B4 Relay <devnull+linux-kernel-dev.aliel.fr@kernel.org>
-Date: Tue, 17 Nov 2026 20:33:13 +0100
-Subject: [PATCH 08/10] arm64: dts: amlogic: Add HDMI TX PHY node for G12
+Date: Tue, 17 Nov 2026 20:33:07 +0100
+Subject: [PATCH 02/10] dt-bindings: phy: amlogic: Add Meson HDMI TX PHY
+ binding
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261117-meson-drm-create-hdmitx-phy-v1-8-9e0ac931381c@aliel.fr>
+Message-Id: <20261117-meson-drm-create-hdmitx-phy-v1-2-9e0ac931381c@aliel.fr>
 References: <20261117-meson-drm-create-hdmitx-phy-v1-0-9e0ac931381c@aliel.fr>
 In-Reply-To: <20261117-meson-drm-create-hdmitx-phy-v1-0-9e0ac931381c@aliel.fr>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -94,13 +95,13 @@ Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org, 
  Ronald Claveau <linux-kernel-dev@aliel.fr>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1190;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1569;
  i=linux-kernel-dev@aliel.fr; h=from:subject:message-id;
- bh=DN6+qVZe39LfbdxFVS/K+gjNh9NYWRH/ygbrMtxxoz4=;
- b=owGbwMvMwCWm1SvKXP3cUInxtFoSQ9afNez7XT7XR3kcn6/0MoJxnmdZsZd6wJmwGbNYn+8wP
- hV/b+qnjlIWBjEuBlkxRZb+uZYn3l0+eubrHvUUmDmsTCBDGLg4BWAiRwoYGVYfC/wVzRLbuMn2
- 1lyXs60v9EpqKj5v5OR/05ZaYHd/RgbDX6lZ0lZsvHlFG1RXsP23Uj/1wdyvQ5Cp22APY4i9lHY
- QBwA=
+ bh=FyF1q04tK6KEaOg7o7mLug+81YUfOqkErLhIZjBmTp0=;
+ b=owGbwMvMwCWm1SvKXP3cUInxtFoSQ9af1f+cXr6uCDbh3DB9a4GK6ZJ9jEEGt1YvUCoJYDk/O
+ V16l7VDRykLgxgXg6yYIkv/XMsT7y4fPfN1j3oKzBxWJpAhDFycAjARpyqGf0qtDd+2mPywfzit
+ /X6Wv5PL5ZMrevkfrBXdvkrmSKTgryOMDK+2aW3rd+ffqa98YMo1mcDKY4HMrqrrlASOMnqus7i
+ VxQIA
 X-Developer-Key: i=linux-kernel-dev@aliel.fr; a=openpgp;
  fpr=DFD863F61375BF917F0012173953305EF1D0EC3E
 X-Endpoint-Received: by B4 Relay for linux-kernel-dev@aliel.fr/default with
@@ -128,40 +129,60 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 From: Ronald Claveau <linux-kernel-dev@aliel.fr>
 
-Describe the HDMI TX PHY as a child of the HHI system controller, with
-the amlogic,meson-g12a-hdmi-tx-phy compatible and reference
-it from the HDMI TX node through "phys" and "phy-names".
+Add a YAML binding for the HDMI TX PHY found on Amlogic Meson SoCs.
+It covers the GXBB, GXL and G12A variants, which are described by
+their own compatible strings:
+
+  - amlogic,meson-gxbb-hdmi-tx-phy
+  - amlogic,meson-gxl-hdmi-tx-phy
+  - amlogic,meson-g12a-hdmi-tx-phy
+
+The PHY is a child of the HHI system controller.
 
 Signed-off-by: Ronald Claveau <linux-kernel-dev@aliel.fr>
 ---
- arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi | 7 +++++++
- 1 file changed, 7 insertions(+)
+ .../bindings/phy/amlogic,meson-hdmi-tx-phy.yaml    | 33 ++++++++++++++++++++++
+ 1 file changed, 33 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-index 3135566df880..17d80b8139d6 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-@@ -210,6 +210,8 @@ hdmi_tx: hdmi-tx@0 {
- 					 <&clkc CLKID_HTX_PCLK>,
- 					 <&clkc CLKID_VPU_INTR>;
- 				clock-names = "isfr", "iahb", "venci";
-+				phys = <&hdmi_tx_phy>;
-+				phy-names = "hdmi";
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 				#sound-dai-cells = <0>;
-@@ -1683,6 +1685,11 @@ mipi_analog_dphy: phy {
- 						#phy-cells = <0>;
- 						status = "disabled";
- 					};
+diff --git a/Documentation/devicetree/bindings/phy/amlogic,meson-hdmi-tx-phy.yaml b/Documentation/devicetree/bindings/phy/amlogic,meson-hdmi-tx-phy.yaml
+new file mode 100644
+index 000000000000..c5dd1036c375
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/amlogic,meson-hdmi-tx-phy.yaml
+@@ -0,0 +1,33 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/amlogic,meson-hdmi-tx-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+					hdmi_tx_phy: hdmi-phy {
-+						compatible = "amlogic,meson-g12a-hdmi-tx-phy";
-+						#phy-cells = <0>;
-+					};
- 				};
- 			};
- 
++title: Amlogic HDMI TX PHY
++
++maintainers:
++  - Ronald Claveau <linux-kernel-dev@aliel.fr>
++
++properties:
++  compatible:
++    enum:
++      - amlogic,meson-gxbb-hdmi-tx-phy
++      - amlogic,meson-gxl-hdmi-tx-phy
++      - amlogic,meson-g12a-hdmi-tx-phy
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    hdmi-phy {
++        compatible = "amlogic,meson-gxbb-hdmi-tx-phy";
++        #phy-cells = <0>;
++    };
 
 -- 
 2.43.0
