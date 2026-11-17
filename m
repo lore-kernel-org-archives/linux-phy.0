@@ -2,105 +2,92 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 03B40606A890
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Nov 2026 13:00:29 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4F628606A33F
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Nov 2026 13:04:44 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=PK9ujazR;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=AcMgczfl
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=D/0qZMH5;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=pengutronix.de header.i=@pengutronix.de header.a=rsa-sha256 header.s=20260414 header.b=VbhjxJqF
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=6FhJdBVKmpDJggvv/k2g/1Uku1M6fj+aYHCTfJ42NWw=; b=PK9ujazRVKiX8OsHq3Kx7jQhA4
-	3HNahCkosSKeMOMlqidlnmdvsddSIZRT3Y1g69mVg6XQlHhwngxvMM9xzWbrD0Axob3nhvgW2iulF
-	W9/zZTxOQHDR4xrN1FIKvmx4CXj2GKfzG9aFTbVWN2bpBvBK3qfF7gFDJG4vLIIv1OevVJBtDjz7U
-	oqKTRYloS1lBeWmqcOJJBcW+fuqK4Z/JEgwUn74M2Nr/4hvr/gP1yXA5aKO8PtN7jvUK8/W3E91A6
-	EEbBmYO9AQYbI8IMjLeZbL1RO9OtZH0qehJ9XDKQxr1j0VaaOTPckE3rNvJNPB5e31T/ItXv8phFL
-	0lXEf23Q==;
+	bh=u3ojWgvOWEeXJRSQ/Py36jkAv/+8Dmxl6WmWA5IHs2I=; b=D/0qZMH5gWeR9cC8cHyi+/kOYn
+	it0mgn3sO4iQIMNzOJOGfEDDV7EQBRyStzAeP70D87JKaGAUPoJEioz5Gdc1a4vtgp04EruQH0WYF
+	Xe6hrZIz9oGhUSDDq/jIybqU1WTghe96VHPxHEzMGDR1j/fusXqPLBt42NC1X+JvXMC/w5gB1l5bE
+	N/axTaU0BPzCa/4uc8Ren7O2icbuJ4KleP+1FABhHENHB8V+lMmchX89ZLj9flfOtA7P2xi9ygIjX
+	SbIGdjaqq3VSY0i4PV63lfWju8uswqwU/xs4mLIztdXzvvy/q4Suk/j34nQBPE+ih8HH6fitABal0
+	Yo0SS/gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTInU-00000005nPB-0x95;
-	Tue, 17 Nov 2026 13:00:28 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xTIrc-00000005oeW-089g;
+	Tue, 17 Nov 2026 13:04:44 +0000
+Received: from mx1.white.stw.pengutronix.de ([185.203.200.13])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTInJ-00000005nHW-2fue;
-	Tue, 17 Nov 2026 13:00:17 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2F80D46980;
-	Tue, 17 Nov 2026 13:00:17 +0000 (UTC)
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1794920417;
-	b=eQZMmPL7PbG95XbrawjYxIxVxxVHtoOP2Hkr9CGBFB2qMoa57aBmUEtYSTAAt2lB/uyA
-	 zacnsQjdu3GiRF1Jkhuo2HsflRCD2Rsf/f7LuAcMZxDd31dLH7XzfUVXU0NPcSDtXEhZk
-	 qpz9aWm9NCVf4P4tC7vh8kpiyEOFrG+l3Zzw9tjkNV144pWTS8r89RMWqbl0eSavlQtGK
-	 R1HvfHSUKq0siil/3+oeFsqODQei5nbpHTV0W/KTKoLkLG1UXmQFw90rNIux8Vv3KW24h
-	 h9PWcfwZJsPl0TCMbTQnltQar+C7EzCrMmusdlivwGkValYTztZxr8V2rgbk3zoXHNw==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1794920417;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=+b74yUvLDxoK8sglf86Bsb/v/4MffzabVcgz+/2mtCE=;
-	b=vRZZWwb9KUR+FTxmLcudhq047r3aFmXqJpn9z5f3XD61m5AA730ajGyuFo/dHPiUUrJN
-	 09SOktWjI877GM3RzTGRXWUvQDVmINOLbZznibfCWKfUCP8XdLhxDSgUx16QhZfmuVJuo
-	 Gd7gKKA78iei5dRylZ0TsY7lXXH48UoAqPK+eHUkaPAc6Tw+vSd1sCnv/0e8qZqbfrQcJ
-	 jlKu6S3cNCRIUwse1jysAdLvOK76/6jVBQLTpR5jDZO7ixTrPa4GzjedKyaSYXoENjVuZ
-	 GMpye2WLGkuyT7enOpqwAuz++WKBHmPlaTzEtB+p16Has0KLh+HMw01whsC2oxXnE5Q==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 171C71F000C7;
-	Tue, 17 Nov 2026 13:00:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794920417;
-	bh=+b74yUvLDxoK8sglf86Bsb/v/4MffzabVcgz+/2mtCE=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=AcMgczflY4FwrwhKc10eeMIlTWR3l85AsApHpANlLGH59OZ2PM7FciXXY0SwsMXai
-	 gMcXtlsLaOaM8LLhBXWB7PhFHX1tTeVNVc+Tk7HtjVUQAhkJlCUaosHa0alCYwJvEo
-	 OG9vuz7ES2dwpYMtWMNGqW8PDj+Q2hnuDtjptyNIfT9is9rkhxTOSNjnpjC7PoW3Hd
-	 fGdKbBqHxLefyiWQaSed3rylCIV9epzZRaRYHLs7Og5OZbA2KAOhFUaAk+Q1+aiun3
-	 eff3mqoYYkBIGpRju0tYvtRQXscQ6TFxcH3txwFTotfQNI1IvoNYkud9WJT89pTEP4
-	 OlqVW/hoXDtrg==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 949484A971;
-	Tue, 17 Nov 2026 13:00:15 +0000 (UTC)
-From: Roadbobek via B4 Relay <devnull+admin.roadbobek.com@kernel.org>
-Date: Tue, 17 Nov 2026 13:00:43 +0000
-Subject: [PATCH 2/2] phy: sun4i-usb: Assert reset before deasserting in phy
+	id 1xTIrY-00000005ocm-43Su;
+	Tue, 17 Nov 2026 13:04:42 +0000
+Received: from [IPv6:2a0a:edc0:0:900:1d::4e] (lupine.office.stw.pengutronix.de [IPv6:2a0a:edc0:0:900:1d::4e])
+	(Authenticated sender: pza@pengutronix.de)
+	by mx1.white.stw.pengutronix.de (Postfix) with ESMTPSA id EF8DE205A36;
+	Tue, 17 Nov 2026 14:04:36 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pengutronix.de;
+	s=20260414; t=1794920677;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=1mVJ+IOGvZs3+RW9SaqfOzie49O+ezTdrW272wWwJeI=;
+	b=VbhjxJqF3tBP20+4AIz4x4IqLigrnrktRbZfzx17lBK073CVeHbRbaif/7onfvnqo4dUzR
+	kKx9vYxioKLURYqr27x9J4ZZv4tPuSvWpxRP1voPDPAzo+Uz05Zf9ZiKpdHqqMV0DAjs7K
+	RJTP80kW8ROu/C9R9jN3P5SUot3QWkA08bMyW2vHRZhYra+m4gToOxquE1FI+HcLClyNEb
+	QIgAwP1qHJMi5t/Qc3lyTROmjVIHg8+O+XcE7aXnJxR1dYzy2m2ykwGsIR/mLTEnHiDvkt
+	xiQH4d4csXoEriLVOxce8WmtPcrCmlP+1KLtvfDfgMoI9gI9V7AjfGkjKwsUsw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=pengutronix.de;
+	s=20260414; t=1794920677;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=1mVJ+IOGvZs3+RW9SaqfOzie49O+ezTdrW272wWwJeI=;
+	b=RvGMQVboS2UQnCQfvoFUciRlrD127ZGmirGjnVOXquq72Y9+0uWWFaVSllJWxR0Aa1x/oI
+	wC9/D3PVhpW5zFPzxu9l456WanvKR5OChT/5x4j6rVXugy7DkDX144mXLxWwdbfvo7UrPF
+	XOK71AGdNPw5Mw1DdvrGf2LkbfTzWeVAWNE8g9F6xD8Fluw3vkwB9jLdcScGUmnSIveVej
+	p8fdzzSBez3bKdtX967EY46Su5kIAWqI2l2O9H9Zg9eKR4WNKEKlFBSMF5fUEOa509Lt1Z
+	9PNjyMo+Qri7hNXoBvz+bLvS1PzVvTp113rHAKjksUb/2Y5sjFUlfsKp6vtS7g==
+ARC-Seal: i=1; s=20260414; d=pengutronix.de; t=1794920677; a=rsa-sha256;
+	cv=none;
+	b=DetY+6izSOzw5Au7wA4sVtzqFY15Vb6NSJrID3yPpz6Vvf8OviOy+HnXABXrdlOk3jxlsN
+	y/mfZXtdzIW9VccH7BFCmVXbv8gjnI3B0rYFjQAbs1BtTwJ4FXVJBJZV9DqcAiIrTznsfc
+	8aO6ME23YPPjEoi8ywTceODZ9hlNHhlIybokf2px3upUSo348XO5WM8LPoIVPklYaZ4jja
+	30KV0z7dS41+orMx3zCBG/vTdeEBVtAnAACidMxt5AV07P35HqqJIKjc4ELXzJYbb7z8Z5
+	nrAdk/aQGpf5elSPN9B8qKB37rTYp9oVVTm1Fx17aI0DzyycRf7J6LNz2hPQRQ==
+ARC-Authentication-Results: i=1;
+	ORIGINATING;
+	auth=pass smtp.auth=pza@pengutronix.de smtp.mailfrom=p.zabel@pengutronix.de
+Message-ID: <614eaf9d3529797eaa6825e3c2226c4e9cf34234.camel@pengutronix.de>
+Subject: Re: [PATCH 0/2] usb/phy: sunxi: Assert reset before deasserting on
  init
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Message-Id: <20261117-usb-sunxi-reset-fix-v1-2-c2b76e0e84e1@roadbobek.com>
-References: <20261117-usb-sunxi-reset-fix-v1-0-c2b76e0e84e1@roadbobek.com>
-In-Reply-To: <20261117-usb-sunxi-reset-fix-v1-0-c2b76e0e84e1@roadbobek.com>
-To: Bin Liu <b-liu@ti.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Chen-Yu Tsai <wens@kernel.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
- Samuel Holland <samuel@sholland.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: admin@roadbobek.com, Bin Liu <b-liu@ti.com>, Greg Kroah-Hartman	
+ <gregkh@linuxfoundation.org>, Chen-Yu Tsai <wens@kernel.org>, Jernej
+ Skrabec	 <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>,
+ Vinod Koul	 <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
  Manivannan Sadhasivam <mani@kernel.org>
 Cc: linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org, Roadbobek <admin@roadbobek.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1794920443; l=1163;
- i=admin@roadbobek.com; s=20261117; h=from:subject:message-id;
- bh=OVg8qc9Dvbt0DpBBY/dML99s9283yAaJeOiCsaXqahQ=;
- b=5z7gVCV2tubzbMgwKmN+aLOEQ1vWqqKL1z+6YQv0bljLTSE+qxlA1SMTklz+ncPdxMcuB/qF0
- WYOLvj2KjZKCI6wo/koiAq3H3sn2WkQP5ZJ+dadlnl7RRIt2cdEXYw2
-X-Developer-Key: i=admin@roadbobek.com; a=ed25519;
- pk=TcWSTwITMylwCZLYbw80sv2LQx1zButqiT90TFVvhas=
-X-Endpoint-Received: by B4 Relay for admin@roadbobek.com/20261117 with
- auth_id=1548
-X-Original-From: Roadbobek <admin@roadbobek.com>
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org
+Date: Tue, 17 Nov 2026 14:04:36 +0100
+In-Reply-To: <20261117-usb-sunxi-reset-fix-v1-0-c2b76e0e84e1@roadbobek.com>
+References: <20261117-usb-sunxi-reset-fix-v1-0-c2b76e0e84e1@roadbobek.com>
+User-Agent: Evolution 3.56.2-0+deb13u1 
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261117_050441_180215_DCA98432 
+X-CRM114-Status: GOOD (  10.54  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,55 +97,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: admin@roadbobek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Roadbobek <admin@roadbobek.com>
+On Di, 2026-11-17 at 13:00 +0000, Roadbobek via B4 Relay wrote:
+> When a bootloader such as U-Boot (for example with
+> CONFIG_USB_MUSB_HOST=y) initializes USB host mode and boots Linux
+> without stopping USB first, both the MUSB controller and USB0 PHY
+> reset lines are already deasserted when Linux probes them.
+> 
+> Because reset_control_deassert() alone is a no-op on an already
+> deasserted reset line, stale hardware register state persists across
+> boot. On Allwinner A33, MUSB stays wedged in a_wait_bcon with
+> DevCtl=0x99, Power=0xf0, and a frozen Frame counter even across
+> hot-unplug and replug.
+> 
+> This two-patch series briefly asserts reset before deasserting it in
+> both drivers so USB starts cleanly regardless of prior bootloader state:
+> 
+> - Patch 1 asserts glue->rst in sunxi_musb_init().
+> - Patch 2 asserts phy->reset in sun4i_usb_phy_init().
 
-When a bootloader initializes USB before booting Linux without
-first tearing down the controller, phy->reset may already be
-deasserted when sun4i_usb_phy_init() runs.
+While you are at it, could you also replace the
+devm_reset_control_get() calls with devm_reset_control_get_exclusive(),
+to make it clear the driver requires exclusive access to assert the
+resets?
 
-Because reset_control_deassert() alone is a no-op on an
-already deasserted reset line, stale USB PHY state can
-persist across the bootloader-to-kernel handoff.
-
-Assert phy->reset briefly before deasserting it in
-sun4i_usb_phy_init() so the PHY starts cleanly regardless of
-prior bootloader USB usage. Tested on an Allwinner A33 Q8
-tablet (Laser MID-786).
-
-Signed-off-by: Roadbobek <admin@roadbobek.com>
----
- drivers/phy/allwinner/phy-sun4i-usb.c | 2 ++
- 1 file changed, 2 insertions(+)
-
-diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
-index f26eed0db17e..05e6dcf035a1 100644
---- a/drivers/phy/allwinner/phy-sun4i-usb.c
-+++ b/drivers/phy/allwinner/phy-sun4i-usb.c
-@@ -270,6 +270,8 @@ static int sun4i_usb_phy_init(struct phy *_phy)
- 		return ret;
- 	}
- 
-+	reset_control_assert(phy->reset);
-+	usleep_range(10, 20);
- 	ret = reset_control_deassert(phy->reset);
- 	if (ret) {
- 		clk_disable_unprepare(phy->clk2);
-
--- 
-2.53.0
-
-
+regards
+Philipp
 
 -- 
 linux-phy mailing list
