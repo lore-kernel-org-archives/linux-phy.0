@@ -2,57 +2,148 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C071E606A31C
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Nov 2026 20:11:36 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1F213606A330
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Nov 2026 20:40:18 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=DxGxY+F1;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=mxK01jt4
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ThmVzDaB;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=ZqJwLEzn;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=N/tbwZAV
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=HdMKnStdZNWmnRVB7X+stLiplsv7KQ+VgEXo2bWBye0=; b=DxGxY+F18nOFM5W+NYklWFUC7m
-	4azc1HEBqAqnBp3pYHDdWqVRmnjWXr8sdcsRNZgyRR6qWvw3fbeoEHDoCHX/EjSsOzx2SSdFJ/pgq
-	ttQS0aYdGdURjKxbMt94ydPK9haq56wmkPjmWo2blkvahRjQBZAf2tN2q5E9TRBMnxckATeVIxz3T
-	csBhUKRFAQFe1FkZOOLCYl9+FdJued3QZQIA3TrjvrHziiMfonye0puC8tFoiBSdlMFGD/DvTV0YR
-	EFtPsQEpM20oM2v7I7mszTWQV38+/FUbTsTKX+28rpXlgNH6yy4Tv8qq+Wd7I6HFkqKmboExmrbLZ
-	Ejk9MpOQ==;
+	bh=janjJfbM0jih0hlcE53aVy9PXO4LRYULAfxpaRReF8c=; b=ThmVzDaBIJLgkMXvKjRZWuLKLQ
+	Nv9KNd7FaIKfwRJXvRB77r1CNa0inCX7OpWpHu1PTVcgRZ11cjk1q1t980+MiRPsfSAa38frivpnC
+	nJ925mmnpmgrKe41MsaBWDmIAjd/Im1R9NBw93GvwGp6nrM3npVoEfMMuLBdygX75NYNwWVc8T63E
+	t81mCObUa9+9mjB424+IG990shVK6YjM8FgBONGMOAeAmefazEuIYzbts1/C/oawrky66XZq37tho
+	k4F6WZOJ2TvT+Jy9gTjISq/a0455DoRiYC/dM0Q4uzyOMk1utefuImqNi0ur94ePei4aYGeN489wB
+	N3ATmNNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTPWi-00000006zau-1YjR;
-	Tue, 17 Nov 2026 20:11:36 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xTPyT-000000071zI-2MT8;
+	Tue, 17 Nov 2026 20:40:17 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTPWf-00000006zah-1o0M;
-	Tue, 17 Nov 2026 20:11:34 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7E8EB60F34;
-	Tue, 17 Nov 2026 20:11:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B82BB1F000C5;
-	Tue, 17 Nov 2026 20:11:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794946292;
-	bh=o1Y/yNbkW2bZMPXGpyxomoYGDfphc/X8oVtcisFJF/w=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=mxK01jt4UnB6GGRkK3XBjM7Wv9pTSp0H6bwXjTnQrTNecq0e19UljW9rpEbjbLou2
-	 HT051gZxjbrrOFqQZEEhkMRikxEOy8ATUMeXemwAGWbOtdSVTh+KDD3yl8rYoGfFh+
-	 yDOeuBxfYbfClk89EWalLhTbOY22jZv1ufcflwJnyaLtoz855Y7JrAwcPvPYpnSh48
-	 Ms8Zv8AEo5qtbbja0tXJxpDK3K2tOJLCwDCYr7vGiOzK+XTMcVlGpT77h0TPwa67r6
-	 jPBaSryASiMUdgxzpqyRTLDfff3DRr/jfbvfe8jWjYQ+b3xCbJizPA87xoKAVW5RtO
-	 X0Ri0s6MRn/Fw==
-Message-ID: <sashiko-outbox-219570@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH 06/10] drm/meson: dw-hdmi: Drop manual HHI clock and
- memory PD setup
-To: "Ronald Claveau" <linux-kernel-dev@aliel.fr>
-Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org, linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org, robh@kernel.org, conor+dt@kernel.org, neil.armstrong@linaro.org, vkoul@kernel.org, olteanv@gmail.com
-In-Reply-To: <20261117-meson-drm-create-hdmitx-phy-v1-6-9e0ac931381c@aliel.fr>
-References: <20261117-meson-drm-create-hdmitx-phy-v1-0-9e0ac931381c@aliel.fr>
- <20261117-meson-drm-create-hdmitx-phy-v1-6-9e0ac931381c@aliel.fr>
-Date: Tue, 17 Nov 2026 20:11:31 +0000
+	id 1xTPyQ-000000071yq-2mGR
+	for linux-phy@lists.infradead.org;
+	Tue, 17 Nov 2026 20:40:15 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AHJ6CTb1419611
+	for <linux-phy@lists.infradead.org>; Tue, 17 Nov 2026 20:40:13 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	6EdTFJwYriIb4IdCOT1qSEgGV4PWIdtBBRJW54ecre8=; b=ZqJwLEznxyO5/+t9
+	dNksUVKxE4vWPKKN0pfkdNvMjGadFAsLAucDT7lWDgUjXtN2fAurs11GjG4SsaFb
+	4d5VSun5AOUeKU6IoL65fgo77p6jlB+vMsHkSGZPISXK8CGzbaYhhjRtTgom2YYX
+	FmX0aqO5UD+Q5CE6LQ/EwDBxiqjiswmSggaboV8+trVAVXmz22a8EukWSdmbnhLH
+	a2Zfy+vlPHfc7Yw6GRrKcCUXw3UdP3y1f78F3Doh0IxuOUdfw3hMSg6pM/vn+47l
+	HM/T44CYjvXHPM3ToYlkr3lTvegCqxlFJeOXHRROHUsUzEo0MxN9L2QjM03O9B/A
+	aB18XQ==
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j0qms20kt-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 17 Nov 2026 20:40:13 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-3821eb27024so350819eec.1
+        for <linux-phy@lists.infradead.org>; Tue, 17 Nov 2026 12:40:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1794948013; x=1795552813; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=6EdTFJwYriIb4IdCOT1qSEgGV4PWIdtBBRJW54ecre8=;
+        b=N/tbwZAVJHZE+584Z7Qx/l+qETZb5RCJ78/E5GPONJoyfSAh02EZvvEcq30iZ1avxb
+         Wc/vhLE/QUhEQzljSXCcraL8KF0li84ycYd1SvyeSGLQWdL+f/Zl1AiwP5vNFN9+UuMb
+         qvv0fmJAdPqTGgNRmCOJHVet9eXPVBOtwwcG79gkmJROT4gLT9NWSAnXQ6tjMwrEEosH
+         4JM7Aba4i2QX4BA8Zq2w92TqxkJBmc3+QmxRj9F5nvZlXC827ESn8spxZ2CWtDqJXNhF
+         +WzaqyLV2biPJYg9aWz0hRGctqJaWicfPX87OPNSHn4XZWDXFOr3tAZeYt/f36+mzsa0
+         AEtQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1794948013; x=1795552813;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=6EdTFJwYriIb4IdCOT1qSEgGV4PWIdtBBRJW54ecre8=;
+        b=DxS0Fm7O2j17aDtztLHBLj4HSt61Jl/WoHH0A5ceI0GZ80mgsO5mIRvK1YmtL0yVyB
+         cH9c4mXJ6ECLZxOARRxBxOZmVYpaXD9HC0ktNUtNiqbkWEWQaIlLeEUwS2vVJmFjYWzZ
+         YpYzOCh7fVxPyDv1QWuwuNq2uarSMbLdZrs0nkZYrVMEJN0hKKd/RxsJemNklVYSs8BS
+         bZqMJeSeLN9KVLHOb9mhFkKwnMz9tacVNrHgnqKHlhzsAZ2W9VYgQGlZuQbShWf41Gqv
+         J29fPe10PPxWiXbX/4tQ9aRa+xJQ+uyCkdRdfDN5MKCd5nQoDLygrBjcTIM+l2i3dFKE
+         ix8w==
+X-Forwarded-Encrypted: i=1; AL+hErH3uQEyRCebh57fWCuhX5+dLWi/cEIsYGolJk+zSjD3HsRI94Jk1zYcE9TJo1/F8rtf5qYNJ/juFME=@lists.infradead.org
+X-Gm-Message-State: APuU4Z9dIu7EbOb/FJEuKR6fRunHP/udml3/NFe5Q/DOXuDGA1R11TRW
+	bIbEQyibdSIqN63Dj+LwoIRlsUmuZEx4pVlnHDkl9YDWG2rOreSWeZ2/uMHOXaqKhD3PXDlVAnG
+	vx5ItsUnmvQXkeZQOGtBSoJl7eDYMDBaDtTUU3YjGwcmR6UhoPOsMVWhXGpl9KDau4/YYMkPDfA
+	xp
+X-Gm-Gg: AZFdTZeHUXpgo+i1n1xoGQ2ZszluUSt8MAJZT5YdW3RyWunvjLQ4ty9WRXFlj1eBChA
+	3mIQ9MtQy4qH7o8S4JVim/JQoUvSoJ+eTLytyeB1wFuFoKRjLGgYwPnfXeUDsiQeetqLpGbJPkj
+	Yqamai+ZhuILm7wOM5rOWkGsdFtan8bG1bUr+OuNlAjYA7oZ/n+W3GugBK9MACf+Mr/j6lReOza
+	Sp+iGh3Cpie/AhhPL+s5N3KJdp0rK28YXMlXtTRCrTgXze89UpP4Otem6K2wJyCcZefAhmPafiq
+	0q8tHE/roocX00acO0kFTPdpbEHxruwaS7HHMPUSDpSY4YF9tTU0VhHXTFv6RYRXtE/bfvLLiKR
+	SNun6pIHMZOchNuDllZYIxHoW+nMs7Zgc//WL7G5l/LsE9lt5fn34T0TsT4Zi0XdnihVJWTrm9X
+	8tU/1Z/9uGFHeLjyrnC6pRFQ==
+X-Received: by 2002:a05:7300:de4c:b0:36a:1f4f:3e9 with SMTP id 5a478bee46e88-3828101de20mr538647eec.20.1794948012316;
+        Tue, 17 Nov 2026 12:40:12 -0800 (PST)
+X-Received: by 2002:a05:7300:de4c:b0:36a:1f4f:3e9 with SMTP id 5a478bee46e88-3828101de20mr538610eec.20.1794948011623;
+        Tue, 17 Nov 2026 12:40:11 -0800 (PST)
+Received: from [10.73.198.203] (pat_11.qualcomm.com. [192.35.156.11])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-382a6304ff2sm456352eec.6.2026.11.17.12.40.10
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 17 Nov 2026 12:40:11 -0800 (PST)
+Message-ID: <c3a45db8-43a5-4aaa-9251-5f6231e83d59@oss.qualcomm.com>
+Date: Tue, 17 Nov 2026 12:40:10 -0800
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: qualcomm: qmp-combo: Differentiate clocks related to
+ the USB block
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Manivannan Sadhasivam <mani@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, jason.pettit@oss.qualcomm.com
+References: <20260930-qmp_phy_usb_clks_v1-v1-1-d4dccc9eb263@oss.qualcomm.com>
+ <c1abd9d4-98ef-4469-b4f3-94a8dcad9d0b@oss.qualcomm.com>
+Content-Language: en-US
+From: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+In-Reply-To: <c1abd9d4-98ef-4469-b4f3-94a8dcad9d0b@oss.qualcomm.com>
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE3MDA4MiBTYWx0ZWRfX4u6jJrezs/Ak
+ T7vfKE7H74ZYRguUEzHoMWkMndd33Y7oyckazLPBy7f8sMvEfZf3cXZAsT9NN3AtfwSDpWQ03fo
+ v4ugjbMZk3xI8qFlF2aimzV7S1fyftI=
+X-Proofpoint-ORIG-GUID: NMsmgAnKDsICxjCBb3XpZrOBfxTVVCEO
+X-Proofpoint-GUID: NMsmgAnKDsICxjCBb3XpZrOBfxTVVCEO
+X-Authority-Analysis: v=2.4 cv=BIEmP1QG c=1 sm=1 tr=0 ts=6afcbbad cx=c_pps
+ a=cFYjgdjTJScbgFmBucgdfQ==:117 a=ZdW6uxA9NKXbfdqeeS2OGA==:17
+ a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
+ a=EUspDBNiAAAA:8 a=_nty3mnF_QhVk_yABmMA:9 a=QEXdDO2ut3YA:10
+ a=scEy_gLbYbu1JhEsrz4S:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE3MDA4MiBTYWx0ZWRfXyxkj7uXxHmrX
+ w6zmjyKRASE0Y2ZwsE2Ygg20dH9owYrhIb9w4WF9CrN/zh+Mlver7QxuOxbnTzT0YX2JXZ0z5oS
+ vMkXbseNarK46aPeL+qbbWJGXmDGYpCobQdSEr9JZiuvw/gvD7sRgwJCrCMQsSdEapFZVVMc4ZK
+ ISAHx8tcW1pec/JrCOx5jcepd7guXtgXgSQH/uRn3lP9J0DysDIOQSaKnUrNdOcpyZai/SnUTlU
+ YNWLFzrnhtPkvDsyeUvCZoGDFzDQA4JC/uuS5VL6jQWh/4q4h0Fhj6hPte2UUQts44SrSu9lrOp
+ 8sMkywBkTxAmUW2psVcblTODkcqXxsNkplCGZyuLIOnNjATDsNuUZN5mQheekXWTOtlrl3D3sGp
+ GB/568FiWYPbcs13FJPpwVxgEcrYHCSd1SOZXqIpHBN4UCuU+zoVeDy1J5B8BM8cpC+gVdK1qO6
+ K1ZJYBq15ZRRrB7d5JQ==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
+ definitions=2026-11-17_04,2026-11-16_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 adultscore=0 bulkscore=0 clxscore=1015 malwarescore=0
+ phishscore=0 spamscore=0 impostorscore=0 lowpriorityscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611170082
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261117_124014_743599_130F76F4 
+X-CRM114-Status: GOOD (  18.80  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,80 +153,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwKaXNzdWUgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIGRybS9tZXNvbjogZHctaGRt
-aTogc2tpcHBlZCBIRE1JVFggbWVtIFBEIHBvd2VyLXVwIGluCiAgbWVzb25fZHdfaGRtaV9pbml0
-KCkKLS0KCmNvbW1pdCBjOGU3ODIwOTlmNzU4YmY2MzU0MDI3MDVhMjBmNTdkN2RmOTY4MmE3CkF1
-dGhvcjogUm9uYWxkIENsYXZlYXUgPGxpbnV4LWtlcm5lbC1kZXZAYWxpZWwuZnI+Cgpkcm0vbWVz
-b246IGR3LWhkbWk6IERyb3AgbWFudWFsIEhISSBjbG9jayBhbmQgbWVtb3J5IFBEIHNldHVwCgpU
-aGlzIGNvbW1pdCByZW1vdmVzIHRoZSBkaXJlY3QgSEhJX0hETUlfQ0xLX0NOVEwgYW5kIEhISV9N
-RU1fUERfUkVHMApyZWdpc3RlciB3cml0ZXMgaW4gbWVzb25fZHdfaGRtaV9pbml0KCkgYW5kIHRh
-a2VzIGEgcnVudGltZSBQTSByZWZlcmVuY2UKaW4gbWVzb25fZHdfaGRtaV9wcm9iZSgpIHRvIHBv
-d2VyIG9uIHRoZSBWUFUgcG93ZXIgZG9tYWluLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUv
-ZHJtL21lc29uL21lc29uX2R3X2hkbWkuYyBiL2RyaXZlcnMvZ3B1L2RybS9tZXNvbi9tZXNvbl9k
-d19oZG1pLmMKPiBpbmRleCBlYjMzYzcwZjI5YzMxLi4yMGE4MjE5MzZiM2FmIDEwMDY0NAo+IC0t
-LSBhL2RyaXZlcnMvZ3B1L2RybS9tZXNvbi9tZXNvbl9kd19oZG1pLmMKPiArKysgYi9kcml2ZXJz
-L2dwdS9kcm0vbWVzb24vbWVzb25fZHdfaGRtaS5jClsgLi4uIF0KPiBAQCAtNTk5LDEyICs1OTgs
-NiBAQCBzdGF0aWMgdm9pZCBtZXNvbl9kd19oZG1pX2luaXQoc3RydWN0IG1lc29uX2R3X2hkbWkg
-Km1lc29uX2R3X2hkbWkpCj4gIHsKPiAgCXN0cnVjdCBtZXNvbl9kcm0gKnByaXYgPSBtZXNvbl9k
-d19oZG1pLT5wcml2Owo+ICAKPiAtCS8qIEVuYWJsZSBjbG9ja3MgKi8KPiAtCXJlZ21hcF91cGRh
-dGVfYml0cyhwcml2LT5oaGksIEhISV9IRE1JX0NMS19DTlRMLCAweGZmZmYsIDB4MTAwKTsKPiAt
-Cj4gLQkvKiBCcmluZyBIRE1JVFggTUVNIG91dHB1dCBvZiBwb3dlciBkb3duICovCj4gLQlyZWdt
-YXBfdXBkYXRlX2JpdHMocHJpdi0+aGhpLCBISElfTUVNX1BEX1JFRzAsIDB4ZmYgPDwgOCwgMCk7
-Cj4gLQo+ICAJLyogUmVzZXQgSERNSVRYIEFQQiAmIFRYICYgUEhZICovCj4gIAlyZXNldF9jb250
-cm9sX3Jlc2V0KG1lc29uX2R3X2hkbWktPmhkbWl0eF9hcGIpOwo+ICAJcmVzZXRfY29udHJvbF9y
-ZXNldChtZXNvbl9kd19oZG1pLT5oZG1pdHhfY3RybCk7Cj4gQEAgLTgyOSw5ICs4MjIsMjkgQEAg
-c3RhdGljIGludCBfX21heWJlX3VudXNlZCBtZXNvbl9kd19oZG1pX3BtX3Jlc3VtZShzdHJ1Y3Qg
-ZGV2aWNlICpkZXYpCj4gIAlyZXR1cm4gMDsKPiAgfQo+ICAKPiArc3RhdGljIHZvaWQgbWVzb25f
-ZHdfaGRtaV9wbV9wdXQodm9pZCAqZGV2KQo+ICt7Cj4gKwlwbV9ydW50aW1lX3B1dF9zeW5jKGRl
-dik7Cj4gK30KPiArCj4gIHN0YXRpYyBpbnQgbWVzb25fZHdfaGRtaV9wcm9iZShzdHJ1Y3QgcGxh
-dGZvcm1fZGV2aWNlICpwZGV2KQo+ICB7Cj4gLQlyZXR1cm4gY29tcG9uZW50X2FkZCgmcGRldi0+
-ZGV2LCAmbWVzb25fZHdfaGRtaV9vcHMpOwo+ICsJc3RydWN0IGRldmljZSAqZGV2ID0gJnBkZXYt
-PmRldjsKPiArCWludCByZXQ7Cj4gKwo+ICsJcmV0ID0gZGV2bV9wbV9ydW50aW1lX2VuYWJsZShk
-ZXYpOwo+ICsJaWYgKHJldCkKPiArCQlyZXR1cm4gcmV0Owo+ICsKPiArCXJldCA9IHBtX3J1bnRp
-bWVfcmVzdW1lX2FuZF9nZXQoZGV2KTsKPiArCWlmIChyZXQpCj4gKwkJcmV0dXJuIGRldl9lcnJf
-cHJvYmUoZGV2LCByZXQsICJGYWlsZWQgdG8gcG93ZXIgb24gSERNSSBUWFxuIik7CgpbU2V2ZXJp
-dHk6IEhpZ2hdCkNhbiBkcm9wcGluZyB0aGUgSEhJX01FTV9QRF9SRUcwIHdyaXRlIGxlYXZlIHRo
-ZSBIRE1JVFggbWVtb3J5IHBvd2VyZWQKZG93biB3aGVuIHRoZSBib290bG9hZGVyIHR1cm5zIG9u
-IHRoZSB0b3AtbGV2ZWwgVlBVIGRvbWFpbiB3aXRob3V0CmVuYWJsaW5nIEhETUk/CgpJbiB0aGUg
-VlBVIHBvd2VyIGRvbWFpbiBkcml2ZXIsIHB3cmNfZWVfaXNfcG93ZXJlZF9vZmYoKSBvbmx5IGNo
-ZWNrcyB0aGUKdG9wLWxldmVsIEFPIHNsZWVwIGJpdCBhbmQgZG9lcyBub3QgY2hlY2sgSEhJX01F
-TV9QRF9SRUcwWzE1OjhdLiAgV2hlbgp0aGUgdG9wLWxldmVsIFZQVSBkb21haW4gaXMgYWxyZWFk
-eSBwb3dlcmVkIG9uIGF0IGJvb3QsCm1lc29uX2VlX3B3cmNfaW5pdF9kb21haW4oKSByZWdpc3Rl
-cnMgdGhlIGdlbnBkIGFzIGFscmVhZHkgb24gd2l0aG91dApjYWxsaW5nIG1lc29uX2VlX3B3cmNf
-b24oKToKCmRyaXZlcnMvcG1kb21haW4vYW1sb2dpYy9tZXNvbi1lZS1wd3JjLmM6bWVzb25fZWVf
-cHdyY19pbml0X2RvbWFpbigpIHsKCS4uLgoJaWYgKGRvbS0+bnVtX2Nsa3MgJiYgZG9tLT5kZXNj
-LmlzX3Bvd2VyZWRfb2ZmICYmICFkb20tPmRlc2MuaXNfcG93ZXJlZF9vZmYoZG9tKSkgewoJCXJl
-dCA9IGNsa19idWxrX3ByZXBhcmVfZW5hYmxlKGRvbS0+bnVtX2Nsa3MsIGRvbS0+Y2xrcyk7CgkJ
-aWYgKHJldCkKCQkJcmV0dXJuIHJldDsKCgkJZG9tLT5iYXNlLmZsYWdzID0gR0VOUERfRkxBR19B
-TFdBWVNfT047CgkJcmV0ID0gcG1fZ2VucGRfaW5pdCgmZG9tLT5iYXNlLCBOVUxMLCBmYWxzZSk7
-CgkJaWYgKHJldCkKCQkJcmV0dXJuIHJldDsKCX0KCS4uLgp9CgpCZWNhdXNlIHRoZSBnZW5wZCBp
-cyBpbml0aWFsaXplZCBpbiB0aGUgT04gc3RhdGUgd2l0aApHRU5QRF9GTEFHX0FMV0FZU19PTiwg
-cG1fcnVudGltZV9yZXN1bWVfYW5kX2dldCgpIGlzIGEgbm8tb3AgYW5kCm1lc29uX2VlX3B3cmNf
-b24oKSBuZXZlciBydW5zIHRvIGNsZWFyIEhISV9NRU1fUERfUkVHMFsxNTo4XSwgbGVhdmluZwpI
-RE1JVFggbWVtb3J5IHBvd2VyZWQgZG93biB3aGVuIG1lc29uX2R3X2hkbWlfaW5pdCgpIGFuZCBk
-d19oZG1pX3Byb2JlKCkKYWNjZXNzIHRoZSBjb250cm9sbGVyLgoKSW4gYWRkaXRpb24sIHBvd2Vy
-LWRvbWFpbnMgYW5kIGFzc2lnbmVkLWNsb2NrcyBhcmUgb3B0aW9uYWwgaW4gdGhlCmFtbG9naWMs
-bWVzb24tZHctaGRtaSBiaW5kaW5nIGFuZCB3ZXJlIG9ubHkgYWRkZWQgdG8gaW4tdHJlZSBEVHMg
-aW4KdjYuMTEsIHNvIGRyb3BwaW5nIHRoZSBISElfSERNSV9DTEtfQ05UTCBhbmQgSEhJX01FTV9Q
-RF9SRUcwIHdyaXRlcyBhbHNvCnJlZ3Jlc3NlcyBvbGRlciBEVEJzICh3aGVyZSBtZXNvbl92Y2xr
-X3NldCgpIG9ubHkgY29uZmlndXJlcwpISElfSERNSV9DTEtfQ05UTCBsYXRlciBhdCBhdG9taWNf
-ZW5hYmxlIHRpbWUpIGFuZCBidWlsZHMgd2l0aCBDT05GSUdfUE0KZGlzYWJsZWQuCgotLSAKU2Fz
-aGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYxMTE3
-LW1lc29uLWRybS1jcmVhdGUtaGRtaXR4LXBoeS12MS0wLTllMGFjOTMxMzgxY0BhbGllbC5mcj9w
-YXJ0PTYKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LXBoeQo=
+
+
+On 10/16/2026 5:13 AM, Konrad Dybcio wrote:
+> On 10/1/26 3:16 AM, Wesley Cheng wrote:
+>> The Qualcomm QMP combo PHY has a USB and Displayport block that is
+>> sourced with different clocks.  In situations where the USB path is not
+>> utilized, and only Displayport is active, unnecessary clocks are enabled
+>> and not used.  Split the current clock list into USB specific clocks,
+>> which will be enabled whenever the USB initialization routine is
+>> executed.
+>>
+>> In addition, move autonomous mode control specifically when USB is
+>> active, as its primary purpose is to detect RX detection and LFPS
+>> signals, which occurs only when USB is active.
+>>
+>> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+>> ---
+> 
+> GPT has the following concerns:
+> 
+> [P1] Don't disable USB clocks that USB init didn't acquire
+> drivers/phy/qualcomm/phy-qcom-qmp-combo.c: USB init/runtime suspend
+> 
+> When USB4 is active, `qmp_combo_usb_init()` takes its early return and
+> increments `usb_init_count` before the new clock-enable call. Runtime
+> suspend then uses that count to disable `usb_clks`, although that path
+> didn't acquire them. This can unbalance clock references; the count
+> needs to reflect actual clock ownership, or the USB4 case needs
+> separate handling.
+> 
+> => the USB4 state machinery is a bit fragile.. but perhaps an if or
+>     two will solve things
+
+Sorry, didn't get back to you in a long time.  I think this should be fine 
+once I add the proper enable path in the USB4 init routine as well, since 
+it is required for USB4 to work.  So now, when usb4 init runs, the usb_clks 
+are enabled.
+
+> 
+> [P2] Unwind clocks if USB-clock resume fails
+> drivers/phy/qualcomm/phy-qcom-qmp-combo.c: runtime resume
+> 
+> The patch enables the common clocks and `pipe_clk` before enabling
+> `usb_clks`. If the latter enable fails, it returns without disabling
+> the earlier clocks, leaving them enabled after a failed resume.
+
+ACK.
+
+Thanks
+Wesley Cheng
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
