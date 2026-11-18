@@ -2,71 +2,113 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9F535606A31C
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 01:37:41 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 38C55606A338
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 01:51:52 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=hfh37caG;
-	dkim=pass (1024-bit key) header.d=cmss.chinamobile.com header.i=@cmss.chinamobile.com header.a=rsa-sha256 header.s=default header.b=cSrj/jBq
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=WpUzMY+B
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=CP14bEtIuwpRh5q3j2PascpH5NJ9JzjsCVGuWRE/O7Y=; b=hfh37caGv6R8cNw5JwaZeFiZ8a
-	zXc0TaZ9lHo45oFtNTl33VzoYhjlSqOH2ENPvSJMqBde0+cMLsoPhl0rBk2vYg6RywAt5d5cU35rD
-	jmwKBpDMT5K7dGMcwyAakuOKeLpCkoVdVvRpjmqYx+KEoIjt3hQ8nizytDprG1eAg4YfUde6ngxSK
-	JfL1ERBEL8FEcGE/WvWvwiB7bD2NRzOXFTJ7AIqaMOkOikqMdoOtnJYepNGaDNYbr8AMErIz80+G0
-	nFDPRE2sAlE4YcdxUldd+dv3eNPDCiThH5ieaBbAJ7340nzoAGbXeAhy/gwvyb3qY8LpPDS3MLJil
-	OUNTN3cw==;
+	bh=w3jJcjW6er9MqfKiC/LLmMN67qTvLskSUi85I3clTZM=; b=WpUzMY+B/mrCd8Mqu0xFxBD3L6
+	RrQ6MYkjcKWI1GtNiiYgPXDLAUfFtQohL2hv/Z/68CYW2INEJL5Rgj0diy1m+3Uu+BM8/MFE4pZPT
+	dH9ltQHFFhCDFS63c8Qrbt+66TGp4vvNskrA4UFkVXAX59LorOc2XE2TJoga2rro+LHRcHy86u59k
+	K1gqXRbvD5kjmswhwpQAcOM/AdH12HpdaNiG0B0MSIzP1t/RyuAktMbinHaH40WFo715/ve2l/3tF
+	iKzYXuLNi0YPXsx82uhOWhrA3PhkII7uI3qEEWCEFNylInV5hgpJzaZAdc94hppZp7wMCujlhbX4v
+	q6GPTf5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTUcH-00000007Sv5-0eJN;
-	Wed, 18 Nov 2026 01:37:41 +0000
-Received: from cmccmta2.chinamobile.com ([111.22.67.135])
-	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTUcC-00000007SrJ-0gOQ
-	for linux-phy@lists.infradead.org;
-	Wed, 18 Nov 2026 01:37:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=cmss.chinamobile.com; s=default; l=0;
-	h=from:subject:message-id:to:cc:mime-version;
-	bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
-	b=cSrj/jBqk0SuDTMhVLLoU3s26qmxRpaisfDbBKfHMOirb0hH2PALyqimSSSgbldrAY7iH86+4oNXX
-	 ZT9TUI6i35r5yqnfpHPTilKJHeKP/cclfD0fOnw8uB+5XF9qwSXeunQ0RMfrA1W7rvE8Y5GdlHxZGd
-	 dLGCybOD5F+3KlLw=
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG: 00000000
-Received: from spf.mail.chinamobile.com (unknown[10.188.0.87])
-	by rmmx-syy-dmz-app07-12007 (RichMail) with SMTP id 2ee76afd0154c52-0eafa;
-	Wed, 18 Nov 2026 09:37:25 +0800 (CST)
-X-RM-TRANSID: 2ee76afd0154c52-0eafa
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG: 00000000
-Received: from DESKTOP-3K8GUTQ (unknown[223.108.79.97])
-	by rmsmtp-syy-appsvr04-12004 (RichMail) with SMTP id 2ee46afd0153bb3-c42db;
-	Wed, 18 Nov 2026 09:37:24 +0800 (CST)
-X-RM-TRANSID: 2ee46afd0153bb3-c42db
-From: Xiangwu Lai <laixiangwu@cmss.chinamobile.com>
-To: vkoul@kernel.org
-Cc: neil.armstrong@linaro.org,
-	mani@kernel.org,
-	narmstrong@baylibre.com,
+	id 1xTUpz-00000007UMG-3RBc;
+	Wed, 18 Nov 2026 01:51:51 +0000
+Received: from mail-japanwestazlp170120003.outbound.protection.outlook.com ([2a01:111:f403:c406::3] helo=OS8PR02CU002.outbound.protection.outlook.com)
+	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
+	id 1xTUpx-00000007ULk-0K8Q;
+	Wed, 18 Nov 2026 01:51:50 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=M15ip3u9LB8l2k8LgqmNalbzEhJKmdEQfZoqwUKlOobTFquLHYsKPGBe2YbfjLlocTpDsjnVWc306AQ9VW84r4JnrBurIYz5qQDDPYa3rh1pg15v1LYTyYCaB+th8r9n0DUu+chSTsvuWUGjN4alcfotI6iLdn38m8iOsTVentHDH1yazQAVnsejokpeK46uPO+xIjfMG3Z8iPJpBsr4btXlEyAgOG7MAwpAaNwlit9u5Z2ZtdkQGWyGWoeKEiLA918NyN34imqg7Pq9PqFP/wy0FN7j0OcRNx/nENVsv8UEfmq8fnKtrNdlwAUpMiwMIjM0f28AbV3tALwoVMlgqg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=bDgjq6qt5mQy372YVXoX3SsrgTjbojm3RamylfK+X60=;
+ b=QjuulCbh+NC0e5Q4QqmTZfdOGgYfAWqzsvK7OIhuhSRG4GGx/4QoUZfIbGysNdBeX2H8inp1zr9wL6t030uQALKzYV+vP0MMoraQiY6m/9o+tnSubLyJJ0OepFofk1HEmnUc2aRrcw1jHuVFdd4U1t3tJmXiC9ORNt+v8TRY5aZMNs0ihLnMK4g5nWnfpin1/+TV65XXXS5vo8N1yxNMfQjpR/oKVH3ke3XX7MyKifqwutap1qMDI7I2htvV9TsQI+x37kMR9/BrWw0ycEGV7RRmnpTXOWA49bNVich89nFZTQhwY9r+19AaVBzpFp8AnzxvnvFmTxEN4KryzmppQA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 222.71.101.198) smtp.rcpttodomain=cixtech.com smtp.mailfrom=cixtech.com;
+ dmarc=bestguesspass action=none header.from=cixtech.com; dkim=none (message
+ not signed); arc=none (0)
+Received: from PS2PR03CA0018.apcprd03.prod.outlook.com (2603:1096:300:5b::30)
+ by SEZPR06MB842317.apcprd06.prod.outlook.com (2603:1096:101:23::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.639.8; Wed, 18 Nov
+ 2026 01:51:42 +0000
+Received: from TY2PEPF0000AB8A.apcprd03.prod.outlook.com
+ (2603:1096:300:5b:cafe::a5) by PS2PR03CA0018.outlook.office365.com
+ (2603:1096:300:5b::30) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.639.6 via Frontend Transport; Wed, 18
+ Nov 2026 01:51:42 +0000
+X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
+ is 222.71.101.198) smtp.mailfrom=cixtech.com; dkim=none (message not signed)
+ header.d=none;dmarc=bestguesspass action=none header.from=cixtech.com;
+Received-SPF: Pass (protection.outlook.com: domain of cixtech.com designates
+ 222.71.101.198 as permitted sender) receiver=protection.outlook.com;
+ client-ip=222.71.101.198; helo=smtprelay.cixcomputing.com; pr=C
+Received: from smtprelay.cixcomputing.com (222.71.101.198) by
+ TY2PEPF0000AB8A.mail.protection.outlook.com (10.167.253.8) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.615.4 via Frontend Transport; Wed, 18 Nov 2026 01:51:41 +0000
+Received: from gary-System-Product-Name (unknown [172.16.66.27])
+	by smtprelay.cixcomputing.com (Postfix) with ESMTPSA id A00A2427EFD1;
+	Wed, 18 Nov 2026 09:51:40 +0800 (CST)
+From: Gary Yang <gary.yang@cixtech.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Fugang Duan <fugang.duan@cixtech.com>
+Cc: Gary Yang <gary.yang@cixtech.com>,
+	Luo Liu <Luo.Liu@cixtech.com>,
+	CIX Linux Kernel Upstream Group <cix-kernel-upstream@cixtech.com>,
 	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Xiangwu Lai <laixiangwu@cmss.chinamobile.com>
-Subject: [PATCH] phy: amlogic: meson-axg-mipi-dphy: fix clock leak in probe error paths
-Date: Wed, 18 Nov 2026 09:37:23 +0800
-Message-ID: <20261118013723.232-1-laixiangwu@cmss.chinamobile.com>
-X-Mailer: git-send-email 2.50.1.windows.1
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH RESEND v2 1/2] dt-bindings: phy: add CIX Sky1 USB/DP combo PHY
+Date: Wed, 18 Nov 2026 09:51:39 +0800
+Message-ID: <20261118015140.3559331-2-gary.yang@cixtech.com>
+X-Mailer: git-send-email 2.50.1
+In-Reply-To: <20261118015140.3559331-1-gary.yang@cixtech.com>
+References: <20261118015140.3559331-1-gary.yang@cixtech.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: TY2PEPF0000AB8A:EE_|SEZPR06MB842317:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8bdd317b-3690-4233-2741-08df45167e4d
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|36860700016|7416014|376014|1800799024|82310400026|10067099003|56012099006|261026140227099003|261026121527099003|261021121427099003|261028144727099003|261022105027099003|261022075727099003|261102123227099003|261009223027099003|20046099003|21026099003|18002099003|22082099003|5123799003|6133799003|3023799007;
+X-Microsoft-Antispam-Message-Info: xGbky2Nm3jZjFLtC63q4awjf0pOYf4sIdAof4ebxmwuBPWvdQlyUCKz9FvFNjNCVcr8svpLa1tZ0WQfYKJs+yiO00g4ZBlflSuW/OWv/+AH/odooB6v9coN1LxZPV32Ok1jW1CPySGFwkAQ9gC+2M3pyxOiPac29WFCQjzdz/ljl0MrKtyWO+F/pfpGNNRYEzlxNowRKWPSRr48FatksDvajZlnoLRGpE5z+oJ/BR/hBwtbyBMr8/vE8F9pfmbSaeQNMOK0SHO/sBCkbwfhKM/vBwqE8LWzN0wnHeYM3T4/OCL4++ycDBVbiqY9u0t/GCEgTjvj4ZGhpEo/qwIcKn7Y/XV50CYHUpiJSWtyfwB/1iqkxIgYf7GEGgDRiRaU+GgyRsPjDDYqHqsH/rU54fh2cadykOaNn4gyry+bQ0ZqoZU3OdxCN6oCE1nscgqcIrKdVMGen6XegeMwmIDjVyz2RjWgnOE7qoCWiCNuzLLtd3IIBF8zsByxmzKWcxdtC+X6diaVIHvF7qRj7TtSQx+dhkEz5dXOLaifB1uERNHJ30WLQt3rQSXe3KlDKtcNq/TWDs4xzB6ksyc+ltnvlfXQ6KILZB/Z8KazFDt2JhTefkLmi6MZgM8wHn1Ai7pMqEgdDPPyq+fR4Sd2OtJgtfQ==
+X-Forefront-Antispam-Report: CIP:222.71.101.198;CTRY:CN;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtprelay.cixcomputing.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(23010399003)(36860700016)(7416014)(376014)(1800799024)(82310400026)(10067099003)(56012099006)(261026140227099003)(261026121527099003)(261021121427099003)(261028144727099003)(261022105027099003)(261022075727099003)(261102123227099003)(261009223027099003)(20046099003)(21026099003)(18002099003)(22082099003)(5123799003)(6133799003)(3023799007);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: nhUOq7SAjY+6Ek2/HauF9L+coqYb2CFaxarhBeM9uIy31cbseTq06hVCR8DP7yg+b18jxgeebFBXLaPwVn4RQqtjGnQIdEAUghJjd5G02DXllAwLx5Qta09LNIx3EgIQokXyKUs6lJVDJs7+vOBavmkRVfIrM4QrNorWMlMd9mh4ZdpnIQzhY2jD98yiD2sjGBsCgyQw3eFhE/fGl3rrTJiS4PDVXg7UMBfkbYpuD6IYLWjNGW7vJ2MizTGZx+M4+oxQ8b5nzFxO3vMS1t0t1GlQ4KjiILfw2X1kXX8fZflpi/kcPSWTdEJRJ+O8vf/lElRlHffF1Qbf+ykip1QlleAA14RVDKWaUQpi3OYku0fxW5/S0d4eEwnrfi3CMud3kFN56pNy6aEHbPJsRpgz34E8ziIu1xMFyaRhmNInuAv0LAWhyAP69z+wzF/WR77n
+X-OriginatorOrg: cixtech.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Nov 2026 01:51:41.6300
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8bdd317b-3690-4233-2741-08df45167e4d
+X-MS-Exchange-CrossTenant-Id: 0409f77a-e53d-4d23-943e-ccade7cb4811
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=0409f77a-e53d-4d23-943e-ccade7cb4811;Ip=[222.71.101.198];Helo=[smtprelay.cixcomputing.com]
+X-MS-Exchange-CrossTenant-AuthSource: TY2PEPF0000AB8A.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEZPR06MB842317
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261117_173737_236819_92AF57B8 
-X-CRM114-Status: UNSURE (   8.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.4 (--)
+X-CRM114-CacheID: sfid-20261117_175149_117889_A45247CD 
+X-CRM114-Status: GOOD (  15.63  )
+X-Spam-Score: -1.9 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,50 +128,180 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The probe path enables the pclk clock with clk_prepare_enable() but
-none of the error paths that follow (reset_control_deassert(),
-devm_phy_create(), devm_of_phy_provider_register()) disable it again.
-When one of them fails, the prepared and enabled clock is leaked.
+Document the USB/DP combo PHY of the CIX Sky1 SoC. One PHY instance
+provides one SuperSpeedPlus USB lane and up to four DisplayPort lanes of
+a USB Type-C port; consumers select the part they need with a PHY type
+cell, using PHY_TYPE_USB3 or PHY_TYPE_DP.
 
-Use devm_clk_get_enabled() to get the clock, so the clock is disabled
-and its reference released automatically if probe fails after it or
-the driver detaches.
+The PHY performs Type-C plug orientation switching and USB/DP lane
+muxing in hardware and is therefore described with the properties of
+the common USB switch binding. The plug orientation is switched through
+the S5 system controller, identified by the "cix,usbphy-syscon" phandle
+followed by the PHY instance index.
 
-Fixes: 76aefb221146 ("phy: amlogic: Add AXG MIPI D-PHY driver")
-Signed-off-by: Xiangwu Lai <laixiangwu@cmss.chinamobile.com>
+Reviewed-by: Fugang Duan <fugang.duan@cixtech.com>
+Signed-off-by: Gary Yang <gary.yang@cixtech.com>
 ---
- drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c | 6 +-----
- 1 file changed, 1 insertion(+), 5 deletions(-)
+ .../bindings/phy/cix,sky1-usbdp-phy.yaml      | 150 ++++++++++++++++++
+ 1 file changed, 150 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/cix,sky1-usbdp-phy.yaml
 
-diff --git a/drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c b/drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c
-index 5e2b7d93b..8a132b0e7 100644
---- a/drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c
-+++ b/drivers/phy/amlogic/phy-meson-axg-mipi-dphy.c
-@@ -355,7 +355,7 @@ static int phy_meson_axg_mipi_dphy_probe(struct platform_device *pdev)
- 	if (IS_ERR(priv->regmap))
- 		return PTR_ERR(priv->regmap);
- 
--	priv->clk = devm_clk_get(dev, "pclk");
-+	priv->clk = devm_clk_get_enabled(dev, "pclk");
- 	if (IS_ERR(priv->clk))
- 		return PTR_ERR(priv->clk);
- 
-@@ -367,10 +367,6 @@ static int phy_meson_axg_mipi_dphy_probe(struct platform_device *pdev)
- 	if (IS_ERR(priv->analog))
- 		return PTR_ERR(priv->analog);
- 
--	ret = clk_prepare_enable(priv->clk);
--	if (ret)
--		return ret;
--
- 	ret = reset_control_deassert(priv->reset);
- 	if (ret)
- 		return ret;
--- 
-2.50.1.windows.1
-
-
-
+diff --git a/Documentation/devicetree/bindings/phy/cix,sky1-usbdp-phy.yaml b/Documentation/devicetree/bindings/phy/cix,sky1-usbdp-phy.yaml
+new file mode 100644
+index 000000000000..9bdd01e348b2
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/cix,sky1-usbdp-phy.yaml
+@@ -0,0 +1,150 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/cix,sky1-usbdp-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: CIX Sky1 USB/DP Combo PHY
++
++maintainers:
++  - Gary Yang <gary.yang@cixtech.com>
++
++description:
++  The CIX Sky1 USB/DP combo PHY provides one SuperSpeedPlus USB lane and
++  up to four DisplayPort lanes for a USB Type-C port. Which of the two
++  functions is in use depends on the Type-C alt mode and on the plug
++  orientation.
++
++allOf:
++  - $ref: /schemas/usb/usb-switch.yaml#
++
++properties:
++  compatible:
++    const: cix,sky1-usbdp-phy
++
++  reg:
++    maxItems: 1
++
++  "#phy-cells":
++    description: |
++      Cell allows setting the type of the PHY. Possible values are:
++      - PHY_TYPE_USB3
++      - PHY_TYPE_DP
++    const: 1
++
++  clocks:
++    maxItems: 1
++    description: PHY APB clock.
++
++  resets:
++    items:
++      - description: PHY core reset
++      - description: PHY APB preset
++
++  reset-names:
++    items:
++      - const: core
++      - const: apb
++
++  orientation-switch:
++    description:
++      The PHY handles Type-C plug orientation switching.
++    type: boolean
++
++  mode-switch:
++    description:
++      The PHY handles multiplexing of the USB and DisplayPort lanes.
++    type: boolean
++
++  cix,usbphy-syscon:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    items:
++      - items:
++          - description: phandle to the S5 system controller
++          - description: PHY instance index within the system controller
++    description:
++      Phandle to the system controller used for Type-C plug orientation
++      control, followed by the PHY instance index.
++
++  ports:
++    $ref: /schemas/graph.yaml#/properties/ports
++
++    properties:
++      "#address-cells":
++        const: 1
++
++      "#size-cells":
++        const: 0
++
++      port@0:
++        $ref: /schemas/graph.yaml#/properties/port
++        description:
++          Output endpoint of the PHY for USB, or for DisplayPort when
++          configured into 4-lane mode, which should point to the
++          SuperSpeed port of a USB Type-C connector.
++      port@1:
++        $ref: /schemas/graph.yaml#/properties/port
++        description: Incoming endpoint from the USB controller.
++      port@2:
++        $ref: /schemas/graph.yaml#/properties/port
++        description: Incoming endpoint from the DisplayPort controller.
++
++    additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++  - clocks
++  - resets
++  - reset-names
++  - cix,usbphy-syscon
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/cix,sky1.h>
++    #include <dt-bindings/reset/cix,sky1-s5-system-control.h>
++
++    usbc_phy0: phy@9030000 {
++        compatible = "cix,sky1-usbdp-phy";
++        reg = <0x09030000 0x40000>;
++        #phy-cells = <1>;
++        clocks = <&scmi_clk CLK_TREE_USB3C_DRD_PHY3_GATE>;
++        resets = <&s5_syscon SKY1_USB_DP_PHY0_RST_N>,
++                 <&s5_syscon SKY1_USB_DP_PHY0_PRST_N>;
++        reset-names = "core", "apb";
++        cix,usbphy-syscon = <&s5_syscon 0>;
++        orientation-switch;
++        mode-switch;
++
++        ports {
++            #address-cells = <1>;
++            #size-cells = <0>;
++
++            port@0 {
++                reg = <0>;
++
++                endpoint {
++                    remote-endpoint = <&usb_c_connector>;
++                };
++            };
++
++            port@1 {
++                reg = <1>;
++
++                endpoint {
++                    remote-endpoint = <&usb3_controller>;
++                };
++            };
++
++            port@2 {
++                reg = <2>;
++
++                endpoint {
++                    remote-endpoint = <&dp_controller>;
++                };
++            };
++        };
++    };
 
 -- 
 linux-phy mailing list
