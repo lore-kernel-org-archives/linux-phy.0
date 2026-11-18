@@ -2,56 +2,65 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2F0D960A3808
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 08:16:56 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A86F7606A32A
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 09:28:35 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=q+aCTSvn;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=eyZgpKqi
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=sxkikuFg;
+	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=cherry.de header.i=@cherry.de header.a=rsa-sha256 header.s=selector1 header.b=kIy8hHF9
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=4t8CtLEyw9OT2CoUVYoaE4UladG7sOSWbeaWGEtjGgc=; b=q+aCTSvnKpVTLBnZTRe7ZsdvoZ
-	GUYxHJDUnlbVGPHTEGZBAEW9isunjGq6af7sMO9qfv6bSGYyveMWya+SNRozS7N5f0NSRxloaIeZj
-	AOS292ZT6g4rXTh2XI2oBGmmjT3d/8j8UlUYFv9hGTxHujhzZ/+8ViZFalnUexx7oGn4ZBZLTfW5r
-	7DEb477rZWw3Wwq6oGbv+2mcmivWBkEcEC4v1eIePiawVFKMLCsjQtbMb44TFcCfsiXhahOgKUIFO
-	nE4o3wr4ebSgT2SEeuhHqBe0BQLNHDt/e3VNY0v2toEqRzQvzBcl/63EszbSb/sSnNR4mBXlf6nJn
-	1MBNNgUQ==;
+	bh=ZB31yT7P5VeJeZ/i+NVKWOKHx2W6puZ/BvGX9UZX5HU=; b=sxkikuFggIVyai+kn5/VwM9+jD
+	egZw67lveZJWeNungNt+bJNrcg+jjdOX2DrTjM+X/ixEO3HDdXfzi4nKrljbVq0X1tza8MI/qc/J4
+	NKVtd/bHRlix9YIhyEjpRuSkHOMquORx+76aIroWHbEOHZ3aQIcXgKy+T730fOJTlKzq55LlkD1qF
+	gBb82waQWbDuPKUr9U3bgtuZPXgv9ab2QZnLWNKMZXZIjdk9WWfuVsk8pko9bikkCj1FjdQQumXbN
+	XTMRwH1C9BGEqbg1jrCTFUOZpk76rT6gfCyrQbFgQJUzTC2X8sLwFHZK/dRZx7qiNde38m79WV73l
+	tH6VtxXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTaqd-000000088zY-2PYW;
-	Wed, 18 Nov 2026 08:16:55 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xTbxz-00000008N6i-0zWe;
+	Wed, 18 Nov 2026 09:28:35 +0000
+Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTaqb-000000088wn-2wnd;
-	Wed, 18 Nov 2026 08:16:54 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id CD44261F84;
-	Wed, 18 Nov 2026 08:16:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C6151F000C7;
-	Wed, 18 Nov 2026 08:16:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794989812;
-	bh=RgUy9ilEvlBEFEAO7I4cAOPp0gwuSrRk3EbpdwQzjWw=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=eyZgpKqi1/eEwQCPJrV3JHvcJ7BJGBNdzKNHXVr3jKwh4sH1XYEDz2ntepME7DESg
-	 RynbIxG67nQEjpWK8wULhrtDLIgfzLw02BoIEZemabyGctWPxDh2ED0VNIWZ7Nn/ii
-	 oQEMNKOi8vzgwiCjW+VzZrLrH/7Lszdd8R9FBpF6hLobiDEl9x5afuwm6I6NTLQ7XX
-	 W9Xo3n4885KmOX0PxkdYbqvJFTTV6b/fkalC3u5gEJXdvnsmvWR32N2eFpqGHpg2a2
-	 hyGKW4gdmpSFb5UQH/+v4aMbk0k9fpXxTssQD0m1F7/Ed1YmmfsiR9haZJMrES+4Zh
-	 GEib5Gvt6vpSA==
-Message-ID: <3a9e999f-5ff5-422c-aa65-b8560dca84bc@kernel.org>
-Date: Wed, 18 Nov 2026 09:16:46 +0100
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
+	id 1xTbxt-00000008Mzq-15HT;
+	Wed, 18 Nov 2026 09:28:33 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=QIhfUyvpMj+jaGVKI0pNQODv/zBq8AoULZOpnU6BLZacNPNls5sA2JT2DjxP8GzBE8Zgcp+MJaBrtxBHfo6nCj6zO00FuPUpQIsSjyTxmi0sLJEB8FPyfMXO4s82bilLO86/jtalRKqdMyXsMY+CeAhPpUkbknOt34DY52E98F6BsaKZEAW4PrE53WUSMJMa9csB2mauh38JdoIokKZhnzZZZven8unfSs1R3FX02gwc+gnfiu27yKntJTDuoctGcotZVjvqVOMKr5imG9slnbwYJHur1I5212i732efI91QbekoVLICrv82kYhD5sx3fEDQ2vdkSS7k+mGJQjdV+w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=3j4jqu6qpwCjOYNgzyNa7FKYtVY3lzEeW4eukRCRCbY=;
+ b=ONqtjsCZt8wpezu/4GqlV5lDO4QKR95XN5O8fLk25pTc1oFHTxRhoo+dsDwp4c4OWt4H9haEP9m4Thaqll1EfPBvXaOHkPZHy4HG7uHWQwsd98fgBPy+RkE/J3b4b7x4RRAMAr9imcgyDLI4+m8KErf3mWuRKl4wkpu/P95mS9y14DgeVhdIb6tj3GL1oLFV+h54eaBXb4sPpR4ePW4f+RjGuLdIi3I88Ebvyr8wy3SGVETtEqbrSVV9eA6QHtv3+wTyai32EKj+48FOoIZdJhwMvJgL39KvmZWRam6fZjhRmvGQk3uW8ldkixPvwSYMbgWfQCcPW9jJtfaxWMVZnQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=cherry.de; dmarc=pass action=none header.from=cherry.de;
+ dkim=pass header.d=cherry.de; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cherry.de;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=3j4jqu6qpwCjOYNgzyNa7FKYtVY3lzEeW4eukRCRCbY=;
+ b=kIy8hHF934o5Vnadtu9j1yKrY/ZaSYqjo1pAHB2276KN/S4VVgTjpeK4kAjV9dp7oKftqYhVQfTO7xVAGr+yUZjOALJsPBjj3oYjk64iBQl9sZa1jk95X/LMkAU7H1e4x8Fkgnxu8wimaia4BnQCUbWY2H4ir7/bKF9WoNCuHNo=
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=cherry.de;
+Received: from PA3PR04MB11153.eurprd04.prod.outlook.com (2603:10a6:102:4ab::7)
+ by GV1PR04MB10775.eurprd04.prod.outlook.com (2603:10a6:150:213::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.14; Wed, 18 Nov
+ 2026 09:28:15 +0000
+Received: from PA3PR04MB11153.eurprd04.prod.outlook.com
+ ([fe80::6b02:c0eb:95a4:3c3d]) by PA3PR04MB11153.eurprd04.prod.outlook.com
+ ([fe80::6b02:c0eb:95a4:3c3d%5]) with mapi id 15.21.0615.013; Wed, 18 Nov 2026
+ 09:28:15 +0000
+Message-ID: <fe324e43-50c4-4f0e-9bb0-57ea7172530b@cherry.de>
+Date: Wed, 18 Nov 2026 10:28:13 +0100
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v7 2/9] dt-bindings: phy: rockchip,rk3588-mipi-dcphy:
  Select TX or RX, add phy-type
-To: Jason Yang <jason98166@gmail.com>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
+To: Krzysztof Kozlowski <krzk@kernel.org>, Jason Yang <jason98166@gmail.com>,
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
  Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
  <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
@@ -62,55 +71,83 @@ Cc: Michael Riesch <michael.riesch@collabora.com>,
  Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, Quentin Schulz <quentin.schulz@cherry.de>
+ linux-kernel@vger.kernel.org
 References: <20261118-dcphy-rx-v1-v7-0-8de1adac3a74@gmail.com>
  <20261118-dcphy-rx-v1-v7-2-8de1adac3a74@gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ <3a9e999f-5ff5-422c-aa65-b8560dca84bc@kernel.org>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <20261118-dcphy-rx-v1-v7-2-8de1adac3a74@gmail.com>
+From: Quentin Schulz <quentin.schulz@cherry.de>
+In-Reply-To: <3a9e999f-5ff5-422c-aa65-b8560dca84bc@kernel.org>
+X-ClientProxiedBy: VI4PEPF000001D0.AUTP296.PROD.OUTLOOK.COM
+ (2603:10a6:808:1::852) To PA3PR04MB11153.eurprd04.prod.outlook.com
+ (2603:10a6:102:4ab::7)
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PA3PR04MB11153:EE_|GV1PR04MB10775:EE_
+X-MS-Office365-Filtering-Correlation-Id: f9ca8c8a-23d3-4be5-0455-08df455645de
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|7416014|1800799024|376014|10070799003|23010399003|6133799003|22082099003|18002099003|261009223027099003|4133799003|261022113327099003|261021135927099003|261022075727099003|261022105027099003|261022115727099003|261021123027099003|261021121427099003|921020|261026121527099003|261026130827099003|261026140227099003|261026135527099003|261102123227099003|261028144727099003|5023799004|56012099006|11063799006|261021130227099003|261021133027099003|10067099003|4143699003;
+X-Microsoft-Antispam-Message-Info: dtCxoK5+m0lLkMz4DJJYBetXeorWedS4YVagSWYvuYjY1fheaXbAc6sl94EiWcghqESLtRrEw6adUqQanRCINcEC6wU43jqapMfxZeZzK+hyHv7gE682GNYbowc2w5DSa+F62UGQTzF1Hz/hVlBud0zVoemrHpQehp9MkLmwftEzEw/Pj7QU9Zv2p5TRSIMuApL74/Incx9umwyrHIwxknqsclFjtX7pSlbDKprIcsuIqhrHcofOLearfaX7k1gAKB5CxyRhItFk0wDjA8uxQMARYGUrBGhunbk5UPcvfvhGEVdgt5YRVErlFF3ehzWxcy46r+hQY3UjyFYNTT+FpFhuah0FiOXJhShT4/+s00sHdjGUYGi3z6kS0/UUfaefAzSKhPluNKzJ4NOd7rVkw87YphplTJXNeyNClT0vej4pv5gMQ4+7OXO/J7TXJvqGZt0PvxhvlRrfXp8UA5hTW/Sg4eGcXNHJ/FCq/v1kbBhaqL1RdIokB+nzP0kTOFyQxRi1E3Vs87il4NDmebV6ATyhVUNm3fnO56PuqCcrHYiWFoLmqTC6FF0bmJE8o8MRw7WttBeFcEEh81i6AWxHcz+UkvUBSQGdXJjZgRDFLYD7Ek1IVZWaBHBf5bFHlDATh0UNgdvgOsVYli3QwRYNCLWJItZUPEzQpL649QOvASw=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA3PR04MB11153.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(7416014)(1800799024)(376014)(10070799003)(23010399003)(6133799003)(22082099003)(18002099003)(261009223027099003)(4133799003)(261022113327099003)(261021135927099003)(261022075727099003)(261022105027099003)(261022115727099003)(261021123027099003)(261021121427099003)(921020)(261026121527099003)(261026130827099003)(261026140227099003)(261026135527099003)(261102123227099003)(261028144727099003)(5023799004)(56012099006)(11063799006)(261021130227099003)(261021133027099003)(10067099003)(4143699003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?OE1ucGxDdS8xZzdwYlRVMUF0RVFpOGtQQUVtYThTQ2p0ZkVMa0tJZ1ZBeUg1?=
+ =?utf-8?B?ek93ZHdxWENTbllnc2xSM1o1UFBpbW5vVzd4RnlhKzF1dTd0VUE0cFZNOWM4?=
+ =?utf-8?B?a1RuRFJnWHNaS292dE9vRjIrVy92L24velh4N3JveUJWbllXekRkc3dyUHN4?=
+ =?utf-8?B?K2xjV2pkYThSZ0NuWU9oQnQvLzVmQzNLZTlyRG1kd1p0dHhLZ09LUTZPcFlU?=
+ =?utf-8?B?RHNtNURuN2xUdUhxZHBIbndxSHBmQTRQbk92RzRmL0ptSEJ5dXBhMmVBVnky?=
+ =?utf-8?B?YlFrVFlXTVNObW1QdHNNVDRvT1Y1NXIyTjBJMHM0WGhTT1FRQUlxejdaZkFX?=
+ =?utf-8?B?RzFISmMwLzJwMFZ3MDF6L3k3Z1lKcTBWK2RaNlFsYVVXSEdKSW5Yd1FTbDFm?=
+ =?utf-8?B?MndzV3lUSERtMFhuWEVpOGdBK0pnYnptZ0tPM3UyRHg1ZitKSDJ3bmVUYWpU?=
+ =?utf-8?B?VjdqR3N0WDRUdzB0L1JaVHRyUHRmdEQ4UDlGbnVWakFhWWNoVE1pbWhwSzVh?=
+ =?utf-8?B?UVNsMExqYko0ZUlOQVVQN3NRdWwvQ00yTDhGZDdwTCtsUDVNNENFS2lVTmlk?=
+ =?utf-8?B?dEQ4RUNLbGxHbTRFSE9PM0x1R3p5VzdXSHAxdkE3SnM2UUpZek8xZE9ENW02?=
+ =?utf-8?B?c0VhczE2UUl5MUVYMlBjM1FRaFh5RlRvc0lKbk5QdExGbVMrN2J4YmxnTTly?=
+ =?utf-8?B?QXdLdFBsaGt6aFVqYUxJZlZlcGZZK0gwRDRTR0J4MHRFSGZYYlJXWmo0NDFE?=
+ =?utf-8?B?enpOWEI2Q0hxK0cyS1A1U040NDMxTDFkeG11Z3J5TFI3a3l3S1ZXb2hndkts?=
+ =?utf-8?B?UkF5Q0lvYzRad0NqNWQ0c1ZSSFd0VGxzSHdmeFlqOU9RWTdYcU5HczU4bGl2?=
+ =?utf-8?B?OVl5bmZYMlExMGVMMnI3QmtmUEpvVkNLNTNCTk5jNjJ1dU1JWTZWaFpSMnJP?=
+ =?utf-8?B?a0VkdEczRU9xcW9WTW10aDVHK05BcXIvaHJJUTVWZktpK0pJQ29oV3gwSGNP?=
+ =?utf-8?B?MFpVZkFqR1l1RDJiZG5SVjJ0blhESVQwR2JwOExLL2g3VUlLZ2F4TnVPY3Vj?=
+ =?utf-8?B?MmowMWlVeDJ6cHlaK1JMQTdYeW1pS1dwL3kyNGhwRXJlWTVoQzcrZXFyTm9S?=
+ =?utf-8?B?ZXRSTmFqUGtXUlVnTzBTUVBQUnBLQ2QyWHRpVU8yQUtQY0xVUWs0MVI3aVh4?=
+ =?utf-8?B?ZENqQUlhSEtjdk1hR2ZWYmpuQ1Bqd3hYWVJtc2ErZnNCNUxMNFkyNzdNQ1FZ?=
+ =?utf-8?B?ZEF6SjFWc3NtT0Jqa1M5T0RUbDFSYnpJSWhIeUFvUDgwSVZINlVlNjMzcVQr?=
+ =?utf-8?B?NkpSSVNRazY5c3REbGJWK1J0OTFnUHBOYXRWamU4TFNSUm9OZThudVdpSC8v?=
+ =?utf-8?B?YTNZb0Z1QjZtY3JxZmVnYXVmUXFlL2RGV2pROHhpOERiazg4TUc1NTAxVUtL?=
+ =?utf-8?B?RnNXK1pqTXNtdmZtUXgvK3JFc3dpTEVPZEtvelllamNHUER3ZXNVeVViSmk0?=
+ =?utf-8?B?aG9DbDhsRnU3Y2pKaUVuQStJdnc4MFY1SlBHQXFPKzdnNmdiMzAwSmI3NExs?=
+ =?utf-8?B?Ni9zcUxhTzMyVktZQWlmS0NVVGZCZjdxZ2RtNGV4R2lCK1NSMG4zZlBMdkZR?=
+ =?utf-8?B?VnZzT3hKTVRqajV6cXRJOEZsWVFQRU9NUXR5c1BPb2JHRzVQQTZlc0s3c1Jn?=
+ =?utf-8?B?Sm5LZS90djZxVnJUaENKMVliTHg5bDczOFM1OTNtNWpGa0RwSUdmbTJVY09J?=
+ =?utf-8?B?Tmxza2x6dnF0NWYvK25rdE1DUWl1aFlKZTJ2bVNaTHhiVFBCUVB2aFRTbk9I?=
+ =?utf-8?B?aXFEUS9DZkQ0SlFmVTNIV0FqOTMwV1JuRHFVb0VJNC9xTnRDQUhqUjVNNDNW?=
+ =?utf-8?B?OUliQVU4dy9SSEpNMlRJQVRhekpyTUZwdnJhUXlPdUx6RjhNMnRUdm1ZbVpK?=
+ =?utf-8?B?ZVc5SHh4OTV4bnFCVU16dUJYVFNzejNTNlp3RjFnTnBsZ21DMXJpaS82RXl6?=
+ =?utf-8?B?cmtyM0dORU5GdlFtMlo5WjMyL0IxU0h6b2lmc051cG9sUkJVbmVRVldyWEov?=
+ =?utf-8?B?MWlNR0doY0VpOXJoeEZsdklXRjFlS21SWlVuc0xONFVCbm83QjlXSDVvMTJa?=
+ =?utf-8?B?bHd4ODI2TkVFK21VZU9SaVRQUFVNV3hIOGR3NXFZekYzOUFCT3RmRWhPdHRS?=
+ =?utf-8?B?QXhMRnBMU1JFRU13bWl0UDVaVjl5YWs4ZjIzVERUOTZET1RkNXJqUHZmeFNh?=
+ =?utf-8?B?T2dXaXhJblZkYmo5UTJJNXFiUVIvaVU3dTFEVDlpVlI2SzVzMmN5dEtGRHJr?=
+ =?utf-8?B?RmlhNUo1bi8yTUlGRkZxVHYydjM3OW90c3R4aG1FMHdoUWJEbDhXNWQ4WXV2?=
+ =?utf-8?Q?MkAsQoh8JemvQ5qRR8eByr/TMgTVi16gl0GYZRp0e2seb?=
+X-MS-Exchange-AntiSpam-MessageData-1: 3zou1bon8g+sjcpJA4wUsCzhbUf/Qyg2xEc=
+X-OriginatorOrg: cherry.de
+X-MS-Exchange-CrossTenant-Network-Message-Id: f9ca8c8a-23d3-4be5-0455-08df455645de
+X-MS-Exchange-CrossTenant-AuthSource: PA3PR04MB11153.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Nov 2026 09:28:15.3121
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 5e0e1b52-21b5-4e7b-83bb-514ec460677e
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: wMKPwrx4QXfoFtvyReibaq7mCZtvLOw+/yPy5DV69KldQKMLiSHc9sQKI/q+5dkMoKDEE4ULxXtqHkc4r6TujeX4BhrmwVBCNI107hW0piU=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB10775
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261118_012829_913003_49ECE65E 
+X-CRM114-Status: GOOD (  19.80  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,8 +157,8 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
@@ -130,56 +167,77 @@ X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 18/11/2026 06:55, Jason Yang wrote:
-> The Samsung MIPI D-/C-PHY block on RK3588 and RK3576 has a transmitter
-> for DSI and a receiver for CSI-2, and the DSI host and the CSI-2 host
-> can use the transmitter and the receiver at the same time. The single
-> cell of this binding selects the mode and refers to the transmitter, so
-> the receiver cannot be described.
-> 
-> Change the cell to select the transmitter or the receiver. The
-> transmitter and the receiver cannot operate in different modes [1], so
-> the optional phy-type property of the PHY node sets the mode for the
-> whole block, D-PHY by default:
-> 
-> 	/* the MIPI DSI host, driving the transmitter */
-> 	phys = <&mipidcphy0 PHY_DIRECTION_TX>;
-> 
-> 	/* the MIPI CSI-2 host, driving the receiver */
-> 	phys = <&mipidcphy0 PHY_DIRECTION_RX>;
-> 
-> For C-PHY the consumers stay the same and the PHY node gets:
-> 
-> 	phy-type = <PHY_TYPE_CPHY>;
-> 
-> Existing DTs on a newer kernel: PHY_TYPE_DPHY and PHY_TYPE_CPHY remain
-> valid as deprecated values. They select the transmitter and imply
-> phy-type = <PHY_TYPE_DPHY> or <PHY_TYPE_CPHY> respectively, so nothing
-> changes for them.
-> 
-> New DTs on an older kernel: an ABI break. The older kernel ignores
-> phy-type and takes any cell value as the mode of the block. A DSI node
-> with PHY_DIRECTION_TX therefore gets no display, and a CSI-2 node with
-> PHY_DIRECTION_RX gets no camera.
-> 
-> [1] RK3588 TRM: section 22.1 (overview): "The TX and RX only support
->     operate in the same PHY mode."
-> 
-> Suggested-by: Michael Riesch <michael.riesch@collabora.com>
-> Link: https://lore.kernel.org/r/94d47cab-10c6-4ec3-84a0-3bddc9d67f5f@collabora.com
-> Signed-off-by: Jason Yang <jason98166@gmail.com>
-> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-> Reviewed-by: Michael Riesch <michael.riesch@collabora.com>
-> Tested-by: Quentin Schulz <quentin.schulz@cherry.de> # RK3588 Tiger CSI1 2-lane IMX219, CSI0 2-lane OV5675+DSI
+Hi Krzysztof,
 
-Please drop the tag, this did not happen. In the future, please add only
-applicable tags. Otherwise share how this code was executed and tested
-on the actual hardware (make process, like building code, is obviously
-not testing).
+On 11/18/26 9:16 AM, Krzysztof Kozlowski wrote:
+> On 18/11/2026 06:55, Jason Yang wrote:
+>> The Samsung MIPI D-/C-PHY block on RK3588 and RK3576 has a transmitter
+>> for DSI and a receiver for CSI-2, and the DSI host and the CSI-2 host
+>> can use the transmitter and the receiver at the same time. The single
+>> cell of this binding selects the mode and refers to the transmitter, so
+>> the receiver cannot be described.
+>>
+>> Change the cell to select the transmitter or the receiver. The
+>> transmitter and the receiver cannot operate in different modes [1], so
+>> the optional phy-type property of the PHY node sets the mode for the
+>> whole block, D-PHY by default:
+>>
+>> 	/* the MIPI DSI host, driving the transmitter */
+>> 	phys = <&mipidcphy0 PHY_DIRECTION_TX>;
+>>
+>> 	/* the MIPI CSI-2 host, driving the receiver */
+>> 	phys = <&mipidcphy0 PHY_DIRECTION_RX>;
+>>
+>> For C-PHY the consumers stay the same and the PHY node gets:
+>>
+>> 	phy-type = <PHY_TYPE_CPHY>;
+>>
+>> Existing DTs on a newer kernel: PHY_TYPE_DPHY and PHY_TYPE_CPHY remain
+>> valid as deprecated values. They select the transmitter and imply
+>> phy-type = <PHY_TYPE_DPHY> or <PHY_TYPE_CPHY> respectively, so nothing
+>> changes for them.
+>>
+>> New DTs on an older kernel: an ABI break. The older kernel ignores
+>> phy-type and takes any cell value as the mode of the block. A DSI node
+>> with PHY_DIRECTION_TX therefore gets no display, and a CSI-2 node with
+>> PHY_DIRECTION_RX gets no camera.
+>>
+>> [1] RK3588 TRM: section 22.1 (overview): "The TX and RX only support
+>>      operate in the same PHY mode."
+>>
+>> Suggested-by: Michael Riesch <michael.riesch@collabora.com>
+>> Link: https://lore.kernel.org/r/94d47cab-10c6-4ec3-84a0-3bddc9d67f5f@collabora.com
+>> Signed-off-by: Jason Yang <jason98166@gmail.com>
+>> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+>> Reviewed-by: Michael Riesch <michael.riesch@collabora.com>
+>> Tested-by: Quentin Schulz <quentin.schulz@cherry.de> # RK3588 Tiger CSI1 2-lane IMX219, CSI0 2-lane OV5675+DSI
+> 
+> Please drop the tag, this did not happen. In the future, please add only
+> applicable tags. Otherwise share how this code was executed and tested
+> on the actual hardware (make process, like building code, is obviously
+> not testing).
+> 
 
+What did not happen? I tested the v6, on the reported hardware, on the 
+reported two DCPHYs, see 
+https://lore.kernel.org/all/840285d6-a8a6-4777-8d38-6758ccbc7723@cherry.de/
 
-Best regards,
-Krzysztof
+If you're complaining about the Tested-by being given to a dt-binding 
+patch, it was provided as an answer to the cover-letter, and the 
+contributor is clearly using b4 considering the last few lines from the 
+cover letter (base-commit/change-id lines). b4 trailers -u applies the 
+tags given to the cover letter to all patches in the series, so if 
+there's someone to blame here, it's me for adding it as an answer to the 
+cover letter. So now the question is, do you want me to add a Tested-by: 
+to each individual patches of long series when I technically built and 
+tested only based on the last patch of the series, which is only a DTS 
+patch adding the nodes to the RK3588 DTSI? In that case, I cannot 
+provide Tested-by for patches before the last, as it can simply not work 
+at all until the last (actually all of them, except the bindings) patch 
+is applied.
+
+Cheers,
+Quentin
 
 -- 
 linux-phy mailing list
