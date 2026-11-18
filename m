@@ -2,91 +2,68 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7FE96606A333
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 17:07:51 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9DE0E606A32F
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 19:10:55 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=MmktVX61;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=QCgNfw9F
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ZqxqlPag;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=aliel.fr header.i=@aliel.fr header.a=rsa-sha256 header.s=courrier-s1 header.b=DZPLUL18
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=7AOiSe5KObppRXGd8Z5lcm8eeBu2uSCRauNsNYpjEzc=; b=MmktVX61DtmHWAhxZ1MDsOaR7p
-	P36ftPdJN04Nsz3sVhHrbTUcJs8TGx9Oey8x4OllroXOQWYw5kMiEodOiRgoaSMyLuMNj2iujcrNf
-	wLGOy5EdWnqQ8brzNj3zh4peYY5C6qEx5Dk2MJ4Nv7AEtvKY1TBYj8jwuSSz7h6tEtOTeJ9E8S27n
-	I9GbMfBlJXBoThURajlPab9/WkTtQfpgGF1bXtIl6NXuRX5RiggntyFPglT13a2xr3M7zBjWNc33m
-	UvF4BKukkVB7FSuDWvk9lzgcRzB/FjOn3iUt03BVGtN2w7ikAyVBFiUNbkN7ab4PE3FFnDVMliSTC
-	dgome/+Q==;
+	bh=GWsW2hG/ysusA44ghrtOc7DBxcteEB7X5UV/UF6U+L8=; b=ZqxqlPagb/Eg+omKaGjvc2Ycdo
+	vrc+BjCppTkEZ0rXmW/XT3qSd5EBbnDLBXc5Rg3x78LWapJykhw2KcwhEzJRiYvyNNSn2rVyU3/lN
+	luY3vXnKkR8DhEOKbD5bsO9GlIcBJ+vuT1z5bEC2hR3EyyIdkG3Jt+AhtTt03/rSYLV4bC9LlWNbg
+	tL01pTL1yCU12sss/yRiy3JNAQxRA6LEakbDRITQCryRHP0RHaisJlR87KjbqzYgWjqJpKRJTL8//
+	FX9ipJ69ZYD/As9g7twrO3VuQFSrouPiQDk++UBZiMT4/miMUo+QBy9wpbGkENAJAxzhetIV6FOeg
+	41ieLJLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTj8Q-00000009hpQ-3ioj;
-	Wed, 18 Nov 2026 17:07:50 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xTl3X-0000000A5M4-1UF0;
+	Wed, 18 Nov 2026 19:10:55 +0000
+Received: from courrier.aliel.fr ([2a01:4f9:c011:1c83::1])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTj8P-00000009hol-1E6A;
-	Wed, 18 Nov 2026 17:07:49 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id A94AA45602;
-	Wed, 18 Nov 2026 17:07:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 514611F000C4;
-	Wed, 18 Nov 2026 17:07:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795021668;
-	bh=1082igN8AgArxQJ6WvmrNI+Gc7WS+2/LYjRpQ2Ge3Gs=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=QCgNfw9FgQK+sm5NRvdWobhMGhtjBzuObXQHEjX1yuhdiiBLYB0bTRTLmyx6fA8kJ
-	 UHbkZjfg2xM6NV6Fx09wyv0Qw9cmOGqEbDfQynp0Xfyg3RI+neNW9r+ioVkyG+/A+5
-	 8x6SbqumZKvLr+liTbgiCqHzllt++Dxv+YHm/HbjShj3gyfRl1pzdQOwAhqNzBovvm
-	 f+PrOSIvLjHTBV0MzhK/eYbE6mY1kut9NlJ6uuMrjLdRizvupv1TeZDHBuSK+Q7zUo
-	 Mibg2IC3WkhnVR7XiiG827juW4oPIHLCViYkj3mA0/csL0NMxbZRVcbTO19V3GeyAy
-	 4FIPM3WQfqiWw==
-Date: Wed, 18 Nov 2026 17:07:39 +0000
-From: Conor Dooley <conor@kernel.org>
-To: =?iso-8859-1?Q?Beno=EEt?= Monin <benoit.monin@bootlin.com>
-Cc: Mark Brown <broonie@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Jun Chang <jun.chang@metanoia-comm.com>,
-	Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Sebastian Reichel <sre@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Jonathan Cameron <jic23@kernel.org>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Thomas Gleixner <tglx@kernel.org>, Radu Rendec <radu@rendec.net>,
-	Samuel Holland <samuel.holland@sifive.com>,
-	Ben Zong-You Xie <ben717@andestech.com>,
-	Daniel Lezcano <daniel.lezcano@kernel.org>,
-	Ulf Hansson <ulfh@kernel.org>, Jisheng Zhang <jszhang@kernel.org>,
-	CL Wang <cl634@andestech.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Wim Van Sebroeck <wim@linux-watchdog.org>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Adrian Hunter <adrian.hunter@intel.com>,
-	Minas Harutyunyan <hminas@synopsys.com>,
-	Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
-	Randolph Sheng-Kai =?utf-8?B?TGluKOael+iBluWHsSk=?= <randolph@andestech.com>,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-riscv@lists.infradead.org, linux-pm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Paul Walmsley <paul.walmsley@sifive.com>, linux-mmc@vger.kernel.org,
-	linux-spi@vger.kernel.org, linux-usb@vger.kernel.org,
-	linux-watchdog@vger.kernel.org
-Subject: Re: [PATCH 00/25] riscv: add support for the Metanoia MT2824 SoC and
- MT5824 EVB
-Message-ID: <20261118-unlovely-danger-3cab5aa87742@spud>
-References: <20261106-mt2824-v1-0-86087eaf5af4@bootlin.com>
- <_koitdIgQPmk89LDhlUlJQ@bootlin.com>
- <20261117-calamity-quiver-96d0d568b338@spud>
- <tSRWYJl8QRO6qpOrYOmeTA@bootlin.com>
+	id 1xTl3T-0000000A5K5-25T5;
+	Wed, 18 Nov 2026 19:10:53 +0000
+Message-ID: <f0c5f3ae-5a37-4f38-bd32-6191a6a98485@aliel.fr>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=aliel.fr;
+	s=courrier-s1; t=1795029044;
+	bh=y9UgIWQynPgPoVUM6/yn261u+b/dkSIroE44iaL3T2g=;
+	h=Date:From:Subject:To:Cc:References:In-Reply-To;
+	b=DZPLUL186iJM63saUsDmf+QkaMlJDFQ0b3i6Pn4Ivn7rDVbd+CdgMfNGuJ5E61TgN
+	 4nqWYMEs0NZYMTWbpqLapborXRKZ7R0tLvAAFshU3+Irce7MP/AlT4f3tisXyihh+g
+	 56re9lp/cNYBe2c8rEQimJQQU13wKmVciZzaOq40=
+Date: Wed, 18 Nov 2026 20:10:11 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <tSRWYJl8QRO6qpOrYOmeTA@bootlin.com>
+User-Agent: Mozilla Thunderbird
+From: linux-kernel-dev@aliel.fr
+Subject: Re: [PATCH 05/10] dt-bindings: display: amlogic,meson-dw-hdmi: Add
+ phys and phy-names
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
+ Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>
+References: <20261117-meson-drm-create-hdmitx-phy-v1-0-9e0ac931381c@aliel.fr>
+ <20261117-meson-drm-create-hdmitx-phy-v1-5-9e0ac931381c@aliel.fr>
+ <3e82658f-1152-4c98-b996-242abc203f74@linaro.org>
+Content-Language: en-US
+In-Reply-To: <3e82658f-1152-4c98-b996-242abc203f74@linaro.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261118_111052_090580_2B86FBF6 
+X-CRM114-Status: GOOD (  12.83  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,96 +73,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2648125315953229010=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
---===============2648125315953229010==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="qHjQ/oQFDRYJL6Ds"
-Content-Disposition: inline
-
---qHjQ/oQFDRYJL6Ds
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Nov 18, 2026 at 05:08:33PM +0100, Beno=EEt Monin wrote:
-> On Tuesday, 17 November 2026 at 18:30:58 CET, Conor Dooley wrote:
-> > On Tue, Nov 17, 2026 at 11:41:52AM +0100, Beno=EEt Monin wrote:
-> > > On Friday, 6 November 2026 at 12:15:09 CET, Mark Brown wrote:
-> > > > On Fri, Nov 06, 2026 at 10:29:57AM +0100, Beno=EEt Monin wrote:
-> > > >=20
-> > > > > The series is organised as:
-> > > >=20
-> > > > > - patches 1-14 add the device tree bindings, the Metanoia vendor =
-prefix,
-> > > > >   the RISC-V board schema and the SoC block compatibles
-> > > > > - patch 15 adds ARCH_METANOIA and selects the AX45MP errata
-> > > > > - patches 16-23 add the reset, SPI, watchdog, MMC, PHY and USB ch=
-anges
-> > > > >   needed to build and probe on this SoC
-> > > > > - patch 24 adds the MT2824 SoC and MT5824 EVB device trees
-> > > > > - patch 25 adds the MAINTAINERS entry
-> > > >=20
-> > > > This sort of thing tends to work better if you submit the patches f=
-or
-> > > > subsystems as separate serieses, it avoids enormous CC lists and ke=
-eps
-> > > > the individual serieses a managable size.
-> > > >=20
-> > > I agree, and I am reworking the series that way. Version 1 was intend=
-ed
-> > > as an overview of the complete SoC support, but it ended up being too
-> > > big for a single series.
-> > >=20
-> > > So version 2 of this current series will be only the platform basics
-> > > (2 patches):
-> > >=20
-> > >   - dt-bindings: vendor-prefixes: add Metanoia Communications
-> >=20
-> > >   - riscv: add ARCH_METANOIA Kconfig entry
-> >=20
-> > Realistically, this does not need to be a prereq either, because you'll
-> > have "depends on ARCH_METANIOA || COMPILE_TEST".
-> >=20
-> True but checkkconfigsymbols.py will then complain about a referenced but
-> undefined Kconfig symbol in the following series.
-
-Do people actually care about this transiently failing in subsystem trees?
-For that matter, do people care that the vendor prefix might fail in a
-subsystem tree as long as it arrives in Linus' tree from another PR in
-the same window?
-
---qHjQ/oQFDRYJL6Ds
-Content-Type: application/pgp-signature; name=signature.asc
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCav3bWwAKCRB4tDGHoIJi
-0mflAP4mPyCBWxjRHa5hM3Th8QKGT/GcS2FW3txaiRkFbQ3zDQEAqGN5oVKdjCh+
-kLDcm68sMAeSJ5Q0sGQa7uNSaVeIrAk=
-=4VYb
------END PGP SIGNATURE-----
-
---qHjQ/oQFDRYJL6Ds--
-
-
---===============2648125315953229010==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2648125315953229010==--
-
+T24gMTEvMTgvMjYgMTM6MzQsIE5laWwgQXJtc3Ryb25nIHdyb3RlOgo+IE9uIDExLzE3LzI2IDIw
+OjMzLCBSb25hbGQgQ2xhdmVhdSB2aWEgQjQgUmVsYXkgd3JvdGU6Cj4+IEZyb206IFJvbmFsZCBD
+bGF2ZWF1IDxsaW51eC1rZXJuZWwtZGV2QGFsaWVsLmZyPgo+Pgo+PiBUaGUgSERNSSBUWCBQSFkg
+bm93IGhhcyBpdHMgb3duIGJpbmRpbmcgYW5kIGRyaXZlci4gRGVzY3JpYmUgdGhlIGxpbmsKPj4g
+YmV0d2VlbiB0aGUgSERNSSBUWCBjb250cm9sbGVyIGFuZCBpdHMgUEhZIHdpdGggYSAicGh5cyIg
+cHJvcGVydHkKPj4gaG9sZGluZyBhIHNpbmdsZSBwaGFuZGxlLCBuYW1lZCAiaGRtaSIgdGhyb3Vn
+aCAicGh5LW5hbWVzIiwgYW5kIHVwZGF0ZQo+PiB0aGUgZXhhbXBsZSBhY2NvcmRpbmdseS4KPj4K
+Pj4gVGhlIHByb3BlcnRpZXMgYXJlIG9wdGlvbmFsIHNvIHRoYXQgZXhpc3RpbmcgRFQsIHdoaWNo
+IGRvIG5vdCBkZXNjcmliZQo+PiB0aGUgUEhZLCBrZWVwIHZhbGlkYXRpbmc7IHRoZSBkcml2ZXIg
+ZmFsbHMgYmFjayB0byBjcmVhdGluZyB0aGUgUEhZCj4+IGl0c2VsZiBpbiB0aGF0IGNhc2UuCj4+
+Cj4+IFNpZ25lZC1vZmYtYnk6IFJvbmFsZCBDbGF2ZWF1IDxsaW51eC1rZXJuZWwtZGV2QGFsaWVs
+LmZyPgo+PiAtLS0KPj4gwqAgLi4uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9hbWxvZ2lj
+LG1lc29uLWR3LWhkbWkueWFtbMKgwqDCoMKgwqDCoMKgIHwKPj4gOCArKysrKysrKwo+PiDCoCAx
+IGZpbGUgY2hhbmdlZCwgOCBpbnNlcnRpb25zKCspCj4+Cj4+IGRpZmYgLS1naXQgYS9Eb2N1bWVu
+dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9hbWxvZ2ljLG1lc29uLQo+PiBkdy1o
+ZG1pLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS8KPj4g
+YW1sb2dpYyxtZXNvbi1kdy1oZG1pLnlhbWwKPj4gaW5kZXggNDE2ZmUyNjNhYzkyLi41YTAzM2Zl
+YzIxYjAgMTAwNjQ0Cj4+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9k
+aXNwbGF5L2FtbG9naWMsbWVzb24tZHctCj4+IGhkbWkueWFtbAo+PiArKysgYi9Eb2N1bWVudGF0
+aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9hbWxvZ2ljLG1lc29uLWR3LQo+PiBoZG1p
+LnlhbWwKPj4gQEAgLTEwOCw2ICsxMDgsMTIgQEAgcHJvcGVydGllczoKPj4gwqAgwqDCoMKgIHNv
+dW5kLW5hbWUtcHJlZml4OiB0cnVlCj4+IMKgICvCoCBwaHlzOgo+PiArwqDCoMKgIG1heEl0ZW1z
+OiAxCj4+ICsKPj4gK8KgIHBoeS1uYW1lczoKPj4gK8KgwqDCoCBjb25zdDogaGRtaQo+IAo+IEkg
+ZG9uJ3QgdGhpbmsgcGh5cy1uYW1lIGlzIG5lY2Vzc2FyeSBoZXJlLgoKT2ssIEkgd2lsbCBkcm9w
+IHBoeS1uYW1lcyBhbmQgdXNlIE5VTEwgYXMgbmFtZSBpbiB0aGUgZHJpdmVyIGluc3RlYWQuCgo+
+IAo+PiArCj4+IMKgIHJlcXVpcmVkOgo+PiDCoMKgwqAgLSBjb21wYXRpYmxlCj4+IMKgwqDCoCAt
+IHJlZwo+PiBAQCAtMTM2LDYgKzE0Miw4IEBAIGV4YW1wbGVzOgo+PiDCoMKgwqDCoMKgwqDCoMKg
+wqAgcG93ZXItZG9tYWlucyA9IDwmcGRfdnB1PjsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgICNhZGRy
+ZXNzLWNlbGxzID0gPDE+Owo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgI3NpemUtY2VsbHMgPSA8MD47
+Cj4+ICvCoMKgwqDCoMKgwqDCoCBwaHlzID0gPCZoZG1pX3R4X3BoeT47Cj4+ICvCoMKgwqDCoMKg
+wqDCoCBwaHktbmFtZXMgPSAiaGRtaSI7Cj4+IMKgIMKgwqDCoMKgwqDCoMKgwqDCoCAvKiBWUFUg
+VkVOQyBJbnB1dCAqLwo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgaGRtaV90eF92ZW5jX3BvcnQ6IHBv
+cnRAMCB7Cj4+Cj4gCgoKLS0gCkJlc3QgcmVnYXJkcywKUm9uYWxkCgotLSAKbGludXgtcGh5IG1h
+aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
