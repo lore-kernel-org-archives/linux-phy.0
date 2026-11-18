@@ -2,68 +2,75 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9DE0E606A32F
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 19:10:55 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 16062606A325
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 19:12:54 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ZqxqlPag;
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=aliel.fr header.i=@aliel.fr header.a=rsa-sha256 header.s=courrier-s1 header.b=DZPLUL18
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=wTtJbqJb;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=samsung.com header.i=@samsung.com header.a=rsa-sha256 header.s=mail20170921 header.b=neTfT88U
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
 	List-Unsubscribe-Post:List-Owner;
-	bh=GWsW2hG/ysusA44ghrtOc7DBxcteEB7X5UV/UF6U+L8=; b=ZqxqlPagb/Eg+omKaGjvc2Ycdo
-	vrc+BjCppTkEZ0rXmW/XT3qSd5EBbnDLBXc5Rg3x78LWapJykhw2KcwhEzJRiYvyNNSn2rVyU3/lN
-	luY3vXnKkR8DhEOKbD5bsO9GlIcBJ+vuT1z5bEC2hR3EyyIdkG3Jt+AhtTt03/rSYLV4bC9LlWNbg
-	tL01pTL1yCU12sss/yRiy3JNAQxRA6LEakbDRITQCryRHP0RHaisJlR87KjbqzYgWjqJpKRJTL8//
-	FX9ipJ69ZYD/As9g7twrO3VuQFSrouPiQDk++UBZiMT4/miMUo+QBy9wpbGkENAJAxzhetIV6FOeg
-	41ieLJLg==;
+	bh=4vY+CDht8/hk6cYUBWYziNUBl1qw2cZFGzIJZxyiWZk=; b=wTtJbqJbvy0FnK+hmobrjJgfxG
+	L80uX273MvI1GLTApyfqYyZbZooB9ZlNLgrNo1YhBEA+NXtJBVZ0ib3oANfU73dQNlsJ3WO+EKonO
+	j0eUt8cjQcX3tLeZTGe9qxe4U/QkvCuCx7MS43ZZ3YjAyywkbJ/fAtYc0thMW8AqLd8fMb1QgWtCi
+	e0sw4N+HVMwLG2Nxz2pPUwjgTNv3l2H89zQocen7wszg732keCu0hjdT1LM05K11WMbqO0wnTznd/
+	Woise02jDR3mKm7txAwzFYLCXN9MCDdXiq5A8YQVeZPatJtQZuob/uuur+gRKuMppgNnE4TYxeWFz
+	SrG7XevA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTl3X-0000000A5M4-1UF0;
-	Wed, 18 Nov 2026 19:10:55 +0000
-Received: from courrier.aliel.fr ([2a01:4f9:c011:1c83::1])
+	id 1xTl5R-0000000A5eL-3PIK;
+	Wed, 18 Nov 2026 19:12:53 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTl3T-0000000A5K5-25T5;
-	Wed, 18 Nov 2026 19:10:53 +0000
-Message-ID: <f0c5f3ae-5a37-4f38-bd32-6191a6a98485@aliel.fr>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=aliel.fr;
-	s=courrier-s1; t=1795029044;
-	bh=y9UgIWQynPgPoVUM6/yn261u+b/dkSIroE44iaL3T2g=;
-	h=Date:From:Subject:To:Cc:References:In-Reply-To;
-	b=DZPLUL186iJM63saUsDmf+QkaMlJDFQ0b3i6Pn4Ivn7rDVbd+CdgMfNGuJ5E61TgN
-	 4nqWYMEs0NZYMTWbpqLapborXRKZ7R0tLvAAFshU3+Irce7MP/AlT4f3tisXyihh+g
-	 56re9lp/cNYBe2c8rEQimJQQU13wKmVciZzaOq40=
-Date: Wed, 18 Nov 2026 20:10:11 +0100
+	id 1xTl5N-0000000A5dn-0Ok5
+	for linux-phy@lists.infradead.org;
+	Wed, 18 Nov 2026 19:12:52 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+	by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id 20261118191240euoutp028812a9795928d3fbd8916dda9b0ff459~pOYLBdr0c1157611576euoutp02L
+	for <linux-phy@lists.infradead.org>; Wed, 18 Nov 2026 19:12:40 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com 20261118191240euoutp028812a9795928d3fbd8916dda9b0ff459~pOYLBdr0c1157611576euoutp02L
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1795029160;
+	bh=pQnJmWW6nPDVDbiKnkWy2swOvfjrmQ+u4ZBhr5A3f7M=;
+	h=From:To:Cc:Subject:Date:References:From;
+	b=neTfT88UtZtb8+MzvLHLB7HJ5OGTAmn+qJocvu/auOYis5WAlCO36FGGoLnhACRtd
+	 9eCrS03nfKWw/hjY+ZGPO556QcKgRsknSNojWaY0tti8QiivCYvqdoAIm46aqse5aw
+	 PEX7b2cP1tcEcGuAycAmZ+mige/oUlvTgKKNkcAA=
+Received: from eusmtip2.samsung.com (unknown [203.254.199.222]) by
+	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+	20261118191239eucas1p1054471efd4b07967555d34a2aed994c0~pOYKdupe21910519105eucas1p1J;
+	Wed, 18 Nov 2026 19:12:39 +0000 (GMT)
+Received: from AMDC4653.digital.local (unknown [106.120.51.32]) by
+	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+	20261118191239eusmtip2489642b72e5eb3c0cdd84cb7d9d30c28~pOYKCR2S62280122801eusmtip2w;
+	Wed, 18 Nov 2026 19:12:39 +0000 (GMT)
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+To: linux-phy@lists.infradead.org, linux-samsung-soc@vger.kernel.org
+Cc: Marek Szyprowski <m.szyprowski@samsung.com>, Vinod Koul
+	<vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Manivannan
+	Sadhasivam <mani@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>, Peter
+	Griffin <peter.griffin@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>
+Subject: [PATCH] phy: samsung: exynos5250-sata: fix unreliable PLL lock
+ timeout
+Date: Wed, 18 Nov 2026 20:12:31 +0100
+Message-ID: <20261118191233.376139-1-m.szyprowski@samsung.com>
+X-Mailer: git-send-email 2.43.0
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: linux-kernel-dev@aliel.fr
-Subject: Re: [PATCH 05/10] dt-bindings: display: amlogic,meson-dw-hdmi: Add
- phys and phy-names
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
- Jerome Brunet <jbrunet@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>
-References: <20261117-meson-drm-create-hdmitx-phy-v1-0-9e0ac931381c@aliel.fr>
- <20261117-meson-drm-create-hdmitx-phy-v1-5-9e0ac931381c@aliel.fr>
- <3e82658f-1152-4c98-b996-242abc203f74@linaro.org>
-Content-Language: en-US
-In-Reply-To: <3e82658f-1152-4c98-b996-242abc203f74@linaro.org>
+X-CMS-MailID: 20261118191239eucas1p1054471efd4b07967555d34a2aed994c0
+X-Msg-Generator: CA
+X-RootMTR: 20261118191239eucas1p1054471efd4b07967555d34a2aed994c0
+X-EPHeader: CA
+X-CMS-RootMailID: 20261118191239eucas1p1054471efd4b07967555d34a2aed994c0
+References: <CGME20261118191239eucas1p1054471efd4b07967555d34a2aed994c0@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261118_111052_090580_2B86FBF6 
-X-CRM114-Status: GOOD (  12.83  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20261118_111249_595648_92B5CD99 
+X-CRM114-Status: GOOD (  17.87  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,49 +80,110 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
-	version=4.0.1
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-T24gMTEvMTgvMjYgMTM6MzQsIE5laWwgQXJtc3Ryb25nIHdyb3RlOgo+IE9uIDExLzE3LzI2IDIw
-OjMzLCBSb25hbGQgQ2xhdmVhdSB2aWEgQjQgUmVsYXkgd3JvdGU6Cj4+IEZyb206IFJvbmFsZCBD
-bGF2ZWF1IDxsaW51eC1rZXJuZWwtZGV2QGFsaWVsLmZyPgo+Pgo+PiBUaGUgSERNSSBUWCBQSFkg
-bm93IGhhcyBpdHMgb3duIGJpbmRpbmcgYW5kIGRyaXZlci4gRGVzY3JpYmUgdGhlIGxpbmsKPj4g
-YmV0d2VlbiB0aGUgSERNSSBUWCBjb250cm9sbGVyIGFuZCBpdHMgUEhZIHdpdGggYSAicGh5cyIg
-cHJvcGVydHkKPj4gaG9sZGluZyBhIHNpbmdsZSBwaGFuZGxlLCBuYW1lZCAiaGRtaSIgdGhyb3Vn
-aCAicGh5LW5hbWVzIiwgYW5kIHVwZGF0ZQo+PiB0aGUgZXhhbXBsZSBhY2NvcmRpbmdseS4KPj4K
-Pj4gVGhlIHByb3BlcnRpZXMgYXJlIG9wdGlvbmFsIHNvIHRoYXQgZXhpc3RpbmcgRFQsIHdoaWNo
-IGRvIG5vdCBkZXNjcmliZQo+PiB0aGUgUEhZLCBrZWVwIHZhbGlkYXRpbmc7IHRoZSBkcml2ZXIg
-ZmFsbHMgYmFjayB0byBjcmVhdGluZyB0aGUgUEhZCj4+IGl0c2VsZiBpbiB0aGF0IGNhc2UuCj4+
-Cj4+IFNpZ25lZC1vZmYtYnk6IFJvbmFsZCBDbGF2ZWF1IDxsaW51eC1rZXJuZWwtZGV2QGFsaWVs
-LmZyPgo+PiAtLS0KPj4gwqAgLi4uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9hbWxvZ2lj
-LG1lc29uLWR3LWhkbWkueWFtbMKgwqDCoMKgwqDCoMKgIHwKPj4gOCArKysrKysrKwo+PiDCoCAx
-IGZpbGUgY2hhbmdlZCwgOCBpbnNlcnRpb25zKCspCj4+Cj4+IGRpZmYgLS1naXQgYS9Eb2N1bWVu
-dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9hbWxvZ2ljLG1lc29uLQo+PiBkdy1o
-ZG1pLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS8KPj4g
-YW1sb2dpYyxtZXNvbi1kdy1oZG1pLnlhbWwKPj4gaW5kZXggNDE2ZmUyNjNhYzkyLi41YTAzM2Zl
-YzIxYjAgMTAwNjQ0Cj4+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9k
-aXNwbGF5L2FtbG9naWMsbWVzb24tZHctCj4+IGhkbWkueWFtbAo+PiArKysgYi9Eb2N1bWVudGF0
-aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9hbWxvZ2ljLG1lc29uLWR3LQo+PiBoZG1p
-LnlhbWwKPj4gQEAgLTEwOCw2ICsxMDgsMTIgQEAgcHJvcGVydGllczoKPj4gwqAgwqDCoMKgIHNv
-dW5kLW5hbWUtcHJlZml4OiB0cnVlCj4+IMKgICvCoCBwaHlzOgo+PiArwqDCoMKgIG1heEl0ZW1z
-OiAxCj4+ICsKPj4gK8KgIHBoeS1uYW1lczoKPj4gK8KgwqDCoCBjb25zdDogaGRtaQo+IAo+IEkg
-ZG9uJ3QgdGhpbmsgcGh5cy1uYW1lIGlzIG5lY2Vzc2FyeSBoZXJlLgoKT2ssIEkgd2lsbCBkcm9w
-IHBoeS1uYW1lcyBhbmQgdXNlIE5VTEwgYXMgbmFtZSBpbiB0aGUgZHJpdmVyIGluc3RlYWQuCgo+
-IAo+PiArCj4+IMKgIHJlcXVpcmVkOgo+PiDCoMKgwqAgLSBjb21wYXRpYmxlCj4+IMKgwqDCoCAt
-IHJlZwo+PiBAQCAtMTM2LDYgKzE0Miw4IEBAIGV4YW1wbGVzOgo+PiDCoMKgwqDCoMKgwqDCoMKg
-wqAgcG93ZXItZG9tYWlucyA9IDwmcGRfdnB1PjsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgICNhZGRy
-ZXNzLWNlbGxzID0gPDE+Owo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgI3NpemUtY2VsbHMgPSA8MD47
-Cj4+ICvCoMKgwqDCoMKgwqDCoCBwaHlzID0gPCZoZG1pX3R4X3BoeT47Cj4+ICvCoMKgwqDCoMKg
-wqDCoCBwaHktbmFtZXMgPSAiaGRtaSI7Cj4+IMKgIMKgwqDCoMKgwqDCoMKgwqDCoCAvKiBWUFUg
-VkVOQyBJbnB1dCAqLwo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgaGRtaV90eF92ZW5jX3BvcnQ6IHBv
-cnRAMCB7Cj4+Cj4gCgoKLS0gCkJlc3QgcmVnYXJkcywKUm9uYWxkCgotLSAKbGludXgtcGh5IG1h
-aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Arndale boards the SATA PHY occasionally fails to initialize, which
+makes the AHCI controller probe fail and the attached disk disappear:
+
+  phy phy-12170000.sata-phy.11: PHY PLL locking failed
+  phy phy-12170000.sata-phy.11: phy init failed --> -14
+  ahci-dwc 122f0000.sata: probe with driver ahci-dwc failed with error -14
+
+The PLL lock is polled by wait_for_reg_status() with a timeout of
+usecs_to_jiffies(1000). On ARM with the default HZ=100 that rounds up to
+a single jiffy, so the effective timeout is anything between almost zero
+and 10ms, depending on where in the tick period the wait starts. The
+loop also does not re-check the status after the deadline has passed,
+so an interrupt or preemption during polling can turn an already locked
+PLL into a reported failure. Finally, -EFAULT is a misleading error code
+for a timeout.
+
+Replace the open-coded loop with readl_poll_timeout(), which measures
+time with ktime, performs a final read after the timeout, and returns
+-ETIMEDOUT. Use a 10ms timeout, matching the upper bound of the
+previous behaviour with HZ=100.
+
+Fixes: bcff4cba41bc ("PHY: Exynos: Add Exynos5250 SATA PHY driver")
+Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+---
+This patch has been developed with LLM assistance and have been tested
+on the real Exynos5250-based Arndale board.
+
+Best regards
+Marek Szyprowski, PhD
+Samsung R&D Institute Poland
+---
+ drivers/phy/samsung/phy-exynos5250-sata.c | 23 ++++++-----------------
+ 1 file changed, 6 insertions(+), 17 deletions(-)
+
+diff --git a/drivers/phy/samsung/phy-exynos5250-sata.c b/drivers/phy/samsung/phy-exynos5250-sata.c
+index a88534eba2be..b55cbb3c47b3 100644
+--- a/drivers/phy/samsung/phy-exynos5250-sata.c
++++ b/drivers/phy/samsung/phy-exynos5250-sata.c
+@@ -10,6 +10,7 @@
+ #include <linux/clk.h>
+ #include <linux/delay.h>
+ #include <linux/io.h>
++#include <linux/iopoll.h>
+ #include <linux/i2c.h>
+ #include <linux/kernel.h>
+ #include <linux/module.h>
+@@ -43,7 +44,8 @@
+ #define EXYNOS5_SATA_PHSATA_STATM	0xf0
+ #define PHSTATM_PLL_LOCKED		BIT(0)
+ 
+-#define PHY_PLL_TIMEOUT (usecs_to_jiffies(1000))
++#define PHY_PLL_POLL_US		10
++#define PHY_PLL_TIMEOUT_US	10000
+ 
+ struct exynos_sata_phy {
+ 	struct phy *phy;
+@@ -53,19 +55,6 @@ struct exynos_sata_phy {
+ 	struct i2c_client *client;
+ };
+ 
+-static int wait_for_reg_status(void __iomem *base, u32 reg, u32 checkbit,
+-				u32 status)
+-{
+-	unsigned long timeout = jiffies + PHY_PLL_TIMEOUT;
+-
+-	while (time_before(jiffies, timeout)) {
+-		if ((readl(base + reg) & checkbit) == status)
+-			return 0;
+-	}
+-
+-	return -EFAULT;
+-}
+-
+ static int exynos_sata_phy_power_on(struct phy *phy)
+ {
+ 	struct exynos_sata_phy *sata_phy = phy_get_drvdata(phy);
+@@ -142,9 +131,9 @@ static int exynos_sata_phy_init(struct phy *phy)
+ 	val |= RESET_CMN_RST_N;
+ 	writel(val, sata_phy->regs + EXYNOS5_SATA_RESET);
+ 
+-	ret = wait_for_reg_status(sata_phy->regs,
+-				EXYNOS5_SATA_PHSATA_STATM,
+-				PHSTATM_PLL_LOCKED, 1);
++	ret = readl_poll_timeout(sata_phy->regs + EXYNOS5_SATA_PHSATA_STATM,
++				 val, val & PHSTATM_PLL_LOCKED,
++				 PHY_PLL_POLL_US, PHY_PLL_TIMEOUT_US);
+ 	if (ret < 0)
+ 		dev_err(&sata_phy->phy->dev,
+ 			"PHY PLL locking failed\n");
+-- 
+2.43.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
