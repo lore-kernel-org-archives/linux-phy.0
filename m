@@ -2,90 +2,88 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 97FCB606A32C
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 16:09:01 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 21F82606A337
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 16:32:30 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=hlrNL99C;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=bootlin.com header.i=@bootlin.com header.a=rsa-sha256 header.s=dkim header.b=X6cEgtil
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3Cv1rtxS;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=casper.20170209 header.b=NbPXtQFG;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=bootlin.com header.i=@bootlin.com header.a=rsa-sha256 header.s=dkim header.b=wHJw8qKU
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Subject:From:To:
+	Cc:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=lNeOjsxtn7sB29SUAVaJ2Yaf4NUNO1mK/tfUwyZ3vpk=; b=hlrNL99C1Q9Wj6qNXVQ3dt/qJz
-	6/h4n0EVKJALmVivX7GzeErQSIG3w379ioyU/KuyFbGhJxnk1LxJzS5AVc/wdc3GDvJARN3wqHuVc
-	+/YlmGVodpIO+lYOotLYSB8kzzB0qqRQ66VtQeRl+DSveZDvvyhxE2MijfBPe34CCL3ESeAmyVq3w
-	HlosOuk3scz7IfKe/IbmnzM7KhJ//hrABd1P6qldSP3vzCC5paV04NhzKBC+HMejstkDCxZl5dXeV
-	3qKnDQ5F3cN9THybGfqQRIWJ1aamaXoxCWUXOBTBfL4Z+c5tSte75RwTd4lKUPCtlojna3kBXYsUd
-	09CYCHtA==;
+	bh=oPhJkAABp1EJy7WpDmutZzNIwpMi5SrVDHWzEC/7IjM=; b=3Cv1rtxSMsDxllCU/yv4WdXCUD
+	ImWvBidxPm+fTUppP71pcWuJbtSMnTkKQpwg8hWbp8aFEAVhXr2rrw8oFkjtNjcInxmpJkHQBrfFC
+	9EPiFV8b/yAqulZ+3Af5vRHfqiQuTncPtNkZ6dRY2f7tMx7I2sNiANFTzotXJPrGDbUarA+l6rCLF
+	32vzX10KOOhprQ48vvq9d5TZXBqekILCBkkKS0rkAr3i9R794nNOvrLUJcDtN+jJnnakD/ylWZtJ+
+	lEqTtHQpn3GC6tr1sHVroMy7U19/KhcZyN6qDm+ZK9zEO35+YCydqdE6i7bth55ZXRDlbcVTY+uYo
+	GxfBLLww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTiDV-00000009Pjs-1MlD;
-	Wed, 18 Nov 2026 16:09:01 +0000
-Received: from smtpout-04.galae.net ([185.171.202.116])
+	id 1xTiaD-00000009WvS-3cVa;
+	Wed, 18 Nov 2026 16:32:29 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTiDS-00000009Pj6-0qbs;
-	Wed, 18 Nov 2026 16:08:59 +0000
+	id 1xTiZt-00000009WcN-0RwG
+	for linux-phy@bombadil.infradead.org;
+	Wed, 18 Nov 2026 16:32:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=casper.20170209; h=In-Reply-To:References:Subject:From:To:
+	Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:Mime-Version:Sender
+	:Reply-To:Content-ID:Content-Description;
+	bh=r+SLzODzG8HHw9cfKRrHw03Y8/zONqIuf6pHGVgPbko=; b=NbPXtQFGyL/XZ+ZVhpdQnb40yD
+	GAg8+W0sYX1eaCXVlI7dP4tJEGv8K3Hz8hCa1OYDEWBmysyPJSbiFOeqMpSbvkwJ3xxnTiyvO1+Xd
+	rmnpj80l0yBANT6l9241XwtaTXzEW7+Pu7R0hSM6nY28/sSsM+0eVKzGZYK9J43XwrPpA1zo5uT+8
+	ocirF8yHCyqDZHSZhw4StLtpJK+tyaF/CgJJVFa9mieZvJuSKStXVANkQ1gIFJVdVJDqZdSoZ55tk
+	zF1SazXl/2Fj3I7OCyLjrxtph5/SiJ/KFXHc4zElg60IyoJwKmTNCXR58tsTSPAVop50UkOjIptVg
+	5BH8IhnQ==;
+Received: from smtpout-04.galae.net ([185.171.202.116])
+	by casper.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
+	id 1xTiZj-0000000FA7W-2M36
+	for linux-phy@lists.infradead.org;
+	Wed, 18 Nov 2026 16:32:07 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id 14695C79A9F;
-	Wed, 18 Nov 2026 16:08:58 +0000 (UTC)
+	by smtpout-04.galae.net (Postfix) with ESMTPS id 38BA7C4F77B;
+	Wed, 18 Nov 2026 16:31:54 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 299BD5FE9B;
-	Wed, 18 Nov 2026 16:08:53 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id BD37011BC244F;
-	Wed, 18 Nov 2026 17:08:34 +0100 (CET)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 4822E5FE9B;
+	Wed, 18 Nov 2026 16:31:49 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 1090311BC280A;
+	Wed, 18 Nov 2026 17:31:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1795018130; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	t=1795019508; h=from:subject:date:message-id:to:cc:mime-version:content-type:
 	 content-transfer-encoding:in-reply-to:references;
-	bh=NyruYRmBJ333KKsYOsJfBubBYnjFdFekZpcsS68Afoo=;
-	b=X6cEgtil8ijijO0rJLXA2fM6mfOKCqDSKEpQnIZl8O7QDvCmAFq44iTLtGiRg59T6tim+9
-	BkfAmw+/K2LmZlkCdVN2sYKaDDdw/b0/mTAmoK6EDNyam9WvPm2KyqSsK6FFH80ZrBBRbl
-	fOuG3P4fgquqDyFTbuhX5QPxzAzzTotAL3yURPLSCZ75iuwuF5fR7obk1dgbOVKjz5XyHU
-	usLAW0L1/qdVNqF382CZu2aco6xcOyG4qofdf/C4tljy9+Ib67sXLpy0J5bWTKyaLMICZ9
-	hf3TVLYsrb2HPg/gXOz12/t9aAj1TndcLvng+XJYM9BoHm2TlIq0tO3MLsgbzA==
-From: =?UTF-8?B?QmVub8OudA==?= Monin <benoit.monin@bootlin.com>
-To: Conor Dooley <conor@kernel.org>
-Cc: Mark Brown <broonie@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
- Jun Chang <jun.chang@metanoia-comm.com>, Paul Walmsley <pjw@kernel.org>,
- Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Alexandre Ghiti <alex@ghiti.fr>, Philipp Zabel <p.zabel@pengutronix.de>,
- Sebastian Reichel <sre@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Jonathan Cameron <jic23@kernel.org>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Thomas Gleixner <tglx@kernel.org>, Radu Rendec <radu@rendec.net>,
- Samuel Holland <samuel.holland@sifive.com>,
- Ben Zong-You Xie <ben717@andestech.com>,
- Daniel Lezcano <daniel.lezcano@kernel.org>, Ulf Hansson <ulfh@kernel.org>,
- Jisheng Zhang <jszhang@kernel.org>, CL Wang <cl634@andestech.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Guenter Roeck <linux@roeck-us.net>, Adrian Hunter <adrian.hunter@intel.com>,
- Minas Harutyunyan <hminas@synopsys.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Randolph Sheng-Kai =?UTF-8?B?TGluKOael+iBluWHsSk=?= <randolph@andestech.com>,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-riscv@lists.infradead.org, linux-pm@vger.kernel.org,
- linux-phy@lists.infradead.org, Paul Walmsley <paul.walmsley@sifive.com>,
- linux-mmc@vger.kernel.org, linux-spi@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-watchdog@vger.kernel.org
-Subject: Re: [PATCH 00/25] riscv: add support for the Metanoia MT2824 SoC and MT5824
- EVB
-Date: Wed, 18 Nov 2026 17:08:33 +0100
-Message-ID: <tSRWYJl8QRO6qpOrYOmeTA@bootlin.com>
-In-Reply-To: <20261117-calamity-quiver-96d0d568b338@spud>
-References: <20261106-mt2824-v1-0-86087eaf5af4@bootlin.com>
- <_koitdIgQPmk89LDhlUlJQ@bootlin.com>
- <20261117-calamity-quiver-96d0d568b338@spud>
+	bh=r+SLzODzG8HHw9cfKRrHw03Y8/zONqIuf6pHGVgPbko=;
+	b=wHJw8qKUoASaCYaUuh6NJ5+MzfzWnvTluXzTcHEQnISrE+l+Gv5JfD83qXKV+5Ho6tmgZe
+	Q2dCQLiti0FDkqKPaqSffZtOU01D4iq3QbeRKVPkINy1dDVewKnmtE1YKtO+ZxoYGDAP3/
+	mDLU9RbpIWniI5UL8aYszXMoNQMmGDeQ3Nv6ZdcAyBo/6sXZED84TAEOciBPlUW0BnPHu6
+	2k17UHPvtn/Jsf+ZOFRtv72BVLqJhTjaMKDXV/u4kL4eB2NMjxzJnwqNmKfesJ55b8Akyx
+	8PmePUoMLA27e2mitgRDXYCoh8USLiLvaIlWCKdQbo8+AY22Ehru7jB+USUJPQ==
 X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
+Mime-Version: 1.0
+Date: Wed, 18 Nov 2026 17:31:43 +0100
+Message-Id: <DMYHB3VFX8GQ.2DELCXHWSP8X1@bootlin.com>
+Cc: "Francesco Dolcini" <francesco.dolcini@toradex.com>,
+ <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>, "Alexander
+ Stein" <alexander.stein@ew.tq-group.com>, "linux-phy"
+ <linux-phy-bounces@lists.infradead.org>
+To: "Francesco Dolcini" <francesco@dolcini.it>, "Vinod Koul"
+ <vkoul@kernel.org>, "Neil Armstrong" <neil.armstrong@linaro.org>,
+ "Manivannan Sadhasivam" <mani@kernel.org>
+From: "Luca Ceresoli" <luca.ceresoli@bootlin.com>
+Subject: Re: [PATCH v1] Revert "phy: freescale: fsl-samsung-hdmi: initialize
+ default rate"
+X-Mailer: aerc 0.22.0
+References: <20261116162409.218059-1-francesco@dolcini.it>
+In-Reply-To: <20261116162409.218059-1-francesco@dolcini.it>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261118_080858_573323_9001D999 
-X-CRM114-Status: GOOD (  26.43  )
+X-CRM114-CacheID: sfid-20261118_163200_138011_CBF966AD 
+X-CRM114-Status: UNSURE (   6.83  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,61 +94,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-T24gVHVlc2RheSwgMTcgTm92ZW1iZXIgMjAyNiBhdCAxODozMDo1OCBDRVQsIENvbm9yIERvb2xl
-eSB3cm90ZToKPiBPbiBUdWUsIE5vdiAxNywgMjAyNiBhdCAxMTo0MTo1MkFNICswMTAwLCBCZW5v
-w650IE1vbmluIHdyb3RlOgo+ID4gT24gRnJpZGF5LCA2IE5vdmVtYmVyIDIwMjYgYXQgMTI6MTU6
-MDkgQ0VULCBNYXJrIEJyb3duIHdyb3RlOgo+ID4gPiBPbiBGcmksIE5vdiAwNiwgMjAyNiBhdCAx
-MDoyOTo1N0FNICswMTAwLCBCZW5vw650IE1vbmluIHdyb3RlOgo+ID4gPiAKPiA+ID4gPiBUaGUg
-c2VyaWVzIGlzIG9yZ2FuaXNlZCBhczoKPiA+ID4gCj4gPiA+ID4gLSBwYXRjaGVzIDEtMTQgYWRk
-IHRoZSBkZXZpY2UgdHJlZSBiaW5kaW5ncywgdGhlIE1ldGFub2lhIHZlbmRvciBwcmVmaXgsCj4g
-PiA+ID4gICB0aGUgUklTQy1WIGJvYXJkIHNjaGVtYSBhbmQgdGhlIFNvQyBibG9jayBjb21wYXRp
-Ymxlcwo+ID4gPiA+IC0gcGF0Y2ggMTUgYWRkcyBBUkNIX01FVEFOT0lBIGFuZCBzZWxlY3RzIHRo
-ZSBBWDQ1TVAgZXJyYXRhCj4gPiA+ID4gLSBwYXRjaGVzIDE2LTIzIGFkZCB0aGUgcmVzZXQsIFNQ
-SSwgd2F0Y2hkb2csIE1NQywgUEhZIGFuZCBVU0IgY2hhbmdlcwo+ID4gPiA+ICAgbmVlZGVkIHRv
-IGJ1aWxkIGFuZCBwcm9iZSBvbiB0aGlzIFNvQwo+ID4gPiA+IC0gcGF0Y2ggMjQgYWRkcyB0aGUg
-TVQyODI0IFNvQyBhbmQgTVQ1ODI0IEVWQiBkZXZpY2UgdHJlZXMKPiA+ID4gPiAtIHBhdGNoIDI1
-IGFkZHMgdGhlIE1BSU5UQUlORVJTIGVudHJ5Cj4gPiA+IAo+ID4gPiBUaGlzIHNvcnQgb2YgdGhp
-bmcgdGVuZHMgdG8gd29yayBiZXR0ZXIgaWYgeW91IHN1Ym1pdCB0aGUgcGF0Y2hlcyBmb3IKPiA+
-ID4gc3Vic3lzdGVtcyBhcyBzZXBhcmF0ZSBzZXJpZXNlcywgaXQgYXZvaWRzIGVub3Jtb3VzIEND
-IGxpc3RzIGFuZCBrZWVwcwo+ID4gPiB0aGUgaW5kaXZpZHVhbCBzZXJpZXNlcyBhIG1hbmFnYWJs
-ZSBzaXplLgo+ID4gPiAKPiA+IEkgYWdyZWUsIGFuZCBJIGFtIHJld29ya2luZyB0aGUgc2VyaWVz
-IHRoYXQgd2F5LiBWZXJzaW9uIDEgd2FzIGludGVuZGVkCj4gPiBhcyBhbiBvdmVydmlldyBvZiB0
-aGUgY29tcGxldGUgU29DIHN1cHBvcnQsIGJ1dCBpdCBlbmRlZCB1cCBiZWluZyB0b28KPiA+IGJp
-ZyBmb3IgYSBzaW5nbGUgc2VyaWVzLgo+ID4gCj4gPiBTbyB2ZXJzaW9uIDIgb2YgdGhpcyBjdXJy
-ZW50IHNlcmllcyB3aWxsIGJlIG9ubHkgdGhlIHBsYXRmb3JtIGJhc2ljcwo+ID4gKDIgcGF0Y2hl
-cyk6Cj4gPiAKPiA+ICAgLSBkdC1iaW5kaW5nczogdmVuZG9yLXByZWZpeGVzOiBhZGQgTWV0YW5v
-aWEgQ29tbXVuaWNhdGlvbnMKPiAKPiA+ICAgLSByaXNjdjogYWRkIEFSQ0hfTUVUQU5PSUEgS2Nv
-bmZpZyBlbnRyeQo+IAo+IFJlYWxpc3RpY2FsbHksIHRoaXMgZG9lcyBub3QgbmVlZCB0byBiZSBh
-IHByZXJlcSBlaXRoZXIsIGJlY2F1c2UgeW91J2xsCj4gaGF2ZSAiZGVwZW5kcyBvbiBBUkNIX01F
-VEFOSU9BIHx8IENPTVBJTEVfVEVTVCIuCj4gClRydWUgYnV0IGNoZWNra2NvbmZpZ3N5bWJvbHMu
-cHkgd2lsbCB0aGVuIGNvbXBsYWluIGFib3V0IGEgcmVmZXJlbmNlZCBidXQKdW5kZWZpbmVkIEtj
-b25maWcgc3ltYm9sIGluIHRoZSBmb2xsb3dpbmcgc2VyaWVzLgoKPiA+IAo+ID4gSXQgd2lsbCBh
-Y3QgYXMgYSBwcmVyZXF1aXNpdGUgZm9yIHRoZSBmb2xsb3dpbmcgbmV3IHNlcmllcywgb25lIHBl
-cgo+ID4gc3Vic3lzdGVtOgo+ID4gCj4gPiAgIC0gcmVzZXQ6IGJpbmRpbmcgKyByZXNldC1zaW1w
-bGUgc3VwcG9ydCAodGhlIHNlcGFyYXRlIHJlYm9vdCBiaW5kaW5nCj4gPiAgICAgaXMgZHJvcHBl
-ZDsgdGhlIFJTVCBibG9jayBpcyBkZXNjcmliZWQgYXMgYSBzaW5nbGUgbm9kZSkKPiA+ICAgLSBT
-UEk6IG9wdGlvbmFsIERNQS9JUlEgYmluZGluZywgTVQyODI0IGNvbXBhdGlibGUsIGF0Y3NwaTIw
-MCBJUlEKPiA+ICAgICBzdXBwb3J0ICsgS2NvbmZpZwo+ID4gICAtIHdhdGNoZG9nOiBjb21wYXRp
-YmxlICsgS2NvbmZpZwo+ID4gICAtIE1NQzogY29tcGF0aWJsZSArIE1UMjgyNCBzdXBwb3J0IChz
-cGxpdCBiZXR3ZWVuIFNELCBlTU1DIGFuZAo+ID4gICAgIGF1dG8tZGV0ZWN0aW9uKSArIHR1bmlu
-Zy9IUzQwMAo+ID4gICAtIFBIWTogVVNCMiBQSFkgYmluZGluZyArIGRyaXZlci9LY29uZmlnCj4g
-PiAgIC0gVVNCIERXQzI6IGJpbmRpbmcgKyBwYXJhbXMKPiA+IAo+ID4gRmluYWxseSwgb25jZSB0
-aGUgc3Vic3lzdGVtIGJpbmRpbmdzIGFyZSBhY2NlcHRlZCBhbmQgdGhlIGRyaXZlcnMKPiA+IGFy
-ZSBxdWV1ZWQsIEknbGwgcG9zdCB0aGUgU29DIERUUyBpbiBpdHMgb3duIHNlcmllczogYm9hcmQg
-c2NoZW1hICsKPiA+IGNhY2hlL1BMSUMvUExJQ1NXL1BMTVQgY29tcGF0aWJsZXMgKyB0aGUgTVQy
-ODI0L01UNTgyNCBEVFMgYW5kIHRoZQo+ID4gTUFJTlRBSU5FUlMgZW50cnkKPiA+IAo+ID4gVGhh
-bmtzIGV2ZXJ5b25lIGZvciB0aGUgcmV2aWV3cywgSSB3aWxsIGludGVncmF0ZSB0aGUgZmVlZGJh
-Y2sgaW4gdGhlCj4gPiBuZXh0IGl0ZXJhdGlvbnMgb2YgZWFjaCBzZXJpZXMuCj4gPiAKPiA+IEJl
-c3QgcmVnYXJkcywKPiA+IEJlbm/DrnQKPiA+IAo+ID4gCj4gPiAKPiAKCgoKLS0gCmxpbnV4LXBo
-eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Hi Francesco,
+
+On Mon Nov 16, 2026 at 5:24 PM CET, Francesco Dolcini wrote:
+> From: Francesco Dolcini <francesco.dolcini@toradex.com>
+>
+> This reverts commit c01ccf91b257741e9edc374a465126bae9ae4711.
+>
+> Programming the 74.25 MHz configuration at probe fails on i.MX8MP boards,
+> the PHY probe aborts and HDMI is no longer available:
+>
+>   fsl-samsung-hdmi-phy 32fdff00.phy: PLL failed to lock
+>   fsl-samsung-hdmi-phy 32fdff00.phy: error -ETIMEDOUT: failed to configure default rate
+>   fsl-samsung-hdmi-phy 32fdff00.phy: probe with driver fsl-samsung-hdmi-phy failed with error -110
+>
+> Reported-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+> Closes: https://lore.kernel.org/all/13219248.O9o76ZdvQC@steina-w/
+> Fixes: c01ccf91b257 ("phy: freescale: fsl-samsung-hdmi: initialize default rate")
+> Signed-off-by: Francesco Dolcini <francesco.dolcini@toradex.com>
+
+Got the same issue on i.MX8MP after rebasing on drm-misc-next, which is
+based on v7.4-rc2.
+
+Tested-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
+
+Luca
+
+--
+Luca Ceresoli, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
