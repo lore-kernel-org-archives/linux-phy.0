@@ -2,58 +2,58 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3DD4A606A7D1
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 16:33:24 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 725A6606A7D5
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 16:33:35 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3Bw9NHxP;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=nxp.com header.i=@nxp.com header.a=rsa-sha256 header.s=selector1 header.b=UzRWwSyk
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=e76TzqOD;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=nxp.com header.i=@nxp.com header.a=rsa-sha256 header.s=selector1 header.b=DpjMKrAc
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ZDCjj8biUMbwFUbqMYo5OBkA3hiHA9yjjmRM9Nr0gos=; b=3Bw9NHxP6fthOmiwmI3GRuAHze
-	rBxQoLMLoqAP8M9vcvKHDScO3T552QDMPgR6c7X1VrQw3WcXhLMZqWh9+bus9h/qBspgcR+ckPYQD
-	hEEFaY2JGRbtxWbzv4vnbSkP4WcAk3xnKFzgY2ANjvFYjZV73mEaX3wPXsRIQbpPTMB7GqtgJSjpj
-	G1KVBz0d1DsWR9c+aIvDjdT0yK4iZYV7fNLuIYQijE7RtXNpRosxfbkIHibCBiS44bWHKp80dVCSe
-	JtUBYq44oGDtRetF8HIR4IgQNkrSj4Awd5Kir/VPx8L1xro9zVxCnbDLGgNu7H6efs/nVeyVdsIRh
-	NPJRKuKw==;
+	bh=k+QMyR6jbxZW80XcDWsBobttIijuSE2tUoXFqJWG6Ac=; b=e76TzqODpGtOlDJmOYCChKjh0z
+	WBGv41wpZp5qPwyKmQigteZ9iG9pp/dqQ3w/t1rZgSNiDVXf/FLG1yztVrzKlPISiHZGla07smX59
+	Kr3FLF5RuJF6O8mafi+J2pPpgvlCZhuFA/RCHq1JnrDKBCQ7MSBWHBB080UecuqH7aiY9OejmjaTJ
+	Vtk1ZqVbVHcKLt9hPxrlfEqgPdlU+J4SZc+o4RncVbZHiojL9zpW4spk1VSqi4pXPa6+5jUBpCrBn
+	OK4bruy6F0vd5C6BZto0ZFXztZOfmdxCaccfIL6PK0X2Dq5m9DdqQ9JotxTEdb7BrkV45QHDMrDik
+	ftlEgkcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTib5-00000009XPO-43xU;
-	Wed, 18 Nov 2026 16:33:23 +0000
-Received: from mail-westeuropeazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c201::6] helo=AM0PR02CU008.outbound.protection.outlook.com)
+	id 1xTibH-00000009XUL-0pEP;
+	Wed, 18 Nov 2026 16:33:35 +0000
+Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTiap-00000009XGP-2MW5
+	id 1xTiav-00000009XIC-21pq
 	for linux-phy@lists.infradead.org;
-	Wed, 18 Nov 2026 16:33:08 +0000
+	Wed, 18 Nov 2026 16:33:18 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=RDcRH5z0JXLtPyjDf/GzbJGgNADZCBdgBYjUjgC6R7TIQM3HgV9RON3r7SfY8W244/Sj2Xwc1eFtkVFBoXnuZzcs8sKJ0eJhbG/IHMyPfEr+4ba/2gEvJxzuU9YUN+l+Pab3QWHE97QMcpsoRCX6A7Gu7qcqoPgtUJ7YjE0xtuCfNuDkovaLGlx0jd/eI/roalejQK5pgfpGnvxlEG8dWuj47MrI9t1gR05mItSo+J4g5bCbmGAVYcXQHjIY9cWCtBVtJAzgWfp2qck/DS6y5LvhBbzmITzR1WzqUeqoi2xHi0AqfimWjdZ+YEZpquxA3IZ7H6VASXHtkMl1iqybEg==
+ b=zFBlIAZ6i1o4Cq1IUxquOr8tjeJNKJEYeNZNb+2DZarmxOYDnMINbTP6Wd/BQnlnXkakyERHq+nuNr/ZTPX9yJutay98KM0a8ALIbsfGL1rT7TLuyt3imuawH9ATwx95L81C6MtgAM+ZHCkTx9asles7o3cGNjohlrkF6Y6GiAlCmHwr6SS5Ae0DFT7vnT211KNBKUqR/tg98FgMbXO0/tO7/uSf505SzCrO2hu+At8HEiH/XBnmpKU5AaTg0Uf2RSQCyothZnzzbQYbatI/6mvg1UfPEhNXvsZnfVCjt0hvhzTUX90gO6H1u87Xp9WE8kUVUodl4yOzi2bVYmXwRA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=P5YQSXH2nnhBy49ynhKIO379xmRMN9E4x5+MoRfmRMc=;
- b=FOqfuOibJwLkqtSrvaDXJc20eE9vyXJRtzHb80eNqclSPNXuJTu2Q8ZbTOfvuiooLYYFuFjUwCiMLVnpw3tyyCyTYabFy44ViGaCg5lVKg9UstmLiLTPsFEC8GcZuNg/PR8W0l1NMpVTHB421W5Z2/YkYI4T6ofkRzndi14kuKnDBnfNflXEwb+CLNomGjhQH6B1mmrP/Bv7h3FQGU4FyYUKHBTGWPJ/58TLJnCvqz6WfPbEhd6pFVFsAC4aeYqrkALXJ/VcDFnGV2xbiHyxouD2w5+Ai4uLMu2ik6l4fG7hqW+kU0TSDTl6Yvix6/I8y+dPorz6w6J1mK6UaqqPLw==
+ bh=e083wJLL9/C0SKvH9Wbj+iVEKusU44832JaNnH2hhfc=;
+ b=gt2Muhv7FLUtrKut8Nt+wE91WnQr14YZ0yiyjbiSsS3ZgRxQZUDuO/yKPkuW4K31v39cIwti23OdEmbclTUZJD2cU7536KUHQ9ZCRc+wZ6CNLGuPjPVxQBISbuE4fSa4uJXJQyFyT8FLt5ozZtQXECjNvaaxVNpw5DEykits3qSuICm8IfgtIlyywEyT4fNcvP+WwbL0oBGgQasoRGao5+gkz+chA/DfLRp74dtCsWVUBe1DB9CUPTYlpdcHlgvOB1MPYXxqyszuG+BWShRoYOHIIkg2F5nKAKu8yfhEKVPsdmHD5H3z2e62t07etXmHWZ1XpA556aHUvpv23cWL6Q==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=P5YQSXH2nnhBy49ynhKIO379xmRMN9E4x5+MoRfmRMc=;
- b=UzRWwSykWSqYGyUYk9XaB1YjJjJqAl6/iCguF8MMR3nOTfQCds1+7uo3SioD+2bqm+XGgxLdrv2A8GFB/eXtaznuoca0JJMToH6XjWQcadjg01rV2KA4srn5u3N+iMRlXkdgEwEOcsKDoM6s6i56cB9oloctdERiPROtBIXes9z55GwTQFZQ62laDVZIqgwmyXp7/yJUnT4L5DNpk/NbFRFQwqcD3nj3I9p+ojdE3ucDjuZwSgodii0Ioe4FkF2Mx7M/XqIyl9+VtP36FM6LuhoIZTR+DqwRQZ/SspHFPYM9j4cDoVKb9wuTjcW3s/0rWKLnVtNYZ44jv2O+7qslHQ==
+ bh=e083wJLL9/C0SKvH9Wbj+iVEKusU44832JaNnH2hhfc=;
+ b=DpjMKrAcvMDyFclG9aZUK+xtgna4LNG9FQyJNvSvAyHUE5QXqBNv9g5lUOYc0uyYNQDn6CpBzcatd6ipRJw2G9UuggEkrBz7kGVMB9LGbgriss49uJMivtKMSnbIapLhLGn1UjYbDQ1u99CKNey99gDJFa8O+DPfARTMSm0EQm2yc+5l6jwhIoezHQsNs4B/JuQi30smp4Gnfl6PtkUYmpEQ88jqqygmygR9blu+8UKoUDG9PK8JD9CN6Y1oA9mureeGr3diokA4yvsWO/j1UIgMk+V3DAsG6RMFQrDicIALxWG20ABdMAyPmPvOxQPLVowQ+eYEo8muXSFShxmI2A==
 Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from MI9PR04MB019273.eurprd04.prod.outlook.com
- (2603:10a6:290:d3::17) by DU2PR04MB8999.eurprd04.prod.outlook.com
- (2603:10a6:10:2e2::16) with Microsoft SMTP Server (version=TLS1_2,
+ (2603:10a6:290:d3::17) by MA9PR04MB766428.eurprd04.prod.outlook.com
+ (2603:10a6:250:10c::24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.14; Wed, 18 Nov
- 2026 16:32:58 +0000
+ 2026 16:33:05 +0000
 Received: from MI9PR04MB019273.eurprd04.prod.outlook.com
  ([fe80::263c:943a:dcb0:29d8]) by MI9PR04MB019273.eurprd04.prod.outlook.com
  ([fe80::263c:943a:dcb0:29d8%5]) with mapi id 15.21.0615.013; Wed, 18 Nov 2026
- 16:32:58 +0000
+ 16:33:05 +0000
 From: Ioana Ciornei <ioana.ciornei@nxp.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -65,68 +65,70 @@ To: Vinod Koul <vkoul@kernel.org>,
 Cc: devicetree@vger.kernel.org,
 	netdev@vger.kernel.org,
 	Vladimir Oltean <vladimir.oltean@nxp.com>
-Subject: [PATCH 0/3] phy: lynx: add support for downstream retimer PHYs
-Date: Wed, 18 Nov 2026 18:31:31 +0200
-Message-Id: <20261118163134.2149894-1-ioana.ciornei@nxp.com>
+Subject: [PATCH 3/3] phy: lynx: forward the phy_ops to the downstream PHYs of a lane
+Date: Wed, 18 Nov 2026 18:31:34 +0200
+Message-Id: <20261118163134.2149894-4-ioana.ciornei@nxp.com>
 X-Mailer: git-send-email 2.34.1
-X-ClientProxiedBy: AM9P250CA0028.EURP250.PROD.OUTLOOK.COM
- (2603:10a6:20b:21c::33) To MI9PR04MB019273.eurprd04.prod.outlook.com
+In-Reply-To: <20261118163134.2149894-1-ioana.ciornei@nxp.com>
+References: <20261118163134.2149894-1-ioana.ciornei@nxp.com>
+X-ClientProxiedBy: AM9P250CA0001.EURP250.PROD.OUTLOOK.COM
+ (2603:10a6:20b:21c::6) To MI9PR04MB019273.eurprd04.prod.outlook.com
  (2603:10a6:290:d3::17)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MI9PR04MB019273:EE_|DU2PR04MB8999:EE_
-X-MS-Office365-Filtering-Correlation-Id: c663fe86-f4d7-4a32-bdfa-08df45919b29
+X-MS-TrafficTypeDiagnostic: MI9PR04MB019273:EE_|MA9PR04MB766428:EE_
+X-MS-Office365-Filtering-Correlation-Id: b748c2bc-6cfc-4c9f-d403-08df45919f4b
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|19092799006|366016|1800799024|376014|18002099003|11063799006|56012099006|261026121527099003|261021121427099003|261021123027099003|10067099003|261102123227099003|261009223027099003|261022075727099003;
-X-Microsoft-Antispam-Message-Info: nVEo6zsUekodE4M+nPeF+MDktYJ9hEZWQjF5SkCEZNyr0WsllyaBOj70DU2h4Q/ncyxFQ+tlkykxGShag/K6WiwzrmtLTjdROzsuvS67VCw+1EX49woEYLsG580CL9FbTSc04UE/C1ZGi7P1UjyfexH+rYrTr8vD5mm4Sooun9QQmPEIqTDGaaDWnHySPFXoK9C1dT8VhHYLYvf/4QWXojvXughPdca8tbh6B022umLV2gSWOpL8NX98lBx9hPDBBvOORuGslN8oLlJel5HRgD8o5LbVQd848+JTidshZ1Q5iYOWr3FX2ZCdJYPA90zJnnggibvvJekA2CQ2t/oWiThTGwzkYDr5lWmDEZ+4EXxqjyOO90OMC1AH17T2crc4KkWGn+vlMoFbdFMqXtxW17CF3hEF/JnIrmjKJoG6QP2v1Kp7R44InK7zxVH54euWXNUEy2VUfpovk3/VpV6PgpuU6SXh3B2FW6Jwj5SP6X6uz9WwSw/Nx6nibET8ZPaBmU6nodsufhQDSp9No2e+G5QlnRk2qTCX4/QNeQB6+SYsUu7EMgtUEJ/4yef4SUtUAEaai1MdQbTfxridSfLOhK8vF20e5+p5Z+szRr7NAxXxcSrWSwOLye5+c05H71owKIRbirOhpGW1ukXGKMMzmfxY+iZF/2lNbW94DlWcm40=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI9PR04MB019273.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(19092799006)(366016)(1800799024)(376014)(18002099003)(11063799006)(56012099006)(261026121527099003)(261021121427099003)(261021123027099003)(10067099003)(261102123227099003)(261009223027099003)(261022075727099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|366016|376014|1800799024|19092799006|261021123027099003|10067099003|56012099006|11063799006|261026140227099003|261028144727099003|261022105027099003|261021121427099003|261026121527099003|261102123227099003|261009223027099003|18002099003|22082099003|3023799007;
+X-Microsoft-Antispam-Message-Info: tb9bA6zDddS7oerJVUCsx5C3PNTKEr30b8HW75PeK8Keh454wtSjrn0g01MfG46Fszl4WurgbeZqFw/UIg01MZ4ZSlroAGtk7oq5A5npEzRnhmz0c5V8k+IgXs1BGGqh1HPXU+cyRr+RQLFWccZBuC/rmcJPBGjh0QFXi1Ea8jhG/1G+D00ygQEd9t4sr8VpFDaJQwGhVkm9LEeXCl+XLZ5zWdlvtQV5zqKl5YDjRJKVCaSg/J27AOZ27b+MvKdXPNvSiMycMqComHH5Jz1xpqRZdcES9vBMkNNBGK3XtNxHzBttCldu6mXxWoPj7o1zoGoUu8H3X2AHrz7taEy3bAe6I3Vdt4zisd7Zw0yxx2I2QrSuNXgcaK0trNlagls46uMno8emlucbkhLqAzPugKt91F90ZvKUE1P05TJM51T4E9XYZ7E8dDH5TYbVIX0mRm0yMSxS0PGCTC2KZJQMzbAAbAtOYlmLBQN5VZtFi01rfxTl42/ZPY6biTihPliwMNA6N2V+nqn6brXWo1FiIdQU9srFuX2DtlSo8Hoc4IVj9QwZnna794fPypU/K7LRfE+vrjji9VECB6MXS+1cMU5oVJxT0Ecmz6220b85tYBOhJzBEg8B7ei+ada4PDuU6SY6Dk8noix/lXG86wv/tHDy4tb9H7owXdn4++Rgm6Y=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI9PR04MB019273.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(366016)(376014)(1800799024)(19092799006)(261021123027099003)(10067099003)(56012099006)(11063799006)(261026140227099003)(261028144727099003)(261022105027099003)(261021121427099003)(261026121527099003)(261102123227099003)(261009223027099003)(18002099003)(22082099003)(3023799007);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?YbplEnleYwVaDO2h5vioxZxTzIIQ6NvHB6t5DYYJ5AXgxdpIni5FMucV0V8v?=
- =?us-ascii?Q?Dw85q+A+3SIWnn89D4JvzqnbO7Y8QF2ErLOleol5xeR/kgw5D8lNM7KsnkCg?=
- =?us-ascii?Q?6iHtICrmAK0UD6BgIa5E8x9C2YBnpW6Pmrncpei7x+LTE9eDRhJjgOAK1g+I?=
- =?us-ascii?Q?9QSijMOpAAJF5tnyjhMGRv2ct37hZQAHdQIoUn0hIvgdu74yfqNbtnlYDc7G?=
- =?us-ascii?Q?GiessJB0gO/GojF4dDEcP4IYqcl7VUOxNJz/KH1rsrC+tL139VYLU3dWrGQi?=
- =?us-ascii?Q?2O6jMEAI1l0LQL2AgxPnrsjIAmb3bACopt8JGJF2rQlaeGS73fiNw6YDG7DE?=
- =?us-ascii?Q?+ezC0j8xJOfXLxnpeQBvbNua1ZMtKZOnnmyKPmp8TDQimAuV2o8h5spGUEQ5?=
- =?us-ascii?Q?nvoPy8fg9e5CRoTWXaOSXCcUQNMvpBW4bfe03moeG0SI1082FYzHvXFyrVbO?=
- =?us-ascii?Q?lIOTZ/rIns6CwY7D9auzmz9hUBJ/DY9oHHwFriIJysVZcS1knHWXjqKupEXQ?=
- =?us-ascii?Q?kvPIP0c+ikMDc+e+pVUo6x388uE8UCw9+4i1jfVsH/SXXNgaFXYeJS89rC1T?=
- =?us-ascii?Q?8tyAj7KDunmDZCzZC2blPiTT5oGQgoadbuDX8I5a5iG1GGSfoDYlREszGddv?=
- =?us-ascii?Q?VCZ/UNLjfPkLgd/6H89N0uZP1i5cXOX9GEw7SRBYVV/MiVgkAyfEpqig+0bg?=
- =?us-ascii?Q?7/2zyP+UrMZzfpn++Lk7vBlOXr46j73xi6/lJd9gboH7kV5eHWBjofcWy+od?=
- =?us-ascii?Q?pfQ4+pT9gro5yuelQduuxg1WQOQnbTGnwvt732skjewq7tuZ0wrF9m7Un9Fd?=
- =?us-ascii?Q?LO8i6u4dr14mJ69g89Loj73d7TYPPmDCONpi6vajS/jVlYnUaQvDnOkRTx50?=
- =?us-ascii?Q?138bkutK17hWxmaOQS2uauXM2RE0Ty9Rax55PGSFwQ52dsluLf0Q+zvWvNr0?=
- =?us-ascii?Q?cfyDqFAhjpFynu4B/0ds71NPDDIQzouA5S33qyOPzmCm2YXi0TjHvZsWf4if?=
- =?us-ascii?Q?GxVwfgg63BvKfGc8eHQYXXA/mvHeRm730HYM1/wB0eNzUnIlZMkOPX4PLAs+?=
- =?us-ascii?Q?VsVb6itbqx1r9IEWwsTBzm4exxZJnNg+Bu7eY9QbrVb/malkQB3EHuIuX5lG?=
- =?us-ascii?Q?EJXWUcBHknDdSwc6GG49weZ7i1J8SkRBAWAkBlDpe65LzFqN5dtR1xd1DCkt?=
- =?us-ascii?Q?rdl4+eFtckNBOHMs+yCd1J966DNveQ/R7kUpMM/5YdW30e3oheSWeUu/sWbG?=
- =?us-ascii?Q?8AE8MtcIMCV8JaKCoa6jc3UVL5I9ILqW66+cU3HDmldWVGEwQwBMQwnw+joX?=
- =?us-ascii?Q?Qp99ziEnogIIICqUYws70Cbli2EKwoYjh8RuzBBuZa7Pdx3/4eiDINIU05Z6?=
- =?us-ascii?Q?SFUIrpThGJlRbQ1A8gHT6JKSrFEp5bIi4yTBUfGuy+HjPJFxG5aw3fZ9lc1r?=
- =?us-ascii?Q?nxUIoug7R0z0iI0gH6HWX7u7VxXkOk4udEJ8uuQI8MH7YkwvSggA8XAk9zEE?=
- =?us-ascii?Q?54ApF3j+6JOk+o6KT8GFkVWFj3XCFroHGIDopQZaTIbOd80higG6+QsHcEjD?=
- =?us-ascii?Q?aK2VAq9F0F8owtzakQrWsrGtYsVQeJfmqtTLsgsJq7BtirNXQEliuAxpx2Oc?=
- =?us-ascii?Q?G49MZcMehx0XoaTgWtt/i7ZBBvb3y1ilvTbFO718B9tKFxRcgjZN0e/X/5nV?=
- =?us-ascii?Q?6QExxFpb32C/EY/LwJYFEPW+k3D/xJmpsqrNnbOJ1N43tG0rualPlg/jF7z4?=
- =?us-ascii?Q?2JyG5lshBg=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?DNQGMlXoNOEX4ywyGxLQdn85tf9IlIwR6zjmONj/dyyjGB5YaMDLA+zAuZfd?=
+ =?us-ascii?Q?S2k9+EFYSanItO1hIfVMgvk1/R3hrevY1l/8APsdQPM9C/3BZ8RncTwC1/TQ?=
+ =?us-ascii?Q?MrVD0NtfyZAZn7g3uGvaf1tmlVd8HyvQ6KqEYBxYT9QQ/vxa1FeXSSf9Qsn0?=
+ =?us-ascii?Q?u5+RJqAnWoRbuowey6VC4Eop31Y38ySV/kcHLi2QQ0mIfyibFXh0fMhocdu+?=
+ =?us-ascii?Q?Y/cPkqbBbzQD60GNLVmjCbLiDw6bbDe9lAvZmCgAjL0XT9VarM40a3BCEolF?=
+ =?us-ascii?Q?DJmZiBBtw1jVzoA5vgHq/s+1sZx8W9soF5L2nzgJQHCcZW6Yt33QC+K0gyum?=
+ =?us-ascii?Q?raMUeQX/bfMow9HL8TytaSX4Z7AwTQpmb+yw0Iaf9uyvU8pzuSwvlVXDVhFi?=
+ =?us-ascii?Q?YrTv/H3QwhpAHpjSdjvVvFzlsIQpH1yXF84UmrYN1qUC+RsqdCh+dKbd3dEX?=
+ =?us-ascii?Q?2HryRZY+E+yMZyKw8V6/WZBhjCu8voS1CSlcuLluME1+grWCktqPxxBTa7x+?=
+ =?us-ascii?Q?3n3lNuM/ttNH8W8BbdUF9dlwHYYLmpDT16ULiU+cYgcE+88CBpVgXqyeQkt2?=
+ =?us-ascii?Q?a7C+UKyXN3NrwH1i6ax5NfRvFDrs42eo80GYTqy93J0GALdFoL+udZZYN3rL?=
+ =?us-ascii?Q?iUtWNv9d/CX2mVcIOQcCd451587M4LN9Sh5BeB5N64K8w/g3IRsuI8PpNE5m?=
+ =?us-ascii?Q?x98Xlm8eeNQjYaI9Mw90z6fSV/zsxwsOY/0EQFc6+6+LQGmZMJ6smxP7hBX+?=
+ =?us-ascii?Q?c5v2nJD6AtO1W5sgAw1blqv0x3M1NwAs+p6DAN2Rku39AzIfPw6KomTmBpvZ?=
+ =?us-ascii?Q?yye3qSolgHZWmQ8pzEFF6ME+biob+0CMhvUOKgsdvh5UWt1E15ykqcYpDlJW?=
+ =?us-ascii?Q?EREUreDxXzY6ZfoodqKlUbYqFKVcEaq0UwGKuBRFf3OsvMWzdjWMzshm6lxc?=
+ =?us-ascii?Q?DoITDdJtAPRKl0jQbtmRcSJkKFPweuoFjDmWReWvbypzHEWSrG0mHNzdzlRB?=
+ =?us-ascii?Q?PKy4tZ5DpLkj22nHjjKnBMuQRaKpKOoJ5wvPQtdQWKUPnhwI4auHe9nDqf9K?=
+ =?us-ascii?Q?AaTzIjW9rpuyz5RZ4VEX96lGMl85hVluTNkkg75lk8sHsg/FbfAM+ToafuFE?=
+ =?us-ascii?Q?nneDquY4qn0nuhdWYqi1MTbntLH/AvHSCYHHuZu9EhA2tlhe6JzNsyS4c1pw?=
+ =?us-ascii?Q?w1/Cccrj1OTObwp37XbhA3fnSOML4GnMmxYGDlxFA6OrZYRgDMsS4SYflKzI?=
+ =?us-ascii?Q?vpl767gxaM5qOvk/OklrXCByf75dfURq2XIjD5rs3VbBe4Ghjkxx+9nsemC5?=
+ =?us-ascii?Q?xsxrR0jcs9IO46KJJREHc3qft0mI5d6EgSfzOWfrMDfaGbGiJLoCd95X9kHh?=
+ =?us-ascii?Q?vEIqGq6GlnzdUti9K2lQQ75Nd4yZHv/Xm4XffRbQXOx8oUcdfNu+fto2d5Ny?=
+ =?us-ascii?Q?h2djfxUf4oDGk1orUSIEVSO526Anulaf3rGLu3nlLJV6vtt3DxMMmjTIrhtS?=
+ =?us-ascii?Q?LOi4fwdZpA7bjzQpa1HEsQxd6F+alS55iLfYVESuad42HYGWyUD/2JfLUfhK?=
+ =?us-ascii?Q?7hXIsO+yGlB8RmDFd7RvT5ZToeClWolM5CRfXNAOKqrSHWtpbmMzjTssYiOl?=
+ =?us-ascii?Q?3qZ3EQi5YEPrGpO3jrNb+eBjagyMqcHQVXl4gqCcNY8TiWYvvcghXPKrKiTy?=
+ =?us-ascii?Q?CuA717fEVQTsaY19AabRIvLT28ehPE5tgcvO7DVhtb+Ur97S17E5FNCj450+?=
+ =?us-ascii?Q?CSdIRG7NdA=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c663fe86-f4d7-4a32-bdfa-08df45919b29
+X-MS-Exchange-CrossTenant-Network-Message-Id: b748c2bc-6cfc-4c9f-d403-08df45919f4b
 X-MS-Exchange-CrossTenant-AuthSource: MI9PR04MB019273.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Nov 2026 16:32:58.6288
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Nov 2026 16:33:05.5986
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: kHIn/xTN97r+kEB9jOF5NQ/nJefJmxH6MMAThwwCyCTQKfBBGOixgFH2Ntw9Im6e5/gxnA2rNOP4TsMpIC+cGA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB8999
+X-MS-Exchange-CrossTenant-UserPrincipalName: NgWAoXz/cDE2UTGxn9gqUTmI6tgmG9GvsoBpgGffOkgXeprlgHR8SxdgH6KB2AuVFpnk5hkYlQelc1Pzts/vjQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MA9PR04MB766428
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261118_083307_616698_3D5539E8 
-X-CRM114-Status: GOOD (  13.14  )
+X-CRM114-CacheID: sfid-20261118_083313_568079_44CC121A 
+X-CRM114-Status: GOOD (  25.44  )
 X-Spam-Score: -1.1 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -140,45 +142,332 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-This patch set adds support in the Lynx SerDes PHY drivers for
-retimer PHYs which can be found on the board downstream of the SerDes
-lane towards any connector such as an SFP cage.
+Now that the lane has the PHYs listed in its "phys" property, make them
+follow the lane. A consumer, such as dpaa2-mac, only sees the lane PHY,
+so it is the lane that has to bring up and program the retimer for the
+protocol that the consumer asks for, and report as supported only the
+interfaces that the retimer accepts as well.
 
-The first patch extends the Lynx 10G and Lynx 28G dt bindings so that we
-allow the phys and phy-names properties at the SerDes lane level.
+Forward init, exit, power_on, power_off, set_mode and validate. The PHYs
+of the lane are called through the phy_*() API, so that they keep their
+own locking and counters.
 
-The second patch extends the core lane probing function with
-lynx_lane_get_retimers() which walks the lane's phys array and gets a
-reference to any downstream PHY found. The 3rd patch sets up the
-forwarding of the phy_ops received by the SerDes lane towards the
-retimer PHYs as well.
+Errors are handled as follows:
+- init and power_on: if one of the PHYs fails, the ones already brought
+  up are undone, in reverse order, and the error is returned. If the lane
+  itself fails, all of them are undone.
+- exit and power_off: if the lane fails, its PHYs are left as they are,
+  because the PHY core keeps the lane counted as up and the consumer may
+  retry; taking them down now would do it twice. Otherwise, a failure of
+  one of the downstream PHYs is logged and the others are still taken down.
+- set_mode and validate: the first error is returned. A PHY that does not
+  implement validate fails the validation of the lane too, since the lane
+  cannot tell that the PHY accepts the mode.
 
-One thing to note here is that the forwarding code is kept rather
-grouped in phy-fsl-lynx-core.c rather than in the individual Lynx10G and
-Lynx28G drivers so that in the future, if necessary, it can be moved
-internally into the Generic PHY framework. This leads to the consequence
-that the actual phy_ops with which the PHY is created cannot be const
-since the .owner field needs to be copied from the structure received
-from the actual PHY driver.
+There is no rollback if set_mode fails on one of the PHYs, because there
+is no previous mode to go back to: neither the PHY core nor the retimer
+drivers record the submode. The next phy_set_mode_ext(), which dpaa2-mac
+makes from every mac_config(), reconfigures the whole signal path.
 
-Ioana Ciornei (3):
-  dt-bindings: phy: lynx: allow downstream phys on the lane nodes
-  phy: lynx: get the PHYs listed in the lane nodes
-  phy: lynx: forward the phy_ops to the downstream PHYs of a lane
+The forwarding is done once in the core, for both the 10G and the 28G
+driver. The core ops are installed on all the lane PHYs, whether or not
+they have downstream PHYs, and call the ops of the driver. They are
+copied at probe time to take the .owner of the driver.
 
- .../devicetree/bindings/phy/fsl,lynx-10g.yaml |  27 ++
- .../devicetree/bindings/phy/fsl,lynx-28g.yaml |  27 ++
- drivers/phy/freescale/phy-fsl-lynx-core.c     | 266 +++++++++++++++++-
- drivers/phy/freescale/phy-fsl-lynx-core.h     |  14 +-
- 4 files changed, 327 insertions(+), 7 deletions(-)
+Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
+---
+ drivers/phy/freescale/phy-fsl-lynx-core.c | 206 +++++++++++++++++++++-
+ drivers/phy/freescale/phy-fsl-lynx-core.h |  10 +-
+ 2 files changed, 209 insertions(+), 7 deletions(-)
 
+diff --git a/drivers/phy/freescale/phy-fsl-lynx-core.c b/drivers/phy/freescale/phy-fsl-lynx-core.c
+index 307427b73d40..8a2e9ab8aebb 100644
+--- a/drivers/phy/freescale/phy-fsl-lynx-core.c
++++ b/drivers/phy/freescale/phy-fsl-lynx-core.c
+@@ -374,9 +374,200 @@ static int lynx_lane_get_retimers(struct lynx_priv *priv,
+ 	return 0;
+ }
+ 
++/* The PHYs of the lane are brought up before the lane, in the order of
++ * "phys", and taken down after it, also in the order of "phys". If one of them
++ * fails to come up, the ones already brought up are undone and the error is
++ * returned. If one of them fails to go down, the error is only logged, so that
++ * all of them get a chance to go down.
++ */
++static int lynx_init(struct phy *phy)
++{
++	struct lynx_lane *lane = phy_get_drvdata(phy);
++	struct phy *retimer;
++	int i, err, ret;
++
++	for (i = 0; i < lane->num_retimers; i++) {
++		retimer = lane->retimer[i];
++		err = phy_init(retimer);
++		if (err) {
++			dev_err(&phy->dev, "phy_init failed on %s: %pe\n",
++				dev_name(&retimer->dev), ERR_PTR(err));
++			goto err_exit_retimers;
++		}
++	}
++
++	err = lane->priv->drv_ops->init(phy);
++	if (err)
++		goto err_exit_retimers;
++
++	return 0;
++
++err_exit_retimers:
++	while (i--) {
++		retimer = lane->retimer[i];
++		ret = phy_exit(retimer);
++		if (ret)
++			dev_err(&phy->dev, "phy_exit failed on %s: %pe\n",
++				dev_name(&retimer->dev), ERR_PTR(ret));
++	}
++
++	return err;
++}
++
++static int lynx_exit(struct phy *phy)
++{
++	struct lynx_lane *lane = phy_get_drvdata(phy);
++	struct phy *retimer;
++	int i, err;
++
++	/* If the lane fails its .exit() callback, the PHY core does not
++	 * decrement its init_count, and the consumer may retry. In that case,
++	 * return directly without calling phy_exit() on the downstream retimer
++	 * PHYs so that we avoid an unbalance of their init_count field.
++	 */
++	err = lane->priv->drv_ops->exit(phy);
++	if (err)
++		return err;
++
++	/* A failure of a downstream PHY is only logged. There is no point
++	 * stopping and returning an error.
++	 */
++	for (i = 0; i < lane->num_retimers; i++) {
++		retimer = lane->retimer[i];
++		err = phy_exit(retimer);
++		if (err)
++			dev_err(&phy->dev, "phy_exit failed on %s: %pe\n",
++				dev_name(&retimer->dev), ERR_PTR(err));
++	}
++
++	return 0;
++}
++
++static int lynx_power_on(struct phy *phy)
++{
++	struct lynx_lane *lane = phy_get_drvdata(phy);
++	struct phy *retimer;
++	int i, err, ret;
++
++	for (i = 0; i < lane->num_retimers; i++) {
++		retimer = lane->retimer[i];
++		err = phy_power_on(retimer);
++		if (err) {
++			dev_err(&phy->dev, "phy_power_on failed on %s: %pe\n",
++				dev_name(&retimer->dev), ERR_PTR(err));
++			goto err_power_off_retimers;
++		}
++	}
++
++	err = lane->priv->drv_ops->power_on(phy);
++	if (err)
++		goto err_power_off_retimers;
++
++	return 0;
++
++err_power_off_retimers:
++	while (i--) {
++		retimer = lane->retimer[i];
++		ret = phy_power_off(retimer);
++		if (ret)
++			dev_err(&phy->dev, "phy_power_off failed on %s: %pe\n",
++				dev_name(&retimer->dev), ERR_PTR(ret));
++	}
++
++	return err;
++}
++
++static int lynx_power_off(struct phy *phy)
++{
++	struct lynx_lane *lane = phy_get_drvdata(phy);
++	struct phy *retimer;
++	int i, err;
++
++	/* If the lane fails to power_off, the PHY core keeps it counted as up,
++	 * and the consumer may retry. Leave the downstream retimer PHYs of the
++	 * lane up too, so that the retry does not take them down twice and
++	 * unbalance their counters.
++	 */
++	err = lane->priv->drv_ops->power_off(phy);
++	if (err)
++		return err;
++
++	/* A failure of a downstream PHY is only logged. Returning it would
++	 * make the PHY core keep the lane counted as on, although its own op
++	 * already turned it off, and a later phy_power_on() would then not
++	 * turn it back on.
++	 */
++	for (i = 0; i < lane->num_retimers; i++) {
++		retimer = lane->retimer[i];
++		err = phy_power_off(retimer);
++		if (err)
++			dev_err(&phy->dev, "phy_power_off failed on %s: %pe\n",
++				dev_name(&retimer->dev), ERR_PTR(err));
++	}
++
++	return 0;
++}
++
++/* There is no rollback if one of the PHYs fails, because there is no previous
++ * mode to go back to: the submode is not recorded by the PHY core or by the
++ * retimer drivers. The next phy_set_mode_ext() from the consumer reconfigures
++ * the whole signal path.
++ */
++static int lynx_set_mode(struct phy *phy, enum phy_mode mode, int submode)
++{
++	struct lynx_lane *lane = phy_get_drvdata(phy);
++	struct phy *retimer;
++	int i, err;
++
++	for (i = 0; i < lane->num_retimers; i++) {
++		retimer = lane->retimer[i];
++		err = phy_set_mode_ext(retimer, mode, submode);
++		if (err)
++			return err;
++	}
++
++	return lane->priv->drv_ops->set_mode(phy, mode, submode);
++}
++
++static int lynx_validate(struct phy *phy, enum phy_mode mode, int submode,
++			 union phy_configure_opts *opts)
++{
++	struct lynx_lane *lane = phy_get_drvdata(phy);
++	struct phy *retimer;
++	int i, err;
++
++	for (i = 0; i < lane->num_retimers; i++) {
++		retimer = lane->retimer[i];
++		/* A retimer PHY that cannot validate the mode, including one
++		 * without .validate (-EOPNOTSUPP), makes the lane fail as
++		 * well.
++		 */
++		err = phy_validate(retimer, mode, submode, opts);
++		if (err)
++			return err;
++	}
++
++	return lane->priv->drv_ops->validate(phy, mode, submode, opts);
++}
++
++/* The ops installed on the lane PHYs, for every lane. They call the ops of the
++ * driver, after the ones of the PHYs of the lane. .owner is not set here, see
++ * lynx_probe().
++ *
++ * The ops of the driver are called without checking for NULL: the Lynx 10G and
++ * 28G drivers, the only users of this core, implement all of them.
++ */
++static const struct phy_ops lynx_ops = {
++	.init		= lynx_init,
++	.exit		= lynx_exit,
++	.power_on	= lynx_power_on,
++	.power_off	= lynx_power_off,
++	.set_mode	= lynx_set_mode,
++	.validate	= lynx_validate,
++};
++
+ static int lynx_probe_lane(struct lynx_priv *priv, int id,
+-			   struct device_node *dn,
+-			   const struct phy_ops *phy_ops)
++			   struct device_node *dn)
+ {
+ 	struct lynx_lane *lane = &priv->lane[id];
+ 	struct phy *phy;
+@@ -386,7 +577,7 @@ static int lynx_probe_lane(struct lynx_priv *priv, int id,
+ 	if (err)
+ 		return err;
+ 
+-	phy = devm_phy_create(priv->dev, dn, phy_ops);
++	phy = devm_phy_create(priv->dev, dn, &priv->phy_ops);
+ 	if (IS_ERR(phy))
+ 		return PTR_ERR(phy);
+ 
+@@ -400,7 +591,7 @@ static int lynx_probe_lane(struct lynx_priv *priv, int id,
+ }
+ 
+ int lynx_probe(struct platform_device *pdev, const struct lynx_info *info,
+-	       const struct phy_ops *phy_ops)
++	       const struct phy_ops *drv_ops)
+ {
+ 	struct device *dev = &pdev->dev;
+ 	struct phy_provider *provider;
+@@ -423,6 +614,9 @@ int lynx_probe(struct platform_device *pdev, const struct lynx_info *info,
+ 
+ 	priv->dev = dev;
+ 	priv->info = info;
++	priv->drv_ops = drv_ops;
++	priv->phy_ops = lynx_ops;
++	priv->phy_ops.owner = drv_ops->owner;
+ 	priv->big_endian = device_property_read_bool(dev, "big-endian");
+ 	dev_set_drvdata(dev, priv);
+ 	spin_lock_init(&priv->pcc_lock);
+@@ -467,7 +661,7 @@ int lynx_probe(struct platform_device *pdev, const struct lynx_info *info,
+ 				return -EINVAL;
+ 			}
+ 
+-			err = lynx_probe_lane(priv, reg, child, phy_ops);
++			err = lynx_probe_lane(priv, reg, child);
+ 			if (err) {
+ 				of_node_put(child);
+ 				return err;
+@@ -475,7 +669,7 @@ int lynx_probe(struct platform_device *pdev, const struct lynx_info *info,
+ 		}
+ 	} else {
+ 		for (int i = priv->info->first_lane; i < priv->info->num_lanes; i++) {
+-			err = lynx_probe_lane(priv, i, NULL, phy_ops);
++			err = lynx_probe_lane(priv, i, NULL);
+ 			if (err)
+ 				return err;
+ 		}
+diff --git a/drivers/phy/freescale/phy-fsl-lynx-core.h b/drivers/phy/freescale/phy-fsl-lynx-core.h
+index c2ad81a9144b..88a9de75a134 100644
+--- a/drivers/phy/freescale/phy-fsl-lynx-core.h
++++ b/drivers/phy/freescale/phy-fsl-lynx-core.h
+@@ -70,6 +70,14 @@ struct lynx_priv {
+ 	struct lynx_pll pll[LYNX_NUM_PLL];
+ 	struct lynx_lane *lane;
+ 
++	/* PHY ops defined by the driver - either Lynx10G or Lynx28G */
++	const struct phy_ops *drv_ops;
++	/* Lynx core ops which take care of any possible downstream retimer
++	 * PHYs as well as calling the driver callbacks. Cannot be const
++	 * because the .owner field needs to be copied from the drv_ops.
++	 */
++	struct phy_ops phy_ops;
++
+ 	struct delayed_work cdr_check;
+ };
+ 
+@@ -115,7 +123,7 @@ static inline void lynx_rmw(struct lynx_priv *priv, unsigned long off, u32 val,
+ 	lynx_read((pll)->priv, reg((pll)->id))
+ 
+ int lynx_probe(struct platform_device *pdev, const struct lynx_info *info,
+-	       const struct phy_ops *phy_ops);
++	       const struct phy_ops *drv_ops);
+ void lynx_remove(struct platform_device *pdev);
+ 
+ const char *lynx_lane_mode_str(enum lynx_lane_mode lane_mode);
 -- 
 2.25.1
 
