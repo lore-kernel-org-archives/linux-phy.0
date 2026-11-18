@@ -2,159 +2,118 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0C7D1606A325
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 04:51:35 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 15CD9606A31C
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 05:55:48 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=EDhLrGuP;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Ajvgn8ep;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=fE9Xn227
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=HSZLFzXF;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=JmPLZbjG
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=NtddbT6LzzCz/pRfcybqWnNbNjpuZjuFtyQASe+QwwA=; b=EDhLrGuPrX0kmy1k+7J9OpKJts
-	wHevvTN0US7Jq20lfs5vVT5NhNBwsTX54RldKhCCCadp5fkijkH6cXT+7DBiObhCJnacoGPFdVita
-	E/2k2ZYJVXM9kbREUb2aszHE/tbU9jUIMkoQ5VUgMDzd57dsJbjQgGoonrOzg+TNxzs5lbvFsk+Sk
-	K25sBSilZcXdb9T8X+M2h4JHf8V0/OCv3QAwaUnkx0O/KpLLFFpXT4CHqYHjkOAF8Hs4Xv0sVs92Z
-	1xHwoa0tOxnql8wHxNyUF8sz/gJq1XncmpmZdDGSqSw8FRA+G/8yne2OZXE0qeBxoKbeWIJEfsIYf
-	ftUAb6ig==;
+	bh=RTgom9Jawt+9Cz0+iGGwsDJifEYedHaReYwTjNREGBI=; b=HSZLFzXFDbq2GxGcOM2R10ixUa
+	f3ZHSyC24o2Mu9mjgbjY3uvmqSarUAX0P4QeJ2Rl9NH0o+haaajUFVhwRgySy9z0EGoKSwQYqUNoy
+	z2O0+rXWAni6NaSJ2YMg3PQgvg1zsgat6YdpCFvbLng80ISqCNqMW8Jsikajc8zhlSTqFAM7hV3t0
+	P2OClLjbxNP3CB9o8dEzoYpphzGdZQqg5Njo0rACvm51ri/btF0xyqQU92PTouTP3cPuv8aX7Y3m4
+	gILhDDFPuncZNieeiAeo+3FcsTQFuLkymPvmdSTiiL4ovMniE3BcEt2jO/veRJWKNHesWnIa3NIpj
+	RsUChcYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTXdu-00000007itZ-1rpN;
-	Wed, 18 Nov 2026 04:51:34 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xTYe3-00000007neK-2Z5Z;
+	Wed, 18 Nov 2026 05:55:47 +0000
+Received: from mail-pf1-x42f.google.com ([2607:f8b0:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTXdq-00000007it9-3Db9
+	id 1xTYe0-00000007ncq-2ttw
 	for linux-phy@lists.infradead.org;
-	Wed, 18 Nov 2026 04:51:33 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AI2V2ef1959902
-	for <linux-phy@lists.infradead.org>; Wed, 18 Nov 2026 04:51:29 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=2gGNj1mVMGkwLJSC+d+QVQha
-	JGEVdPV98C71LrlbtbU=; b=Ajvgn8ep+yB01x9i7q1pwbVGU5q7rcSCVHEiUlXd
-	y56DFUnQYoGIPf9BaE95BVAzU4Rg3RsIbuOBdsV/A6Ddrr7BCO/bqTFNImwPRdFb
-	OU8FfjfC2sJRlO9G5rBn7Nw5bVaNDwRCp9+19oY24Lzey7vJ63UXvPj8DTs3iZRM
-	/5ee52kIT3vbQrD/fSYlRuDUk1g8LbaIDNWk12XbxR+WVsZssQqlA7yJXbPUUSic
-	V2IwhwgZ/MmaC5vf9Oj6T4iVQT/wNGi7b25OWA2nvEy4DPMKsdraM3cO7ptrDeZb
-	vmRjJ6hDsAnFWByCYY/FIobyUJh/cj4l9xW31sCnHR0DOw==
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j0yv9h80f-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 18 Nov 2026 04:51:29 +0000 (GMT)
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-93f32050e72so165078885a.1
-        for <linux-phy@lists.infradead.org>; Tue, 17 Nov 2026 20:51:29 -0800 (PST)
+	Wed, 18 Nov 2026 05:55:46 +0000
+Received: by mail-pf1-x42f.google.com with SMTP id d2e1a72fcca58-8a052288e41so3511b3a.1
+        for <linux-phy@lists.infradead.org>; Tue, 17 Nov 2026 21:55:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1794977488; x=1795582288; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=2gGNj1mVMGkwLJSC+d+QVQhaJGEVdPV98C71LrlbtbU=;
-        b=fE9Xn227xdKb4RRn9IgKmyPDqsyeM5x1jLiiFRRQwKCVECPolvTPBYLxo4ttMDL1qk
-         /Ny67OWumzHIpqFP6M6oDWNwi8tshAIPiGa05Gck8F596rt09hSO9mNUG4+1aM7X7hvb
-         QmeNh8hl4aU0nULZB8g8ifFb7kM+uptWQDyZveK5E0snJbyqaNsWuPqz41h7tF/R+NPT
-         pevo+T5UdVp6WPGCpySluOpJVIuCJbT+wLLJ224jCLOn9KNSDC7K7dAHgzOtpk1EtPIB
-         y3F4OC73YPEQqzwPGKOY3jASmFp8VpvrPiwBuv0Rl5COthpOKwzcvRiehdqWpuTQ4trS
-         dsQQ==
+        d=gmail.com; s=20260707; t=1794981344; x=1795586144; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:from:to:cc:subject:date:message-id
+         :reply-to:content-type;
+        bh=JxBXNLa6ZBXlBBQrdfV9c1+1S3GpXGF9noKFfawCuGg=;
+        b=JmPLZbjGL4mZ+FI9loIJZ33fboOvUCI1yPPaq8nNPHol9c3siq+2l+hftpVMw2POGs
+         FdTvluvg/+oVgGcfWIkV9dTwvUVs/tOPat8l1xuM45sL4BYDKJf25+wreG5caxP7xEix
+         ZmPWukeNNhpK1qxN48qJS10Gi1D7nC1bJwoaBFZZjJK95gc7XZ0YlYiy6PvfwGSfUojl
+         iTytx9nMwAzErpnHgKXw9d+q26NGS1BUzsQb9eN4OMOrxgsx7PQXK7uxcJK54faskaxl
+         uo8QuQbL0BfPEuxvbL2BPmyj7qSxTn7cmIBhzjARkifBH2yjJf94z40kBgQKeVK/5tgH
+         kuGQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1794977488; x=1795582288;
-        h=in-reply-to:content-disposition:content-type:mime-version
-         :references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=2gGNj1mVMGkwLJSC+d+QVQhaJGEVdPV98C71LrlbtbU=;
-        b=AfniR7+nZLrHkbfOcwReZjOMg+A3I9K7c10mWp0249ZdCgA6+Dd94K2UwUeizGXqRq
-         uEjx6ho40xCv88hIVrMmcONlG52/KUFiG2AJf0gu1Gwwg7i/4625aMdN4WP/CZvqe6RM
-         IxczHFPp+QdBNXnBJKR02txhG9G2NcXnTFz+de2vd/mrZa/nMkxr5p/jsGeRhm7/rjxp
-         VCBBXyhQuDHResEGVs3JE2wW3g8AZQPyf91jUG3kSfCxa4Cc2OPlIb62tFCsUiM0BY0F
-         aykss85ORb5F2IL3yKB6WiTrV+fNJt6zUgOdecD39jrHS7xtVjEVCwYiwdDgVw8Go1Ap
-         EVow==
-X-Forwarded-Encrypted: i=1; AL+hErG0uX2ADwR72YLlejWOthAtBqyYXM9iH1YEUjs/Nm8fcpzJAgpxBZrbU8/QVFLlu4ZH7LhmsOBzeKQ=@lists.infradead.org
-X-Gm-Message-State: APuU4Z9zAR8cAkz/ApssMFLdmQjbxtj5mL2CnaD9rolch2ECr5EpfFAe
-	u+/9XpWj9ddO7ICYxOJtKc6mSTm0zJzxaWndbq3Q5p3lZ02NMReLavTTXHZod25VZAYLZdhKBU9
-	1FUgaklJb+dBh54WBykWqrsSalUBqwGYC3FPPSUQbwaMkuAj5Zr8/uPp93e6iHCisSwi6LFmYEa
-	yQrQI=
-X-Gm-Gg: AYBFou244SEC2CTwNxeUV8m3ilzBad9zjrNfRync32496xCYIhp1IbZq4qDL1jQze3Y
-	jc55VlVVbpuubwtE5jld/KUZM59wNQpcmUlRTealnOyXsKjAW1yUAdktPnN2wCHu2R7ZgiygMP8
-	GFmcRSi/sGPmxfeRGpG3beRaGXDiGJVY7R7jevxhSJo7iu0UXsWG26kbxrQPNzHetNE7dBVjSk4
-	VkjHmb5rGEw6LkHTWkAw6XPVAIshCW5EDUCt6hApepy7LtvIg86ZFezcfVozti+OPxNmtYmtYYH
-	fWOtEQRfwXhGttGLaQ4g7GKKJqVoHdTosr61buLCrZ5AOOTonrLq1hpDyyFdly5S/I3as+hF9Nc
-	QoaqumI0lR/AwrnuESI8xnF02pkMz9Pfk2LSfdYbEIRD2SdVZJaDSn6JtN8p2Xo9KSATmBm5hiu
-	MCauLTDpTQ9Y0=
-X-Received: by 2002:a05:620a:4729:b0:949:61a9:5a6e with SMTP id af79cd13be357-949995a8479mr320831485a.31.1794977488118;
-        Tue, 17 Nov 2026 20:51:28 -0800 (PST)
-X-Received: by 2002:a05:620a:4729:b0:949:61a9:5a6e with SMTP id af79cd13be357-949995a8479mr320825585a.31.1794977487465;
-        Tue, 17 Nov 2026 20:51:27 -0800 (PST)
-Received: from QCOM-aGQu4IUr3Y.na.qualcomm.com ([195.50.164.66])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4a650d2ecd0sm2742959f8f.8.2026.11.17.20.51.24
+        d=1e100.net; s=20260707; t=1794981344; x=1795586144;
+        h=cc:to:content-transfer-encoding:content-type:mime-version
+         :message-id:date:subject:from:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=JxBXNLa6ZBXlBBQrdfV9c1+1S3GpXGF9noKFfawCuGg=;
+        b=2iVj48Mpeyc4pVhnBWRxFs/wkLshn9qqUPQ2p72Z42AbhN4cmMNQAD4yuSx3RPJGEu
+         Een35GoM716ImZgr1caOna2lu2T07Jt1tLHzH+yu6bU5SJCuC7dkA6NxhafVuCeTESf3
+         541S0mb1Sf8cEWtHyAluQsmRvr3JRIr7KUi231yIIWijuH95hlxoyAzFVn0Q383n+ssJ
+         AopOb05BxZ+cTha2r8JiKZ6nymmdA5UIq87NUc3WBulg9FZI6vZ0Kvk1QZYxTpmDE3Hd
+         18yiT+Eh18gRf1T3i5EC1eCaGXQm+rLqIRl3wTZ/kDnl7gXdrTCOw8LPPIR2Tl/wcaFy
+         dRsA==
+X-Forwarded-Encrypted: i=1; AL+hErHRjKyaN/ff9ATTbb07dskxT1Yih7HvEWrpBlUWyz14hUuq/sksiN89TWe04ErKjcy1nxlA8mqkGms=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8hihOSv15sReBgPx37jeHuSGT0bOmGVZ1AZCHPYI6850PctXqF
+	sBCLzkbGZt/LUfiltReFmd/VuFboeZH/6+FRMyjUhmnfYLulnePGv/1cXobBIR4tVbg=
+X-Gm-Gg: AYBFou2SwKD5VsPXc2t53rUKGnLCLAZPS5Er4i9Zxiff4RFu69wYv9sleDPif0Xk2mV
+	tesaqE5eQTZLokbcjagFoTpo+KyfZwyHufdXRXLGh68rL1aYv3c3yfHm5dm3vtUsE7MeHwuPCiC
+	2v4REL9cUlwst6Nx8dUe4i18phVgG5V3GhF8WN9wSSm9ZSobNX79YnMftJTM0AddnA//ZHlaAbj
+	dQamNpZMN7sSuNTikDrnsdrra5a/YCUHT/LrrQ52s3ve0gWkuB8t11Qrl4QFWBqfi13zhl3n3kQ
+	vnmoQbp85i1gTMKj2fARgKa0eIqZhaA7fJ9bUJca9LtTGa3/9cR51xhLqfxy1Uywt52dPZh4dsw
+	SFox01BLOED+8YYJ06s8PpIGFHOtgAbmbf6cthX7CFNbBOHQGKMvqYJkP6heiH6ZBj9kyRQpFGQ
+	6wFU9RI3y5DaNk0XrLK36nmMuJxCqLcwJRx+lEecx/tJJKHnUSSP6ff0P61b6Ahv+/519cWDNMV
+	Hbu4uj0/1Iwd3FN270cMtoOyAaJEWDYrD4YM/P8LHXH2LpkYjoQRQejHwEcigfbyDOFHpotPoqI
+	Lq5bwQCEZqkOLDAfj6FJjkz8Q5RdIuRuEhKKOwAFGjsyhRvrrz9boEDiKQc/m5ZBPU5VSWfIXOU
+	4kjNp+7Wa+Vq5PFah0d/8
+X-Received: by 2002:a05:6a00:754f:b0:8a0:4f14:8a4d with SMTP id d2e1a72fcca58-8c5d278952bmr2016960b3a.2.1794981343233;
+        Tue, 17 Nov 2026 21:55:43 -0800 (PST)
+Received: from [127.0.1.1] (211-23-39-77.hinet-ip.hinet.net. [211.23.39.77])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8c5ca5bf959sm569563b3a.20.2026.11.17.21.55.39
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Nov 2026 20:51:26 -0800 (PST)
-Date: Wed, 18 Nov 2026 05:51:23 +0100
-From: Shawn Guo <shengchao.guo@oss.qualcomm.com>
-To: Nabige Aala <nabige.aala@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Rob Clark <robin.clark@oss.qualcomm.com>,
-        Dmitry Baryshkov <lumag@kernel.org>,
-        Abhinav Kumar <abhinav.kumar@linux.dev>,
-        Jessica Zhang <jesszhan0024@gmail.com>, Sean Paul <sean@poorly.run>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-        Maxime Ripard <mripard@kernel.org>,
-        Thomas Zimmermann <tzimmermann@suse.de>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        Kuogee Hsieh <quic_khsieh@quicinc.com>,
-        Ritesh Kumar <ritesh.kumar@oss.qualcomm.com>,
-        Mahadevan P <mahadevan.p@oss.qualcomm.com>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org
-Subject: Re: [PATCH v3 03/11] dt-bindings: display/msm: Document Nord MDSS
-Message-ID: <av0uy_Cq9iaTZn4c@QCOM-aGQu4IUr3Y.na.qualcomm.com>
-References: <20261116-nord-drv-dt-v3-0-e3d3bf0e2c49@oss.qualcomm.com>
- <20261116-nord-drv-dt-v3-3-e3d3bf0e2c49@oss.qualcomm.com>
+        Tue, 17 Nov 2026 21:55:42 -0800 (PST)
+From: Jason Yang <jason98166@gmail.com>
+Subject: [PATCH v7 0/9] phy: rockchip-samsung-dcphy: Add the MIPI D-PHY
+ receiver
+Date: Wed, 18 Nov 2026 13:55:13 +0800
+Message-Id: <20261118-dcphy-rx-v1-v7-0-8de1adac3a74@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261116-nord-drv-dt-v3-3-e3d3bf0e2c49@oss.qualcomm.com>
-X-Authority-Analysis: v=2.4 cv=QenzLcbv c=1 sm=1 tr=0 ts=6afd2ed1 cx=c_pps
- a=50t2pK5VMbmlHzFWWp8p/g==:117 a=Jk2/TV77q6/E6wQq2oQJxQ==:17
- a=kj9zAlcOel0A:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=gEfo2CItAAAA:8 a=EUspDBNiAAAA:8 a=s44c23SdAZ6jS4fPfVAA:9 a=CjuIK1q_8ugA:10
- a=IoWCM6iH3mJn3m4BftBB:22 a=sptkURWiP4Gy88Gu7hUp:22
-X-Proofpoint-ORIG-GUID: o4ZF_A-P1tMlHDHTDv4AGqQMnL-OhiJF
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTE4MDAxOSBTYWx0ZWRfXxYPNKWtkJpoM
- lY/qQGpy3Jncj+759eE0gBR39LFKqz/NMJEUSWLDe1B47w1T8GIs0hQ6d1WA8IXliA2ubuT619O
- 9zZzt9s5F6R4zdZ1g1QnLiL5jSJJJYxfMewjV0JRUrK5QDiltOlMKKxh/sdrGElpfUb9uFzEZb6
- tsfT/qJyxt9jKNogDvI+UmAFF0/FrzBfzE1t+FqDbTMaQYMuRRvyz4F8awJPyU9KbdxrCw1RW23
- Bel7LtCUifD/kEnoTLPHBsY3C714K1VtpCtJ5mbvN3cU/MeHvvl8rZ0FU+S7hQDEtAhLEQJ78X8
- IfNcRSg4IoZj7azrIQGEzZ3Ja/vAY+KDhhT+jExfep9erLQKtPDtmE2Xx4N8bsak9NiM10qYOYM
- cwSYTKDRhEFulFkvaNKl7BxhELHQGd0hpvoOc2xK1Tm/F5vZfIC3vJKqkh/7eyrFYIUoN2bKE/9
- 0Hs9pG1g8zbihQkOHAQ==
-X-Proofpoint-GUID: o4ZF_A-P1tMlHDHTDv4AGqQMnL-OhiJF
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTE4MDAxOSBTYWx0ZWRfXxDKK2qpKzq+Z
- r3cWRwM7+8X023bdWSP+MNxctplVQW6LbyZVPWpEHs50f0I7kRYkpiQISp5/HDyadlr659PBRma
- Ir5sCgS1ukLLxwJq/1nUeJPpDzz1Dwc=
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-18_01,2026-11-16_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 phishscore=0 clxscore=1015 suspectscore=0 impostorscore=0
- bulkscore=0 priorityscore=1501 lowpriorityscore=0 adultscore=0 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611180019
+X-B4-Tracking: v=1; b=H4sIAMI9/WoC/23PQW7DIBAF0KtErEvFDBhMV71H1cV4gBipiSNcW
+ Yki370kiyamldj8kd7X5yrmWHKcxdvuKkpc8pynYw3uZSd4pOM+yhxqFqjQKocgA5/GiyxnuYD
+ 0lDqXdAwpeFHFqcSUz/e2j8+axzx/T+VyL1/gdv2/pz4lTeJes2Im9u/7A+WvV54O4taz4LO1W
+ 4vVcvLM2pABpNbqh+1Bba2uljBgx+gpJG6tebLtZlNtAued1Qa1Dq3tfi0oaDZ31UarB+MjDRH
+ /WPuw0G621Qbbw0CoBm03/13X9QciCVk20gEAAA==
+X-Change-ID: 20260721-dcphy-rx-v1-9af57f3edfd9
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Guochun Huang <hero.huang@rock-chips.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Michael Riesch <michael.riesch@collabora.com>, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Jason Yang <jason98166@gmail.com>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
+ Quentin Schulz <quentin.schulz@cherry.de>, Sashiko <sashiko-bot@kernel.org>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1794981338; l=9675;
+ i=jason98166@gmail.com; s=20260721; h=from:subject:message-id;
+ bh=4jldtoqotv+0+iVOKby65SdrP0m8eLnQDSL8YhS7iS4=;
+ b=dEmFplU2MroJIYLQWmJxnycUVLog0BQBHxuTTx87Q/u7Epn/a78HxJKxVydC3sIB3gGwIZC0+
+ G75qhyoh0XiCpKadq5GSPpI4odVILMOHjBbfXUN1f2mLz3E/4WVhU06
+X-Developer-Key: i=jason98166@gmail.com; a=ed25519;
+ pk=xQmD001Q/ooHl39PxyQtusbUQmgbOsSfpFryRVWZ/k4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261117_205130_845777_1232F420 
-X-CRM114-Status: GOOD (  21.19  )
-X-Spam-Score: -2.8 (--)
+X-CRM114-CacheID: sfid-20261117_215544_750557_DEDE1346 
+X-CRM114-Status: GOOD (  27.06  )
+X-Spam-Score: -1.9 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -167,443 +126,210 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-8.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Mon, Nov 16, 2026 at 06:46:42PM +0530, Nabige Aala wrote:
-> From: Mahadevan P <mahadevan.p@oss.qualcomm.com>
-> 
-> Nord has a new MDSS 12.1 revision with DPU 1499A and two independent,
-> DP-only display interface controllers (no DSI), which no existing
-> schema describes. Add a dedicated qcom,nord-mdss binding to document.
-> 
-> Assisted-by: LLM
-> Signed-off-by: Mahadevan P <mahadevan.p@oss.qualcomm.com>
-> Signed-off-by: Nabige Aala <nabige.aala@oss.qualcomm.com>
-> ---
->  .../bindings/display/msm/qcom,nord-mdss.yaml       | 396 +++++++++++++++++++++
->  1 file changed, 396 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/display/msm/qcom,nord-mdss.yaml b/Documentation/devicetree/bindings/display/msm/qcom,nord-mdss.yaml
-> new file mode 100644
-> index 000000000000..abd80dae4e7f
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/msm/qcom,nord-mdss.yaml
-> @@ -0,0 +1,396 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/msm/qcom,nord-mdss.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Qualcomm Nord display subsystem (MDSS)
-> +
-> +maintainers:
-> +  - Mahadevan P <mahadevan.p@oss.qualcomm.com>
-> +
-> +description:
-> +  Nord display subsystem consists of MDSS (display controller), DPU 1499A
-> +  (display processing unit), and display interface controllers (DP only, no DSI).
-> +  This is MDSS 12.1, DP-only, with 2 independent DP controllers.
-> +
-> +$ref: /schemas/display/msm/mdss-common.yaml#
-> +
-> +properties:
-> +  compatible:
-> +    const: qcom,nord-mdss
-> +
-> +  clocks:
-> +    items:
-> +      - description: Display AHB
-> +      - description: Display hf AXI
-> +      - description: Display core
-> +
-> +  clock-names:
-> +    items:
-> +      - const: iface
-> +      - const: bus
-> +      - const: core
-> +
-> +  iommus:
-> +    maxItems: 1
-> +
-> +  interconnects:
-> +    items:
-> +      - description: Interconnect path from mdp0 port to the data bus
-> +      - description: Interconnect path from CPU to the reg bus
-> +
-> +  interconnect-names:
-> +    items:
-> +      - const: mdp0-mem
-> +      - const: cpu-cfg
-> +
-> +patternProperties:
-> +  "^display-controller@[0-9a-f]+$":
-> +    type: object
-> +    additionalProperties: true
-> +    properties:
-> +      compatible:
-> +        const: qcom,nord-dpu
-> +
-> +  "^displayport-controller@[0-9a-f]+$":
-> +    type: object
-> +    additionalProperties: true
-> +    properties:
-> +      compatible:
-> +        const: qcom,nord-dp
+The Samsung MIPI D-/C-PHY block on RK3588 and RK3576 has a transmitter
+for DSI and a receiver for CSI-2. Both can be used at the same time.
 
-This is now contradicting with the dp-controller bindings which documents
-"qcom,nord-dp" with a fallback on "qcom,sa8775p-dp".
+Mainline only supports the transmitter and models the block as a single
+struct phy. The PHY core refcounts power_on() per struct phy, so the
+receiver cannot be powered independently of it, and the single
+devicetree cell selects the mode, so the provider cannot tell which of
+the two a consumer refers to.
 
-> +
-> +  "^phy@[0-9a-f]+$":
-> +    type: object
-> +    additionalProperties: true
-> +    properties:
-> +      compatible:
-> +        const: qcom,nord-dp-phy
-> +
-> +required:
-> +  - compatible
-> +
-> +unevaluatedProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/qcom,nord-dispcc.h>
-> +    #include <dt-bindings/clock/qcom,nord-nwgcc.h>
-> +    #include <dt-bindings/clock/qcom,nord-tcsrcc.h>
-> +    #include <dt-bindings/interconnect/qcom,icc.h>
-> +    #include <dt-bindings/interconnect/qcom,nord-rpmh.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/power/qcom,rpmhpd.h>
-> +
-> +    display-subsystem@ae00000 {
-> +        compatible = "qcom,nord-mdss";
-> +        reg = <0x0ae00000 0x1000>;
-> +        reg-names = "mdss";
-> +
-> +        power-domains = <&dispcc0 MDSS_DISP_CC_MDSS_CORE_GDSC>;
-> +        clocks = <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>,
-> +                 <&nwgcc NW_GCC_DISP_0_HF_AXI_CLK>,
-> +                 <&dispcc0 MDSS_DISP_CC_MDSS_MDP_CLK>;
-> +        clock-names = "iface", "bus", "core";
-> +        resets = <&dispcc0 MDSS_DISP_CC_MDSS_CORE_BCR>;
-> +
-> +        interconnects = <&mmss_noc MASTER_MDP0 QCOM_ICC_TAG_ALWAYS
-> +                         &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
-> +                        <&hscnoc MASTER_APPSS_PROC QCOM_ICC_TAG_ACTIVE_ONLY
-> +                         &config_noc SLAVE_DISPLAY_CFG QCOM_ICC_TAG_ACTIVE_ONLY>;
-> +        interconnect-names = "mdp0-mem", "cpu-cfg";
-> +
-> +        interrupts = <GIC_SPI 930 IRQ_TYPE_LEVEL_HIGH>;
-> +        interrupt-controller;
-> +        #interrupt-cells = <1>;
-> +
-> +        iommus = <&apps_smmu_1 0x3e0 0x2>;
-> +        #address-cells = <1>;
-> +        #size-cells = <1>;
-> +        ranges;
-> +
-> +        display-controller@ae01000 {
-> +            compatible = "qcom,nord-dpu";
-> +            reg = <0x0ae01000 0x8f000>,
-> +                  <0x0aeb0000 0x3000>;
-> +            reg-names = "mdp", "vbif";
-> +
-> +            clocks = <&nwgcc NW_GCC_DISP_0_HF_AXI_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_MDP_LUT_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_MDP_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_VSYNC_CLK>;
-> +            clock-names = "nrt_bus", "iface", "lut", "core", "vsync";
-> +
-> +            assigned-clocks = <&dispcc0 MDSS_DISP_CC_MDSS_VSYNC_CLK>;
-> +            assigned-clock-rates = <19200000>;
-> +
-> +            operating-points-v2 = <&mdp_opp_table>;
-> +            power-domains = <&rpmhpd RPMHPD_MMCX>;
-> +
-> +            interrupt-parent = <&mdss>;
-> +            interrupts = <0>;
-> +
-> +            ports {
-> +                #address-cells = <1>;
-> +                #size-cells = <0>;
-> +
-> +                port@0 {
-> +                    reg = <0>;
-> +                    dpu_intf0_out: endpoint {
-> +                        remote-endpoint = <&mdss_dp0_in>;
-> +                    };
-> +                };
-> +
-> +                port@1 {
-> +                    reg = <1>;
-> +                    dpu_intf4_out: endpoint {
-> +                        remote-endpoint = <&mdss_dp1_in>;
-> +                    };
-> +                };
-> +            };
-> +
-> +            mdp_opp_table: opp-table {
-> +                compatible = "operating-points-v2";
-> +
-> +                opp-300000000 {
-> +                    opp-hz = /bits/ 64 <300000000>;
-> +                    required-opps = <&rpmhpd_opp_svs>;
-> +                };
-> +
-> +                opp-417000000 {
-> +                    opp-hz = /bits/ 64 <417000000>;
-> +                    required-opps = <&rpmhpd_opp_svs_l1>;
-> +                };
-> +
-> +                opp-532000000 {
-> +                    opp-hz = /bits/ 64 <532000000>;
-> +                    required-opps = <&rpmhpd_opp_nom>;
-> +                };
-> +
-> +                opp-650000000 {
-> +                    opp-hz = /bits/ 64 <650000000>;
-> +                    required-opps = <&rpmhpd_opp_turbo>;
-> +                };
-> +
-> +                opp-710000000 {
-> +                    opp-hz = /bits/ 64 <710000000>;
-> +                    required-opps = <&rpmhpd_opp_turbo_l1>;
-> +                };
-> +            };
-> +        };
-> +
-> +        displayport-controller@af54000 {
-> +            compatible = "qcom,nord-dp";
+This series registers a struct phy for the PHY transmitter and one for
+the PHY receiver, and implements the D-PHY receiver. As suggested in
+the v5 review, the single cell of the binding now selects the PHY
+transmitter or the PHY receiver. The cell values are the new generic
+PHY_DIRECTION_TX and PHY_DIRECTION_RX constants. The PHY transmitter
+and the PHY receiver cannot run in different modes. A phy-type property
+of the PHY node therefore sets the mode of the whole block, D-PHY by
+default.
 
-The example needs to be updated for the "qcom,sa8775p-dp" fallback
-as well.
+  1/9  adds PHY_DIRECTION_TX and PHY_DIRECTION_RX to the generic header
+  2/9  changes the single cell of the rockchip,rk3588-mipi-dcphy binding
+       to select PHY_DIRECTION_TX or PHY_DIRECTION_RX, adds phy-type for
+       the mode of the whole block, and keeps PHY_TYPE_DPHY and
+       PHY_TYPE_CPHY as deprecated values
+  3/9  unwinds the PHY transmitter power-on when the PLL fails to lock
+  4/9  always writes the rate-dependent registers of the PHY transmitter
+  5/9  moves the block-level setup (APB reset, BIAS) to runtime resume
+  6/9  names the transmitter helpers and ops (no functional change)
+  7/9  takes the PHY mode from phy-type and the PHY from the cell, and
+       keeps the deprecated cell values on the PHY transmitter
+  8/9  registers the receiver's struct phy, takes PHY_DIRECTION_RX in
+       of_xlate() and implements the D-PHY receiver bring-up
+  9/9  adds the MIPI CSI-2 receiver nodes on RK3588 and connects them
+       to VICAP
 
-Shawn
+9/9 has to wait for 1/9 to 8/9. It uses PHY_DIRECTION_RX from 1/9,
+and the csi nodes need a PHY driver with receiver support.
 
-> +
-> +            reg = <0xaf54000 0x200>,
-> +                  <0xaf54200 0x200>,
-> +                  <0xaf55000 0xc00>,
-> +                  <0xaf56000 0x400>,
-> +                  <0xaf57000 0x400>,
-> +                  <0xaf58000 0x400>,
-> +                  <0xaf59000 0x400>,
-> +                  <0xaf5a000 0x600>,
-> +                  <0xaf5b000 0x600>;
-> +
-> +            clocks = <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_AUX_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_LINK_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_LINK_INTF_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_PIXEL0_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_PIXEL1_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_PIXEL2_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_PIXEL3_CLK>;
-> +            clock-names = "core_iface", "core_aux",
-> +                          "ctrl_link", "ctrl_link_iface",
-> +                          "stream_pixel", "stream_1_pixel",
-> +                          "stream_2_pixel", "stream_3_pixel";
-> +
-> +            assigned-clocks = <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_LINK_CLK_SRC>,
-> +                              <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_PIXEL0_CLK_SRC>,
-> +                              <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_PIXEL1_CLK_SRC>,
-> +                              <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_PIXEL2_CLK_SRC>,
-> +                              <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_PIXEL3_CLK_SRC>;
-> +            assigned-clock-parents = <&dp0_phy 0>,
-> +                                     <&dp0_phy 1>,
-> +                                     <&dp0_phy 1>,
-> +                                     <&dp0_phy 1>,
-> +                                     <&dp0_phy 1>;
-> +
-> +            interrupt-parent = <&mdss>;
-> +            interrupts = <12>;
-> +
-> +            phys = <&dp0_phy>;
-> +            phy-names = "dp";
-> +
-> +            operating-points-v2 = <&dp_opp_table>;
-> +            power-domains = <&rpmhpd RPMHPD_MMCX>;
-> +
-> +            #sound-dai-cells = <0>;
-> +
-> +            ports {
-> +                #address-cells = <1>;
-> +                #size-cells = <0>;
-> +
-> +                port@0 {
-> +                    reg = <0>;
-> +                    mdss_dp0_in: endpoint {
-> +                        remote-endpoint = <&dpu_intf0_out>;
-> +                    };
-> +                };
-> +
-> +                port@1 {
-> +                    reg = <1>;
-> +                    mdss_dp0_out: endpoint { };
-> +                };
-> +            };
-> +
-> +            dp_opp_table: opp-table {
-> +                compatible = "operating-points-v2";
-> +
-> +                opp-162000000 {
-> +                    opp-hz = /bits/ 64 <162000000>;
-> +                    required-opps = <&rpmhpd_opp_low_svs>;
-> +                };
-> +
-> +                opp-270000000 {
-> +                    opp-hz = /bits/ 64 <270000000>;
-> +                    required-opps = <&rpmhpd_opp_low_svs>;
-> +                };
-> +
-> +                opp-540000000 {
-> +                    opp-hz = /bits/ 64 <540000000>;
-> +                    required-opps = <&rpmhpd_opp_svs_l1>;
-> +                };
-> +
-> +                opp-810000000 {
-> +                    opp-hz = /bits/ 64 <810000000>;
-> +                    required-opps = <&rpmhpd_opp_nom>;
-> +                };
-> +            };
-> +        };
-> +
-> +        displayport-controller@af5c000 {
-> +            compatible = "qcom,nord-dp";
-> +
-> +            reg = <0xaf5c000 0x200>,
-> +                  <0xaf5c200 0x200>,
-> +                  <0xaf5d000 0xc00>,
-> +                  <0xaf5e000 0x400>,
-> +                  <0xaf5f000 0x400>,
-> +                  <0xaf60000 0x400>,
-> +                  <0xaf61000 0x400>,
-> +                  <0xaf62000 0x600>,
-> +                  <0xaf63000 0x600>;
-> +
-> +            clocks = <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX1_AUX_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX1_LINK_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX1_LINK_INTF_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX1_PIXEL0_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX1_PIXEL1_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX1_PIXEL2_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_DPTX1_PIXEL3_CLK>;
-> +            clock-names = "core_iface", "core_aux",
-> +                          "ctrl_link", "ctrl_link_iface",
-> +                          "stream_pixel", "stream_1_pixel",
-> +                          "stream_2_pixel", "stream_3_pixel";
-> +
-> +            assigned-clocks = <&dispcc0 MDSS_DISP_CC_MDSS_DPTX1_LINK_CLK_SRC>,
-> +                              <&dispcc0 MDSS_DISP_CC_MDSS_DPTX1_PIXEL0_CLK_SRC>,
-> +                              <&dispcc0 MDSS_DISP_CC_MDSS_DPTX1_PIXEL1_CLK_SRC>;
-> +            assigned-clock-parents = <&dp1_phy 0>,
-> +                                     <&dp1_phy 1>,
-> +                                     <&dp1_phy 1>;
-> +
-> +            interrupt-parent = <&mdss>;
-> +            interrupts = <13>;
-> +
-> +            phys = <&dp1_phy>;
-> +            phy-names = "dp";
-> +
-> +            operating-points-v2 = <&dp1_opp_table>;
-> +            power-domains = <&rpmhpd RPMHPD_MMCX>;
-> +
-> +            #sound-dai-cells = <0>;
-> +
-> +            ports {
-> +                #address-cells = <1>;
-> +                #size-cells = <0>;
-> +
-> +                port@0 {
-> +                    reg = <0>;
-> +                    mdss_dp1_in: endpoint {
-> +                        remote-endpoint = <&dpu_intf4_out>;
-> +                    };
-> +                };
-> +
-> +                port@1 {
-> +                    reg = <1>;
-> +                    mdss_dp1_out: endpoint { };
-> +                };
-> +            };
-> +
-> +            dp1_opp_table: opp-table {
-> +                compatible = "operating-points-v2";
-> +
-> +                opp-162000000 {
-> +                    opp-hz = /bits/ 64 <162000000>;
-> +                    required-opps = <&rpmhpd_opp_low_svs>;
-> +                };
-> +
-> +                opp-270000000 {
-> +                    opp-hz = /bits/ 64 <270000000>;
-> +                    required-opps = <&rpmhpd_opp_low_svs>;
-> +                };
-> +
-> +                opp-540000000 {
-> +                    opp-hz = /bits/ 64 <540000000>;
-> +                    required-opps = <&rpmhpd_opp_svs_l1>;
-> +                };
-> +
-> +                opp-810000000 {
-> +                    opp-hz = /bits/ 64 <810000000>;
-> +                    required-opps = <&rpmhpd_opp_nom>;
-> +                };
-> +            };
-> +        };
-> +
-> +        dp0_phy: phy@fc3a00 {
-> +            compatible = "qcom,nord-dp-phy";
-> +
-> +            reg = <0xfc3a00 0x1d0>,
-> +                  <0xfc3200 0x128>,
-> +                  <0xfc3600 0x128>,
-> +                  <0xfc3000 0x200>;
-> +
-> +            clocks = <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_AUX_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>,
-> +                     <&tcsrcc TCSR_DP_TX_0_CLKREF_EN>;
-> +            clock-names = "aux", "cfg_ahb", "ref";
-> +
-> +            #clock-cells = <1>;
-> +            #phy-cells = <0>;
-> +
-> +            power-domains = <&rpmhpd RPMHPD_MX>;
-> +        };
-> +
-> +        dp1_phy: phy@fc6a00 {
-> +            compatible = "qcom,nord-dp-phy";
-> +
-> +            reg = <0xfc6a00 0x200>,
-> +                  <0xfc6200 0xd0>,
-> +                  <0xfc6600 0xd0>,
-> +                  <0xfc6000 0x1c8>;
-> +
-> +            clocks = <&dispcc0 MDSS_DISP_CC_MDSS_DPTX1_AUX_CLK>,
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>,
-> +                     <&tcsrcc TCSR_DP_TX_1_CLKREF_EN>;
-> +            clock-names = "aux", "cfg_ahb", "ref";
-> +
-> +            #clock-cells = <1>;
-> +            #phy-cells = <0>;
-> +
-> +            power-domains = <&rpmhpd RPMHPD_MX>;
-> +        };
-> +    };
-> 
-> -- 
-> 2.34.1
-> 
+Compatibility
+=============
+
+In 2/9 and 7/9, the old cell values PHY_TYPE_DPHY and PHY_TYPE_CPHY
+remain valid as deprecated values. They select the PHY transmitter, so
+existing DTs keep working on a newer kernel.
+
+New DTs following 1/9 and 2/9 are an ABI break on an older kernel. The
+older kernel ignores phy-type and takes any cell value as the mode of
+the block. A DSI node with PHY_DIRECTION_TX therefore gets no display,
+and a CSI-2 node with PHY_DIRECTION_RX gets no camera.
+
+In 9/9, the dsi nodes keep PHY_TYPE_DPHY, which older and newer kernels
+both accept. With the csi nodes disabled, the display therefore keeps
+working on either kernel.
+
+The csi nodes in 9/9 have no older value to keep and have to use
+PHY_DIRECTION_RX. Enabling csi0 or csi1 therefore needs a PHY driver
+with receiver support. Since v7.0, a CSI-2 host driver probes the csi
+nodes. An older PHY driver then gives the CSI-2 host the PHY transmitter
+that drives the display. The camera gets no frames, and the display can
+stop working as well.
+
+Testing
+=======
+
+Tested on an RK3588 board, with a DSI panel and an IMX219 camera on
+DCPHY0, and an LVDS panel behind a DSI-to-LVDS bridge on DCPHY1.
+
+  - The PHY transmitter and the PHY receiver run at the same time: with
+    8/9 and 9/9, both panels light from boot, and the camera stream is
+    shown live on the DCPHY0 panel.
+  - The two can be powered independently: the DCPHY0 panel is turned
+    off and back on during a 1200-frame capture, and the capture
+    completes.
+  - The PHY receiver does not need the PHY transmitter: with dsi0
+    disabled, the camera alone brings the block up and streams, which
+    relies on 5/9 moving the block-level setup to runtime resume.
+  - Existing device trees keep working: with a single PHY_TYPE_DPHY
+    cell in dsi0 as before this series, the DCPHY0 panel lights.
+  - The DT of 9/9 keeps the display working on an older kernel: with
+    the csi nodes disabled and without this series, both panels light.
+  - The new cell works for the PHY transmitter: with PHY_DIRECTION_TX
+    in dsi0, with and without phy-type = <PHY_TYPE_DPHY>, the DCPHY0
+    panel lights.
+
+No WARNING, underflow, "Internal error" or Oops in dmesg in any of
+these.
+
+Not covered: the receiver of DCPHY1 (tested by Quentin Schulz on v6),
+the 3- and 4-lane receiver paths, and RK3576. 3/9 and 4/9 fix states
+found by reading the code. Those states were not reproduced on
+hardware.
+
+This series was prepared with Claude through Claude Code:
+
+  - It checked the driver against the vendor driver and the TRM.
+  - It drafted the code. I reviewed and reworked it before committing it
+    to my tree.
+  - It checked the wording and spelling of the commit messages and this
+    cover letter.
+  - After I ran the basic pipeline tests, it generated more test cases
+    and ran them on my board.
+
+---
+Changes in v7:
+- Collect the Reviewed-by and Tested-by tags. Keep them on 6/9 and 8/9,
+  as the changes there only rename and move fields as Michael suggested.
+- 6/9: also give the PLL helpers the tx_ prefix, and move the master
+  reset and the PLL state, which only the transmitter uses, into
+  struct samsung_mipi_phy. (Michael)
+- 8/9: put the receiver-only and the transmitter-only fields of struct
+  samsung_mipi_phy in a union, and move the slave reset there as well.
+  (Michael)
+- 8/9: use a single space before = in the receiver's phy_ops. (Michael)
+- 9/9: restrict the commit message to what the patch does and how it
+  affects an older kernel. (Michael)
+- Thanks to Quentin Schulz for testing v6 and for pointing out that the
+  U-Boot SPLL fix is merged.
+- Test with mainline U-Boot v2027.01-rc2 and drop the note about the
+  SPLL fix.
+- Link to v6: https://patch.msgid.link/20261110-dcphy-rx-v1-v6-0-d681ba20b36a@gmail.com
+
+Changes in v6:
+- Rebase onto phy/next (v7.4-rc1).
+- Collect the Reviewed-by tags on 1/9 and 6/9.
+- 2/9: move the mode from the first cell to a phy-type property.
+  (Michael, Heiko, Rob)
+- New 3/9: power_on relied on the APB reset, which 5/9 moves to
+  runtime resume, to clean up after a PLL lock failure. (Sashiko)
+- New 4/9: power_on also relied on that reset to clear the
+  rate-dependent registers, found while checking power_on for 3/9.
+- 5/9: keep BIAS_CON4 with the other BIAS writes. (Michael)
+- New 7/9: support the new phy-type and direction binding of 2/9.
+- 8/9: merge v5's 5/8 and 6/8. (Michael)
+- 8/9: trim the comments and name the magic numbers.
+- Drop v5's 7/8: the dsi nodes keep PHY_TYPE_DPHY. (Michael, Krzysztof)
+- 9/9: use a single PHY_DIRECTION_RX cell in the csi nodes.
+- Describe the ABI break of new DTs in 2/9, 9/9 and the cover letter.
+  (Rob, Krzysztof)
+- Drop the Assisted-by tags.
+- Link to v5: https://patch.msgid.link/20261016-dcphy-rx-v1-v5-0-e63b49eabe2d@gmail.com
+
+Changes in v5:
+- Rebase onto phy/next. The runtime PM fix this series applied on top
+  of is now commit 261e84f9278f ("phy: rockchip-samsung-dcphy: Enable
+  runtime PM at PHY core level"), so it is no longer carried here.
+- 1/8: use PHY_DIRECTION_TX and PHY_DIRECTION_RX instead of
+  PHY_TYPE_DSI and PHY_TYPE_CSI. (Michael)
+- 2/8: use PHY_DIRECTION_* for the second cell and rewrite the
+  description.
+- Drop v4's 5/7: it has no benefit over the switch, and it moved a
+  DC-PHY shared function into a D-PHY helper. (Michael)
+- 5/8: rename protocol to direction in of_xlate() to follow 1/8.
+- 6/8: use a switch in the receiver's power_on() and power_off(), as
+  the transmitter does.
+- New patches 7/8 and 8/8: switch the RK3588 DC-PHYs to two cells and
+  add the MIPI CSI-2 receiver nodes.
+- Link to v4: https://lore.kernel.org/r/20260821-dcphy-rx-v1-v4-0-f1797634233d@gmail.com
+
+Changes in v4:
+- Put the second cell back: the first cell selects the mode, the
+  second the transmitter or the receiver.
+- Drop the private use count and mutex; the runtime PM usage count
+  does the same job.
+- New patch 3/7: move the block-level setup to runtime resume.
+- Split v3's 3/5 into 4/7 and 5/7.
+- of_xlate() rejects a mix of D-PHY and C-PHY consumers.
+- The runtime PM probe-order fix is now a separate patch [1] that this
+  series applies on top of.
+- Bryan O'Donoghue's Reviewed-by from v2 is not carried over; that
+  patch was rewritten.
+- Link to v3: https://lore.kernel.org/r/20260810-dcphy-rx-v1-v3-0-a2d25c29adfc@gmail.com
+
+---
+Jason Yang (9):
+      dt-bindings: phy: Add PHY_DIRECTION_TX/RX definitions
+      dt-bindings: phy: rockchip,rk3588-mipi-dcphy: Select TX or RX, add phy-type
+      phy: rockchip-samsung-dcphy: Unwind power-on on PLL lock failure
+      phy: rockchip-samsung-dcphy: Always write the rate-dependent registers
+      phy: rockchip-samsung-dcphy: Move block-level setup to runtime resume
+      phy: rockchip-samsung-dcphy: Name the transmitter helpers and ops
+      phy: rockchip-samsung-dcphy: Support the new phy-type and direction binding
+      phy: rockchip-samsung-dcphy: Add MIPI D-PHY receiver support
+      arm64: dts: rockchip: add the dcphy mipi csi-2 receiver nodes to rk3588
+
+ .../bindings/phy/rockchip,rk3588-mipi-dcphy.yaml   |  18 +-
+ arch/arm64/boot/dts/rockchip/rk3588-base.dtsi      |  68 +++
+ drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c  | 659 +++++++++++++++++----
+ include/dt-bindings/phy/phy.h                      |   3 +
+ 4 files changed, 634 insertions(+), 114 deletions(-)
+---
+base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
+change-id: 20260721-dcphy-rx-v1-9af57f3edfd9
+
+Best regards,
+--  
+Jason Yang <jason98166@gmail.com>
+
 
 -- 
 linux-phy mailing list
