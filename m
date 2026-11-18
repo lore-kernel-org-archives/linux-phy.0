@@ -2,118 +2,80 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8BE80606A334
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 10:08:15 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AC163606A31C
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 10:19:08 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=bFnBBTfA;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=DYBjfuJG
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Bj0Wjgcd;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=icenowy.me header.i=@icenowy.me header.a=rsa-sha256 header.s=zmail2 header.b=Oi4ByOSX
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=c0hfVUkf3MOHnd0tnVPcGjHxdFFtyceRPtuM4p05cNU=; b=bFnBBTfADaE1gyuDq27xxm+gwn
-	x+h2IYUP71cUzeh9p7a/vT0Xe3VrVokc+bf+pqDwFOuAmWki04QVQsrvhZge5JvqnXEpfQJRvi+nN
-	j4MhKDkZwWAJ3cRUV1pC8WPu/kbpU9F7ZuR+PgVmn+k4cQJObHSXsyeU9Q1g4+M3Wan30+5kXSxAO
-	dlqWvDwfwdamBaA1fRneBdowBrlFu1i1r6LBSQh4rWnmXTyxtbci4bfFHAHwwILPNXpVm1PIdyjXV
-	c//jtrYj6iOuNtbCR6aWZN+SSe+sNG/+J4dCxsGypeRbHRJUPqMhTJvG4orSSSjyCzYQLfq6ncX7W
-	XRRLzo5A==;
+	bh=n7GNuroE2cDLhXi2LthNKy8WI+OIxtpRLgLEADhEC48=; b=Bj0WjgcdY7vJJ15NImWvN55wCQ
+	eUzy3ukX5zn4/ST700/RBq83i8UL0Ks/ObRDyuOatMCYLtq4YPNuOVrBAWMBZdFWZSZkACMkznhrx
+	IeRdbpvK7lM8ur7gVSDIwuL5n5p2oiNfe3Fj9OYlcOTLC9sB4iKevG5B0ORCQOSrKJY4e2+ZN/+vv
+	xFwnQkJhFyagibsUCz7bAAzRzcQ6OYflDiVgwHVVJbM3MtA9KnGzh7TZvyN05IvnvWGLYBd/6d0sB
+	gL4WOCv8ct7RaDkwGbxsvaRNHgcWS9iDLRvqkrCX6xcCMOBTouUjC5x34Zd0DkyjEgrs4m3BL5J9n
+	HxZHpZIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTcaN-00000008WFB-1HJ6;
-	Wed, 18 Nov 2026 10:08:15 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xTcku-00000008XZs-0nTG;
+	Wed, 18 Nov 2026 10:19:08 +0000
+Received: from sender5-op-o15.zoho.com ([165.173.182.15])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTcaM-00000008WEd-0Iqz;
-	Wed, 18 Nov 2026 10:08:14 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1A0306113A;
-	Wed, 18 Nov 2026 10:08:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 728631F000C4;
-	Wed, 18 Nov 2026 10:08:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1794996492;
-	bh=7zhgK2cftjiTzkt87l4mZkq8xI6jhkpMgB4GLzuXArw=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=DYBjfuJGrCXQ5e9ujie/dO4L0JQvm+DUcbp2mc5xLpc6ZPVBjs3Ks40ccoAIAn5jE
-	 S064t9CjDeHB7T3eD57yk2dXCKfnBCc6wRIq+ITEIAdxG1oGk9NZkCCWhJODWp/Dbs
-	 ITgEHQZfxngWJpcYEVO0uKaZyWR9UqTt0PUJ0E5rvoLarq2wbkWgaUzYyw+1OA4UCO
-	 AefOBHsv0F+y8WwxpSM6ztttoWEsueqP42lDnMak+TZEkavGJ0n0yZQjCg7eQsioGi
-	 50KaZEwibq/raNQbq8BnQ6SOqDX6nGbphDC99VEYumkuZNFqFD7zuwP4HwACP0Jmwm
-	 S/Z+52+/5aPjg==
-Message-ID: <fceee6fa-2bfb-4676-b5ac-80e1bae8d4f4@kernel.org>
-Date: Wed, 18 Nov 2026 11:08:06 +0100
+	id 1xTckr-00000008XZQ-1m6O;
+	Wed, 18 Nov 2026 10:19:06 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1794997111; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=duM/gO9A/sLm4uIjFeWEgFv+8mgswwB0RU3N1Ifzp2Ah6TAeu968wyO74dJF0VYXVz3aleUMsIbdB2IRen5xWjvuSf4dT/68uWQL6NGtg1MUmRz+LM6V78k2Atf1PqxZyXV1JL94kL36cHlI9zB0YQQTY7hS5dZt8UeeHoPlkjQ=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1794997111; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=mkIlP/VFkdFXEzDXzF49yA7qSDhA59GiLbzlhR/mvdk=; 
+	b=UxNUkRRwALdBIqd+u0/1SRXfSlX+uHGECmIwZzaX1DuSs2pa10TpsUGZHRPbOovb+wmYPA5elYCOsL/zzhj7Ja/70TCDe9GHaSKebPGQ1xW8xDVoRQHqVqjrMJ5ZyDw58na/G9/5HF6c3A/XsCDs6iAkC4ALddga4NTtRLnIVwc=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=icenowy.me;
+	spf=pass  smtp.mailfrom=uwu@icenowy.me;
+	dmarc=pass header.from=<uwu@icenowy.me>
+DKIM-Signature: a=rsa-sha256; b=Oi4ByOSXHxLX391vOuMr/ZKJCm3wX0/iKuyFiAVU8SQ65OQFej2WozQWNQhfeuQDKv6l7/BbgNydDlEIBiQg74Tb/vXKn31Guesh8GqcgI2stI6Kq1Kb9Ig8qZSjrw/TeDA8bfWI/eUtCnU+lwOcCAVfvSKix2fhpltCrtBzzXj8pu2W1CpFQNXcijLLQgLIu1Mi5Dd8eR4esbk0nYSsFbI3URs5BaQVssiEjjdppL6Y7FWiQSiOc1epm8U5ye3iBb58oenDahc2hdDesBKYIoXQUCPxxSsBJff/KGn94iCE0+QT20jdhbxNSL5wAsi+0SpyMebfRQt8RwGtWvHQrw==; c=relaxed/relaxed; s=zmail2; d=icenowy.me; v=1; bh=mkIlP/VFkdFXEzDXzF49yA7qSDhA59GiLbzlhR/mvdk=; h=Content-Description:Content-ID:Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:List-Subscribe:List-Post:List-Owner:List-Id:List-Archive:List-Help:List-Unsubscribe:MIME-Version:Message-ID:Resent-Sender:Resent-Cc:Resent-Date:Resent-To:Reply-To:Resent-Message-ID:Resent-From:Sender:Subject:To:Date:From:Message-Id:Reply-To:Subject:To:Cc;
+Received: by smtp.zohomail.com with SMTPS id 1794997109359888.2617794708957;
+	Wed, 18 Nov 2026 02:18:29 -0800 (PST)
+Message-ID: <bffbf989f2c99aa8c463719347930aca44962615.camel@icenowy.me>
+Subject: Re: [PATCH v2 07/17] drm/spacemit: add Saturn DPU register model
+From: Icenowy Zheng <uwu@icenowy.me>
+To: Guodong Xu <docular.xu@gmail.com>
+Cc: Cody Kang <codykang.hk@gmail.com>, David Airlie <airlied@gmail.com>, 
+ Simona Vetter <simona@ffwll.ch>, Maarten Lankhorst
+ <maarten.lankhorst@linux.intel.com>, Maxime Ripard	 <mripard@kernel.org>,
+ Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring	 <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley	
+ <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>, Vinod Koul
+ <vkoul@kernel.org>,  Neil Armstrong <neil.armstrong@linaro.org>, Haylen Chu
+ <heylenay@4d2.org>, Michael Turquette	 <mturquette@baylibre.com>, Stephen
+ Boyd <sboyd@kernel.org>, Brian Masney	 <bmasney@redhat.com>, Philipp Zabel
+ <p.zabel@pengutronix.de>, Paul Walmsley	 <pjw@kernel.org>, Palmer Dabbelt
+ <palmer@dabbelt.com>, Albert Ou	 <aou@eecs.berkeley.edu>, Alexandre Ghiti
+ <alex@ghiti.fr>, Yao Zi <me@ziyao.cc>,  Uwe =?ISO-8859-1?Q?Kleine-K=F6nig?=
+	 <u.kleine-koenig@baylibre.com>, dri-devel@lists.freedesktop.org, 
+	linux-riscv@lists.infradead.org, devicetree@vger.kernel.org, 
+	spacemit@lists.linux.dev, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-clk@vger.kernel.org
+Date: Wed, 18 Nov 2026 18:18:11 +0800
+In-Reply-To: <19ceb44df3141049a955c2c30fe64766.docular.xu@gmail.com>
+References: <20260809-k3-display-v2-0-327d7910bf71@gmail.com>
+	 <20260809-k3-display-v2-7-327d7910bf71@gmail.com>
+	 <edd7ae1b38ebc687d0b2bfb2509c40fb8a45e625.camel@icenowy.me>
+	 <19ceb44df3141049a955c2c30fe64766.docular.xu@gmail.com>
+User-Agent: Evolution 3.58.3 
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 2/9] dt-bindings: phy: rockchip,rk3588-mipi-dcphy:
- Select TX or RX, add phy-type
-To: Quentin Schulz <quentin.schulz@cherry.de>,
- Jason Yang <jason98166@gmail.com>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Guochun Huang <hero.huang@rock-chips.com>,
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: Michael Riesch <michael.riesch@collabora.com>,
- Sebastian Reichel <sebastian.reichel@collabora.com>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20261118-dcphy-rx-v1-v7-0-8de1adac3a74@gmail.com>
- <20261118-dcphy-rx-v1-v7-2-8de1adac3a74@gmail.com>
- <3a9e999f-5ff5-422c-aa65-b8560dca84bc@kernel.org>
- <fe324e43-50c4-4f0e-9bb0-57ea7172530b@cherry.de>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <fe324e43-50c4-4f0e-9bb0-57ea7172530b@cherry.de>
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261118_021905_524152_89D75B73 
+X-CRM114-Status: GOOD (  13.70  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,106 +85,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 18/11/2026 10:28, Quentin Schulz wrote:
-> Hi Krzysztof,
-> 
-> On 11/18/26 9:16 AM, Krzysztof Kozlowski wrote:
->> On 18/11/2026 06:55, Jason Yang wrote:
->>> The Samsung MIPI D-/C-PHY block on RK3588 and RK3576 has a transmitter
->>> for DSI and a receiver for CSI-2, and the DSI host and the CSI-2 host
->>> can use the transmitter and the receiver at the same time. The single
->>> cell of this binding selects the mode and refers to the transmitter, so
->>> the receiver cannot be described.
->>>
->>> Change the cell to select the transmitter or the receiver. The
->>> transmitter and the receiver cannot operate in different modes [1], so
->>> the optional phy-type property of the PHY node sets the mode for the
->>> whole block, D-PHY by default:
->>>
->>> 	/* the MIPI DSI host, driving the transmitter */
->>> 	phys = <&mipidcphy0 PHY_DIRECTION_TX>;
->>>
->>> 	/* the MIPI CSI-2 host, driving the receiver */
->>> 	phys = <&mipidcphy0 PHY_DIRECTION_RX>;
->>>
->>> For C-PHY the consumers stay the same and the PHY node gets:
->>>
->>> 	phy-type = <PHY_TYPE_CPHY>;
->>>
->>> Existing DTs on a newer kernel: PHY_TYPE_DPHY and PHY_TYPE_CPHY remain
->>> valid as deprecated values. They select the transmitter and imply
->>> phy-type = <PHY_TYPE_DPHY> or <PHY_TYPE_CPHY> respectively, so nothing
->>> changes for them.
->>>
->>> New DTs on an older kernel: an ABI break. The older kernel ignores
->>> phy-type and takes any cell value as the mode of the block. A DSI node
->>> with PHY_DIRECTION_TX therefore gets no display, and a CSI-2 node with
->>> PHY_DIRECTION_RX gets no camera.
->>>
->>> [1] RK3588 TRM: section 22.1 (overview): "The TX and RX only support
->>>      operate in the same PHY mode."
->>>
->>> Suggested-by: Michael Riesch <michael.riesch@collabora.com>
->>> Link: https://lore.kernel.org/r/94d47cab-10c6-4ec3-84a0-3bddc9d67f5f@collabora.com
->>> Signed-off-by: Jason Yang <jason98166@gmail.com>
->>> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
->>> Reviewed-by: Michael Riesch <michael.riesch@collabora.com>
->>> Tested-by: Quentin Schulz <quentin.schulz@cherry.de> # RK3588 Tiger CSI1 2-lane IMX219, CSI0 2-lane OV5675+DSI
->>
->> Please drop the tag, this did not happen. In the future, please add only
->> applicable tags. Otherwise share how this code was executed and tested
->> on the actual hardware (make process, like building code, is obviously
->> not testing).
->>
-> 
-> What did not happen? I tested the v6, on the reported hardware, on the 
-> reported two DCPHYs, see 
-> https://lore.kernel.org/all/840285d6-a8a6-4777-8d38-6758ccbc7723@cherry.de/
-
-
-I comment in a specific place in a specific patch. The testing of this
-patch did not happen, which I explained why.
-
-
-> 
-> If you're complaining about the Tested-by being given to a dt-binding 
-> patch, it was provided as an answer to the cover-letter, and the 
-
-I know. Tag was applied blindly and that I ask to correct.
-
-> contributor is clearly using b4 considering the last few lines from the 
-> cover letter (base-commit/change-id lines). b4 trailers -u applies the 
-> tags given to the cover letter to all patches in the series, so if 
-> there's someone to blame here, it's me for adding it as an answer to the 
-> cover letter. So now the question is, do you want me to add a Tested-by: 
-> to each individual patches of long series when I technically built and 
-
-The comment was not to you. I responded to the contributor and I expect
-the contributor to act, not you.
-
-> tested only based on the last patch of the series, which is only a DTS 
-> patch adding the nodes to the RK3588 DTSI? In that case, I cannot 
-> provide Tested-by for patches before the last, as it can simply not work 
-> at all until the last (actually all of them, except the bindings) patch 
-> is applied.
-> 
-
-
-
-Best regards,
-Krzysztof
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+5ZyoIDIwMjYtMTEtMTfkuoznmoQgMTY6NDggLTA1MDDvvIxHdW9kb25nIFh15YaZ6YGT77yaCj4g
+SGkgSWNlbm93eSwKPiAKPiBPbiBUaHUsIDAzIFNlcCAyMDI2IDIwOjA4OjEwICswODAwLCBJY2Vu
+b3d5IFpoZW5nIHdyb3RlOgo+ID4g5ZyoIDIwMjYtMDgtMDnml6XnmoQgMjE6MTQgKzA4MDDvvIxD
+b2R5IEthbmcgdmlhIEI0IFJlbGF55YaZ6YGT77yaCj4gPiA+IMKgZHJpdmVycy9ncHUvZHJtL3Nw
+YWNlbWl0L2RwdS9zYXR1cm5fcmVncy9kcHVfaW50LmggfMKgIDI1ICsrCj4gPiAKPiA+IElzIHRo
+ZSBzbGlnaHRseSBkaWZmZXJlbnQgSzEgU2F0dXJuIERQVSByZWdpc3RlcnMgY29uc2lkZXJlZD8K
+PiAKPiBJIGNvbXBhcmVkIHRoZW0gd2l0aCB0aGUgSzEgQlNQIHlvdSBtZW50aW9uZWQgb2ZmbGlu
+ZSBbMV0uIEp1ZGdpbmcgYnkKPiB0aGUgYmxvY2ssIGZpZWxkIGFuZCBpbnRlcnJ1cHQgbWFjcm8g
+bmFtZXMsIEkgYWdyZWUgd2l0aCB5b3UgdGhhdCB0aGUKPiBLMSBhbmQgdGhlIEszIHVzZSBzaW1p
+bGFyIElQLiBCdXQgdGhlcmUgYXJlIGFsc28gaW1wb3J0YW50Cj4gZGlmZmVyZW5jZXMgYmV0d2Vl
+biB0aGUgSzEgYW5kIEszIHJlZ2lzdGVycywgd2hpY2ggaXMgd2h5IEkgd291bGQgbm90Cj4gcHJv
+cG9zZSByZXVzaW5nIHRoZXNlIHRhYmxlcy4KPiAKPiBGb3IgZXhhbXBsZSwgdGhlIGJsb2NrcyBz
+aXQgYXQgZGlmZmVyZW50IGFkZHJlc3NlcywgYW5kIG1vc3QgZmllbGRzCj4gYXJlIGF0IGEgZGlm
+ZmVyZW50IHdvcmQgb3IgYml0LiBJbiBkcHVfaW50LmgsIENGR19SRFlfQ0xSIGlzIGJpdCA0IG9u
+Cj4gdGhlIEsxIGFuZCBiaXQgNSBvbiB0aGUgSzMsIGFuZCB0aGUgdW5kZXJydW4gYml0IGlzIDkg
+YW5kIDguCgpZZXMsIHRoaXMgSVAgd2VpcmRseSBkb2Vzbid0IGNvbnNpZGVyIHJlZ2lzdGVyIG1h
+cCBjb21wYXRpYmxpdHkgYXQgYWxsLgoKPiAKPiBJTUhPIGEgSzEgcG9ydCBzaG91bGQgYWRkIGl0
+cyBvd24gY29tcGF0aWJsZSwgaXRzIG93biBmaWVsZCBoZWFkZXIKCldlbGwgSSBkb24ndCB0aGlu
+ayBmaWVsZCBoZWFkZXJzIHdvdWxkIHdvcmsgZm9yIGEgbWFpbmxpbmVkIGRyaXZlcjsKbWF5YmUg
+dGhpbmdzIGxpa2UgcmVnbWFwX2ZpZWxkIGNvdWxkIGJlIHVzZWQgdG8gbWl0aWdhdGUgdGhlCmRp
+ZmZlcmVuY2UuCgpTdXJlbHkgYSBjb21wYXRpYmxlIHN0cmluZyBmb3IgSzEgd291bGQgYmUgbmVl
+ZGVkLCBhbmQgaXQgbWlnaHQgdGhlbgpzZXQgYSBkZXZpY2UgaW5mbyBzdHJ1Y3R1cmUgYXMgbWF0
+Y2ggZGF0YSwgY29udGFpbmluZyB0aGUgZGV2aWNlCmNhcGFiaWxpdHkgYW5kIHJlZ21hcF9maWVs
+ZCBsaXN0LgoKVGhhbmtzLApJY2Vub3d5Cgo+IGFuZCBpdHMgb3duIGJhY2tlbmQgZmlsZSBuZXh0
+IHRvIHRoZSBLMyBvbmVzLiBXaGF0IGRvIHlvdSB0aGluaz8KPiBIb3BlZnVsbHkgeW91IGFncmVl
+IHdpdGggbWUuCj4gCj4gWzFdCj4gaHR0cHM6Ly9naXRodWIuY29tL3NwYWNlbWl0LWNvbS9saW51
+eC02LjYvdHJlZS9rMS1ibC12Mi4yLnkvZHJpdmVycy9ncHUvZHJtL3NwYWNlbWl0L2RwdS9zYXR1
+cm5fcmVncwo+IAo+IEd1b2RvbmcKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
+eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LXBoeQo=
