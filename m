@@ -2,89 +2,132 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 21F82606A337
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 16:32:30 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3DD4A606A7D1
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Nov 2026 16:33:24 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3Cv1rtxS;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=casper.20170209 header.b=NbPXtQFG;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=bootlin.com header.i=@bootlin.com header.a=rsa-sha256 header.s=dkim header.b=wHJw8qKU
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3Bw9NHxP;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=nxp.com header.i=@nxp.com header.a=rsa-sha256 header.s=selector1 header.b=UzRWwSyk
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Subject:From:To:
-	Cc:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=oPhJkAABp1EJy7WpDmutZzNIwpMi5SrVDHWzEC/7IjM=; b=3Cv1rtxSMsDxllCU/yv4WdXCUD
-	ImWvBidxPm+fTUppP71pcWuJbtSMnTkKQpwg8hWbp8aFEAVhXr2rrw8oFkjtNjcInxmpJkHQBrfFC
-	9EPiFV8b/yAqulZ+3Af5vRHfqiQuTncPtNkZ6dRY2f7tMx7I2sNiANFTzotXJPrGDbUarA+l6rCLF
-	32vzX10KOOhprQ48vvq9d5TZXBqekILCBkkKS0rkAr3i9R794nNOvrLUJcDtN+jJnnakD/ylWZtJ+
-	lEqTtHQpn3GC6tr1sHVroMy7U19/KhcZyN6qDm+ZK9zEO35+YCydqdE6i7bth55ZXRDlbcVTY+uYo
-	GxfBLLww==;
+	bh=ZDCjj8biUMbwFUbqMYo5OBkA3hiHA9yjjmRM9Nr0gos=; b=3Bw9NHxP6fthOmiwmI3GRuAHze
+	rBxQoLMLoqAP8M9vcvKHDScO3T552QDMPgR6c7X1VrQw3WcXhLMZqWh9+bus9h/qBspgcR+ckPYQD
+	hEEFaY2JGRbtxWbzv4vnbSkP4WcAk3xnKFzgY2ANjvFYjZV73mEaX3wPXsRIQbpPTMB7GqtgJSjpj
+	G1KVBz0d1DsWR9c+aIvDjdT0yK4iZYV7fNLuIYQijE7RtXNpRosxfbkIHibCBiS44bWHKp80dVCSe
+	JtUBYq44oGDtRetF8HIR4IgQNkrSj4Awd5Kir/VPx8L1xro9zVxCnbDLGgNu7H6efs/nVeyVdsIRh
+	NPJRKuKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTiaD-00000009WvS-3cVa;
-	Wed, 18 Nov 2026 16:32:29 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1xTib5-00000009XPO-43xU;
+	Wed, 18 Nov 2026 16:33:23 +0000
+Received: from mail-westeuropeazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c201::6] helo=AM0PR02CU008.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTiZt-00000009WcN-0RwG
-	for linux-phy@bombadil.infradead.org;
-	Wed, 18 Nov 2026 16:32:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=casper.20170209; h=In-Reply-To:References:Subject:From:To:
-	Cc:Message-Id:Date:Content-Type:Content-Transfer-Encoding:Mime-Version:Sender
-	:Reply-To:Content-ID:Content-Description;
-	bh=r+SLzODzG8HHw9cfKRrHw03Y8/zONqIuf6pHGVgPbko=; b=NbPXtQFGyL/XZ+ZVhpdQnb40yD
-	GAg8+W0sYX1eaCXVlI7dP4tJEGv8K3Hz8hCa1OYDEWBmysyPJSbiFOeqMpSbvkwJ3xxnTiyvO1+Xd
-	rmnpj80l0yBANT6l9241XwtaTXzEW7+Pu7R0hSM6nY28/sSsM+0eVKzGZYK9J43XwrPpA1zo5uT+8
-	ocirF8yHCyqDZHSZhw4StLtpJK+tyaF/CgJJVFa9mieZvJuSKStXVANkQ1gIFJVdVJDqZdSoZ55tk
-	zF1SazXl/2Fj3I7OCyLjrxtph5/SiJ/KFXHc4zElg60IyoJwKmTNCXR58tsTSPAVop50UkOjIptVg
-	5BH8IhnQ==;
-Received: from smtpout-04.galae.net ([185.171.202.116])
-	by casper.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xTiZj-0000000FA7W-2M36
+	id 1xTiap-00000009XGP-2MW5
 	for linux-phy@lists.infradead.org;
-	Wed, 18 Nov 2026 16:32:07 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id 38BA7C4F77B;
-	Wed, 18 Nov 2026 16:31:54 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 4822E5FE9B;
-	Wed, 18 Nov 2026 16:31:49 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 1090311BC280A;
-	Wed, 18 Nov 2026 17:31:44 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1795019508; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=r+SLzODzG8HHw9cfKRrHw03Y8/zONqIuf6pHGVgPbko=;
-	b=wHJw8qKUoASaCYaUuh6NJ5+MzfzWnvTluXzTcHEQnISrE+l+Gv5JfD83qXKV+5Ho6tmgZe
-	Q2dCQLiti0FDkqKPaqSffZtOU01D4iq3QbeRKVPkINy1dDVewKnmtE1YKtO+ZxoYGDAP3/
-	mDLU9RbpIWniI5UL8aYszXMoNQMmGDeQ3Nv6ZdcAyBo/6sXZED84TAEOciBPlUW0BnPHu6
-	2k17UHPvtn/Jsf+ZOFRtv72BVLqJhTjaMKDXV/u4kL4eB2NMjxzJnwqNmKfesJ55b8Akyx
-	8PmePUoMLA27e2mitgRDXYCoh8USLiLvaIlWCKdQbo8+AY22Ehru7jB+USUJPQ==
+	Wed, 18 Nov 2026 16:33:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=RDcRH5z0JXLtPyjDf/GzbJGgNADZCBdgBYjUjgC6R7TIQM3HgV9RON3r7SfY8W244/Sj2Xwc1eFtkVFBoXnuZzcs8sKJ0eJhbG/IHMyPfEr+4ba/2gEvJxzuU9YUN+l+Pab3QWHE97QMcpsoRCX6A7Gu7qcqoPgtUJ7YjE0xtuCfNuDkovaLGlx0jd/eI/roalejQK5pgfpGnvxlEG8dWuj47MrI9t1gR05mItSo+J4g5bCbmGAVYcXQHjIY9cWCtBVtJAzgWfp2qck/DS6y5LvhBbzmITzR1WzqUeqoi2xHi0AqfimWjdZ+YEZpquxA3IZ7H6VASXHtkMl1iqybEg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=P5YQSXH2nnhBy49ynhKIO379xmRMN9E4x5+MoRfmRMc=;
+ b=FOqfuOibJwLkqtSrvaDXJc20eE9vyXJRtzHb80eNqclSPNXuJTu2Q8ZbTOfvuiooLYYFuFjUwCiMLVnpw3tyyCyTYabFy44ViGaCg5lVKg9UstmLiLTPsFEC8GcZuNg/PR8W0l1NMpVTHB421W5Z2/YkYI4T6ofkRzndi14kuKnDBnfNflXEwb+CLNomGjhQH6B1mmrP/Bv7h3FQGU4FyYUKHBTGWPJ/58TLJnCvqz6WfPbEhd6pFVFsAC4aeYqrkALXJ/VcDFnGV2xbiHyxouD2w5+Ai4uLMu2ik6l4fG7hqW+kU0TSDTl6Yvix6/I8y+dPorz6w6J1mK6UaqqPLw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=P5YQSXH2nnhBy49ynhKIO379xmRMN9E4x5+MoRfmRMc=;
+ b=UzRWwSykWSqYGyUYk9XaB1YjJjJqAl6/iCguF8MMR3nOTfQCds1+7uo3SioD+2bqm+XGgxLdrv2A8GFB/eXtaznuoca0JJMToH6XjWQcadjg01rV2KA4srn5u3N+iMRlXkdgEwEOcsKDoM6s6i56cB9oloctdERiPROtBIXes9z55GwTQFZQ62laDVZIqgwmyXp7/yJUnT4L5DNpk/NbFRFQwqcD3nj3I9p+ojdE3ucDjuZwSgodii0Ioe4FkF2Mx7M/XqIyl9+VtP36FM6LuhoIZTR+DqwRQZ/SspHFPYM9j4cDoVKb9wuTjcW3s/0rWKLnVtNYZ44jv2O+7qslHQ==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from MI9PR04MB019273.eurprd04.prod.outlook.com
+ (2603:10a6:290:d3::17) by DU2PR04MB8999.eurprd04.prod.outlook.com
+ (2603:10a6:10:2e2::16) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.615.14; Wed, 18 Nov
+ 2026 16:32:58 +0000
+Received: from MI9PR04MB019273.eurprd04.prod.outlook.com
+ ([fe80::263c:943a:dcb0:29d8]) by MI9PR04MB019273.eurprd04.prod.outlook.com
+ ([fe80::263c:943a:dcb0:29d8%5]) with mapi id 15.21.0615.013; Wed, 18 Nov 2026
+ 16:32:58 +0000
+From: Ioana Ciornei <ioana.ciornei@nxp.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	linux-phy@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+	netdev@vger.kernel.org,
+	Vladimir Oltean <vladimir.oltean@nxp.com>
+Subject: [PATCH 0/3] phy: lynx: add support for downstream retimer PHYs
+Date: Wed, 18 Nov 2026 18:31:31 +0200
+Message-Id: <20261118163134.2149894-1-ioana.ciornei@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: AM9P250CA0028.EURP250.PROD.OUTLOOK.COM
+ (2603:10a6:20b:21c::33) To MI9PR04MB019273.eurprd04.prod.outlook.com
+ (2603:10a6:290:d3::17)
 X-Archived-By: <archiver.kernel.org>
-Mime-Version: 1.0
-Date: Wed, 18 Nov 2026 17:31:43 +0100
-Message-Id: <DMYHB3VFX8GQ.2DELCXHWSP8X1@bootlin.com>
-Cc: "Francesco Dolcini" <francesco.dolcini@toradex.com>,
- <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>, "Alexander
- Stein" <alexander.stein@ew.tq-group.com>, "linux-phy"
- <linux-phy-bounces@lists.infradead.org>
-To: "Francesco Dolcini" <francesco@dolcini.it>, "Vinod Koul"
- <vkoul@kernel.org>, "Neil Armstrong" <neil.armstrong@linaro.org>,
- "Manivannan Sadhasivam" <mani@kernel.org>
-From: "Luca Ceresoli" <luca.ceresoli@bootlin.com>
-Subject: Re: [PATCH v1] Revert "phy: freescale: fsl-samsung-hdmi: initialize
- default rate"
-X-Mailer: aerc 0.22.0
-References: <20261116162409.218059-1-francesco@dolcini.it>
-In-Reply-To: <20261116162409.218059-1-francesco@dolcini.it>
-X-Last-TLS-Session-Version: TLSv1.3
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MI9PR04MB019273:EE_|DU2PR04MB8999:EE_
+X-MS-Office365-Filtering-Correlation-Id: c663fe86-f4d7-4a32-bdfa-08df45919b29
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|19092799006|366016|1800799024|376014|18002099003|11063799006|56012099006|261026121527099003|261021121427099003|261021123027099003|10067099003|261102123227099003|261009223027099003|261022075727099003;
+X-Microsoft-Antispam-Message-Info: nVEo6zsUekodE4M+nPeF+MDktYJ9hEZWQjF5SkCEZNyr0WsllyaBOj70DU2h4Q/ncyxFQ+tlkykxGShag/K6WiwzrmtLTjdROzsuvS67VCw+1EX49woEYLsG580CL9FbTSc04UE/C1ZGi7P1UjyfexH+rYrTr8vD5mm4Sooun9QQmPEIqTDGaaDWnHySPFXoK9C1dT8VhHYLYvf/4QWXojvXughPdca8tbh6B022umLV2gSWOpL8NX98lBx9hPDBBvOORuGslN8oLlJel5HRgD8o5LbVQd848+JTidshZ1Q5iYOWr3FX2ZCdJYPA90zJnnggibvvJekA2CQ2t/oWiThTGwzkYDr5lWmDEZ+4EXxqjyOO90OMC1AH17T2crc4KkWGn+vlMoFbdFMqXtxW17CF3hEF/JnIrmjKJoG6QP2v1Kp7R44InK7zxVH54euWXNUEy2VUfpovk3/VpV6PgpuU6SXh3B2FW6Jwj5SP6X6uz9WwSw/Nx6nibET8ZPaBmU6nodsufhQDSp9No2e+G5QlnRk2qTCX4/QNeQB6+SYsUu7EMgtUEJ/4yef4SUtUAEaai1MdQbTfxridSfLOhK8vF20e5+p5Z+szRr7NAxXxcSrWSwOLye5+c05H71owKIRbirOhpGW1ukXGKMMzmfxY+iZF/2lNbW94DlWcm40=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI9PR04MB019273.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(19092799006)(366016)(1800799024)(376014)(18002099003)(11063799006)(56012099006)(261026121527099003)(261021121427099003)(261021123027099003)(10067099003)(261102123227099003)(261009223027099003)(261022075727099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?YbplEnleYwVaDO2h5vioxZxTzIIQ6NvHB6t5DYYJ5AXgxdpIni5FMucV0V8v?=
+ =?us-ascii?Q?Dw85q+A+3SIWnn89D4JvzqnbO7Y8QF2ErLOleol5xeR/kgw5D8lNM7KsnkCg?=
+ =?us-ascii?Q?6iHtICrmAK0UD6BgIa5E8x9C2YBnpW6Pmrncpei7x+LTE9eDRhJjgOAK1g+I?=
+ =?us-ascii?Q?9QSijMOpAAJF5tnyjhMGRv2ct37hZQAHdQIoUn0hIvgdu74yfqNbtnlYDc7G?=
+ =?us-ascii?Q?GiessJB0gO/GojF4dDEcP4IYqcl7VUOxNJz/KH1rsrC+tL139VYLU3dWrGQi?=
+ =?us-ascii?Q?2O6jMEAI1l0LQL2AgxPnrsjIAmb3bACopt8JGJF2rQlaeGS73fiNw6YDG7DE?=
+ =?us-ascii?Q?+ezC0j8xJOfXLxnpeQBvbNua1ZMtKZOnnmyKPmp8TDQimAuV2o8h5spGUEQ5?=
+ =?us-ascii?Q?nvoPy8fg9e5CRoTWXaOSXCcUQNMvpBW4bfe03moeG0SI1082FYzHvXFyrVbO?=
+ =?us-ascii?Q?lIOTZ/rIns6CwY7D9auzmz9hUBJ/DY9oHHwFriIJysVZcS1knHWXjqKupEXQ?=
+ =?us-ascii?Q?kvPIP0c+ikMDc+e+pVUo6x388uE8UCw9+4i1jfVsH/SXXNgaFXYeJS89rC1T?=
+ =?us-ascii?Q?8tyAj7KDunmDZCzZC2blPiTT5oGQgoadbuDX8I5a5iG1GGSfoDYlREszGddv?=
+ =?us-ascii?Q?VCZ/UNLjfPkLgd/6H89N0uZP1i5cXOX9GEw7SRBYVV/MiVgkAyfEpqig+0bg?=
+ =?us-ascii?Q?7/2zyP+UrMZzfpn++Lk7vBlOXr46j73xi6/lJd9gboH7kV5eHWBjofcWy+od?=
+ =?us-ascii?Q?pfQ4+pT9gro5yuelQduuxg1WQOQnbTGnwvt732skjewq7tuZ0wrF9m7Un9Fd?=
+ =?us-ascii?Q?LO8i6u4dr14mJ69g89Loj73d7TYPPmDCONpi6vajS/jVlYnUaQvDnOkRTx50?=
+ =?us-ascii?Q?138bkutK17hWxmaOQS2uauXM2RE0Ty9Rax55PGSFwQ52dsluLf0Q+zvWvNr0?=
+ =?us-ascii?Q?cfyDqFAhjpFynu4B/0ds71NPDDIQzouA5S33qyOPzmCm2YXi0TjHvZsWf4if?=
+ =?us-ascii?Q?GxVwfgg63BvKfGc8eHQYXXA/mvHeRm730HYM1/wB0eNzUnIlZMkOPX4PLAs+?=
+ =?us-ascii?Q?VsVb6itbqx1r9IEWwsTBzm4exxZJnNg+Bu7eY9QbrVb/malkQB3EHuIuX5lG?=
+ =?us-ascii?Q?EJXWUcBHknDdSwc6GG49weZ7i1J8SkRBAWAkBlDpe65LzFqN5dtR1xd1DCkt?=
+ =?us-ascii?Q?rdl4+eFtckNBOHMs+yCd1J966DNveQ/R7kUpMM/5YdW30e3oheSWeUu/sWbG?=
+ =?us-ascii?Q?8AE8MtcIMCV8JaKCoa6jc3UVL5I9ILqW66+cU3HDmldWVGEwQwBMQwnw+joX?=
+ =?us-ascii?Q?Qp99ziEnogIIICqUYws70Cbli2EKwoYjh8RuzBBuZa7Pdx3/4eiDINIU05Z6?=
+ =?us-ascii?Q?SFUIrpThGJlRbQ1A8gHT6JKSrFEp5bIi4yTBUfGuy+HjPJFxG5aw3fZ9lc1r?=
+ =?us-ascii?Q?nxUIoug7R0z0iI0gH6HWX7u7VxXkOk4udEJ8uuQI8MH7YkwvSggA8XAk9zEE?=
+ =?us-ascii?Q?54ApF3j+6JOk+o6KT8GFkVWFj3XCFroHGIDopQZaTIbOd80higG6+QsHcEjD?=
+ =?us-ascii?Q?aK2VAq9F0F8owtzakQrWsrGtYsVQeJfmqtTLsgsJq7BtirNXQEliuAxpx2Oc?=
+ =?us-ascii?Q?G49MZcMehx0XoaTgWtt/i7ZBBvb3y1ilvTbFO718B9tKFxRcgjZN0e/X/5nV?=
+ =?us-ascii?Q?6QExxFpb32C/EY/LwJYFEPW+k3D/xJmpsqrNnbOJ1N43tG0rualPlg/jF7z4?=
+ =?us-ascii?Q?2JyG5lshBg=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c663fe86-f4d7-4a32-bdfa-08df45919b29
+X-MS-Exchange-CrossTenant-AuthSource: MI9PR04MB019273.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Nov 2026 16:32:58.6288
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: kHIn/xTN97r+kEB9jOF5NQ/nJefJmxH6MMAThwwCyCTQKfBBGOixgFH2Ntw9Im6e5/gxnA2rNOP4TsMpIC+cGA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB8999
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261118_163200_138011_CBF966AD 
-X-CRM114-Status: UNSURE (   6.83  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20261118_083307_616698_3D5539E8 
+X-CRM114-Status: GOOD (  13.14  )
+X-Spam-Score: -1.1 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,43 +140,48 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Francesco,
+This patch set adds support in the Lynx SerDes PHY drivers for
+retimer PHYs which can be found on the board downstream of the SerDes
+lane towards any connector such as an SFP cage.
 
-On Mon Nov 16, 2026 at 5:24 PM CET, Francesco Dolcini wrote:
-> From: Francesco Dolcini <francesco.dolcini@toradex.com>
->
-> This reverts commit c01ccf91b257741e9edc374a465126bae9ae4711.
->
-> Programming the 74.25 MHz configuration at probe fails on i.MX8MP boards,
-> the PHY probe aborts and HDMI is no longer available:
->
->   fsl-samsung-hdmi-phy 32fdff00.phy: PLL failed to lock
->   fsl-samsung-hdmi-phy 32fdff00.phy: error -ETIMEDOUT: failed to configure default rate
->   fsl-samsung-hdmi-phy 32fdff00.phy: probe with driver fsl-samsung-hdmi-phy failed with error -110
->
-> Reported-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-> Closes: https://lore.kernel.org/all/13219248.O9o76ZdvQC@steina-w/
-> Fixes: c01ccf91b257 ("phy: freescale: fsl-samsung-hdmi: initialize default rate")
-> Signed-off-by: Francesco Dolcini <francesco.dolcini@toradex.com>
+The first patch extends the Lynx 10G and Lynx 28G dt bindings so that we
+allow the phys and phy-names properties at the SerDes lane level.
 
-Got the same issue on i.MX8MP after rebasing on drm-misc-next, which is
-based on v7.4-rc2.
+The second patch extends the core lane probing function with
+lynx_lane_get_retimers() which walks the lane's phys array and gets a
+reference to any downstream PHY found. The 3rd patch sets up the
+forwarding of the phy_ops received by the SerDes lane towards the
+retimer PHYs as well.
 
-Tested-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
+One thing to note here is that the forwarding code is kept rather
+grouped in phy-fsl-lynx-core.c rather than in the individual Lynx10G and
+Lynx28G drivers so that in the future, if necessary, it can be moved
+internally into the Generic PHY framework. This leads to the consequence
+that the actual phy_ops with which the PHY is created cannot be const
+since the .owner field needs to be copied from the structure received
+from the actual PHY driver.
 
-Luca
+Ioana Ciornei (3):
+  dt-bindings: phy: lynx: allow downstream phys on the lane nodes
+  phy: lynx: get the PHYs listed in the lane nodes
+  phy: lynx: forward the phy_ops to the downstream PHYs of a lane
 
---
-Luca Ceresoli, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+ .../devicetree/bindings/phy/fsl,lynx-10g.yaml |  27 ++
+ .../devicetree/bindings/phy/fsl,lynx-28g.yaml |  27 ++
+ drivers/phy/freescale/phy-fsl-lynx-core.c     | 266 +++++++++++++++++-
+ drivers/phy/freescale/phy-fsl-lynx-core.h     |  14 +-
+ 4 files changed, 327 insertions(+), 7 deletions(-)
+
+-- 
+2.25.1
+
 
 -- 
 linux-phy mailing list
