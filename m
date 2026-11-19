@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 041AB60A262F
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 16:24:14 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0C8EA60A2629
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 16:24:24 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=FS6+pe4y;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=O5M/YeZe
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=LgkZ6F5Y;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=JmrLOcUN
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,48 +14,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ntobRMbJE8DeJUI1mNUn0fLxqy+Hg92QjSsCHljUdVY=; b=FS6+pe4yCJIAh3xzBkFHRvHkLO
-	Aq6lAhI/UktRCk43sosY6b5HrxUMDyjY4MkYaYLSnCWbLgCsFh5vB6eFBbki5DDYEglibR3rhGk2/
-	3iQGTcGagBybKR6Dk3Cjg8/Bp8wEqkVfl7dnfzodrGkeB1+fGRdBPAHEapMwb/2H03Scbf+eB5zUc
-	tCiUwIwlpG4KcF0OAJdTEBOVWJOM61Cq9uxIov0pCkxv8oUx0JzEPgNasYgSH5VnUq6kTd7K/jfp9
-	7kVwV6zyXws3yhXRIoNjqlmgtW8RCzFjRtUGy9Y47x73fCPKG/3b+lu1uGZmqQOq7c3eiDbbTAply
-	NEpitgZw==;
+	bh=CUdRjMp2hXxsuH2y6IGiNAT29vG9R2aNaWh0LH5Fhak=; b=LgkZ6F5YTgCUrkzyp9y5ycyPYI
+	hq8BA7yYfMqsvKC8aRw3McHqkwWwBpA90n1EK335XUkB+D6mbqgviR4pJAsW5CAci01ytcgiYo8Vo
+	wG62WvVKJ5yw5qC7MxSh9G2pj6Lx/5A/52bG0C8XW3gSPsNluNBYElYlt7CKCoU8UgNB987beuvI2
+	XfWM/a24NByPKtkoGvJqvnJoPgtonfYNUAOBNEYvOg8ZalBeDCyThINyXrPMr/JSjxCa7d/vM1wOK
+	HamzLe5CcYsGIEEoSVKkobFlv4BuVwDOzwXxB/UDmoOn1GqxGFbjjHCsuHN/vZiyBKmS7CVxVCY5k
+	lcDTMxew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU4vl-0000000Cce8-2rTG;
-	Thu, 19 Nov 2026 16:24:13 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xU4vv-0000000Ccj1-36wf;
+	Thu, 19 Nov 2026 16:24:23 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU4vl-0000000CcdZ-0czw
-	for linux-phy@lists.infradead.org;
-	Thu, 19 Nov 2026 16:24:13 +0000
+	id 1xU4vp-0000000Ccgs-2Xji;
+	Thu, 19 Nov 2026 16:24:20 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 70A9D472ED;
+	by sea.source.kernel.org (Postfix) with ESMTP id 5EA65466B8;
+	Thu, 19 Nov 2026 16:24:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F2F2F1F000D0;
 	Thu, 19 Nov 2026 16:24:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 55BBA1F000CF;
-	Thu, 19 Nov 2026 16:24:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795105452;
-	bh=0d4XB0YTAQtRX8+hgqAgNWT6fwr6zYYShVEyknE8s34=;
+	s=k20260515; t=1795105457;
+	bh=JLDwz9ycOu6YbPPABd6Tj3z/LQdgz4tnvknkVWOgRsQ=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=O5M/YeZeC/FpBNKovFTnUVVEes2FAmmqEE7ghAKtIgRef6Wj9TpUFrjxfTvbCkMaJ
-	 x/kxyNh+RcGQTnP4NqGmnIeNomLIPeOm/f66ua+N3I9JyqnJWkDEbTDrmlypEDtYO9
-	 T4bYqcVtAelL9IbdAZUmZ9pEGH3ENlTeAou9qKpeORPKI4axXJWzj8axSQUIqcaKt0
-	 amsFxJQgHSmVIid6h/gyv+5J+lbJ41Bi0bMc7CJsReBShxr8DcmJE83aEL3YoH1WGT
-	 OvjGj0KZp7CGFgSRewCxE9WcpfZBi+kT/HMfH2X0J8mw4eS2taJqrRwXNyXB/qIG5Q
-	 ox/bcFBHVMLNw==
+	b=JmrLOcUNIdhcWji9htOEaYTUTjtKET7j3eWYLNuEK0sAfR8Mwn6y14IFmALE1Tz7t
+	 f8Sc8A3Ts/rcpx1jDWQ3wfbWnvlkpvBOsyl8cy7UBHfzI8+8kwjjGTVVhY6jVhHljh
+	 a4JJC6eu8K0zC3RI8099ph3HFaMQZSaeEGxJ8Nbds7Uc7JhRRFvn2aGtgtXJ0cON1u
+	 aVDMEAWZNdS5DKQ0kyKu/ntQy6CthDfkBsVFDkFIYrhhtMHXSdDjl4DAf7w3IO/2aC
+	 27bomEi/Or9kDpyYP4OKNsYRCxRV6d8LIkkeuem9sm0lPnoVPp8P1ucSOw6qqmQZpA
+	 wdxsDO8axBDVw==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20261102-topic-qmp_aon_clamp-v1-0-141c2cb6cdf6@oss.qualcomm.com>
-References: <20261102-topic-qmp_aon_clamp-v1-0-141c2cb6cdf6@oss.qualcomm.com>
-Subject: Re: [PATCH 0/3] Fix up AON clamps on qmp-combo-phy
-Message-Id: <179510544997.1370333.11528579298614736658.b4-ty@kernel.org>
-Date: Thu, 19 Nov 2026 21:54:09 +0530
+To: neil.armstrong@linaro.org, mani@kernel.org, robh@kernel.org, 
+ krzk+dt@kernel.org, conor+dt@kernel.org, gary.yang@cixtech.com, 
+ fugang.duan@cixtech.com, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ Luo Liu <Luo.Liu@cixtech.com>
+Cc: cix-kernel-upstream@cixtech.com, p.zabel@pengutronix.de, 
+ linux-kernel@vger.kernel.org, Wuyi.Shen@cixtech.com, 
+ EastLake.Yang@cixtech.com
+In-Reply-To: <20261116073800.2396894-1-Luo.Liu@cixtech.com>
+References: <20261116073800.2396894-1-Luo.Liu@cixtech.com>
+Subject: Re: (subset) [PATCH v5 0/3] phy: cix: Add Sky1 DisplayPort PHY
+Message-Id: <179510545262.1370333.17988639888921284371.b4-ty@kernel.org>
+Date: Thu, 19 Nov 2026 21:54:12 +0530
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
@@ -79,24 +80,23 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
-On Mon, 02 Nov 2026 14:59:31 +0100, Konrad Dybcio wrote:
-> Various platforms have apparently not had the AON clamp writes end up
-> at the desired registers. This fixes that up, based on the robot's
-> findings.
+On Mon, 16 Nov 2026 15:37:57 +0800, Luo Liu wrote:
+> Add the CIX Sky1 dedicated DisplayPort PHY: the binding, the driver,
+> and the Sky1 devicetree node.
 > 
-> Depends on (reviewed and ready to be picked up):
-> https://lore.kernel.org/linux-arm-msm/20261023123512.1912-1-26rote@gmail.com/
+> Changes in v5:
+> 
+> The binding and the devicetree node are unchanged. The driver changes
+> address review comments:
 > 
 > [...]
 
 Applied, thanks!
 
-[1/3] phy: qcom: qmp-combo: Separate PCS misc clamp mapping
-      commit: 391a14a0a31505c9202369258d47d1fc42c1fe65
-[2/3] phy: qcom: qmp-combo: Make v4/v5 targets use the right clamp
-      commit: ff2aca40e0d58c4f7f4fbddcb95f15d7d983af05
-[3/3] phy: qcom: qmp-combo: Use V6 offsets for PCS-AON clamps
-      commit: 478797c9284d2ad85a2fd1f61ba021932099b36e
+[1/3] dt-bindings: phy: Add CIX Sky1 DP PHY
+      commit: 804eb94ad72b4b896fde5c629f8f1b5f06301f96
+[2/3] phy: cix: Add Sky1 DP PHY driver
+      commit: 1ad6145fb8536810c25f8d9ee539a83b01296635
 
 Best regards,
 -- 
