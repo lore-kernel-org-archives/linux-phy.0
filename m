@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DA86560A2607
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 16:24:13 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 041AB60A262F
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 16:24:14 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qJKuBWe2;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=WMO2BvPX
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=FS6+pe4y;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=O5M/YeZe
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,36 +14,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=CqlmH20iVV34gWsUJCYylp0d2SJ9eAoklvC7m/cowk8=; b=qJKuBWe29LTqDQ7DVajm6+sbFY
-	XezFjJrXWv5DpqVpTbKSHhRixVh99bR2aSU9hcEMBSNgqoLxezY8AJXEpwJJubilEe29EaBSsTOlp
-	0YZ8OApcnx7KDooa4v3H3jklrGPZlF7DcDf23VW7PGBNn0cgqoF5fExEqC0UH0swoXY/1Z9l/YIea
-	V8zJbCngq5T80iQb4stKJDQ4zjYujq9ZKAvVndukb0pievku3z4NFueaBhIcqVfXxHjNS2yPHwoRn
-	/rbp8fZ1wC2ICmHt4nu9i842oOyfN84HKuinZtY2SfqgzXbsPgZp+KU/1HHmCk68XGgIYMk4Ryj1d
-	kiu/a9cQ==;
+	bh=ntobRMbJE8DeJUI1mNUn0fLxqy+Hg92QjSsCHljUdVY=; b=FS6+pe4yCJIAh3xzBkFHRvHkLO
+	Aq6lAhI/UktRCk43sosY6b5HrxUMDyjY4MkYaYLSnCWbLgCsFh5vB6eFBbki5DDYEglibR3rhGk2/
+	3iQGTcGagBybKR6Dk3Cjg8/Bp8wEqkVfl7dnfzodrGkeB1+fGRdBPAHEapMwb/2H03Scbf+eB5zUc
+	tCiUwIwlpG4KcF0OAJdTEBOVWJOM61Cq9uxIov0pCkxv8oUx0JzEPgNasYgSH5VnUq6kTd7K/jfp9
+	7kVwV6zyXws3yhXRIoNjqlmgtW8RCzFjRtUGy9Y47x73fCPKG/3b+lu1uGZmqQOq7c3eiDbbTAply
+	NEpitgZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU4vl-0000000Ccds-1imG;
+	id 1xU4vl-0000000Cce8-2rTG;
 	Thu, 19 Nov 2026 16:24:13 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU4vi-0000000Ccah-0Msf
+	id 1xU4vl-0000000CcdZ-0czw
 	for linux-phy@lists.infradead.org;
-	Thu, 19 Nov 2026 16:24:10 +0000
+	Thu, 19 Nov 2026 16:24:13 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D2262472C0;
-	Thu, 19 Nov 2026 16:24:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B68CC1F000CD;
-	Thu, 19 Nov 2026 16:24:07 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 70A9D472ED;
+	Thu, 19 Nov 2026 16:24:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 55BBA1F000CF;
+	Thu, 19 Nov 2026 16:24:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795105449;
-	bh=AkMiUephLKiNzveQJzwmn2T0m49/fLiQwWfrZq9JTIo=;
+	s=k20260515; t=1795105452;
+	bh=0d4XB0YTAQtRX8+hgqAgNWT6fwr6zYYShVEyknE8s34=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=WMO2BvPX7k/e/g7h1btHiqwMzI1UhlU5fjLKU1hpdQZHttOIMzTRqQ79XVYhX8wop
-	 iBNeBK6hlkB+TomsNBJyxa5xEWUbmGIhfyReSPrpMhB13SHEPzNbPLakKKGgK0i6U7
-	 weZR0m2SQuxdHxLGZcQR4VWfjy4VMIBhnZzTxoOc4oKxc2au4Bj6Mpkvu11LEKIobd
-	 T68bDZnwGxyjg63vi607brAd2HmFbRqCCAasq9VfVU4WR8cwwd2CRP2letuGBI69Fr
-	 Sc40pdHAkQVJHwDuCNNpW6MS7SWh1Em9PqeTV3vw47jtTQ3jaxroGUZHg0dLqD6JuY
-	 2OlHstHLeRUZA==
+	b=O5M/YeZeC/FpBNKovFTnUVVEes2FAmmqEE7ghAKtIgRef6Wj9TpUFrjxfTvbCkMaJ
+	 x/kxyNh+RcGQTnP4NqGmnIeNomLIPeOm/f66ua+N3I9JyqnJWkDEbTDrmlypEDtYO9
+	 T4bYqcVtAelL9IbdAZUmZ9pEGH3ENlTeAou9qKpeORPKI4axXJWzj8axSQUIqcaKt0
+	 amsFxJQgHSmVIid6h/gyv+5J+lbJ41Bi0bMc7CJsReBShxr8DcmJE83aEL3YoH1WGT
+	 OvjGj0KZp7CGFgSRewCxE9WcpfZBi+kT/HMfH2X0J8mw4eS2taJqrRwXNyXB/qIG5Q
+	 ox/bcFBHVMLNw==
 From: Vinod Koul <vkoul@kernel.org>
 To: Neil Armstrong <neil.armstrong@linaro.org>, 
  Manivannan Sadhasivam <mani@kernel.org>, 
@@ -51,11 +51,11 @@ To: Neil Armstrong <neil.armstrong@linaro.org>,
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  linux-kernel@vger.kernel.org, 
  Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20261102-topic-usb3_sequence-v1-0-5b144f5e6865@oss.qualcomm.com>
-References: <20261102-topic-usb3_sequence-v1-0-5b144f5e6865@oss.qualcomm.com>
-Subject: Re: [PATCH 0/2] Patch up sc8280xp/Glymur USB3 PHY sequences
-Message-Id: <179510544737.1370333.1438032186611624937.b4-ty@kernel.org>
-Date: Thu, 19 Nov 2026 21:54:07 +0530
+In-Reply-To: <20261102-topic-qmp_aon_clamp-v1-0-141c2cb6cdf6@oss.qualcomm.com>
+References: <20261102-topic-qmp_aon_clamp-v1-0-141c2cb6cdf6@oss.qualcomm.com>
+Subject: Re: [PATCH 0/3] Fix up AON clamps on qmp-combo-phy
+Message-Id: <179510544997.1370333.11528579298614736658.b4-ty@kernel.org>
+Date: Thu, 19 Nov 2026 21:54:09 +0530
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
@@ -79,17 +79,24 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
-On Mon, 02 Nov 2026 14:58:35 +0100, Konrad Dybcio wrote:
-> Bring them in line with docs.
+On Mon, 02 Nov 2026 14:59:31 +0100, Konrad Dybcio wrote:
+> Various platforms have apparently not had the AON clamp writes end up
+> at the desired registers. This fixes that up, based on the robot's
+> findings.
 > 
+> Depends on (reviewed and ready to be picked up):
+> https://lore.kernel.org/linux-arm-msm/20261023123512.1912-1-26rote@gmail.com/
 > 
+> [...]
 
 Applied, thanks!
 
-[1/2] phy: qcom: qmp-combo: Update Glymur USB3 settings
-      commit: 968edd3d8d6565f88b2d95cb68a655bdcc6435fe
-[2/2] phy: qcom: qmp-combo: Update SC8280XP USB3 PCS settings
-      commit: 27a01a3ba61465a3638ee640255e4706ce4480c2
+[1/3] phy: qcom: qmp-combo: Separate PCS misc clamp mapping
+      commit: 391a14a0a31505c9202369258d47d1fc42c1fe65
+[2/3] phy: qcom: qmp-combo: Make v4/v5 targets use the right clamp
+      commit: ff2aca40e0d58c4f7f4fbddcb95f15d7d983af05
+[3/3] phy: qcom: qmp-combo: Use V6 offsets for PCS-AON clamps
+      commit: 478797c9284d2ad85a2fd1f61ba021932099b36e
 
 Best regards,
 -- 
