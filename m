@@ -2,60 +2,90 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 19C9A606A326
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 16:29:59 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CACE860A2609
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 16:48:42 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=M/THFqU3;
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=aliel.fr header.i=@aliel.fr header.a=rsa-sha256 header.s=courrier-s1 header.b=vAWBsD/e
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=bcNt97W/;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=hOGW4L7i
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=9CqmdgY9/wys4njWZBOv/a6te2fpdatyolO4KJeFx9c=; b=M/THFqU3KCw5xCAuTZOfcq7axn
-	f3ODyEbBq190xPCsCkr0n7CY9NJx1FlTbcTO5/VKG8eEaOEX4UEru5sH4B65ppbrOQzY1ENEs9GzH
-	FQpxMrv1eMtWXZYr5JG4h/8sqEjpSb4fZ87Y8qk62p1Pp5csLukX5a8TQJ4YT5URpGvOHUSGl6MpU
-	zRoTtX0vfqTKSehfIRdPR+CIMMFLVltlabkeTqhvd0/ebqaG7Nt3EU7amAAFPDapJHkulDQkp74qa
-	VhSqBgAXWY+ZSkpGjIOthnz7dwiI4VDT2i04sdwUo72jPj2OZnB44NpAgIBBv0C/MfuhSF6URaX/r
-	okjbKbEA==;
+	bh=oqrxjhYEU828db+kcvXWyNq72iLWoenknKv+17rklGA=; b=bcNt97W/yt1QpJjk6YLC8uHLGn
+	vOU1rL9dKPzpYQeYVhLCnlKlSPkrCHOQu2k3GlPYMpD0O7+PVBFNqgvG1RlmvGDnHurd8L1WdZg40
+	rHzwAPzp3SwZktDgWkUDMZ2ohzI268TBfiw9KmaAo15Kofx+Xnyrn92Peyr08G9B7YL5LFEb9dvro
+	Uz1sKDwbi8MHF4NqYvtW17mIW5S7t7HyvAyiuqTYgiN0W/c6kiY3Gum4114m+wlrdeL7M1qrVFiBI
+	X+wSEWOzQ5vy6se0c34Ug/6djbDVeO2JRif+2/J5ZRX6MMRz65mLhA8MDYEkPnKjVaycty9S71tTB
+	4VWrvklg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU51K-0000000CdwN-2vDa;
-	Thu, 19 Nov 2026 16:29:58 +0000
-Received: from courrier.aliel.fr ([2a01:4f9:c011:1c83::1])
+	id 1xU5JS-0000000CinC-1lpD;
+	Thu, 19 Nov 2026 16:48:42 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU51I-0000000Cdtt-0Flf;
-	Thu, 19 Nov 2026 16:29:57 +0000
-Message-ID: <8652ae36-7506-4fc2-b8ff-0b05a61dec63@aliel.fr>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=aliel.fr;
-	s=courrier-s1; t=1795105792;
-	bh=McqmrGGoBsWtFO9rSLDSWUOXL2yC9fScta0oWrJ5HFE=;
-	h=Date:From:Subject:To:Cc:References:In-Reply-To;
-	b=vAWBsD/ePEqL301DdsswEq/IJ55Q9aS6ABXHAzDCh/3C+pvw0XpvcS29dDjLwcplb
-	 hd+k7v1hm1gr9jRkQZ++5bJzAtYbEpgtsEhf/4A2PhL0xMr3fnz9iT7fogwUm0eIvh
-	 cD2c1SFpljoYu0Acms8xnIjDxltOhLszWv3MK2j8=
-Date: Thu, 19 Nov 2026 17:29:51 +0100
+	id 1xU5JQ-0000000Cimp-466K;
+	Thu, 19 Nov 2026 16:48:41 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 4849561297;
+	Thu, 19 Nov 2026 16:48:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E4DBF1F000C7;
+	Thu, 19 Nov 2026 16:48:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795106920;
+	bh=8HXa68Qw9U8seRwWAPXNB/ewGGSCzzxtMHD1FScJ9Vo=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=hOGW4L7iXcp23kZoYzOxl244lck6jnSGkO3u/foitA0/9XQXVU0S6YWNWJy74lRWJ
+	 IZnpmAUyFvq0Kth/zdeWp/9lb+Xft6SlOmA00sPRSsX+vj6M3eUb15cntpHPNHu3I+
+	 sqWeySL6onzxSn+OubDpygDV8ycIfwI6hjP5vEYboR6jH/XruUjQGwrpadH3FLRBcO
+	 gWUmEu1Z6nHSwlR1k0HTIr5MQngxOUnS0sAJofHnQaqKOuTNDvPfkoLQ1H0G6fh82g
+	 xkyXaRVVzeEs5ghlRSE6AjISFFFCihwgbiuQnBWawAOyXcTAmDsRfoRAXwvKbSihVw
+	 K/J2K3KG5X2vQ==
+From: Lee Jones <lee@kernel.org>
+To: Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney+clk@redhat.com>, 
+ Jerome Brunet <jbrunet+clk@baylibre.com>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Elaine Zhang <zhangqing@rock-chips.com>, Lee Jones <lee@kernel.org>, 
+ Linus Walleij <linusw@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, 
+ Richard Cochran <richardcochran@gmail.com>, Ulf Hansson <ulfh@kernel.org>, 
+ Andi Shyti <andi.shyti@kernel.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Jiri Slaby <jirislaby@kernel.org>, Jisheng Zhang <jszhang@kernel.org>, 
+ Andrew Lunn <andrew+netdev@lunn.ch>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@kernel.org>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ David Wu <david.wu@rock-chips.com>, "Rafael J. Wysocki" <rafael@kernel.org>, 
+ Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>, 
+ Lukasz Luba <lukasz.luba@arm.com>, 
+ Maxime Chevallier <maxime.chevallier@bootlin.com>, 
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+ Alexandre Torgue <alexandre.torgue@foss.st.com>, 
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+ Jaehoon Chung <jh80.chung@samsung.com>, 
+ Shawn Lin <shawn.lin@rock-chips.com>, Cunhao Lu <1579567540@qq.com>
+Cc: linux-clk@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, mfd@lists.linux.dev, 
+ linux-gpio@vger.kernel.org, netdev@vger.kernel.org, 
+ linux-pm@vger.kernel.org, linux-i2c@vger.kernel.org, 
+ linux-serial@vger.kernel.org, linux-mmc@vger.kernel.org, 
+ linux-stm32@st-md-mailman.stormreply.com, linux-phy@lists.infradead.org, 
+ linux-usb@vger.kernel.org
+In-Reply-To: <20261022-add-board-ok3572-c-v1-4-0b0fd85a31ee@qq.com>
+References: <20261022-add-board-ok3572-c-v1-4-0b0fd85a31ee@qq.com>
+Subject: Re: (subset) [PATCH 04/27] dt-bindings: mfd: syscon: Add RK3572
+ QoS register compatible
+Message-Id: <179510691068.78262.17485799721461490431.b4-ty@b4>
+Date: Thu, 19 Nov 2026 16:48:30 +0000
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Ronald Claveau <linux-kernel-dev@aliel.fr>
-Subject: Re: [PATCH 04/10] phy: amlogic: Add Meson HDMI TX PHY driver
-To: sashiko-reviews@lists.linux.dev
-Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org,
- robh@kernel.org, conor+dt@kernel.org, neil.armstrong@linaro.org,
- vkoul@kernel.org, olteanv@gmail.com
-References: <20261117-meson-drm-create-hdmitx-phy-v1-0-9e0ac931381c@aliel.fr>
- <20261117-meson-drm-create-hdmitx-phy-v1-4-9e0ac931381c@aliel.fr>
- <sashiko-outbox-219538@kernel.org>
-Content-Language: en-US
-In-Reply-To: <sashiko-outbox-219538@kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261119_082956_617594_2809A2B7 
-X-CRM114-Status: GOOD (  17.77  )
-X-Spam-Score: -2.1 (--)
+X-Mailer: b4 0.16-dev-ad80c
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,100 +95,20 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-6.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 11/17/26 20:58, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 1 potential
-> issue to consider:
-> - [Medium] phy: amlogic: broken rate and submode check in
->   meson_hdmi_phy_validate()
-> --
-> 
-> commit 0bf49ea77c864cdcf7af96e59e1ffba5194d9636
-> Author: Ronald Claveau <linux-kernel-dev@aliel.fr>
-> 
-> phy: amlogic: Add Meson HDMI TX PHY driver
-> 
-> This commit adds a generic PHY driver for the HDMI TX PHY on Amlogic GXBB,
-> GXL, GXM, and G12A SoCs, along with a legacy helper for device trees
-> lacking a "phys" property.
-> 
->> diff --git a/drivers/phy/amlogic/phy-meson-hdmi-tx.c b/drivers/phy/amlogic/phy-meson-hdmi-tx.c
->> new file mode 100644
->> index 0000000000000..69833a080dc35
->> --- /dev/null
->> +++ b/drivers/phy/amlogic/phy-meson-hdmi-tx.c
-> [ ... ]
->> +/* GXBB */
->> +static const struct meson_hdmi_phy_rate gxbb_rates[] = {
->> +	/* 5.94Gbps, 3.7125Gbps */
->> +	{ 371250000, 0x33353245, 0x2100115b },
->> +	/* 2.97Gbps */
->> +	{ 297000000, 0x33634283, 0xb000115b },
->> +	/* 1.485Gbps, and below */
->> +	{ 0,         0x33632122, 0x2000115b },
->> +};
-> [ ... ]
->> +static const struct meson_hdmi_phy_rate *
->> +meson_hdmi_phy_find_rate(const struct meson_hdmi_phy_data *data, u64 rate)
->> +{
->> +	unsigned int i;
->> +
->> +	for (i = 0; i < data->num_rates; i++)
->> +		if (rate >= data->rates[i].min_rate)
->> +			return &data->rates[i];
->> +
->> +	return NULL;
->> +}
-> [ ... ]
->> +static int meson_hdmi_phy_validate(struct phy *phy, enum phy_mode mode,
->> +				   int submode, union phy_configure_opts *opts)
->> +{
->> +	struct meson_hdmi_phy *priv = phy_get_drvdata(phy);
->> +
->> +	if (mode != PHY_MODE_HDMI)
->> +		return -EINVAL;
->> +
->> +	if (opts->hdmi.bpc != 8)
->> +		return -EINVAL;
->> +
->> +	if (!meson_hdmi_phy_find_rate(priv->data, opts->hdmi.tmds_char_rate))
->> +		return -EINVAL;
->> +
->> +	return 0;
->> +}
-> 
-> [Severity: Medium]
-> Can meson_hdmi_phy_find_rate() ever return NULL here?
-> 
-> Every per-SoC rate table ends with an entry where min_rate is 0, and rate
-> is an unsigned u64, so rate >= data->rates[i].min_rate is always true on
-> the final entry.  That makes the NULL return and the callers' NULL checks
-> in meson_hdmi_phy_validate() and meson_hdmi_phy_configure() dead code, and
-> meson_hdmi_phy_validate() accepts any tmds_char_rate value (including 0 Hz
-> or rates above the 594 MHz hardware limit).
-> 
-> In addition, meson_hdmi_phy_validate() does not check that submode is
-> PHY_HDMI_MODE_TMDS before reading opts->hdmi.tmds_char_rate, which shares
-> an anonymous union with opts->hdmi.frl when submode is PHY_HDMI_MODE_FRL.
-> 
-
-I will add min_rate 25175000 in table end and a check on max_rate 600MHz
-in v2.
-
--- 
-Best regards,
-Ronald
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCAyMiBPY3QgMjAyNiAwMDoxMTowMSArMDgwMCwgQ3VuaGFvIEx1IHdyb3RlOgo+IEFk
+ZCByb2NrY2hpcCxyazM1NzItcW9zIHRvIHRoZSBzeXNjb24gY29tcGF0aWJsZSBsaXN0LgoKQXBw
+bGllZCwgdGhhbmtzIQoKWzA0LzI3XSBkdC1iaW5kaW5nczogbWZkOiBzeXNjb246IEFkZCBSSzM1
+NzIgUW9TIHJlZ2lzdGVyIGNvbXBhdGlibGUKICAgICAgICBjb21taXQ6IDk3NzZmYmI0N2Q2Yzlk
+MDkyOGM2NjczNGVkNTY1ZDg3MGQ4ZmRmZTkKCi0tCkxlZSBKb25lcyBb5p2O55C85pavXQoKCi0t
+IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
