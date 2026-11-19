@@ -2,62 +2,94 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AF8F8606A320
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 14:18:33 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E29BC60A2636
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 15:06:22 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=wIsFNi2T;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=XqFU3Hv+
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=SRcG2nsE;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=mail header.b=IHsjOYR5
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=j/8l+Cg1PQQXSYq2LO069X0ZXqN9zXAfkb8WRGEOoLY=; b=wIsFNi2TKA0AFeb2nmteEj7k8N
-	94yeVQUy6TsM5RctSf2+k5JxyukqEX74RBhhBNVEU65QQAadVffYsGyC5zf3o6cnn750kbMLJ/TUE
-	XDsv8eMG8Lft9A7RC1JmQqKocsHH/JTBitCwk9vOzPzfPNYzrdtgHbN5UzJBgPWx63brJvlyPu+Te
-	4FREOJFRqY7LZHQnGbfnsutt75q8XFG3+bjDSDxwha7KOntI6IZPQlZmqSvkrw8rwWi+n62zx6L8b
-	oieDzUw+aciIyKEqDkba0wYtTAzueDP7/t5qK7LPyGQAs+YoQsEtaPzd0fj8kxu/Ln3/ApZSunXci
-	G2t+PvsA==;
+	bh=oC8f8g/e8LjvLlPxx7fNz6GF82SgHN7YGC2aT+WoRJY=; b=SRcG2nsEPeiWkFuYdgH9HmVxUq
+	5RKX86hXZcqw1n8MhEbC5fkKVNKgJGjmRzx7KqtNMcn+wVzXxLUmGfkKkkZJ+7t0yU2ORcEZDXiZF
+	z6MufsfmT3TOs5hF/TdHovilHiUm68rFN2F/BYmhiEEHs4Ch/aBGEAApSNLGTRT3bCf+r/Gm8ImWJ
+	yF02wbuwKO1Hg1r3r25ysOaGhu7057dh7k8otm0FsnrHj8ww/YK9GF/0kK4qYxOp8OyMSrw0u6VLz
+	AYgcXbDYn6qY1XVaICEPqstCsvCwSl66CurMgkWUmScAkOEN252SyDy06GqnZ3Qv4OdxepqTDW2D9
+	PS0MCtmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU2y9-0000000CCJG-1Kqj;
-	Thu, 19 Nov 2026 14:18:33 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xU3iQ-0000000CK87-2AGA;
+	Thu, 19 Nov 2026 15:06:22 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU2y6-0000000CCIT-2dS6;
-	Thu, 19 Nov 2026 14:18:30 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 110ED403F2;
-	Thu, 19 Nov 2026 14:18:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 341F71F000C4;
-	Thu, 19 Nov 2026 14:18:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795097909;
-	bh=q7NwVO/A9WphMCDbQzvYX930tXlLoAWpqgcxhIVwLa0=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=XqFU3Hv+Fi3Si5miPmf2dgrDa0IV2XlWnbOQDjaKtPO6BNB61B/mxpb2V4BJLTB3Q
-	 F0pfbceWF+gaQR5EnnS82zmdW2ksg1qNginddxqQxaOYQ7GJyYLU0d6eCNUutKmnQo
-	 paTJ+actWI1328U/q+KDf4swFWW0J9Hr91YvwlFnHuusfNtMoPwv/4CSSL4dnM9WE5
-	 6gK5YTMM2qIjf63+pbNLpMn2BU3MwWViqnBmreoieR4F9kNgeLUAG02WXA+6bvhFAR
-	 D06Wb3s+97/BhfnbNtGDwpcud7UuVMlSYTWV6hm/h6w0obguXl4RaQ44Yu6WmaO324
-	 0bJSGAhaya4aQ==
-From: Vinod Koul <vkoul@kernel.org>
-To: Shawn Lin <shawn.lin@rock-chips.com>
-Cc: linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
-In-Reply-To: <20261102005129.3745527-1-shawn.lin@rock-chips.com>
-References: <20261102005129.3745527-1-shawn.lin@rock-chips.com>
-Subject: Re: [PATCH v4] phy: rockchip: snps-pcie3: Raise the SRAM init
- timeout
-Message-Id: <179509790782.1342948.7577883372083652668.b4-ty@kernel.org>
-Date: Thu, 19 Nov 2026 19:48:27 +0530
+	id 1xU3iN-0000000CK5p-2bi2;
+	Thu, 19 Nov 2026 15:06:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1795100775;
+	bh=OkH2AAJZOThBC2r1QhPH/9jLbZ44qnEqaygGO/zO3MU=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=IHsjOYR5GTi5Q4CFMHQjaVhslPoZk1X4awt+zc9JKFSjhTfkt36haoQELqWkuQLi+
+	 CuoSSqP78JzzNZq+DnIgCVQ9U7IbG0dVIrCa9GhUvo2DAmfvH6MlrP4LHyRGOJumBU
+	 amGPAe+sPSxR+TqKHiFmIDEP5yBGBp8zbMcFzcTIhZgAWYuxdMqn1PlzaNnn/TmfzU
+	 PR5ASLH0qoPWZLFLVMGiY8ZVPvehKa5IjJxSyUcSna72GP9CNzVjR4wo4G5MCBuikl
+	 LKXhTvvii1d4XOf1wR7rPrhUta3apPSCJO/ZGvZEJpf/8BvK9sN+GWaQxk/fWVwlDW
+	 dWo9pmgJ53zQQ==
+Received: from yukiji.home (unknown [100.64.0.131])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: laeyraud)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 64A2A17E0A27;
+	Thu, 19 Nov 2026 16:06:14 +0100 (CET)
+From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
+Date: Thu, 19 Nov 2026 16:05:49 +0100
+Subject: [PATCH v15 01/23] dt-bindings: phy: Add mediatek,mt8196-ufsphy
+ variant
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+Message-Id: <20261119-mt8196-ufs-v15-1-aae1eb0382e8@collabora.com>
+References: <20261119-mt8196-ufs-v15-0-aae1eb0382e8@collabora.com>
+In-Reply-To: <20261119-mt8196-ufs-v15-0-aae1eb0382e8@collabora.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Peter Wang <peter.wang@mediatek.com>, 
+ Chaotian Jing <chaotian.jing@mediatek.com>, 
+ Alim Akhtar <alim.akhtar@samsung.com>, Bart Van Assche <bvanassche@acm.org>, 
+ Bean Huo <beanhuo@micron.com>, Stanley Jhu <stanleyjhu@google.com>, 
+ Stanley Jhu <chu.stanley@gmail.com>, 
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>, 
+ "Martin K. Petersen" <mkp@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>, 
+ Mark Brown <broonie@kernel.org>
+Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org, 
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-scsi@vger.kernel.org, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
+ Conor Dooley <conor.dooley@microchip.com>, 
+ Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795100772; l=2063;
+ i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
+ bh=1dYQjIKL2vOZS2GSwWwkaJQYg1OTtXjRqHL5/V3FaAQ=;
+ b=NP30laKI+3VgiDweB+PgcDO50LXeHQGpVvvs/urfJGWsXaHT6QQa2ynQDQJ7LOq22B/8voaEI
+ P8S/bsfko7UBbSGYsx5z2YQoxG4gTV8HNrVq8zALo2khTJqlen+gOMa
+X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
+ pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261119_070619_910355_292F1469 
+X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,34 +102,76 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-6.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 
-On Mon, 02 Nov 2026 08:51:29 +0800, Shawn Lin wrote:
-> The SRAM initialization of the PCIe3 PHY may take longer than the 500us
-> currently allowed, especially on a slow power-up such as at low
-> temperature. In that case the driver reports
-> 
->   lock failed 0x..., check input refclk and power supply
-> 
-> even though the input refclk and power supply are fine.
-> 
-> [...]
+The MediaTek MT8196 SoC includes an M-PHY compatible with the already
+existing mt8183 binding.
 
-Applied, thanks!
+However, one omission from the original binding was that all of these
+variants may have an optional reset.
 
-[1/1] phy: rockchip: snps-pcie3: Raise the SRAM init timeout
-      commit: 7c2a2268bd3ddf3b2c674ebb7557ae24c22309d7
+Add the new compatible, and also the resets property, with an example.
 
-Best regards,
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Reviewed-by: Peter Wang <peter.wang@mediatek.com>
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+Acked-by: Vinod Koul <vkoul@kernel.org>
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
+---
+ .../devicetree/bindings/phy/mediatek,ufs-phy.yaml        | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,ufs-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,ufs-phy.yaml
+index 6e2edd43fc2a..ee71dfa4e0c0 100644
+--- a/Documentation/devicetree/bindings/phy/mediatek,ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/mediatek,ufs-phy.yaml
+@@ -27,6 +27,7 @@ properties:
+       - items:
+           - enum:
+               - mediatek,mt8195-ufsphy
++              - mediatek,mt8196-ufsphy
+           - const: mediatek,mt8183-ufsphy
+       - const: mediatek,mt8183-ufsphy
+ 
+@@ -43,6 +44,10 @@ properties:
+       - const: unipro
+       - const: mp
+ 
++  resets:
++    items:
++      - description: Optional UFS M-PHY reset.
++
+   "#phy-cells":
+     const: 0
+ 
+@@ -66,5 +71,16 @@ examples:
+         clock-names = "unipro", "mp";
+         #phy-cells = <0>;
+     };
++  - |
++    #include <dt-bindings/reset/mediatek,mt8196-resets.h>
++    ufs-phy@16800000 {
++        compatible = "mediatek,mt8196-ufsphy", "mediatek,mt8183-ufsphy";
++        reg = <0x16800000 0x10000>;
++        clocks = <&ufs_ao_clk 3>,
++                 <&ufs_ao_clk 5>;
++        clock-names = "unipro", "mp";
++        resets = <&ufs_ao_clk MT8196_UFSAO_RST0_UFS_MPHY>;
++        #phy-cells = <0>;
++    };
+ 
+ ...
+
 -- 
-~Vinod
-
+2.56.1
 
 
 -- 
