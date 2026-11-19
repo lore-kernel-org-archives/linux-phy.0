@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6107360A2606
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 16:24:01 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 71A8B606A332
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 16:24:05 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=bytgQftY;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=hxKT5OeH
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=e0EMwnmv;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Rc5ivXsE
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,55 +14,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=SYqmTK3yYZ47gMV+sA5xBZ+6oZeCvJhA6hWiQdCVKQs=; b=bytgQftYjGgbAwVEnxfgTPdzwZ
-	nUJlNJpyItxVAqEe29bVoaIWBO8xR7Wx2CMboVT6icEigGe2rltvs9lf97vsiZhIHDYGQHaatnMvI
-	li89IeyfnmLxX/27N8XWKAuoNLUXxlLUf0+vBJagk4sksRyo4hGK+Jfw41oygpITSQKL9LffksNoF
-	songIbkXfOgDV1YgZoeijm5hgUqZjvH+4EVOHWas/qy+cel9YZD/YbhdxNw8HgOSoUPnhz5YazHab
-	obAD9Ipi4B2caAVIRypLoyt6y5pbczv69aSqxR7uCYNofh4DFz6V9OBIdwY8A1xZ6YkDNRr4ewwOS
-	vXV/fPtQ==;
+	bh=ReorKKlq3rz/C+lcxb+MVsGDaChqra313VZV3/0itdU=; b=e0EMwnmvK+2Z5KnVstae5MWqGL
+	SGTaOXl6XlSNVU0SfXwFthDxCvmnpkOS40TVMKd9t4XV4y4AhoVVp3X/jc3DFj0tNlh+2CWzEhyKH
+	mF+xC3ie9bs2MU5rmokT7/y7ls1L8CzoUjZ+lBLFoKLfJmhko6rQZnyeuyMdMfxfX6qlCQ+czQKZ9
+	1kvJFoc5hLU0I//txb3NvwjJH3XYBDef6goEgGZ1OTn1oQptQETjmgQUF+VbbjD1/7z8qY+7Q792D
+	SWJf4i46VTzy7fBu3509NCVy6UxNQgK/utJkfXxrHFxOF8nt83UVyAr4ULYXj6hTJrhSlLc0inrAD
+	6njmsrLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU4vZ-0000000CcTs-0IG4;
-	Thu, 19 Nov 2026 16:24:01 +0000
+	id 1xU4vd-0000000CcWb-0k0C;
+	Thu, 19 Nov 2026 16:24:05 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU4vX-0000000CcTD-2XVZ
-	for linux-phy@lists.infradead.org;
-	Thu, 19 Nov 2026 16:23:59 +0000
+	id 1xU4vb-0000000CcW5-3Qvu;
+	Thu, 19 Nov 2026 16:24:04 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5F0C94129A;
+	by sea.source.kernel.org (Postfix) with ESMTP id 8E05D4129A;
+	Thu, 19 Nov 2026 16:24:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E34F91F000C5;
 	Thu, 19 Nov 2026 16:23:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B09311F000C4;
-	Thu, 19 Nov 2026 16:23:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795105439;
-	bh=dBXavqtMtY9Ez2EruGyacWXl/ozOz7EdwD1qaC6t62M=;
+	s=k20260515; t=1795105443;
+	bh=1pbHZ/UD3rUQYraKB5VVEpOEj7pJU3t0iXhesNJaed0=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=hxKT5OeHFCzRi8nnnXANQv6Kp5gTvPp0yNZGs3Vh4tn2dKS9jSU9+f/e/9C0lInGN
-	 GsE3WmzXSbvJS0W20zzjFljt3LPHWhWSQzKzfLUSCfi7/22Pdq1HGgo1laHWIZUWoz
-	 8kDAx8IbRJFvMWLeW69mA8ZXMWmd468pLnykkNt1Y1TcJ12jMZ2IWtGaBT7yMXPd44
-	 LlbjFqb/IWNbH8tcDqC+/jtrQ3JSI0y1krRYz3MHRGZ+VZxrhQ1jceZL66+Wkh25Zn
-	 iR/uKg0P9CBDzMrq+tBXFPfNTbDpJ8KVuL4DxCPh6Hex6wtHeNKVHPL6DyGatIznPS
-	 oo6LhfCEDYP3A==
+	b=Rc5ivXsEeR2w3rU7JQDOz4iYCapl+O/BWbDN5F+XKB/CZyCzHDR0p2OzE1xPA64pU
+	 yqWSTHDyMNnNLsGcAwgSYVknFBOMytGmp5OjRnaU1obcOECQrfnNp4pv33gAhfLZgX
+	 HLw8G0q+9/i8UVyfBQqi95WAo04ar003E70hsfsxMF2aJPLsbSuXcyIhvrym62pwrl
+	 JlmynBi15yUTStZRK5k86N9TocCIqcgRbH7hB/Gkuq3hk3jjfo5x3W5UdSkSkQsCEP
+	 asD4H2HnsN7dlNcFXMZWsaA8i76320hsbUdZjcs2JVAB8uWr6/PoWGQSKYxof8RJs2
+	 d8M+hLS/MAcjA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, 
- Bryan O'Donoghue <bod@kernel.org>, Rob Herring <robh@kernel.org>, 
+To: Heiko Stuebner <heiko@sntech.de>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Vladimir Zapolskiy <vz@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, 
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
- Loic Poulain <loic.poulain@oss.qualcomm.com>, 
- Mauro Carvalho Chehab <mchehab@kernel.org>, linux-media@vger.kernel.org, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, linux-phy@lists.infradead.org, 
- Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org
-In-Reply-To: <20261026224957.1115370-1-vz@kernel.org>
-References: <20261026224957.1115370-1-vz@kernel.org>
-Subject: Re: (subset) [PATCH v2 0/7] media: qcom: camss: Add SM8450 CAMSS
- support
-Message-Id: <179510543434.1370333.10289839587183821711.b4-ty@kernel.org>
-Date: Thu, 19 Nov 2026 21:53:54 +0530
+ Conor Dooley <conor+dt@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Shawn Lin <shawn.lin@rock-chips.com>
+Cc: linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, devicetree@vger.kernel.org, 
+ Samuel Holland <samuel@sholland.org>, Coia Prant <coiaprant@gmail.com>, 
+ Diederik de Haas <diederik@cknow-tech.com>
+In-Reply-To: <20261102015236.3844843-1-shawn.lin@rock-chips.com>
+References: <20261102015236.3844843-1-shawn.lin@rock-chips.com>
+Subject: Re: [PATCH v3 0/2] Support updating the PCIe3 PHY firmware on
+ RK3568
+Message-Id: <179510543955.1370333.11289386216403807541.b4-ty@kernel.org>
+Date: Thu, 19 Nov 2026 21:53:59 +0530
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
@@ -86,23 +82,26 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
-On Tue, 27 Oct 2026 00:49:50 +0200, Vladimir Zapolskiy wrote:
-> This series adds support of Qualcomm SM8450 Camera Subsystem.
+On Mon, 02 Nov 2026 09:52:34 +0800, Shawn Lin wrote:
+> The RK3568 PCIe3 PHY contains a small controller that runs microcode
+> from an internal SRAM. The microcode present in the PHY is not always
+> the latest one; with a stale version the PHY may fail to establish a
+> stable link or come up with other issues that are otherwise very hard
+> to diagnose from the host side.
 > 
-> The CSIPHYs are described as separate CSIPHY devices compatible with
-> X1E80100 ones, there is no legacy CSIPHY resource description in
-> the CAMSS driver, and this option is not intended to be supported.
-> 
-> The change can be immediately tested on any SM8450 powered board by
-> running an image stream from TPG to CSIDs, CSIPHY IPs are equal to
-> the ones found on Hamoa platform, and were tested on a private board.
+> The firmware stays optional: when firmware-name is not described in DT
+> (older DTBs) or the file cannot be requested, the driver keeps the
+> existing behaviour and runs with the microcode already present in the
+> PHY, so there is no new hard dependency for existing boards.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/7] dt-bindings: phy: qcom,x1e80100-csi2-phy: Add SM8450 compatible
-      commit: 069e05f3dfd76b1ee4d0500056c983a469f58b87
+[1/2] dt-bindings: phy: rockchip,pcie3-phy: Document firmware-name
+      commit: 3b93911c3e311584e01e5ceb7f2cde8b77842bd6
+[2/2] phy: rockchip: snps-pcie3: Load updated PHY firmware on RK3568
+      commit: 8f7b319cc91e61ff9144bd9d72df4d508dbf5e93
 
 Best regards,
 -- 
