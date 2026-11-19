@@ -2,68 +2,130 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 00D5F606A332
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 15:57:31 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BCEA5606A331
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 16:16:01 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=CYjL079q;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=free.fr header.i=@free.fr header.a=rsa-sha256 header.s=smtp-20201208 header.b=snfT/r7J
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=0PzTsgyR;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=nxp.com header.i=@nxp.com header.a=rsa-sha256 header.s=selector1 header.b=hl93R4Hb
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=XIsiqNEA0QhQuhsXF57W6Una/xrY7he7CisuFqqRwRA=; b=CYjL079qtdG/n6WWleaAjn86Ja
-	MkCFwqkVEBtpzEDKnLWKA3gNb4yC13D6or63cCJrG4TPJBk8N8bFOjz+8gHNbA6/9mG8tXIInKOlI
-	CsOAUs3Mw/VpJoGLG6j5cAtbwYlyB0a7p6jKk5WSES0tAkLhcD9LakPrlZrR/od05wbZDGlnAWAL+
-	tybrvX2/YCAITPlUnRiamF35Vb62TyheYvTQM/ZALR32EblR3M8pjvF1n0iaI/E2t5Fyzws+o+nl8
-	3+3My6H2OCEHUM6x9EEEByDLXvasJHr7FRxRQQ+bvqq6aEOT/cuGoNkyeDtYUVvScKabfqc5MJC2l
-	FN/izFdg==;
+	bh=Ad9RmkcODxjZMnDgegToBQ7W859zh7VOp2tB53yd1qo=; b=0PzTsgyRNI1dxJkjJtnn5RgeVn
+	2nzp6g8mzNBbultkkQoTwRCFOde5CiqZ0EpEKYRtvjh6hA2gOyYxhUWpqTvju6XzdGEiz+UAJZa3N
+	8dVYxnICt9IpDuly+5AipHeSbQOtpjDcE6zuGkfI6Gg93Fz4xhaliJW/I0ZQOpvdSFl4TrSmXG7mM
+	fQOB5CnWWrbq0o7fL01fL9gG38ATcPv95BWG9mE4S1HZw0sN/veEwyQ2jsaiSLhdcKvmbt52nR8Ww
+	P14d9eNJs1XdJ8DWbwdHG0DE9Xat5EwE/0xH38+XlR7BQ4awR9USAoRfOsPdofwoJi4PAcxajXLfO
+	YWMEGaxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU4Vu-0000000CYej-339e;
-	Thu, 19 Nov 2026 15:57:30 +0000
-Received: from smtp6-g21.free.fr ([212.27.42.6])
+	id 1xU4np-0000000CbKs-1T4o;
+	Thu, 19 Nov 2026 16:16:01 +0000
+Received: from mail-swedencentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c202::7] helo=GVXPR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU4Vq-0000000CYai-1bmt
+	id 1xU4nm-0000000CbJl-10Ut
 	for linux-phy@lists.infradead.org;
-	Thu, 19 Nov 2026 15:57:29 +0000
-Received: from L30177.local (unknown [213.36.7.12])
-	(Authenticated sender: vjardin@free.fr)
-	by smtp6-g21.free.fr (Postfix) with ESMTPSA id 3D7B578034D;
-	Thu, 19 Nov 2026 16:57:07 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=free.fr;
-	s=smtp-20201208; t=1795103839;
-	bh=ICdMlhTFeha21pZvvVAfhDVEl7HZL+KT6ohipt9rgNo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=snfT/r7JO2xh+gI9mOw4Szjy2GLjGvpT6IOEkq/RPDm//ttWXZodRrbfKwk6HFD0J
-	 RziB6M1wXt/DCwRCyNTc+rKmorB2sHc3NOUc/DnZsKCilZcSle4TxxNQNf+dveXDdU
-	 KpuQQJKqvCbTebh/7Tsx4dliYP1nWvtn3sUewrfvjs5FF2pxi32Nfr9Q21PnDxd1Wz
-	 f5+BXK4he4KOyGWEeM4QxIbIx1J0zzSu4xVu361n7qRmYOoj5OIWmnRgexrmbTKjw7
-	 gMvPynUZqcuaYmu8QOYi1SL1DbmxCsIumWfWjW9hApXHg6jXUU+Fq7UaaYI+NDDqq1
-	 KZayY9nMtFtrQ==
-Date: Thu, 19 Nov 2026 16:57:05 +0100
-From: Vincent Jardin <vjardin@free.fr>
-To: Ioana Ciornei <ioana.ciornei@nxp.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, netdev@vger.kernel.org,
-	Vladimir Oltean <vladimir.oltean@nxp.com>
+	Thu, 19 Nov 2026 16:15:59 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=hdx7kUqZhkcvJMdDDEu32e9NP2EkRvbviNl98l0KNn4PL00pQTD5f4pKxwTLdG4AU0Dnj8V4wu0cvTbxqhHQId4+hHY1FsLqJ9/vVkpS0WViiqNsBmFafWgBLJytlrbq7DvMLMXFfRP9JOMELr3DL1RymoN2wYdlmmldYLsVFenL49dSux5X3Mk/k4BgZr6Zd63OoUf4hiJqrVdW4QGpPFl9PfWmCefPGkPgPoZvawtqfOGVG5beVGWQYrR5arqrHk99IB7TheU6nd5wbCdNg7Aa3Q1UiSUQ3CMFroq+6Wn5u61zi/EVoWcAJXyeN7chWPXadicME/EfNY8yV56hAA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=jOYhkZTqfYCkgs5d3ymxseWK0cG/Kw+BiuFDK7ze0P0=;
+ b=vAlgnp/cnJZf9xtpXiW+edjAaoh48L4I/jBqIp2mxQhiRkB4XJTT9N0MHgbXNbs5hH6RWfD+71CYCDw0vuWlf1YZgBtj4nTrGYvzulTtuah2mYtJBuajTHOLQaZSzcePV0itYUQH+b67o+i9Q+Sk3OLRR/X/cgIv/h7yGyUIOjC8p1aGlx65ISebzhNBbxU7SRBcu+MY0v8r2bEaZaItQ3FsFBxfPVFFemKXcRLsrYbOIW7SKZqJ3/YGhBte6pbFXKGJ22AFb6unsC9/iW74mjbHze0uEXZIQe+v1Qvze4DU5qv+8/sTgExAvXRHfGd/M17cDEpdvWOmomllksJ/vQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=jOYhkZTqfYCkgs5d3ymxseWK0cG/Kw+BiuFDK7ze0P0=;
+ b=hl93R4Hb9FNzev6zFRzyCpx2O3aXt+TZtFNG0ly1aTHGwIOMHveDlHvfVFW+pa9d6kvfHWU30XnWiuxDJ3S5BC1Og23BOuy0TaMj33hdX1UzpB40wK68HwQhlm/8H3sbBGUvr0ypSX6xSVDiXOjYYbXD8h2UFmf3nE/SFSypp14Ru1b6O04AsYsLi4ZIkeCCGwS37qz/M+bDlBPHFahwCKmFVTBcRxYerYwMIGkuzTvt351O1LVic/r3cjkKaICXBXRdn9YaMUOSjnAoJwJS3ugLRsDEMJT9xKpZQ21Tbhcg743GAxurZf+beHSFTISrte6B0earHfmbXZ1G4zkD3Q==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from BR0PR04MB755739.eurprd04.prod.outlook.com (2603:10a6:2c8:5c::9)
+ by AS8PR04MB8994.eurprd04.prod.outlook.com (2603:10a6:20b:42d::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.639.10; Thu, 19 Nov
+ 2026 16:15:51 +0000
+Received: from BR0PR04MB755739.eurprd04.prod.outlook.com
+ ([fe80::84cb:5d9b:dce:2492]) by BR0PR04MB755739.eurprd04.prod.outlook.com
+ ([fe80::84cb:5d9b:dce:2492%4]) with mapi id 15.21.0639.010; Thu, 19 Nov 2026
+ 16:15:51 +0000
+Date: Thu, 19 Nov 2026 18:15:48 +0200
+From: Ioana Ciornei <ioana.ciornei@nxp.com>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	netdev@vger.kernel.org
 Subject: Re: [PATCH 0/3] phy: lynx: add support for downstream retimer PHYs
-Message-ID: <av8cUZ2F4_iw2fQV@L30177.local>
+Message-ID: <4v4cb2cdjsm5pe67yedtz7mmidvm5bf2xictjmnvd5r27cuimx@st442r2qjuhz>
 References: <20261118163134.2149894-1-ioana.ciornei@nxp.com>
+ <av6-ROH48bJTSp04@skbuf>
+Content-Disposition: inline
+In-Reply-To: <av6-ROH48bJTSp04@skbuf>
+X-ClientProxiedBy: AM8P189CA0024.EURP189.PROD.OUTLOOK.COM
+ (2603:10a6:20b:218::29) To BR0PR04MB755739.eurprd04.prod.outlook.com
+ (2603:10a6:2c8:5c::9)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261118163134.2149894-1-ioana.ciornei@nxp.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BR0PR04MB755739:EE_|AS8PR04MB8994:EE_
+X-MS-Office365-Filtering-Correlation-Id: a4886cdb-29f8-4d35-9209-08df46586179
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|19092799006|366016|1800799024|376014|22082099003|18002099003|6133799003|3023799007|11063799006|56012099006|261026121527099003|4143699003|261026140227099003|261102123227099003|261028144727099003|261022105027099003|261021123027099003|261021121427099003|261022075727099003|261009223027099003|10067099003;
+X-Microsoft-Antispam-Message-Info: YgM6iNT58DPDQmufDO4QcKQ5M6XwrLbHh2Y6kjk2kQTVKY3aiAkaL51bsqLl2nqbZI39ut+jOVSwZ1UpmGP1dmgZMbdzA80O+EYGa4y9oJ1bll3pTg+FV2IpsVXEXoxzKSPQ52GqIf8ev5IXbCXQS64ILIQfEcJp6kWzNwtRCLZiZrKEtwz4jrWSgF1WsY6S5Kd7Ul0vdaXwtZyztV8BuolBsJYZK2Ny/5a3uxOZedT9rRj/vQBsfFmJpPP2gNzLgFVSa1NgAxWpN7SwtOTkioJta0fcxP33UidWVH7cnVX4BYXOQ1COY+LJkprMNNV02SjvYQs21rB0ox0uR+yvntqQzzsj91EH9UihkNOaOXBY2qYe0A7Bf5dgBCX7a8vHI8rO2RoMkIwbQ9relFFGM/NXLLv8TNi+NpS+yx5My8ZHvgfndO/v4E4+l436dptrPwQsdLrSS6zQx26ff8AkYwy25f94cOpKTwi0NxW45N+YqpTSGdBhkAiDj7hOinb2J2d/hpsmDwCpATWKMe/VulJF9IzgMUuWPIriOEVpdpvvrDcDAahrFh+J8wCZz9TJP7GVbvZYbXblXX8DypLfo43jiubJGWMD6f2NsIJVH/EjcEFClMeEpE0vx2WYGA2Yo2538LO+nSrrCb56jIP6NWRlmGKfDzCZXLCJV1N1bMw=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BR0PR04MB755739.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(19092799006)(366016)(1800799024)(376014)(22082099003)(18002099003)(6133799003)(3023799007)(11063799006)(56012099006)(261026121527099003)(4143699003)(261026140227099003)(261102123227099003)(261028144727099003)(261022105027099003)(261021123027099003)(261021121427099003)(261022075727099003)(261009223027099003)(10067099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?yc2SDV7MPobjBkGC9cYb9LWVFJkPLouBNInRJvqvrGuNHbBQBNbcQJCFr/Wy?=
+ =?us-ascii?Q?v2wi6WF/fU9PwVVKspslFGHso2GQb1zQSn9zLq/fRH/O40ErkZI7IYjL93jn?=
+ =?us-ascii?Q?IvGZvnaONstehThR788Qc31z69C3tMo09mJQXQ3Z5gC2qh7bOLL5tGgoxXR/?=
+ =?us-ascii?Q?9WwGDffV41s6c8y9rkvF2Em19eU2WpV1Maob+lx4+tsddCWb7p8Ed/Epj+xu?=
+ =?us-ascii?Q?sEWvwgI2sXCvKkqyX5Z035QsEG/l2nRFf2/FlEElJOj3MqH2OV+mHz9LmQXA?=
+ =?us-ascii?Q?TTxfq9mx7OxUr3C1S3C1xmm1xq7/90trplQAEwR0SQE+fkx2mb4foqPs2DKY?=
+ =?us-ascii?Q?Aw9PR/qPEVCl7fPJZuwUmJFaxYlI4thKJ2hgS0zfZenCIcrjX+SO30iAoPnn?=
+ =?us-ascii?Q?XMiFB5g3D8ksYOtAxJd9Kgnz2NeUyJC1lq2PeW0dlKlv8AsJ5/kl0EFRdle6?=
+ =?us-ascii?Q?b5r9erft8R6DJIZuq4HmxlI8sPSJMTVRjKWUpC1VeZWH5pW5r4/xDp9rl8V8?=
+ =?us-ascii?Q?jBuuohJd19rIB3CgIIOo3HQfEDhYFN7zKCqhQJvXZGksb1MKY1HqdIuM4KBS?=
+ =?us-ascii?Q?1I836ZTs81RlA0a04d5bBKfoGv3h3wBmTE2DVNUJJx4n0WcgKYaX7AJA4FhA?=
+ =?us-ascii?Q?XyZcUWNJW8q1lQvNXXNjOhFeXbO0KpERggj54yZcOfIIL2j/fRxzYPflt0dO?=
+ =?us-ascii?Q?yvwesmALXKHzEVKRS/BSbT9+WPdOAig+og33UgK00w0Ht1XWte2hW9YjA7Hl?=
+ =?us-ascii?Q?ruZqtFUZDag1h5+Doa2aNIbxw1l7NxNbbXxQRHMW3mxIJyM6GOyJkbPua/vc?=
+ =?us-ascii?Q?2mMC3/71PCz/ASWqTtnhvZRHs2RLFnyGLFMz+KOd9PnmEC0JV6Mi7S6zAJ+Z?=
+ =?us-ascii?Q?l6hwtlPL1XJ0L6XN/J5zSiWlBawAkzyP12THSRecSBaBs8M+0r5yISijdOJ6?=
+ =?us-ascii?Q?ZVXorWeYiAoNZteCnk451+ZvN9QWebheelY1+BuuUj931bpvAEDwQczxLasW?=
+ =?us-ascii?Q?h0+w8yrjXV3ju9dbvxizfGoBRTUpCPVM2XbQ2V+X2pThU1FegiqdK9kVFu4p?=
+ =?us-ascii?Q?7hV0lu+pZNqF3l0TvmKcYAxM8fPYgre8txxvYFHdQV+3MMC7uIw53zMVvjuE?=
+ =?us-ascii?Q?HInlUVzjXnWkX4ujU94EJEpN/wHkhlm14Pqm1juFabPZoN0JrNwheSEj6KHm?=
+ =?us-ascii?Q?kYfN4tiR3vln7Q9bTBnm/mP1j95ufqZNB+jU5yvmjqsOq4j/mn7uzaupJG8w?=
+ =?us-ascii?Q?2A5jtki/KX1pe3yW1e6TR+IjNE5keJAEOk7q9+sfL5sG46mYvsuPQqRfxAuH?=
+ =?us-ascii?Q?evY1j9+0IH8z0a8VBlmdgNsgMI7uL+DY6jGb+gHMt7xDVBbsAfA3rxPuQzff?=
+ =?us-ascii?Q?IsZX9qHe0Zh+mQd+Xd/1L1lNxChFR3n+9WE6GnYOcPICcWwCZTNwu4hTicCu?=
+ =?us-ascii?Q?EHfM0gl3W1t8z/rkxdeuhKmE9J3Z5zW5B3b122wdrgDHXQv9CeogIbr8WU9C?=
+ =?us-ascii?Q?pVej4gCHpYCDBXV3BUad9pYqawhC2LBr3pzHCtP54vqPlTCeakqniCllpiMW?=
+ =?us-ascii?Q?CJHsk7e28B5bzWjPvmRJLB5XPT9+Q+fCXXOn1IZ+ESonON+Dlz0D+EW2nrfC?=
+ =?us-ascii?Q?v5VZFWsci+z22BsAK0n5SMYwqp9sq83GEzNQhnczys6oQBdx6L7F+jzTNDaI?=
+ =?us-ascii?Q?XZLiT35kbVqcgl/vcXYmv/dUl+QnGGxfeLpGSmWu57ZExNSoTHFrNPSqhnKn?=
+ =?us-ascii?Q?KVPzkr7kCA=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a4886cdb-29f8-4d35-9209-08df46586179
+X-MS-Exchange-CrossTenant-AuthSource: BR0PR04MB755739.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Nov 2026 16:15:51.7541
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: yWS617Mfjnrm019PNcYv55FCxaw1glwGEgU51EKbw1yM9oYt88eUIVputwSPa4ySW5KDCyuZALG6UFhIqCzCmQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8994
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261119_075726_920913_A2160786 
-X-CRM114-Status: GOOD (  13.28  )
+X-CRM114-CacheID: sfid-20261119_081558_299173_0007B6FB 
+X-CRM114-Status: GOOD (  23.09  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,38 +139,67 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Ioana,
+On Thu, Nov 19, 2026 at 11:25:01AM +0200, Vladimir Oltean wrote:
+> On Wed, Nov 18, 2026 at 06:31:31PM +0200, Ioana Ciornei wrote:
+> > One thing to note here is that the forwarding code is kept rather
+> > grouped in phy-fsl-lynx-core.c rather than in the individual Lynx10G and
+> > Lynx28G drivers so that in the future, if necessary, it can be moved
+> > internally into the Generic PHY framework. This leads to the consequence
+> > that the actual phy_ops with which the PHY is created cannot be const
+> > since the .owner field needs to be copied from the structure received
+> > from the actual PHY driver.
+> 
+> Have you evaluated the possibility to land retimer support in the core
+> PHY framework directly? What would the obstacles be?
 
-> This patch set adds support in the Lynx SerDes PHY drivers for
-> retimer PHYs which can be found on the board downstream of the SerDes
-> lane towards any connector such as an SFP cage.
+I did evaluate the possibility to add retimer support in the core PHY
+framework but there is a lot of preparatory work to be done in order for
+the core to be ready to receive this kind of feature and actually use
+it in its current drivers. On top of this, I am not really sure there is
+enough interest in the community to do it.
 
-It is a good idea, it can be used then to leverage other retimers
-on those serdes too (like a ds250).
+Everything stems from the fact that there is no actual enforced
+guideline of how the PHY consumer and PHY provider drivers should
+interact with one another through the phy_ops.
 
-So, two questions:
- - in patch 3, a downstream PHY without .validate fails every mode of
-the lane. Could it be stated in the binding or in a kernel doc ? A
-minimal retimer driver would take the port down.
+I will list below some of the identified issues:
 
- - for 100G and 40G ports that are 4 lanes under one MAC, and the
-Lynx 28G driver has no lane mode for them, so set_mode would never reach
-their retimers. What's the plan ?
+- How to interpret a missing callback. A missing callback returns 0 for
+  most of the ops but .configure() and .validate() which return
+  -EOPNOTSUPP.
 
-One more point: we need to be able to tune the equalization and run PRBS
-on these chips from userspace. A driver that selects a channel and then
-writes would race with such tools. The retimer driver
-would have to deal with it. What could the proper design be ?
+  For example, any PHY consumer can now call phy_set_mode_ext(phy,
+  PHY_MODE_ETHERNET, PHY_INTERFACE_MODE_25GBASER) on a PHY which does
+  not implement the .set_mode() callback and get no error, even though
+  the SerDes could be very well unable to sustain that mode. The
+  question is what to do when this happens.
 
-thank you,
-  Vincent
+  In my view, .validate should always be defined by a PHY provider which
+  wants to expose .set_mode and .configure since without .validate the
+  consumer cannot check what modes the PHY supports nor what
+  configurations it accepts. Since this is not the norm currently in the
+  core PHY framework I would be taking on responsability that is backed
+  by no authoritative source.
+
+- Which ops to forward and in what order.
+
+  Today each driver that uses this kind of "chained PHY" schema
+  forwards a different subset by hand - some forward .init() / .exit() /
+  .set_mode(), others only .init().
+
+  At the same time, there is no uniform order in which the phy_ops are
+  called on the SerDes PHY and its downstream PHYs. Some drivers go
+  through the downstream PHYs first and then their own callback, others
+  the other way around.
+
+Ioana
 
 -- 
 linux-phy mailing list
