@@ -2,58 +2,61 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AB495606A325
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 15:26:43 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 855FF606A326
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 15:30:44 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=zSSA2R5w;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=YCAELgZL
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=hAolCZaP;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=aliel.fr header.i=@aliel.fr header.a=rsa-sha256 header.s=courrier-s1 header.b=Nj6zi7Fo
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=z7bLEcRh8P9BL6RepDLYBO0qx8i/kSTncwKCR1958nk=; b=zSSA2R5w3gmeVEYkXrj9tqh5FN
-	TqUGvIz5GHG9pmiMYTsNiH8QoxamF+oilgWG8gKO/z8L+5S/cndOSbJawYSwOSNqDl/Q5OLjTOfnn
-	02q69e4QTuduUB1h3CV9M3h+8xMA2biIrExfUmmkHprrETFEjn8soYbW4Yvtk2iHetcU3HYaEWFav
-	verAD/kYF0XjhuRL1Wz9SeV600SqdNr3ODlGk85uySFeUQzgNEW6RyeYEorfNxZC+jqLrpw3HjJj9
-	WSaBXD3IkFXsvp2v4M6OofwTDUHB0qq4ruhqJ2iDa16Uejtm5A+x5gXEo8L2L8jPC+BGnM5Bfjnjc
-	SbowW7WQ==;
+	bh=FHr9v05YLz7pGWtmmxk1NM+p6lEZrfEOKF4p9ADGBUk=; b=hAolCZaP/vBjM/lso2ob2DmD6v
+	S3atIij+JuqhCwempEzbQiKiP0F9P8YCkzNDLdhGU2DUuC2jNU0e7FrWszg7NaJg1fBXDSRFi3K01
+	0e0ouPNz31jyXsWXnBFUeOvrlD/NZ6yj5rMsJ2LXkisX8Io5DQXG6JUu+XL2blxBBqmLiZyyE/u34
+	mB8+ragOANtSkqYtqrCE4v/5Blf+P8ahf3d/rALFVkqGgoZBwSHzuEGDuGr/sSpN+Lzd/ehv+Twyn
+	b6ucXY/ERcZ838lKUzXvc+TQPYYzDzBg6HKds/pf/W3beSOwsL7VXpNWwOpvCrpqKvxAnlSO8GzGu
+	VM7FXpxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU427-0000000CRgI-1pmX;
-	Thu, 19 Nov 2026 15:26:43 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xU460-0000000CSok-16Me;
+	Thu, 19 Nov 2026 15:30:44 +0000
+Received: from courrier.aliel.fr ([65.21.61.41])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU426-0000000CRgA-47xj
-	for linux-phy@lists.infradead.org;
-	Thu, 19 Nov 2026 15:26:43 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id B9C4C41340;
-	Thu, 19 Nov 2026 15:26:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 301C91F000C4;
-	Thu, 19 Nov 2026 15:26:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795102002;
-	bh=w5xpY7nzvsPGQqyIoOdUke8GvoCz7BF4Gu6054u1XQc=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=YCAELgZLnyccb+gqD/QJgU2oBXlle/EsPEtwMYZxow1Mkv+RQ/0penhOKQCnQcJOZ
-	 RvjRW8uBgm3mO8mHp0buX9RKvHPAbtncJYRcZxHFYDBHjnjvoGjFzSYRvxyczLPCJJ
-	 yMW79LUytWT/LzP05FRDSmJew0bOpqm9y4lDeZf75qg92eX5GGGe5lNNJ3DNosV72m
-	 Qnbrq8fV1s3ca1pDcu3D2I5OXd/JWxvNuYWPdVNiAv1UB47A6Y2P9QHGw3XrNsyVtT
-	 J1+DHlsef9P9qcIY2UNBCpnD7Z3i2q2xI1uEp9CJ/DXeArw5Ywwo9/i3eWL3rmqhoA
-	 HwopVspC2Fe3Q==
-Message-ID: <sashiko-outbox-223382@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v15 14/23] scsi: ufs: mediatek: Use the common PHY
- framework
-To: "Louis-Alexis Eyraud" <louisalexis.eyraud@collabora.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-scsi@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261119-mt8196-ufs-v15-14-aae1eb0382e8@collabora.com>
-References: <20261119-mt8196-ufs-v15-0-aae1eb0382e8@collabora.com>
- <20261119-mt8196-ufs-v15-14-aae1eb0382e8@collabora.com>
-Date: Thu, 19 Nov 2026 15:26:41 +0000
+	id 1xU45u-0000000CSjM-3AnJ;
+	Thu, 19 Nov 2026 15:30:43 +0000
+Message-ID: <ec9c8460-a8de-460e-92bb-dc03240152bb@aliel.fr>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=aliel.fr;
+	s=courrier-s1; t=1795102234;
+	bh=3cxvdL4KfFwcHXkWK7rQriyomVokMs5MeD2OaggeClQ=;
+	h=Date:From:Subject:To:Cc:References:In-Reply-To;
+	b=Nj6zi7Fo0ca5Ps9aUATozF/jxT6gCv+7SS7P/dwLIZlh4hIVjAk7MXSsgA7JbBLy7
+	 lf+mFz55owqBoYAWIJldfRz0SSqxgdM6lEpUk0rQzL+74rNH31mts30Mc31SPIGjA+
+	 FTOPuTK24MLzcb6ip2CCC7ddL/fChzsbgAjliXNI=
+Date: Thu, 19 Nov 2026 16:30:02 +0100
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+From: Ronald Claveau <linux-kernel-dev@aliel.fr>
+Subject: Re: [PATCH 06/10] drm/meson: dw-hdmi: Drop manual HHI clock and
+ memory PD setup
+To: sashiko-reviews@lists.linux.dev
+Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ robh@kernel.org, conor+dt@kernel.org, neil.armstrong@linaro.org,
+ vkoul@kernel.org, olteanv@gmail.com
+References: <20261117-meson-drm-create-hdmitx-phy-v1-0-9e0ac931381c@aliel.fr>
+ <20261117-meson-drm-create-hdmitx-phy-v1-6-9e0ac931381c@aliel.fr>
+ <sashiko-outbox-219570@kernel.org>
+Content-Language: en-US
+In-Reply-To: <sashiko-outbox-219570@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261119_073039_262413_4A12CE00 
+X-CRM114-Status: GOOD (  21.00  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,127 +66,124 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtIaWdoXSBzY3NpOiB1ZnM6IG1lZGlh
-dGVrOiBwcmVtYXR1cmUgcGh5X2V4aXQoKSBhbmQgcG93ZXIgbGVhayBpbgogIHVmc19tdGtfZXhp
-dCgpCi0gW0hpZ2hdIHNjc2k6IHVmczogbWVkaWF0ZWs6IG1pc3NpbmcgZXJyb3Igcm9sbGJhY2sg
-aW4KICB1ZnNfbXRrX3J1bnRpbWVfc3VzcGVuZCgpCi0gW01lZGl1bV0gc2NzaTogdWZzOiBtZWRp
-YXRlazogUEhZIHBvd2VyIGxlYWsgYW5kIGVycm9yIGluCiAgdWZzX210a19ydW50aW1lX3Jlc3Vt
-ZSgpCi0tCgpjb21taXQgZGQ5ZjMyMjllNDk3OGRjNGZkYTA3Y2Q0MmRlYzUzOTlkZjAyMjZlZQpB
-dXRob3I6IE5pY29sYXMgRnJhdHRhcm9saSA8bmljb2xhcy5mcmF0dGFyb2xpQGNvbGxhYm9yYS5j
-b20+CgpzY3NpOiB1ZnM6IG1lZGlhdGVrOiBVc2UgdGhlIGNvbW1vbiBQSFkgZnJhbWV3b3JrCgpU
-aGlzIGNvbW1pdCBzd2l0Y2hlcyB0aGUgTWVkaWFUZWsgVUZTIGRyaXZlciBmcm9tIG1hbnVhbCBP
-RiBQSFkgZGV2aWNlCmhhbmRsaW5nIGluIHByb2JlIGFuZCBydW50aW1lIFBNIHRvIGFjcXVpcmlu
-ZyBhbmQgbWFuYWdpbmcgdGhlIFBIWSB2aWEKdGhlIGNvbW1vbiBQSFkgZnJhbWV3b3JrIGluIHRo
-ZSB1ZnNoY2QgdmFyaWFudCBjYWxsYmFja3MuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3Vmcy9o
-b3N0L3Vmcy1tZWRpYXRlay5jIGIvZHJpdmVycy91ZnMvaG9zdC91ZnMtbWVkaWF0ZWsuYwo+IGlu
-ZGV4IGZlYzBmYjI0ZTdhMmMuLmE3OGUwMTVlMzI5YTUgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy91
-ZnMvaG9zdC91ZnMtbWVkaWF0ZWsuYwo+ICsrKyBiL2RyaXZlcnMvdWZzL2hvc3QvdWZzLW1lZGlh
-dGVrLmMKClsgLi4uIF0KCj4gQEAgLTEzMjEsMTEgKzEyOTEsMjIgQEAgc3RhdGljIGludCB1ZnNf
-bXRrX2luaXQoc3RydWN0IHVmc19oYmEgKmhiYSkKPiAgCj4gIAlyZXR1cm4gMDsKPiAgCj4gK291
-dF9waHlfZXhpdDoKPiArCXBoeV9leGl0KGhvc3QtPm1waHkpOwo+ICBvdXRfdmFyaWFudF9jbGVh
-cjoKPiAgCXVmc2hjZF9zZXRfdmFyaWFudChoYmEsIE5VTEwpOwo+ICAJcmV0dXJuIGVycjsKPiAg
-fQo+ICAKPiArc3RhdGljIHZvaWQgdWZzX210a19leGl0KHN0cnVjdCB1ZnNfaGJhICpoYmEpCj4g
-K3sKPiArCXN0cnVjdCB1ZnNfbXRrX2hvc3QgKmhvc3QgPSB1ZnNoY2RfZ2V0X3ZhcmlhbnQoaGJh
-KTsKPiArCj4gKwl1ZnNfbXRrX21waHlfcG93ZXJfb24oaGJhLCBmYWxzZSk7Cj4gKwo+ICsJcGh5
-X2V4aXQoaG9zdC0+bXBoeSk7Cj4gK30KCltTZXZlcml0eTogSGlnaF0KRG9lcyB1ZnNfbXRrX2V4
-aXQoKSBjYWxsIHBoeV9leGl0KGhvc3QtPm1waHkpIHdoaWxlIGEgc2Vjb25kCnBoeV9wb3dlcl9v
-bigpIHJlZmVyZW5jZSBpcyBzdGlsbCBoZWxkPwoKdWZzX210a19pbml0KCkgYWNxdWlyZXMgdHdv
-IHBoeV9wb3dlcl9vbigpIHJlZmVyZW5jZXMgb24gaG9zdC0+bXBoeTogb25lCmluIHVmc19tdGtf
-bXBoeV9wb3dlcl9vbihoYmEsIHRydWUpIGFuZCBhbm90aGVyIGluCnVmc19tdGtfc2V0dXBfY2xv
-Y2tzKGhiYSwgdHJ1ZSwgUE9TVF9DSEFOR0UpIHZpYQp1ZnNfbXRrX3B3cl9jdHJsKGhiYSwgdHJ1
-ZSkuICBEdXJpbmcgdGVhcmRvd24sIHVmc2hjZF9oYmFfZXhpdCgpIGludm9rZXMKdWZzaGNkX3Zv
-cHNfZXhpdChoYmEpIGJlZm9yZSB1ZnNoY2Rfc2V0dXBfY2xvY2tzKGhiYSwgZmFsc2UpOgoKZHJp
-dmVycy91ZnMvY29yZS91ZnNoY2QuYzp1ZnNoY2RfaGJhX2V4aXQoKSB7CgkuLi4KCQl1ZnNoY2Rf
-ZXhpdF9jbGtfZ2F0aW5nKGhiYSk7CgkJaWYgKGhiYS0+ZWhfd3EpCgkJCWRlc3Ryb3lfd29ya3F1
-ZXVlKGhiYS0+ZWhfd3EpOwoJCXVmc19kZWJ1Z2ZzX2hiYV9leGl0KGhiYSk7CgkJdWZzaGNkX3Zv
-cHNfZXhpdChoYmEpOwoJCXVmc2hjZF9zZXR1cF92cmVnKGhiYSwgZmFsc2UpOwoJCXVmc2hjZF9z
-ZXR1cF9jbG9ja3MoaGJhLCBmYWxzZSk7CgkuLi4KfQoKSW4gdWZzX210a19leGl0KCksIHVmc19t
-dGtfbXBoeV9wb3dlcl9vbihoYmEsIGZhbHNlKSBkcm9wcyBvbmx5IG9uZQpwaHlfcG93ZXJfb24o
-KSByZWZlcmVuY2UgKGxlYXZpbmcgbXBoeS0+cG93ZXJfY291bnQgYXQgMSkgYW5kIHR1cm5zIG9m
-Zgp0aGUgMC45ViBzdXBwbHkgYmVmb3JlIHBoeV9leGl0KGhvc3QtPm1waHkpIHJ1bnMuCgpPbiBk
-cml2ZXIgcmVtb3ZhbCwgdWZzaGNkX3JlbW92ZSgpIGxlYXZlcyBoYmEtPnVpY19saW5rX3N0YXRl
-IGFzClVJQ19MSU5LX0FDVElWRV9TVEFURSwgc28gdGhlIHN1YnNlcXVlbnQgdWZzaGNkX3NldHVw
-X2Nsb2NrcyhoYmEsIGZhbHNlKQpza2lwcyB1ZnNfbXRrX3B3cl9jdHJsKGhiYSwgZmFsc2UpIGFu
-ZCBwZXJtYW5lbnRseSBsZWFrcyB0aGUgcmVtYWluaW5nCnBoeV9wb3dlcl9vbigpIHJlZmVyZW5j
-ZSwgUEhZIGNsb2NrcywgYW5kIHJ1bnRpbWUgUE0gcmVmZXJlbmNlLiAgT24gYW4KZWFybHkgdWZz
-aGNkX2luaXQoKSBmYWlsdXJlIHdoaWxlIHRoZSBsaW5rIGlzIHN0aWxsIG9mZiwKdWZzaGNkX3Nl
-dHVwX2Nsb2NrcyhoYmEsIGZhbHNlKSBpbnN0ZWFkIGNhbGxzIHBoeV9wb3dlcl9vZmYoaG9zdC0+
-bXBoeSkKYW5kIGFjY2Vzc2VzIE0tUEhZIHJlZ2lzdGVycyBhZnRlciBwaHlfZXhpdCgpIGhhcyBy
-dW4gYW5kIHRoZSAwLjlWIHN1cHBseQpoYXMgYmVlbiBkaXNhYmxlZC4KClsgLi4uIF0KCj4gQEAg
-LTI1MjIsOSArMjQ2Nyw4IEBAIHN0YXRpYyBpbnQgdWZzX210a19zeXN0ZW1fcmVzdW1lKHN0cnVj
-dCBkZXZpY2UgKmRldikKPiAgc3RhdGljIGludCB1ZnNfbXRrX3J1bnRpbWVfc3VzcGVuZChzdHJ1
-Y3QgZGV2aWNlICpkZXYpCj4gIHsKPiAgCXN0cnVjdCB1ZnNfaGJhICpoYmEgPSBkZXZfZ2V0X2Ry
-dmRhdGEoZGV2KTsKPiAtCXN0cnVjdCB1ZnNfbXRrX2hvc3QgKmhvc3QgPSB1ZnNoY2RfZ2V0X3Zh
-cmlhbnQoaGJhKTsKPiAgCXN0cnVjdCBhcm1fc21jY2NfcmVzIHJlczsKPiAtCWludCByZXQgPSAw
-Owo+ICsJaW50IHJldDsKPiAgCj4gIAlyZXQgPSB1ZnNoY2RfcnVudGltZV9zdXNwZW5kKGRldik7
-Cj4gIAlpZiAocmV0KQo+IEBAIC0yNTM1LDggKzI0NzksMTMgQEAgc3RhdGljIGludCB1ZnNfbXRr
-X3J1bnRpbWVfc3VzcGVuZChzdHJ1Y3QgZGV2aWNlICpkZXYpCj4gIAlpZiAodWZzX210a19pc19y
-dGZmX210Y21vcyhoYmEpKQo+ICAJCXVmc19tdGtfbXRjbW9zX2N0cmwoZmFsc2UsIHJlcyk7Cj4g
-IAo+IC0JaWYgKGhvc3QtPnBoeV9kZXYpCj4gLQkJcG1fcnVudGltZV9wdXRfc3luYyhob3N0LT5w
-aHlfZGV2KTsKPiArCWlmICghdWZzaGNkX2lzX2xpbmtfYWN0aXZlKGhiYSkpIHsKPiArCQlyZXQg
-PSB1ZnNfbXRrX21waHlfcG93ZXJfb24oaGJhLCBmYWxzZSk7Cj4gKwkJaWYgKHJldCkgewo+ICsJ
-CQlkZXZfZXJyKGRldiwgIkZhaWxlZCB0byBwb3dlciBvZmYgUEhZOiAlcGVcbiIsIEVSUl9QVFIo
-cmV0KSk7Cj4gKwkJCXJldHVybiByZXQ7Cj4gKwkJfQo+ICsJfQo+ICAKPiAgCXJldHVybiAwOwo+
-ICB9CgpbU2V2ZXJpdHk6IEhpZ2hdCklmIHVmc19tdGtfbXBoeV9wb3dlcl9vbihoYmEsIGZhbHNl
-KSBmYWlscyBoZXJlLCBkb2VzIHJldHVybmluZyBhbiBlcnJvcgp3aXRob3V0IHJvbGxpbmcgYmFj
-ayBsZWF2ZSB0aGUgY29udHJvbGxlciBwb3dlcmVkIGRvd24gd2hpbGUgcnVudGltZSBQTQpjb25z
-aWRlcnMgZGV2IGFjdGl2ZT8KCkF0IHRoaXMgcG9pbnQgdWZzaGNkX3J1bnRpbWVfc3VzcGVuZChk
-ZXYpLCB1ZnNfbXRrX2Rldl92cmVnX3NldF9scG0oaGJhLAp0cnVlKSwgYW5kIHVmc19tdGtfbXRj
-bW9zX2N0cmwoZmFsc2UsIHJlcykgaGF2ZSBhbHJlYWR5IGdhdGVkIGNsb2NrcywKZGlzYWJsZWQg
-aW50ZXJydXB0cywgcGxhY2VkIGRldmljZSByZWd1bGF0b3JzIGludG8gTFBNLCBhbmQgdHVybmVk
-IG9mZgpNVENNT1MuICBXaGVuIGEgcnVudGltZV9zdXNwZW5kIGNhbGxiYWNrIHJldHVybnMgYW4g
-ZXJyb3IsIHJwbV9zdXNwZW5kKCkKYWJvcnRzIHRoZSBzdXNwZW5kIGFuZCBsZWF2ZXMgdGhlIGRl
-dmljZSBpbiBSUE1fQUNUSVZFLCBzbyBzdWJzZXF1ZW50IEkvTwpvciByZWdpc3RlciBhY2Nlc3Nl
-cyB3aWxsIHRvdWNoIHVucG93ZXJlZCBoYXJkd2FyZSB3aXRob3V0IHJ1bm5pbmcKdWZzX210a19y
-dW50aW1lX3Jlc3VtZSgpLiAgQWxzbywgcG93ZXJpbmcgb2ZmIHRoZSBQSFkgYWZ0ZXIKdWZzX210
-a19tdGNtb3NfY3RybChmYWxzZSwgcmVzKSBydW5zIGluIHRoZSBzYW1lIG9yZGVyIGFzCnVmc19t
-dGtfcnVudGltZV9yZXN1bWUoKSByYXRoZXIgdGhhbiB0aGUgcmV2ZXJzZSBvcmRlci4KCj4gQEAg
-LTI1NDQsMTQgKzI0OTMsMTcgQEAgc3RhdGljIGludCB1ZnNfbXRrX3J1bnRpbWVfc3VzcGVuZChz
-dHJ1Y3QgZGV2aWNlICpkZXYpCj4gIHN0YXRpYyBpbnQgdWZzX210a19ydW50aW1lX3Jlc3VtZShz
-dHJ1Y3QgZGV2aWNlICpkZXYpCj4gIHsKPiAgCXN0cnVjdCB1ZnNfaGJhICpoYmEgPSBkZXZfZ2V0
-X2RydmRhdGEoZGV2KTsKPiAtCXN0cnVjdCB1ZnNfbXRrX2hvc3QgKmhvc3QgPSB1ZnNoY2RfZ2V0
-X3ZhcmlhbnQoaGJhKTsKPiAgCXN0cnVjdCBhcm1fc21jY2NfcmVzIHJlczsKPiArCWludCByZXQ7
-Cj4gIAo+ICAJaWYgKHVmc19tdGtfaXNfcnRmZl9tdGNtb3MoaGJhKSkKPiAgCQl1ZnNfbXRrX210
-Y21vc19jdHJsKHRydWUsIHJlcyk7Cj4gIAo+IC0JaWYgKGhvc3QtPnBoeV9kZXYpCj4gLQkJcG1f
-cnVudGltZV9nZXRfc3luYyhob3N0LT5waHlfZGV2KTsKPiArCXJldCA9IHVmc19tdGtfbXBoeV9w
-b3dlcl9vbihoYmEsIHRydWUpOwo+ICsJaWYgKHJldCkgewo+ICsJCWRldl9lcnIoZGV2LCAiRmFp
-bGVkIHRvIHBvd2VyIG9uIFBIWTogJXBlXG4iLCBFUlJfUFRSKHJldCkpOwo+ICsJCXJldHVybiBy
-ZXQ7Cj4gKwl9Cj4gIAo+ICAJdWZzX210a19kZXZfdnJlZ19zZXRfbHBtKGhiYSwgZmFsc2UpOwo+
-ICAKCltTZXZlcml0eTogTWVkaXVtXQpDYW4gcG93ZXJpbmcgb24gdGhlIE0tUEhZIGluIHVmc19t
-dGtfcnVudGltZV9yZXN1bWUoKSBsZWF2ZSB0aGUgUEhZIGFuZAowLjlWIHN1cHBseSBlbmFibGVk
-IGFjcm9zcyBzeXN0ZW0gc3VzcGVuZD8KCklmIGhiYS0+ZGV2IHJ1bnRpbWUtcmVzdW1lcyB3aGls
-ZSB0aGUgdWZzX2RldmljZV93bHVuIGNoaWxkIHJlbWFpbnMKcnVudGltZS1zdXNwZW5kZWQsIHVm
-c19tdGtfcnVudGltZV9yZXN1bWUoKSBzZXRzIGhvc3QtPm1waHlfcG93ZXJlZF9vbgphbmQgZW5h
-YmxlcyB0aGUgUEhZLiAgSWYgc3lzdGVtIHN1c3BlbmQgdGhlbiBydW5zIGJlZm9yZSBoYmEtPmRl
-dgphdXRvc3VzcGVuZHMgKHdoZW4gdWZzaGNkX3JwbV9va19mb3Jfc3BtKCkgaXMgdHJ1ZSksIHVm
-c2hjZF93bF9zdXNwZW5kKCkKc2tpcHMgdWZzX210a19zdXNwZW5kKCksIGFuZCB1ZnNfbXRrX3N5
-c3RlbV9zdXNwZW5kKCkgZG9lcyBub3QgY2FsbAp1ZnNfbXRrX21waHlfcG93ZXJfb24oaGJhLCBm
-YWxzZSk6Cgpkcml2ZXJzL3Vmcy9ob3N0L3Vmcy1tZWRpYXRlay5jOnVmc19tdGtfc3lzdGVtX3N1
-c3BlbmQoKSB7CgkuLi4KCXJldCA9IHVmc2hjZF9zeXN0ZW1fc3VzcGVuZChkZXYpOwoJaWYgKHJl
-dCkKCQlnb3RvIG91dDsKCglpZiAocG1fcnVudGltZV9zdXNwZW5kZWQoaGJhLT5kZXYpKQoJCWdv
-dG8gb3V0OwoKCXVmc19tdGtfZGV2X3ZyZWdfc2V0X2xwbShoYmEsIHRydWUpOwoKCWlmICh1ZnNf
-bXRrX2lzX3J0ZmZfbXRjbW9zKGhiYSkpCgkJdWZzX210a19tdGNtb3NfY3RybChmYWxzZSwgcmVz
-KTsKCS4uLgp9CgpUaGlzIGxlYXZlcyB0aGUgTS1QSFkgYW5kIDAuOVYgcmVndWxhdG9yIHBvd2Vy
-ZWQgb24gZHVyaW5nIHN5c3RlbSBzbGVlcAp3aGlsZSBNVENNT1MgYW5kIGNsb2NrcyBhcmUgb2Zm
-LiAgSW4gYWRkaXRpb24sIGlmCnVmc19tdGtfbXBoeV9wb3dlcl9vbihoYmEsIHRydWUpIG9yIHVm
-c2hjZF9ydW50aW1lX3Jlc3VtZShkZXYpIGZhaWxzIGluCnVmc19tdGtfcnVudGltZV9yZXN1bWUo
-KSwgdGhlIHByZWNlZGluZyBNVENNT1MsIFBIWSwgYW5kIHJlZ3VsYXRvciBzdGF0ZQpjaGFuZ2Vz
-IGFyZSBub3QgdW53b3VuZCB3aGlsZSBkZXYgcmVtYWlucyBSUE1fU1VTUEVOREVELgoKLS0gClNh
-c2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MTEx
-OS1tdDgxOTYtdWZzLXYxNS0wLWFhZTFlYjAzODJlOEBjb2xsYWJvcmEuY29tP3BhcnQ9MTQKCi0t
-IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 11/17/26 21:11, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential
+> issue to consider:
+> - [High] drm/meson: dw-hdmi: skipped HDMITX mem PD power-up in
+>   meson_dw_hdmi_init()
+> --
+> 
+> commit c8e782099f758bf635402705a20f57d7df9682a7
+> Author: Ronald Claveau <linux-kernel-dev@aliel.fr>
+> 
+> drm/meson: dw-hdmi: Drop manual HHI clock and memory PD setup
+> 
+> This commit removes the direct HHI_HDMI_CLK_CNTL and HHI_MEM_PD_REG0
+> register writes in meson_dw_hdmi_init() and takes a runtime PM reference
+> in meson_dw_hdmi_probe() to power on the VPU power domain.
+> 
+>> diff --git a/drivers/gpu/drm/meson/meson_dw_hdmi.c b/drivers/gpu/drm/meson/meson_dw_hdmi.c
+>> index eb33c70f29c31..20a821936b3af 100644
+>> --- a/drivers/gpu/drm/meson/meson_dw_hdmi.c
+>> +++ b/drivers/gpu/drm/meson/meson_dw_hdmi.c
+> [ ... ]
+>> @@ -599,12 +598,6 @@ static void meson_dw_hdmi_init(struct meson_dw_hdmi *meson_dw_hdmi)
+>>  {
+>>  	struct meson_drm *priv = meson_dw_hdmi->priv;
+>>  
+>> -	/* Enable clocks */
+>> -	regmap_update_bits(priv->hhi, HHI_HDMI_CLK_CNTL, 0xffff, 0x100);
+>> -
+>> -	/* Bring HDMITX MEM output of power down */
+>> -	regmap_update_bits(priv->hhi, HHI_MEM_PD_REG0, 0xff << 8, 0);
+>> -
+>>  	/* Reset HDMITX APB & TX & PHY */
+>>  	reset_control_reset(meson_dw_hdmi->hdmitx_apb);
+>>  	reset_control_reset(meson_dw_hdmi->hdmitx_ctrl);
+>> @@ -829,9 +822,29 @@ static int __maybe_unused meson_dw_hdmi_pm_resume(struct device *dev)
+>>  	return 0;
+>>  }
+>>  
+>> +static void meson_dw_hdmi_pm_put(void *dev)
+>> +{
+>> +	pm_runtime_put_sync(dev);
+>> +}
+>> +
+>>  static int meson_dw_hdmi_probe(struct platform_device *pdev)
+>>  {
+>> -	return component_add(&pdev->dev, &meson_dw_hdmi_ops);
+>> +	struct device *dev = &pdev->dev;
+>> +	int ret;
+>> +
+>> +	ret = devm_pm_runtime_enable(dev);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	ret = pm_runtime_resume_and_get(dev);
+>> +	if (ret)
+>> +		return dev_err_probe(dev, ret, "Failed to power on HDMI TX\n");
+> 
+> [Severity: High]
+> Can dropping the HHI_MEM_PD_REG0 write leave the HDMITX memory powered
+> down when the bootloader turns on the top-level VPU domain without
+> enabling HDMI?
+> 
+> In the VPU power domain driver, pwrc_ee_is_powered_off() only checks the
+> top-level AO sleep bit and does not check HHI_MEM_PD_REG0[15:8].  When
+> the top-level VPU domain is already powered on at boot,
+> meson_ee_pwrc_init_domain() registers the genpd as already on without
+> calling meson_ee_pwrc_on():
+> 
+> drivers/pmdomain/amlogic/meson-ee-pwrc.c:meson_ee_pwrc_init_domain() {
+> 	...
+> 	if (dom->num_clks && dom->desc.is_powered_off && !dom->desc.is_powered_off(dom)) {
+> 		ret = clk_bulk_prepare_enable(dom->num_clks, dom->clks);
+> 		if (ret)
+> 			return ret;
+> 
+> 		dom->base.flags = GENPD_FLAG_ALWAYS_ON;
+> 		ret = pm_genpd_init(&dom->base, NULL, false);
+> 		if (ret)
+> 			return ret;
+> 	}
+> 	...
+> }
+> 
+> Because the genpd is initialized in the ON state with
+> GENPD_FLAG_ALWAYS_ON, pm_runtime_resume_and_get() is a no-op and
+> meson_ee_pwrc_on() never runs to clear HHI_MEM_PD_REG0[15:8], leaving
+> HDMITX memory powered down when meson_dw_hdmi_init() and dw_hdmi_probe()
+> access the controller.
+> 
+
+I will add a new patch with a function to release the memories power off
+bits in v2.
+
+> In addition, power-domains and assigned-clocks are optional in the
+> amlogic,meson-dw-hdmi binding and were only added to in-tree DTs in
+> v6.11, so dropping the HHI_HDMI_CLK_CNTL and HHI_MEM_PD_REG0 writes also
+> regresses older DTBs (where meson_vclk_set() only configures
+> HHI_HDMI_CLK_CNTL later at atomic_enable time) and builds with CONFIG_PM
+> disabled.
+> 
+
+I will add a depends on PM in v2.
+
+-- 
+Best regards,
+Ronald
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
