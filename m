@@ -2,112 +2,57 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6334260A260E
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 19:49:27 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 74FC2606A332
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 19:54:57 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=snqoB3Ej;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Q32nPSYJ
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=hIxgodA0;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=YjzzbRIc
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=4C814HJWg8u1Mur6IEwc23Dwy2Of4PZjhDMVBgIgZfw=; b=snqoB3EjaHtOVTvLpxhZ4MRBnQ
-	Su95k+6PRIuT4wxFEBI2wl6mStSMK/vHtaYcfADafNDBcG1zZRat9BuoAuT2U+RTx3bQl/b9ZvdmL
-	U0lPtOPBZ8cB0AXFkSj49Ru4b/PXMWNRU116+/ovBufSU3KhT96Ze/JkTNi4abyOx7okBrzuAdFIC
-	v8zLlaNQkKKCJP2W0e4YAuXK6fNXwBNvyp+xH0C+Sweg+aJff6lYI+6p+gR+5xxOR74qy7N9U5BCD
-	RyNt8prKUKjFQ6mNzN4Pm0IT3O2Qkt5TLiJyrYOLE0murFQY5+7BRFAds+vaWOOWnJY25yMhWWHjg
-	k+7Kl/1w==;
+	bh=jrvZ3R0mGqrdNDOoEyJsY8gA9AfF+mTnkB+yM2MSCp8=; b=hIxgodA0qiJGQa3EBC5Hx2MOEF
+	Zq3k7wAOXMCRRUQCoMCPSal/i/pp5drPOsxzohmyourwSez+IqqpQEv6t6sofhk+EbYSd95r/DKPR
+	JQ0mMYigSo7PCW/PtoIQnd/xQtOngAhU4oY+LN30CU5YG27DTqZSgcCMptiuJ1p4msQuR58i2b5qi
+	FJeXE0V7Ox6K5C/zKY0btaEdRRK6NJWo99qSxl8NWtN1FWjM5KM2Xj4TFjP66514ZfSprTKVTglvb
+	GDY43z1a+5g8aQpK7BRp+j58y5+gmujRXPMzyT60M7Bu1lrDKh1bmW76bPi9dK1MCPNNDvQWRQm9m
+	pV+ChU3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU88N-0000000DGbO-06ja;
-	Thu, 19 Nov 2026 19:49:27 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xU8Dh-0000000DHoL-0C6q;
+	Thu, 19 Nov 2026 19:54:57 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU88K-0000000DGXX-0vZ0;
-	Thu, 19 Nov 2026 19:49:24 +0000
+	id 1xU8Df-0000000DHo3-269H
+	for linux-phy@lists.infradead.org;
+	Thu, 19 Nov 2026 19:54:55 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id A88866152E;
-	Thu, 19 Nov 2026 19:49:23 +0000 (UTC)
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795117763;
-	b=wHWmGdLcalaF7YNPcMQFNstoAJanGwZsXix/tlv9Tf+kSV3Nnq+HALT5RKsTfZWlqpZh
-	 mMc7hxN+CrBtMmyqUQwzWCJcAfhRKSDAIN5ZnmRuO7j+4CdYiTrjkAYKNyeci0NZANLVL
-	 QaK2z6P9wzgLJdvhwKNq6ObW3MN8cgSRQ9SF3HD8yo+adNBwrrtfeRe/jmlQo++srYgjJ
-	 58RRjO6h775LLTaP4mxDiNB7h1799eHN296f+DrlCi6o4j5fKJysFNVk4D8T1n9lWsFOX
-	 FcFT5VSpouQG3n+wWZY5mf+aGG24JQZp2Ptm7T1WMorOPY0wznEMJ5muei7s9MUYmHA==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795117763;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=tGaSlh8WowCpjefQ9EPxD+050Ca7Fij70+0D6vHAq9o=;
-	b=W43kpO3cRw8zO87hyFjDFog4rrppNUwC8/djoO2pjkgN0j2npUsvE+KlLcRuye7JySk+
-	 7KUyKvjPKuFyGA13o3feIEo+6WhEBOO00pRJe6EiFUA9PdqptbjbHEcLGoKVAVNIrEpMZ
-	 wdidySCDdR9y6s8RLSxyiraRYzXssNpabT3Nz8YZ3p7IxbF429ErayPVUan92XGt76832
-	 uoODwN+C4MrumV23oF+8IqVaWwO5UvjeBu1rk08JZgG16yeMPlE1O49kj51H/wZ8uKHVX
-	 17Vr+2aHhN+wokwVV7jfImko4G8yuBizRehcLt7N1oqlmvbnMd2Oq7/4+Mf7D2vzUHw==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 6DEB81F000C5;
-	Thu, 19 Nov 2026 19:49:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 15EB0456B5;
+	Thu, 19 Nov 2026 19:54:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 929A11F000C6;
+	Thu, 19 Nov 2026 19:54:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795117763;
-	bh=tGaSlh8WowCpjefQ9EPxD+050Ca7Fij70+0D6vHAq9o=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=Q32nPSYJ0/MqHSX9Lmm8kNXv9S18ULwIeaUTHM7ga7hzxqZQ4fTRmybclYNILTmSR
-	 wQUu1PqibOPGE5FuUEYjL4ZKVjBTU22CXRBnU3LR23+3ybsTZjbWc0JJabS3KZnYqD
-	 PHb9s2fKYpaUU3C7pKfE12g0J1QySmBaH0zFkKFmVJnUPiPSGDLp+DGZ523ZXiJTDb
-	 GmAvkiqmwlIRXxbJ9o3qjWxrDzOl0N7sRBtwWqcDzerhAqiv+2SN74ncONJ/Y//W3M
-	 5JXERCtyCnhj6SjawswZ6pAMVZEj7xRE/Fvqy70z8RgXeXww76M+XxNlsWHJqCTTdP
-	 ruA+d7MIjcj7A==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 8225E4B410;
-	Thu, 19 Nov 2026 19:49:21 +0000 (UTC)
-From: Umer Uddin via B4 Relay <devnull+umer.uddin.mentallysanemainliners.org@kernel.org>
-Date: Thu, 19 Nov 2026 19:49:21 +0000
-Subject: [PATCH 5/6] arm64: dts: exynos: exynos7885-gta3xllte: Enable USB
- support
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Message-Id: <20261119-gta3xllte-usb-battery-v1-5-0cf5f763522e@mentallysanemainliners.org>
-References: <20261119-gta3xllte-usb-battery-v1-0-0cf5f763522e@mentallysanemainliners.org>
-In-Reply-To: <20261119-gta3xllte-usb-battery-v1-0-0cf5f763522e@mentallysanemainliners.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Marek Szyprowski <m.szyprowski@samsung.com>, 
- Sylwester Nawrocki <s.nawrocki@samsung.com>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Peter Griffin <peter.griffin@linaro.org>, 
- Alim Akhtar <alim.akhtar@samsung.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-samsung-soc@vger.kernel.org, 
- Umer Uddin <umer.uddin@mentallysanemainliners.org>
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795117759; l=1489;
- i=umer.uddin@mentallysanemainliners.org; s=20261109;
- h=from:subject:message-id;
- bh=2sc//xhMdQLxeTbKn3e0zeBob0QS6bolzRWDj8BhCrE=;
- b=hoa8lF31kpywbV6h7hS1pTyfL1CIInM9Am92ae7H88ueiW47bUVtJ7ONmjYxJi3JTlClFyWPv
- yplbPml6tGqB/pddUWhxTIrYZFIIS7uwQ+sZBxr4oToOwDW+qNOmRH5
-X-Developer-Key: i=umer.uddin@mentallysanemainliners.org; a=ed25519;
- pk=Hsgrt4A72CFTe27AI1AAWlnLsiQrlb4+T+cbrfWDhUA=
-X-Endpoint-Received: by B4 Relay for
- umer.uddin@mentallysanemainliners.org/20261109 with auth_id=1466
-X-Original-From: Umer Uddin <umer.uddin@mentallysanemainliners.org>
+	s=k20260515; t=1795118095;
+	bh=XaLAsEu4UO5DapSZw0EfL4oTdO5UsS7JdVPqGtvWbNQ=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=YjzzbRIcd0gQJziGVjB5hKPP4cHcTIWyMg9GS5SB4VsjbZdM4CBXI/vF3yj71fIlO
+	 osOwlb+7vWnI2Lrlz/GGnp/QsHAMkqjbuR/grjjE0h28hdvHQV9byRJ68LxdOKELB/
+	 lNwhm8cxM+ncBekbRz3FxdQSfyGG/X16UjUIg6DcUbvWkk27TambPgi5mOsOK3f45e
+	 A4cwvQ2b7RZOttCt7EInnlL6pD4UXShFzN277ToTy5yYhtx59cL9oLheMxPeyGzeMa
+	 GX04EidaoDW6xobvNWSRpX/BewsQECy1Sw4QxqGnK8YdUxCCuUpxf3K8/pF1td4wQY
+	 G75JIsqjx3tIA==
+Message-ID: <sashiko-outbox-223985@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v18 5/7] phy: rockchip: usbdp: Re-init PHY on mux change
+To: "Sebastian Reichel" <sebastian.reichel@collabora.com>
+Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261119-b4-rockchip-usbdp-cleanup-part3-v18-5-fb325e336494@collabora.com>
+References: <20261119-b4-rockchip-usbdp-cleanup-part3-v18-0-fb325e336494@collabora.com>
+ <20261119-b4-rockchip-usbdp-cleanup-part3-v18-5-fb325e336494@collabora.com>
+Date: Thu, 19 Nov 2026 19:54:54 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,76 +62,56 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: umer.uddin@mentallysanemainliners.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Umer Uddin <umer.uddin@mentallysanemainliners.org>
-
-The Samsung Galaxy Tab A 10.1 (2019) has a USB-C port capable of USB 2.0
-speeds, used both as host and device, and is used for charging the
-tablet.
-
-The port is controlled by an S2MU005 IC. Until support for it is
-added, only USB device functionality is available, so enable the USB
-controller and PHY in peripheral mode.
-
-Signed-off-by: Umer Uddin <umer.uddin@mentallysanemainliners.org>
----
- .../arm64/boot/dts/exynos/exynos7885-gta3xllte.dts | 22 ++++++++++++++++++++++
- 1 file changed, 22 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/exynos/exynos7885-gta3xllte.dts b/arch/arm64/boot/dts/exynos/exynos7885-gta3xllte.dts
-index 03476f8b1200..57df878cb563 100644
---- a/arch/arm64/boot/dts/exynos/exynos7885-gta3xllte.dts
-+++ b/arch/arm64/boot/dts/exynos/exynos7885-gta3xllte.dts
-@@ -68,6 +68,12 @@ memory@80000000 {
- 		      <0x0 0xc0000000 0x40000000>;
- 	};
- 
-+	/* TODO: Remove this once PMIC is implemented */
-+	reg_dummy: regulator-0 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "dummy_reg";
-+	};
-+
- 	reserved-memory {
- 		ranges;
- 		#address-cells = <2>;
-@@ -127,3 +133,19 @@ key_volup: key-volup-pins {
- 		samsung,pin-drv = <EXYNOS5420_PIN_DRV_LV1>;
- 	};
- };
-+
-+&usbdrd {
-+	vdd10-supply = <&reg_dummy>;
-+	vdd33-supply = <&reg_dummy>;
-+
-+	status = "okay";
-+};
-+
-+&usbdrd_dwc3 {
-+	/* Force to peripheral until we have Type-C working */
-+	dr_mode = "peripheral";
-+};
-+
-+&usbdrd_phy {
-+	status = "okay";
-+};
-
--- 
-2.56.1
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwKaXNzdWUgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gcGh5OiByb2NrY2hpcDog
+dXNiZHA6IG1pc3NpbmcgUEhZIHJlLWluaXQgaW4KICBya191ZHBoeV9vcmllbl9zd19zZXQoKQot
+LQoKY29tbWl0IGQzOWVjODdlYmU1NWRlNmQwNGZkNjQ1ZjJkYzVhZGQ0MjYxMmY1OTMKQXV0aG9y
+OiBTZWJhc3RpYW4gUmVpY2hlbCA8c2ViYXN0aWFuLnJlaWNoZWxAY29sbGFib3JhLmNvbT4KCnBo
+eTogcm9ja2NoaXA6IHVzYmRwOiBSZS1pbml0IFBIWSBvbiBtdXggY2hhbmdlCgpUaGlzIGNvbW1p
+dCBjYWxscyBya191ZHBoeV91cGRhdGVfcG93ZXJfc3RhdGUoKSBpbiBya191ZHBoeV90eXBlY19t
+dXhfc2V0KCkKdG8gcmUtaW5pdGlhbGl6ZSB0aGUgUEhZIHdoZW4gdGhlIFR5cGUtQyBtdXggc3Rh
+dGUgY2hhbmdlcy4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2Nr
+Y2hpcC11c2JkcC5jIGIvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXVzYmRwLmMK
+PiBpbmRleCAxNDBiZWM4ODdhNWVmLi5lNGJiY2I0ZWRlYWU2IDEwMDY0NAo+IC0tLSBhL2RyaXZl
+cnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC11c2JkcC5jCj4gKysrIGIvZHJpdmVycy9waHkv
+cm9ja2NoaXAvcGh5LXJvY2tjaGlwLXVzYmRwLmMKPiBAQCAtMTQzOCw3ICsxNDM4LDcgQEAgc3Rh
+dGljIGludCBya191ZHBoeV90eXBlY19tdXhfc2V0KHN0cnVjdCB0eXBlY19tdXhfZGV2ICptdXgs
+Cj4gIAo+ICAJcmtfdWRwaHlfc2V0X3R5cGVjX3N0YXRlKHVkcGh5LCBzdGF0ZS0+bW9kZSk7Cj4g
+IAo+IC0JcmV0dXJuIDA7Cj4gKwlyZXR1cm4gcmtfdWRwaHlfdXBkYXRlX3Bvd2VyX3N0YXRlKHVk
+cGh5KTsKPiAgfQo+ICAKPiAgc3RhdGljIHZvaWQgcmtfdWRwaHlfdHlwZWNfbXV4X3VucmVnaXN0
+ZXIodm9pZCAqZGF0YSkKCltTZXZlcml0eTogTWVkaXVtXQpTaG91bGQgcmtfdWRwaHlfb3JpZW5f
+c3dfc2V0KCkgYWxzbyBjYWxsIHJrX3VkcGh5X3VwZGF0ZV9wb3dlcl9zdGF0ZSgpPwoKV2hlbiBj
+YWJsZSBvcmllbnRhdGlvbiBjaGFuZ2VzLCBya191ZHBoeV9vcmllbl9zd19zZXQoKSBzZXRzCnVk
+cGh5LT5waHlfbmVlZHNfcmVpbml0ID0gdHJ1ZSBhbmQgdXBkYXRlcyB1ZHBoeS0+bGFuZV9tdXhf
+c2VsIGFuZAp1ZHBoeS0+aHdfbW9kZSB2aWEgcmtfdWRwaHlfc2V0X3R5cGVjX2RlZmF1bHRfbWFw
+cGluZygpLCBidXQgcmV0dXJucyAwCndpdGhvdXQgcmUtaW5pdGlhbGl6aW5nIHRoZSBQSFk6Cgpk
+cml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtdXNiZHAuYzpya191ZHBoeV9vcmllbl9z
+d19zZXQoKSB7CiAgICAuLi4KCWlmICh1ZHBoeS0+ZmxpcCAhPSBmbGlwcGVkKSB7CgkJZGV2X2Ri
+Zyh1ZHBoeS0+ZGV2LCAiY2FibGUgb3JpZW50YXRpb24gY2hhbmdlZCwgUEhZIHJlLWluaXQgcmVx
+dWlyZWQuXG4iKTsKCQl1ZHBoeS0+cGh5X25lZWRzX3JlaW5pdCA9IHRydWU7Cgl9CgoJdWRwaHkt
+PmZsaXAgPSBmbGlwcGVkOwoJcmtfdWRwaHlfc2V0X3R5cGVjX2RlZmF1bHRfbWFwcGluZyh1ZHBo
+eSk7Cglya191ZHBoeV91c2JfYnZhbGlkX2VuYWJsZSh1ZHBoeSwgdHJ1ZSk7CgoJcmV0dXJuIDA7
+Cn0KCk9uIGJvYXJkcyB0aGF0IHNwZWNpZnkgb3JpZW50YXRpb24tc3dpdGNoIHdpdGhvdXQgbW9k
+ZS1zd2l0Y2ggKHN1Y2ggYXMKcmszNTg4LWphZ3Vhci5kdHMpLCBvciB3aXRoIFR5cGUtQyBjb250
+cm9sbGVyIGRyaXZlcnMgdGhhdCBkbyBub3QgY2FsbAp0eXBlY19zZXRfbW9kZSgpIGFmdGVyIHR5
+cGVjX3NldF9vcmllbnRhdGlvbigpLCBya191ZHBoeV90eXBlY19tdXhfc2V0KCkKaXMgbm90IGlu
+dm9rZWQgYWZ0ZXIgdGhlIG9yaWVudGF0aW9uIGNoYW5nZSBhbmQgdGhlIFBIWSBpcyBuZXZlcgpy
+ZS1pbml0aWFsaXplZCBmb3IgdGhlIG5ldyBsYW5lIG1hcHBpbmcuCgotLSAKU2FzaGlrbyBBSSBy
+ZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYxMTE5LWI0LXJvY2tj
+aGlwLXVzYmRwLWNsZWFudXAtcGFydDMtdjE4LTAtZmIzMjVlMzM2NDk0QGNvbGxhYm9yYS5jb20/
+cGFydD01CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1waHkK
