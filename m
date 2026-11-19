@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CEC5160A381C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DF1AA60A382B
 	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 19:49:25 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=XMRxEjPQ;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=oDL9HOEB
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=WFVjuh5G;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=j2xYmbCf
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
@@ -14,71 +14,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=XAZDyQtdrjgePzKgbhfA1mEqoDp8e0DD/DJwPAD/0Og=; b=XMRxEjPQ+rybhpEkisb2Y4Aw72
-	vG1B05hpdrF9d+kCYYOk6+qpLH0wAmECnyWJ6bH/tT/eTQI74tvDNwOhl7f2aNvwM0Xpl54hMWGFS
-	pYKgAZv5fWbjmPSxd/WrujEanEPaJLiXLCVfhcy0aTDX56utdrzgz2Q393EqNBlAFra71BsT1euua
-	H4l3w6L9xdmyPThxuRBCsZjA6uqOa1tQ5yWwEXuOWewjUQEwehRQ0IhXTVEImJwO7tDMGHwMEGv2H
-	lhsreGij3jES4RBkRydtqq42TXgxXCE4hQ3TPtC3FqM02dpTwsCxVqou5viXEJGCGW7LeoPNPnOgh
-	TPLtx2RQ==;
+	bh=l5FZ2pf962Gd/3r5/jewqfzLxcZ08OSfHwtsGpiEcBI=; b=WFVjuh5G9VJvGYYVHRbx2d72sL
+	FVjAgGfnR4ucgpKbpGaRFJKbZlV97vwKIb0njOSM4ieDhQUnEoin+ORGVxOT6KJ6AsvboTqC+MlT4
+	RLdBeCZiJ6yBMLJZ8tjF3YwTvEhAEqijkcyPdrJtF54UarV/7ksH22mVSuP88kxqqGZfvfQg2r7HR
+	MFmxlm9+rBc+49Jfa/F8C9vXT3EBAqeD6Izf8P21OjGrsP/lqV9wcjyJdhvsoGOChuVdGv7KkvoMc
+	QbD8QomLVzHkLd8oy7VBMAL/4QD0iZnOVD1O7d2LezBo38OuaWiZU/AmxZPLco37UlsH45I146K9W
+	nc54NY5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU88L-0000000DGZi-2KBj;
+	id 1xU88L-0000000DGZr-2fA7;
 	Thu, 19 Nov 2026 19:49:25 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU88J-0000000DGWn-1Z7N;
+	id 1xU88J-0000000DGX1-28Ew;
 	Thu, 19 Nov 2026 19:49:23 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id CCA1960E5F;
-	Thu, 19 Nov 2026 19:49:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 423F343C6F;
+	Thu, 19 Nov 2026 19:49:23 +0000 (UTC)
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795117762;
-	b=jOGxAN665LXvhIOigHaByZD5npa1mcdaLMLLITuHrVbl7WrczS3ItuAq4Qlkj2FXqX+r
-	 2tIBP6JbPYA5E0eUfAQMMvkBXvsBgxQWiaSfjoEihihMRygAJ7LbnxTsOcniAXpUYJ4VS
-	 7mhSWOm1OzmnL2o3xyvgB1NSBObNzCeIx73oyAt8BX6ibOgWyEJg/XX7OXOtUz4xM+PNV
-	 rvO5PUxHzfsdmRIZtEzFmd3d4QUZYiCrRRHJ8fx/9wc+H6LZs6gwR1HlZRUbHDd225Y0Q
-	 cchmIdoFouK7rnThNmxA+8L1LUfa2sh+o4XHBIgMjz/QNisuRWB/AHcHwO3dhDnjXGQ==
+	t=1795117763;
+	b=tFLj40yJUCEgx/QyGH74ro75npx3YbXa2ZElEbErH7Rdx4t6Uc8q1xKQA4BDgIc1O8fe
+	 jPYwuNCK8GFVVV57QOTggQsn94Hx14k47YBnHvGg4UK5UKIHOss3cwV4y1s6b/G3yngkc
+	 vvZf950XPBdUhbrk4PQA+Zbkbr6vdMpcAZzfgEaiwdWUBczHC96ajMwEKEkNWUK7nEx87
+	 0vM+8zD67HNHx2NkE4o9stzA6KIcGbAdAcOQd9ECNAPVA3bSfN2K0iz/jrJ//dbMeSbLb
+	 IIDI2B32Ak52UHBP7InDE2AmPzTnBLsE3yHqUwMBIcvmRPF5F/uSMfev6LAcjf38MzQ==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795117762;
+	c=relaxed/relaxed; t=1795117763;
 	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
 	 Content-Transfer-Encoding:Message-Id:References:In-Reply-To:To:Cc:
 	 X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
 	 X-Original-From:Reply-To;
-	bh=Gg5qBFruImsSPUzRHqmcU2x9q+Z5Ol2aaow8kapAZU4=;
-	b=0ugLYTDpYDizhsrY2JwfTpy6zHBnP9lgghY67TjSFCM5eoCLYJrepNVm022JYika5gq0
-	 TrN012drexdIsEF1JOtagwArcqbTDCMMIuJNcSfl84ZthssLpk1HBHIaPFy7X2mojyE8C
-	 XEM7xAG1HHQ+Ef9fAUzwqu+gydiUJRkI7jGt3eXo9STyWLrvYBHdKDwNH19zGmvcFTsCG
-	 BaH6PTKA4Wr9man9xs4sRbDXZMh3fcoNdHIW/Ded+Zha4N7qUHEfdqwlWFX/I1+dO5HnG
-	 qAwdpb/rJ7mdK7WlUBI7zqakeXRjTzCEGH4VgkC3Q8sxE4XOayykxxEUXwfDkY2o+MQ==
+	bh=HIj3JFwDNWtHJg2RgayCFkAiLzjNl+HWCEg2ZyUVwPU=;
+	b=BeG2Vvgj+U4z1pcWQkhaZZpZvf5XEt4dZNJYRy5rQQpTCfRfq9QOftLrq3jKIN9s0cxl
+	 7eaqyGjtOZ3cG/eJ2f8yWWtQzTm/a6je+v/CyOMmOABgGff3F6Xszs1+j9VFRf6HBZeyt
+	 UbKMLKy2FsUNHUvoUxnbuZcaXuj2gtSEoY0vcxOBsHScRPvO8yOChhQNp7sqwX4oXBfzN
+	 xTIaO8Cwu1xMKdiMLFs4KP6NTyNQrQFG7IR7gfuR9sVIejPTpu1VoLZiJXWraPPWZzRom
+	 4zXLM87Wzi2ojqRJZLZdvAWMtQgUxgxNnM7y6CALAX8wj7LkOXUG/bvdHf+AOouTyEg==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id ABB7E1F000C6;
+	by smtp.kernel.org (Postfix) with ESMTPS id DF8D01F000CA;
 	Thu, 19 Nov 2026 19:49:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795117762;
-	bh=Gg5qBFruImsSPUzRHqmcU2x9q+Z5Ol2aaow8kapAZU4=;
+	s=k20260515; t=1795117763;
+	bh=HIj3JFwDNWtHJg2RgayCFkAiLzjNl+HWCEg2ZyUVwPU=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=oDL9HOEB+BsQVLfXskcjJUwdtQLc9YVRmf/9ybMuj+en0t+aBlR7RcpJvKcWUMs+M
-	 4RrMClwqsPeNFLPz8WZmht/B/+N7NLRM0j3mHbJ3suAVW40M1dU4+98iizX5GrvsD1
-	 J90hwnYsuA0lIzUE6foK+Wk1IpS8z6WrEoqJYh20piweyIY+SKs3fAkf+FfTlXvRUG
-	 4pqKwx1FOaeTN+F7sVlgCkIrh2IFpTTVxVytgijh6pZroJNFgNw2xNBPzAOT0e2p1U
-	 pQ+eM5aR6dI7I/+q98eKrdOnkkhjiqsxo7EzRw69HwbZEzXxdr9DwrfCwab2Ib8eH9
-	 CWJ4uEqJHnHFw==
+	b=j2xYmbCf/XqXLCZxO9ekPK++qDxnRX6ST3Pz4/GmoV4fLuvqd4yFR2rLA2gNifi6t
+	 QNWaEvLbDBSc0qc5HIGyyuWyIxZVutj6DukroOf8cVDd8Uh7mmSAoerKTSwLm8POgT
+	 hDOyxAKsiDFYGBPg7Cr0RxhghxNcg53FZ6vRYJhIYBFCO2w5kLLLjDyYV/uY0XtUKX
+	 14FToOIHPZSK6qDYu2lVCxErKOmizZsH7/+TkwSntv1XRLUROHfTzswlhSkbWaznC6
+	 y2kQSJ8iB8k22lTnwV+sQr+xoFEjozFyOKohYypxiPTPWQanRfh4dUIGvhTOr1036K
+	 410KmzogxALPw==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 389034B404;
+	by lkml.kernel.org (Postfix) with ESMTP id 6A7F14B40C;
 	Thu, 19 Nov 2026 19:49:21 +0000 (UTC)
 From: Umer Uddin via B4 Relay <devnull+umer.uddin.mentallysanemainliners.org@kernel.org>
-Date: Thu, 19 Nov 2026 19:49:18 +0000
-Subject: [PATCH 2/6] dt-bindings: usb: samsung,exynos-dwc3: Add Exynos7885
- support
+Date: Thu, 19 Nov 2026 19:49:20 +0000
+Subject: [PATCH 4/6] arm64: dts: exynos: Enable USB in Exynos7885
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261119-gta3xllte-usb-battery-v1-2-0cf5f763522e@mentallysanemainliners.org>
+Message-Id: <20261119-gta3xllte-usb-battery-v1-4-0cf5f763522e@mentallysanemainliners.org>
 References: <20261119-gta3xllte-usb-battery-v1-0-0cf5f763522e@mentallysanemainliners.org>
 In-Reply-To: <20261119-gta3xllte-usb-battery-v1-0-0cf5f763522e@mentallysanemainliners.org>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -98,12 +97,12 @@ Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org,
  Umer Uddin <umer.uddin@mentallysanemainliners.org>, 
  David Virag <virag.david003@gmail.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795117759; l=1209;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795117759; l=2109;
  i=umer.uddin@mentallysanemainliners.org; s=20261109;
  h=from:subject:message-id;
- bh=v4DbW6fDalAVYk0Te5ZSWb09z4/f2QgblZnvvRGhkXU=;
- b=jmKfYf+qTlQd9d4FBC5QF2O23tXQdfJDxnNZ6ipXFAqDnWYNWcpSMYyMMu9M2IdQPbhmBkBQq
- wzptHRFlRhwB13miEVgN2al2PTGUYX2ZVzT52IDPbhv8P6+WDAhrLXd
+ bh=Z90I+ZgSvTHKtQhv8fIplgrzwo46zX8M8n1SBbl4siw=;
+ b=3uCw2rXhAwhlB/yoGbbyMLAd57ifkF6WctONIGReP8/YmugqWx5fu4psFBPq3Bx8x5tOarECl
+ a+5rCl4oaMmCTLelMQ+e1AUcZ92OorKL2QuSVSdNSETRD7DIDGAUU8f
 X-Developer-Key: i=umer.uddin@mentallysanemainliners.org; a=ed25519;
  pk=Hsgrt4A72CFTe27AI1AAWlnLsiQrlb4+T+cbrfWDhUA=
 X-Endpoint-Received: by B4 Relay for
@@ -131,31 +130,76 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 From: David Virag <virag.david003@gmail.com>
 
-Exynos7885 SoC has a DWC3 compatible USB controller, so it can reuse the
-existing Exynos glue layer. Clocks are the same as on Exynos850.
+Add USB controller and USB PHY controller nodes to Exynos7885 SoC DTSI.
+
+The SoC theoretically supports USB3 SuperSpeed, but is not implemented
+in any known device. The vendor kernel also stubs out USB3 functions, so
+we do not support it.
+
+It is though, perfectly capable of USB 2.0 high-speed mode, both as host
+and device.
 
 Signed-off-by: David Virag <virag.david003@gmail.com>
-[Umer Uddin: use samsung,exynos850-dwusb3 as fallback compatible instead
-of adding a separate match entry to the dwc3-exynos driver]
+[Umer Uddin: Rebased onto krzk for-next branch]
 Signed-off-by: Umer Uddin <umer.uddin@mentallysanemainliners.org>
 ---
- Documentation/devicetree/bindings/usb/samsung,exynos-dwc3.yaml | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm64/boot/dts/exynos/exynos7885.dtsi | 43 ++++++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/usb/samsung,exynos-dwc3.yaml b/Documentation/devicetree/bindings/usb/samsung,exynos-dwc3.yaml
-index 8af0143c3e47..f62e3ed82257 100644
---- a/Documentation/devicetree/bindings/usb/samsung,exynos-dwc3.yaml
-+++ b/Documentation/devicetree/bindings/usb/samsung,exynos-dwc3.yaml
-@@ -24,6 +24,9 @@ properties:
-       - items:
-           - const: samsung,exynos8890-dwusb3
-           - const: samsung,exynos7-dwusb3
-+      - items:
-+          - const: samsung,exynos7885-dwusb3
-+          - const: samsung,exynos850-dwusb3
-       - items:
-           - const: samsung,exynos990-dwusb3
-           - const: samsung,exynos850-dwusb3
+diff --git a/arch/arm64/boot/dts/exynos/exynos7885.dtsi b/arch/arm64/boot/dts/exynos/exynos7885.dtsi
+index 6b994b487107..142542245cb1 100644
+--- a/arch/arm64/boot/dts/exynos/exynos7885.dtsi
++++ b/arch/arm64/boot/dts/exynos/exynos7885.dtsi
+@@ -480,6 +480,49 @@ i2c_7: i2c@11cd0000 {
+ 
+ 			status = "disabled";
+ 		};
++
++		usbdrd: usb@13600000 {
++			compatible = "samsung,exynos7885-dwusb3",
++				     "samsung,exynos850-dwusb3";
++			ranges = <0x0 0x13600000 0x10000>;
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			clocks = <&cmu_fsys CLK_FSYS_USB30DRD_BUS_CLK_EARLY>,
++				 <&cmu_fsys CLK_FSYS_USB30DRD_REF_CLK>;
++			clock-names = "bus_early", "ref";
++
++			status = "disabled";
++
++			usbdrd_dwc3: usb@0 {
++				compatible = "snps,dwc3";
++				reg = <0x0 0x10000>;
++				interrupts = <GIC_SPI 135 IRQ_TYPE_LEVEL_HIGH>;
++
++				phys = <&usbdrd_phy 0>;
++				phy-names = "usb2-phy";
++
++				/*
++				 * SoC in theory supports SS but no device has it.
++				 * Actual capabilities unknown.
++				 */
++				maximum-speed = "high-speed";
++			};
++		};
++
++		usbdrd_phy: phy@135d0000 {
++			compatible = "samsung,exynos7885-usbdrd-phy";
++			reg = <0x135d0000 0x100>;
++			#phy-cells = <1>;
++
++			clocks = <&cmu_fsys CLK_FSYS_USB30DRD_ACLK_20PHYCTRL>,
++				 <&cmu_fsys CLK_FSYS_USB20PHY_CLKCORE>;
++			clock-names = "phy", "ref";
++
++			samsung,pmu-syscon = <&pmu_system_controller>;
++
++			status = "disabled";
++		};
+ 	};
+ };
+ 
 
 -- 
 2.56.1
