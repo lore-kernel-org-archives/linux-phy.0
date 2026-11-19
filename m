@@ -2,93 +2,115 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A686D60A2623
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 19:41:54 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0976960A3822
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Nov 2026 19:49:25 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Cj7Tm0X9;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=mail header.b=MzkMG2Yg
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=mf6T+lpn;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Vo0hJsNJ
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
+	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=7nN7IRIDFJSrNWtNCmQkxEVlpPnqaplJ3EqxJGSmYqQ=; b=Cj7Tm0X9Vq/UyWnY7nUCRjc1TM
-	+h/+Hqf98TnNFiwS4Oq/dxCm6pMO/vee4wo4TFFFnsyL4A8y9hse5ri+ldENlJcUBDufjTEpDFp+L
-	tLOFktG0ok+/np0cYm3F7gz99clIJFzGQ/eK+KORqJdeMM7XfoW3Di+ne/pEwsJHEDo7w6w282A/5
-	12pLUpD81HAenHy6kmjbOAmet0WBz8yuiUWIQEHXx/+KwFv7E6Kitt+B8XOIV3kbOkV59TdJtfsLV
-	iObusU2mdgSrZiJnLRi5ZXcRItvLoMi59pz4LqfuSluf02KmCWQ35kF8VCuzmD9uPw+Gw76Kuxhoz
-	FVoo40FA==;
+	bh=DLW4/vtzIr+Im+LDl7qVUbmkm3+W9Vn64t4db5lFTjc=; b=mf6T+lpn75FxXH+zk+4uG5y51+
+	7yejGxOAoqBmuW27mD1gISCJAv09gO4NjrORk0asMdD+Gd2vIxEIh9GAN6NaHRUVrxqvQB5VsrlGh
+	j2Sf+8khaN5ocj/8J91OQznnQXj0kLTn3e8IpzDt1XY9cJPAWSwKz+brlCOchvIUQ+53dGUWjrSww
+	3zvEuXZC/7EWN0YzytFQlLiJQl1ZPGc9v8eoRKphrYl8TXPA8G1P+zqkBo0IRrFwVp3jd1tI65ruq
+	oooS8c2QC77PSfJyGcWZlJ5YAua3jbBLH3kxjhyIcLabL15ZXLnb7YTEo25+zyPuJjBSsk8Z1NXgj
+	ELksvjYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU814-0000000DF4Z-1Klb;
-	Thu, 19 Nov 2026 19:41:54 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1xU88K-0000000DGXt-36ED;
+	Thu, 19 Nov 2026 19:49:24 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xU803-0000000DELh-1UR3;
-	Thu, 19 Nov 2026 19:40:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1795117245;
-	bh=ZJJnGyy7bCzUp+dwilrqINl/+jw9ECyHmmQLI6RNOt8=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=MzkMG2Ygq6B+U9U7iYmHk/hzyD9oJWweTvQsm27/qzT+a5R3kPpmF/j/05Z6g/Prj
-	 qEAyJHQwsXtOfz2d3qQ7BgXpLf4RyAKd544JmZTw9Tw92Ug0qn0WKnks1nRzYchBPO
-	 Lfr9s+Hw0F8BWHBGKMigQkHipr+xlH/HLCJQeCRpJwoyKnI9G/QgKD806H0smbQ8NM
-	 7LU1qI73JK5TTkbiM6+0z9YWqRR+7fOJgkTE70Df/+zgLh00AP6VncMUH21TtX0V0o
-	 YQQJcbAKweu5ovvm9R1/CYff7851zjblBbIbiOLoeVvzi3aYn8iLcPg+NRfGbYnr4I
-	 evHYOVOq/6hTw==
-Received: from jupiter.universe (unknown [100.64.1.62])
+	id 1xU88I-0000000DGWl-4Agj;
+	Thu, 19 Nov 2026 19:49:23 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 27BB360DE6;
+	Thu, 19 Nov 2026 19:49:22 +0000 (UTC)
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1795117761;
+	b=TwP3P4RqGtTF5Irho9PrA5dHJLqRVX2fgjo/8zvBqU88AmDOGIVwihCE7r3OED/sR0Io
+	 qiKWjldpx/bZlaWIXqRkbIdBoJAzQv/50Qd04gjgdGgPhUAAWb2BEKGCC0eIQrELZf4Sy
+	 szAxZTYJVwgCku4vMcKv6kzq+FPig1VlzFqc3QVjhmOdHvnFe+LbZLH6Ddz7P3bGSq/ra
+	 2cbLgIK2vEoKsVncVW5aTFw8aJMqGlriBzyB1htVn658nmETjkfIRJ+Ho23l3GLURd0YH
+	 Eb224ZbPG/vhXPFgf0TCerWNUZf1BEmu4VJ37SayMqLYRBJRVb0JJt8XgcRhBlyO7oQ==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1795117761;
+	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
+	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=3+49QTDjm/vKqS/Wcu2TETTUiKiVb5Sph5ntAgUjO8g=;
+	b=w8k9h0DDRHLDEfsc5XlcL6cYupKzAQFwMLA57T2gncEkC5gpsfo5CmXrg6cahql3b+29
+	 60h1wCLREUwfoUzJY7ss+/cyAue6x16JYS9ga/4D9cGbC7eHooC9LmQ6Q7Fd2Md7FHPdz
+	 CBK2ADb2SPCejmV7Xuf2n0vHy03aOFZLCwZZOTOIDvwLHXeGyHrIlfNhVCxnTuCors7m6
+	 vpn42U8PVMTY1h8E7BoE+fOXYpzyDalh8f9tDNjY7VkNWL+JypT7IFx1U8KCU61dLo6VK
+	 1c6HWCq2obVKQV+sy03CA69DQwby8rpsiuJTrZ7BSPNweunQcLX5vSqYaG02N+K7R4w==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4597017E0DE8;
-	Thu, 19 Nov 2026 20:40:45 +0100 (CET)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id B7768480038; Thu, 19 Nov 2026 20:40:44 +0100 (CET)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Thu, 19 Nov 2026 20:40:33 +0100
-Subject: [PATCH v18 5/7] phy: rockchip: usbdp: Re-init PHY on mux change
+	by smtp.kernel.org (Postfix) with ESMTPS id 46C631F000C5;
+	Thu, 19 Nov 2026 19:49:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795117761;
+	bh=3+49QTDjm/vKqS/Wcu2TETTUiKiVb5Sph5ntAgUjO8g=;
+	h=From:Subject:Date:To:Cc:Reply-To;
+	b=Vo0hJsNJlVDFRsdVjfsd0RHe/k+Ox6HSa43+JUz8lFrgi6eUnlO7JU6yN08HaPClD
+	 y/1P0k3bOduEguVMKjCnvMzX/Mk75OI865fO4mXvyNu7jIzzyRejILryn2rbXtu2FV
+	 iZu2Hpg3Ik6GVi9prhxDvjXvFWf2pbB609MS51WQRBkFlACNuLX7p3vc9snrAQGphH
+	 KK3J18wx/itrEj1/BeIkqHUQIBNVBrkSnh3OxnJUgp4DRk35fLeQmsVKXhrkPMIC86
+	 obiCB/kbaJSuluC3MKcnemo8Jf70bGS+YoiErfVUP+M+yureJeCxIV1fwWvgKAsjrm
+	 AOrrHETXnfQQQ==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 992A04B400;
+	Thu, 19 Nov 2026 19:49:20 +0000 (UTC)
+From: Umer Uddin via B4 Relay <devnull+umer.uddin.mentallysanemainliners.org@kernel.org>
+Subject: [PATCH 0/6] Add USB support for Exynos7885 and enable USB and FG
+ on gta3xllte
+Date: Thu, 19 Nov 2026 19:49:16 +0000
+Message-Id: <20261119-gta3xllte-usb-battery-v1-0-0cf5f763522e@mentallysanemainliners.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261119-b4-rockchip-usbdp-cleanup-part3-v18-5-fb325e336494@collabora.com>
-References: <20261119-b4-rockchip-usbdp-cleanup-part3-v18-0-fb325e336494@collabora.com>
-In-Reply-To: <20261119-b4-rockchip-usbdp-cleanup-part3-v18-0-fb325e336494@collabora.com>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yXMQQ6CMBBG4auQWTuJRTDUqxgWLfziGIKmMxgI4
+ e5WXX6L9zZSJIHSpdgo4S0qzynDHQrq7mEawNJnU3ksz845z4OF0zKOBp41cgxmSCtHX6PqGx/
+ Q1JTbV8JNlt/32v6tc3ygs++M9v0DH3PPq3kAAAA=
+X-Change-ID: 20261119-gta3xllte-usb-battery-b95e4d89ae85
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
- Zhang Yubing <yubing.zhang@rock-chips.com>, 
- Frank Wang <frank.wang@rock-chips.com>
-Cc: Igor Paunovic <royalnet026@gmail.com>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
- Alexey Charkov <alchark@flipper.net>, 
- Chaoyi Chen <chaoyi.chen@rock-chips.com>, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org, kernel@collabora.com, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1196;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=ZJJnGyy7bCzUp+dwilrqINl/+jw9ECyHmmQLI6RNOt8=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGr/ULzKaChPEYt/9fxdAQdVsH1fqc72zg+Om
- txAR5G+ejrp/4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJq/1C8AAoJENju1/PI
- O/qa+x4P/29rFOaQrzXajByPbHGRG/Td37cmPgas647t0zaeDsQoxYpKNS7T934aOndPmRuQbZm
- ReQcXxLrqO2oMbWq5B6TbmqbufOeC8Stsh2m5x1YImlP86lZhTQglKsNPf4adllV43BpBeVue1d
- 4c4Ie9KSKVKQzicPduCgk3Zw19PuZc7oiByKRtK/GfnD6Tv4Ruzj0VC0M0oywRtGwjUgn5Ygx22
- Ugwcde2vxyLMEophltQOic4a0sH+NPbFhUiilPKILDomJvZvy0OnqkFoHBHwLdbJQFC2ORo0a8x
- l3rMOO5HaygBz9uixQycM30ukajziol18F74QJVZQw6KJhPJRQLuH8GUz00p9q/1HsNBri2i3w9
- iufBdM4j2ke+J0Bhqwl13+h744cLC23ShumhdBHjM9bPg+9S+Zz/pWcfT1ezt3+8Rf5NReOMlKy
- 9FEyA8s7L/12VvTDD09Llud3tSeSUhvspb8j9ZDuxiGTc/6+risDStULvRYVuJkWYtaKr/60eXs
- l2Wz7vvT/8CQjVP/bFRKrH/dKj1jkZvcyyLV9tEp+pORdT397h/NXZ9RJfLRk7VlSzKxtAXPp+g
- 94xjV2xZjGKs80tdSCOQU6izx301BQliSrYofFW1oP2Cq6DptyL8eh9y56XbWfs7iv2R1ifyCYy
- uE9fPD5kQBqaRtXqsJPg0TA==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261119_114051_587654_3ED3A871 
-X-CRM114-Status: GOOD (  12.37  )
-X-Spam-Score: -2.1 (--)
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Marek Szyprowski <m.szyprowski@samsung.com>, 
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Peter Griffin <peter.griffin@linaro.org>, 
+ Alim Akhtar <alim.akhtar@samsung.com>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-samsung-soc@vger.kernel.org, 
+ Umer Uddin <umer.uddin@mentallysanemainliners.org>, 
+ David Virag <virag.david003@gmail.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795117759; l=1828;
+ i=umer.uddin@mentallysanemainliners.org; s=20261109;
+ h=from:subject:message-id;
+ bh=yfFFDGO1vosaycRHkyMq/ESVrYzVjaRTqRdxrfEOlRU=;
+ b=DOUWCJC+nGAPnXyDeJyc7GzcvtXM33vcEfPLeUGUDgC34VJmZIADaL8pMrRRf0Q+kEdHuXTF9
+ pScKDNhyaBXCo8FM/p5Xk8rvTEEKTBTi+pjQnkEozJPcCyD4Te1NT4c
+X-Developer-Key: i=umer.uddin@mentallysanemainliners.org; a=ed25519;
+ pk=Hsgrt4A72CFTe27AI1AAWlnLsiQrlb4+T+cbrfWDhUA=
+X-Endpoint-Received: by B4 Relay for
+ umer.uddin@mentallysanemainliners.org/20261109 with auth_id=1466
+X-Original-From: Umer Uddin <umer.uddin@mentallysanemainliners.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,47 +120,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: umer.uddin@mentallysanemainliners.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-21.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Ensure that the right part of the PHY are powered up when the
-mode changes. This ensures the PHY is re-initialized in the
-following two scenarios, which are currently broken:
+Hi guys, this patch series adds support for USB on Exynos7885. This series
+is based on David Virag's work[1] I had rebased it onto krzk's for-next
+tree and tested it on gta3xllte. This series also enables S2MU005 FG
+on gta3xllte, which is also tested.
 
- - cable orientation changes without DP being involved
- - switching from DP-only into a mode with USB support
+Please note, I did drop enabling USB on jackpotlte, this is because I
+don't have the device myself to test the changes personally and I didn't
+want to risk a regression on jackpotlte.
 
-Fixes: 2f70bbddeb45 ("phy: rockchip: add usbdp combo phy driver")
-Tested-by: Igor Paunovic <royalnet026@gmail.com> # Orange Pi 5 Plus
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+DT changes were tested with make dtbs_check W=1, and the dt styling check
+scripts with --mode strict flags, both of which returned no warnings.
+
+Best regards,
+Umer
+
+[1] https://github.com/VDavid003/linux/commits/linux-6.11-rc2-7885/
+
+Signed-off-by: Umer Uddin <umer.uddin@mentallysanemainliners.org>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+David Virag (4):
+      dt-bindings: phy: samsung,usb3-drd-phy: Add Exynos7885 support
+      dt-bindings: usb: samsung,exynos-dwc3: Add Exynos7885 support
+      phy: exynos5-usbdrd: support Exynos7885 USB PHY
+      arm64: dts: exynos: Enable USB in Exynos7885
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 140bec887a5e..e4bbcb4edeae 100644
---- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -1438,7 +1438,7 @@ static int rk_udphy_typec_mux_set(struct typec_mux_dev *mux,
- 
- 	rk_udphy_set_typec_state(udphy, state->mode);
- 
--	return 0;
-+	return rk_udphy_update_power_state(udphy);
- }
- 
- static void rk_udphy_typec_mux_unregister(void *data)
+Umer Uddin (2):
+      arm64: dts: exynos: exynos7885-gta3xllte: Enable USB support
+      arm64: dts: exynos: exynos7885-gta3xllte: Enable FuelGauge support
 
--- 
-2.53.0
+ .../bindings/phy/samsung,usb3-drd-phy.yaml         |  2 +
+ .../bindings/usb/samsung,exynos-dwc3.yaml          |  3 ++
+ .../arm64/boot/dts/exynos/exynos7885-gta3xllte.dts | 50 ++++++++++++++++++++++
+ arch/arm64/boot/dts/exynos/exynos7885.dtsi         | 43 +++++++++++++++++++
+ drivers/phy/samsung/phy-exynos5-usbdrd.c           | 27 ++++++++++++
+ include/linux/soc/samsung/exynos-regs-pmu.h        |  3 ++
+ 6 files changed, 128 insertions(+)
+---
+base-commit: 397f550f3c8551b3ffbf3f45a571b58448514988
+change-id: 20261119-gta3xllte-usb-battery-b95e4d89ae85
+
+Best regards,
+--  
+Umer Uddin <umer.uddin@mentallysanemainliners.org>
+
 
 
 -- 
