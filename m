@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 30211606A320
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 11:48:25 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 05BE4606A335
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 11:49:04 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=UFvzjJow;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=g3FtLrEd
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=WLEDqI25;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=hcBexOHU
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,39 +14,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=86JMnfMoQaeIXa86JT11CgamK1Pf7PDl0NC4lZmxV4A=; b=UFvzjJowxl6IqLp2wCPNoFerhF
-	uVog/tvp7sbQWZImOGk+JDduzkVZh7QMzuxqfRgW+kxis6DVttU0j31hKF8ZTh8Xfy9bqIR2WMTD3
-	aUofYB5/v+mRiazW80fuE3jK9jUtO6ic49AvQ2Fu6gtL7Of33rDObRjVby/jFHmHa6gJV3D78IeQ8
-	mZXbVu+9CMWKKMkzrw4PD7z7lGthkXodvw05fmdBmnRH6BcRbkzowZ//eBrhMVfLL5ORCY26s9D6o
-	y4TyCeT0At5O3vntw13QbLyN/ODcPZQWkcZPaMgLI9IrSilWaZ9kJ6YMJBD5ylEAQJD6zR+dfSQk7
-	5qfYopSQ==;
+	bh=LedNjXhO7rRjMv8PVEH/w6nEMR2sQKpne9Gh7HihaiI=; b=WLEDqI25yIsjxtszN90evFBXjL
+	YUcFiWNKwrvwqhE0TXI5EAzU9XAT5n92ABBwHearHuzBjA4d+wY6mU3mdm7R3JfeKbW+KrHWu4Qj5
+	+tlSRFpAP4TMdK/vw6iDe8miS6qgAdZZ7Z+IOkjxSJ9eTy+ktJi2bPNaccrqYCaM+ZfDRt+vGNvpG
+	DjDoTUffWvs4u/d1CB7zi7jUtPVwxcA9D+DDB+3jr4jMuekFLLthi8bAMEi+09U65jhRBKr9v+fYT
+	t4+r9+afVOPDcGt7tnowBISgKcQB0j/z/kCs6Cj3yy1uBUmAYlutFFp4nSiR8fUpjCOHGK5Y0eJM/
+	d5wZbxmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUN6O-0000000Eryx-2bnO;
-	Fri, 20 Nov 2026 11:48:24 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xUN71-0000000Es1N-3CkI;
+	Fri, 20 Nov 2026 11:49:03 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUN6M-0000000Eryd-0XED
+	id 1xUN70-0000000Es1E-0Gah
 	for linux-phy@lists.infradead.org;
-	Fri, 20 Nov 2026 11:48:23 +0000
+	Fri, 20 Nov 2026 11:49:02 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 926CF6136F;
-	Fri, 20 Nov 2026 11:48:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2A0521F000D2;
-	Fri, 20 Nov 2026 11:48:15 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 6D8F061B30;
+	Fri, 20 Nov 2026 11:49:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DCCE61F000C0;
+	Fri, 20 Nov 2026 11:48:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795175301;
-	bh=KCiZ+OPPiUqNo96uGTMFbWd85A/AQQGSdw1qgemTJ/w=;
+	s=k20260515; t=1795175340;
+	bh=u8l/U5OT/Y6CBEr80GX62yXAKFPyEQ4q4m7GqQI3+Nw=;
 	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=g3FtLrEdDCcx7zeFiksA1MQYSbIwpjOYCqyMb22iOuD1Kzfo2nH4UirJGUXFG+BeW
-	 9nksGUdMrH7NfSFyv5Zuipmumnckn+a3q0sMkc7pOJM+3e+F6f+cYFbrjzVsSXJD3M
-	 7Bpv1kEHdQc5B4OSIV1Td+lcOn6osFQuRK61tiqQHksevi42quuiGwZq3KS+zwRnbV
-	 Y15ZgS11PuI/91TsbvXB6rpn1DTO36ItmJ+HPinY95jEKd8KGbddMVr6NfPqyfwi5E
-	 0swLKxNq2DqmrM/FAjxhdCYdxtF+ZlH25SlI8hZY3KILrFnjFznbjundNzYdoo5VUw
-	 SiJLcWRdv3UHA==
+	b=hcBexOHUMQkhXRpw6J2YlBW+kBBvPm7QrGDW4CGU5mAlWg6twGFJxe1ZqttaN07tn
+	 sd4v+OROeVivVIw16xj/TXH5XCZ3S4hypUxgMbynLKxKBLD5ixIPy8UZ2ZY6c8FfvN
+	 pyEvQ5W9YO3DkgIPSor/3yhPOnVYGx7M6onSbyAdoqBvBckgNjBsqwJkBnm8ubbjQi
+	 0B57FJlZiBSaL/jud64G3ooz9IpjTTrMV2bj11E/eRbqZI0FUBT3ZQpTi1rjTRAmRl
+	 amccNZt1lXknyuG962K39swBEJNao4rwh3irNCNf0J1rhrkcIFw7AE5bnWnweHROJy
+	 wQanlKSiR+cfQ==
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH v7 06/23] phy: qcom-mipi-csi2: Add SM8750 support
+Subject: Re: [PATCH v7 08/23] media: qcom: camss: Add PM clock definitions
+ for SM8750
 From: bod@kernel.org
 To: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
 Cc: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
@@ -66,26 +67,26 @@ Cc: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
  linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  linux-i2c@vger.kernel.org
-In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-6-8ff2a11835f6@oss.qualcomm.com>
+In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-8-8ff2a11835f6@oss.qualcomm.com>
 References: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
- <20261114-add-support-for-camss-on-sm8750-v7-6-8ff2a11835f6@oss.qualcomm.com>
-Date: Fri, 20 Nov 2026 11:48:14 +0000
-Message-Id: <179517529405.2846709.10906711375536299427.b4-reply@b4>
+ <20261114-add-support-for-camss-on-sm8750-v7-8-8ff2a11835f6@oss.qualcomm.com>
+Date: Fri, 20 Nov 2026 11:48:53 +0000
+Message-Id: <179517533369.2846709.4822429145839216229.b4-reply@b4>
 X-Mailer: b4 0.17-dev-e3fc9
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1472; i=bod@kernel.org;
- h=from:subject:message-id; bh=HkCiTy52VEw3U3iHmphqDHJaeM19p2HQlEUAvtfV7sM=;
- b=owEBbQKS/ZANAwAKASJxO7Ohjcg6AcsmYgBrADN+rM7FGOD4L/bE61iccAJDLA1GBgvIi9K25
- 7TFu2ta+NqJAjMEAAEKAB0WIQTmk/sqq6Nt4Rerb7QicTuzoY3IOgUCawAzfgAKCRAicTuzoY3I
- OnXgEACgF/ZyF9GFxmZtzZJvXcWq0YAAS8WJq/XOHG+rnlzVjz+XuzVJHpQJWwk51LrOn/wfCjN
- Nt0D2a1l3jpyVyHwVIk9NBEYITqU+lUUrHni4ZgtoFD+hL8a75/pVSxyy53QgYf39WiC9t3LxY4
- AkxKrjSz0A8WZDxolJYT9xcQyaN6aO4WNV34z6YCaMHvgE8YvwIBuXuSGvTbhlCq7zaPtB/LzfC
- gX67yae2iIeQ5TSqXPMhUHmDCpmVm7C1eSrkGO5lsdud5UQZ+jdTU73pJ85jB4URNwGFgPlY9tA
- n0VYIicr3vkyPPIvoxYT4Yo9RA8noTgxNaPQnjpo1YZIQYuBek2QxpV+gr5mWdA0gv3mn6vDB8i
- jal2FESfQqkgdWuymUDxCzbNoOVMb0LLQKSY9Lvs5ZqRl72ZKBDjuEc+rem5yK18DRHFdOUM2Sy
- BGDzevkaaAMZ4A2liil0oGoKFwPb3uyWnBvwGSNLBHH6+UyoK2svjyqMJIL1KhegYWUM9M9xfKB
- 5xPpB8joDxgPlSgB23rj0dtvbVbMKzkTXY/BD4tMgkRql9u7F3Y1Hi7c1dKgvDKjNo89+2+Pff7
- y/0g6iYNGwK8VVUk6MPFrKnfMRmlMNdvCXjiemQe6U9jIso7tywrVuX3keqDelvK/YN35RHwWAz
- KoYo4vdep5v594w==
+X-Developer-Signature: v=1; a=openpgp-sha256; l=487; i=bod@kernel.org;
+ h=from:subject:message-id; bh=uMJapb3KunetUf6a8hwO+z88+IfyEVucqVVMO3w/uh0=;
+ b=owEBbQKS/ZANAwAKASJxO7Ohjcg6AcsmYgBrADOl2MX4yKVTxDhvZxr+pGfmeAH85hqm4xuZY
+ psAiCfBz8aJAjMEAAEKAB0WIQTmk/sqq6Nt4Rerb7QicTuzoY3IOgUCawAzpQAKCRAicTuzoY3I
+ Or65EACi218HD1FId3P5PiL3Jtf7fowZziKnMcsHHdroi69/H0q1YecJ6AxAF2bQU5s3/mlLynt
+ MR9oVqbVOPwuFepOAFcq61n91ec/R5we+PVfA/3K0ku7nDnlKYnZywZx/9IcBLPRKRny9joAFvL
+ AP2/YOg4vZWJDenNUtPp1CJNVR2vfzb2g422cPV91MKrTY1r+KcNHQ5Cfzz7Vf8Y0XLG3Hb3oy/
+ PPHTz+/MGr2IradSx2J+/v9LUGcHjeZCxq5KDnM9ItPu0FwKqgzNcdbnSS/F2xB/UUr9YqAS4aw
+ oCOvsZiveZufw0dGn3tmKqPpojUbEVC2urFqQyU0iIUZA3YQPGIafwqJFvY0eOrsrbI3TnSpiSF
+ tVHeBRUjL9Drd8GMdVKy0zDnyxdYPs18SLPZyM1eEblBeJ+hcPS2AtRCs8gf1vMYZrupqTkHdiY
+ T7uRSTzUSMGmPuzap3oh5pU4O39ccURtuy33xZdhQR/2dm+i3PwK/feD2R2XjC+vIK9rxuy0Y3T
+ qz9DPscI1ogkiJEUlxVKJwY8w/iZo7uJ8swEc0ajLl90Uzgo8y6e0b2LR4GOFPrP00/EkVDUH6r
+ zzq+XIzjGLGPOKleLiyQYPqoZ6th0YnWQIv8STVZxD1EbcNA0MuckMgYkFo3VbG/WpTJP0XlCvD
+ fdkdjXePKPFPEWg==
 X-Developer-Key: i=bod@kernel.org; a=openpgp;
  fpr=E693FB2AABA36DE117AB6FB422713BB3A18DC83A
 X-BeenThere: linux-phy@lists.infradead.org
@@ -100,46 +101,23 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 On 2026-11-14 19:29 +0800, Wenmeng Liu wrote:
 > From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
 > 
-> Add the SM8750 CSI2 DPHY compatible to the match table, using the 3nm
-> DPHY configuration.
-> 
-> The SM8750 CSIPHY nodes only carry "qcom,sm8750-csi2-phy" with no
-> fallback compatible, so without this entry no driver matches them and
-> the PHYs stay unbound.
+> Add cpas_fast_ahb, cpas_ahb and gcc_axi_hf to the PM clock list for
+> SM8750. The CAMSS core enables them through the shared PM clock helper
+> when the device is probed.
 > 
 > Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
 > Signed-off-by: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
 > ---
->  drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-> index 165e3d026872db85e54a99c5dd25ca68a1a4e450..a672bf318487b16aacd1ecf165554cde3f38e292 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-> @@ -444,6 +444,7 @@ static int phy_qcom_mipi_csi2_probe(struct platform_device *pdev)
->  
->  static const struct of_device_id phy_qcom_mipi_csi2_of_match_table[] = {
->  	{ .compatible	= "qcom,kaanapali-csi2-phy", .data = &mipi_csi2_dphy_3nm_kaanapali },
-> +	{ .compatible	= "qcom,sm8750-csi2-phy", .data = &mipi_csi2_dphy_3nm_kaanapali },
->  	{ .compatible	= "qcom,x1e80100-csi2-phy", .data = &mipi_csi2_dphy_4nm_x1e },
->  	{ }
->  };
-> 
-> -- 
-> 2.34.1
-> 
-> 
 
 Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 ---
