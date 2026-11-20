@@ -2,62 +2,70 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 326A0606A326
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 14:57:17 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AD110606A326
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 15:07:29 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=a7Dl8urI;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=IWGA7uvu
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=H+CSoSlp;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=linuxfoundation.org header.i=@linuxfoundation.org header.a=rsa-sha256 header.s=korg header.b=iqxN36ev
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=oRyTc5/q8AZtb8n+jQcEcoPPLH3jlz9XiHtJZfbWHOM=; b=a7Dl8urII+TNZdf5z01DoqhxKA
-	hSwCoqGFsv8Ea0hF2boDaffnT5NdSmpKOkZBJkxM3TRmhrW9L5bSX3shd/U1dnbAQv2b15wmUK8Rz
-	ANXbjMGkkaeAlT3dgLBozFOK5N5/khTHQ4y6PTbCNkpxYbzcCwn7DYwVlj7pjRD4AhHYOR8A7C3nz
-	1oCnmBQaNVjEK4EaHO8EvOe2zrZ5ZTicJaffalDAoQ8VLOe7V69BQw+Q+Yj5D2X6ixfmw7CkGj2nX
-	YUCo9fPyLCCexkLFzDeKivsTl5f+wtD4V1pT1LYIdlkIVCI/MpVTXj3NcHmBqjlm56zcrLaZUF1Ki
-	a7XSMkjA==;
+	bh=EJJHtdMofpNNysuGrdJWG85YRN5kXAdhdDCzWzhfKNQ=; b=H+CSoSlpFMNEQwmPevoiuXauu7
+	eeq63ZpXoinSalA7SjosL8FYAv1wXlbNwWIhj+Fp5CKhrYSzrMYaDXtG5U3X6Lo5drKJZ2Cvpwc2P
+	ptGmsBmFzY3ksWcSpj3EjNLx6TA1gLLqajbhIO1S0KYlDlGNtWl+nc4af9z0HmM9XooDFyBNwHFap
+	SAWu2nLoBdaXrzuZ/do7fLFq+m4pQKSk8Xa+4/YEPrWwQMiDEbkOOYizfDNBiq/SLtPJGQlpwx/pV
+	TCBhzG1KPYf94K/dlQn29VncxDGTS2ed/EvKV3wI23FgdlgwCGteXQcQa+mDXQQgHVOhNgbQaTA9+
+	cvl6Il0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUQ3A-0000000FKCv-32v6;
-	Fri, 20 Nov 2026 14:57:16 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xUQD3-0000000FMSl-0ooP;
+	Fri, 20 Nov 2026 15:07:29 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUQ39-0000000FKCo-24cV
+	id 1xUQD0-0000000FMS3-1f7c
 	for linux-phy@lists.infradead.org;
-	Fri, 20 Nov 2026 14:57:15 +0000
+	Fri, 20 Nov 2026 15:07:28 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4325F40647;
-	Fri, 20 Nov 2026 14:57:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3B98C1F000C6;
-	Fri, 20 Nov 2026 14:57:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795186634;
-	bh=VigvJCRt5rXY+6Kai55nHb34XII7DZnlFQiPz+X14Z4=;
-	h=From:To:Cc:Subject:In-Reply-To:References:Date;
-	b=IWGA7uvu2MNG1+rvnP6DxMwptyVI8Pkgsj7+Sezxf/GivzfH5F6TV+kJ0Uh4Grg5D
-	 m+Jf6nY7EKL/Ew9z/r7JgMb6+renWFEObbdwkmT6Crn+PdBvAzhnzh9GuaXB/u7yRX
-	 +xxTsjiW9bKxm9pXEYOIA5dizN9RlIecuBq00HfiqxsQowP+ZpDSjeYskl3ncXnwll
-	 5alPiJAejp3VcEbqdrhC/ED1O/H4HpjNp6Qwm1Ig8HVhTLdSVn7WiLtfUJLeCON1wn
-	 gvxFL04fVGIO7+vxD67QCUJMNe0zu2j1VZFMjcnCDjdTANnwCByyBZxxDWFLO/IuXB
-	 2s4qYPrfa1ulw==
-From: Mattijs Korpershoek <mkorpershoek@kernel.org>
-To: sashiko-reviews@lists.linux.dev
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
- neil.armstrong@linaro.org, olteanv@gmail.com
-Subject: Re: [PATCH v5 2/2] phy: qcom-snps-femto-v2: Add support for SA8255P
-In-Reply-To: <sashiko-outbox-225334@kernel.org>
-References: <20261120-phy-qcom-snps-femto-v2-8255-v5-0-86a9880ee5a5@kernel.org>
- <20261120-phy-qcom-snps-femto-v2-8255-v5-2-86a9880ee5a5@kernel.org>
- <sashiko-outbox-225334@kernel.org>
-Date: Fri, 20 Nov 2026 15:57:12 +0100
-Message-ID: <xhkdbcxrzpn3r.fsf@mkorpers-koolstof.csb>
+	by tor.source.kernel.org (Postfix) with ESMTP id 6EF8560FA0;
+	Fri, 20 Nov 2026 15:07:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E38B81F000CF;
+	Fri, 20 Nov 2026 15:07:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linuxfoundation.org;
+	s=korg; t=1795187244;
+	bh=apbOSjev7HKZm4LBe6IqAKdUKgP4Z7eK2DCBfu34NMM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=iqxN36evFfI+bIDlZv7napilDVpgOR4zkZpmTtD/6MZoePpmTlv8QTOxj44mVCI0y
+	 yQJDlYU8tlfOcbtSC9N6p5udPIrtHNNtXMkF0JW8aLMRbCLJEW5v3J3IlH8UWibUco
+	 1Qk0GOV6ZNMJMGOG1Jdhu5IlcOhObeWGCbAExlbQ=
+Date: Fri, 20 Nov 2026 16:07:21 +0100
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Joonhoe Kim <26rote@gmail.com>
+Cc: Thinh.Nguyen@synopsys.com, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
+	heikki.krogerus@linux.intel.com, abel.vesa@oss.qualcomm.com,
+	abelvesa@kernel.org, wesley.cheng@oss.qualcomm.com,
+	krishna.kurapati@oss.qualcomm.com, konrad.dybcio@oss.qualcomm.com,
+	dmitry.baryshkov@oss.qualcomm.com, neil.armstrong@linaro.org,
+	val@packett.cool, balaji.kalkonda@oss.qualcomm.com,
+	tvlad744@gmail.com, effeffe99@gmail.com,
+	prashanth.k@oss.qualcomm.com, yongxing.mou@oss.qualcomm.com,
+	peter.chen@oss.qualcomm.com, tapas.rana@oss.qualcomm.com,
+	vkoul@kernel.org, linux-phy@lists.infradead.org,
+	linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 2/2] usb: dwc3: qcom: Use the UTMI clock as PIPE clock
+ in DisplayPort-only modes
+Message-ID: <2026112017-flyover-grape-cee7@gregkh>
+References: <20261119124558.1548-1-26rote@gmail.com>
+ <20261119124558.1548-3-26rote@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20261119124558.1548-3-26rote@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,72 +75,226 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-T24gRnJpLCBOb3YgMjAsIDIwMjYgYXQgMTQ6MTEsIHNhc2hpa28tYm90QGtlcm5lbC5vcmcgd3Jv
-dGU6Cgo+IFRoYW5rIHlvdSBmb3IgeW91ciBjb250cmlidXRpb24hIFNhc2hpa28gQUkgcmV2aWV3
-IGZvdW5kIDEgcG90ZW50aWFsCj4gaXNzdWUgdG8gY29uc2lkZXI6Cj4gLSBbTG93XSBwaHk6IHFj
-b20tc25wcy1mZW10by12MjogdXNlIGRldm1fcG1fZG9tYWluX2F0dGFjaF9saXN0KCkgYW5kCj4g
-ICBjaGVjayByZXQgPT0gMAo+IC0tCj4KPiBjb21taXQgNDAzMjNlZDgzZWU2ZjAzYzM2ZDI3Njdk
-MWU5MWNkMDhjY2ZmMzczYgo+IEF1dGhvcjogU3JpcmFtIERhc2ggPHF1aWNfc3JpcmFtZEBxdWlj
-aW5jLmNvbT4KPgo+IHBoeTogcWNvbS1zbnBzLWZlbXRvLXYyOiBBZGQgc3VwcG9ydCBmb3IgU0E4
-MjU1UAo+Cj4gVGhpcyBjb21taXQgYWRkcyBzdXBwb3J0IGZvciB0aGUgU0E4MjU1UCBVU0IgSFMg
-UEhZIHZhcmlhbnQsIHdob3NlIHBvd2VyLAo+IGNsb2NrLCBhbmQgcmVzZXQgcmVzb3VyY2VzIGFy
-ZSBtYW5hZ2VkIGJ5IFNDTUkgZmlybXdhcmUgdGhyb3VnaCAiY29yZSIgYW5kCj4gInRyYW5zZmVy
-IiBwb3dlciBkb21haW5zLgo+Cj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9w
-aHktcWNvbS1zbnBzLWZlbXRvLXYyLmMgYi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1z
-bnBzLWZlbXRvLXYyLmMKPj4gaW5kZXggMGRhZTgzNjk2NzFhYi4uMGVjMzRiYzVjMjZlYyAxMDA2
-NDQKPj4gLS0tIGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tc25wcy1mZW10by12Mi5j
-Cj4+ICsrKyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXNucHMtZmVtdG8tdjIuYwo+
-IFsgLi4uIF0KPj4gQEAgLTE2NCw4ICsxNjcsODIgQEAgc3RydWN0IHFjb21fc25wc19oc3BoeSB7
-Cj4+ICAJYm9vbCBwaHlfaW5pdGlhbGl6ZWQ7Cj4+ICAJZW51bSBwaHlfbW9kZSBtb2RlOwo+PiAg
-CXN0cnVjdCBwaHlfb3ZlcnJpZGVfc2VxIHVwZGF0ZV9zZXFfY2ZnW05VTV9IU1BIWV9UVU5JTkdf
-UEFSQU1TXTsKPj4gKwo+PiArCXN0cnVjdCBkZXZfcG1fZG9tYWluX2xpc3QgKnBkX2xpc3Q7Cj4+
-ICB9Owo+PiAgCj4+ICtzdGF0aWMgdm9pZCBxY29tX3NucHNfZG9tYWluX2RldGFjaCh2b2lkICpk
-YXRhKQo+PiArewo+PiArCXN0cnVjdCBxY29tX3NucHNfaHNwaHkgKmhzcGh5ID0gZGF0YTsKPj4g
-Kwo+PiArCWRldl9wbV9kb21haW5fZGV0YWNoX2xpc3QoaHNwaHktPnBkX2xpc3QpOwo+PiArfQo+
-PiArCj4+ICtzdGF0aWMgaW50IHFjb21fc25wc19kb21haW5fYXR0YWNoKHN0cnVjdCBxY29tX3Nu
-cHNfaHNwaHkgKmhzcGh5KQo+PiArewo+PiArCXN0cnVjdCBkZXZfcG1fZG9tYWluX2F0dGFjaF9k
-YXRhIHBkX2RhdGEgPSB7Cj4+ICsJCS5wZF9mbGFncyAgICAgICA9IFBEX0ZMQUdfTk9fREVWX0xJ
-TkssCj4+ICsJCS5wZF9uYW1lcyAgICAgICA9IChjb25zdCBjaGFyKltdKSB7ICJjb3JlIiwgInRy
-YW5zZmVyIiB9LAo+PiArCQkubnVtX3BkX25hbWVzICAgPSAyLAo+PiArCX07Cj4+ICsJc3RydWN0
-IGRldmljZSAqZGV2ID0gaHNwaHktPmRldjsKPj4gKwlpbnQgcmV0Owo+PiArCj4+ICsJcmV0ID0g
-ZGV2X3BtX2RvbWFpbl9hdHRhY2hfbGlzdChkZXYsICZwZF9kYXRhLCAmaHNwaHktPnBkX2xpc3Qp
-Owo+PiArCWlmIChyZXQgPCAwKQo+PiArCQlyZXR1cm4gZGV2X2Vycl9wcm9iZShkZXYsIHJldCwg
-ImRvbWFpbiBhdHRhY2ggZmFpbGVkXG4iKTsKPj4gKwo+PiArCXJldHVybiAwOwo+PiArfQo+PiAr
-Cj4+ICtzdGF0aWMgYm9vbCBxY29tX3NucHNfaXNfZndfbWFuYWdlZChzdHJ1Y3QgcWNvbV9zbnBz
-X2hzcGh5ICpoc3BoeSkKPj4gK3sKPj4gKwlyZXR1cm4gaHNwaHktPnBkX2xpc3QgIT0gTlVMTDsK
-Pj4gK30KPj4gKwo+PiArc3RhdGljIGludCBxY29tX3NucHNfcGRzX2VuYWJsZV9hbGwoc3RydWN0
-IHFjb21fc25wc19oc3BoeSAqaHNwaHkpCj4+ICt7Cj4+ICsJaW50IHJldDsKPj4gKwo+PiArCWlm
-ICghcWNvbV9zbnBzX2lzX2Z3X21hbmFnZWQoaHNwaHkpKQo+PiArCQlyZXR1cm4gMDsKPgo+IFtT
-ZXZlcml0eTogTG93XQo+IENhbiBxY29tX3NucHNfZG9tYWluX2F0dGFjaCgpIHN1Y2NlZWQgd2l0
-aCBoc3BoeS0+cGRfbGlzdCBsZWZ0IE5VTEwgd2hlbgo+IGRldl9wbV9kb21haW5fYXR0YWNoX2xp
-c3QoKSByZXR1cm5zIDAgKGZvciBleGFtcGxlLCB3aGVuIENPTkZJR19QTSBpcwo+IGRpc2FibGVk
-KT8KPgo+IElmIHRoYXQgaGFwcGVucywgcWNvbV9zbnBzX3Bkc19lbmFibGVfYWxsKCkgcmV0dXJu
-cyAwIHdpdGhvdXQgZW5hYmxpbmcgdGhlCj4gcG93ZXIgZG9tYWlucywgYW5kIHFjb21fc25wc19o
-c3BoeV9md19tYW5hZ2VkX2luaXQoKSBwcm9jZWVkcyB0bwo+IHFjb21fc25wc19oc3BoeV9jb25m
-aWd1cmUoKSBhbmQgd3JpdGVzIFBIWSByZWdpc3RlcnMgd2hpbGUgY2xvY2tzLCByZXNldHMsCj4g
-YW5kIHBvd2VyIGRvbWFpbnMgYXJlIG9mZi4gIEFsc28sIHFjb21fc25wc19kb21haW5fYXR0YWNo
-KCkgYW5kCj4gcWNvbV9zbnBzX2RvbWFpbl9kZXRhY2goKSB3aXRoIGRldm1fYWRkX2FjdGlvbl9v
-cl9yZXNldCgpIGluCj4gcWNvbV9zbnBzX2hzcGh5X3Byb2JlKCkgZHVwbGljYXRlIGRldm1fcG1f
-ZG9tYWluX2F0dGFjaF9saXN0KCk7IGNhbGxpbmcKPiBkZXZtX3BtX2RvbWFpbl9hdHRhY2hfbGlz
-dCgpIGRpcmVjdGx5IGFuZCByZXR1cm5pbmcgLUVOT0RFViB3aGVuIHJldCA9PSAwCj4gd291bGQg
-YXZvaWQgYm90aCBpc3N1ZXMuCgpXaGlsZSBJIGFncmVlIHRoaXMgY2FuIGluZGVlZCBoYXBwZW4s
-IGhhdmluZyBhIGtlcm5lbCBvbiBhbiBTQ01JLWVuYWJsZWQKYm9hcmQgc3VjaCBhcyBTQTgyNTVQ
-IGRvZXMgbm90IG1ha2UgYSBsb3Qgb2Ygc2Vuc2UuIEkgdGhpbmsgdGhhdCBvdGhlcgp0aGluZ3Mg
-d2lsbCBicmVhayBhcyB3ZWxsLiBJZiBpdCdzIG5vdCBzdHJpY3RseSBuZWNlc3NhcnkgSSdkIGxp
-a2UgdG8KYXZvaWQgcmVzZW5kaW5nIGEgdjYganVzdCB0byBmaXggdGhpcy4KClZpbm9kLCBjYW4g
-eW91IHBsZWFzZSBsZXQgbWUga25vdyBpZiBJIHNob3VsZCByZXNwaW4gdG8gYWRkcmVzcyB0aGlz
-PwoKPgo+IC0tIAo+IFNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9w
-YXRjaHNldC8yMDI2MTEyMC1waHktcWNvbS1zbnBzLWZlbXRvLXYyLTgyNTUtdjUtMC04NmE5ODgw
-ZWU1YTVAa2VybmVsLm9yZz9wYXJ0PTIKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
-LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Thu, Nov 19, 2026 at 09:45:58PM +0900, Joonhoe Kim wrote:
+> With DisplayPort pin assignment C or E the QMP USB3-DP combo PHY gives
+> all four lanes to DisplayPort and powers its USB PCS down. The
+> controller can still run USB 2.0, e.g. for the hub of a USB-C monitor.
+> Keeping the pipe clock branch enabled, as commit f546912bcac6 ("phy:
+> qcom: qmp-combo: Move pipe_clk on/off to common") does, is not enough on
+> Kaanapali. The next xHCI reset in this mode times out ("Host halt
+> failed, -110"), and USB stops working until the cable is replugged.
+> 
+> Register the glue as a Type-C mode switch when the node has the
+> "mode-switch" property. Select the UTMI clock as PIPE clock in DP-only
+> modes, as "qcom,select-utmi-as-pipe-clk" does statically.
+> typec_mux_set() calls the switches in the order of the connector's
+> ports. Port 0 (HS, the controller) comes before port 1 (SS, the PHY).
+> So the controller switches before the PHY powers its USB side down.
+> 
+> The safe and USB states can come with the DisplayPort altmode, so only
+> the modal states with the DisplayPort SVID count as DisplayPort. Pin
+> assignment C or E always selects the UTMI clock. Go back to the PIPE
+> clock when a USB state follows the safe state. A change from C/E to
+> D/F while DisplayPort is active keeps the UTMI clock: the PHY may keep
+> DP-only mode then, and the UTMI clock still runs USB 2.0 if it does
+> not.
+> 
+> Read the selected clock back from QSCRATCH, as on some SoCs it loses
+> its contents in system suspend.
+> 
+> The mux callback does not resume the glue. From the start of a
+> runtime or system suspend until the core has resumed, the callback only
+> records the state. The resume paths apply it before the core resumes,
+> and again once the core has resumed or when the suspend fails.
+> 
+> The mux needs the Type-C class, so depend on TYPEC || TYPEC=n as
+> PHY_QCOM_QMP_COMBO does, and do not register the mux without it. With
+> the arm64 defconfig (TYPEC=m) this builds the glue, including
+> dwc3-qcom-legacy, as a module.
+> 
+> Signed-off-by: Joonhoe Kim <26rote@gmail.com>
+> ---
+> v4:
+> - mutex_lock()/mutex_unlock() where nothing returns early (Krzysztof)
+> - Leave the probe code as it was apart from the new argument (Krzysztof)
+> v3:
+> - Rebase on Filippo Falezza's "usb: dwc3: qcom: Restore UTMI PIPE clock
+>   on resume" and use its utmi_as_pipe_clk
+> - Compare with the clock selected in QSCRATCH, not a cached value
+> - Check the safe state before the altmode: the safe and USB states can
+>   come with the DisplayPort altmode (Sashiko)
+> - Always select the UTMI clock for pin assignment C or E (Sashiko)
+> - Do not resume the glue from the mux callback. From the start of a
+>   runtime or system suspend until the core has resumed, only record the
+>   state; apply it before and after the core resumes, and when the
+>   suspend fails (Sashiko)
+> - Leave the clock select alone on nodes without a mux
+> - Only record the state once remove has started
+> v2:
+> - Switch back to the PIPE clock from the mux callback, not on a role
+>   change (Sashiko)
+> - Keep dp_only while DisplayPort is active, as the PHY keeps its mode
+> - Defer the clock switch to resume while suspended for system sleep
+> - Depend on TYPEC || TYPEC=n, skip the mux without CONFIG_TYPEC (Sashiko)
+> 
+>  drivers/usb/dwc3/Kconfig     |   1 +
+>  drivers/usb/dwc3/dwc3-qcom.c | 150 ++++++++++++++++++++++++++++++++---
+>  2 files changed, 138 insertions(+), 13 deletions(-)
+> 
+> diff --git a/drivers/usb/dwc3/Kconfig b/drivers/usb/dwc3/Kconfig
+> index 18169727a..282f366de 100644
+> --- a/drivers/usb/dwc3/Kconfig
+> +++ b/drivers/usb/dwc3/Kconfig
+> @@ -132,6 +132,7 @@ config USB_DWC3_QCOM
+>  	depends on ARCH_QCOM || COMPILE_TEST
+>  	depends on EXTCON || !EXTCON
+>  	depends on OF
+> +	depends on TYPEC || TYPEC=n
+>  	default USB_DWC3
+>  	help
+>  	  Some Qualcomm SoCs use DesignWare Core IP for USB2/3
+> diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
+> index f4ce035d4..d80c7ee39 100644
+> --- a/drivers/usb/dwc3/dwc3-qcom.c
+> +++ b/drivers/usb/dwc3/dwc3-qcom.c
+> @@ -19,6 +19,9 @@
+>  #include <linux/iopoll.h>
+>  #include <linux/usb/hcd.h>
+>  #include <linux/usb.h>
+> +#include <linux/usb/typec_altmode.h>
+> +#include <linux/usb/typec_dp.h>
+> +#include <linux/usb/typec_mux.h>
+>  #include "core.h"
+>  #include "glue.h"
+>  
+> @@ -82,6 +85,13 @@ struct dwc3_qcom {
+>  	bool			is_suspended;
+>  	bool			pm_suspended;
+>  	bool			utmi_as_pipe_clk;
+> +	bool			dp_active;
+> +	bool			dp_only;
+> +	bool			mux_deferred;
+> +	bool			mode_switch;
+> +	/* protects dp_active, dp_only and mux_deferred */
+> +	struct mutex		pipe_clk_lock;
+> +	struct typec_mux_dev	*mux;
+>  	struct icc_path		*icc_path_ddr;
+>  	struct icc_path		*icc_path_apps;
+>  
+> @@ -336,16 +346,19 @@ static void dwc3_qcom_enable_interrupts(struct dwc3_qcom *qcom)
+>  		dwc3_qcom_enable_port_interrupts(&qcom->ports[i]);
+>  }
+>  
+> -static void dwc3_qcom_select_utmi_clk(struct dwc3_qcom *qcom)
+> +static void dwc3_qcom_select_utmi_clk(struct dwc3_qcom *qcom, bool utmi)
+
+What does that bool mean?  That's going to be a pain, please make this 2
+functions so you know what is happening when you call it.
+
+
+>  {
+> -	/* Configure dwc3 to use UTMI clock as PIPE clock not present */
+>  	dwc3_qcom_setbits(qcom->qscratch_base, QSCRATCH_GENERAL_CFG,
+>  			  PIPE_UTMI_CLK_DIS);
+>  
+>  	usleep_range(100, 1000);
+>  
+> -	dwc3_qcom_setbits(qcom->qscratch_base, QSCRATCH_GENERAL_CFG,
+> -			  PIPE_UTMI_CLK_SEL | PIPE3_PHYSTATUS_SW);
+> +	if (utmi)
+> +		dwc3_qcom_setbits(qcom->qscratch_base, QSCRATCH_GENERAL_CFG,
+> +				  PIPE_UTMI_CLK_SEL | PIPE3_PHYSTATUS_SW);
+> +	else
+> +		dwc3_qcom_clrbits(qcom->qscratch_base, QSCRATCH_GENERAL_CFG,
+> +				  PIPE_UTMI_CLK_SEL | PIPE3_PHYSTATUS_SW);
+>  
+>  	usleep_range(100, 1000);
+>  
+> @@ -353,6 +366,39 @@ static void dwc3_qcom_select_utmi_clk(struct dwc3_qcom *qcom)
+>  			  PIPE_UTMI_CLK_DIS);
+>  }
+>  
+> +static bool dwc3_qcom_utmi_clk_selected(struct dwc3_qcom *qcom)
+> +{
+> +	return readl(qcom->qscratch_base + QSCRATCH_GENERAL_CFG) &
+> +	       PIPE_UTMI_CLK_SEL;
+> +}
+> +
+> +static void dwc3_qcom_update_pipe_clk(struct dwc3_qcom *qcom)
+> +{
+> +	lockdep_assert_held(&qcom->pipe_clk_lock);
+> +
+> +	if (qcom->mode_switch && !qcom->utmi_as_pipe_clk &&
+> +	    qcom->dp_only != dwc3_qcom_utmi_clk_selected(qcom))
+> +		dwc3_qcom_select_utmi_clk(qcom, qcom->dp_only);
+> +}
+> +
+> +static void dwc3_qcom_defer_mux(struct dwc3_qcom *qcom)
+> +{
+> +	mutex_lock(&qcom->pipe_clk_lock);
+> +	qcom->mux_deferred = true;
+> +	mutex_unlock(&qcom->pipe_clk_lock);
+> +}
+> +
+> +static void dwc3_qcom_undefer_mux(struct dwc3_qcom *qcom)
+> +{
+> +	guard(mutex)(&qcom->pipe_clk_lock);
+> +
+> +	if (qcom->is_suspended)
+> +		return;
+> +
+> +	qcom->mux_deferred = false;
+> +	dwc3_qcom_update_pipe_clk(qcom);
+> +}
+> +
+>  static int dwc3_qcom_suspend(struct dwc3_qcom *qcom, bool wakeup)
+>  {
+>  	u32 val;
+> @@ -413,7 +459,11 @@ static int dwc3_qcom_resume(struct dwc3_qcom *qcom, bool wakeup)
+>  	 * clock ("failed to enable ep0out").
+>  	 */
+>  	if (qcom->utmi_as_pipe_clk)
+> -		dwc3_qcom_select_utmi_clk(qcom);
+> +		dwc3_qcom_select_utmi_clk(qcom, true);
+> +
+> +	mutex_lock(&qcom->pipe_clk_lock);
+
+Why no guard() use here?
+
+
+
+> +	dwc3_qcom_update_pipe_clk(qcom);
+> +	mutex_unlock(&qcom->pipe_clk_lock);
+>  
+>  	/* Clear existing events from PHY related to L2 in/out */
+>  	for (i = 0; i < qcom->num_ports; i++) {
+> @@ -446,6 +496,54 @@ static irqreturn_t qcom_dwc3_resume_irq(int irq, void *data)
+>  	return IRQ_HANDLED;
+>  }
+>  
+> +static int dwc3_qcom_mux_set(struct typec_mux_dev *mux,
+> +			     struct typec_mux_state *state)
+> +{
+> +	struct dwc3_qcom *qcom = typec_mux_get_drvdata(mux);
+> +	bool dp = state->mode >= TYPEC_STATE_MODAL && state->alt &&
+> +		  state->alt->svid == USB_TYPEC_DP_SID;
+> +
+> +	mutex_lock(&qcom->pipe_clk_lock);
+
+guard()?
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
