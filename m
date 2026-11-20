@@ -2,93 +2,92 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 05BE4606A335
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 11:49:04 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5AA34606A320
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 12:56:19 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=WLEDqI25;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=hcBexOHU
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=36QliK+h;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=bootlin.com header.i=@bootlin.com header.a=rsa-sha256 header.s=dkim header.b=BEwZ0SsO
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:References:In-Reply-To:
-	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=LedNjXhO7rRjMv8PVEH/w6nEMR2sQKpne9Gh7HihaiI=; b=WLEDqI25yIsjxtszN90evFBXjL
-	YUcFiWNKwrvwqhE0TXI5EAzU9XAT5n92ABBwHearHuzBjA4d+wY6mU3mdm7R3JfeKbW+KrHWu4Qj5
-	+tlSRFpAP4TMdK/vw6iDe8miS6qgAdZZ7Z+IOkjxSJ9eTy+ktJi2bPNaccrqYCaM+ZfDRt+vGNvpG
-	DjDoTUffWvs4u/d1CB7zi7jUtPVwxcA9D+DDB+3jr4jMuekFLLthi8bAMEi+09U65jhRBKr9v+fYT
-	t4+r9+afVOPDcGt7tnowBISgKcQB0j/z/kCs6Cj3yy1uBUmAYlutFFp4nSiR8fUpjCOHGK5Y0eJM/
-	d5wZbxmQ==;
+	bh=I4iNvQhYsOWZlcsO5k3BhVm260CFBeQ2v9t8kREAejk=; b=36QliK+hiFbOgL+y3szLuYVj/Y
+	YYAaUYuPrySIl/tBbxR4HXWElGzUYCUbLLdWtS+1YFaRzNUOx726OO0jU7cAWzhsMOwgw2k5FV8J8
+	hQ2TNxasS58WWB5+OV70nq0JfBeQLrLjZFAg5LsHAKc6Ae9qy2ZwSNfpvkohJMxbpOInh0CRZeThW
+	x1fRmm2QIIfqFTk3HCq0Uz1ez7WrYm7eO+FIQeF5LtxITtIAVhU9JZ43MxhHUL7bthkbnUGbjWX+F
+	mgIH+ANPGinhGtVrcZaWqCOvIxDHOu2FQhhhGr+vAJDnpMEJanhCtsrd0iHEeyHYZV6EKBndO+j9O
+	3yqUu0yg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUN71-0000000Es1N-3CkI;
-	Fri, 20 Nov 2026 11:49:03 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xUOA6-0000000F1IM-3hfU;
+	Fri, 20 Nov 2026 12:56:18 +0000
+Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUN70-0000000Es1E-0Gah
+	id 1xUOA2-0000000F1H7-1BUG
 	for linux-phy@lists.infradead.org;
-	Fri, 20 Nov 2026 11:49:02 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6D8F061B30;
-	Fri, 20 Nov 2026 11:49:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DCCE61F000C0;
-	Fri, 20 Nov 2026 11:48:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795175340;
-	bh=u8l/U5OT/Y6CBEr80GX62yXAKFPyEQ4q4m7GqQI3+Nw=;
-	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=hcBexOHUMQkhXRpw6J2YlBW+kBBvPm7QrGDW4CGU5mAlWg6twGFJxe1ZqttaN07tn
-	 sd4v+OROeVivVIw16xj/TXH5XCZ3S4hypUxgMbynLKxKBLD5ixIPy8UZ2ZY6c8FfvN
-	 pyEvQ5W9YO3DkgIPSor/3yhPOnVYGx7M6onSbyAdoqBvBckgNjBsqwJkBnm8ubbjQi
-	 0B57FJlZiBSaL/jud64G3ooz9IpjTTrMV2bj11E/eRbqZI0FUBT3ZQpTi1rjTRAmRl
-	 amccNZt1lXknyuG962K39swBEJNao4rwh3irNCNf0J1rhrkcIFw7AE5bnWnweHROJy
-	 wQanlKSiR+cfQ==
+	Fri, 20 Nov 2026 12:56:17 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id 194C1C6221E;
+	Fri, 20 Nov 2026 12:56:15 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 4D2CA601B9;
+	Fri, 20 Nov 2026 12:56:09 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id E190811BC003E;
+	Fri, 20 Nov 2026 13:55:54 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1795179366; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding; bh=eHMqgDAEPCosoidPk3c6KfvIHKmZESHd+BbV4dQ2VRg=;
+	b=BEwZ0SsO/M9c0BxNk8KuFpHOcOpd57kpxzVOILhXBUMq3Qe0j7OYdRCN/sevm5BjlSfA1d
+	2b/NUy18cQ64lQhBx+t6Tue6Wt1m6Fpm7ZVhbHrtYlcwcmqmYjakFK40C18ETegqo6Cols
+	bZgAEEwx+tDLaXQlyMu5s3ZmaqRpBUWdW6VtZYjSIMjd9pfuSDG0ahNTPiTGbrlWUljv/I
+	m1CXPrNE0sc1WLk9BmwA6yDrOhsCTjm2SzxzjVt2wG9zIPPEDYxdHt9Yw+ePs12AIX6vTO
+	pVE1MltmXtlUK6hDl7kZQjMEl4TNoh4huNhXzA34l+V0GZLMaNtcHXzcy2PqgQ==
+From: Benjamin Robin <benjamin.robin@bootlin.com>
+Subject: [PATCH 0/4] phy: cadence-torrent: rewrite Torrent PHY driver
+Date: Fri, 20 Nov 2026 13:55:48 +0100
+Message-Id: <20261120-phy-cadence-torrent-ng-v1-0-da2db7125cd7@bootlin.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH v7 08/23] media: qcom: camss: Add PM clock definitions
- for SM8750
-From: bod@kernel.org
-To: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
-Cc: Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yXMQQ6CMBBG4auQWTtJi6joVYwLaH9gXAxkWo2Gc
+ HerLr/FeyslmCDRpVrJ8JQksxb4XUVh6nQESyym2tVH792el+nNoYvQAM6zGTSzjtzG5nzqozs
+ MTUslXgyDvH7j6+3v9OjvCPl7o237AHFabKx6AAAA
+X-Change-ID: 20261103-phy-cadence-torrent-ng-8d497bd05f48
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Yuti Amonkar <yamonkar@cadence.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>, 
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, 
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
+ Luca Ceresoli <luca.ceresoli@bootlin.com>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+ Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>, 
+ Tero Kristo <kristo@kernel.org>, Andrew Davis <afd@ti.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Chintan Vankar <c-vankar@ti.com>, 
+ Abhash Kumar Jha <a-kumar2@ti.com>, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, 
- Loic Poulain <loic.poulain@oss.qualcomm.com>, 
- Mauro Carvalho Chehab <mchehab@kernel.org>, 
- Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>, 
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>, 
- Robert Foss <rfoss@kernel.org>, Andi Shyti <andi.shyti@kernel.org>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, 
- Frank Li <Frank.Li@nxp.com>, linux-phy@lists.infradead.org, 
- linux-media@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-i2c@vger.kernel.org
-In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-8-8ff2a11835f6@oss.qualcomm.com>
-References: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
- <20261114-add-support-for-camss-on-sm8750-v7-8-8ff2a11835f6@oss.qualcomm.com>
-Date: Fri, 20 Nov 2026 11:48:53 +0000
-Message-Id: <179517533369.2846709.4822429145839216229.b4-reply@b4>
-X-Mailer: b4 0.17-dev-e3fc9
-X-Developer-Signature: v=1; a=openpgp-sha256; l=487; i=bod@kernel.org;
- h=from:subject:message-id; bh=uMJapb3KunetUf6a8hwO+z88+IfyEVucqVVMO3w/uh0=;
- b=owEBbQKS/ZANAwAKASJxO7Ohjcg6AcsmYgBrADOl2MX4yKVTxDhvZxr+pGfmeAH85hqm4xuZY
- psAiCfBz8aJAjMEAAEKAB0WIQTmk/sqq6Nt4Rerb7QicTuzoY3IOgUCawAzpQAKCRAicTuzoY3I
- Or65EACi218HD1FId3P5PiL3Jtf7fowZziKnMcsHHdroi69/H0q1YecJ6AxAF2bQU5s3/mlLynt
- MR9oVqbVOPwuFepOAFcq61n91ec/R5we+PVfA/3K0ku7nDnlKYnZywZx/9IcBLPRKRny9joAFvL
- AP2/YOg4vZWJDenNUtPp1CJNVR2vfzb2g422cPV91MKrTY1r+KcNHQ5Cfzz7Vf8Y0XLG3Hb3oy/
- PPHTz+/MGr2IradSx2J+/v9LUGcHjeZCxq5KDnM9ItPu0FwKqgzNcdbnSS/F2xB/UUr9YqAS4aw
- oCOvsZiveZufw0dGn3tmKqPpojUbEVC2urFqQyU0iIUZA3YQPGIafwqJFvY0eOrsrbI3TnSpiSF
- tVHeBRUjL9Drd8GMdVKy0zDnyxdYPs18SLPZyM1eEblBeJ+hcPS2AtRCs8gf1vMYZrupqTkHdiY
- T7uRSTzUSMGmPuzap3oh5pU4O39ccURtuy33xZdhQR/2dm+i3PwK/feD2R2XjC+vIK9rxuy0Y3T
- qz9DPscI1ogkiJEUlxVKJwY8w/iZo7uJ8swEc0ajLl90Uzgo8y6e0b2LR4GOFPrP00/EkVDUH6r
- zzq+XIzjGLGPOKleLiyQYPqoZ6th0YnWQIv8STVZxD1EbcNA0MuckMgYkFo3VbG/WpTJP0XlCvD
- fdkdjXePKPFPEWg==
-X-Developer-Key: i=bod@kernel.org; a=openpgp;
- fpr=E693FB2AABA36DE117AB6FB422713BB3A18DC83A
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Thomas Richard <thomas.richard@bootlin.com>, 
+ Swapnil Jakhade <sjakhade@cadence.com>, 
+ Siddharth Vadapalli <s-vadapalli@ti.com>, 
+ Gregory CLEMENT <gregory.clement@bootlin.com>, 
+ =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>, 
+ Tawfik Bayouk <tawfik.bayouk@mobileye.com>, 
+ Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>, 
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ Benjamin Robin <benjamin.robin@bootlin.com>
+X-Mailer: b4 0.15.2
+X-Last-TLS-Session-Version: TLSv1.3
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261120_045614_462823_585922AC 
+X-CRM114-Status: GOOD (  21.81  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,27 +100,149 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-21.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 2026-11-14 19:29 +0800, Wenmeng Liu wrote:
-> From: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-> 
-> Add cpas_fast_ahb, cpas_ahb and gcc_axi_hf to the PM clock list for
-> SM8750. The CAMSS core enables them through the shared PM clock helper
-> when the device is probed.
-> 
-> Signed-off-by: Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>
-> Signed-off-by: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
-> ---
+This series rewrites the driver for the Cadence Torrent multi-protocol
+PHY (sd0801).
 
-Reviewed-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Motivation
+----------
+The existing phy-cadence-torrent driver hard-codes, for each supported
+configuration, the register values to program. The configuration space
+is large: protocol and associated PLL frequency, DisplayPort bit rate,
+reference clock frequency, spread-spectrum clocking (SSC), number of
+lanes, PHY revision and technology. As a result, every new board or
+standard combination requires a full extra table of opaque register
+values, which is inflexible and hard to maintain.
+
+The rewrite aims to:
+
+  - simplify the addition of support for a new board;
+  - support every reference clock frequencies supported by the Cadence
+    Torrent PHY;
+  - support multiple links per standard without restriction (the previous
+    driver, for instance, was limited to two PCIe links);
+  - allow, in the future, the dynamic reconfiguration of the SerDes link
+    rate (for example, to switch between SGMII and 2500BASE-X).
+
+Because this is a complete rewrite, the diff is large and not well suited
+to a line-by-line review. The rewritten driver can be fetched from the
+`phy-cadence-torrent` branch at https://github.com/benjarobin/linux
+
+Design
+------
+The new driver computes the register values instead of hard-coding them:
+
+  - registers that depend on the reference clock frequency or on a PLL
+    frequency are computed at run time, from the reference clock
+    obtained through the clock framework and from the PLL frequency
+    derived from the selected standard;
+  - the remaining registers, which only depend on the standard type, the
+    PHY revision and the technology, are written through one function per
+    register, with an internal table selected by a
+    standard/revision/technology key.
+
+The PHY revision and technology are detected from the PHY identification
+registers, and the DisplayPort link initialization and rate-change
+sequence were rewritten.
+
+Validation
+----------
+Because the rewritten driver computes register values instead of
+hard-coding them, its output was validated against two independent
+references:
+
+  - The Cadence "Torrent Programmers Guide" spreadsheet, for the
+    registers that depend on the reference clock and on the PLL
+    frequencies. The spreadsheet generates (as a CSV) the expected value
+    of every register to write; the values computed by the driver were
+    compared with these expected values over a large number of
+    combinations of reference clock, PLL frequency.
+    To make this comparison feasible, the reference-clock and PLL
+    computation code was extracted into small userspace harnesses,
+    so that many combinations can be swept without booting the hardware,
+    and the results are fed to a comparison tool that checks them against
+    the spreadsheet CSV.
+
+  - The existing driver, for the complete set of programmed registers.
+    Every supported configuration of the old driver was extracted as a
+    test case. Two userspace harnesses were generated:
+     - tp-full-old, mirroring the old cdns_torrent_phy_init() /
+       cdns_torrent_phy_configure_multilink() path;
+     - tp-full-new, mirroring the new tp_configure_links() path.
+    These 2 userspace harnesses run the same test cases (single
+    standards, standard pairs, PCIe-Multilink and internal-SSC variants)
+    and then compare, register by register, the writes performed by each
+    driver for the same configuration. The registers written by both
+    drivers match, with a small number of remaining differences that are
+    all explained (for example, values that were fixed in a later
+    revision of the spreadsheet, or obsolete/unused registers);
+
+The last patch of the series adds a debug trace on every register read
+or write, so the same comparison can also be performed on real hardware
+by capturing the driver logs.
+
+The tooling used for the validation described above is available at:
+https://github.com/benjarobin/cadence-torrent-phy-tooling
+
+Status / testing
+----------------
+The driver has so far been validated on two TI boards:
+
+  - J784S4XEVM: two PCIe links (x2, x4), one DisplayPort link (display
+    output working) and one USB-C port (configured as host);
+  - J721EXCPXEVM: two PCIe links (x2, x1) and a J721EXENETXPANEVM
+    daughter card exposing four Ethernet ports over a single QSGMII
+    link (~1 Gbps per port).
+
+Comments on the overall approach are welcome, as is testing on additional
+hardware, for which Tested-by tags would be appreciated.
+
+Dependency
+----------
+This series should be applied on top of v7.4-rc3. This was done this way
+since the commit "treewide: Convert devm_kmalloc() family to the
+devm_kmalloc_obj() family" introduced conflicts.
+
+The driver depends on the following series:
+
+  - [1]: needed since the driver requires the consumers to call
+    phy_power_on() and phy_power_off();
+  - [2]: needed otherwise the QSGMII SerDes link is never powered ON.
+
+The series [2] is included in this one.
+
+[1] https://lore.kernel.org/all/20260601095041.3042950-1-a-kumar2@ti.com/
+[2] https://lore.kernel.org/all/20260326134929.1696750-1-c-vankar@ti.com/
+
+Signed-off-by: Benjamin Robin <benjamin.robin@bootlin.com>
 ---
-bod
+Benjamin Robin (3):
+      dt-bindings: phy: cadence-torrent: drop cdns,num-lanes default value
+      dt-bindings: phy: cadence-torrent: add phy-mode constants
+      phy: cadence-torrent: rewrite Torrent PHY driver
+
+Chintan Vankar (1):
+      arm64: dts: ti: k3-j7200: Fix QSGMII overlay by adding SERDES PHY
+
+ .../bindings/phy/phy-cadence-torrent.yaml          |   10 +-
+ .../dts/ti/k3-j7200-evm-quad-port-eth-exp.dtso     |    3 +-
+ drivers/phy/cadence/phy-cadence-torrent.c          | 9417 +++++++++-----------
+ include/dt-bindings/phy/phy-cadence.h              |    8 +
+ 4 files changed, 4376 insertions(+), 5062 deletions(-)
+---
+base-commit: 6515d69692fb374d01e3dc95eef53047ca8f947c
+change-id: 20261103-phy-cadence-torrent-ng-8d497bd05f48
+
+Best regards,
+--  
+Benjamin Robin <benjamin.robin@bootlin.com>
 
 
 -- 
