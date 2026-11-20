@@ -2,86 +2,86 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 90D2060A2606
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 13:43:49 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3B86560A382E
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 13:56:25 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3bi1Xa+7;
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=samsung.com header.i=@samsung.com header.a=rsa-sha256 header.s=mail20170921 header.b=AVDT2NBg
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=NRuNtNVs;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=mmByupct
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=TP6kPnFIYKSry+DxC1lUYsC2HBPYDaTeX5e7suHDmwg=; b=3bi1Xa+75EJ2vO0jQcdYkTBVLz
-	1pRO3nsdRs2n4ZIJhl7KqtFqPtGYZApf3d7+PMAlDZsuUt8AyZAFKtEwphwt0f8HU1C2g+ldsauVZ
-	EXiMvplIlVzxKnwBcHrMet2phrzjQNuhHR/f6ShGvdWWrcXc+EwCQTqITk5XKCanXPcOx70EP+qXu
-	J80AJsyEMa4LkZrKC93UD3IUf9xW+xY7nL87XzsjzQZBi5D2i2WuDThvc5o6CV7hW9YG8g4OV79y9
-	b0y4PBkZ3cP4K3CEJauectEnGP6nYK+wwNYjJqOypif4H5NxvYeKbaCJ6oo8Yoc469qJlf1iMr4/F
-	qUsi2NlA==;
+	bh=DNQ++L7M+w1BiGwW/I9cbRFj4njYw2SDBO+o01u/Xfg=; b=NRuNtNVsaY/bD1UPDyrSYMrRcc
+	Vk7r9CxZU0dqFl09Rzm+T3m/RURYw620T5dm+6rD2AzQWkCZYk0ENFqOC4QokmN0/Bai92PExWv7P
+	6BaDbmckMSlWD3NtwlWJAzw/rMpdrDzac87H+wpoljKl24X0Tl3OKlPvHzsAGs1g7waEisHFRMvEX
+	frzm4sQ2LDI6A5/M3ddzQnO6vpURm898uEMDvRzGd02ck20eulK4ME78kpPmr4voIQx9TWCUDp/Y2
+	3zOrWlBqCUKXS58GsKnkuQ4LKvXrUJlCuunSiOCFFeQdNZciCSD6ketOV9ijW0EnJdiW+qqiXDM3Z
+	qQJzIJww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUOu5-0000000F8RV-0suJ;
-	Fri, 20 Nov 2026 13:43:49 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1xUP6G-0000000FC5I-46S3;
+	Fri, 20 Nov 2026 13:56:24 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUOtc-0000000F7qX-1WfG
+	id 1xUP6C-0000000FC4E-024m
 	for linux-phy@lists.infradead.org;
-	Fri, 20 Nov 2026 13:43:25 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
-	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20261120134316euoutp018b88dd0be3ff51dcc6de3c9716d60a98~pxLI8yY2I0544505445euoutp01p
-	for <linux-phy@lists.infradead.org>; Fri, 20 Nov 2026 13:43:16 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20261120134316euoutp018b88dd0be3ff51dcc6de3c9716d60a98~pxLI8yY2I0544505445euoutp01p
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1795182196;
-	bh=9237+tKAR89WsuPxFlAqDCDty0GUNRZKGXXasLOl2ng=;
-	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
-	b=AVDT2NBgHGsRO0KO7DoI41IixNDJ18plqCeYQue7B59xesvIJz3QQok0fPUO6n1Sw
-	 vj0Cs19HyEGr45mj1VWnfM6roS9dZozGmwEh6szwoBmt+ZjP9kUdvLbUbcuSP5re48
-	 JbPpsDgKcmjI3Lnj0FsAOoSy94VFvUNpn/T9zPRM=
-Received: from eusmtip1.samsung.com (unknown [203.254.199.221]) by
-	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
-	20261120134315eucas1p14bd143778442db5f514865fe00a49c63~pxLInXiM60242902429eucas1p1r;
-	Fri, 20 Nov 2026 13:43:15 +0000 (GMT)
-Received: from [192.168.1.44] (unknown [106.210.136.40]) by
-	eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
-	20261120134314eusmtip1e5f11fdfc1d113cba0eecae5a72f9eb8~pxLHtfY1G0050900509eusmtip1w;
-	Fri, 20 Nov 2026 13:43:14 +0000 (GMT)
-Message-ID: <b6dc6c36-9ce1-49dd-bae5-245d983610bc@samsung.com>
-Date: Fri, 20 Nov 2026 14:43:14 +0100
+	Fri, 20 Nov 2026 13:56:20 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id A90F445B59;
+	Fri, 20 Nov 2026 13:56:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E1A0A1F00ACF;
+	Fri, 20 Nov 2026 13:56:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795182979;
+	bh=zF42Mi5y8Ib0X4sHCH0GaZJRw3qLxhz9wgJMlHfgL9E=;
+	h=From:Subject:Date:To:Cc;
+	b=mmByupctFo9HTSIllwteEG9JbCq5ZTKBNwT/RVCi5r6LltM42qjnk1hFVvM9qZapB
+	 zzyXVf/pk70xWbkMs2WZi8/KbXvxZZXeefgKbumN6SqOP/lqaeC8xbLDr+b2XAUEqy
+	 /xUc57cJJCOfFT9BKhcuKtVWWJdH36W06LH8eIEMFeyozeK2MZGQvjoyBj4Eq5XXpZ
+	 ZQDJT+KQPv+NMQtBPkL9Prj97QgEgO/H55AloW2CaaWmceVJbVR6wBqYaOv9/t/Hki
+	 ySnJdJ8kzNtZb0K0zqLn98KB4r1JoVHIREYfSgXclgJpC90oGVtiydIvJb9rVCmPKm
+	 xH0yFxvJ6KwsQ==
+From: Mattijs Korpershoek <mkorpershoek@kernel.org>
+Subject: [PATCH v5 0/2] Add support for SA8255P in the
+ phy-qcom-snps-femto-v2 phy driver
+Date: Fri, 20 Nov 2026 14:56:03 +0100
+Message-Id: <20261120-phy-qcom-snps-femto-v2-8255-v5-0-86a9880ee5a5@kernel.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 0/5] phy: Add the StarFive JH7110 Innosilicon HDMI
- PHY
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
-	<neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, Rob
-	Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor
-	Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>, Emil Renner
-	Berthing <kernel@esmil.dk>, Hal Feng <hal.feng@starfivetech.com>, Dominique
-	Belhachemi <db@domibel.de>, Andy Yan <andyshrk@163.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org, Marek
-	Szyprowski <m.szyprowski@samsung.com>, Icenowy Zheng
-	<zhengxingda@iscas.ac.cn>, Chaoyi Chen <chaoyi.chen@rock-chips.com>, Joshua
-	Peisach <jpeisach@ubuntu.com>, Byron Stanoszek <gandalf@winds.org>, OOHehir
-	<oo.hehir@gmail.com>
-Content-Language: en-US
-From: Michal Wilczynski <m.wilczynski@samsung.com>
-In-Reply-To: <20261106-jh7110-inno-hdmi-phy-v7-0-d49368303800@samsung.com>
-X-CMS-MailID: 20261120134315eucas1p14bd143778442db5f514865fe00a49c63
-X-Msg-Generator: CA
-X-RootMTR: 20261106135504eucas1p14138c1ce829febb8bcd63c4de1f29ffb
-X-EPHeader: CA
-X-CMS-RootMailID: 20261106135504eucas1p14138c1ce829febb8bcd63c4de1f29ffb
-References: <CGME20261106135504eucas1p14138c1ce829febb8bcd63c4de1f29ffb@eucas1p1.samsung.com>
-	<20261106-jh7110-inno-hdmi-phy-v7-0-d49368303800@samsung.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261120_054320_996927_3199C6F5 
-X-CRM114-Status: GOOD (  27.34  )
-X-Spam-Score: -4.4 (----)
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/33Qy2rDMBAF0F8JWneKNHrYzqr/EbKw7FGstrFcy
+ RUNwf9eOS19EPDywuVcZq4sUfSU2H53ZZGyTz6MJeiHHeuGdjwR+L5khhwNr7CBabjAWxfOkMY
+ pgaPzHCAj1Kg1NNw5qkylOBesCFMk5z9u+uH4ldO7faZuXsm1Mfg0h3i5zWex9r6XJN9cygI41
+ La2TguuW1M/vVAc6fUxxBNbpzL+YrUU2xgWrO+MaCrnehL2DpM/mOActzFZMKlQK7R9Yztzh6k
+ /GFbbmFrPLP9EWXJr5D9sWZZPJeEkWMABAAA=
+X-Change-ID: 20260729-phy-qcom-snps-femto-v2-8255-90ffe7674001
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Mattijs Korpershoek <mkorpershoek@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
+ Sriram Dash <quic_sriramd@quicinc.com>
+X-Mailer: b4 0.17-dev
+X-Developer-Signature: v=1; a=openpgp-sha256; l=4187;
+ i=mkorpershoek@kernel.org; h=from:subject:message-id;
+ bh=jZrp9wHdk2cj+vXmr5WjanzvROeJV+DE0ZhEYl72FmA=;
+ b=owEBbQGS/pANAwAKARkNHbRmThk1AcsmYgBrAFGA10fCOQaYHF42xNAxYqyPZpKSbWpcDkaC1
+ PGFnPe9sweJATMEAAEKAB0WIQQu6UKnth9qvlMTrQAZDR20Zk4ZNQUCawBRgAAKCRAZDR20Zk4Z
+ NfptCACDIi2reevB1Uv+IEOMSOlQvy2z2QugJbB7Oj1lnMbiruEE055T8QlNxcf4xewYHAajdKI
+ +9nxGADlW5obBWyto7vxXUl8IKdloQG5Vt2tUQseDCQEf1G3wLiGOYbDDHrB4H9Pc2Jl2YaYLq+
+ QGM3dKThQsOZ1lQggQqsyqaN8lzje0Kiqe/8e9AwOA2b/6iEjOB/JQz/EikLSP/pkbCsvraZG3Q
+ HjgKbIimI1rUBstodaATYj4q9q5IACtI9NuzcN8Jg8tvd/ILr+pTaO/88aqIFGHa3ARjLR/zDZ8
+ Mkbu7Ul4kVzYlvrCDyyk+YKQqLjf+Eydc0hHub+e5P6To4NB
+X-Developer-Key: i=mkorpershoek@kernel.org; a=openpgp;
+ fpr=8234A35B45C0D26B31C1A2DA570338B018144F28
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,106 +94,110 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
+The Qualcomm automotive SA8255p SoC abstracts resources such as resets,
+clocks and regulators in firmware. The SCMI firmware exposes multiple
+protocols to control such resources which are identified by protocol_id.
 
+For this USB phy, 2 SCMI protocols are exposed by the firmware:
+* power domain management protocol (protocol_id=0x11)
+* performance domain management protocol (protocol_id=0x13)
 
-On 11/6/26 14:52, Michal Wilczynski wrote:
-> This series adds the HDMI PHY driver for the StarFive JH7110 and shares
-> the pre-PLL code it has in common with the Rockchip RK3328 Innosilicon
-> HDMI PHY.
-> 
-> Up to v5 it was part of the JH7110 display series [1]. It is split out
-> as Vinod suggested, so it can go through linux-phy on its own; the rest
-> continues as v6 of "drm: starfive: jh7110: Enable display subsystem".
-> Nothing here depends on the display series. The display series depends
-> on this one: its HDMI subsystem binding references the PHY binding from
-> patch 1, and it needs the PHY driver at runtime.
-> 
-> [1] https://lore.kernel.org/all/20260929-jh7110-clean-send-v5-0-82b4d8e3c6c7@samsung.com/
-> 
-> The JH7110 has the same Innosilicon PHY as the RK3328, offset by 0x100
-> because it sits behind the HDMI controller in a shared register block.
-> Patch 2 factors out the pre-PLL config format, table lookup,
-> determine_rate, recalc_rate and the pre-PLL programming; patch 3 moves
-> Rockchip onto it; patch 4 adds the JH7110 driver. Pixel clock tables,
-> post-PLL and analog config stay SoC specific.
-> 
-> Patch 3 should be a no-op for Rockchip - same writes, same order, same
-> values - and RK3228, whose pre-PLL is at different addresses, keeps its
-> own register code and shares only the lookup. I have no Rockchip
-> hardware, so it is build tested only (arm and riscv). A Tested-by would
-> help.
-> 
-> Patch 5 adds a MAINTAINERS entry for the binding and the driver, as the
-> other JH7110 PHY drivers have.
-> 
-> Testing
-> =======
-> 
-> Tested on a VisionFive 2 v1.3B together with the display series, using
-> modetest: all 42 modes the sink advertises work, with pixel clocks from
-> 25.175 MHz up to 297 MHz.
-> 
-> Every commit builds for riscv and arm.
-> 
-> Changes in v7:
-> - Point the binding example comment at the hdmi-subsystem binding's new
->   location in bindings/display/starfive/, where the display series moved
->   it
-> - Rebased onto v7.4-rc1
-> - Link to v6: https://lore.kernel.org/r/20261028-jh7110-inno-hdmi-phy-v6-0-f3379684d97e@samsung.com
-> 
-> Changes in v6:
-> - Split out of the JH7110 display series (Vinod)
-> - inno_read() returns the regmap_read() error and recalc_rate checks it,
->   instead of a failed read turning into a zero divisor (Vinod)
-> - Bound the pre-PLL and post-PLL table walks with the table size instead
->   of relying on a sentinel (Vinod)
-> - Lowercase hex in the JH7110 pixel clock table (Vinod)
-> - New patch 5: a MAINTAINERS entry for the JH7110 HDMI PHY, moved out of
->   the display series' entry
-> - Rebased onto v7.3, collected tags
-> - Link to v5: https://lore.kernel.org/all/20260929-jh7110-clean-send-v5-0-82b4d8e3c6c7@samsung.com/
-> 
-> ---
-> Michal Wilczynski (5):
->       dt-bindings: phy: Add starfive,jh7110-inno-hdmi-phy
->       phy: Add common Innosilicon HDMI PHY helpers
->       phy: rockchip: inno-hdmi: Use the common Innosilicon PHY helpers
->       phy: starfive: Add jh7110-inno-hdmi-phy driver
->       MAINTAINERS: Add StarFive JH7110 HDMI PHY entry
-> 
->  .../phy/starfive,jh7110-inno-hdmi-phy.yaml         |  49 ++
->  MAINTAINERS                                        |   6 +
->  drivers/phy/Kconfig                                |   8 +
->  drivers/phy/Makefile                               |   1 +
->  drivers/phy/phy-inno-hdmi.c                        | 358 +++++++++++++
->  drivers/phy/rockchip/Kconfig                       |   1 +
->  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c      | 169 +-----
->  drivers/phy/starfive/Kconfig                       |  20 +
->  drivers/phy/starfive/Makefile                      |   1 +
->  drivers/phy/starfive/phy-jh7110-inno-hdmi.c        | 587 +++++++++++++++++++++
->  include/linux/phy/inno-hdmi-phy.h                  |  88 +++
->  11 files changed, 1144 insertions(+), 144 deletions(-)
-> ---
-> base-commit: 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
-> change-id: 20261028-jh7110-inno-hdmi-phy-83e5cfa643e3
-> 
-> Best regards,
+The power domain has 2 indices: 'core' and 'transfer'.
+* core controls the regulators, the clocks and the reset
+* transfer only controls the clocks
 
-Gentle ping on this series.
+For example, to power on/off the PHY, we should use the 'core' domain.
+To disable data transfer and keeping power enabled, we should use the
+'transfer' domain.
 
-Is there anything else needed from my side ?
+Note: the performance domain (0x13) exposes opaques values (0xa to 0x11)
+for which we don't have any information. Since it is not mandatory
+for the PHY to be functional, we have omitted it from the bindings and
+the driver.
+
+Patch 1 adds the binding for sa8255p. Similarly to what has been done
+for I2C [1], this is a separate binding.
+
+Patch 2 adds the driver change, which is based on a public vendor
+patch from qualcomm [2].
+I did the following changes on top of that:
+* Use devm_add_action_or_reset() for dev_pm_domain_detach_list() instead
+  of implementing a driver .remove()
+* Changed power domain names to drop 'usb_' prefix
+* Fixed various error handling paths
+* Added suspend/resume support
+
+This has been tested on next-20261026 with a Ride4 SA8775P board that
+has SCMI firmware (which is compatible).
+
+[1] https://lore.kernel.org/all/20260617-enable-i2c-on-sa8255p-v7-1-ad736dbeab57@oss.qualcomm.com/
+[2] https://git.codelinaro.org/clo/le/meta-qti-auto-kernel/-/blob/LY.AU.0.1.0.r1-16800-gen4meta.0/recipes-kernel/linux/files/usb/0014-PENDING-phy-qcom-snps-femto-v2-Add-support-for-SA825.patch
+
+---
+Changes in v5:
+- Rebased on phy/next (non trivial conflicts due to IPQ9650 changes)
+- Moved fw_managed to phy_config_data
+- I have kept Mani's R-b on this since the patch still has similar
+  changes to v4.
+- Link to v4: https://patch.msgid.link/20261027-phy-qcom-snps-femto-v2-8255-v4-0-874023825a63@kernel.org
+
+Changes in v4:
+- Don't control regulator, clk and reset in SCMI path (Mani)
+- Rename helper functions to qcom_snps_pds_{enable,disable}_all and
+  qcom_snps_pd_{enable,disable}_transfer (Mani)
+- Add some more helper functions to keep probe() cleaner.
+- Dropped Neil's R-b due to the above driver changes
+- Link to v3: https://lore.kernel.org/r/20261002-phy-qcom-snps-femto-v2-8255-v3-0-342542bd9bc6@kernel.org
+
+Changes in v3:
+- Applied R-b from Krzysztof and Neil
+- Link to v2: https://patch.msgid.link/20260831-phy-qcom-snps-femto-v2-8255-v2-0-dc6197ffde1b@kernel.org
+
+Changes in v2:
+- Move 'core' as first domain, before 'transfer' (Krzysztof)
+- Reworded binding commit message to be more precise about the various
+  domains ('core', 'transfer' and 'perf') (Krzysztof)
+- Link to v1: https://patch.msgid.link/20260730-phy-qcom-snps-femto-v2-8255-v1-0-8b8bf5105a68@kernel.org
+
+To: Vinod Koul <vkoul@kernel.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+To: Manivannan Sadhasivam <mani@kernel.org>
+To: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzk+dt@kernel.org>
+To: Conor Dooley <conor+dt@kernel.org>
+To: Mattijs Korpershoek <mkorpershoek@kernel.org>
+To: Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-arm-msm@vger.kernel.org
+Cc: linux-phy@lists.infradead.org
+Cc: devicetree@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+
+---
+Mattijs Korpershoek (1):
+      dt-bindings: phy: Add sa8255p high-speed USB PHY
+
+Sriram Dash (1):
+      phy: qcom-snps-femto-v2: Add support for SA8255P
+
+ .../bindings/phy/qcom,sa8255p-usb-hs-phy.yaml      |  52 ++++
+ drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c      | 261 +++++++++++++++++----
+ 2 files changed, 270 insertions(+), 43 deletions(-)
+---
+base-commit: 6bdfbe223ed4735073c299a6645ebd3faac3f51f
+base-tree: git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git next
+change-id: 20260729-phy-qcom-snps-femto-v2-8255-90ffe7674001
 
 Best regards,
--- 
-Michal Wilczynski <m.wilczynski@samsung.com>
+--  
+Mattijs Korpershoek <mkorpershoek@kernel.org>
+
 
 -- 
 linux-phy mailing list
