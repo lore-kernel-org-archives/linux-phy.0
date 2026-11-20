@@ -2,61 +2,56 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3B86560A382E
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 13:56:25 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4AC7D6074CD9
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 13:56:27 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=NRuNtNVs;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=mmByupct
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=hmks6rPZ;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=P+RdDfrp
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=DNQ++L7M+w1BiGwW/I9cbRFj4njYw2SDBO+o01u/Xfg=; b=NRuNtNVsaY/bD1UPDyrSYMrRcc
-	Vk7r9CxZU0dqFl09Rzm+T3m/RURYw620T5dm+6rD2AzQWkCZYk0ENFqOC4QokmN0/Bai92PExWv7P
-	6BaDbmckMSlWD3NtwlWJAzw/rMpdrDzac87H+wpoljKl24X0Tl3OKlPvHzsAGs1g7waEisHFRMvEX
-	frzm4sQ2LDI6A5/M3ddzQnO6vpURm898uEMDvRzGd02ck20eulK4ME78kpPmr4voIQx9TWCUDp/Y2
-	3zOrWlBqCUKXS58GsKnkuQ4LKvXrUJlCuunSiOCFFeQdNZciCSD6ketOV9ijW0EnJdiW+qqiXDM3Z
-	qQJzIJww==;
+	bh=dBL0syhcroVO+n0tWEzSap0Ih8Vv9XWMD1RCwgW3Xos=; b=hmks6rPZYMBsBRCvy7ygseZtPo
+	aZ9UAt5fZCdRNDVaM9SVW0kqbTA3/CgVy0Lihbuq7PF1YFoN16D0Yk36H7lYDpdvo8M6AK+LU0g17
+	XDDAMCW/m6feemGWnr9QoxcBEuZcOZETcjzTyA8sTWnmI0IDGYvp0NkG71IAzkZG/Nd7dD7xtuTLB
+	+iPRQs5zHd6r6HMC2TuQvuIyeixRl+I9WYZ0dSvy71XSEZQ+e+EAySQpqQsyzjqfTP68xiK3MwpH7
+	u03vPVnVNe3ncwx152VmZY4eXbUDBi3VMFZZ7l+FJ7jyWUKp5iqW7uWM+G8y4HIcDRI6TxpMXQpnI
+	PfFQSa5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUP6G-0000000FC5I-46S3;
-	Fri, 20 Nov 2026 13:56:24 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xUP6J-0000000FC5s-03fo;
+	Fri, 20 Nov 2026 13:56:27 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUP6C-0000000FC4E-024m
+	id 1xUP6E-0000000FC4f-46H6
 	for linux-phy@lists.infradead.org;
-	Fri, 20 Nov 2026 13:56:20 +0000
+	Fri, 20 Nov 2026 13:56:24 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id A90F445B59;
-	Fri, 20 Nov 2026 13:56:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E1A0A1F00ACF;
-	Fri, 20 Nov 2026 13:56:18 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 803EB43319;
+	Fri, 20 Nov 2026 13:56:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C4F6A1F0093E;
+	Fri, 20 Nov 2026 13:56:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795182979;
-	bh=zF42Mi5y8Ib0X4sHCH0GaZJRw3qLxhz9wgJMlHfgL9E=;
-	h=From:Subject:Date:To:Cc;
-	b=mmByupctFo9HTSIllwteEG9JbCq5ZTKBNwT/RVCi5r6LltM42qjnk1hFVvM9qZapB
-	 zzyXVf/pk70xWbkMs2WZi8/KbXvxZZXeefgKbumN6SqOP/lqaeC8xbLDr+b2XAUEqy
-	 /xUc57cJJCOfFT9BKhcuKtVWWJdH36W06LH8eIEMFeyozeK2MZGQvjoyBj4Eq5XXpZ
-	 ZQDJT+KQPv+NMQtBPkL9Prj97QgEgO/H55AloW2CaaWmceVJbVR6wBqYaOv9/t/Hki
-	 ySnJdJ8kzNtZb0K0zqLn98KB4r1JoVHIREYfSgXclgJpC90oGVtiydIvJb9rVCmPKm
-	 xH0yFxvJ6KwsQ==
+	s=k20260515; t=1795182982;
+	bh=KmAc3T9mWrH7swBNo0EglWG6ricFEmcz6t+LpSrqQD8=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc;
+	b=P+RdDfrpbaDcBgMKYTpiIBnfseY6vmGZQO1xSAb3Isnjkl8HLABo4o/po2+ETAaTe
+	 2mPV3JRZbo4nCQM1jpfgy/xk1fjtWKaVKo+DxWeMsD0daIXmWonkW5fhZ8w9fnvJRs
+	 ZlTKAUWBJN/XFoa7VbDD7CYC6xnS1cGKGCxpNrSYx9xEtw3wTGdsFYvu7UlOxIbfPj
+	 ShVe+1UpBQ2a9hEIeIMEOOhMRsUPcclaX3n0sG5Y2iQxvXCO/0ryjqNTE43JkiX6MZ
+	 GwaVmnSP4OGLvltuaIWRnthbWeN8pDztSh2yN/8JpBe0+6Zp4yxIFybclbKidPlh9E
+	 Jepz5OQoeHBQQ==
 From: Mattijs Korpershoek <mkorpershoek@kernel.org>
-Subject: [PATCH v5 0/2] Add support for SA8255P in the
- phy-qcom-snps-femto-v2 phy driver
-Date: Fri, 20 Nov 2026 14:56:03 +0100
-Message-Id: <20261120-phy-qcom-snps-femto-v2-8255-v5-0-86a9880ee5a5@kernel.org>
+Date: Fri, 20 Nov 2026 14:56:04 +0100
+Subject: [PATCH v5 1/2] dt-bindings: phy: Add sa8255p high-speed USB PHY
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/33Qy2rDMBAF0F8JWneKNHrYzqr/EbKw7FGstrFcy
- RUNwf9eOS19EPDywuVcZq4sUfSU2H53ZZGyTz6MJeiHHeuGdjwR+L5khhwNr7CBabjAWxfOkMY
- pgaPzHCAj1Kg1NNw5qkylOBesCFMk5z9u+uH4ldO7faZuXsm1Mfg0h3i5zWex9r6XJN9cygI41
- La2TguuW1M/vVAc6fUxxBNbpzL+YrUU2xgWrO+MaCrnehL2DpM/mOActzFZMKlQK7R9Yztzh6k
- /GFbbmFrPLP9EWXJr5D9sWZZPJeEkWMABAAA=
-X-Change-ID: 20260729-phy-qcom-snps-femto-v2-8255-90ffe7674001
+Message-Id: <20261120-phy-qcom-snps-femto-v2-8255-v5-1-86a9880ee5a5@kernel.org>
+References: <20261120-phy-qcom-snps-femto-v2-8255-v5-0-86a9880ee5a5@kernel.org>
+In-Reply-To: <20261120-phy-qcom-snps-femto-v2-8255-v5-0-86a9880ee5a5@kernel.org>
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
  Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
@@ -67,19 +62,18 @@ To: Vinod Koul <vkoul@kernel.org>,
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>, 
- Sriram Dash <quic_sriramd@quicinc.com>
+ Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 X-Mailer: b4 0.17-dev
-X-Developer-Signature: v=1; a=openpgp-sha256; l=4187;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2903;
  i=mkorpershoek@kernel.org; h=from:subject:message-id;
- bh=jZrp9wHdk2cj+vXmr5WjanzvROeJV+DE0ZhEYl72FmA=;
- b=owEBbQGS/pANAwAKARkNHbRmThk1AcsmYgBrAFGA10fCOQaYHF42xNAxYqyPZpKSbWpcDkaC1
- PGFnPe9sweJATMEAAEKAB0WIQQu6UKnth9qvlMTrQAZDR20Zk4ZNQUCawBRgAAKCRAZDR20Zk4Z
- NfptCACDIi2reevB1Uv+IEOMSOlQvy2z2QugJbB7Oj1lnMbiruEE055T8QlNxcf4xewYHAajdKI
- +9nxGADlW5obBWyto7vxXUl8IKdloQG5Vt2tUQseDCQEf1G3wLiGOYbDDHrB4H9Pc2Jl2YaYLq+
- QGM3dKThQsOZ1lQggQqsyqaN8lzje0Kiqe/8e9AwOA2b/6iEjOB/JQz/EikLSP/pkbCsvraZG3Q
- HjgKbIimI1rUBstodaATYj4q9q5IACtI9NuzcN8Jg8tvd/ILr+pTaO/88aqIFGHa3ARjLR/zDZ8
- Mkbu7Ul4kVzYlvrCDyyk+YKQqLjf+Eydc0hHub+e5P6To4NB
+ bh=+iqdwQcNJL4/e62aoHyHmgjIrFNlesW9mTuXz0wcwEE=;
+ b=owEBbQGS/pANAwAKARkNHbRmThk1AcsmYgBrAFGA12KAP+Eu97PQ5RLJLiYBMe0bqt09cz6gl
+ CgYOfcmCAKJATMEAAEKAB0WIQQu6UKnth9qvlMTrQAZDR20Zk4ZNQUCawBRgAAKCRAZDR20Zk4Z
+ NfNwB/9Sk8DO60b6vCOrlGTrbB7iCe+oWNnd8KpYXR+Py8c1wH7f0jpHC8lrbRzahFX8xQ71pTK
+ RejVPVAD557D9IKyTM5SBifyhdRtMzqK+ZlRNhOmv6AX98KN2LJmFqEZtctj/tp66auNKkTTY9S
+ rNuqyX+mCJms0g6PL0vASmmoX+F905mOC1fBJMIytUnibYEljhLv/aqr6VqO8RV2mmlJwzj40oK
+ G6Rg/hbgYIdZiHzLv9GKf5s+cToJgyfTpd2IyxlGcgZ8NU5EK5MB61n6rJ8z5k85YZHcA0/pbaI
+ Q5/GwrGFq2+jmM/mDTa2hekGGiaExlNOTbKlu3PCIJ7hZ8xY
 X-Developer-Key: i=mkorpershoek@kernel.org; a=openpgp;
  fpr=8234A35B45C0D26B31C1A2DA570338B018144F28
 X-BeenThere: linux-phy@lists.infradead.org
@@ -96,14 +90,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
 	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The Qualcomm automotive SA8255p SoC abstracts resources such as resets,
-clocks and regulators in firmware. The SCMI firmware exposes multiple
-protocols to control such resources which are identified by protocol_id.
+SA8255p platform abstracts resources such as resets, clocks and
+regulators in firmware. The SCMI firmware exposes multiple protocols to
+control such resources which are identified by protocol_id.
 
 For this USB phy, 2 SCMI protocols are exposed by the firmware:
 * power domain management protocol (protocol_id=0x11)
@@ -117,86 +111,83 @@ For example, to power on/off the PHY, we should use the 'core' domain.
 To disable data transfer and keeping power enabled, we should use the
 'transfer' domain.
 
+Add a new binding for the Qualcomm SA8255p Synopsys Femto High-Speed
+USB PHY V2 found in SA8255P.
+
 Note: the performance domain (0x13) exposes opaques values (0xa to 0x11)
 for which we don't have any information. Since it is not mandatory
-for the PHY to be functional, we have omitted it from the bindings and
-the driver.
+for the PHY to be functional, we have ommited it from the bindings.
+We can document it (and make them part of the dt ABI) once we have more
+information.
 
-Patch 1 adds the binding for sa8255p. Similarly to what has been done
-for I2C [1], this is a separate binding.
-
-Patch 2 adds the driver change, which is based on a public vendor
-patch from qualcomm [2].
-I did the following changes on top of that:
-* Use devm_add_action_or_reset() for dev_pm_domain_detach_list() instead
-  of implementing a driver .remove()
-* Changed power domain names to drop 'usb_' prefix
-* Fixed various error handling paths
-* Added suspend/resume support
-
-This has been tested on next-20261026 with a Ride4 SA8775P board that
-has SCMI firmware (which is compatible).
-
-[1] https://lore.kernel.org/all/20260617-enable-i2c-on-sa8255p-v7-1-ad736dbeab57@oss.qualcomm.com/
-[2] https://git.codelinaro.org/clo/le/meta-qti-auto-kernel/-/blob/LY.AU.0.1.0.r1-16800-gen4meta.0/recipes-kernel/linux/files/usb/0014-PENDING-phy-qcom-snps-femto-v2-Add-support-for-SA825.patch
-
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
 ---
-Changes in v5:
-- Rebased on phy/next (non trivial conflicts due to IPQ9650 changes)
-- Moved fw_managed to phy_config_data
-- I have kept Mani's R-b on this since the patch still has similar
-  changes to v4.
-- Link to v4: https://patch.msgid.link/20261027-phy-qcom-snps-femto-v2-8255-v4-0-874023825a63@kernel.org
+ .../bindings/phy/qcom,sa8255p-usb-hs-phy.yaml      | 52 ++++++++++++++++++++++
+ 1 file changed, 52 insertions(+)
 
-Changes in v4:
-- Don't control regulator, clk and reset in SCMI path (Mani)
-- Rename helper functions to qcom_snps_pds_{enable,disable}_all and
-  qcom_snps_pd_{enable,disable}_transfer (Mani)
-- Add some more helper functions to keep probe() cleaner.
-- Dropped Neil's R-b due to the above driver changes
-- Link to v3: https://lore.kernel.org/r/20261002-phy-qcom-snps-femto-v2-8255-v3-0-342542bd9bc6@kernel.org
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sa8255p-usb-hs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sa8255p-usb-hs-phy.yaml
+new file mode 100644
+index 000000000000..fff474a8345d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,sa8255p-usb-hs-phy.yaml
+@@ -0,0 +1,52 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/qcom,sa8255p-usb-hs-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm SA8255p Synopsys Femto High-Speed USB PHY V2
++
++maintainers:
++  - Mattijs Korpershoek <mkorpershoek@kernel.org>
++
++properties:
++  compatible:
++    const: qcom,sa8255p-usb-hs-phy
++
++  reg:
++    maxItems: 1
++
++  "#phy-cells":
++    const: 0
++
++  power-domains:
++    maxItems: 2
++
++  power-domain-names:
++    items:
++      - const: core
++      - const: transfer
++
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++  - power-domains
++  - power-domain-names
++
++additionalProperties: false
++
++examples:
++  - |
++    soc {
++        #address-cells = <2>;
++        #size-cells = <2>;
++
++        phy@88e4000 {
++            compatible = "qcom,sa8255p-usb-hs-phy";
++            reg = <0x0 0x088e4000 0x0 0x120>;
++            #phy-cells = <0>;
++            power-domains = <&scmi12_pd 1>, <&scmi12_pd 0>;
++            power-domain-names = "core", "transfer";
++        };
++    };
 
-Changes in v3:
-- Applied R-b from Krzysztof and Neil
-- Link to v2: https://patch.msgid.link/20260831-phy-qcom-snps-femto-v2-8255-v2-0-dc6197ffde1b@kernel.org
-
-Changes in v2:
-- Move 'core' as first domain, before 'transfer' (Krzysztof)
-- Reworded binding commit message to be more precise about the various
-  domains ('core', 'transfer' and 'perf') (Krzysztof)
-- Link to v1: https://patch.msgid.link/20260730-phy-qcom-snps-femto-v2-8255-v1-0-8b8bf5105a68@kernel.org
-
-To: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-To: Manivannan Sadhasivam <mani@kernel.org>
-To: Rob Herring <robh@kernel.org>
-To: Krzysztof Kozlowski <krzk+dt@kernel.org>
-To: Conor Dooley <conor+dt@kernel.org>
-To: Mattijs Korpershoek <mkorpershoek@kernel.org>
-To: Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-arm-msm@vger.kernel.org
-Cc: linux-phy@lists.infradead.org
-Cc: devicetree@vger.kernel.org
-Cc: linux-kernel@vger.kernel.org
-
----
-Mattijs Korpershoek (1):
-      dt-bindings: phy: Add sa8255p high-speed USB PHY
-
-Sriram Dash (1):
-      phy: qcom-snps-femto-v2: Add support for SA8255P
-
- .../bindings/phy/qcom,sa8255p-usb-hs-phy.yaml      |  52 ++++
- drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c      | 261 +++++++++++++++++----
- 2 files changed, 270 insertions(+), 43 deletions(-)
----
-base-commit: 6bdfbe223ed4735073c299a6645ebd3faac3f51f
-base-tree: git://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git next
-change-id: 20260729-phy-qcom-snps-femto-v2-8255-90ffe7674001
-
-Best regards,
---  
-Mattijs Korpershoek <mkorpershoek@kernel.org>
+-- 
+2.56.0
 
 
 -- 
