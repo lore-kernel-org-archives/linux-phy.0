@@ -2,70 +2,76 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AD110606A326
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 15:07:29 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5F53E606A83B
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 17:55:10 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=H+CSoSlp;
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=linuxfoundation.org header.i=@linuxfoundation.org header.a=rsa-sha256 header.s=korg header.b=iqxN36ev
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=JcmvjgvD;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=ZGVmGiIs;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=aliel.fr header.i=@aliel.fr header.a=rsa-sha256 header.s=courrier-s1 header.b=vYBXbJye
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=EJJHtdMofpNNysuGrdJWG85YRN5kXAdhdDCzWzhfKNQ=; b=H+CSoSlpFMNEQwmPevoiuXauu7
-	eeq63ZpXoinSalA7SjosL8FYAv1wXlbNwWIhj+Fp5CKhrYSzrMYaDXtG5U3X6Lo5drKJZ2Cvpwc2P
-	ptGmsBmFzY3ksWcSpj3EjNLx6TA1gLLqajbhIO1S0KYlDlGNtWl+nc4af9z0HmM9XooDFyBNwHFap
-	SAWu2nLoBdaXrzuZ/do7fLFq+m4pQKSk8Xa+4/YEPrWwQMiDEbkOOYizfDNBiq/SLtPJGQlpwx/pV
-	TCBhzG1KPYf94K/dlQn29VncxDGTS2ed/EvKV3wI23FgdlgwCGteXQcQa+mDXQQgHVOhNgbQaTA9+
-	cvl6Il0w==;
+	bh=xLSJqYZFj3Kt00a/gRMdP2eO0aPNTYCq7dJHcFYh/to=; b=JcmvjgvDDuRO6DaRRifwxjcvB4
+	PPB90/zsq4RP/jLtn9+L1kJQjZ8N/EkilpAU0ei4sBQYAoSk/qNZKNTnB+JAxqsQ7BT6Ra4S1OMwW
+	CqURNDzrqzu29+8JReWO35YbQGb+6iFsVbAWGjPKEafymNsDSdQ9n0ecu5E7fJdIq7z8ZznRi7UyM
+	uGcL0zS1o5kQBGYZ69eZ6JGVnZZv+bbtyQAYvs/GhBoMakStoNjtEuZylgIsSkVREmCT57EVHh8+O
+	eIazDaQ5825ApV5t4cf+SnLQzgUvnYyWS7bx86NKajjBfwZ1lbld+uWu9jelIsUvRpzQ2mov4TYy8
+	X4HMTs4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUQD3-0000000FMSl-0ooP;
-	Fri, 20 Nov 2026 15:07:29 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xUSpI-0000000Fort-3R3M;
+	Fri, 20 Nov 2026 17:55:09 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUQD0-0000000FMS3-1f7c
-	for linux-phy@lists.infradead.org;
-	Fri, 20 Nov 2026 15:07:28 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6EF8560FA0;
-	Fri, 20 Nov 2026 15:07:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E38B81F000CF;
-	Fri, 20 Nov 2026 15:07:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linuxfoundation.org;
-	s=korg; t=1795187244;
-	bh=apbOSjev7HKZm4LBe6IqAKdUKgP4Z7eK2DCBfu34NMM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=iqxN36evFfI+bIDlZv7napilDVpgOR4zkZpmTtD/6MZoePpmTlv8QTOxj44mVCI0y
-	 yQJDlYU8tlfOcbtSC9N6p5udPIrtHNNtXMkF0JW8aLMRbCLJEW5v3J3IlH8UWibUco
-	 1Qk0GOV6ZNMJMGOG1Jdhu5IlcOhObeWGCbAExlbQ=
-Date: Fri, 20 Nov 2026 16:07:21 +0100
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Joonhoe Kim <26rote@gmail.com>
-Cc: Thinh.Nguyen@synopsys.com, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
-	heikki.krogerus@linux.intel.com, abel.vesa@oss.qualcomm.com,
-	abelvesa@kernel.org, wesley.cheng@oss.qualcomm.com,
-	krishna.kurapati@oss.qualcomm.com, konrad.dybcio@oss.qualcomm.com,
-	dmitry.baryshkov@oss.qualcomm.com, neil.armstrong@linaro.org,
-	val@packett.cool, balaji.kalkonda@oss.qualcomm.com,
-	tvlad744@gmail.com, effeffe99@gmail.com,
-	prashanth.k@oss.qualcomm.com, yongxing.mou@oss.qualcomm.com,
-	peter.chen@oss.qualcomm.com, tapas.rana@oss.qualcomm.com,
-	vkoul@kernel.org, linux-phy@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 2/2] usb: dwc3: qcom: Use the UTMI clock as PIPE clock
- in DisplayPort-only modes
-Message-ID: <2026112017-flyover-grape-cee7@gregkh>
-References: <20261119124558.1548-1-26rote@gmail.com>
- <20261119124558.1548-3-26rote@gmail.com>
+	id 1xUSnp-0000000Fniy-2Zp6;
+	Fri, 20 Nov 2026 17:53:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:References:Cc:To:Subject:From:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=kjTn6xldicO6RCtt89/zeFZNDZh8oCX8apMB4+cXgjk=; b=ZGVmGiIsi1MOUQsWUJe/MAqCCX
+	Riit6LEgycvyRqDZEK0DoBiYPJa8ZPx1zyVqhIiTcEH/doRg3/YcsDyYomD+Y1ftgJMN5RX/aQrPv
+	ROGmA/hAVXbismUIRYy76C6Lq90G3nBjuYA9ffwhs7917eBzjqL3Ta/1FiVHwWel92bSyxNcmgiE/
+	kLpPul+A4HY4TGGPzFLVXe5WmY0K1vSLsmAxREx8XtWPv+EzCRdlYxecAwS5o6qlQk1QjMCMgV2Oh
+	YPPbgiK8kBHk099Riq6fTrmjYpH4pjwE3cPH1bb0C5R4ds4PQ3zgx/wYKaI4AoS/7gS60xsfHRtqH
+	P5yEZxhw==;
+Received: from courrier.aliel.fr ([2a01:4f9:c011:1c83::1])
+	by desiato.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
+	id 1xUSnm-000000012DX-2ye8;
+	Fri, 20 Nov 2026 17:53:36 +0000
+Message-ID: <ef1b7465-9639-4d11-9b10-4b0c9da21bd5@aliel.fr>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=aliel.fr;
+	s=courrier-s1; t=1795197201;
+	bh=V8tpS6gdtCA8ZbK1QEzTWT9dOlqALvACzeGN4IBIn60=;
+	h=Date:From:Subject:To:Cc:References:In-Reply-To;
+	b=vYBXbJyeFCDtVKTZkks5hS0kKXgmajx0a9aGeWOoL6LRhNYO0O1MO2QARIZQDEbki
+	 ezb0rth3CwzPZpsK6kXyuX92iK0FDNFUbi2O3bjhrJgqn4rOtuRJaiEuf4sQG3B6Sm
+	 eZmcENqezW7RZGDTK3ggXRmbK6y/wimX1gYVvpM8=
+Date: Fri, 20 Nov 2026 18:52:50 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261119124558.1548-3-26rote@gmail.com>
+User-Agent: Mozilla Thunderbird
+From: Ronald Claveau <linux-kernel-dev@aliel.fr>
+Subject: Re: [PATCH 07/10] drm/meson: dw-hdmi: Use the generic PHY framework
+ for the HDMI TX PHY
+To: sashiko-reviews@lists.linux.dev
+Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ robh@kernel.org, conor+dt@kernel.org, neil.armstrong@linaro.org,
+ vkoul@kernel.org, olteanv@gmail.com
+References: <20261117-meson-drm-create-hdmitx-phy-v1-0-9e0ac931381c@aliel.fr>
+ <20261117-meson-drm-create-hdmitx-phy-v1-7-9e0ac931381c@aliel.fr>
+ <sashiko-outbox-219549@kernel.org>
+Content-Language: en-US
+In-Reply-To: <sashiko-outbox-219549@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261120_175334_739093_3F26ABC0 
+X-CRM114-Status: GOOD (  19.39  )
+X-Spam-Score: -0.2 (/)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,221 +84,115 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Thu, Nov 19, 2026 at 09:45:58PM +0900, Joonhoe Kim wrote:
-> With DisplayPort pin assignment C or E the QMP USB3-DP combo PHY gives
-> all four lanes to DisplayPort and powers its USB PCS down. The
-> controller can still run USB 2.0, e.g. for the hub of a USB-C monitor.
-> Keeping the pipe clock branch enabled, as commit f546912bcac6 ("phy:
-> qcom: qmp-combo: Move pipe_clk on/off to common") does, is not enough on
-> Kaanapali. The next xHCI reset in this mode times out ("Host halt
-> failed, -110"), and USB stops working until the cable is replugged.
+On 11/17/26 21:03, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 3 potential
+> issues to consider:
+> - [High] drm/meson: dw-hdmi: suspend/resume order breaks PHY state and
+>   HDMI output
+> - [Medium] drm/meson: dw-hdmi: missing phy_exit() on dw_hdmi_probe()
+>   failure
+> - [Medium] drm/meson: dw-hdmi: premature PHY teardown in
+>   meson_dw_hdmi_unbind()
+> --
 > 
-> Register the glue as a Type-C mode switch when the node has the
-> "mode-switch" property. Select the UTMI clock as PIPE clock in DP-only
-> modes, as "qcom,select-utmi-as-pipe-clk" does statically.
-> typec_mux_set() calls the switches in the order of the connector's
-> ports. Port 0 (HS, the controller) comes before port 1 (SS, the PHY).
-> So the controller switches before the PHY powers its USB side down.
+> commit 91e31ad4e0b36171e791e7c0487c9a4c66b12b31
+> Author: Ronald Claveau <linux-kernel-dev@aliel.fr>
 > 
-> The safe and USB states can come with the DisplayPort altmode, so only
-> the modal states with the DisplayPort SVID count as DisplayPort. Pin
-> assignment C or E always selects the UTMI clock. Go back to the PIPE
-> clock when a USB state follows the safe state. A change from C/E to
-> D/F while DisplayPort is active keeps the UTMI clock: the PHY may keep
-> DP-only mode then, and the UTMI clock still runs USB 2.0 if it does
-> not.
+> drm/meson: dw-hdmi: Use the generic PHY framework for the HDMI TX PHY
 > 
-> Read the selected clock back from QSCRATCH, as on some SoCs it loses
-> its contents in system suspend.
+> This commit converts meson_dw_hdmi from direct HHI_HDMI_PHY_CNTL0..5
+> register writes to the generic PHY API, with a legacy fallback when the
+> device tree lacks a "phys" property.
 > 
-> The mux callback does not resume the glue. From the start of a
-> runtime or system suspend until the core has resumed, the callback only
-> records the state. The resume paths apply it before the core resumes,
-> and again once the core has resumed or when the suspend fails.
+>> diff --git a/drivers/gpu/drm/meson/meson_dw_hdmi.c b/drivers/gpu/drm/meson/meson_dw_hdmi.c
+>> index 20a821936b3af..f28cc1e6ee1df 100644
+>> --- a/drivers/gpu/drm/meson/meson_dw_hdmi.c
+>> +++ b/drivers/gpu/drm/meson/meson_dw_hdmi.c
 > 
-> The mux needs the Type-C class, so depend on TYPEC || TYPEC=n as
-> PHY_QCOM_QMP_COMBO does, and do not register the mux without it. With
-> the arm64 defconfig (TYPEC=m) this builds the glue, including
-> dwc3-qcom-legacy, as a module.
 > 
-> Signed-off-by: Joonhoe Kim <26rote@gmail.com>
-> ---
-> v4:
-> - mutex_lock()/mutex_unlock() where nothing returns early (Krzysztof)
-> - Leave the probe code as it was apart from the new argument (Krzysztof)
-> v3:
-> - Rebase on Filippo Falezza's "usb: dwc3: qcom: Restore UTMI PIPE clock
->   on resume" and use its utmi_as_pipe_clk
-> - Compare with the clock selected in QSCRATCH, not a cached value
-> - Check the safe state before the altmode: the safe and USB states can
->   come with the DisplayPort altmode (Sashiko)
-> - Always select the UTMI clock for pin assignment C or E (Sashiko)
-> - Do not resume the glue from the mux callback. From the start of a
->   runtime or system suspend until the core has resumed, only record the
->   state; apply it before and after the core resumes, and when the
->   suspend fails (Sashiko)
-> - Leave the clock select alone on nodes without a mux
-> - Only record the state once remove has started
-> v2:
-> - Switch back to the PIPE clock from the mux callback, not on a role
->   change (Sashiko)
-> - Keep dp_only while DisplayPort is active, as the PHY keeps its mode
-> - Defer the clock switch to resume while suspended for system sleep
-> - Depend on TYPEC || TYPEC=n, skip the mux without CONFIG_TYPEC (Sashiko)
+> [Severity: Medium]
+> Does meson_dw_hdmi_bind() leak a phy_init() reference if dw_hdmi_probe()
+> fails later in this function (for example with -EPROBE_DEFER when the DDC
+> I2C bus is not ready)?
 > 
->  drivers/usb/dwc3/Kconfig     |   1 +
->  drivers/usb/dwc3/dwc3-qcom.c | 150 ++++++++++++++++++++++++++++++++---
->  2 files changed, 138 insertions(+), 13 deletions(-)
+> When the PHY comes from the external PHY provider, devres cleanup on a
+> failed component bind only calls phy_put(), leaving phy->init_count at 1.
+> On the next bind attempt, meson_dw_hdmi_init() resets hdmitx_phy and calls
+> phy_init(), which sees init_count > 0 and skips phy->ops->init(), leaving
+> HHI_HDMI_PHY_CNTL0 and HHI_HDMI_PHY_CNTL1 uninitialized after the hardware
+> reset.
 > 
-> diff --git a/drivers/usb/dwc3/Kconfig b/drivers/usb/dwc3/Kconfig
-> index 18169727a..282f366de 100644
-> --- a/drivers/usb/dwc3/Kconfig
-> +++ b/drivers/usb/dwc3/Kconfig
-> @@ -132,6 +132,7 @@ config USB_DWC3_QCOM
->  	depends on ARCH_QCOM || COMPILE_TEST
->  	depends on EXTCON || !EXTCON
->  	depends on OF
-> +	depends on TYPEC || TYPEC=n
->  	default USB_DWC3
->  	help
->  	  Some Qualcomm SoCs use DesignWare Core IP for USB2/3
-> diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
-> index f4ce035d4..d80c7ee39 100644
-> --- a/drivers/usb/dwc3/dwc3-qcom.c
-> +++ b/drivers/usb/dwc3/dwc3-qcom.c
-> @@ -19,6 +19,9 @@
->  #include <linux/iopoll.h>
->  #include <linux/usb/hcd.h>
->  #include <linux/usb.h>
-> +#include <linux/usb/typec_altmode.h>
-> +#include <linux/usb/typec_dp.h>
-> +#include <linux/usb/typec_mux.h>
->  #include "core.h"
->  #include "glue.h"
->  
-> @@ -82,6 +85,13 @@ struct dwc3_qcom {
->  	bool			is_suspended;
->  	bool			pm_suspended;
->  	bool			utmi_as_pipe_clk;
-> +	bool			dp_active;
-> +	bool			dp_only;
-> +	bool			mux_deferred;
-> +	bool			mode_switch;
-> +	/* protects dp_active, dp_only and mux_deferred */
-> +	struct mutex		pipe_clk_lock;
-> +	struct typec_mux_dev	*mux;
->  	struct icc_path		*icc_path_ddr;
->  	struct icc_path		*icc_path_apps;
->  
-> @@ -336,16 +346,19 @@ static void dwc3_qcom_enable_interrupts(struct dwc3_qcom *qcom)
->  		dwc3_qcom_enable_port_interrupts(&qcom->ports[i]);
->  }
->  
-> -static void dwc3_qcom_select_utmi_clk(struct dwc3_qcom *qcom)
-> +static void dwc3_qcom_select_utmi_clk(struct dwc3_qcom *qcom, bool utmi)
 
-What does that bool mean?  That's going to be a pain, please make this 2
-functions so you know what is happening when you call it.
+I will move revert this change.
 
+> [Severity: Medium]
+> Can tearing down meson_dw_hdmi->phy before devm_free_irq() and
+> dw_hdmi_unbind() cause a use-after-free in dw_hdmi_top_thread_irq()?
+> 
+> CPU0                                    CPU1
+> meson_dw_hdmi_unbind()
+>   phy_exit(meson_dw_hdmi->phy)
+>   devm_phy_destroy(..., meson_dw_hdmi->phy)
+>                                         dw_hdmi_top_thread_irq()
+>                                           dw_hdmi_setup_rx_sense()
+>                                             ...
+>                                               dw_hdmi_phy_init()
+>                                                 phy_configure(dw_hdmi->phy, ...)
+>                                                   <-- use-after-free
+>   devm_free_irq(...)
+>   dw_hdmi_unbind(...)
+> 
+> In the legacy PHY path, devm_phy_destroy() immediately unregisters and
+> frees meson_dw_hdmi->phy while the threaded HPD interrupt handler is still
+> active and can invoke dw_hdmi_phy_init() or dw_hdmi_phy_disable().  Even
+> with a DT PHY, HPD handling or dw_hdmi_unbind() can access the PHY after
+> phy_exit().  Should phy_exit() and devm_phy_destroy() run after
+> devm_free_irq() and dw_hdmi_unbind()?
+> 
 
->  {
-> -	/* Configure dwc3 to use UTMI clock as PIPE clock not present */
->  	dwc3_qcom_setbits(qcom->qscratch_base, QSCRATCH_GENERAL_CFG,
->  			  PIPE_UTMI_CLK_DIS);
->  
->  	usleep_range(100, 1000);
->  
-> -	dwc3_qcom_setbits(qcom->qscratch_base, QSCRATCH_GENERAL_CFG,
-> -			  PIPE_UTMI_CLK_SEL | PIPE3_PHYSTATUS_SW);
-> +	if (utmi)
-> +		dwc3_qcom_setbits(qcom->qscratch_base, QSCRATCH_GENERAL_CFG,
-> +				  PIPE_UTMI_CLK_SEL | PIPE3_PHYSTATUS_SW);
-> +	else
-> +		dwc3_qcom_clrbits(qcom->qscratch_base, QSCRATCH_GENERAL_CFG,
-> +				  PIPE_UTMI_CLK_SEL | PIPE3_PHYSTATUS_SW);
->  
->  	usleep_range(100, 1000);
->  
-> @@ -353,6 +366,39 @@ static void dwc3_qcom_select_utmi_clk(struct dwc3_qcom *qcom)
->  			  PIPE_UTMI_CLK_DIS);
->  }
->  
-> +static bool dwc3_qcom_utmi_clk_selected(struct dwc3_qcom *qcom)
-> +{
-> +	return readl(qcom->qscratch_base + QSCRATCH_GENERAL_CFG) &
-> +	       PIPE_UTMI_CLK_SEL;
-> +}
-> +
-> +static void dwc3_qcom_update_pipe_clk(struct dwc3_qcom *qcom)
-> +{
-> +	lockdep_assert_held(&qcom->pipe_clk_lock);
-> +
-> +	if (qcom->mode_switch && !qcom->utmi_as_pipe_clk &&
-> +	    qcom->dp_only != dwc3_qcom_utmi_clk_selected(qcom))
-> +		dwc3_qcom_select_utmi_clk(qcom, qcom->dp_only);
-> +}
-> +
-> +static void dwc3_qcom_defer_mux(struct dwc3_qcom *qcom)
-> +{
-> +	mutex_lock(&qcom->pipe_clk_lock);
-> +	qcom->mux_deferred = true;
-> +	mutex_unlock(&qcom->pipe_clk_lock);
-> +}
-> +
-> +static void dwc3_qcom_undefer_mux(struct dwc3_qcom *qcom)
-> +{
-> +	guard(mutex)(&qcom->pipe_clk_lock);
-> +
-> +	if (qcom->is_suspended)
-> +		return;
-> +
-> +	qcom->mux_deferred = false;
-> +	dwc3_qcom_update_pipe_clk(qcom);
-> +}
-> +
->  static int dwc3_qcom_suspend(struct dwc3_qcom *qcom, bool wakeup)
->  {
->  	u32 val;
-> @@ -413,7 +459,11 @@ static int dwc3_qcom_resume(struct dwc3_qcom *qcom, bool wakeup)
->  	 * clock ("failed to enable ep0out").
->  	 */
->  	if (qcom->utmi_as_pipe_clk)
-> -		dwc3_qcom_select_utmi_clk(qcom);
-> +		dwc3_qcom_select_utmi_clk(qcom, true);
-> +
-> +	mutex_lock(&qcom->pipe_clk_lock);
+I will move the phy_destroy after unbind, phy_exit will be on
+phy_disable only.
 
-Why no guard() use here?
+> [Severity: High]
+> Does calling phy_exit() in meson_dw_hdmi_pm_suspend() and phy_init() in
+> meson_dw_hdmi_pm_resume() break HDMI output across system suspend/resume?
+> 
+> Because the HDMI TX platform device sits after the VPU master device on
+> dpm_list (both from DT node order and because devm_phy_optional_get() adds
+> a stateless device link to the PHY that reorders the consumer to the tail
+> of dpm_list), system suspend runs meson_dw_hdmi_pm_suspend() before
+> meson_drv_pm_suspend(), and system resume runs meson_drv_pm_resume()
+> before meson_dw_hdmi_pm_resume().
+> 
+> On suspend, meson_dw_hdmi_pm_suspend() calls phy_exit() while the PHY is
+> still powered on, before meson_drv_pm_suspend() ->
+> drm_mode_config_helper_suspend() -> dw_hdmi_phy_disable() calls
+> phy_power_off().
+> 
+> On resume, meson_drv_pm_resume() -> drm_mode_config_helper_resume() ->
+> dw_hdmi_phy_init() calls phy_configure() and phy_power_on() while
+> phy->init_count is still 0.  Then meson_dw_hdmi_pm_resume() runs
+> meson_dw_hdmi_init(), which resets hdmitx_phy and calls phy_init(); since
+> phy->power_count > phy->init_count, phy_init() warns ("phy_power_on was
+> called before phy_init") and runs meson_hdmi_phy_init(), overwriting
+> HHI_HDMI_PHY_CNTL0 and HHI_HDMI_PHY_CNTL1 with cntl0_init and cntl1_init
+> and clobbering the mode that meson_drv_pm_resume() just configured and
+> powered on.
+> 
 
+I will put phy_init in dw_hdmi_phy_init and phy_exit in
+dw_hdmi_phy_disable for v2.
 
-
-> +	dwc3_qcom_update_pipe_clk(qcom);
-> +	mutex_unlock(&qcom->pipe_clk_lock);
->  
->  	/* Clear existing events from PHY related to L2 in/out */
->  	for (i = 0; i < qcom->num_ports; i++) {
-> @@ -446,6 +496,54 @@ static irqreturn_t qcom_dwc3_resume_irq(int irq, void *data)
->  	return IRQ_HANDLED;
->  }
->  
-> +static int dwc3_qcom_mux_set(struct typec_mux_dev *mux,
-> +			     struct typec_mux_state *state)
-> +{
-> +	struct dwc3_qcom *qcom = typec_mux_get_drvdata(mux);
-> +	bool dp = state->mode >= TYPEC_STATE_MODAL && state->alt &&
-> +		  state->alt->svid == USB_TYPEC_DP_SID;
-> +
-> +	mutex_lock(&qcom->pipe_clk_lock);
-
-guard()?
-
+-- 
+Best regards,
+Ronald
 
 -- 
 linux-phy mailing list
