@@ -2,80 +2,57 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 67E2C6074CDB
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 13:56:27 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 422DD606A320
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Nov 2026 14:11:29 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3H3pAbB0;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=lE1EI0BX
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qmOCoGQz;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=K2eZstRp
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
+	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=wQrQgVLvm+BPaIPHHqcO9LVMGd+PUur3GKUUIjVkClc=; b=3H3pAbB0EiQxEdbrSAHS6jSKnp
-	UL0+sSgiaNVjX11G2x4S7QohIfKwPaJ2eiwIwx5hMYH9FOxr9lpJRkdidZTL1b/9zxuYY0vRltVlj
-	wNRebKETQ45moCTPnyzRuI2iM2zaoNPijR64OZhqNpmIzEwR1sgcpk4PASPSx9hMQOXbVSDoZmZAE
-	F+KDvch6oMLFInRtbjng4Vrl1CgDFBEsho7+neLjfZLmEdjeGa5h+DbGqQSCI+t0t4alsvxK1r96V
-	3+E/UD7H2/LQMqmPMBeu3vB7WT0jc5PjLmvx7RHjtprVULkY/M6LLzc/HJ9FiSPSl3TbZL+SGfkcr
-	gp/IOz1g==;
+	bh=Vl67rQFkM0Q/88AL01B3rgr16luINGJXJzELlXcjOKw=; b=qmOCoGQz/79DaHFJbwXZsmZIDn
+	eUMe19JKjjQsMLOwNnc/1SbM36lsXbjS6a6lo6ybKbE5CxXIp4D+2KndeDBRGZYAdh93IxJ3N4f4+
+	01/RhuGqHHO/oHnt4v8FDpqtjcDvZj2GqLq5mzaoYUIUF5kXXX3l2H9daGpE+yjTnVT3QMSsGZGND
+	W2vxEeHNvviqL0iDJZ32XL2lY4thVRVacl7m90OXBk6fTPj+WNfa5CAD1kADD15UmDRzn6rcpWd2u
+	wE/jZRo+As2jFHOnp7ymLGTCtIqjvX8NQ4qOFowpuqpH2skysBPJmcgjfiG6YDLh7lscFzpdyWsXe
+	pd/TmAVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUP6J-0000000FC5z-0Ngs;
-	Fri, 20 Nov 2026 13:56:27 +0000
+	id 1xUPKq-0000000FDia-2sLR;
+	Fri, 20 Nov 2026 14:11:28 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUP6H-0000000FC5W-1uiQ
+	id 1xUPKn-0000000FDiT-1dsZ
 	for linux-phy@lists.infradead.org;
-	Fri, 20 Nov 2026 13:56:25 +0000
+	Fri, 20 Nov 2026 14:11:27 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 37DA74037D;
-	Fri, 20 Nov 2026 13:56:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9262F1F000F2;
-	Fri, 20 Nov 2026 13:56:24 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 2ABF444D1C;
+	Fri, 20 Nov 2026 14:11:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 98F9E1F000C6;
+	Fri, 20 Nov 2026 14:11:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795182985;
-	bh=HUEP/0p+9k5IE/mviHMNkQgH46AfBL65dKNI7uo5/oQ=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc;
-	b=lE1EI0BXSyTZnzToAMJboTUb5O7YClbWtSgCkNpka4euf1b6LwFPB/c3bBpEP04xN
-	 FZWbqO8BVMarjEUNneD5BXCgut0jAvz1KM/ZwrFgWTz5kYmjz2difkFEy+52rHHF+9
-	 XcUrZ1sXiK6OYodAmQNbXnMF5KTdrhsydgLH3zphlHPVm21CY4vVK1XKkhYN6BKUhh
-	 mlTYeasdCSdW1Zgiiti6EQL/j3yPlvljtrNxbHVnnB9NETaTrMyHbFKS/WCH9Ew33Q
-	 YVBjcfzc+SBk9HKPgAoBDFRp+RoAfw3d1kvmEa3nkJRt3gAqEeFoPmNrFXJHMLCWAN
-	 HWSVVpBrg5WRQ==
-From: Mattijs Korpershoek <mkorpershoek@kernel.org>
-Date: Fri, 20 Nov 2026 14:56:05 +0100
-Subject: [PATCH v5 2/2] phy: qcom-snps-femto-v2: Add support for SA8255P
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Message-Id: <20261120-phy-qcom-snps-femto-v2-8255-v5-2-86a9880ee5a5@kernel.org>
+	s=k20260515; t=1795183885;
+	bh=3gYBs56kAsjtxUacV4LsaH3IHliGuGIJRJqS+UjidRI=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=K2eZstRpQxawxs3eLNh1w+9mlYgTvSwUpsF2YQuBZLRro3aOvWjQzLaYGnLb7IeNd
+	 xM/K/gQIPQhDvMOLX8602W3VNuayLkTnU3rKwWYeqzgh6ortcT/Q8ZjrtgEPKQDsf+
+	 gJNP8AVVONjJcSFNFnABjsBPuyipBiBfTpgAFUKRyRC1oSlQGZXEkxH1OvIogFUO4d
+	 9QNsXq6e+3tLJ1l7iKZ3+kwv9dDFhL+NfmO7GLfH4Yh0lsKzLzEgpCFCbhjxfZrQuw
+	 EFWoQ9EW4F+wd8zCUm+gFWME9fWtJdnsKroHalmlp8jAn2XBPkHbx5OYE6Jk++MDLv
+	 7uJCGW4GyEWzA==
+Message-ID: <sashiko-outbox-225334@kernel.org>
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v5 2/2] phy: qcom-snps-femto-v2: Add support for SA8255P
+To: "Mattijs Korpershoek" <mkorpershoek@kernel.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20261120-phy-qcom-snps-femto-v2-8255-v5-2-86a9880ee5a5@kernel.org>
 References: <20261120-phy-qcom-snps-femto-v2-8255-v5-0-86a9880ee5a5@kernel.org>
-In-Reply-To: <20261120-phy-qcom-snps-femto-v2-8255-v5-0-86a9880ee5a5@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Mattijs Korpershoek <mkorpershoek@kernel.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Sriram Dash <quic_sriramd@quicinc.com>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
-X-Mailer: b4 0.17-dev
-X-Developer-Signature: v=1; a=openpgp-sha256; l=12814;
- i=mkorpershoek@kernel.org; h=from:subject:message-id;
- bh=aV7O6WqGjf5Up9T8u/+eDnNlJDjw4OhjXzDba3DIo3Q=;
- b=owEBbQGS/pANAwAKARkNHbRmThk1AcsmYgBrAFGAUzryare53zk/q1itRwX14vRvAEd1eoy6l
- 21EuWuoF6qJATMEAAEKAB0WIQQu6UKnth9qvlMTrQAZDR20Zk4ZNQUCawBRgAAKCRAZDR20Zk4Z
- NcFJB/9qMS6aoSeS1vvFhBMybBSPV+fmfa/nMx+0akjwUlLy9goHByKBiqSJWanmBzN86i5lgKl
- EjmrjEj6UU0oYDga30aQLSVzSK9zbsQzRQIwtEFABLDhoC8kLE4MdI+wxIFo42sVqeUnio5UDkf
- W1eFPgT9if1o6uu1+75nOsf1K57iXoRF2zwGPPixxOufKGG+c388KsC8l9cZDo7cWD6CbePdUqv
- nxJO5BLsS0drJkFMtekDpktaS1S6rQlzVl0wygcoKu9461FYJGeDXqp2Xl/UKpJKLCVYyLEwwJV
- iT4qEP52YcNqIByz/hEeYCb+IPtdt5IjhlZBKrwluCQQ9Tox
-X-Developer-Key: i=mkorpershoek@kernel.org; a=openpgp;
- fpr=8234A35B45C0D26B31C1A2DA570338B018144F28
+ <20261120-phy-qcom-snps-femto-v2-8255-v5-2-86a9880ee5a5@kernel.org>
+Date: Fri, 20 Nov 2026 14:11:24 +0000
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,440 +62,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Sriram Dash <quic_sriramd@quicinc.com>
-
-SA8255p platform abstracts resources such as resets, clocks and
-regulators in firmware. The SCMI firmware exposes multiple protocols to
-control such resources which are identified by protocol_id.
-
-For this USB phy, 2 SCMI protocols are exposed by the firmware:
-* power domain management protocol (protocol_id=0x11)
-* performance domain management protocol (protocol_id=0x13)
-
-The power domain has 2 indices: 'core' and 'transfer'.
-* core controls the regulators, the clocks and the reset
-* transfer only controls the clocks
-
-For example, to power on/off the PHY, we should use the 'core' domain.
-To disable data transfer and keeping power enabled, we should use the
-'transfer' domain.
-
-Add support for the SCMI firmware-managed variant in the driver.
-
-Note: the performance domain (0x13) exposes opaques values (0xa to 0x11)
-for which we don't have any information. Since it is not mandatory
-for the PHY to be functional, we have ommited it from the driver.
-
-Signed-off-by: Sriram Dash <quic_sriramd@quicinc.com>
-Co-developed-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
-Signed-off-by: Mattijs Korpershoek <mkorpershoek@kernel.org>
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
----
- drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 261 +++++++++++++++++++++-----
- 1 file changed, 218 insertions(+), 43 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-index 0dae8369671a..0ec34bc5c26e 100644
---- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-+++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-@@ -13,6 +13,7 @@
- #include <linux/of.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/pm_domain.h>
- #include <linux/regmap.h>
- #include <linux/regulator/consumer.h>
- #include <linux/reset.h>
-@@ -130,6 +131,7 @@ struct phy_config_data {
- 	const struct phy_reg_config *post_tuning;
- 	const u32 num_pre_tuning;
- 	const u32 num_post_tuning;
-+	bool fw_managed;
- };
- 
- #define NUM_HSPHY_TUNING_PARAMS	(9)
-@@ -149,6 +151,7 @@ struct phy_config_data {
-  * @phy_initialized: if PHY has been initialized correctly
-  * @mode: contains the current mode the PHY is in
-  * @update_seq_cfg: tuning parameters for phy init
-+ * @pd_list: list of power domains associated with the device
-  */
- struct qcom_snps_hsphy {
- 	struct device *dev;
-@@ -164,8 +167,82 @@ struct qcom_snps_hsphy {
- 	bool phy_initialized;
- 	enum phy_mode mode;
- 	struct phy_override_seq update_seq_cfg[NUM_HSPHY_TUNING_PARAMS];
-+
-+	struct dev_pm_domain_list *pd_list;
- };
- 
-+static void qcom_snps_domain_detach(void *data)
-+{
-+	struct qcom_snps_hsphy *hsphy = data;
-+
-+	dev_pm_domain_detach_list(hsphy->pd_list);
-+}
-+
-+static int qcom_snps_domain_attach(struct qcom_snps_hsphy *hsphy)
-+{
-+	struct dev_pm_domain_attach_data pd_data = {
-+		.pd_flags       = PD_FLAG_NO_DEV_LINK,
-+		.pd_names       = (const char*[]) { "core", "transfer" },
-+		.num_pd_names   = 2,
-+	};
-+	struct device *dev = hsphy->dev;
-+	int ret;
-+
-+	ret = dev_pm_domain_attach_list(dev, &pd_data, &hsphy->pd_list);
-+	if (ret < 0)
-+		return dev_err_probe(dev, ret, "domain attach failed\n");
-+
-+	return 0;
-+}
-+
-+static bool qcom_snps_is_fw_managed(struct qcom_snps_hsphy *hsphy)
-+{
-+	return hsphy->pd_list != NULL;
-+}
-+
-+static int qcom_snps_pds_enable_all(struct qcom_snps_hsphy *hsphy)
-+{
-+	int ret;
-+
-+	if (!qcom_snps_is_fw_managed(hsphy))
-+		return 0;
-+
-+	ret = pm_runtime_resume_and_get(hsphy->pd_list->pd_devs[0]);
-+	if (ret)
-+		return ret;
-+
-+	ret = pm_runtime_resume_and_get(hsphy->pd_list->pd_devs[1]);
-+	if (ret)
-+		pm_runtime_put_sync(hsphy->pd_list->pd_devs[0]);
-+
-+	return ret;
-+}
-+
-+static void qcom_snps_pds_disable_all(struct qcom_snps_hsphy *hsphy)
-+{
-+	if (!qcom_snps_is_fw_managed(hsphy))
-+		return;
-+
-+	pm_runtime_put_sync(hsphy->pd_list->pd_devs[1]);
-+	pm_runtime_put_sync(hsphy->pd_list->pd_devs[0]);
-+}
-+
-+static int qcom_snps_pd_enable_transfer(struct qcom_snps_hsphy *hsphy)
-+{
-+	if (!qcom_snps_is_fw_managed(hsphy))
-+		return 0;
-+
-+	return pm_runtime_resume_and_get(hsphy->pd_list->pd_devs[1]);
-+}
-+
-+static void qcom_snps_pd_disable_transfer(struct qcom_snps_hsphy *hsphy)
-+{
-+	if (!qcom_snps_is_fw_managed(hsphy))
-+		return;
-+
-+	pm_runtime_put_sync(hsphy->pd_list->pd_devs[1]);
-+}
-+
- static int qcom_snps_hsphy_clk_init(struct qcom_snps_hsphy *hsphy)
- {
- 	struct device *dev = hsphy->dev;
-@@ -224,6 +301,8 @@ static int qcom_snps_hsphy_suspend(struct qcom_snps_hsphy *hsphy)
- 					   USB2_AUTO_RESUME, 0);
- 	}
- 
-+	qcom_snps_pd_disable_transfer(hsphy);
-+
- 	return 0;
- }
- 
-@@ -231,7 +310,7 @@ static int qcom_snps_hsphy_resume(struct qcom_snps_hsphy *hsphy)
- {
- 	dev_dbg(&hsphy->phy->dev, "Resume QCOM SNPS PHY, mode\n");
- 
--	return 0;
-+	return qcom_snps_pd_enable_transfer(hsphy);
- }
- 
- static int __maybe_unused qcom_snps_hsphy_runtime_suspend(struct device *dev)
-@@ -469,18 +548,45 @@ static const struct phy_reg_config hs_6nm_phy_post_tuning[] = {
- 	{ USB2_PHY_USB_PHY_CFG0, UTMI_PHY_CMN_CTRL_OVERRIDE_EN, 0 },
- };
- 
--static int qcom_snps_hsphy_init(struct phy *phy)
-+static int qcom_snps_hsphy_configure(struct qcom_snps_hsphy *hsphy)
- {
--	struct qcom_snps_hsphy *hsphy = phy_get_drvdata(phy);
- 	const struct phy_config_data *data;
--	int ret, i;
--
--	dev_vdbg(&phy->dev, "%s(): Initializing SNPS HS phy\n", __func__);
-+	int i;
- 
- 	data = of_device_get_match_data(hsphy->dev);
- 	if (!data)
- 		return -ENODEV;
- 
-+	for (i = 0; i < data->num_pre_tuning; i++)
-+		qcom_snps_hsphy_write_mask(hsphy->base,
-+					   data->pre_tuning[i].offset,
-+					   data->pre_tuning[i].mask,
-+					   data->pre_tuning[i].val);
-+
-+	for (i = 0; i < ARRAY_SIZE(hsphy->update_seq_cfg); i++) {
-+		if (hsphy->update_seq_cfg[i].need_update)
-+			qcom_snps_hsphy_write_mask(hsphy->base,
-+					hsphy->update_seq_cfg[i].offset,
-+					hsphy->update_seq_cfg[i].mask,
-+					hsphy->update_seq_cfg[i].value);
-+	}
-+
-+	for (i = 0; i < data->num_post_tuning; i++)
-+		qcom_snps_hsphy_write_mask(hsphy->base,
-+					   data->post_tuning[i].offset,
-+					   data->post_tuning[i].mask,
-+					   data->post_tuning[i].val);
-+
-+	return 0;
-+}
-+
-+static int qcom_snps_hsphy_init(struct phy *phy)
-+{
-+	struct qcom_snps_hsphy *hsphy = phy_get_drvdata(phy);
-+	int ret;
-+
-+	dev_vdbg(&phy->dev, "%s(): Initializing SNPS HS phy\n", __func__);
-+
- 	ret = regulator_bulk_enable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
- 	if (ret)
- 		return ret;
-@@ -505,30 +611,18 @@ static int qcom_snps_hsphy_init(struct phy *phy)
- 		goto disable_clks;
- 	}
- 
--	for (i = 0; i < data->num_pre_tuning; i++)
--		qcom_snps_hsphy_write_mask(hsphy->base,
--					   data->pre_tuning[i].offset,
--					   data->pre_tuning[i].mask,
--					   data->pre_tuning[i].val);
--
--	for (i = 0; i < ARRAY_SIZE(hsphy->update_seq_cfg); i++) {
--		if (hsphy->update_seq_cfg[i].need_update)
--			qcom_snps_hsphy_write_mask(hsphy->base,
--					hsphy->update_seq_cfg[i].offset,
--					hsphy->update_seq_cfg[i].mask,
--					hsphy->update_seq_cfg[i].value);
-+	ret = qcom_snps_hsphy_configure(hsphy);
-+	if (ret) {
-+		dev_err(&phy->dev, "failed to configure phy, %d\n", ret);
-+		goto assert_reset;
- 	}
- 
--	for (i = 0; i < data->num_post_tuning; i++)
--		qcom_snps_hsphy_write_mask(hsphy->base,
--					   data->post_tuning[i].offset,
--					   data->post_tuning[i].mask,
--					   data->post_tuning[i].val);
--
- 	hsphy->phy_initialized = true;
- 
- 	return 0;
- 
-+assert_reset:
-+	reset_control_assert(hsphy->phy_reset);
- disable_clks:
- 	clk_bulk_disable_unprepare(hsphy->num_clks, hsphy->clks);
- poweroff_phy:
-@@ -556,6 +650,46 @@ static const struct phy_ops qcom_snps_hsphy_gen_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
-+static int qcom_snps_hsphy_fw_managed_init(struct phy *phy)
-+{
-+	struct qcom_snps_hsphy *hsphy = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = qcom_snps_pds_enable_all(hsphy);
-+	if (ret) {
-+		dev_err(&phy->dev, "failed to enable pds, %d\n", ret);
-+		return ret;
-+	}
-+
-+	ret = qcom_snps_hsphy_configure(hsphy);
-+	if (ret) {
-+		dev_err(&phy->dev, "failed to configure phy, %d\n", ret);
-+		qcom_snps_pds_disable_all(hsphy);
-+		return ret;
-+	}
-+
-+	hsphy->phy_initialized = true;
-+
-+	return 0;
-+}
-+
-+static int qcom_snps_hsphy_fw_managed_exit(struct phy *phy)
-+{
-+	struct qcom_snps_hsphy *hsphy = phy_get_drvdata(phy);
-+
-+	qcom_snps_pds_disable_all(hsphy);
-+	hsphy->phy_initialized = false;
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops qcom_snps_hsphy_fw_managed_ops = {
-+	.init		= qcom_snps_hsphy_fw_managed_init,
-+	.exit		= qcom_snps_hsphy_fw_managed_exit,
-+	.set_mode	= qcom_snps_hsphy_set_mode,
-+	.owner		= THIS_MODULE,
-+};
-+
- static const struct phy_config_data hs_5nm_phy = {
- 	.pre_tuning = hs_5nm_phy_pre_tuning,
- 	.num_pre_tuning = ARRAY_SIZE(hs_5nm_phy_pre_tuning),
-@@ -563,6 +697,14 @@ static const struct phy_config_data hs_5nm_phy = {
- 	.num_post_tuning = ARRAY_SIZE(hs_5nm_phy_post_tuning),
- };
- 
-+static const struct phy_config_data hs_5nm_fw_managed_phy = {
-+	.pre_tuning = hs_5nm_phy_pre_tuning,
-+	.num_pre_tuning = ARRAY_SIZE(hs_5nm_phy_pre_tuning),
-+	.post_tuning = hs_5nm_phy_post_tuning,
-+	.num_post_tuning = ARRAY_SIZE(hs_5nm_phy_post_tuning),
-+	.fw_managed = true,
-+};
-+
- static const struct phy_config_data hs_6nm_phy = {
- 	.pre_tuning = hs_6nm_phy_pre_tuning,
- 	.num_pre_tuning = ARRAY_SIZE(hs_6nm_phy_pre_tuning),
-@@ -592,6 +734,10 @@ static const struct of_device_id qcom_snps_hsphy_of_match_table[] = {
- 		.compatible	= "qcom,ipq9650-usb-hs-phy",
- 		.data		= &hs_6nm_phy,
- 	},
-+	{
-+		.compatible	= "qcom,sa8255p-usb-hs-phy",
-+		.data		= &hs_5nm_fw_managed_phy,
-+	},
- 	{
- 		.compatible	= "qcom,usb-snps-hs-7nm-phy",
- 		.data		= &hs_7nm_phy,
-@@ -661,14 +807,42 @@ static void qcom_snps_hsphy_read_override_param_seq(struct device *dev)
- 	}
- }
- 
-+static int qcom_snps_hsphy_init_resources(struct qcom_snps_hsphy *hsphy)
-+{
-+	struct device *dev = hsphy->dev;
-+	int ret, i, num;
-+
-+	ret = qcom_snps_hsphy_clk_init(hsphy);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "failed to initialize clocks\n");
-+
-+	hsphy->phy_reset = devm_reset_control_get_exclusive(dev, NULL);
-+	if (IS_ERR(hsphy->phy_reset)) {
-+		dev_err(dev, "failed to get phy core reset\n");
-+		return PTR_ERR(hsphy->phy_reset);
-+	}
-+
-+	num = ARRAY_SIZE(hsphy->vregs);
-+	for (i = 0; i < num; i++)
-+		hsphy->vregs[i].supply = qcom_snps_hsphy_vreg_names[i];
-+
-+	ret = devm_regulator_bulk_get(dev, num, hsphy->vregs);
-+	if (ret)
-+		return dev_err_probe(dev, ret,
-+				"failed to get regulator supplies\n");
-+
-+	return 0;
-+}
-+
- static int qcom_snps_hsphy_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct qcom_snps_hsphy *hsphy;
-+	const struct phy_config_data *data;
- 	struct phy_provider *phy_provider;
-+	const struct phy_ops *phy_ops;
- 	struct phy *generic_phy;
--	int ret, i;
--	int num;
-+	int ret;
- 
- 	hsphy = devm_kzalloc(dev, sizeof(*hsphy), GFP_KERNEL);
- 	if (!hsphy)
-@@ -680,24 +854,25 @@ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
- 	if (IS_ERR(hsphy->base))
- 		return PTR_ERR(hsphy->base);
- 
--	ret = qcom_snps_hsphy_clk_init(hsphy);
--	if (ret)
--		return dev_err_probe(dev, ret, "failed to initialize clocks\n");
--
--	hsphy->phy_reset = devm_reset_control_get_exclusive(&pdev->dev, NULL);
--	if (IS_ERR(hsphy->phy_reset)) {
--		dev_err(dev, "failed to get phy core reset\n");
--		return PTR_ERR(hsphy->phy_reset);
--	}
-+	data = of_device_get_match_data(dev);
-+	if (!data)
-+		return -ENODEV;
- 
--	num = ARRAY_SIZE(hsphy->vregs);
--	for (i = 0; i < num; i++)
--		hsphy->vregs[i].supply = qcom_snps_hsphy_vreg_names[i];
-+	if (data->fw_managed) {
-+		phy_ops = &qcom_snps_hsphy_fw_managed_ops;
-+		ret = qcom_snps_domain_attach(hsphy);
-+		if (ret)
-+			return ret;
- 
--	ret = devm_regulator_bulk_get(dev, num, hsphy->vregs);
--	if (ret)
--		return dev_err_probe(dev, ret,
--				     "failed to get regulator supplies\n");
-+		ret = devm_add_action_or_reset(dev, qcom_snps_domain_detach, hsphy);
-+		if (ret)
-+			return ret;
-+	} else {
-+		phy_ops = &qcom_snps_hsphy_gen_ops;
-+		ret = qcom_snps_hsphy_init_resources(hsphy);
-+		if (ret)
-+			return ret;
-+	}
- 
- 	/*
- 	 * Enable runtime PM before creating the PHY, phy_create() only enables
-@@ -717,7 +892,7 @@ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
- 	 */
- 	pm_runtime_forbid(dev);
- 
--	generic_phy = devm_phy_create(dev, NULL, &qcom_snps_hsphy_gen_ops);
-+	generic_phy = devm_phy_create(dev, NULL, phy_ops);
- 	if (IS_ERR(generic_phy)) {
- 		ret = PTR_ERR(generic_phy);
- 		dev_err(dev, "failed to create phy, %d\n", ret);
-
--- 
-2.56.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwKaXNzdWUgdG8gY29uc2lkZXI6Ci0gW0xvd10gcGh5OiBxY29tLXNucHMtZmVt
+dG8tdjI6IHVzZSBkZXZtX3BtX2RvbWFpbl9hdHRhY2hfbGlzdCgpIGFuZAogIGNoZWNrIHJldCA9
+PSAwCi0tCgpjb21taXQgNDAzMjNlZDgzZWU2ZjAzYzM2ZDI3NjdkMWU5MWNkMDhjY2ZmMzczYgpB
+dXRob3I6IFNyaXJhbSBEYXNoIDxxdWljX3NyaXJhbWRAcXVpY2luYy5jb20+CgpwaHk6IHFjb20t
+c25wcy1mZW10by12MjogQWRkIHN1cHBvcnQgZm9yIFNBODI1NVAKClRoaXMgY29tbWl0IGFkZHMg
+c3VwcG9ydCBmb3IgdGhlIFNBODI1NVAgVVNCIEhTIFBIWSB2YXJpYW50LCB3aG9zZSBwb3dlciwK
+Y2xvY2ssIGFuZCByZXNldCByZXNvdXJjZXMgYXJlIG1hbmFnZWQgYnkgU0NNSSBmaXJtd2FyZSB0
+aHJvdWdoICJjb3JlIiBhbmQKInRyYW5zZmVyIiBwb3dlciBkb21haW5zLgoKPiBkaWZmIC0tZ2l0
+IGEvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tc25wcy1mZW10by12Mi5jIGIvZHJpdmVy
+cy9waHkvcXVhbGNvbW0vcGh5LXFjb20tc25wcy1mZW10by12Mi5jCj4gaW5kZXggMGRhZTgzNjk2
+NzFhYi4uMGVjMzRiYzVjMjZlYyAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9w
+aHktcWNvbS1zbnBzLWZlbXRvLXYyLmMKPiArKysgYi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHkt
+cWNvbS1zbnBzLWZlbXRvLXYyLmMKWyAuLi4gXQo+IEBAIC0xNjQsOCArMTY3LDgyIEBAIHN0cnVj
+dCBxY29tX3NucHNfaHNwaHkgewo+ICAJYm9vbCBwaHlfaW5pdGlhbGl6ZWQ7Cj4gIAllbnVtIHBo
+eV9tb2RlIG1vZGU7Cj4gIAlzdHJ1Y3QgcGh5X292ZXJyaWRlX3NlcSB1cGRhdGVfc2VxX2NmZ1tO
+VU1fSFNQSFlfVFVOSU5HX1BBUkFNU107Cj4gKwo+ICsJc3RydWN0IGRldl9wbV9kb21haW5fbGlz
+dCAqcGRfbGlzdDsKPiAgfTsKPiAgCj4gK3N0YXRpYyB2b2lkIHFjb21fc25wc19kb21haW5fZGV0
+YWNoKHZvaWQgKmRhdGEpCj4gK3sKPiArCXN0cnVjdCBxY29tX3NucHNfaHNwaHkgKmhzcGh5ID0g
+ZGF0YTsKPiArCj4gKwlkZXZfcG1fZG9tYWluX2RldGFjaF9saXN0KGhzcGh5LT5wZF9saXN0KTsK
+PiArfQo+ICsKPiArc3RhdGljIGludCBxY29tX3NucHNfZG9tYWluX2F0dGFjaChzdHJ1Y3QgcWNv
+bV9zbnBzX2hzcGh5ICpoc3BoeSkKPiArewo+ICsJc3RydWN0IGRldl9wbV9kb21haW5fYXR0YWNo
+X2RhdGEgcGRfZGF0YSA9IHsKPiArCQkucGRfZmxhZ3MgICAgICAgPSBQRF9GTEFHX05PX0RFVl9M
+SU5LLAo+ICsJCS5wZF9uYW1lcyAgICAgICA9IChjb25zdCBjaGFyKltdKSB7ICJjb3JlIiwgInRy
+YW5zZmVyIiB9LAo+ICsJCS5udW1fcGRfbmFtZXMgICA9IDIsCj4gKwl9Owo+ICsJc3RydWN0IGRl
+dmljZSAqZGV2ID0gaHNwaHktPmRldjsKPiArCWludCByZXQ7Cj4gKwo+ICsJcmV0ID0gZGV2X3Bt
+X2RvbWFpbl9hdHRhY2hfbGlzdChkZXYsICZwZF9kYXRhLCAmaHNwaHktPnBkX2xpc3QpOwo+ICsJ
+aWYgKHJldCA8IDApCj4gKwkJcmV0dXJuIGRldl9lcnJfcHJvYmUoZGV2LCByZXQsICJkb21haW4g
+YXR0YWNoIGZhaWxlZFxuIik7Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4gK3N0YXRpYyBi
+b29sIHFjb21fc25wc19pc19md19tYW5hZ2VkKHN0cnVjdCBxY29tX3NucHNfaHNwaHkgKmhzcGh5
+KQo+ICt7Cj4gKwlyZXR1cm4gaHNwaHktPnBkX2xpc3QgIT0gTlVMTDsKPiArfQo+ICsKPiArc3Rh
+dGljIGludCBxY29tX3NucHNfcGRzX2VuYWJsZV9hbGwoc3RydWN0IHFjb21fc25wc19oc3BoeSAq
+aHNwaHkpCj4gK3sKPiArCWludCByZXQ7Cj4gKwo+ICsJaWYgKCFxY29tX3NucHNfaXNfZndfbWFu
+YWdlZChoc3BoeSkpCj4gKwkJcmV0dXJuIDA7CgpbU2V2ZXJpdHk6IExvd10KQ2FuIHFjb21fc25w
+c19kb21haW5fYXR0YWNoKCkgc3VjY2VlZCB3aXRoIGhzcGh5LT5wZF9saXN0IGxlZnQgTlVMTCB3
+aGVuCmRldl9wbV9kb21haW5fYXR0YWNoX2xpc3QoKSByZXR1cm5zIDAgKGZvciBleGFtcGxlLCB3
+aGVuIENPTkZJR19QTSBpcwpkaXNhYmxlZCk/CgpJZiB0aGF0IGhhcHBlbnMsIHFjb21fc25wc19w
+ZHNfZW5hYmxlX2FsbCgpIHJldHVybnMgMCB3aXRob3V0IGVuYWJsaW5nIHRoZQpwb3dlciBkb21h
+aW5zLCBhbmQgcWNvbV9zbnBzX2hzcGh5X2Z3X21hbmFnZWRfaW5pdCgpIHByb2NlZWRzIHRvCnFj
+b21fc25wc19oc3BoeV9jb25maWd1cmUoKSBhbmQgd3JpdGVzIFBIWSByZWdpc3RlcnMgd2hpbGUg
+Y2xvY2tzLCByZXNldHMsCmFuZCBwb3dlciBkb21haW5zIGFyZSBvZmYuICBBbHNvLCBxY29tX3Nu
+cHNfZG9tYWluX2F0dGFjaCgpIGFuZApxY29tX3NucHNfZG9tYWluX2RldGFjaCgpIHdpdGggZGV2
+bV9hZGRfYWN0aW9uX29yX3Jlc2V0KCkgaW4KcWNvbV9zbnBzX2hzcGh5X3Byb2JlKCkgZHVwbGlj
+YXRlIGRldm1fcG1fZG9tYWluX2F0dGFjaF9saXN0KCk7IGNhbGxpbmcKZGV2bV9wbV9kb21haW5f
+YXR0YWNoX2xpc3QoKSBkaXJlY3RseSBhbmQgcmV0dXJuaW5nIC1FTk9ERVYgd2hlbiByZXQgPT0g
+MAp3b3VsZCBhdm9pZCBib3RoIGlzc3Vlcy4KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRw
+czovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjExMjAtcGh5LXFjb20tc25wcy1mZW10by12
+Mi04MjU1LXY1LTAtODZhOTg4MGVlNWE1QGtlcm5lbC5vcmc/cGFydD0yCgotLSAKbGludXgtcGh5
+IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
