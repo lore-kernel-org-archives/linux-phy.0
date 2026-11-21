@@ -2,81 +2,61 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 532BD606A320
-	for <linux-phy@archiver.kernel.org>; Sat, 21 Nov 2026 17:11:28 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B4BAB606A320
+	for <linux-phy@archiver.kernel.org>; Sat, 21 Nov 2026 18:58:34 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=OXlxh4o5;
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=qq.com header.i=@qq.com header.a=rsa-sha256 header.s=s201512 header.b=gtQC1xM8
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=dPdULQ33;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=aliel.fr header.i=@aliel.fr header.a=rsa-sha256 header.s=courrier-s1 header.b=g2ei063E
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Subject:Cc:To:From:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=B+EUIlLKJsdd6UCn06OIs22/98i/Q++uRbin+9I0KLQ=; b=OXlxh4o5CI568ZuK3fMh3mGeHP
-	4MGJzxG6c9zT4NjHerPj8pxSlquD32EA0UpLlkc5dKZOiajofXB4ED5Y+ChLtp/Fb4L9gojLGDnlJ
-	MEPE3qTJjuA+U0ZetLMXtnSVTEOsnhHaUJCD/j/DeRjJQxwD757wC6qSqtl5Zh313ekUMjCeGBpHb
-	5Wfq13JU81/rEOZPBlz9vg5n95mBJaNO2E4EBlhDfudXoxhUPQCpiNiayPH2Txk/3XU9Czki9IUww
-	L4Capxy0HtKZd8ysuT83xIC3FBlw6z5ILaECLiUVx5Hu0eLVT0a0jLzYNfolBApBN6hwBpM2vXJd5
-	eK7FC+MQ==;
+	bh=P7jAC6zyOb5bXArht1EnENevd0fUJpTShwoujtPO6zw=; b=dPdULQ33ABFKfyleJ1K1R6+jav
+	3u0UxMMgX2JtAByyRdr8ypVd9VGamUkIbxIzWjzwj0APmHK13QDTkzR9qgyPMuGVfu6hMNYM7O+cp
+	++CEfDqKoQU8UqIJ7/ukE9SdqgskD551dE1LEjWL2WvcAR/7labrE66LUGsM5EUPEE8A5PN8WtHRG
+	1wbYHMYejGENWMhaYWh5z835pTaHieWRHBuQiJfwiWiAkbzhuqC4UjVhsW+FVnbCpnpv50/LLpcwc
+	nC8zNQvMj7lEpSHJkjj49KseYOPU/plz3Brtbenl5+HcZs75IwBE572PxR7HKsfQCkW69ILIaTmDs
+	h6u4AbUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUoca-0000000HYXN-0GpE;
-	Sat, 21 Nov 2026 17:11:28 +0000
-Received: from out203-205-221-191.mail.qq.com ([203.205.221.191])
+	id 1xUqIE-0000000049w-17QV;
+	Sat, 21 Nov 2026 18:58:34 +0000
+Received: from courrier.aliel.fr ([65.21.61.41])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUocX-0000000HYWC-17vY;
-	Sat, 21 Nov 2026 17:11:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
-	t=1795281081; bh=zeAGBzUvkXeOm8/CB9GEDh0u7+FI30sxlipMlqhTmnI=;
-	h=From:To:Cc:Subject:Date;
-	b=gtQC1xM8obtKfjt5gvs/0bzkII2b22Kj4/W3pUrdxDIEaOIB/fgsoUHqYuSI6PYOs
-	 t3WCrr6ZaNHALXLFP9+h8BQ5ozoOK8xR9MZJ82/ruE2kOCNHxsZYAzmUyL101ekLvZ
-	 6HD32fvmsc+ECIdxg2bOARFup+xIB0xCNsgKxiio=
-Received: from jerry-PC.lan ([2408:8249:5f:7101:71a:8713:56b4:5043])
-	by newxmesmtplogicsvrszb51-1.qq.com (NewEsmtp) with SMTP
-	id 2D22F85E; Sun, 22 Nov 2026 01:11:18 +0800
-X-QQ-mid: xmsmtpt1795281078tmvupf2jg
-Message-ID: <tencent_6A9CF9A2529C8FA2C04933F2D5D1A259B506@qq.com>
-X-QQ-XMAILINFO: NbgegmlEc3JuvjAbzxDC/d292Dzu8u6ODXknC8jRsMFWVDLcsIjgINkf7SjZxi
-	 5CoJ4Zk8Pmsg+MVa1E2WfndJK9wHKEnMX70Me40klfXK7EoPkJQUGZodA/sqAK65tNrhy7T5MWMh
-	 Atu3+QVqJVQ4OCG/wQRYvCWuiYWF7IWSNDp1tNZ1HGnhhJKUG5jqO3hxWzhh8nxCqU+JIrnaNF9V
-	 zA3Y1u3YztGF+EB1KZIUQq19e6UyjdQtwqUPOlLM5bWRuBBHNFlNwXoqRqQOYNJQumriyvLyPwVF
-	 b/Kz5Kqz+yhqG19TLUuZerB0cd5soTFNH6+9rs4K3P2ozrPX/TkxEWMY6teGbc+8MIBMj7NqDAjS
-	 2MQ01R/U234CtXliA6FEYRAWxmGfKtg/kApkfqG+sNYDBq2XOacLLGCLigtIz7v0HtjSSRQHujz8
-	 3WO+frUiywH9KyF1aZB0zy43b0J5BxWUYCOcA2V1HyAbzHAVqOT/LFa+PoUHPe9ykaZsqYZqTkGC
-	 Oxns19w/zWhfCv1c3owh2r6G7qUqNP9jDdNH500Ip3dkoD/MYLyRHtlwfnCx03zFt6GfR/LucrJP
-	 YlHBHUFli87+/EMOzU7NH1udYTdYsSoi2R/ujPDD5JKTTm1DRYKep1BUcrU+fY8z//w45QcYDlFR
-	 JMJH/bY08mh8pXEd/k6LO9Di2aqEBE2jV+vYATizT+45NyX/Xw/1b/ZQw3GeBv02bGz+b7nJbkd+
-	 QzgCOgdzNYSrrB3+4nHsljt5aUvsCXgjfioc389ZB6dL0pxkiVXJxCGOeb/Phh2E7+BFjp/psLeL
-	 H0KJIydCaOSuDCfPFW82s8PV6WH+wmQsaqxFCrwqfB99Q0w/2F+yTcgngYVH7ehj8+q4UrnfqRbz
-	 2j7UrOqd/WdgzM+Lwxmz6+5SbuBpUn4559sZuxrVj53hlj2BT270JLXE4KTzTrF4LEQdqkavyALp
-	 lOOXwj63ko6VbrJPHi2B7TmH8y0/z91KypoAmv7vi12C/l9hLXA5hKEZNcjztTZoFsGIYxUNsCdM
-	 6AvlSVPrFwuUyihkXlrpUOB7vNHXN9bDUdgqqsWafoTPkDKlIrIiNKivBXn6xqJ9UnsYwa0AmIrF
-	 gfA0VDTNDFKCdySZrp7o8bjcZuqegT8TK+Ywdr
-X-QQ-XMRINFO: Mp0Kj//9VHAxzExpfF+O8yhSrljjwrznVg==
-From: ZhuXiangyu <1194781887@qq.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Heiko Stuebner <heiko@sntech.de>
-Cc: Manivannan Sadhasivam <mani@kernel.org>,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	ZhuXiangyu <1194781887@qq.com>
-Subject: [PATCH v2] phy: rockchip: inno-dsidphy: fix 1.5 GHz rate units
-Date: Sun, 22 Nov 2026 01:11:16 +0800
-X-OQ-MSGID: <20261121171116.1703397-1-1194781887@qq.com>
-X-Mailer: git-send-email 2.47.3
+	id 1xUqIB-0000000049K-1EgL;
+	Sat, 21 Nov 2026 18:58:33 +0000
+Message-ID: <e92bbf55-08f2-4cc0-ad08-cbbcde9f93ac@aliel.fr>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=aliel.fr;
+	s=courrier-s1; t=1795287497;
+	bh=fJNClJvE09AeKF+kIGp46dIINijEJgt3u/BcL85nr4g=;
+	h=Date:From:Subject:To:Cc:References:In-Reply-To;
+	b=g2ei063Ermv4QMnmqaxKqlXwFWh1s/DyCoZOALwFIUNumGUw9wEey3LbLDBjZnrEa
+	 e87I+pwMEwkN1gXZTogR/+UMKirzaK3a54ggbNq2WMfYPhqvMaJ9Gh1UekMXtaaF9k
+	 838bMrmXKJGwx2pjG4I6atDtPsMzWwRx3rerShHA=
+Date: Sat, 21 Nov 2026 19:57:45 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+From: Ronald Claveau <linux-kernel-dev@aliel.fr>
+Subject: Re: [PATCH v2 06/11] pmdomain: amlogic: meson-ee-pwrc: power up
+ memories for boot-enabled domains
+To: sashiko-reviews@lists.linux.dev
+Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ robh@kernel.org, conor+dt@kernel.org, neil.armstrong@linaro.org,
+ vkoul@kernel.org, olteanv@gmail.com
+References: <20261120-meson-drm-create-hdmitx-phy-v2-0-93d622d9bb07@aliel.fr>
+ <20261120-meson-drm-create-hdmitx-phy-v2-6-93d622d9bb07@aliel.fr>
+ <sashiko-outbox-225878@kernel.org>
+Content-Language: en-US
+In-Reply-To: <sashiko-outbox-225878@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261121_091125_653954_7E8043BC 
-X-CRM114-Status: UNSURE (   9.45  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.9 (-)
+X-CRM114-CacheID: sfid-20261121_105831_822558_1C5B808D 
+X-CRM114-Status: GOOD (  13.53  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,82 +69,67 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The 1.5 GHz Innosilicon DSI PHY timing table stores its rates in Mbps,
-whereas the other timing tables and the lookup loop use Hz. When
-enabling a mode, the driver compares inno->pll.rate in Hz (e.g.
-372000000) against timings[].rate in Mbps (e.g. 400), so no entry
-matches. The loop falls through to the last, fastest entry and programs
-an excessively large TLPX/LPX counter, preventing panels from decoding
-low-power DCS initialization commands.
+On 11/20/26 19:58, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential
+> issue to consider:
+> - [Low] pmdomain: amlogic: duplicated memory power-up loop in
+>   meson_ee_pwrc_on()
+> --
+> 
+> commit a69a64ee3e13ba7f9072dbadb0f25ec3e146c336
+> Author: Ronald Claveau <linux-kernel-dev@aliel.fr>
+> 
+> pmdomain: amlogic: meson-ee-pwrc: power up memories for boot-enabled domains
+> 
+> This commit introduces a helper to clear the HHI memory power-down bits
+> for power domains that are found already enabled at probe time.
+> 
+>> diff --git a/drivers/pmdomain/amlogic/meson-ee-pwrc.c b/drivers/pmdomain/amlogic/meson-ee-pwrc.c
+>> index 338f70d77bf03..404af46192562 100644
+>> --- a/drivers/pmdomain/amlogic/meson-ee-pwrc.c
+>> +++ b/drivers/pmdomain/amlogic/meson-ee-pwrc.c
+>> @@ -428,6 +428,16 @@ static int meson_ee_pwrc_on(struct generic_pm_domain *domain)
+>>  				       pwrc_domain->clks);
+>>  }
+>>  
+>> +static void meson_ee_pwrc_mem_power_up(struct meson_ee_pwrc_domain *dom)
+>> +{
+>> +	int i;
+>> +
+>> +	for (i = 0; i < dom->desc.mem_pd_count; i++)
+>> +		regmap_update_bits(dom->pwrc->regmap_hhi,
+>> +				   dom->desc.mem_pd[i].reg,
+>> +				   dom->desc.mem_pd[i].mask, 0);
+>> +}
+> 
+> [Severity: Low]
+> This isn't a bug, but meson_ee_pwrc_on() right above has the same loop:
+> 
+> drivers/pmdomain/amlogic/meson-ee-pwrc.c:meson_ee_pwrc_on() {
+>     ...
+> 	for (i = 0 ; i < pwrc_domain->desc.mem_pd_count ; ++i)
+> 		regmap_update_bits(pwrc_domain->pwrc->regmap_hhi,
+> 				   pwrc_domain->desc.mem_pd[i].reg,
+> 				   pwrc_domain->desc.mem_pd[i].mask, 0);
+>     ...
+> }
+> 
+> Could meson_ee_pwrc_mem_power_up() be defined above meson_ee_pwrc_on()
+> and reused there as well?
+> 
 
-Convert the 1.5 GHz timing table rate values to Hz so the lookup
-selects the matching entry.
+Good reminder, will do it in v3.
 
-Tested on an RK3506B board: the panel receives the low-power init
-sequence and the framebuffer console displays properly.
-
-Fixes: 785a9d5bb145 ("phy: rockchip: inno-dsidphy: Add support for rk3506")
-Signed-off-by: Xiangyu Zhu <1194781887@qq.com>
----
-Changes in v2:
-- Split out from the combined drm/phy patch into a standalone phy
-  subsystem patch per Heiko's review.
-- Limit recipients to phy and Rockchip maintainers/lists.
-- Fix Signed-off-by author name formatting.
-
- .../phy/rockchip/phy-rockchip-inno-dsidphy.c  | 28 +++++++++----------
- 1 file changed, 14 insertions(+), 14 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-index 6ad04b0c..fcf7aa17 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-@@ -282,20 +282,20 @@ struct inno_mipi_dphy_timing inno_mipi_dphy_timing_table_max_1ghz[] = {
- 
- static const
- struct inno_mipi_dphy_timing inno_mipi_dphy_timing_table_max_1_5ghz[] = {
--	{ 110, 0x02, 0x7f, 0x16, 0x02, 0x02},
--	{ 150, 0x02, 0x7f, 0x16, 0x03, 0x02},
--	{ 200, 0x02, 0x7f, 0x17, 0x04, 0x02},
--	{ 250, 0x02, 0x7f, 0x17, 0x05, 0x04},
--	{ 300, 0x02, 0x7f, 0x18, 0x06, 0x04},
--	{ 400, 0x03, 0x7e, 0x19, 0x07, 0x04},
--	{ 500, 0x03, 0x7c, 0x1b, 0x07, 0x08},
--	{ 600, 0x03, 0x70, 0x1d, 0x08, 0x10},
--	{ 700, 0x05, 0x40, 0x1e, 0x08, 0x30},
--	{ 800, 0x05, 0x02, 0x1f, 0x09, 0x30},
--	{1000, 0x05, 0x08, 0x20, 0x09, 0x30},
--	{1200, 0x06, 0x03, 0x32, 0x14, 0x0f},
--	{1400, 0x09, 0x03, 0x32, 0x14, 0x0f},
--	{1500, 0x0d, 0x42, 0x36, 0x0e, 0x0f},
-+	{ 110000000, 0x02, 0x7f, 0x16, 0x02, 0x02},
-+	{ 150000000, 0x02, 0x7f, 0x16, 0x03, 0x02},
-+	{ 200000000, 0x02, 0x7f, 0x17, 0x04, 0x02},
-+	{ 250000000, 0x02, 0x7f, 0x17, 0x05, 0x04},
-+	{ 300000000, 0x02, 0x7f, 0x18, 0x06, 0x04},
-+	{ 400000000, 0x03, 0x7e, 0x19, 0x07, 0x04},
-+	{ 500000000, 0x03, 0x7c, 0x1b, 0x07, 0x08},
-+	{ 600000000, 0x03, 0x70, 0x1d, 0x08, 0x10},
-+	{ 700000000, 0x05, 0x40, 0x1e, 0x08, 0x30},
-+	{ 800000000, 0x05, 0x02, 0x1f, 0x09, 0x30},
-+	{1000000000, 0x05, 0x08, 0x20, 0x09, 0x30},
-+	{1200000000, 0x06, 0x03, 0x32, 0x14, 0x0f},
-+	{1400000000, 0x09, 0x03, 0x32, 0x14, 0x0f},
-+	{1500000000, 0x0d, 0x42, 0x36, 0x0e, 0x0f},
- };
- 
- static const
 -- 
-2.47.3
-
+Best regards,
+Ronald
 
 -- 
 linux-phy mailing list
