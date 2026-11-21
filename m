@@ -2,58 +2,87 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6DFB8606A32C
-	for <linux-phy@archiver.kernel.org>; Sat, 21 Nov 2026 07:45:29 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 24A08606A333
+	for <linux-phy@archiver.kernel.org>; Sat, 21 Nov 2026 07:48:08 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=IaSNVzm0;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Gd2RaALu
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=1yFiiexg;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=qq.com header.i=@qq.com header.a=rsa-sha256 header.s=s201512 header.b=BChlDjPI
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Subject:Cc:To:From:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=KDjUG2N72lj/+gl+EaNPsBKr50y5ScfiEGfzdpQFJ7o=; b=IaSNVzm0JWd6V9eTSb6NtqnTuj
-	R7tj0q6Ixk7gz0mnWbegnFq2WXmzC0V4WMSzWBEWtaErYl/GG8QpbdxfQixLmrvxgwp4CceaX6yr7
-	DNRgSU+Y8QkGbFr4nQp7G4FhTNdVSNDSu5NFywqWZhG49q9TRATTh1FGUAPB1pl14WNNuLcXILHX8
-	U1JblbyBOlT+AqBYFzhWV5kxbxHXEJdalX2BmslmyuZHBn11zizPfIid27eo6bpuEUJNWM0rMgoJ/
-	VdWVVjyGjdZjJ88b8Dk5jIN+V7/B1RXB1oJZAFy/EvA96DIXlT8Zwlr9KA6SaU9HpCb1sNgPZo/1e
-	8JHuIP0w==;
+	bh=7OuKfOt7EJnOjmEl5GdayT7nNLbHoWaZe5Wn9oL7UdE=; b=1yFiiexg+kEUtGDehGGHMe697Z
+	p2vCuXNW+TPUtO7fWzfFgdY3BKaSnpCeVab+JIRE5MMfklGYb9JkPEinES32KzW8XzDBzfpZ6GWdM
+	s8uVKLCmfUDMHLOtR+q3js1cuce60jsvFbwYsbBYke3KXp8a8FdQJ/YbRIWb4nDGMD9ilBHyfeyEj
+	F/QH/UBAZz1pwNdKv8hPsyR9wpd6CWfAYuwu5yTQ/oVCEetHJWJXRjNysc09v4ok3T0ZEf/3ktSsi
+	V7k9fD2jUUUfoxGd5zQpAI/uytOlnpFpUPiYxMDKTAa4NA/iS4MO163TK03p4DvWMtVuGurZA8V82
+	rH8L04kQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUfmr-0000000GtD0-0kBl;
-	Sat, 21 Nov 2026 07:45:29 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xUfpP-0000000GtLw-3fnz;
+	Sat, 21 Nov 2026 07:48:07 +0000
+Received: from out203-205-221-202.mail.qq.com ([203.205.221.202])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUfmp-0000000GtCu-2q0w
-	for linux-phy@lists.infradead.org;
-	Sat, 21 Nov 2026 07:45:27 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5744C4117E;
-	Sat, 21 Nov 2026 07:45:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C94FD1F000C0;
-	Sat, 21 Nov 2026 07:45:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795247127;
-	bh=g7uVbYqCYWmetjl6f9vcUu3yNhR9LD4vfFPastZ9L80=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=Gd2RaALu/YwbhvRDd0Z4V8W6BDTN9LuaxkRmnYQ3o29ncAnI2Yy07hmk6WoEs5M8C
-	 0uaGgL6Dpq9MBTHFE+ELK8/L3ih2cjUaNW5g7xsHPgRUEJDqDW2UQrCx9JmlcWU1s0
-	 xIzR5pD30TG84Ry+nSipDMeqlFRrT2ovl41W3X39S4wTH8PcZS6kkCgiIgASvtEu3m
-	 MeKxmjon2kT9EHKitQHsJOv3rVPuW2neXaWWNX0zhhKHVuMOuGsxaYng0im3etEtny
-	 1kugrSda3VgMibAhhXnKbUueroRVF76HoK1T9SPMBSZc4mFaLbhjmQevzCbyQQTCXh
-	 jcVnZHUezUDCQ==
-Message-ID: <sashiko-outbox-226793@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3 03/17] dt-bindings: display: spacemit: add K3
- Innosilicon DP/eDP controller
-To: "Cody Kang" <codykang.hk@gmail.com>
-Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, linux-clk@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261121-k3-display-v3-3-ec419e8e96b8@gmail.com>
-References: <20261121-k3-display-v3-0-ec419e8e96b8@gmail.com>
- <20261121-k3-display-v3-3-ec419e8e96b8@gmail.com>
-Date: Sat, 21 Nov 2026 07:45:26 +0000
+	id 1xUfpM-0000000GtKl-468a;
+	Sat, 21 Nov 2026 07:48:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+	t=1795247280; bh=IFNwACmidFToCCNfb4iFqu5ciyIQ6dqGvleob7ligsI=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=BChlDjPICHvQ7eX+vhw742v3dwnqhTvARFG8hLTEIYm0oe9A+3oDRVfvbxB7Uebbw
+	 4YldIZ4x3RGar2oWelfsY5m4u1fER/iEn2JwIEVuA6u31cJqijxNRzpiGS95r75fQz
+	 9tMWzBx9SDY1qy4J+1CghBZlVB1VyvXL81KeIdL0=
+Received: from jerry-PC.lan ([2408:8249:5f:7101:71a:8713:56b4:5043])
+	by newxmesmtplogicsvrszc43-0.qq.com (NewEsmtp) with SMTP
+	id BF71E40F; Sat, 21 Nov 2026 15:47:55 +0800
+X-QQ-mid: xmsmtpt1795247276tfzuxhlqb
+Message-ID: <tencent_1A5C41E9DE4754C0A639FE4A64B1B23AC305@qq.com>
+X-QQ-XMAILINFO: Npv5yIQT4nxMRdjQGHBeq7pCwcd+N+ut+TRiHESwHMHR/AwGJruwixJZN6B1hQ
+	 HsYmbIkFeXJkbH+ZBRWJz5CIqGFjPMKa7ToIALun3QXaDQqxhi8pCTzI1KppAz/DuVb064gXeU5u
+	 W25Z5AardHizFC4ky5XICCBysV1gVO2gdSrYSQJVfR8QDWL1ihKwjMXei/u9N6SS5Iy+bcAWTi6D
+	 uZYJMbjkc553ODhbMV/SZYE1VrugUXbF2YsjuRKGqsmIm2E9pHFIrSyNPHYgIxWV6o+dAiU3tf5P
+	 o8B3bK62rSBryKY+tnpy+ke4K9sXb/b6DcTpPXsMnT+7bvlOLBJoMa4dLr3HNcxqTCY5Te4bPfjY
+	 jHsWr3ciBmTWBuRS+xg80O4urq8gtwCS1L0IxA+W6KFHNjkPygc6cMBrXha8dFdalDukjsaBmnUY
+	 FFewkPAB8y/q+5F65I9pA8dMsGP1e+5pVqjfKOqIZ1/NgMKVRKfFIRYn5/FItIs4wa8XkV4KIt94
+	 ZABj8XyJR03yUnaaF8Cdj9AJRkjn6VWin74ratKY1DWuE54p1+Dsb2drl4S5s5/aj+pMkQb9XOKO
+	 A+qGGI/Bf97P9TIrS0MrK4zJz9wG0Yu+JVTSgotAAahUzk9HYQ251Aq9w84az8vri7Q1F98FpbZC
+	 S5hK3WN9E7yzOltWk+0We5r+8uYoASui1gTKfHkJwlI7hjaNZwEjoybjfErT7f4mFBQuddSjn8cT
+	 uvEZxBBDBmp3R4YjFbkXtemEZoYdoUMlO6iXTPt6Ds8JZD3i7ijTQRocj/PkbUh7rW39MZ0BZZ+c
+	 WtB0hW3gebJWuqKBFs9RFuOiEgu8GP6mS987IvjlRHOvGPxilU5PTVYa6pdFqq7boBaSULPSW+8A
+	 aOSzgWXjiXJ9NyymmWt/TbQGprYyfiOc1IfKxsTo4aelY1aIKUguC5NPUpNWQIUqB+lQfpeV5lRz
+	 Yvk2XRFSZIepR+aDe7PuB4ALYCStGkOadzRS8l7X2dwQjQHOioENoFjc1h8iDZAEjnVy4eqN4QgG
+	 WSAPL4SCEvWhgeEg4wnB6nFaV+Fq7LPMa9WtF7EG5/DzSrcVco3EEjJwh5vpqjnsKJ6TdImNgNvH
+	 PEF1gppF0UAmlwUpB9xI8lSY2nmeHF1tSfXkzk
+X-QQ-XMRINFO: NS+P29fieYNwqS3WCnRCOn9D1NpZuCnCRA==
+From: ZhuXiangyu <1194781887@qq.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>
+Cc: Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	ZhuXiangyu <1194781887@qq.com>
+Subject: [PATCH 2/2] dt-bindings: phy: rockchip: add RK3506 USB2 PHY
+Date: Sat, 21 Nov 2026 15:47:53 +0800
+X-OQ-MSGID: <20261121074753.1262819-2-1194781887@qq.com>
+X-Mailer: git-send-email 2.47.3
+In-Reply-To: <20261121074753.1262819-1-1194781887@qq.com>
+References: <20261121074753.1262819-1-1194781887@qq.com>
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261120_234805_613908_C61DDCDD 
+X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.9 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,56 +92,79 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
 	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwKaXNzdWUgdG8gY29uc2lkZXI6Ci0gW0xvd10gZHQtYmluZGluZ3M6IGRpc3Bs
-YXk6IHNwYWNlbWl0OiBpbnRlcnJ1cHRzIGxpc3RlZCBiZWZvcmUgY2xvY2tzCiAgaW4gazMtaW5u
-by1kcAotLQoKY29tbWl0IGVjMTIzZGRkMGRjYjg2ZDIxNjhkMDdlZjA5NTRmZmFlMWRkOWQ5YWEK
-QXV0aG9yOiBDb2R5IEthbmcgPGNvZHlrYW5nQHZzaXQuYWk+CgpkdC1iaW5kaW5nczogZGlzcGxh
-eTogc3BhY2VtaXQ6IGFkZCBLMyBJbm5vc2lsaWNvbiBEUC9lRFAgY29udHJvbGxlcgoKVGhpcyBj
-b21taXQgYWRkcyB0aGUgRGV2aWNlIFRyZWUgYmluZGluZyBzY2hlbWEgZm9yIHRoZSBTcGFjZW1p
-VCBLMwpJbm5vc2lsaWNvbiBEaXNwbGF5UG9ydCBhbmQgZW1iZWRkZWQgRGlzcGxheVBvcnQgY29u
-dHJvbGxlci4KCj4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
-cy9kaXNwbGF5L3NwYWNlbWl0L3NwYWNlbWl0LGszLWlubm8tZHAueWFtbCBiL0RvY3VtZW50YXRp
-b24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3NwYWNlbWl0L3NwYWNlbWl0LGszLWlubm8t
-ZHAueWFtbAo+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwMC4uNDkx
-ZDI1NzMwZGE5Zgo+IC0tLSAvZGV2L251bGwKPiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRy
-ZWUvYmluZGluZ3MvZGlzcGxheS9zcGFjZW1pdC9zcGFjZW1pdCxrMy1pbm5vLWRwLnlhbWwKPiBA
-QCAtMCwwICsxLDE0MSBAQAoKWyAuLi4gXQoKPiArcHJvcGVydGllczoKPiArICBjb21wYXRpYmxl
-Ogo+ICsgICAgY29uc3Q6IHNwYWNlbWl0LGszLWlubm8tZHAKPiArCj4gKyAgcmVnOgo+ICsgICAg
-bWF4SXRlbXM6IDEKPiArCj4gKyAgaW50ZXJydXB0czoKPiArICAgIG1heEl0ZW1zOiAxCj4gKyAg
-ICBkZXNjcmlwdGlvbjogTGluayBhbmQgaG90LXBsdWcgZXZlbnRzLgo+ICsKPiArICBjbG9ja3M6
-Cj4gKyAgICBpdGVtczoKPiArICAgICAgLSBkZXNjcmlwdGlvbjogUGl4ZWwgY2xvY2sgZm9yIHRo
-ZSBjb250cm9sbGVyLgo+ICsgICAgICAtIGRlc2NyaXB0aW9uOgo+ICsgICAgICAgICAgUGl4ZWwg
-Y2xvY2sgZ2VuZXJhdGVkIGJ5IHRoZSBEUCBQSFkgUExMOyB0aGUgcGl4ZWwgY2xvY2sgYWJvdmUg
-aXMKPiArICAgICAgICAgIHBhcmVudGVkIG9udG8gaXQgaW4gdXNlLgo+ICsKPiArICBjbG9jay1u
-YW1lczoKPiArICAgIGl0ZW1zOgo+ICsgICAgICAtIGNvbnN0OiBweGNsawo+ICsgICAgICAtIGNv
-bnN0OiBwbGwKClsgLi4uIF0KCj4gK3JlcXVpcmVkOgo+ICsgIC0gY29tcGF0aWJsZQo+ICsgIC0g
-cmVnCj4gKyAgLSBpbnRlcnJ1cHRzCj4gKyAgLSBjbG9ja3MKPiArICAtIGNsb2NrLW5hbWVzCgpb
-IC4uLiBdCgo+ICsgICAgICAgIGVkcEBjYWM4NDAwMCB7Cj4gKyAgICAgICAgICAgIGNvbXBhdGli
-bGUgPSAic3BhY2VtaXQsazMtaW5uby1kcCI7Cj4gKyAgICAgICAgICAgIHJlZyA9IDwweDAgMHhj
-YWM4NDAwMCAweDAgMHg0MDAwPjsKPiArICAgICAgICAgICAgaW50ZXJydXB0cyA9IDwxMzIgSVJR
-X1RZUEVfTEVWRUxfSElHSD47Cj4gKyAgICAgICAgICAgIGNsb2NrcyA9IDwmc3lzY29uX2FwbXUg
-Q0xLX0FQTVVfRURQMF9QWENMSz4sIDwmZWRwMF9waHk+Owo+ICsgICAgICAgICAgICBjbG9jay1u
-YW1lcyA9ICJweGNsayIsICJwbGwiOwoKW1NldmVyaXR5OiBMb3ddClRoaXMgaXNuJ3QgYSBidWcs
-IGJ1dCBEVCBiaW5kaW5nIHNjaGVtYXMgYW5kIGV4YW1wbGUgbm9kZXMgZm9sbG93IHRoZQpjYW5v
-bmljYWwgcHJvcGVydHkgb3JkZXJpbmcgd2hlcmUgY2xvY2tzIGFuZCBjbG9jay1uYW1lcyBhcHBl
-YXIgYmVmb3JlCmludGVycnVwdHMuICBDb3VsZCBpbnRlcnJ1cHRzIGJlIG1vdmVkIGFmdGVyIGNs
-b2NrLW5hbWVzIGluIHByb3BlcnRpZXMsCnJlcXVpcmVkLCBhbmQgdGhlIGVkcEBjYWM4NDAwMCBl
-eGFtcGxlIG5vZGU/CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRl
-di8jL3BhdGNoc2V0LzIwMjYxMTIxLWszLWRpc3BsYXktdjMtMC1lYzQxOWU4ZTk2YjhAZ21haWwu
-Y29tP3BhcnQ9MwoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtcGh5Cg==
+Document the RK3506 USB2 PHY, which uses the phyclk and apb_pclk
+clocks and requires the PMU GRF phandle.
+
+Signed-off-by: ZhuXiangyu <1194781887@qq.com>
+---
+ .../bindings/phy/rockchip,inno-usb2phy.yaml     | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+index f50fc69f..956a82cc 100644
+--- a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
++++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+@@ -20,6 +20,7 @@ properties:
+       - rockchip,rk3328-usb2phy
+       - rockchip,rk3366-usb2phy
+       - rockchip,rk3399-usb2phy
++      - rockchip,rk3506-usb2phy
+       - rockchip,rk3528-usb2phy
+       - rockchip,rk3562-usb2phy
+       - rockchip,rk3568-usb2phy
+@@ -47,6 +48,9 @@ properties:
+       - items:
+           - const: phyclk
+           - const: pclk
++      - items:
++          - const: phyclk
++          - const: apb_pclk
+       - items:
+           - const: phyclk
+           - const: aclk
+@@ -158,6 +162,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - rockchip,rk3506-usb2phy
+               - rockchip,rk3528-usb2phy
+               - rockchip,rk3568-usb2phy
+               - rockchip,rv1108-usb2phy
+@@ -240,6 +245,18 @@ allOf:
+         clock-names:
+           minItems: 2
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: rockchip,rk3506-usb2phy
++    then:
++      properties:
++        clocks:
++          minItems: 2
++        clock-names:
++          minItems: 2
++
+   - if:
+       properties:
+         compatible:
+-- 
+2.47.3
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
