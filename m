@@ -2,84 +2,100 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E85F9606A337
-	for <linux-phy@archiver.kernel.org>; Sat, 21 Nov 2026 07:48:07 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5C9A3606A320
+	for <linux-phy@archiver.kernel.org>; Sat, 21 Nov 2026 07:53:34 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=baO31FX/;
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=qq.com header.i=@qq.com header.a=rsa-sha256 header.s=s201512 header.b=aOm7QODZ
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=gPS20rmD;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Jay8ApW2
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Subject:Cc:To:From:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=n6EHwAec8yjUS2yH1xpHAkiwt2rUAkJZkvavlzpdkGg=; b=baO31FX/Lnbsr6rsWu+r+vx9BO
-	+gZSyWF4srsHn15/Jt+HcHH4suHQ0WZcsVvBQ44vLfz0EaSUDXUfvG7WIF9Cr1aOn4uOunnKg/MaU
-	9UKFGBu4bpV85f0d19wS6tRHsn43pBl0DJVcOyUbrF41WhUSFuhWSlTfTt0UpPVkNUx5p/QjphziJ
-	0DW1jMmVFVOYwpKEWsJF6/rNGlOi3qm06C7XjM2YJW6Npd5R9SHOn+j5JLCQ2C0MOvphRBSQtHflu
-	FMTof8S5lhM3YPThG9KyK0H0Gi6Ie7MZlwVKoNzBdfkp+QWLxlxt5oHvY+yUwu75lXSdofVI9t33F
-	PslZVvLw==;
+	bh=1oNY82p8iv7t2tHUJPoI3fmELZhFNPb0FT901fxwXxo=; b=gPS20rmDc793P6Xq6N1Ay5kUNe
+	FU0e/zkEzBIYb6ESPvU/mImn9T4TPTjU7z6WMGjuRduzTKg/0qkS+lJ/fiC9EoPR7CDtSxOT413Qi
+	nnQRxY5B3/O9fERX9MlP8I7a3SSw0r/l9DPH7j95hFJQFUuDaM0OZGVGyOzmtdMQfHVP78r2aB7OD
+	IoLSp2nZdLHiavEgf/Z7tJBwg53r8YQ07+2+1GGquuKRhuXl+D4ZfAwisyQPUzQtRPGKglF2+VQsP
+	4RVf/uMCMz8/0W2jzWfSKXMPfmKqi+3L18dBspUj2/Ldz6skDPR7zO4SzRLFOrCvzqK7SQ640lE0w
+	Hr2/nlFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUfpP-0000000GtLa-2j9v;
-	Sat, 21 Nov 2026 07:48:07 +0000
-Received: from out162-62-58-216.mail.qq.com ([162.62.58.216])
+	id 1xUfug-0000000Gtpx-0LUV;
+	Sat, 21 Nov 2026 07:53:34 +0000
+Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUfpM-0000000GtKk-0GSC;
-	Sat, 21 Nov 2026 07:48:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
-	t=1795247278; bh=ueMDV0zkslEtYlqqHnL9zl53jNUKumH06vyFp4k6ec4=;
-	h=From:To:Cc:Subject:Date;
-	b=aOm7QODZCPcqAogHM32Qn4FWsJ1oWBg0CbzM4avlVw+ZsXO/M+1nX084nZjuUtsCM
-	 XpD5nP/cjoAaDz51O8s65n/qC0ar2sOGi6nH2Z2Ol4EKwUJJd5/PbfvWHuy4QT9DVv
-	 TX2KMH3wJdguYSbNBpOTXEs7oXRnFAb28QPbBv2o=
-Received: from jerry-PC.lan ([2408:8249:5f:7101:71a:8713:56b4:5043])
-	by newxmesmtplogicsvrszc43-0.qq.com (NewEsmtp) with SMTP
-	id BF71E40F; Sat, 21 Nov 2026 15:47:55 +0800
-X-QQ-mid: xmsmtpt1795247275t7989d969
-Message-ID: <tencent_A28766992BC445C76A277305A50C1F300107@qq.com>
-X-QQ-XMAILINFO: NJFIk87MF7ke+lAfbXH+n5m+tBBi33Z+EksO7USaool3hU1zORwg9X5LECpz1Q
-	 9u66McU12v8kHWrAV2S8Vu2HTSsGMCla6imSgNgn9nxbW9arLh/IvFP1bqAS0kqT06OPlJJOPj1R
-	 jXBYAfDDlx3QylMEu4uvzjNlGO4zwvGJXF1YmMwbwE9Ihgtg4w/FQkArmlVW16iuhPy4LTSJcbCQ
-	 EhIqO4RKdqHunG1kmpUvGYm6qtcXP9jqZybxzuD5cjHz/AgnfS7TugbHC8QSgIx+qjayX4jmxIr7
-	 fS4XkLhi2aVoi60xC3tN52xIEPVT2Sn2hVxPocqXhNwO5e5juS61RwYrIUImumSqiPOygRzP0TlM
-	 tA/hxm/7cygsFLuDbRjxY3iBBR8FQVKaNLlweflA1iIXLRouae6KFsrxfoHmZAWjcnVxttq0X5t2
-	 YEV4H1Dsy+IqvXcVMwYi9hO/YUeNR5xcGIR98Vv6qJitJxyR9VYhum4Q0RjlH2gTWnWpHHEwFJ9b
-	 l4LN/gTa8oL4dz35zvt0o9PUYLeIGFz8l7izyuKO24GAkhuqyZ4I+WO2oqNtK0ek+DajNo8xwntm
-	 zC0gjXv1Ni2nlpn94ufYIU+RLmbK/+S/00ZPzI/PiyK8xjKZiUzqO1ab/tNMYjGeN0G3moM2uGUZ
-	 7uu4IEetI8tqqJplvzpQic7aV/fb9uX9+z+lrG3xFzm1zxDviq0t4ejdwM8/arbMmy0BzAqQt+DM
-	 AbqIPPK3Q4mtr5Q9xmLn0uHxmUFO5ZmY7nNMWWD0HLMElbDZh1B9PBAnmOfZC05JSupKxzEEVySM
-	 mM3DApCrFloajaZkUXDgABdXBbmLCt04afYYVywrJ93QGiW1IIrw7ZFM1pwFBxKPSRzDydU2QeB6
-	 pdZn++p3ORTObvDU3qYTI1zuwrczUDyXIRRNfZik6zuEEWStWW/S68gq+fuPx3DpcX8jII4s5WaT
-	 mt1vXhfMp3MOG0dc6htiPTmmxy/1kROkgk9CdMxRpzLJirCR27ETz4u8w69nQJAuLZJnIFSimxnU
-	 gv5m6wEcu5JNb+rvqta+MbpGdm/HYx8w0TBHG9aLt7WE3nMZpP11MT0SoIL8eXRKc4QsRBhg0RbD
-	 y6jGdcc8oNU8qVqRSRaUbDBbdQGqP7dsN1jzC9vQLHXhI71WvWFNgtDEkae8aMluR8oakZ
-X-QQ-XMRINFO: OWPUhxQsoeAVwkVaQIEGSKwwgKCxK/fD5g==
-From: ZhuXiangyu <1194781887@qq.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Heiko Stuebner <heiko@sntech.de>
-Cc: Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	ZhuXiangyu <1194781887@qq.com>
-Subject: [PATCH 1/2] phy: rockchip: inno-usb2: add RK3506 support
-Date: Sat, 21 Nov 2026 15:47:52 +0800
-X-OQ-MSGID: <20261121074753.1262819-1-1194781887@qq.com>
-X-Mailer: git-send-email 2.47.3
+	id 1xUfud-0000000GtpT-0LVe
+	for linux-phy@lists.infradead.org;
+	Sat, 21 Nov 2026 07:53:32 +0000
+Received: by mail-pj1-x1036.google.com with SMTP id 98e67ed59e1d1-3b439e37813so612455a91.3
+        for <linux-phy@lists.infradead.org>; Fri, 20 Nov 2026 23:53:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795247610; x=1795852410; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=OFCgfXZyqNz90HWdYpeyXbVhNfixwYHLdj2jezmIKJE=;
+        b=Jay8ApW2FP2hw/W7//9jjcyT2St+fdW5ClFUktjKF+qBBu6xQ3uY+Et5xKX1R58/ga
+         HPi/USeVO5AaBsarb4U9+rri07lJovqLYhqiTrveo59Kt0yQCkVueXcdQ9NhyIjjrhvJ
+         PlLshNeZuNW61POFyPRyeJLnDfhiV6bnxSXKFXrc7hpRbkZUmajBpnNTCiAJrdb9xNHm
+         RkduqWYdzwclMOb01DY62sRZeVkiFf/MBUSbZphfBHRdFjHt90RM6NO9qzlJ+hwaD8FO
+         1c4UzZnCT8PyZaao1wlT9qgJvmuncLctyLmDjqoOzClc8r1uysdnV9kz7k5MFCfUsW38
+         AHfg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795247610; x=1795852410;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=OFCgfXZyqNz90HWdYpeyXbVhNfixwYHLdj2jezmIKJE=;
+        b=2u2XDH3hCIDeZqal4OPZLk10oR4bVBKo0ixDayqVCbHzP1lakR3RjHDIaBL2yT/RMh
+         VWqZCDkNXGE31FDxWdlgW/7N8ipvaSuUBeMn9HTPL5fXNx1GsqoP/930LPQhR1C4p0eY
+         LAp3X+klTXt7xTXdvcfzfZIyOA38wkIH65wwi00vVWz2musCuR+NYFgA/SnSK3qwUBal
+         32IWPbQFWCtbSWD/S3bV3utawr3nZuxeZC+x2qtva+makmqAPGJGCQs1SioW4BUtcSVD
+         +TNLKoBvufsHnxVP7JYfRptRztuStcyx1hZ90kNpnfTBACpe8KyMwVdJeUb/6q1V217b
+         l+JQ==
+X-Forwarded-Encrypted: i=1; AL+hErGO2HhK46TZLBuVR3RWMJZjufb+wPlQOJX5owM5T6SV/Vjmysz/VdPKVQ/Xf2RX8SEHN380HQVmanY=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8a9oTGsLPA0zhSiIfI8LV2CTDqLDY7v+9LD1aanUtwveiNA85E
+	5l6aRP4bYJPWLfJAY8PjLvW60tqE0KW3z9BZK6NFN1poYHu4BESc/YEU
+X-Gm-Gg: AZFdTZeEN9WDGGn1r/BXNkXnB+O/BQaIKjyg4+p5lOJ1ZHapd6XJb9MG4R2JXz15fXU
+	S5pRg8wJgQFh8IaA+sRJ0ElE2cKueENLGi+UdEVKKBKAb8ifWN3NVrWH+KwSfCV7M32kOXbBrcR
+	w3BabN33Tj6W0dV3PAnlEiRBB5+9aDRIkdrVMKmpNklxuF/z7+D+H6FO+lHqge2ManJELjnao1w
+	F8ee2bbRDKD8ryaLHUC/TOJ14VXhsWAaKgienHAovsoXEAYWVZIashkKUjTckAtcsQ2stdZNlK4
+	7XWSlwdniFRHG15A9X+kI1coH5fb5lqTKjxuis7Cpxj43k5d7bPX6MAzReWuWembykj7d2HMVJw
+	uKx625UvOsgBpqHL9AXHxEQp1d2uxNL4W9Oq+Id22QwN1pElqzVPWXDM3j8brbYyHp4rRaeaJSD
+	GifaIvL5m+7GveOFB90TI/GKWTZUMDX8IM8vz2459hlb8tOpEMNTWuhpOls5ED0wJIEaUGIDp5F
+	3z3f/Dj0EJg0d7fsj3ybrlGOsTW1N/nRVU149+jLTOEMuqH/o7rKpQtX3L/DisDlhGvnyU1Ofhu
+	T/0e5xpZSulSBddjiZpdgwrTEHo=
+X-Received: by 2002:a17:90b:3ec8:b0:3ac:8dfe:8ec9 with SMTP id 98e67ed59e1d1-3b41cafdb7dmr4480174a91.47.1795247609783;
+        Fri, 20 Nov 2026 23:53:29 -0800 (PST)
+Received: from localhost ([2001:19f0:8000:4ce8:5400:7ff:fe0e:e6b2])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b409330ae8sm10382959a91.7.2026.11.20.23.53.27
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 20 Nov 2026 23:53:28 -0800 (PST)
+Date: Sat, 21 Nov 2026 15:52:55 +0800
+From: Inochi Amaoto <inochiama@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Vladimir Oltean <olteanv@gmail.com>
+Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>, 
+	Jonathan Corbet <corbet@lwn.net>, Shuah Khan <skhan@linuxfoundation.org>, 
+	Randy Dunlap <rdunlap@infradead.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Rhys Tumelty <rhys@tumelty.co.uk>, Inochi Amaoto <inochiama@gmail.com>, linux-doc@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Yixun Lan <dlan@gentoo.org>, 
+	Longbin Li <looong.bin@gmail.com>
+Subject: Re: [PATCH v4 3/5] phy: core: Add phy bulk data helper functions
+Message-ID: <awFL17YyVU7yRKZz@inochi.infowork>
+References: <20260929085235.469515-1-inochiama@gmail.com>
+ <20260929085235.469515-4-inochiama@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260929085235.469515-4-inochiama@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261120_234804_768596_9C9F9EE7 
-X-CRM114-Status: GOOD (  12.58  )
-X-Spam-Score: -1.8 (-)
+X-CRM114-CacheID: sfid-20261120_235331_127921_B5B75F4F 
+X-CRM114-Status: GOOD (  25.71  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,178 +108,109 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-10.8 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,
+	FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add the USB2 PHY configuration for the RK3506. The PHY needs a
-board-specific tuning sequence: the OTG differential receivers are
-disabled in suspend mode, the HS eye height is reduced to 425 mV, and
-the Tx fs/ls linestate is selected from the TX driver.
+On Tue, Sep 29, 2026 at 04:52:33PM +0800, Inochi Amaoto wrote:
+> Add several helper functions that allow drivers to get several phy
+> consumers in one operation. If any of the phy cannot be acquired then
+> any phys that were got will be put before returning to the caller.
+> 
+> This can relieve the driver owners' life who needs to handle many phys,
+> as well as each phy error reporting.
+> 
+> Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
+> ---
+>  drivers/phy/phy-core.c  | 253 ++++++++++++++++++++++++++++++++++++++++
+>  include/linux/phy/phy.h |  55 +++++++++
+>  2 files changed, 308 insertions(+)
+> 
+> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> index 8fbaea003b90..5b76c006575b 100644
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -1004,6 +1004,259 @@ struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
+>  }
+>  EXPORT_SYMBOL_GPL(devm_of_phy_get_by_index);
 
-Tested on an RK3506B board: USB host mode enumerates devices and a USB
-drive mounts correctly; device and OTG modes work, including adb.
+[...]
 
-Tested-by: ZhuXiangyu <1194781887@qq.com>
-Signed-off-by: ZhuXiangyu <1194781887@qq.com>
----
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 122 ++++++++++++++++++
- 1 file changed, 122 insertions(+)
+> +/**
+> + * phy_bulk_init() - initialize multiple PHYs
+> + * @num_phys: number of entries in the phys array
+> + * @phys: array of struct phy_bulk_data to initialize
+> + *
+> + * Initializes the PHYs in array order. If an initialization fails, all PHYs
+> + * initialized by this call are exited in reverse order.
+> + *
+> + * Return: %0 if successful, a negative error code otherwise
+> + */
+> +int phy_bulk_init(unsigned int num_phys, struct phy_bulk_data *phys)
+> +{
+> +	unsigned int i;
+> +	int ret;
+> +
+> +	for (i = 0; i < num_phys; i++) {
+> +		ret = phy_init(phys[i].phy);
+> +		if (ret)
+> +			goto err;
+> +	}
+> +
+> +	return 0;
+> +
+> +err:
+> +	while (i--)
+> +		phy_exit(phys[i].phy);
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(phy_bulk_init);
+> +
+> +/**
+> + * phy_bulk_exit() - exit multiple PHYs
+> + * @num_phys: number of entries in the phys array
+> + * @phys: array of struct phy_bulk_data to exit
+> + *
+> + * Exits the PHYs in reverse array order. All PHYs are processed even if an
+> + * error occurs.
+> + *
+> + * Return: %0 if successful, the first negative error code otherwise
+> + */
+> +int phy_bulk_exit(unsigned int num_phys, struct phy_bulk_data *phys)
+> +{
+> +	int ret = 0;
+> +	int err;
+> +
+> +	while (num_phys--) {
+> +		err = phy_exit(phys[num_phys].phy);
+> +		if (err && !ret)
+> +			ret = err;
+> +	}
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(phy_bulk_exit);
+> +
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 848c07cc..634fdbb0 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -1617,6 +1617,53 @@ static int rk3588_usb2phy_tuning(struct rockchip_usb2phy *rphy)
- 	return ret;
- }
- 
-+static int rk3506_usb2phy_tuning(struct rockchip_usb2phy *rphy)
-+{
-+	int ret;
-+
-+	/* Turn off otg0 port differential receiver in suspend mode */
-+	ret = regmap_write(rphy->phy_base, 0x30,
-+			   BIT(2) << BIT_WRITEABLE_SHIFT);
-+	if (ret)
-+		return ret;
-+
-+	/* Turn off otg1 port differential receiver in suspend mode */
-+	ret = regmap_write(rphy->phy_base, 0x430,
-+			   BIT(2) << BIT_WRITEABLE_SHIFT);
-+	if (ret)
-+		return ret;
-+
-+	/* Set otg0 port HS eye height to 425mV (default is 450mV) */
-+	ret = regmap_write(rphy->phy_base, 0x30,
-+			   (0x05 << 4) |
-+			   (GENMASK(6, 4) << BIT_WRITEABLE_SHIFT));
-+	if (ret)
-+		return ret;
-+
-+	/* Set otg1 port HS eye height to 425mV (default is 450mV) */
-+	ret = regmap_write(rphy->phy_base, 0x430,
-+			   (0x05 << 4) |
-+			   (GENMASK(6, 4) << BIT_WRITEABLE_SHIFT));
-+	if (ret)
-+		return ret;
-+
-+	/* Choose the Tx fs/ls data as linestate from TX driver for otg0 port */
-+	ret = regmap_write(rphy->phy_base, 0x94,
-+			   (0x03 << 3) |
-+			   (GENMASK(6, 3) << BIT_WRITEABLE_SHIFT));
-+	if (ret)
-+		return ret;
-+
-+	/* Choose the Tx fs/ls data as linestate from TX driver for otg1 port */
-+	ret = regmap_write(rphy->phy_base, 0x494,
-+			   (0x03 << 3) |
-+			   (GENMASK(6, 3) << BIT_WRITEABLE_SHIFT));
-+	if (ret)
-+		return ret;
-+
-+	return 0;
-+}
-+
- static const struct rockchip_usb2phy_cfg rk3036_phy_cfgs[] = {
- 	{
- 		.reg = 0x17c,
-@@ -2366,6 +2413,80 @@ static const struct rockchip_usb2phy_cfg rv1108_phy_cfgs[] = {
- 	{ /* sentinel */ }
- };
- 
-+static const struct rockchip_usb2phy_cfg rk3506_phy_cfgs[] = {
-+	{
-+		.reg = 0xff2b0000,
-+		.num_ports	= 2,
-+		.phy_tuning	= rk3506_usb2phy_tuning,
-+		.clkout_ctl_phy = { 0x041c, 7, 2, 0, 0x27 },
-+		.port_cfgs	= {
-+			[USB2PHY_PORT_OTG] = {
-+				.phy_sus	= { 0x0060, 8, 0, 0, 0x1d1 },
-+				.bvalid_det_en	= { 0x0150, 2, 2, 0, 1 },
-+				.bvalid_det_st	= { 0x0154, 2, 2, 0, 1 },
-+				.bvalid_det_clr = { 0x0158, 2, 2, 0, 1 },
-+				.idfall_det_en	= { 0x0150, 5, 5, 0, 1 },
-+				.idfall_det_st	= { 0x0154, 5, 5, 0, 1 },
-+				.idfall_det_clr = { 0x0158, 5, 5, 0, 1 },
-+				.idrise_det_en	= { 0x0150, 4, 4, 0, 1 },
-+				.idrise_det_st	= { 0x0154, 4, 4, 0, 1 },
-+				.idrise_det_clr = { 0x0158, 4, 4, 0, 1 },
-+				.ls_det_en	= { 0x0150, 0, 0, 0, 1 },
-+				.ls_det_st	= { 0x0154, 0, 0, 0, 1 },
-+				.ls_det_clr	= { 0x0158, 0, 0, 0, 1 },
-+				.disfall_en	= { 0x0150, 7, 7, 0, 0 },
-+				.disfall_st	= { 0x0154, 7, 7, 0, 1 },
-+				.disfall_clr	= { 0x0158, 7, 7, 0, 1 },
-+				.disrise_en	= { 0x0150, 6, 6, 0, 0 },
-+				.disrise_st	= { 0x0154, 6, 6, 0, 1 },
-+				.disrise_clr	= { 0x0158, 6, 6, 0, 1 },
-+				.utmi_avalid	= { 0x0118, 1, 1, 0, 1 },
-+				.utmi_bvalid	= { 0x0118, 0, 0, 0, 1 },
-+				.utmi_ls	= { 0x0118, 5, 4, 0, 1 },
-+				.utmi_hstdet	= { 0x0118, 7, 7, 0, 1 },
-+			},
-+			[USB2PHY_PORT_HOST] = {
-+				.phy_sus	= { 0x0070, 8, 0, 0, 0x1d1 },
-+				.bvalid_det_en	= { 0x0170, 2, 2, 0, 1 },
-+				.bvalid_det_st	= { 0x0174, 2, 2, 0, 1 },
-+				.bvalid_det_clr = { 0x0178, 2, 2, 0, 1 },
-+				.idfall_det_en	= { 0x0170, 5, 5, 0, 1 },
-+				.idfall_det_st	= { 0x0174, 5, 5, 0, 1 },
-+				.idfall_det_clr = { 0x0178, 5, 5, 0, 1 },
-+				.idrise_det_en	= { 0x0170, 4, 4, 0, 1 },
-+				.idrise_det_st	= { 0x0174, 4, 4, 0, 1 },
-+				.idrise_det_clr = { 0x0178, 4, 4, 0, 1 },
-+				.ls_det_en	= { 0x0170, 0, 0, 0, 1 },
-+				.ls_det_st	= { 0x0174, 0, 0, 0, 1 },
-+				.ls_det_clr	= { 0x0178, 0, 0, 0, 1 },
-+				.disfall_en	= { 0x0170, 7, 7, 0, 0 },
-+				.disfall_st	= { 0x0174, 7, 7, 0, 1 },
-+				.disfall_clr	= { 0x0178, 7, 7, 0, 1 },
-+				.disrise_en	= { 0x0170, 6, 6, 0, 0 },
-+				.disrise_st	= { 0x0174, 6, 6, 0, 1 },
-+				.disrise_clr	= { 0x0178, 6, 6, 0, 1 },
-+				.utmi_avalid	= { 0x0118, 9, 9, 0, 1 },
-+				.utmi_bvalid	= { 0x0118, 8, 8, 0, 1 },
-+				.utmi_ls	= { 0x0118, 13, 12, 0, 1 },
-+				.utmi_hstdet	= { 0x0118, 15, 15, 0, 1 },
-+			}
-+		},
-+		.chg_det = {
-+			.opmode		= { 0x0060, 8, 0, 0, 0x1d7 },
-+			.cp_det		= { 0x0118, 19, 19, 0, 1 },
-+			.dcp_det	= { 0x0118, 18, 18, 0, 1 },
-+			.dp_det		= { 0x0118, 20, 20, 0, 1 },
-+			.idm_sink_en	= { 0x006c, 1, 1, 0, 1 },
-+			.idp_sink_en	= { 0x006c, 0, 0, 0, 1 },
-+			.idp_src_en	= { 0x006c, 2, 2, 0, 1 },
-+			.rdm_pdwn_en	= { 0x006c, 3, 3, 0, 1 },
-+			.vdm_src_en	= { 0x006c, 5, 5, 0, 1 },
-+			.vdp_src_en	= { 0x006c, 4, 4, 0, 1 },
-+		},
-+	},
-+	{ /* sentinel */ }
-+};
-+
- static const struct of_device_id rockchip_usb2phy_dt_match[] = {
- 	{ .compatible = "rockchip,px30-usb2phy", .data = &rk3328_phy_cfgs },
- 	{ .compatible = "rockchip,rk3036-usb2phy", .data = &rk3036_phy_cfgs },
-@@ -2375,6 +2496,7 @@ static const struct of_device_id rockchip_usb2phy_dt_match[] = {
- 	{ .compatible = "rockchip,rk3328-usb2phy", .data = &rk3328_phy_cfgs },
- 	{ .compatible = "rockchip,rk3366-usb2phy", .data = &rk3366_phy_cfgs },
- 	{ .compatible = "rockchip,rk3399-usb2phy", .data = &rk3399_phy_cfgs },
-+	{ .compatible = "rockchip,rk3506-usb2phy", .data = &rk3506_phy_cfgs },
- 	{ .compatible = "rockchip,rk3528-usb2phy", .data = &rk3528_phy_cfgs },
- 	{ .compatible = "rockchip,rk3562-usb2phy", .data = &rk3562_phy_cfgs },
- 	{ .compatible = "rockchip,rk3568-usb2phy", .data = &rk3568_phy_cfgs },
--- 
-2.47.3
 
+Hi Vinod, Vladimir and Manivannan,
+
+Before sending the next patch (I guess I can update it in the next
+week), I have a question for the error handle.
+
+As the phy_exit()/phy_power_off()/phy_power_on() can return an
+error code, should the corresponding bulk api need to call the
+corresponding  phy_init()/phy_power_on()/phy_power_off() when
+there is an error occurs. Or just leave the state as it is.
+I saw the reset subsystem does this rollback.
+
+Regards,
+Inochi
 
 -- 
 linux-phy mailing list
