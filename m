@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 83656606A32C
-	for <linux-phy@archiver.kernel.org>; Sat, 21 Nov 2026 19:22:35 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 41821606A32A
+	for <linux-phy@archiver.kernel.org>; Sat, 21 Nov 2026 19:22:36 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=me0Mz/96;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=SGLhmQt0
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=1Lu/EEIZ;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=NWhhZ8Tx
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
@@ -14,70 +14,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=5m2YWmeoXlkQXaHpWssMaQji0a/J+iad7EXc0Dsa3m0=; b=me0Mz/96S+3iNX755RfQmduKqJ
-	QZ+ay7TLJKXUzaVBoBU0iOR02qcc0irfFCKwhe5NI3pl58hoxCTsDFPJl7+Xqpfl+aOufKLtPwZ4x
-	CmxvohTKI5p+woT6D7cX3Vme2FOYlkGmjBroKtQb5JQNYI+Aspw+Ed1lDcNgCIaog5rN7CWZ5EMvZ
-	xhFXGgxWD8zOyiavtxRg/2Dib8Cj5kD1JNMGXOQDfLHzoXR9NQCNHEpd41PH3hp/KmUO69TC1CP37
-	brgmCxbq6rNtulSsShiV9OREFbMpcPne/xJMeZrL0jGdq71Xxlt+ia5JYLyNQHIpd9eVyciiNPR/3
-	D7zTBddA==;
+	bh=bRJgb8Ezj33HzSOqZXODza+RTQezNlFq5hOWXxYoOH0=; b=1Lu/EEIZP2DsHWfzP9biaWzX8R
+	53dhg29BbLNbO+45yP/WfWPylSThnqw+g/0/IZ7HutMtzCnpqiyQ/8Fk3EOPELwZ8Nk9tUyAX99Sr
+	+FYhvkghBKtm2NKP1yiwnhs3DVNHHWgvKIWjNUjdPvATKNVcnOF57nVVldPFlq0vpgxMHjkUkWHnH
+	NAhGoakQHWfkOZ6qgd0dJ7o04utfWN2tA9TiIspwt+saMhJVQK/dUriBFA8zi+2OW0XZZ490dgknj
+	1wMz43ZrUU+hFVfqYAIsW7NVkpfwrrXSBGjJGQUHF1pMZcb1RRPScpziwqjDSlJHakPeJuQSKQ7jV
+	KE61X/xQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUqfT-0000000061s-11FT;
+	id 1xUqfT-00000000649-42Id;
 	Sat, 21 Nov 2026 19:22:35 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUqef-000000005MU-3TVJ;
-	Sat, 21 Nov 2026 19:21:45 +0000
+	id 1xUqeg-000000005Ne-28sP;
+	Sat, 21 Nov 2026 19:21:46 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6FB2745AFC;
-	Sat, 21 Nov 2026 19:21:45 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 4044245AD4;
+	Sat, 21 Nov 2026 19:21:46 +0000 (UTC)
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795288905;
-	b=kNTHhGjJ4jUv/3lyXNfseEd7NMx9egxOFJkxhtn9EBTPtkp5mZhcpmb3zmOcXu0xKt8X
-	 AAVa89efFuK/zgBzJt56q2Z/Wvj3q3yXHsQN/TPa5V0mNcFihyvXEDYmDNi46gWUNDuYo
-	 ir4nmiyYmUTVVDW77dd/giHTZScvfpufaLN8VWsZIttveZ79dpLuek2f4TtHhRFW07bl3
-	 hxeutXxE65coDxzxL7CnaBe7tMkPGVRJOnOUlDBmhaTP8662jbJq8sJYGIPoKwGjSoDSB
-	 +k5JXG6h+qSFArRU1MwfoTPUJQvfod0C5XQ8eL5qEmRpY+y1iNvV2fBoPQDwsNj1VmQ==
+	t=1795288906;
+	b=JRI2hHvb8B3SAr63wKsi5aNi0e7XxfYf+iIdOwmTR4OfyRGVq4hiNavKu0ZJjj8rqC4d
+	 DNHjkOUMmr6LXBEpbnRF7d6/ytH75lf9bKPyPgmH5hAaXCoZVL6E4UyTHQDGA8E0qQVPN
+	 u6ij3R9oZKY1V6emPLa3CJxuvOhpyTKIIcrtZ9lq8FJ43WWM+gri+i1lXBxnIyqwpBwkE
+	 f+lsamH0cX6x20weIZt4SbY6LZ1hJAn4KQU02TYcqrMpdR4oSR49Ds4pFiLHdIvYKoLbB
+	 eIAX7heL4Pcd5BEYCEtIdAhPj+85JzJONXjrvTpq4Sm0W3DIJCxzePqstzQ1kQthkcw==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795288905;
+	c=relaxed/relaxed; t=1795288906;
 	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
 	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
 	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
 	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=wHtstx12TPFOVoOdJsV4o5pTGvndM07vJ3yUi+EhRFk=;
-	b=DCQ+bO+1Av2WXzvyBGD8jyqVrB5KMjA8153sKaZjUYfXBj6BdEihEcyqw59nbVQD62u9
-	 BMZ4bjz9LtteQ1qDEDUgknQY8UM3RCTNO2mHzFnJVPanUrFD7iynnTbPoLJ96Kya1GtAw
-	 ghFst+7FRmJpbMuxzY83ZcDsTQymnMrDyPe55ZwUIen/0r6jfZAo2cMsEBNlqpG3MNn9M
-	 vtaInSrwY4ncWGytpL+lkRZ4v1VTGMiEepbojDYi9UKgmkaTkBD5oLoXwZmdl9SvTtbMy
-	 7wzIYBgHSMZ+HitpcFx8WH78FFoDR+SKE90GafAH8ZmMut3A0LPvRtTQqFrkrAtog6g==
+	bh=3ySlJUTZg8+yNINn5sfi2SIyHBWA5zVWlGALJ4M1cgM=;
+	b=lukfTTr48vAw4iNlV5IWtq6Ue3gS6DXHpaBsjf8wP8QoB/JhXEsVksCOwDzn7buqTRve
+	 IDKIokkJo8WsfbGUbjLkBkmsIgjMXQn5HT/MqK4i7thKnIkVWlrzYamO6Rp8Tqp2vwRcw
+	 pL3eF/kv2JBy/SYkDq6hKdqMkBt3iZS0ABD9yH0J3X3gQ8cCDIFtTEbdrYSdY8lUDDPK0
+	 8z/Guh7h/tBkK3LRiMgBXMFLG07QQnranGqhpjOqgmLINXPDYDLpf3uVlU4+64vn00jT1
+	 95FxlHW5/NZp0pgDrIdwb3Utg2Bek9Cr8Y+bwm3GMn6HdGHmR70V/u6GsEKGaTFBsFA==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 66DA31F000D2;
-	Sat, 21 Nov 2026 19:21:39 +0000 (UTC)
+	by smtp.kernel.org (Postfix) with ESMTPS id 0A9DF1F00AD3;
+	Sat, 21 Nov 2026 19:21:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795288905;
-	bh=wHtstx12TPFOVoOdJsV4o5pTGvndM07vJ3yUi+EhRFk=;
+	s=k20260515; t=1795288906;
+	bh=3ySlJUTZg8+yNINn5sfi2SIyHBWA5zVWlGALJ4M1cgM=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=SGLhmQt0WMt+u1ntohx7/zKZxUnGGrLT5vXD5K7NLjvPI2ga6gyIS1RR3HqLogmDT
-	 6IfF5kDHT3OrJF8e1Mrs+YkKeuEfgYzVoiuer/+RH21BbnwA5nXkL0U0dk1Qn6+4Ql
-	 xbKhsPXw07emTPBGMxl7JzTo/m7Gep+vc8ddEWl4DnU9KZ1McoYrQ0Yv5od3JKp0sr
-	 pAw99oZeuVsE7iGyt3l2wIMftnPJZbusXK7J4CUNKcpRwz8MLg+JZGxTEukitUN7T2
-	 ORLeAccaNkZHSa/PMXl99vN2LHGQAZSGBlxdfzDdOhUDCURPQmH5M7CJsKKn64fro2
-	 0rypOpygEoZDA==
+	b=NWhhZ8TxIs81wdW1Fy4yXuk26SrglkNzvDmS+Tldb5rGmbmJZs/K9MjKYYxFoyRXh
+	 RRXbNkYOcdrP1qem3wGnqCJCZnH+u3NIDi5VWIwNkCOIx6JeooT4tYkFh8j4a+Ip2C
+	 g3zTmKIAX9JA+E6a/7O6SYTTrAJsrieqEeEdi5GXrHOw6n3/Mu0+kTIdvlURz+3jW/
+	 wMyxX2gNYQBG67iVaNflkrRRBfckQJiogtOzAfO/69n52ZX1KnXE1/uwkxcBppr33t
+	 ceAk3KZbOL9K0SI4o1wnIu6W0t+Bwwh7+uucrPHGuQkUWoZ+ucaOPGMshEGpStbsyl
+	 YAzocPve+BXHA==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id E3DD54BD72;
-	Sat, 21 Nov 2026 19:21:38 +0000 (UTC)
+	by lkml.kernel.org (Postfix) with ESMTP id AA8344BD8E;
+	Sat, 21 Nov 2026 19:21:39 +0000 (UTC)
 From: Ronald Claveau via B4 Relay <devnull+linux-kernel-dev.aliel.fr@kernel.org>
-Date: Sat, 21 Nov 2026 20:21:06 +0100
-Subject: [PATCH v3 04/11] phy: amlogic: Add Meson HDMI TX PHY driver
+Date: Sat, 21 Nov 2026 20:21:13 +0100
+Subject: [PATCH v3 11/11] arm64: dts: amlogic: Add HDMI TX PHY node for GXL
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261121-meson-drm-create-hdmitx-phy-v3-4-f8f471788076@aliel.fr>
+Message-Id: <20261121-meson-drm-create-hdmitx-phy-v3-11-f8f471788076@aliel.fr>
 References: <20261121-meson-drm-create-hdmitx-phy-v3-0-f8f471788076@aliel.fr>
 In-Reply-To: <20261121-meson-drm-create-hdmitx-phy-v3-0-f8f471788076@aliel.fr>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -95,13 +95,13 @@ Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org, 
  Ronald Claveau <linux-kernel-dev@aliel.fr>, linux-pm@vger.kernel.org
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=12662;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1074;
  i=linux-kernel-dev@aliel.fr; h=from:subject:message-id;
- bh=ucuFasgJ8vF/dPW17iRMO07LFAc2GN7AQ9w0+4vsLvo=;
- b=owGbwMvMwCWm1SvKXP3cUInxtFoSQzbje11xx0seNj/UhPvDHstuYGDpEJmar3SkPEfyc/2Cj
- 41pR6s7SlkYxLgYZMUUWfrnWp54d/noma971FNg5rAygQxh4OIUgInU+DH8L533mSnQnn/qtLwL
- vqsPTnggp15wr7dPcVrSndabYs7LShj+p026//+qr+2JJE7pG1vb9S6wnVhakuvxwdpmRp6+Vcc
- RHgA=
+ bh=JP7lAwalWZ4HUjkBJydQfX0hMiglUBnijIXqwFKtcOI=;
+ b=owGbwMvMwCWm1SvKXP3cUInxtFoSQzbje/vf+uX5V92qrFhOTbM66DQ/fFWce6/zjVxHdl8xo
+ bTjO791lLIwiHExyIopsvTPtTzx7vLRM1/3qKfAzGFlAhnCwMUpABOplmVk6OwMktjnz/e14YbN
+ 05PHN65YoHK99eNTJ4apGxPnuvmbqTL84S3ns3obu9m22l7e++rn8P7EJqVrLwzYb0p83Fqj/9W
+ OAwA=
 X-Developer-Key: i=linux-kernel-dev@aliel.fr; a=openpgp;
  fpr=DFD863F61375BF917F0012173953305EF1D0EC3E
 X-Endpoint-Received: by B4 Relay for linux-kernel-dev@aliel.fr/default with
@@ -129,412 +129,39 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 From: Ronald Claveau <linux-kernel-dev@aliel.fr>
 
-Add a PHY driver for the HDMI TX PHY found on Amlogic GXBB, GXL, GXM
-and G12A SoCs. The PHY is controlled through the HHI_HDMI_PHY_CNTL0..5
-registers of the HHI system controller, of which the PHY node is a
-child, so the regmap is obtained from the parent syscon.
-
-The driver implements the generic PHY API with the HDMI configuration
-options: .validate() accepts only 8 bpc and a TMDS character rate
-covered by the per-SoC table, .configure() programs the analog
-settings matching that rate, and .power_on()/.power_off() handle the
-reset sequence and the return to the initial state.
-
-The per-SoC register values and rate thresholds are taken from the
-existing HDMI TX code, so that the PHY handling can be moved out of the
-display driver.
-
-For DTs that do not provide a "phys" property on the HDMI TX node,
-export meson_hdmi_phy_create_legacy() so that the display driver can
-still create the PHY itself. It is marked as deprecated and will be
-removed together with the fallback in meson_dw_hdmi.c.
+Describe the HDMI TX PHY as a child of the HHI system controller, with
+the amlogic,meson-gxl-hdmi-tx-phy compatible and reference
+it from the HDMI TX node through "phys".
 
 Signed-off-by: Ronald Claveau <linux-kernel-dev@aliel.fr>
 ---
- drivers/phy/amlogic/Kconfig             |  11 ++
- drivers/phy/amlogic/Makefile            |   1 +
- drivers/phy/amlogic/phy-meson-hdmi-tx.c | 319 ++++++++++++++++++++++++++++++++
- include/linux/phy/phy-meson-hdmi-tx.h   |  19 ++
- 4 files changed, 350 insertions(+)
+ arch/arm64/boot/dts/amlogic/meson-gxl.dtsi | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/drivers/phy/amlogic/Kconfig b/drivers/phy/amlogic/Kconfig
-index ce7ba3eb2a8e..14fcde8d88bc 100644
---- a/drivers/phy/amlogic/Kconfig
-+++ b/drivers/phy/amlogic/Kconfig
-@@ -105,3 +105,14 @@ config PHY_MESON_AXG_MIPI_DPHY
- 	  Enable this to support the Meson MIPI DPHY found in Meson AXG
- 	  SoCs.
- 	  If unsure, say N.
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
+index f257fe3860f7..d205eec1cff7 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
+@@ -328,6 +328,7 @@ &hdmi_tx {
+ 		 <&clkc CLKID_GCLK_VENCI_INT0>;
+ 	clock-names = "isfr", "iahb", "venci";
+ 	power-domains = <&pwrc PWRC_GXBB_VPU_ID>;
++	phys = <&hdmi_tx_phy>;
+ 
+ 	assigned-clocks = <&clkc CLKID_HDMI_SEL>,
+ 			  <&clkc CLKID_HDMI>;
+@@ -342,6 +343,11 @@ clkc: clock-controller {
+ 		clocks = <&xtal>;
+ 		clock-names = "xtal";
+ 	};
 +
-+config PHY_MESON_HDMI_TX
-+	tristate "Meson HDMI TX PHY driver"
-+	depends on ARCH_MESON || COMPILE_TEST
-+	depends on OF
-+	select GENERIC_PHY
-+	select MFD_SYSCON
-+	help
-+	  Enable this to support the HDMI TX PHY found on Amlogic
-+	  GXBB, GXL, GXM and G12A SoCs.
-+	  If unsure, say N.
-diff --git a/drivers/phy/amlogic/Makefile b/drivers/phy/amlogic/Makefile
-index 91e3b9790c03..fa7165700a93 100644
---- a/drivers/phy/amlogic/Makefile
-+++ b/drivers/phy/amlogic/Makefile
-@@ -8,3 +8,4 @@ obj-$(CONFIG_PHY_MESON_G12A_MIPI_DPHY_ANALOG)	+= phy-meson-g12a-mipi-dphy-analog
- obj-$(CONFIG_PHY_MESON_AXG_PCIE)		+= phy-meson-axg-pcie.o
- obj-$(CONFIG_PHY_MESON_AXG_MIPI_PCIE_ANALOG)	+= phy-meson-axg-mipi-pcie-analog.o
- obj-$(CONFIG_PHY_MESON_AXG_MIPI_DPHY)		+= phy-meson-axg-mipi-dphy.o
-+obj-$(CONFIG_PHY_MESON_HDMI_TX)			+= phy-meson-hdmi-tx.o
-diff --git a/drivers/phy/amlogic/phy-meson-hdmi-tx.c b/drivers/phy/amlogic/phy-meson-hdmi-tx.c
-new file mode 100644
-index 000000000000..872d244de8fb
---- /dev/null
-+++ b/drivers/phy/amlogic/phy-meson-hdmi-tx.c
-@@ -0,0 +1,319 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Amlogic Meson HDMI TX PHY driver (GXBB / GXL / GXM / G12A)
-+ *
-+ * Copyright (C) 2026 Ronald Claveau <linux-kernel-dev@aliel.fr>
-+ *
-+ * Based on meson_dw_hdmi.c:
-+ * Copyright (C) 2016 BayLibre, SAS
-+ * Author: Neil Armstrong <narmstrong@baylibre.com>
-+ * Copyright (C) 2015 Amlogic, Inc. All rights reserved.
-+ */
-+
-+#include <linux/delay.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/phy/phy-hdmi.h>
-+#include <linux/phy/phy-meson-hdmi-tx.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+#define HHI_HDMI_PHY_CNTL0	0x3a0 /* 0xe8 */
-+#define HHI_HDMI_PHY_CNTL1	0x3a4 /* 0xe9 */
-+#define  PHY_CNTL1_INIT		0x03900000
-+#define  PHY_INVERT		BIT(17)
-+#define  PHY_CNTL1_CTRL_MASK	GENMASK(3, 0)
-+#define  PHY_CNTL1_RESET	0xf /* enable + software reset */
-+#define  PHY_CNTL1_UNRESET	0xe /* enable + unreset */
-+#define HHI_HDMI_PHY_CNTL2	0x3a8 /* 0xea */
-+#define HHI_HDMI_PHY_CNTL3	0x3ac /* 0xeb */
-+#define HHI_HDMI_PHY_CNTL4	0x3b0 /* 0xec */
-+#define HHI_HDMI_PHY_CNTL5	0x3b4 /* 0xed */
-+
-+/* The code resets the PHY 3 times in a row */
-+#define PHY_RESET_COUNT		3
-+
-+struct meson_hdmi_phy_rate {
-+	unsigned int min_rate;	/* TMDS character rate, in Hz */
-+	u32 cntl0;
-+	u32 cntl3;
-+	u32 cntl5;		/* only used if has_cntl5 */
-+};
-+
-+struct meson_hdmi_phy_data {
-+	const struct meson_hdmi_phy_rate *rates;
-+	unsigned int num_rates;
-+	unsigned int max_rate;	/* Hz, TMDS character rate maximum */
-+	bool has_cntl5;
-+	u32 cntl0_init;
-+	u32 cntl1_init;
-+};
-+
-+struct meson_hdmi_phy {
-+	struct regmap *hhi;
-+	const struct meson_hdmi_phy_data *data;
-+};
-+
-+/* GXBB */
-+static const struct meson_hdmi_phy_rate gxbb_rates[] = {
-+	/* 5.94Gbps, 3.7125Gbps */
-+	{ 371250000, 0x33353245, 0x2100115b },
-+	/* 2.97Gbps */
-+	{ 297000000, 0x33634283, 0xb000115b },
-+	/* 1.485Gbps, down to 251.75Mbps */
-+	{ 25175000,  0x33632122, 0x2000115b },
-+};
-+
-+/* GXL / GXM */
-+static const struct meson_hdmi_phy_rate gxl_rates[] = {
-+	/* 5.94Gbps, 3.7125Gbps */
-+	{ 371250000, 0x333d3282, 0x2136315b },
-+	/* 2.97Gbps */
-+	{ 297000000, 0x33303382, 0x2036315b },
-+	/* 1.485Gbps */
-+	{ 148500000, 0x33303362, 0x2016315b },
-+	/* 742.5Mbps, down to 251.75Mbps */
-+	{ 25175000,  0x33604142, 0x0016315b },
-+};
-+
-+/* G12A */
-+static const struct meson_hdmi_phy_rate g12a_rates[] = {
-+	/* 5.94Gbps, 3.7125Gbps */
-+	{ 371250000, 0x37eb65c4, 0x2ab0ff3b, 0x0000080b },
-+	/* 2.97Gbps */
-+	{ 297000000, 0x33eb6262, 0x2ab0ff3b, 0x00000003 },
-+	/* 1.485Gbps, down to 251.75Mbps */
-+	{ 25175000,  0x33eb4242, 0x2ab0ff3b, 0x00000003 },
-+};
-+
-+static const struct meson_hdmi_phy_data gxbb_data = {
-+	.rates = gxbb_rates,
-+	.num_rates = ARRAY_SIZE(gxbb_rates),
-+	.max_rate  = 600000000, /* HDMI 2.0 */
-+	.cntl0_init = 0x0,
-+	.cntl1_init = PHY_CNTL1_INIT | PHY_INVERT,
-+};
-+
-+static const struct meson_hdmi_phy_data gxl_data = {
-+	.rates = gxl_rates,
-+	.num_rates = ARRAY_SIZE(gxl_rates),
-+	.max_rate  = 600000000, /* HDMI 2.0 */
-+	.cntl0_init = 0x0,
-+	.cntl1_init = PHY_CNTL1_INIT,
-+};
-+
-+static const struct meson_hdmi_phy_data g12a_data = {
-+	.rates = g12a_rates,
-+	.num_rates = ARRAY_SIZE(g12a_rates),
-+	.max_rate  = 600000000, /* HDMI 2.0 */
-+	.has_cntl5 = true,
-+	.cntl0_init = 0x000b4242, /* Bandgap */
-+	.cntl1_init = PHY_CNTL1_INIT,
-+};
-+
-+static const struct meson_hdmi_phy_rate *
-+meson_hdmi_phy_find_rate(const struct meson_hdmi_phy_data *data, u64 rate)
-+{
-+	unsigned int i;
-+
-+	if (rate > data->max_rate)
-+		return NULL;
-+
-+	for (i = 0; i < data->num_rates; i++)
-+		if (rate >= data->rates[i].min_rate)
-+			return &data->rates[i];
-+
-+	return NULL;
-+}
-+
-+/* Fallback to init mode: CNTL1 first, then CNTL0 (order matters) */
-+static void meson_hdmi_phy_set_init_state(struct meson_hdmi_phy *priv)
-+{
-+	regmap_write(priv->hhi, HHI_HDMI_PHY_CNTL1, priv->data->cntl1_init);
-+	regmap_write(priv->hhi, HHI_HDMI_PHY_CNTL0, priv->data->cntl0_init);
-+}
-+
-+static int meson_hdmi_phy_init(struct phy *phy)
-+{
-+	struct meson_hdmi_phy *priv = phy_get_drvdata(phy);
-+
-+	meson_hdmi_phy_set_init_state(priv);
-+
-+	return 0;
-+}
-+
-+static int meson_hdmi_phy_configure(struct phy *phy,
-+				    union phy_configure_opts *opts)
-+{
-+	struct meson_hdmi_phy *priv = phy_get_drvdata(phy);
-+	const struct meson_hdmi_phy_rate *r;
-+
-+	r = meson_hdmi_phy_find_rate(priv->data, opts->hdmi.tmds_char_rate);
-+	if (!r)
-+		return -EINVAL;
-+
-+	regmap_write(priv->hhi, HHI_HDMI_PHY_CNTL0, r->cntl0);
-+	regmap_write(priv->hhi, HHI_HDMI_PHY_CNTL3, r->cntl3);
-+	if (priv->data->has_cntl5)
-+		regmap_write(priv->hhi, HHI_HDMI_PHY_CNTL5, r->cntl5);
-+
-+	/* Disable clock, fifo, fifo_wr */
-+	regmap_update_bits(priv->hhi, HHI_HDMI_PHY_CNTL1,
-+			   PHY_CNTL1_CTRL_MASK, 0);
-+
-+	return 0;
-+}
-+
-+static int meson_hdmi_phy_validate(struct phy *phy, enum phy_mode mode,
-+				   int submode, union phy_configure_opts *opts)
-+{
-+	struct meson_hdmi_phy *priv = phy_get_drvdata(phy);
-+
-+	if (mode != PHY_MODE_HDMI)
-+		return -EINVAL;
-+
-+	if (submode != PHY_HDMI_MODE_TMDS)
-+		return -EINVAL;
-+
-+	if (opts->hdmi.bpc != 8)
-+		return -EINVAL;
-+
-+	if (!meson_hdmi_phy_find_rate(priv->data, opts->hdmi.tmds_char_rate))
-+		return -EINVAL;
-+
-+	return 0;
-+}
-+
-+static int meson_hdmi_phy_power_on(struct phy *phy)
-+{
-+	struct meson_hdmi_phy *priv = phy_get_drvdata(phy);
-+	int i;
-+
-+	/* Reset PHY 3 times in a row */
-+	for (i = 0; i < PHY_RESET_COUNT; i++) {
-+		/* Enable and software reset */
-+		regmap_update_bits(priv->hhi, HHI_HDMI_PHY_CNTL1,
-+				   PHY_CNTL1_CTRL_MASK, PHY_CNTL1_RESET);
-+		fsleep(2000);
-+
-+		/* Enable and unreset */
-+		regmap_update_bits(priv->hhi, HHI_HDMI_PHY_CNTL1,
-+				   PHY_CNTL1_CTRL_MASK, PHY_CNTL1_UNRESET);
-+		fsleep(2000);
-+	}
-+
-+	return 0;
-+}
-+
-+static int meson_hdmi_phy_power_off(struct phy *phy)
-+{
-+	struct meson_hdmi_phy *priv = phy_get_drvdata(phy);
-+
-+	meson_hdmi_phy_set_init_state(priv);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops meson_hdmi_phy_ops = {
-+	.init		= meson_hdmi_phy_init,
-+	.configure	= meson_hdmi_phy_configure,
-+	.validate	= meson_hdmi_phy_validate,
-+	.power_on	= meson_hdmi_phy_power_on,
-+	.power_off	= meson_hdmi_phy_power_off,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static struct phy *meson_hdmi_phy_alloc(struct device *dev,
-+					struct regmap *hhi,
-+					const struct meson_hdmi_phy_data *data)
-+{
-+	struct meson_hdmi_phy *priv;
-+	struct phy *phy;
-+
-+	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return ERR_PTR(-ENOMEM);
-+
-+	priv->hhi = hhi;
-+	priv->data = data;
-+
-+	phy = devm_phy_create(dev, NULL, &meson_hdmi_phy_ops);
-+	if (IS_ERR(phy))
-+		return phy;
-+
-+	phy_set_drvdata(phy, priv);
-+
-+	return phy;
-+}
-+
-+/*
-+ * DEPRECATED: only for DTs without a "phys" property on the HDMI TX node.
-+ * Remove together with the fallback in meson_dw_hdmi.c.
-+ */
-+struct phy *meson_hdmi_phy_create_legacy(struct device *dev,
-+					 struct regmap *hhi,
-+					 enum meson_hdmi_phy_soc soc)
-+{
-+	static const struct meson_hdmi_phy_data *const soc_data[] = {
-+		[MESON_HDMI_PHY_GXBB] = &gxbb_data,
-+		[MESON_HDMI_PHY_GXL]  = &gxl_data,
-+		[MESON_HDMI_PHY_G12A] = &g12a_data,
++	hdmi_tx_phy: hdmi-phy {
++		compatible = "amlogic,meson-gxl-hdmi-tx-phy";
++		#phy-cells = <0>;
 +	};
-+
-+	if (soc >= ARRAY_SIZE(soc_data))
-+		return ERR_PTR(-EINVAL);
-+
-+	return meson_hdmi_phy_alloc(dev, hhi, soc_data[soc]);
-+}
-+EXPORT_SYMBOL_GPL(meson_hdmi_phy_create_legacy);
-+
-+static int meson_hdmi_phy_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct phy_provider *provider;
-+	struct regmap *hhi;
-+	struct phy *phy;
-+	const struct meson_hdmi_phy_data *data;
-+
-+	data = of_device_get_match_data(dev);
-+	if (!data)
-+		return -EINVAL;
-+
-+	/* The PHY node is a child of the HHI syscon */
-+	hhi = syscon_node_to_regmap(dev->of_node->parent);
-+	if (IS_ERR(hhi))
-+		return dev_err_probe(dev, PTR_ERR(hhi),
-+				     "failed to get HHI regmap\n");
-+
-+	phy = meson_hdmi_phy_alloc(dev, hhi, data);
-+	if (IS_ERR(phy))
-+		return dev_err_probe(dev, PTR_ERR(phy),
-+				     "failed to create PHY\n");
-+
-+	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(provider);
-+}
-+
-+static const struct of_device_id meson_hdmi_phy_of_match[] = {
-+	{ .compatible = "amlogic,meson-gxbb-hdmi-tx-phy", .data = &gxbb_data },
-+	{ .compatible = "amlogic,meson-gxl-hdmi-tx-phy",  .data = &gxl_data },
-+	{ .compatible = "amlogic,meson-g12a-hdmi-tx-phy", .data = &g12a_data },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, meson_hdmi_phy_of_match);
-+
-+static struct platform_driver meson_hdmi_phy_driver = {
-+	.probe = meson_hdmi_phy_probe,
-+	.driver = {
-+		.name = "meson-hdmi-tx-phy",
-+		.of_match_table = meson_hdmi_phy_of_match,
-+	},
-+};
-+module_platform_driver(meson_hdmi_phy_driver);
-+
-+MODULE_AUTHOR("Ronald Claveau <linux-kernel-dev@aliel.fr>");
-+MODULE_DESCRIPTION("Amlogic Meson HDMI TX PHY driver");
-+MODULE_LICENSE("GPL");
-diff --git a/include/linux/phy/phy-meson-hdmi-tx.h b/include/linux/phy/phy-meson-hdmi-tx.h
-new file mode 100644
-index 000000000000..fe76a5f7efdb
---- /dev/null
-+++ b/include/linux/phy/phy-meson-hdmi-tx.h
-@@ -0,0 +1,19 @@
-+/* SPDX-License-Identifier: GPL-2.0-or-later */
-+#ifndef __PHY_MESON_HDMI_TX_H
-+#define __PHY_MESON_HDMI_TX_H
-+
-+struct device;
-+struct regmap;
-+
-+enum meson_hdmi_phy_soc {
-+	MESON_HDMI_PHY_GXBB,
-+	MESON_HDMI_PHY_GXL,	/* GXL and GXM */
-+	MESON_HDMI_PHY_G12A,
-+};
-+
-+/* DEPRECATED: compat for DTs without "phys" on the HDMI TX node */
-+struct phy *meson_hdmi_phy_create_legacy(struct device *dev,
-+					 struct regmap *hhi,
-+					 enum meson_hdmi_phy_soc soc);
-+
-+#endif /* __PHY_MESON_HDMI_TX_H */
+ };
+ 
+ &hwrng {
 
 -- 
 2.56.1
