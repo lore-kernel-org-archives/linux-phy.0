@@ -2,57 +2,89 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 29059606A320
-	for <linux-phy@archiver.kernel.org>; Sat, 21 Nov 2026 08:03:24 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C2523606A320
+	for <linux-phy@archiver.kernel.org>; Sat, 21 Nov 2026 08:06:09 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=oy9eH5P3;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=lDLKu4Wp
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=srBgho+x;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=qq.com header.i=@qq.com header.a=rsa-sha256 header.s=s201512 header.b=MHj78Ez0
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Subject:Cc:To:From:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ZBJ9nhgC1YTZBiZZjHq9wkOf4cU9IW1YL1n9+hfrku8=; b=oy9eH5P3e6BQHWrAmSJoRYWrlh
-	d9NHG1Crzl5EA3ZTTod9RqXt7zryFo3mgPWCmpQ0gwjLQ6WJAuPaMjOhMMheNRE+agllQbOUgLteV
-	tAjm9MMgSCCY237MwYZxsnqDWoks3Q9BpRGypGtZfbDlDQeRDDCu5SAk5U4TvgmxcajxdAsIC3eIn
-	7dHL13Y8fHM5zh6Ak3eQ4T658uhtlYpC3FzXYFAbB3WcOZd4guWl+Z3pMTZ+mX8oh/67NPlxS0lEV
-	8k2dVtGi2jfe2UfJmR8GrXLW7bThr7i5VZg7pzz2BSEK0TTbcPsUcjhSE+kgQIE9lqGu2j36Jr1yP
-	SNBGeCLg==;
+	bh=V8fUNghtGNsXatAAV9Z6fvktgWPcvTILA1r9awpcuSo=; b=srBgho+x+EzdDwD1p3OaM/2r2F
+	sQAkhI8+c5Ogb4w2Hkr7uoaqxPPvXmnobkak3T6fL7uGy39yXFoFVu1CONiDk6U4ei70egM6vfu87
+	SG7dEZ/kU1yUguUXt7c4Kiyz1+Gc9jagI5wCceETPuLx89MaaLRj44OQcP/dM/xovwBF/0FRzibpX
+	f4VzffXJvkkn+1prjScllbRjSUN9kC0ie3OVI6tyDZTUbuVIfvzMraOd/UAVw0UhHTIg1zHG+0AbR
+	gV/OoZF7Mj0gc0XdnuZtaGuZCJB36aHrRpDXT1URWvnoKIUI6jLcamLWEmQoyjlv0Mglh46bbbGer
+	dF8mEqWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUg4B-0000000GuWo-3oJw;
-	Sat, 21 Nov 2026 08:03:23 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xUg6r-0000000GueR-2D6k;
+	Sat, 21 Nov 2026 08:06:09 +0000
+Received: from out162-62-58-216.mail.qq.com ([162.62.58.216])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUg4A-0000000GuWg-3h0V
-	for linux-phy@lists.infradead.org;
-	Sat, 21 Nov 2026 08:03:22 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2F6AF60D54;
-	Sat, 21 Nov 2026 08:03:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9BE601F000C0;
-	Sat, 21 Nov 2026 08:03:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795248201;
-	bh=+uOtZPsqOXKYcPYuGAOs5O9EZjEyzf3mVE2+5dr005A=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=lDLKu4WpmdS6Y9gr57RcC5JfqA0KUc0974f4NIJuYcodQP39QcJhFDSpkWx2ko5p9
-	 BxEYxnMl0j3twE9UVynMaF/x4l85c/ZM87L3+V+2eeBqR7nYZ5ipebt98NOkvFsSfU
-	 yt8c46bFiZ8JUjpJYCcVfgNFd31/F6NEF57rZF8qdGelx72S3YHBCfeuNzxHWpEfhW
-	 PMkSmnNk6ktlhnqmV+UnugEbtMSaP9k2rULGvajT7+E2wHAPuV8quUHU+D+uQEEj2v
-	 n5cuiZPhjX8ZllZ0ZW7LmaBgpW6fByc+5ODr0H+kbpwreV7Ygl+qjH2eftl2ab4qRB
-	 XD9LB1GH7n3pg==
-Message-ID: <sashiko-outbox-226818@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH] drm/phy: rockchip: fix RK3506 DSI low-power command
- handling
-To: ZhuXiangyu <1194781887@qq.com>
-Cc: linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <tencent_6F7C9E04169BCBAE4E162DAA3DCD5395B209@qq.com>
-References: <tencent_6F7C9E04169BCBAE4E162DAA3DCD5395B209@qq.com>
-Date: Sat, 21 Nov 2026 08:03:21 +0000
+	id 1xUg6o-0000000Gucm-3Hja;
+	Sat, 21 Nov 2026 08:06:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+	t=1795248362; bh=e3aB6iEl4AhdDI4c3BawDm+/eHLIPD2LaHMqVk0Sdzg=;
+	h=From:To:Cc:Subject:Date;
+	b=MHj78Ez0kGZfRUqTrib13DOVT+rENAitcIQQOK/L9NyE3N4F5HvoRpqK3P66PboW6
+	 4G+l6t9qXnEmH+gpiNaWEAnIgO4hLtOBw6m7CaCtFm7Py5fd3owqz2yXkpKGiSbQls
+	 dDRQaRIVdGQg/QGhq2SBtkDReqKTK2ROep83nOyU=
+Received: from jerry-PC.lan ([2408:8249:5f:7101:71a:8713:56b4:5043])
+	by newxmesmtplogicsvrszc56-0.qq.com (NewEsmtp) with SMTP
+	id 17A90CFC; Sat, 21 Nov 2026 16:05:58 +0800
+X-QQ-mid: xmsmtpt1795248358txeicc0pc
+Message-ID: <tencent_F495CC22423581B98A12990F93C04F33CB06@qq.com>
+X-QQ-XMAILINFO: MpgQwYiCXBoUm/Z8Sfca4XktQRA8tw5RyhLqUGRZyPrIye9TkwBe5RMw1mCGIo
+	 nIeB+le+vA2nm6GT7Rd6s4LrY97UoXH785690q0DwG1Jsk8PTr8bvZKrGUerWqrQfz5lzktslE+4
+	 KKzjBTfulgpfyllLsb7tRY7tbUi/ezP9u4IlHNtGiVJuA8FkUQ6wNcHMbrGg/cs4ktwVIiITXoPL
+	 Vu1p/kvIdWfybk4xlYJw9aXkiCmJ68GAaVX59+BZrbiIJAlOmvnl0sb2LxQdoDMyPTzn7NevovAn
+	 CTRfRjt7HstnFtdqAvGZS4qNb1XXNGJltcEKfjpp02SOQt6Wz7J0H6BSpEY1I5y54wAl22foINNu
+	 PYowToD/t9LpPoU3miVssMgTIhEDNUD/I2geOC+FM/jZ/yU3jjQHj6iMVA19GYRwR3RyePUcTvia
+	 vziSHDBDmi6FonqZ7TfC1se0LsBQKjpBYj6riExeOpbVQSmYx6y0FltaIUA7YJi51z2WByIOOcG1
+	 KMmem5R0xF9ODrRZ6WraXAAc3tzAlKNcvOWBC1rnlZGRik5k7XJB51dz3C1xoHlfMTewbWTsesKG
+	 wKI4t0FIQKpZHsFu4Ofk0VcPjhxnnSKwORWfCLG+rhPQBIn3Nyem7MatQY9rFvyuJxvxc+QP8vJf
+	 AKoWEhnUOToLjDFO+Y38fqoSYRx2O87KscRhkhivamLQFca/An7u05HaX1eZ15hmcKmorqtwEkYZ
+	 ptkl7t15Ke67k2qITsPCc6+8adJJKTLPkqxI4fJyClAgsNvr0DFE4q3F8qd9Gfeo+q6/a2/7ACPL
+	 0oHwaDVWapaPj518OK6ncQySZZOTN77d86E4bLcv6lOivu2zSuX5TaocpBIQTv410VhIPALV+gvW
+	 nvdnsbnBtPEF6II/tCGXdsvUgAmGm6AniVI2okmgw1Ki6R0zEX1bQveuyZEpqs4vRfjxdXFAxkwJ
+	 yC4c2/5hdyztVxskS2sKCsctUBlhMzfqXTjlHxmdl3f721dd/Oqfs3E1TUxyCoEBRQslpbZQlCxp
+	 iS27TKtaS/TCXaYSFPzjylgOym6B0xWGhrcTsEw8FDFxZmHgHVpgNalV9zLp8g/aWG4E3aRX7Rmq
+	 8dGRSWvFBYeklmgNemJPq3XoBJz2y+QpW8xCQuTjjZ3zXhz55Mh5TtqlfzFWI5NAbdgbDNL+PPCy
+	 p0CD/DRgZuZYuNkPqbZbQDltNkEcuOgQO3O7I=
+X-QQ-XMRINFO: MSVp+SPm3vtSI1QTLgDHQqIV1w2oNKDqfg==
+From: ZhuXiangyu <1194781887@qq.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Sandy Huang <hjc@rock-chips.com>
+Cc: Andy Yan <andyshrk@163.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	linux-phy@lists.infradead.org,
+	dri-devel@lists.freedesktop.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	ZhuXiangyu <1194781887@qq.com>
+Subject: [PATCH] drm/phy: rockchip: fix RK3506 DSI low-power command handling
+Date: Sat, 21 Nov 2026 16:05:55 +0800
+X-OQ-MSGID: <20261121080555.1289195-1-1194781887@qq.com>
+X-Mailer: git-send-email 2.47.3
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261121_000607_496552_9100F68C 
+X-CRM114-Status: GOOD (  13.16  )
+X-Spam-Score: -1.8 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,55 +94,120 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwKaXNzdWUgdG8gY29uc2lkZXI6Ci0gW0xvd10gZHJtL3BoeTogcm9ja2NoaXA6
-IG1pc3NpbmcgRml4ZXM6IHRyYWlsZXJzIGZvciBSSzM1MDYgRFNJIGFuZAogIERQSFkgZml4ZXMK
-LS0KCmNvbW1pdCBkOWZjMDM3Y2QxOGQ5NzVkMTg5YzQ2YzhhMWQwODNiMDhjNDE3YTkyCkF1dGhv
-cjogWmh1WGlhbmd5dSA8MTE5NDc4MTg4N0BxcS5jb20+Cgo+IGRybS9waHk6IHJvY2tjaGlwOiBm
-aXggUkszNTA2IERTSSBsb3ctcG93ZXIgY29tbWFuZCBoYW5kbGluZwo+Cj4gVHdvIGJ1Z3Mga2Vl
-cCB0aGUgUkszNTA2IE1JUEktRFNJIGxpbmsgZnJvbSBpbml0aWFsaXNpbmcgYSBwYW5lbDogdGhl
-Cj4gRFBIWSBwcm9ncmFtcyB0aGUgd3JvbmcgaGlnaC1zcGVlZCB0aW1pbmcgZW50cnksIGFuZCB0
-aGUgUEhZIGRhdGEgbGFuZXMKPiBhcmUgbmV2ZXIgZW5hYmxlZCBpbiB0aGUgR1JGLgo+Cj4gMS4g
-cGh5LXJvY2tjaGlwLWlubm8tZHNpZHBoeSBwaWNrcyB0aGUgd3JvbmcgSFMgdGltaW5nIGVudHJ5
-Cj4KPiAgICBUaGUgMS41IEdIeiBpbm5vIERTSSBQSFkgdGltaW5nIHRhYmxlIHN0b3JlcyBpdHMg
-cmF0ZXMgaW4gTWJwcyB3aGlsZQo+ICAgIHRoZSBvdGhlciB0YWJsZXMgYW5kIHRoZSBsb29rdXAg
-dXNlIEh6LiBUaGUgbW9kZSBlbmFibGUgY29kZSBjb21wYXJlcwo+ICAgIGlubm8tPnBsbC5yYXRl
-IGluIEh6IChlLmcuIDM3MjAwMDAwMCkgYWdhaW5zdCB0aW1pbmdzW10ucmF0ZSBpbiBNYnBzCj4g
-ICAgKGUuZy4gNDAwKSwgc28gdGhlIGNvbXBhcmlzb24gbmV2ZXIgbWF0Y2hlcy4gVGhlIGxvb3Ag
-cnVucyB0byB0aGUgZW5kCj4gICAgYW5kIHRoZSBsYXN0LCBmYXN0ZXN0IGVudHJ5IGlzIHVzZWQs
-IHdoaWNoIHByb2dyYW1zIGEgVExQWC9MUFgKPiAgICBjb3VudGVyIHRoYXQgaXMgZmFyIHRvbyBs
-YXJnZS4gVGhlIHBhbmVsIHRoZW4gY2Fubm90IGRlY29kZSB0aGUKPiAgICBsb3ctcG93ZXIgRENT
-IGNvbW1hbmRzIGFuZCBzdGF5cyBpbiBzbGVlcCBtb2RlLCBzbyB0aGUgZGlzcGxheSBzdGF5cwo+
-ICAgIGJsYWNrIGV2ZW4gdGhvdWdoIHRoZSBMUCBwYWNrZXRzIGFyZSB2aXNpYmxlIG9uIHRoZSBk
-YXRhIGxhbmUuCj4KPiAgICBDb252ZXJ0IHRoZSAxLjUgR0h6IHRpbWluZyB0YWJsZSByYXRlcyB0
-byBIeiBzbyB0aGF0IHRoZSBsb29rdXAKPiAgICBzZWxlY3RzIHRoZSBjb3JyZWN0IGVudHJ5Lgo+
-Cj4gMi4gVGhlIFJLMzUwNiBEU0kgR1JGIGxhbmUgZW5hYmxlIGJpdHMgYXJlIG5ldmVyIHdyaXR0
-ZW4KPgo+ICAgIHJrMzUwNl9jaGlwX2RhdGEgb25seSBjbGVhcnMgdGhlIHR1cm5hcm91bmQgLyBm
-b3JjZS1zdG9wIGZpZWxkcywgc28KPiAgICB0aGUgUEhZIGRhdGEgbGFuZXMgc3RheSBkaXNhYmxl
-ZCB1bmxlc3MgdGhlIGJvb3QgbG9hZGVyIGhhcHBlbnMgdG8KPiAgICBlbmFibGUgdGhlbS4gUHJv
-Z3JhbSBSSzM1MDZfRFNJX1BIWV9FTkFCTEVfTEFORTAvMSBhcyB3ZWxsLgo+Cj4gVGVzdGVkIG9u
-IHRoZSBSSzM1MDZCIEplcnJ5VGVjaCBib2FyZDogdGhlIHBhbmVsIG5vdyByZWNlaXZlcyB0aGUg
-aW5pdAo+IHNlcXVlbmNlIG92ZXIgTFAgYW5kIHRoZSBmcmFtZWJ1ZmZlciBjb25zb2xlIGlzIHZp
-c2libGUuCj4KPiBTaWduZWQtb2ZmLWJ5OiBaaHVYaWFuZ3l1IDwxMTk0NzgxODg3QHFxLmNvbT4K
-CltTZXZlcml0eTogTG93XQpUaGlzIGZpeGVzIGJ1Z3MgaW4gdGhlIFJLMzUwNiBEUEhZIGFuZCBE
-U0kgc3VwcG9ydC4gIFNob3VsZCB0aGUgY29tbWl0Cm1lc3NhZ2UgaW5jbHVkZToKCiAgRml4ZXM6
-IDc4NWE5ZDViYjE0NSAoInBoeTogcm9ja2NoaXA6IGlubm8tZHNpZHBoeTogQWRkIHN1cHBvcnQg
-Zm9yIHJrMzUwNiIpCiAgRml4ZXM6IGNhYmVhY2M3ZWFkYyAoImRybS9yb2NrY2hpcDogZHNpOiBB
-ZGQgc3VwcG9ydCBmb3IgcmszNTA2IikKCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczov
-L3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvdGVuY2VudF82RjdDOUUwNDE2OUJDQkFFNEUxNjJEQUEz
-RENENTM5NUIyMDlAcXEuY29tP3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
-dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Two bugs keep the RK3506 MIPI-DSI link from initialising a panel: the
+DPHY programs the wrong high-speed timing entry, and the PHY data lanes
+are never enabled in the GRF.
+
+1. phy-rockchip-inno-dsidphy picks the wrong HS timing entry
+
+   The 1.5 GHz inno DSI PHY timing table stores its rates in Mbps while
+   the other tables and the lookup use Hz. The mode enable code compares
+   inno->pll.rate in Hz (e.g. 372000000) against timings[].rate in Mbps
+   (e.g. 400), so the comparison never matches. The loop runs to the end
+   and the last, fastest entry is used, which programs a TLPX/LPX
+   counter that is far too large. The panel then cannot decode the
+   low-power DCS commands and stays in sleep mode, so the display stays
+   black even though the LP packets are visible on the data lane.
+
+   Convert the 1.5 GHz timing table rates to Hz so that the lookup
+   selects the correct entry.
+
+2. The RK3506 DSI GRF lane enable bits are never written
+
+   rk3506_chip_data only clears the turnaround / force-stop fields, so
+   the PHY data lanes stay disabled unless the boot loader happens to
+   enable them. Program RK3506_DSI_PHY_ENABLE_LANE0/1 as well.
+
+Tested on the RK3506B JerryTech board: the panel now receives the init
+sequence over LP and the framebuffer console is visible.
+
+Fixes: 785a9d5bb145 ("phy: rockchip: inno-dsidphy: Add support for rk3506")
+Fixes: cabeacc7eadc ("drm/rockchip: dsi: Add support for rk3506")
+Signed-off-by: ZhuXiangyu <1194781887@qq.com>
+---
+ .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   |  6 +++-
+ .../phy/rockchip/phy-rockchip-inno-dsidphy.c  | 28 +++++++++----------
+ 2 files changed, 19 insertions(+), 15 deletions(-)
+
+diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+index 30d6f83c..116cc140 100644
+--- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
++++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+@@ -199,6 +199,8 @@
+ 
+ #define RK3506_SYS_GRF_SOC_CON6		0x0018
+ #define RK3506_DSI_FORCETXSTOPMODE	(0xf << 4)
++#define RK3506_DSI_PHY_ENABLE_LANE1	BIT(9)
++#define RK3506_DSI_PHY_ENABLE_LANE0	BIT(8)
+ #define RK3506_DSI_TURNDISABLE		BIT(2)
+ #define RK3506_DSI_FORCERXMODE		BIT(0)
+ 
+@@ -1727,7 +1729,9 @@ static const struct rockchip_dw_dsi_chip_data rk3506_chip_data[] = {
+ 		.lanecfg1_grf_reg = RK3506_SYS_GRF_SOC_CON6,
+ 		.lanecfg1 = (FIELD_PREP_WM16_CONST(RK3506_DSI_TURNDISABLE, 0) |
+ 			     FIELD_PREP_WM16_CONST(RK3506_DSI_FORCERXMODE, 0) |
+-			     FIELD_PREP_WM16_CONST(RK3506_DSI_FORCETXSTOPMODE, 0)),
++			     FIELD_PREP_WM16_CONST(RK3506_DSI_FORCETXSTOPMODE, 0) |
++			     FIELD_PREP_WM16_CONST(RK3506_DSI_PHY_ENABLE_LANE0, 1) |
++			     FIELD_PREP_WM16_CONST(RK3506_DSI_PHY_ENABLE_LANE1, 1)),
+ 		.max_data_lanes = 2,
+ 		.max_bit_rate_per_lane = 1500000000UL,
+ 		.dphy_get_timing = dw_mipi_dsi_phy_px30_get_timing,
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
+index 6ad04b0c..fcf7aa17 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
+@@ -282,20 +282,20 @@ struct inno_mipi_dphy_timing inno_mipi_dphy_timing_table_max_1ghz[] = {
+ 
+ static const
+ struct inno_mipi_dphy_timing inno_mipi_dphy_timing_table_max_1_5ghz[] = {
+-	{ 110, 0x02, 0x7f, 0x16, 0x02, 0x02},
+-	{ 150, 0x02, 0x7f, 0x16, 0x03, 0x02},
+-	{ 200, 0x02, 0x7f, 0x17, 0x04, 0x02},
+-	{ 250, 0x02, 0x7f, 0x17, 0x05, 0x04},
+-	{ 300, 0x02, 0x7f, 0x18, 0x06, 0x04},
+-	{ 400, 0x03, 0x7e, 0x19, 0x07, 0x04},
+-	{ 500, 0x03, 0x7c, 0x1b, 0x07, 0x08},
+-	{ 600, 0x03, 0x70, 0x1d, 0x08, 0x10},
+-	{ 700, 0x05, 0x40, 0x1e, 0x08, 0x30},
+-	{ 800, 0x05, 0x02, 0x1f, 0x09, 0x30},
+-	{1000, 0x05, 0x08, 0x20, 0x09, 0x30},
+-	{1200, 0x06, 0x03, 0x32, 0x14, 0x0f},
+-	{1400, 0x09, 0x03, 0x32, 0x14, 0x0f},
+-	{1500, 0x0d, 0x42, 0x36, 0x0e, 0x0f},
++	{ 110000000, 0x02, 0x7f, 0x16, 0x02, 0x02},
++	{ 150000000, 0x02, 0x7f, 0x16, 0x03, 0x02},
++	{ 200000000, 0x02, 0x7f, 0x17, 0x04, 0x02},
++	{ 250000000, 0x02, 0x7f, 0x17, 0x05, 0x04},
++	{ 300000000, 0x02, 0x7f, 0x18, 0x06, 0x04},
++	{ 400000000, 0x03, 0x7e, 0x19, 0x07, 0x04},
++	{ 500000000, 0x03, 0x7c, 0x1b, 0x07, 0x08},
++	{ 600000000, 0x03, 0x70, 0x1d, 0x08, 0x10},
++	{ 700000000, 0x05, 0x40, 0x1e, 0x08, 0x30},
++	{ 800000000, 0x05, 0x02, 0x1f, 0x09, 0x30},
++	{1000000000, 0x05, 0x08, 0x20, 0x09, 0x30},
++	{1200000000, 0x06, 0x03, 0x32, 0x14, 0x0f},
++	{1400000000, 0x09, 0x03, 0x32, 0x14, 0x0f},
++	{1500000000, 0x0d, 0x42, 0x36, 0x0e, 0x0f},
+ };
+ 
+ static const
+-- 
+2.47.3
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
