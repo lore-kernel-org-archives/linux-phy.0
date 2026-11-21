@@ -2,104 +2,61 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 74943606A332
-	for <linux-phy@archiver.kernel.org>; Sat, 21 Nov 2026 19:06:17 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BFC6F606A320
+	for <linux-phy@archiver.kernel.org>; Sat, 21 Nov 2026 19:10:26 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=rM9co+YC;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Pm30k6e0
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=12T0/hyy;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=aliel.fr header.i=@aliel.fr header.a=rsa-sha256 header.s=courrier-s1 header.b=RohhYpvv
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=KVWcl0a2BS0aUFiHX+7l1ZWoXpiDFG38ryIEK/M7bBM=; b=rM9co+YCmrG0XzRvAU0986oExb
-	TT84//5/8q+fYcMS5Ldkkx9mEsd8X547T+JhgIrC73TB4vrwLQS0lacY5Sed5jQFRGrS7m+6+pU0c
-	Uq0nPFuXPimMegzX1FoQLHceb4yZxdk+zEVQO+Q9AUqQsKiCtVQ+rAlgKgJLUb9HyQlcty/mwnkaZ
-	BPKxjifqVAZHR29k0dHeO/+e7CJnisBBbaT7CqaJ1icCJ3y1ioyIKg6X33vyAMuDS5M/X5NJo+7En
-	ItsNezqSI0uBQcgi6KQDKw+Wxca34q7IxUWNo5d4JqI3d3fsWNqE36QdAXL3KUniGwVzwGaCW+JNx
-	kwjbv/DA==;
+	bh=RNN6VrdgUNLpixf6byKKBg5j99dM/yaNysHHNkAok+M=; b=12T0/hyyP5Pu/YTeingem338oq
+	e5soTU9xg/ZTeUFFPYUoMykmErNqN76hATPdj83BG3Hz7974lrDxYVaXC8V3e5L/P+GD3ziQlas1K
+	r1ErQ8YOXT0HP7Ir2klJ+Usfwmh8u4xVtStPoM/+VXboQa+nFVDBH7ZuOGbnSdDOvH7Ykn3kG2+b6
+	aTFJ7Ecwz9VIa/9C8B6oc1+p+R4TEmLhy7er6lY92Pbz0HRmAQ6LvBrlB+oZtTmioPS7DAzLvV+MK
+	Kxw3PaDIBe7OrcrY0w0WzFo2sjOQ+1Akw6pLoUyzqVqUp70RWlf4DLzvx2dr6xwV6gkiYeYbh3mwk
+	gURXZbUA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUqPh-000000004XQ-0r2R;
-	Sat, 21 Nov 2026 19:06:17 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1xUqTi-000000004h4-1UrQ;
+	Sat, 21 Nov 2026 19:10:26 +0000
+Received: from courrier.aliel.fr ([65.21.61.41])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUqPe-000000004Wk-1peh
-	for linux-phy@lists.infradead.org;
-	Sat, 21 Nov 2026 19:06:15 +0000
-Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-4a42b34e930so1711175f8f.2
-        for <linux-phy@lists.infradead.org>; Sat, 21 Nov 2026 11:06:13 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795287972; x=1795892772; darn=lists.infradead.org;
-        h=mime-version:user-agent:content-transfer-encoding:content-type
-         :references:in-reply-to:date:cc:to:from:subject:message-id:from:to
-         :cc:subject:date:message-id:reply-to:content-type;
-        bh=FpKHiV2uYxe7Ki0iO3VWKGByi0ydeGzhGSrgX6lNY+s=;
-        b=Pm30k6e0mRQku/N1Hah5IGZNZDLrkkQm7QIRg/ZGaga/Ja8qermDte3BsHqPBjMEci
-         qZj8ANgAoEJO9lUeLO96FitkdpxiRr0M+JUac3eJBfOH6pZHqxE6i4u7ouqTuPlt83iw
-         Co7JIeIkqOO9CtRd00WM510BQTWJn351CLtGbnBFGHhiyW2sktjviu5zJ27Z9jGc3YhT
-         9FSRQOL1VPlhY0VCo5HmeGeq3NLtvtZ/F7VNCcAnmx5WBc8KOEKwXoqtm82OZST9GMOV
-         y4P6Uq0TDqWpxfBAtMz8QJMCbaDo4auxSTzGDvPKjtAGHv5qhb2/ozV0+B6MX+kIBydN
-         YBnA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795287972; x=1795892772;
-        h=mime-version:user-agent:content-transfer-encoding:content-type
-         :references:in-reply-to:date:cc:to:from:subject:message-id:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=FpKHiV2uYxe7Ki0iO3VWKGByi0ydeGzhGSrgX6lNY+s=;
-        b=Z/6D+0UgHK+8n0TP2QhJmHMZQ7keEZ8IThYP6DQ/QH1Mbdu5M5LKTomtHRRpk2uV1Q
-         sT1YIEIIFcMtkFTXlHEVntdGQ8W6Jm/lcvQex/n5HMnBpTxF6hxoYpWpIwpEgqqfyylM
-         ZPAdxVCUt+qstUGKs/pqe6EsRbnruH/gDf3YEppsn5OOeFvKXlQbE0PQ19Bf9rgqdbtA
-         U2zEYgisOLJkQJupL3u7mqWc2bHqUsS+ipCYezEkAodNPQ02afPwWv2uBS0DvgiER00i
-         Kkayivx5FDrHPhpPmUzvxH2r7e4xCqu6KZnElsvEqQJ/RMROadCbm5Nh42OkqBtJPgP6
-         lx9w==
-X-Forwarded-Encrypted: i=1; AL+hErFyT4JFdcvCB2dxhBcZbsvef/FFwtigYt3bE04WXEIHF+0Rxc0bhpBzkkjarYk1bOFlSXIx7zAGxIc=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+cElARpiJ1RqxT4sP9JASeEBEocBtSHSrTKVLVwcioq0OIBqBa
-	aP5kZuRRtpGY1MAroN9aEnuD1VPv7i0Jcyh5Ry/Jq/Vssep1p/JA+95z4GUCvdmlo6JXcA==
-X-Gm-Gg: AZFdTZci9s9ujg35LLJjeIaPPECRxYDUC6BeYU4R5zEb6fZKY28e9fTbHKohQDtH7Ec
-	F8vDAYUgord2isNUzOXGpR4n99Kczk5O1w7CKzR8bf8I5hIS5lhF4jRBnpKHNhsl8xrvHdjc/+5
-	9VkibTwCRAKsKaV+uEHidVVb3OGQ5lFyRIsZ0yh4DYUs07+T363hIRpyuZva0o4IOs62VZWVjVB
-	/tiTgVNNs/959VSygFKPbtWPKfmfdT2G948aGo+Rc3fteAktnMKTd70auzn3oGlA+0u5q1k0tQs
-	6skjchKTJBj6ZNcYgIe10POD/F3pOEkyc6EsgjHLU1RZ3CDithPk6A9BIKSLF7pTCymSjyjmCuv
-	UNz2BI7lxNZ+/lC7K1zUBwn7PEqpYFC3mlcaLzOUXu70kR1vCKM+mDG7KzBgHVhUH0oJ5dGjb+G
-	nESM4SLg5bb6xqRTDoSb60iP6ZVgoS9H+HSnn1RlCHf8zohEks2wxoIINP4O0ww+R4NpgnO4Cbp
-	vL68qHYr4viLtJLFk8U7wBQlH3tum2JdIjr8gr8Tqv30eMr+slMGqCeXT5zSQ7DzIPVvcEkOK6v
-	zNtbdum9frVXKhCh7XoeM24iFsMwY2G/DswHUPwR/LOPBtaGnzXDLkXHmVV46k6waACr2/DsHgL
-	jLGYUm7ln1+U9OEL8vdXtw0u7JnxVug==
-X-Received: by 2002:a05:600c:46c4:b0:4bb:6a5a:7834 with SMTP id 5b1f17b1804b1-4bb888106damr154232025e9.20.1795287971698;
-        Sat, 21 Nov 2026 11:06:11 -0800 (PST)
-Received: from [192.168.0.10] (catv-78-139-0-46.catv.fixed.one.hu. [78.139.0.46])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb8d4f9aa8sm148595925e9.4.2026.11.21.11.06.10
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Nov 2026 11:06:11 -0800 (PST)
-Message-ID: <6937fed688e4bf1d7cb81b004c179cc4912cf6e2.camel@gmail.com>
-Subject: Re: [PATCH 0/6] Add USB support for Exynos7885 and enable USB and
- FG on gta3xllte
-From: David Virag <virag.david003@gmail.com>
-To: umer.uddin@mentallysanemainliners.org, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam
- <mani@kernel.org>, Rob Herring <robh@kernel.org>,  Krzysztof Kozlowski	
- <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Marek Szyprowski	
- <m.szyprowski@samsung.com>, Sylwester Nawrocki <s.nawrocki@samsung.com>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Peter Griffin
- <peter.griffin@linaro.org>, Alim Akhtar	 <alim.akhtar@samsung.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-samsung-soc@vger.kernel.org
-Date: Sat, 21 Nov 2026 20:06:10 +0100
-In-Reply-To: <20261119-gta3xllte-usb-battery-v1-0-0cf5f763522e@mentallysanemainliners.org>
-References: <20261119-gta3xllte-usb-battery-v1-0-0cf5f763522e@mentallysanemainliners.org>
-User-Agent: Evolution 3.62.1 
+	id 1xUqTb-000000004gH-1ytB;
+	Sat, 21 Nov 2026 19:10:21 +0000
+Message-ID: <a2a8fefd-b589-444d-96a4-f679ab5c9946@aliel.fr>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=aliel.fr;
+	s=courrier-s1; t=1795288214;
+	bh=8y0heA0u3ZMdaEjr38+zX0yS05Hb8knX6np75X1lRvU=;
+	h=Date:From:Subject:To:Cc:References:In-Reply-To;
+	b=RohhYpvv9RadrymbNJo6Qxw+FczCEVwhco12YIXZkMV3lPg5fzO2zo8xhxGf+YPsD
+	 OVUJwSqBXpMk+DJZTvezI3yDG+W4zcaQbOI0m6LaftP/AwT7sjS+HKkUWWsndd05W9
+	 ZPViQuLSAYZQQ4+ajv7Y3Go0Rxh0X778e6B6n5so=
+Date: Sat, 21 Nov 2026 20:10:13 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+From: Ronald Claveau <linux-kernel-dev@aliel.fr>
+Subject: Re: [PATCH v2 08/11] drm/meson: dw-hdmi: Use the generic PHY
+ framework for the HDMI TX PHY
+To: sashiko-reviews@lists.linux.dev
+Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ robh@kernel.org, conor+dt@kernel.org, neil.armstrong@linaro.org,
+ vkoul@kernel.org, olteanv@gmail.com
+References: <20261120-meson-drm-create-hdmitx-phy-v2-0-93d622d9bb07@aliel.fr>
+ <20261120-meson-drm-create-hdmitx-phy-v2-8-93d622d9bb07@aliel.fr>
+ <sashiko-outbox-225914@kernel.org>
+Content-Language: en-US
+In-Reply-To: <sashiko-outbox-225914@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261121_110614_486079_CB501488 
-X-CRM114-Status: GOOD (  17.60  )
-X-Spam-Score: -1.9 (-)
+X-CRM114-CacheID: sfid-20261121_111020_136834_B55EB479 
+X-CRM114-Status: GOOD (  19.26  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,44 +69,134 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Thu, 2026-11-19 at 19:49 +0000, Umer Uddin via B4 Relay wrote:
-> Hi guys, this patch series adds support for USB on Exynos7885. This
-> series
-> is based on David Virag's work[1] I had rebased it onto krzk's for-
-> next
-> tree and tested it on gta3xllte. This series also enables S2MU005 FG
-> on gta3xllte, which is also tested.
-
-Hi, thanks for reviving my old patches
-
-I actually have sent the patches before [1], got some reviews, but only
-ended up with the clock patches submitted and applied, and never
-actually got to submitting these patches with fixes based on the
-reviews (which have been sitting on my PC for quite a while).
-
-I think I will submit my fixed up patches (the ones you submitted still
-have some problems), and then your gta3xxlte patches can sit on top.
-
-[1]
-https://lore.kernel.org/linux-samsung-soc/20240804215458.404085-1-virag.david003@gmail.com/
-
+On 11/20/26 20:20, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 2 potential
+> issues to consider:
+> - [High] drm/meson: dw-hdmi: missing PHY init in meson_dw_hdmi_init()
+>   breaks CEC/ARC
+> - [Medium] drm/meson: dw-hdmi: phy_init() leak on error path in
+>   dw_hdmi_phy_init()
+> --
 > 
-> Please note, I did drop enabling USB on jackpotlte, this is because I
-> don't have the device myself to test the changes personally and I
-> didn't
-> want to risk a regression on jackpotlte.
+> commit 9c4e52bbd305f6371ee6545c479c9a84e6845324
+> Author: Ronald Claveau <linux-kernel-dev@aliel.fr>
+> 
+> drm/meson: dw-hdmi: Use the generic PHY framework for the HDMI TX PHY
+> 
+> This commit converts the Meson DW-HDMI driver from direct HHI register
+> programming to the generic PHY API, with a legacy fallback when the DT
+> node lacks a "phys" property.
+> 
+>> diff --git a/drivers/gpu/drm/meson/meson_dw_hdmi.c b/drivers/gpu/drm/meson/meson_dw_hdmi.c
+>> index 20a821936b3af..1ca1ce6173563 100644
+>> --- a/drivers/gpu/drm/meson/meson_dw_hdmi.c
+>> +++ b/drivers/gpu/drm/meson/meson_dw_hdmi.c
+> [ ... ]
+>> @@ -364,10 +276,18 @@ static int dw_hdmi_phy_init(struct dw_hdmi *hdmi, void *data,
+>>  	unsigned int wr_clk =
+>>  		readl_relaxed(priv->io_base + _REG(VPU_HDMI_SETTING));
+>>  	bool mode_is_420 = false;
+>> +	unsigned int pixel_clock = mode->clock;
+>> +	union phy_configure_opts opts = {};
+>> +	int ret;
+>>  
+>>  	DRM_DEBUG_DRIVER("\"%s\" div%d\n", mode->name,
+>>  			 mode->clock > 340000 ? 40 : 10);
+>>  
+>> +	/* Setup PHY */
+>> +	ret = phy_init(dw_hdmi->phy);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>>  	if (drm_mode_is_420_only(display, mode) ||
+>>  	    (!is_hdmi2_sink && drm_mode_is_420_also(display, mode)) ||
+>>  	    dw_hdmi_bus_fmt_is_420(hdmi))
+>> @@ -392,19 +312,22 @@ static int dw_hdmi_phy_init(struct dw_hdmi *hdmi, void *data,
+>>  	dw_hdmi->data->top_write(dw_hdmi, HDMITX_TOP_TMDS_CLK_PTTN_CNTL, 0x2);
+>>  
+>>  	/* Setup PHY parameters */
+>> -	meson_hdmi_phy_setup_mode(dw_hdmi, mode, mode_is_420);
+>> -
+>> -	/* Disable clock, fifo, fifo_wr */
+>> -	regmap_update_bits(priv->hhi, HHI_HDMI_PHY_CNTL1, 0xf, 0);
+>> +	if (mode_is_420)
+>> +		pixel_clock /= 2;
+>> +	opts.hdmi.tmds_char_rate = (u64)pixel_clock * 1000;
+>> +	opts.hdmi.bpc = 8;
+>> +	ret = phy_configure(dw_hdmi->phy, &opts);
+>> +	if (ret)
+>> +		return ret;
+>>  
+>>  	dw_hdmi_set_high_tmds_clock_ratio(hdmi, display);
+>>  
+>>  	msleep(100);
+>>  
+>>  	/* Reset PHY 3 times in a row */
+>> -	meson_dw_hdmi_phy_reset(dw_hdmi);
+>> -	meson_dw_hdmi_phy_reset(dw_hdmi);
+>> -	meson_dw_hdmi_phy_reset(dw_hdmi);
+>> +	ret = phy_power_on(dw_hdmi->phy);
+>> +	if (ret)
+>> +		return ret;
+> 
+> [Severity: Medium]
+> Do the error returns from phy_configure() and phy_power_on() leak a
+> dw_hdmi->phy->init_count reference?
+> 
+> When dw_hdmi_phy_init() fails, dw_hdmi_setup() leaves hdmi->phy.enabled
+> false, so dw_hdmi_poweroff() never calls dw_hdmi_phy_disable() to balance
+> phy_init() with phy_exit().  A non-VIC DMT mode with a pixel clock below
+> 25.175 MHz passes meson_encoder_hdmi_mode_valid() but is rejected with
+> -EINVAL by meson_hdmi_phy_configure() -> meson_hdmi_phy_find_rate(),
+> permanently elevating init_count so subsequent phy_init() calls skip
+> hardware initialization.
+> 
+> [ ... ]
+> 
+>> @@ -623,10 +542,6 @@ static void meson_dw_hdmi_init(struct meson_dw_hdmi *meson_dw_hdmi)
+>>  	/* Enable normal output to PHY */
+>>  	meson_dw_hdmi->data->top_write(meson_dw_hdmi, HDMITX_TOP_BIST_CNTL, BIT(12));
+>>  
+>> -	/* Setup PHY */
+>> -	regmap_write(priv->hhi, HHI_HDMI_PHY_CNTL1, meson_dw_hdmi->data->cntl1_init);
+>> -	regmap_write(priv->hhi, HHI_HDMI_PHY_CNTL0, meson_dw_hdmi->data->cntl0_init);
+>> -
+>>  	/* Enable HDMI-TX Interrupt */
+>>  	meson_dw_hdmi->data->top_write(meson_dw_hdmi, HDMITX_TOP_INTR_STAT_CLR,
+>>  				       HDMITX_TOP_INTR_CORE);
+> 
+> [Severity: High]
+> Does removing the initial PHY setup from meson_dw_hdmi_init() leave the
+> HDMI TX PHY uninitialized whenever no HDMI video mode is active?
+> 
+> meson_dw_hdmi_init() pulses reset_control_reset(meson_dw_hdmi->hdmitx_phy)
+> at bind and system resume time, while meson_venc_init() zeroes
+> HHI_HDMI_PHY_CNTL0.  Commits 04703bfd7f99 ("drm/meson: dw-hdmi: power up
+> phy on device init") and 08001033121d ("drm/meson: dw-hdmi: add bandgap
+> setting for g12") programmed HHI_HDMI_PHY_CNTL1 and HHI_HDMI_PHY_CNTL0
+> here because CEC and the G12A ARC/eARC utility pin need the PHY
+> initialized even before the first HDMI modeset or when another display
+> interface is used.
+> 
+> With phy_init() deferred to dw_hdmi_phy_init(), which dw_hdmi_setup() only
+> calls when enabling an active HDMI display mode (and which
+> meson_dw_hdmi_pm_resume() -> dw_hdmi_resume() does not call), the PHY
+> stays in its post-reset state at boot and after resume whenever HDMI
+> video is inactive.
+> 
 
-I can confirm it does still work properly on jackpotlte.
+I will use v1 code and add a device link to solve suspend/resume order.
 
+-- 
 Best regards,
-David
+Ronald
 
 -- 
 linux-phy mailing list
