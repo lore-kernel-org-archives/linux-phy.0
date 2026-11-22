@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id C1FE7606A31F
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7863E606A31C
 	for <linux-phy@archiver.kernel.org>; Sat, 28 Nov 2026 10:21:07 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=QCIYlqCk;
-	dkim=fail reason="signature verification failed" (1024-bit key, unprotected) header.d=chaosmail.tech header.i=@chaosmail.tech header.a=rsa-sha256 header.s=mail header.b=KccUIHZ+
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=o6WBCCl5;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=chaosmail.tech header.i=@chaosmail.tech header.a=rsa-sha256 header.s=mail header.b=H1nMdubH
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,40 +14,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ZOJWDcl+PaeHtin90XRvrITQvO8RGlL3jAZqPoAMy34=; b=QCIYlqCkf7g9Fv7YWrhsrloo6z
-	501WOrtxGAFN4VF3gunzbJghgTSEdSBw5rwiVVtiGMoGvmeXHHOBjwJo5es+K8kujbJtMc+AKrh2u
-	XSyWby3RSYqnYUklOYxqEjmX2NK8mYRVCTWVaqciLCuMKfbl/dYxDJmRLiUA+2KG1F6+/D+Men3+o
-	5O1WB687V/v8ud/j2CfV7DVpSz70+6LvW43JYNTECIsJKK7l4xru8S75kRXFRTJZR8x0bDVdQuzNe
-	q33jXWUrglVEuNYYP2nIgZ0tOfJF+qUxbpwv9hyokdm5xubwELL6UNYVum88CiHMw6RdxQ8kUaTK8
-	Vy0fQ/ZA==;
+	bh=fp0K4vyPrZeuDCHt0g2PJ6NjKHI3kvIfgr6eWClVfEs=; b=o6WBCCl5bh/DJQpd4LzW8QhbqE
+	wLKKi7Fuf/stV+HhgLqSsc/d1ncLnB2Mm5YdlO1VYSBiPpitP0BLrmxZPPrNSkPZ1vzqmJZOxuZ/I
+	OoEk7qwvdBUruFtS46DWtQ4D0RaNS2s/HFhzcbk6QkJrAMAbo6+IGpz6p34KmbFS7AJRRf5RTQxkl
+	kEE0kj7+KRf3PNCn/Dnnur4bFA5XJk9hwmQFOXLt/+rsSOG9LRZcBedtQMKX+oZvGEk2Prog0Kbax
+	ygqfeJmlmYW/ljt6n7Cmi6FCWmUdX85pGxqiDBFI2dQJ+k1HF4WlyIfH4OcT6qJc4vJwyC5ed1tsZ
+	hb+gQ7Rw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xXFYJ-00000000fGO-1EhH;
+	id 1xXFYJ-00000000fGH-0RTk;
 	Sat, 28 Nov 2026 10:21:07 +0000
 Received: from chaosmail.tech ([77.81.229.115])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWCnD-00000009wYW-0iCl;
-	Wed, 25 Nov 2026 13:12:14 +0000
-Received: by chaosmail.tech (Postfix) id 7A9051CA01C;
-	Wed, 25 Nov 2026 13:11:59 +0000 (UTC)
+	id 1xV6gr-000000015HQ-0ZHD;
+	Sun, 22 Nov 2026 12:29:07 +0000
+Received: by chaosmail.tech (Postfix) id 9D88D1C8A18;
+	Sun, 22 Nov 2026 12:29:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chaosmail.tech;
-	s=mail; t=1795612320;
+	s=mail; t=1795350541;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=NevCsYRoVE/uYVY7bGao5XTDdSbkYJQuYLT2djYZ0sg=;
-	b=KccUIHZ+vsE8isgLK2ahZg3A8gsJICxT3+OKEkFkMAowKmo9UfmIkskfdYQmgbAJWA080R
-	4olhT3SVy60wU7V3dV8plSRxr3hJEWFfj/bL+C73qosBVuDp0XeOweXP6BN08OOHWhVGuf
-	BRBKjvZFwNjOlkSwMn7EXQg33plqWxI=
+	bh=uuC3VGyS+JTLaT2WA+3iMF6YvFDdiNkwRGnGtaGUUJ0=;
+	b=H1nMdubHV5w32cNgVhi0twIJGdfsoAz5WlrAJESPMwIqunxa0S9y1bBGQ61iF7hiG9U8RE
+	V8G0QgYtFIe6fDN/noHxHkre6O22qEyEj5dDFCnKg43UE+UvXGYYTsWjDQ+/FzfZZeWCsF
+	jc+5RjMT+sSKGEgirxSWVzxxJ3SOQWE=
 From: Sasha Finkelstein <k@chaosmail.tech>
-Date: Wed, 25 Nov 2026 14:11:49 +0100
-Subject: [PATCH v3 5/5] phy: apple: atc: Split generation-specific code
+Date: Sun, 22 Nov 2026 13:28:01 +0100
+Subject: [PATCH v2 5/5] phy: apple: atc: Split generation-specific code
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261125-t8122-phy-v3-5-196e20b3537e@chaosmail.tech>
-References: <20261125-t8122-phy-v3-0-196e20b3537e@chaosmail.tech>
-In-Reply-To: <20261125-t8122-phy-v3-0-196e20b3537e@chaosmail.tech>
+Message-Id: <20261122-t8122-phy-v2-5-8d5c8fdf31ba@chaosmail.tech>
+References: <20261122-t8122-phy-v2-0-8d5c8fdf31ba@chaosmail.tech>
+In-Reply-To: <20261122-t8122-phy-v2-0-8d5c8fdf31ba@chaosmail.tech>
 To: Sven Peter <sven@kernel.org>, Janne Grunau <j@jannau.net>, 
  Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
  Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
@@ -56,16 +56,16 @@ To: Sven Peter <sven@kernel.org>, Janne Grunau <j@jannau.net>,
 Cc: asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
  linux-kernel@vger.kernel.org, Sasha Finkelstein <k@chaosmail.tech>
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795612315; l=109238;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795350536; l=127664;
  i=k@chaosmail.tech; s=20241124; h=from:subject:message-id;
- bh=1SLqp/LPWn09xXIRKNtCjF8EPQDNxrDnJZP5brCr47w=;
- b=Imuui3bwLvzW43rsDXdBTVCNY6Xa5kI7u4saZBGYwwABnyDEfBXnD5cNYieAfKhIUqeJODCZ4
- Fl/Emv74DaoDFAM90+Q/syl52/fqw0Vj0MgvzyZfNWeNWKCu/GuDIEB
+ bh=5Pvx7sZqQQA4GKXRTjPH1mnpM6Wo+mrGL6mIw2GNXd4=;
+ b=x+TwsRFFtZp1799CqR1OUZIBRzw7GG8Dgg68ZRt6ndMTr5hhEB47o7FhOSOoHFv2IK6hCup4d
+ HSN7arwl/jqA65nEio4y0lyYWX9v5/O+DZZTooCR/+HGLuKQSnk/E0m
 X-Developer-Key: i=k@chaosmail.tech; a=ed25519;
  pk=aSkp1PdZ+eF4jpMO6oLvz/YfT5XkBUneWwyhQrOgmsU=
-X-Spam-Note: CRM114 run bypassed due to message size (108432 bytes)
+X-Spam-Note: CRM114 run bypassed due to message size (126348 bytes)
 X-Spam-Score: -2.1 (--)
-X-Mailman-Approved-At: Sat, 28 Nov 2026 02:21:03 -0800
+X-Mailman-Approved-At: Sat, 28 Nov 2026 02:21:01 -0800
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,25 +78,25 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-9.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,UPPERCASE_50_75 autolearn=ham autolearn_force=no version=4.0.1
+	SPF_PASS,UNWANTED_LANGUAGE_BODY,UPPERCASE_50_75 autolearn=ham
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 atc.c is getting pretty big, split out the hardware generation-specific
 code into separate files.
 
-Reviewed-by: Sven Peter <sven@kernel.org>
 Signed-off-by: Sasha Finkelstein <k@chaosmail.tech>
 ---
  drivers/phy/apple/Makefile    |    2 +-
- drivers/phy/apple/atc-t8103.c |  273 +++++++++
- drivers/phy/apple/atc-t8122.c |  713 +++++++++++++++++++++++
- drivers/phy/apple/atc.c       | 1286 +----------------------------------------
- drivers/phy/apple/atc.h       |  340 +++++++++++
- 5 files changed, 1333 insertions(+), 1281 deletions(-)
+ drivers/phy/apple/atc-t8103.c |  215 ++++++
+ drivers/phy/apple/atc-t8122.c |  588 +++++++++++++++
+ drivers/phy/apple/atc.c       | 1582 +----------------------------------------
+ drivers/phy/apple/atc.h       |  806 +++++++++++++++++++++
+ 5 files changed, 1616 insertions(+), 1577 deletions(-)
 
 diff --git a/drivers/phy/apple/Makefile b/drivers/phy/apple/Makefile
 index e02836a63df3..068cb5c9e6a4 100644
@@ -110,78 +110,16 @@ index e02836a63df3..068cb5c9e6a4 100644
 +phy-apple-atc-y			:= atc.o atc-t8103.o atc-t8122.o
 diff --git a/drivers/phy/apple/atc-t8103.c b/drivers/phy/apple/atc-t8103.c
 new file mode 100644
-index 000000000000..6dfebff5ee16
+index 000000000000..1f8a04cc1eff
 --- /dev/null
 +++ b/drivers/phy/apple/atc-t8103.c
-@@ -0,0 +1,273 @@
+@@ -0,0 +1,215 @@
 +// SPDX-License-Identifier: GPL-2.0 OR BSD-2-Clause
 +
 +#include <linux/iopoll.h>
 +#include <linux/types.h>
 +
 +#include "atc.h"
-+
-+#define CIO3PLL_CLK_CTRL 0x2a00
-+#define CIO3PLL_CLK_PCLK_EN BIT(1)
-+#define CIO3PLL_CLK_REFCLK_EN BIT(5)
-+
-+#define ACIOPHY_SLEEP_CTRL 0x1b0
-+#define ACIOPHY_SLEEP_CTRL_TX_BIG_OV GENMASK(3, 2)
-+#define ACIOPHY_SLEEP_CTRL_TX_SMALL_OV GENMASK(7, 6)
-+#define ACIOPHY_SLEEP_CTRL_TX_CLAMP_OV GENMASK(11, 10)
-+
-+#define ACIOPHY_TOP_BIST_PHY_CFG0 0xa8
-+#define ACIOPHY_TOP_BIST_PHY_CFG0_LN0_RESET_N BIT(0)
-+
-+#define ACIOPHY_TOP_BIST_PHY_CFG1 0xac
-+#define ACIOPHY_TOP_BIST_PHY_CFG1_LN0_PWR_DOWN GENMASK(13, 10)
-+
-+#define ACIOPHY_TOP_BIST_OV_CFG 0x8c
-+#define ACIOPHY_TOP_BIST_OV_CFG_LN0_RESET_N_OV BIT(13)
-+#define ACIOPHY_TOP_BIST_OV_CFG_LN0_PWR_DOWN_OV BIT(25)
-+
-+#define ACIOPHY_TOP_PHY_STAT 0x9c
-+#define ACIOPHY_TOP_PHY_STAT_LN0_UNK0 BIT(0)
-+#define ACIOPHY_TOP_PHY_STAT_LN0_UNK23 BIT(23)
-+
-+#define ACIOPHY_TOP_BIST_READ_CTRL 0x90
-+#define ACIOPHY_TOP_BIST_READ_CTRL_LN0_PHY_STATUS_RE BIT(2)
-+
-+#define ACIOPHY_TOP_BIST_CIOPHY_CFG1 0x84
-+#define ACIOPHY_TOP_BIST_CIOPHY_CFG1_CLK_EN BIT(27)
-+#define ACIOPHY_TOP_BIST_CIOPHY_CFG1_BIST_EN BIT(28)
-+
-+#define ACIOPHY_PLL_COMMON_CTRL 0x1028
-+#define ACIOPHY_PLL_WAIT_FOR_CMN_READY_BEFORE_RESET_EXIT BIT(24)
-+
-+#define LPDPTX_AUX_CFG_BLK_AUX_LDO_CTRL 0x0008
-+
-+#define LPDPTX_AUX_SHM_CFG_BLK_AUX_CTRL_REG0 0x0204
-+#define LPDPTX_CFG_PMA_AUX_SEL_LF_DATA BIT(15)
-+
-+#define LPDPTX_AUX_SHM_CFG_BLK_AUX_CTRL_REG1 0x0208
-+#define LPDPTX_CFG_PMA_PHYS_ADJ GENMASK(22, 20)
-+#define LPDPTX_CFG_PMA_PHYS_ADJ_OV BIT(19)
-+
-+#define LPDPTX_AUX_CONTROL 0x4000
-+#define LPDPTX_AUX_PWN_DOWN 0x10
-+#define LPDPTX_AUX_CLAMP_EN 0x04
-+#define LPDPTX_SLEEP_B_BIG_IN 0x02
-+#define LPDPTX_SLEEP_B_SML_IN 0x01
-+#define LPDPTX_TXTERM_CODEMSB 0x400
-+#define LPDPTX_TXTERM_CODE GENMASK(9, 5)
-+
-+#define LPDPTX_AUX_CFG_BLK_AUX_MARGIN 0x000c
-+#define LPDPTX_MARGIN_RCAL_RXOFFSET_EN BIT(5)
-+#define LPDPTX_AUX_MARGIN_RCAL_TXSWING GENMASK(10, 6)
-+
-+#define LPDPTX_AUX_CFG_BLK_AUX_CTRL 0x0000
-+#define LPDPTX_BLK_AUX_CTRL_PWRDN BIT(4)
-+#define LPDPTX_BLK_AUX_RXOFFSET GENMASK(25, 22)
-+
-+#define LN_AUSPMA_RX_TOP_PMAFSM 0x0010
-+#define LN_AUSPMA_RX_TOP_PMAFSM_PCS_OV BIT(0)
-+#define LN_AUSPMA_RX_TOP_PMAFSM_PCS_REQ BIT(9)
 +
 +#define ACIOPHY_CROSSBAR_T8103 0x4c
 +
@@ -347,6 +285,11 @@ index 000000000000..6dfebff5ee16
 +	core_set32(atcphy, CIO3PLL_CLK_CTRL, CIO3PLL_CLK_REFCLK_EN);
 +}
 +
++static const struct atcphy_dp_ops atcphy_dp_ops_t8103 = {
++	.enable_aux = atcphy_enable_dp_aux_t8103,
++	.disable_aux = atcphy_disable_dp_aux_t8103,
++};
++
 +static void
 +atcphy_configure_lane_pmafsm_t8103(struct apple_atcphy *atcphy,
 +				   const struct atcphy_mode_configuration *mode_cfg)
@@ -377,6 +320,7 @@ index 000000000000..6dfebff5ee16
 +}
 +
 +const struct atcphy_hw atcphy_hw_t8103 = {
++	.dp = &atcphy_dp_ops_t8103,
 +	.need_dp_tunables = true,
 +	.aciophy_lane_mode = ACIOPHY_LANE_MODE_T8103,
 +	.aciophy_crossbar = ACIOPHY_CROSSBAR_T8103,
@@ -384,150 +328,19 @@ index 000000000000..6dfebff5ee16
 +	.configure_pipehandler_usb3_host = atcphy_configure_pipehandler_usb3_host_t8103,
 +	.enable_cio3pll_clk = atcphy_enable_cio3pll_clk_t8103,
 +	.configure_lane_pmafsm = atcphy_configure_lane_pmafsm_t8103,
-+	.dp_enable_aux = atcphy_enable_dp_aux_t8103,
-+	.dp_disable_aux = atcphy_disable_dp_aux_t8103,
 +};
 diff --git a/drivers/phy/apple/atc-t8122.c b/drivers/phy/apple/atc-t8122.c
 new file mode 100644
-index 000000000000..be18e651d770
+index 000000000000..ef8daa2c51af
 --- /dev/null
 +++ b/drivers/phy/apple/atc-t8122.c
-@@ -0,0 +1,713 @@
+@@ -0,0 +1,588 @@
 +// SPDX-License-Identifier: GPL-2.0 OR BSD-2-Clause
 +
 +#include <linux/iopoll.h>
 +#include <linux/types.h>
 +
 +#include "atc.h"
-+
-+#define AUS_COMMON_SHIM_BLK_BIAS_REG 0x0a00
-+#define AUS_COMMON_SHIM_BLK_BIAS_REG_BGBIAS_OV BIT(1)
-+
-+#define AUS_COMMON_DIG_RCAL1 0x804
-+#define AUS_COMMON_DIG_RCAL1_ALL_CODES_DONE BIT(0)
-+
-+#define ATCPHY_EVT_USB2_CTL 0x0
-+#define ATCPHY_EVT_USB2_CTL_EVT_EN 0x1
-+#define ATCPHY_EVT_USB2_CTL_LOAD_CNT 0x8
-+
-+#define ACIOPHY_BIST_MAC_USBPHY_STATUS2 0x17080
-+#define ACIOPHY_BIST_MAC_USBPHY_STATUS2_LN0_PHY_STATUS2 BIT(7)
-+
-+#define ACIOPHY_BIST_CFG1 0x17000
-+#define ACIOPHY_BIST_CFG1_CLOCK_EN BIT(0)
-+#define ACIOPHY_BIST_CFG1_USB_EN BIT(2)
-+
-+#define ACIOPHY_BIST_CFG2 0x17004
-+#define ACIOPHY_BIST_CFG2_LN0_PHY_STATUS_RE BIT(2)
-+
-+#define ACIOPHY_BIST_MAC_USBPHY_CFG_OV1 0x17088
-+#define ACIOPHY_BIST_MAC_USBPHY_CFG_OV1_LN0_PIPE_RESET_N_OV 0x100000
-+#define ACIOPHY_BIST_MAC_USBPHY_CFG_OV1_LN0_PWR_DOWN_OV GENMASK(26, 25)
-+
-+#define ACIOPHY_BIST_MAC_USBPHY_CFG_OV2 0x1708c
-+#define ACIOPHY_BIST_MAC_USBPHY_CFG_OV2_LN0_RESET_N_OV 0x200
-+#define ACIOPHY_BIST_MAC_USBPHY_CFG_OV2_LN0_PWR_DOWN_OV 0x20
-+
-+/* LPDPTX registers */
-+#define LN_AUSPMA_TX_TOP_EQ1 0x0050
-+#define LN_AUSPMA_TX_TOP_EQ17 0x00d0
-+#define LN_AUSPMA_TX_TOP_EQ18 0x00d4
-+#define LN_AUSPMA_RX_TOP_EQ1 0x0210
-+#define LN_AUSPMA_RX_TOP_EQ17 0x0244
-+#define LN_AUSPMA_RX_TOP_EQ18 0x0248
-+
-+#define LN_EQ_SWING GENMASK(3, 0)
-+#define LN_EQ_SWING_LSB GENMASK(15, 14)
-+#define LN_EQ_SWING_OV BIT(28)
-+#define LN_EQ_AUTO_CTRL_DP BIT(20)
-+/* Deemphasis and override bits; individual fields unknown */
-+#define LN_EQ_DEEMPH_FIELDS GENMASK(18, 0)
-+
-+#define LN_AUSPMA_TX_SHM_MAIN2 0x0004
-+#define LN_MAIN2_BYTECLK_SYNC_SEL BIT(24)
-+#define LN_MAIN2_BYTECLK_SYNC_SEL_OV BIT(25)
-+#define LN_MAIN2_BYTECLK_SYNC_EN BIT(28)
-+#define LN_MAIN2_BYTECLK_SYNC_EN_OV BIT(29)
-+
-+#define LN_AUSPMA_TX_SHM_MAIN4 0x000c
-+#define LN_MAIN4_DIV2_4_EN GENMASK(25, 24)
-+#define LN_MAIN4_DIV2_4_EN_OV BIT(26)
-+
-+#define LN_AUSPMA_TX_SHM_MAIN5 0x0010
-+#define LN_MAIN5_CLK_EN BIT(9)
-+#define LN_MAIN5_CLK_EN_OV BIT(10)
-+
-+#define LN_AUSPMA_TX_SHM_CLKMON1 0x001c
-+#define LN_CLKMON1_HIZ BIT(22)
-+#define LN_CLKMON1_HIZ_OV BIT(23)
-+
-+#define LN_AUSPMA_RX_TOP_TXMODE 0x0160
-+#define LN_AUSPMA_RX_TOP_AFE1 0x01d4
-+#define LN_AFE1_DIV20_RESET_N_OV BIT(0)
-+#define LN_AFE1_DIV20_RESET_N BIT(1)
-+#define LN_AUSPMA_RX_TOP_DCO1 0x01dc
-+#define LN_DCO1_LPBKIN_RECOVERED_DATA GENMASK(16, 15)
-+
-+#define LN_AUSPMA_RX_SHM_CTLE2 0x0030
-+#define LN_CTLE2_TX_CLK_EN BIT(10)
-+#define LN_CTLE2_TX_CLK_EN_OV BIT(11)
-+
-+#define LN_AUSPMA_RX_SHM_DFE101 0x0064
-+#define LN_DFE101_DFEH1FB_EN BIT(2)
-+#define LN_DFE101_DFEH1FB_EN_OV BIT(3)
-+#define LN_DFE101_DTVREG_ADJUST_FIELDS GENMASK(15, 10)
-+
-+#define LN_AUSPMA_RX_SHM_DFE111 0x0068
-+#define LN_DFE111_DTVREG_BIG_EN BIT(5)
-+#define LN_DFE111_DTVREG_BIG_EN_OV BIT(6)
-+#define LN_DFE111_DTVREG_SMALL_EN BIT(7)
-+#define LN_DFE111_DTVREG_SMALL_EN_OV BIT(8)
-+
-+#define LN_AUSPMA_RX_SHM_DFE121 0x006c
-+#define LN_DFE121_TX_BYTECLK_SYNC_CLR BIT(9)
-+#define LN_DFE121_TX_BYTECLK_SYNC_CLR_OV BIT(10)
-+#define LN_DFE121_TX_BYTECLK_SYNC_EN BIT(11)
-+#define LN_DFE121_TX_HRCLK_SEL BIT(13)
-+#define LN_DFE121_TX_HRCLK_SEL_OV BIT(14)
-+#define LN_DFE121_TX_PBIAS_EN BIT(15)
-+#define LN_DFE121_TX_PBIAS_EN_OV BIT(16)
-+
-+#define LN_AUSPMA_RX_SHM_SAVOS161 0x00a4
-+#define LN_SAVOS161_RXTERM_EN BIT(0)
-+#define LN_SAVOS161_RXTERM_EN_OV BIT(1)
-+
-+#define LN_AUSPMA_RX_SHM_TERM191 0x00a8
-+#define LN_TERM191_TX_TEST_EN BIT(15)
-+#define LN_TERM191_TX_TEST_EN_OV BIT(16)
-+#define LN_TERM191_TX_EN BIT(17)
-+#define LN_TERM191_TX_EN_OV BIT(18)
-+#define LN_TERM191_TX_DIV2_EN GENMASK(20, 19)
-+#define LN_TERM191_TX_DIV2_EN_OV BIT(21)
-+#define LN_TERM191_TX_DIV2_RST BIT(22)
-+#define LN_TERM191_TX_DIV2_RST_OV BIT(23)
-+
-+#define LN_AUSPMA_RX_SHM_VREF221 0x00d4
-+/* Adjust, filter and enable overrides; individual fields unknown */
-+#define LN_VREF221_INIT_FIELDS (GENMASK(20, 16) | GENMASK(12, 7))
-+#define LN_VREF221_BIAS_FIELDS GENMASK(15, 13)
-+#define LN_VREF221_EN BIT(16)
-+#define LN_VREF221_FILTER_ADJUST GENMASK(19, 18)
-+
-+#define LN_AUSPMA_RX_SHM_VREF231 0x00d8
-+#define LN_VREF231_BOOST_CTRL GENMASK(1, 0)
-+#define LN_VREF231_BOOST_CTRL_OV BIT(2)
-+
-+#define LN_AUSPMA_RX_SHM_VREG1 0x00dc
-+#define LN_VREG1_DTVREG_POWER_MODE GENMASK(4, 3)
-+
-+#define LN_AUSPMA_TX_SHM_LDOCLK1 0x0044
-+#define LN_LDOCLK1_VREG_ADJ GENMASK(10, 6)
-+#define LN_LDOCLK1_VREF_EN BIT(12)
-+#define LN_LDOCLK1_VREF_FILTER_BOOST (GENMASK(18, 17) | GENMASK(15, 14))
-+#define LN_LDOCLK1_BYPASS_SMALL BIT(20)
-+#define LN_LDOCLK1_BYPASS_BIG BIT(22)
-+#define LN_LDOCLK1_EN_SMALL BIT(24)
-+#define LN_LDOCLK1_EN_BIG BIT(26)
 +
 +#define ACIOPHY_CROSSBAR_T8122 0x64
 +
@@ -1072,7 +885,7 @@ index 000000000000..be18e651d770
 +static void atcphy_configure_post_tunable_t8122(struct apple_atcphy *atcphy, enum atcphy_mode mode)
 +{
 +	if (atcphy_modes[mode].pipehandler_state == ATCPHY_PIPEHANDLER_STATE_USB3 ||
-+	    (atcphy->hw->dp_enable_aux && atcphy_modes[mode].enable_dp_aux))
++	    (atcphy->hw->dp && atcphy_modes[mode].enable_dp_aux))
 +		atcphy_power_on_common_t8122(atcphy);
 +}
 +
@@ -1093,7 +906,15 @@ index 000000000000..be18e651d770
 +	return ret;
 +}
 +
++static const struct atcphy_dp_ops atcphy_dp_ops_t8122 = {
++	.enable_aux = atcphy_enable_dp_aux_t8122,
++	.disable_aux = atcphy_disable_dp_aux_t8122,
++	.set_rate = atcphy_dp_set_rate_t8122,
++	.stop = atcphy_dp_stop_link_t8122,
++};
++
 +const struct atcphy_hw atcphy_hw_t8122 = {
++	.dp = &atcphy_dp_ops_t8122,
 +	.need_dp_tunables = false,
 +	.aciophy_lane_mode = ACIOPHY_LANE_MODE_T8122,
 +	.aciophy_crossbar = ACIOPHY_CROSSBAR_T8122,
@@ -1101,16 +922,12 @@ index 000000000000..be18e651d770
 +	.configure_pipehandler_usb3_host = atcphy_configure_pipehandler_usb3_host_t8122,
 +	.configure_usb2_evt_ctl = atcphy_configure_usb2_evt_ctl_t8122,
 +	.wait_rcal1_done = atcphy_wait_rcal1_done_t8122,
-+	.dp_enable_aux = atcphy_enable_dp_aux_t8122,
-+	.dp_disable_aux = atcphy_disable_dp_aux_t8122,
-+	.dp_set_rate = atcphy_dp_set_rate_t8122,
-+	.dp_stop = atcphy_dp_stop_link_t8122,
 +};
 diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
-index 5c0688339353..534319a4afb7 100644
+index 647093bb70f1..1356fae3308c 100644
 --- a/drivers/phy/apple/atc.c
 +++ b/drivers/phy/apple/atc.c
-@@ -44,36 +44,7 @@
+@@ -44,783 +44,9 @@
  #include <linux/usb/typec_mux.h>
  #include <linux/usb/typec_tbt.h>
  
@@ -1144,14 +961,14 @@ index 5c0688339353..534319a4afb7 100644
 -#define AUSPLL_FD_LFCLK_CTRL GENMASK(19, 16)
 -#define AUSPLL_FD_VCLK_OP_DIVN GENMASK(21, 20)
 -#define AUSPLL_FD_VCLK_PRE_DIVN BIT(22)
-+#include "atc.h"
- 
- #define AUSPLL_DCO_EFUSE_SPARE 0x222c
- #define AUSPLL_RODCO_ENCAP_EFUSE GENMASK(10, 9)
-@@ -82,43 +53,19 @@
- #define AUSPLL_FRACN_CAN 0x22a4
- #define AUSPLL_DLL_START_CAPCODE GENMASK(18, 17)
- 
+-
+-#define AUSPLL_DCO_EFUSE_SPARE 0x222c
+-#define AUSPLL_RODCO_ENCAP_EFUSE GENMASK(10, 9)
+-#define AUSPLL_RODCO_BIAS_ADJUST_EFUSE GENMASK(14, 12)
+-
+-#define AUSPLL_FRACN_CAN 0x22a4
+-#define AUSPLL_DLL_START_CAPCODE GENMASK(18, 17)
+-
 -#define AUSPLL_CLKOUT_MASTER 0x2200
 -#define AUSPLL_CLKOUT_MASTER_PCLK_DRVR_EN BIT(2)
 -#define AUSPLL_CLKOUT_MASTER_PCLK2_DRVR_EN BIT(4)
@@ -1163,39 +980,42 @@ index 5c0688339353..534319a4afb7 100644
 -#define AUSPLL_BGR 0x2214
 -#define AUSPLL_BGR_CTRL_AVAIL BIT(0)
 -
- #define AUSPLL_CLKOUT_DTC_VREG 0x2220
- #define AUSPLL_DTC_VREG_ADJUST GENMASK(16, 14)
- #define AUSPLL_DTC_VREG_BYPASS BIT(7)
- 
+-#define AUSPLL_CLKOUT_DTC_VREG 0x2220
+-#define AUSPLL_DTC_VREG_ADJUST GENMASK(16, 14)
+-#define AUSPLL_DTC_VREG_BYPASS BIT(7)
+-
 -#define AUSPLL_FREQ_CFG 0x2224
 -#define AUSPLL_FREQ_REFCLK GENMASK(1, 0)
 -
 -#define AUS_COMMON_SHIM_BLK_BIAS_REG 0x0a00
 -#define AUS_COMMON_SHIM_BLK_BIAS_REG_BGBIAS_OV BIT(1)
 -
- #define AUS_COMMON_SHIM_BLK_VREG 0x0a04
- #define AUS_VREG_TRIM GENMASK(6, 2)
- 
+-#define AUS_COMMON_SHIM_BLK_VREG 0x0a04
+-#define AUS_VREG_TRIM GENMASK(6, 2)
+-
 -#define AUS_COMMON_DIG_RCAL1 0x804
 -#define AUS_COMMON_DIG_RCAL1_ALL_CODES_DONE BIT(0)
 -
- #define AUS_UNK_A20 0x0a20
- #define AUS_UNK_A20_TX_CAL_CODE GENMASK(23, 20)
- 
- #define ACIOPHY_CMN_SHM_STS_REG0 0x0a74
- #define ACIOPHY_CMN_SHM_STS_REG0_CMD_READY BIT(0)
- 
+-#define AUS_UNK_A20 0x0a20
+-#define AUS_UNK_A20_TX_CAL_CODE GENMASK(23, 20)
+-
+-#define ACIOPHY_CMN_SHM_STS_REG0 0x0a74
+-#define ACIOPHY_CMN_SHM_STS_REG0_CMD_READY BIT(0)
+-
 -#define CIO3PLL_CLK_CTRL 0x2a00
 -#define CIO3PLL_CLK_PCLK_EN BIT(1)
 -#define CIO3PLL_CLK_REFCLK_EN BIT(5)
 -
- #define CIO3PLL_DCO_NCTRL 0x2a38
- #define CIO3PLL_DCO_COARSEBIN_EFUSE0 GENMASK(6, 0)
- #define CIO3PLL_DCO_COARSEBIN_EFUSE1 GENMASK(23, 17)
-@@ -129,23 +76,6 @@
- #define CIO3PLL_DTC_VREG 0x2a20
- #define CIO3PLL_DTC_VREG_ADJUST GENMASK(16, 14)
- 
+-#define CIO3PLL_DCO_NCTRL 0x2a38
+-#define CIO3PLL_DCO_COARSEBIN_EFUSE0 GENMASK(6, 0)
+-#define CIO3PLL_DCO_COARSEBIN_EFUSE1 GENMASK(23, 17)
+-
+-#define CIO3PLL_FRACN_CAN 0x2aa4
+-#define CIO3PLL_DLL_CAL_START_CAPCODE GENMASK(18, 17)
+-
+-#define CIO3PLL_DTC_VREG 0x2a20
+-#define CIO3PLL_DTC_VREG_ADJUST GENMASK(16, 14)
+-
 -#define ATCPHY_EVT_USB2_CTL 0x0
 -#define ATCPHY_EVT_USB2_CTL_EVT_EN 0x1
 -#define ATCPHY_EVT_USB2_CTL_LOAD_CNT 0x8
@@ -1213,20 +1033,27 @@ index 5c0688339353..534319a4afb7 100644
 -
 -#define ACIOPHY_CROSSBAR_T8103 0x4c
 -#define ACIOPHY_CROSSBAR_T8122 0x64
- #define ACIOPHY_CROSSBAR_PROTOCOL GENMASK(4, 0)
- #define ACIOPHY_CROSSBAR_PROTOCOL_USB4 0x0
- #define ACIOPHY_CROSSBAR_PROTOCOL_USB4_SWAPPED 0x1
-@@ -160,68 +90,13 @@
- #define ACIOPHY_CROSSBAR_DP_SINGLE_PMA_UNK008 0x008
- #define ACIOPHY_CROSSBAR_DP_BOTH_PMA BIT(17)
- 
+-#define ACIOPHY_CROSSBAR_PROTOCOL GENMASK(4, 0)
+-#define ACIOPHY_CROSSBAR_PROTOCOL_USB4 0x0
+-#define ACIOPHY_CROSSBAR_PROTOCOL_USB4_SWAPPED 0x1
+-#define ACIOPHY_CROSSBAR_PROTOCOL_USB3 0xa
+-#define ACIOPHY_CROSSBAR_PROTOCOL_USB3_SWAPPED 0xb
+-#define ACIOPHY_CROSSBAR_PROTOCOL_USB3_DP 0x10
+-#define ACIOPHY_CROSSBAR_PROTOCOL_USB3_DP_SWAPPED 0x11
+-#define ACIOPHY_CROSSBAR_PROTOCOL_DP 0x14
+-#define ACIOPHY_CROSSBAR_DP_SINGLE_PMA GENMASK(16, 5)
+-#define ACIOPHY_CROSSBAR_DP_SINGLE_PMA_NONE 0x0000
+-#define ACIOPHY_CROSSBAR_DP_SINGLE_PMA_UNK100 0x100
+-#define ACIOPHY_CROSSBAR_DP_SINGLE_PMA_UNK008 0x008
+-#define ACIOPHY_CROSSBAR_DP_BOTH_PMA BIT(17)
+-
 -#define ACIOPHY_LANE_MODE_T8103 0x48
 -#define ACIOPHY_LANE_MODE_T8122 0x60
- #define ACIOPHY_LANE_MODE_RX0 GENMASK(2, 0)
- #define ACIOPHY_LANE_MODE_TX0 GENMASK(5, 3)
- #define ACIOPHY_LANE_MODE_RX1 GENMASK(8, 6)
- #define ACIOPHY_LANE_MODE_TX1 GENMASK(11, 9)
- 
+-#define ACIOPHY_LANE_MODE_RX0 GENMASK(2, 0)
+-#define ACIOPHY_LANE_MODE_TX0 GENMASK(5, 3)
+-#define ACIOPHY_LANE_MODE_RX1 GENMASK(8, 6)
+-#define ACIOPHY_LANE_MODE_TX1 GENMASK(11, 9)
+-
 -enum atcphy_lane_mode {
 -	ACIOPHY_LANE_MODE_USB4 = 0,
 -	ACIOPHY_LANE_MODE_USB3 = 1,
@@ -1278,17 +1105,23 @@ index 5c0688339353..534319a4afb7 100644
 -#define ACIOPHY_SLEEP_CTRL_TX_SMALL_OV GENMASK(7, 6)
 -#define ACIOPHY_SLEEP_CTRL_TX_CLAMP_OV GENMASK(11, 10)
 -
- #define ACIOPHY_PLL_PCTL_FSM_CTRL1 0x1014
- #define ACIOPHY_PLL_APB_REQ_OV_SEL GENMASK(21, 13)
+-#define ACIOPHY_PLL_PCTL_FSM_CTRL1 0x1014
+-#define ACIOPHY_PLL_APB_REQ_OV_SEL GENMASK(21, 13)
 -#define ACIOPHY_PLL_COMMON_CTRL 0x1028
 -#define ACIOPHY_PLL_WAIT_FOR_CMN_READY_BEFORE_RESET_EXIT BIT(24)
- 
- #define ATCPHY_POWER_CTRL 0x20000
- #define ATCPHY_POWER_STAT 0x20004
-@@ -235,40 +110,6 @@ enum atcphy_lane_mode {
- #define ATCPHY_MISC_RESET_N BIT(0)
- #define ATCPHY_MISC_LANE_SWAP BIT(2)
- 
+-
+-#define ATCPHY_POWER_CTRL 0x20000
+-#define ATCPHY_POWER_STAT 0x20004
+-#define ATCPHY_POWER_SLEEP_SMALL BIT(0)
+-#define ATCPHY_POWER_SLEEP_BIG BIT(1)
+-#define ATCPHY_POWER_CLAMP_EN BIT(2)
+-#define ATCPHY_POWER_APB_RESET_N BIT(3)
+-#define ATCPHY_POWER_PHY_RESET_N BIT(4)
+-
+-#define ATCPHY_MISC 0x20008
+-#define ATCPHY_MISC_RESET_N BIT(0)
+-#define ATCPHY_MISC_LANE_SWAP BIT(2)
+-
 -#define ACIOPHY_LANE_DP_CFG_BLK_TX_DP_CTRL0 0x7000
 -#define DP_PMA_BYTECLK_RESET BIT(0)
 -#define DP_MAC_DIV20_CLK_SEL BIT(1)
@@ -1323,13 +1156,168 @@ index 5c0688339353..534319a4afb7 100644
 -#define LN_AUSPMA_RX_TOP_TJ_CFG_RX_TXMODE 0x00F0
 -#define LN_RX_TXMODE BIT(0)
 -
- #define LN_AUSPMA_RX_SHM_TJ_RXA_CTLE_CTRL0 0x00
- #define LN_TX_CLK_EN BIT(20)
- #define LN_TX_CLK_EN_OV BIT(21)
-@@ -431,155 +272,6 @@ enum atcphy_lane_mode {
- #define LN_LDOCLK_EN_BIG_OV BIT(14)
- #define LN_LDOCLK_EN_BIG BIT(15)
- 
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_CTLE_CTRL0 0x00
+-#define LN_TX_CLK_EN BIT(20)
+-#define LN_TX_CLK_EN_OV BIT(21)
+-
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_AFE_CTRL1 0x04
+-#define LN_RX_DIV20_RESET_N_OV BIT(29)
+-#define LN_RX_DIV20_RESET_N BIT(30)
+-
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL2 0x08
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL3 0x0C
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL4 0x10
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL5 0x14
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL6 0x18
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL7 0x1C
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL8 0x20
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL9 0x24
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_DFE_CTRL10 0x28
+-#define LN_DTVREG_ADJUST GENMASK(31, 27)
+-
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_DFE_CTRL11 0x2C
+-#define LN_DTVREG_BIG_EN BIT(23)
+-#define LN_DTVREG_BIG_EN_OV BIT(24)
+-#define LN_DTVREG_SML_EN BIT(25)
+-#define LN_DTVREG_SML_EN_OV BIT(26)
+-
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_DFE_CTRL12 0x30
+-#define LN_TX_BYTECLK_RESET_SYNC_CLR BIT(22)
+-#define LN_TX_BYTECLK_RESET_SYNC_CLR_OV BIT(23)
+-#define LN_TX_BYTECLK_RESET_SYNC_EN BIT(24)
+-#define LN_TX_BYTECLK_RESET_SYNC_EN_OV BIT(25)
+-#define LN_TX_HRCLK_SEL BIT(28)
+-#define LN_TX_HRCLK_SEL_OV BIT(29)
+-#define LN_TX_PBIAS_EN BIT(30)
+-#define LN_TX_PBIAS_EN_OV BIT(31)
+-
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_DFE_CTRL13 0x34
+-#define LN_TX_PRE_EN BIT(0)
+-#define LN_TX_PRE_EN_OV BIT(1)
+-#define LN_TX_PST1_EN BIT(2)
+-#define LN_TX_PST1_EN_OV BIT(3)
+-#define LN_DTVREG_ADJUST_OV BIT(15)
+-
+-#define LN_AUSPMA_RX_SHM_TJ_UNK_CTRL14A 0x38
+-#define LN_AUSPMA_RX_SHM_TJ_UNK_CTRL14B 0x3C
+-#define LN_AUSPMA_RX_SHM_TJ_UNK_CTRL15A 0x40
+-#define LN_AUSPMA_RX_SHM_TJ_UNK_CTRL15B 0x44
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_SAVOS_CTRL16 0x48
+-#define LN_RXTERM_EN BIT(21)
+-#define LN_RXTERM_EN_OV BIT(22)
+-#define LN_RXTERM_PULLUP_LEAK_EN BIT(23)
+-#define LN_RXTERM_PULLUP_LEAK_EN_OV BIT(24)
+-#define LN_TX_CAL_CODE GENMASK(29, 25)
+-#define LN_TX_CAL_CODE_OV BIT(30)
+-
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_TX_CTRL17 0x4C
+-#define LN_TX_MARGIN GENMASK(19, 15)
+-#define LN_TX_MARGIN_OV BIT(20)
+-#define LN_TX_MARGIN_LSB BIT(21)
+-#define LN_TX_MARGIN_LSB_OV BIT(22)
+-#define LN_TX_MARGIN_P1 GENMASK(26, 23)
+-#define LN_TX_MARGIN_P1_OV BIT(27)
+-#define LN_TX_MARGIN_P1_LSB GENMASK(29, 28)
+-#define LN_TX_MARGIN_P1_LSB_OV BIT(30)
+-
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_TX_CTRL18 0x50
+-#define LN_TX_P1_CODE GENMASK(3, 0)
+-#define LN_TX_P1_CODE_OV BIT(4)
+-#define LN_TX_P1_LSB_CODE GENMASK(6, 5)
+-#define LN_TX_P1_LSB_CODE_OV BIT(7)
+-#define LN_TX_MARGIN_PRE GENMASK(10, 8)
+-#define LN_TX_MARGIN_PRE_OV BIT(11)
+-#define LN_TX_MARGIN_PRE_LSB GENMASK(13, 12)
+-#define LN_TX_MARGIN_PRE_LSB_OV BIT(14)
+-#define LN_TX_PRE_LSB_CODE GENMASK(16, 15)
+-#define LN_TX_PRE_LSB_CODE_OV BIT(17)
+-#define LN_TX_PRE_CODE GENMASK(21, 18)
+-#define LN_TX_PRE_CODE_OV BIT(22)
+-
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_TERM_CTRL19 0x54
+-#define LN_TX_TEST_EN BIT(21)
+-#define LN_TX_TEST_EN_OV BIT(22)
+-#define LN_TX_EN BIT(23)
+-#define LN_TX_EN_OV BIT(24)
+-#define LN_TX_CLK_DLY_CTRL_TAPGEN GENMASK(27, 25)
+-#define LN_TX_CLK_DIV2_EN BIT(28)
+-#define LN_TX_CLK_DIV2_EN_OV BIT(29)
+-#define LN_TX_CLK_DIV2_RST BIT(30)
+-#define LN_TX_CLK_DIV2_RST_OV BIT(31)
+-
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL20 0x58
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL21 0x5C
+-#define LN_AUSPMA_RX_SHM_TJ_RXA_VREF_CTRL22 0x60
+-#define LN_VREF_ADJUST_GRAY GENMASK(11, 7)
+-#define LN_VREF_ADJUST_GRAY_OV BIT(12)
+-#define LN_VREF_BIAS_SEL GENMASK(14, 13)
+-#define LN_VREF_BIAS_SEL_OV BIT(15)
+-#define LN_VREF_BOOST_EN BIT(16)
+-#define LN_VREF_BOOST_EN_OV BIT(17)
+-#define LN_VREF_EN BIT(18)
+-#define LN_VREF_EN_OV BIT(19)
+-#define LN_VREF_LPBKIN_DATA GENMASK(29, 28)
+-#define LN_VREF_TEST_RXLPBKDT_EN BIT(30)
+-#define LN_VREF_TEST_RXLPBKDT_EN_OV BIT(31)
+-
+-#define LN_AUSPMA_TX_SHM_TXA_CFG_MAIN_REG0 0x00
+-#define LN_BYTECLK_RESET_SYNC_EN_OV BIT(2)
+-#define LN_BYTECLK_RESET_SYNC_EN BIT(3)
+-#define LN_BYTECLK_RESET_SYNC_CLR_OV BIT(4)
+-#define LN_BYTECLK_RESET_SYNC_CLR BIT(5)
+-#define LN_BYTECLK_RESET_SYNC_SEL_OV BIT(6)
+-
+-#define LN_AUSPMA_TX_SHM_TXA_CFG_MAIN_REG1 0x04
+-#define LN_TXA_DIV2_EN_OV BIT(8)
+-#define LN_TXA_DIV2_EN BIT(9)
+-#define LN_TXA_DIV2_RESET_OV BIT(10)
+-#define LN_TXA_DIV2_RESET BIT(11)
+-#define LN_TXA_CLK_EN_OV BIT(22)
+-#define LN_TXA_CLK_EN BIT(23)
+-
+-#define LN_AUSPMA_TX_SHM_TXA_IMP_REG0 0x08
+-#define LN_TXA_CAL_CTRL_OV BIT(0)
+-#define LN_TXA_CAL_CTRL GENMASK(18, 1)
+-#define LN_TXA_CAL_CTRL_BASE_OV BIT(19)
+-#define LN_TXA_CAL_CTRL_BASE GENMASK(23, 20)
+-#define LN_TXA_HIZ_OV BIT(29)
+-#define LN_TXA_HIZ BIT(30)
+-
+-#define LN_AUSPMA_TX_SHM_TXA_IMP_REG1 0x0C
+-#define LN_AUSPMA_TX_SHM_TXA_IMP_REG2 0x10
+-#define LN_TXA_MARGIN_OV BIT(0)
+-#define LN_TXA_MARGIN GENMASK(18, 1)
+-#define LN_TXA_MARGIN_2R_OV BIT(19)
+-#define LN_TXA_MARGIN_2R BIT(20)
+-
+-#define LN_AUSPMA_TX_SHM_TXA_IMP_REG3 0x14
+-#define LN_TXA_MARGIN_POST_OV BIT(0)
+-#define LN_TXA_MARGIN_POST GENMASK(10, 1)
+-#define LN_TXA_MARGIN_POST_2R_OV BIT(11)
+-#define LN_TXA_MARGIN_POST_2R BIT(12)
+-#define LN_TXA_MARGIN_POST_4R_OV BIT(13)
+-#define LN_TXA_MARGIN_POST_4R BIT(14)
+-#define LN_TXA_MARGIN_PRE_OV BIT(15)
+-#define LN_TXA_MARGIN_PRE GENMASK(21, 16)
+-#define LN_TXA_MARGIN_PRE_2R_OV BIT(22)
+-#define LN_TXA_MARGIN_PRE_2R BIT(23)
+-#define LN_TXA_MARGIN_PRE_4R_OV BIT(24)
+-#define LN_TXA_MARGIN_PRE_4R BIT(25)
+-
+-#define LN_AUSPMA_TX_SHM_TXA_UNK_REG0 0x18
+-#define LN_AUSPMA_TX_SHM_TXA_UNK_REG1 0x1C
+-#define LN_AUSPMA_TX_SHM_TXA_UNK_REG2 0x20
+-
+-#define LN_AUSPMA_TX_SHM_TXA_LDOCLK 0x24
+-#define LN_LDOCLK_BYPASS_SML_OV BIT(8)
+-#define LN_LDOCLK_BYPASS_SML BIT(9)
+-#define LN_LDOCLK_BYPASS_BIG_OV BIT(10)
+-#define LN_LDOCLK_BYPASS_BIG BIT(11)
+-#define LN_LDOCLK_EN_SML_OV BIT(12)
+-#define LN_LDOCLK_EN_SML BIT(13)
+-#define LN_LDOCLK_EN_BIG_OV BIT(14)
+-#define LN_LDOCLK_EN_BIG BIT(15)
+-
 -/* T8122 DisplayPort registers; power bit names inferred from the sequences */
 -#define ACIOPHY_CFG1 0x000c
 -#define ACIOPHY_SLEEP_CTRL_T8122 0x010c
@@ -1479,13 +1467,66 @@ index 5c0688339353..534319a4afb7 100644
 -#define LPDPTX_TXTERM_CODEMSB 0x400
 -#define LPDPTX_TXTERM_CODE GENMASK(9, 5)
 -
- /* pipehandler registers */
- #define PIPEHANDLER_OVERRIDE 0x00
- #define PIPEHANDLER_OVERRIDE_RXVALID BIT(0)
-@@ -640,183 +332,7 @@ enum atcphy_lane_mode {
- #define USB2PHY_MISCTUNE_APBCLK_GATE_OFF BIT(29)
- #define USB2PHY_MISCTUNE_REFCLK_GATE_OFF BIT(30)
- 
+-/* pipehandler registers */
+-#define PIPEHANDLER_OVERRIDE 0x00
+-#define PIPEHANDLER_OVERRIDE_RXVALID BIT(0)
+-#define PIPEHANDLER_OVERRIDE_RXDETECT BIT(2)
+-
+-#define PIPEHANDLER_OVERRIDE_VALUES 0x04
+-#define PIPEHANDLER_OVERRIDE_VAL_RXDETECT0 BIT(1)
+-#define PIPEHANDLER_OVERRIDE_VAL_RXDETECT1 BIT(2)
+-#define PIPEHANDLER_OVERRIDE_VAL_PHY_STATUS BIT(4)
+-
+-#define PIPEHANDLER_MUX_CTRL 0x0c
+-#define PIPEHANDLER_MUX_CTRL_CLK GENMASK(5, 3)
+-#define PIPEHANDLER_MUX_CTRL_DATA GENMASK(2, 0)
+-#define PIPEHANDLER_MUX_CTRL_CLK_OFF 0
+-#define PIPEHANDLER_MUX_CTRL_CLK_USB3 1
+-#define PIPEHANDLER_MUX_CTRL_CLK_USB4 2
+-#define PIPEHANDLER_MUX_CTRL_CLK_DUMMY 4
+-
+-#define PIPEHANDLER_MUX_CTRL_DATA_USB3 0
+-#define PIPEHANDLER_MUX_CTRL_DATA_USB4 1
+-#define PIPEHANDLER_MUX_CTRL_DATA_DUMMY 2
+-
+-#define PIPEHANDLER_LOCK_REQ 0x10
+-#define PIPEHANDLER_LOCK_ACK 0x14
+-#define PIPEHANDLER_LOCK_EN BIT(0)
+-
+-#define PIPEHANDLER_AON_GEN 0x1C
+-#define PIPEHANDLER_AON_GEN_DWC3_FORCE_CLAMP_EN BIT(4)
+-#define PIPEHANDLER_AON_GEN_DWC3_RESET_N BIT(0)
+-
+-#define PIPEHANDLER_NONSELECTED_OVERRIDE 0x20
+-#define PIPEHANDLER_NATIVE_RESET BIT(12)
+-#define PIPEHANDLER_DUMMY_PHY_EN BIT(15)
+-#define PIPEHANDLER_NATIVE_POWER_DOWN GENMASK(3, 0)
+-
+-#define PIPEHANDLER_LOCK_ACK_TIMEOUT_US 1000
+-
+-/* USB2 PHY regs */
+-#define USB2PHY_USBCTL 0x00
+-#define USB2PHY_USBCTL_USB_MODE 0x7
+-#define USB2PHY_USBCTL_RUN 2
+-#define USB2PHY_USBCTL_ISOLATION 4
+-
+-#define USB2PHY_CTL 0x04
+-#define USB2PHY_CTL_RESET BIT(0)
+-#define USB2PHY_CTL_PORT_RESET BIT(1)
+-#define USB2PHY_CTL_APB_RESET_N BIT(2)
+-#define USB2PHY_CTL_SIDDQ BIT(3)
+-
+-#define USB2PHY_SIG 0x08
+-#define USB2PHY_SIG_VBUSDET_FORCE_VAL BIT(0)
+-#define USB2PHY_SIG_VBUSDET_FORCE_EN BIT(1)
+-#define USB2PHY_SIG_VBUSVLDEXT_FORCE_VAL BIT(2)
+-#define USB2PHY_SIG_VBUSVLDEXT_FORCE_EN BIT(3)
+-#define USB2PHY_SIG_HOST (7 << 12)
+-
+-#define USB2PHY_MISCTUNE 0x1c
+-#define USB2PHY_MISCTUNE_APBCLK_GATE_OFF BIT(29)
+-#define USB2PHY_MISCTUNE_REFCLK_GATE_OFF BIT(30)
+-
 -enum atcphy_dp_link_rate {
 -	ATCPHY_DP_LINK_RATE_RBR,
 -	ATCPHY_DP_LINK_RATE_HBR,
@@ -1564,6 +1605,13 @@ index 5c0688339353..534319a4afb7 100644
 -
 -struct apple_atcphy;
 -
+-struct atcphy_dp_ops {
+-	void (*enable_aux)(struct apple_atcphy *atcphy);
+-	void (*disable_aux)(struct apple_atcphy *atcphy);
+-	int (*set_rate)(struct apple_atcphy *atcphy, enum atcphy_dp_link_rate lr);
+-	int (*stop)(struct apple_atcphy *atcphy);
+-};
+-
 -struct atcphy_hw {
 -	void (*configure_post_tunable)(struct apple_atcphy *atcphy, enum atcphy_mode mode);
 -	void (*configure_pipehandler_usb3_host)(struct apple_atcphy *atcphy);
@@ -1572,10 +1620,7 @@ index 5c0688339353..534319a4afb7 100644
 -	int (*wait_rcal1_done)(struct apple_atcphy *atcphy, enum atcphy_mode mode);
 -	void (*configure_lane_pmafsm)(struct apple_atcphy *atcphy,
 -				      const struct atcphy_mode_configuration *mode_cfg);
--	void (*dp_enable_aux)(struct apple_atcphy *atcphy);
--	void (*dp_disable_aux)(struct apple_atcphy *atcphy);
--	int (*dp_set_rate)(struct apple_atcphy *atcphy, enum atcphy_dp_link_rate lr);
--	int (*dp_stop)(struct apple_atcphy *atcphy);
+-	const struct atcphy_dp_ops *dp;
 -	int aciophy_lane_mode;
 -	int aciophy_crossbar;
 -	bool need_dp_tunables;
@@ -1656,7 +1701,8 @@ index 5c0688339353..534319a4afb7 100644
 -
 -	struct mutex lock;
 -};
--
++#include "atc.h"
+ 
 -static const struct {
 -	const struct atcphy_mode_configuration normal;
 -	const struct atcphy_mode_configuration swapped;
@@ -1667,7 +1713,7 @@ index 5c0688339353..534319a4afb7 100644
  	[APPLE_ATCPHY_MODE_OFF] = {
  		.normal = {
  			.crossbar = ACIOPHY_CROSSBAR_PROTOCOL_USB3,
-@@ -964,7 +480,7 @@ static const struct {
+@@ -968,7 +194,7 @@ static const struct {
  	},
  };
  
@@ -1676,7 +1722,7 @@ index 5c0688339353..534319a4afb7 100644
  	[ATCPHY_DP_LINK_RATE_RBR] = {
  		.freqinit_count_target = 0x21c,
  		.fbdivn_frac_den = 0x0,
-@@ -1011,77 +527,6 @@ static const struct atcphy_dp_link_rate_configuration dp_lr_config[] = {
+@@ -1015,77 +241,6 @@ static const struct atcphy_dp_link_rate_configuration dp_lr_config[] = {
  	},
  };
  
@@ -1754,7 +1800,7 @@ index 5c0688339353..534319a4afb7 100644
  static void atcphy_apply_tunables(struct apple_atcphy *atcphy, enum atcphy_mode mode)
  {
  	const int lane0 = atcphy->swap_lanes ? 1 : 0;
-@@ -1193,7 +638,7 @@ static void atcphy_pipehandler_set_mux(struct apple_atcphy *atcphy, u32 data, u3
+@@ -1197,7 +352,7 @@ static void atcphy_pipehandler_set_mux(struct apple_atcphy *atcphy, u32 data, u3
  	udelay(10);
  }
  
@@ -1763,7 +1809,7 @@ index 5c0688339353..534319a4afb7 100644
  {
  	/* Clear reset for non-selected USB3 PHY (?) */
  	mask32(atcphy->regs.pipehandler + PIPEHANDLER_NONSELECTED_OVERRIDE,
-@@ -1202,128 +647,6 @@ static void atcphy_clear_nonselected_phy_reset(struct apple_atcphy *atcphy)
+@@ -1206,128 +361,6 @@ static void atcphy_clear_nonselected_phy_reset(struct apple_atcphy *atcphy)
  		PIPEHANDLER_NATIVE_RESET);
  }
  
@@ -1892,7 +1938,7 @@ index 5c0688339353..534319a4afb7 100644
  static int atcphy_configure_pipehandler_usb3(struct apple_atcphy *atcphy, bool host)
  {
  	int ret;
-@@ -1474,35 +797,6 @@ static void atcphy_setup_pipehandler(struct apple_atcphy *atcphy)
+@@ -1478,35 +511,6 @@ static void atcphy_setup_pipehandler(struct apple_atcphy *atcphy)
  				   PIPEHANDLER_MUX_CTRL_CLK_DUMMY);
  }
  
@@ -1928,7 +1974,7 @@ index 5c0688339353..534319a4afb7 100644
  static void atcphy_configure_lanes(struct apple_atcphy *atcphy, enum atcphy_mode mode)
  {
  	const struct atcphy_mode_configuration *mode_cfg = atcphy_get_mode_config(atcphy, mode);
-@@ -1535,458 +829,6 @@ static void atcphy_configure_lanes(struct apple_atcphy *atcphy, enum atcphy_mode
+@@ -1539,458 +543,6 @@ static void atcphy_configure_lanes(struct apple_atcphy *atcphy, enum atcphy_mode
  
  }
  
@@ -2386,17 +2432,8 @@ index 5c0688339353..534319a4afb7 100644
 -
  static void atcphy_dp_enable_aux(struct apple_atcphy *atcphy)
  {
- 	if (atcphy->hw->dp_enable_aux)
-@@ -2009,8 +851,6 @@ static int atcphy_dp_configure_lane(struct apple_atcphy *atcphy, enum atcphy_lan
- 
- 	lockdep_assert_held(&atcphy->lock);
- 
--	if ((unsigned int)lane > APPLE_ATCPHY_LANE_1)
--		return -EINVAL;
- 	tx_shm = atcphy_lane_reg(atcphy, lane, LN0_AUSPMA_TX_SHM);
- 	rx_shm = atcphy_lane_reg(atcphy, lane, LN0_AUSPMA_RX_SHM);
- 	rx_top = atcphy_lane_reg(atcphy, lane, LN0_AUSPMA_RX_TOP);
-@@ -2236,7 +1076,7 @@ static int atcphy_dp_configure(struct apple_atcphy *atcphy, enum atcphy_dp_link_
+ 	if (atcphy->hw->dp)
+@@ -2240,7 +792,7 @@ static int atcphy_dp_configure(struct apple_atcphy *atcphy, enum atcphy_dp_link_
  
  	guard(mutex)(&atcphy->lock);
  	mode_cfg = atcphy_get_mode_config(atcphy, atcphy->mode);
@@ -2405,7 +2442,7 @@ index 5c0688339353..534319a4afb7 100644
  
  	if (atcphy->dp_link_rate == lr)
  		return 0;
-@@ -2347,7 +1187,7 @@ static void atcphy_usb2_power_off(struct apple_atcphy *atcphy)
+@@ -2351,7 +903,7 @@ static void atcphy_usb2_power_off(struct apple_atcphy *atcphy)
  	set32(atcphy->regs.usb2phy + USB2PHY_MISCTUNE, USB2PHY_MISCTUNE_REFCLK_GATE_OFF);
  }
  
@@ -2414,7 +2451,7 @@ index 5c0688339353..534319a4afb7 100644
  {
  	u32 reg;
  	int ret;
-@@ -2379,13 +1219,6 @@ static int atcphy_power_off(struct apple_atcphy *atcphy)
+@@ -2383,13 +935,6 @@ static int atcphy_power_off(struct apple_atcphy *atcphy)
  	return 0;
  }
  
@@ -2428,7 +2465,7 @@ index 5c0688339353..534319a4afb7 100644
  static void atcphy_usb2_power_on(struct apple_atcphy *atcphy)
  {
  	set32(atcphy->regs.usb2phy + USB2PHY_SIG,
-@@ -2446,87 +1279,6 @@ static int atcphy_power_on(struct apple_atcphy *atcphy)
+@@ -2450,87 +995,6 @@ static int atcphy_power_on(struct apple_atcphy *atcphy)
  	return 0;
  }
  
@@ -2486,7 +2523,7 @@ index 5c0688339353..534319a4afb7 100644
 -static void atcphy_configure_post_tunable_t8122(struct apple_atcphy *atcphy, enum atcphy_mode mode)
 -{
 -	if (atcphy_modes[mode].pipehandler_state == ATCPHY_PIPEHANDLER_STATE_USB3 ||
--	    (atcphy->hw->dp_enable_aux && atcphy_modes[mode].enable_dp_aux))
+-	    (atcphy->hw->dp && atcphy_modes[mode].enable_dp_aux))
 -		atcphy_power_on_common_t8122(atcphy);
 -}
 -
@@ -2516,11 +2553,24 @@ index 5c0688339353..534319a4afb7 100644
  static int atcphy_configure(struct apple_atcphy *atcphy, enum atcphy_mode mode)
  {
  	int ret = 0;
-@@ -3124,32 +1876,6 @@ static int atcphy_probe(struct platform_device *pdev)
+@@ -3128,40 +1592,6 @@ static int atcphy_probe(struct platform_device *pdev)
  	return atcphy_probe_finalize(atcphy);
  }
  
+-static const struct atcphy_dp_ops atcphy_dp_ops_t8103 = {
+-	.enable_aux = atcphy_enable_dp_aux_t8103,
+-	.disable_aux = atcphy_disable_dp_aux_t8103,
+-};
+-
+-static const struct atcphy_dp_ops atcphy_dp_ops_t8122 = {
+-	.enable_aux = atcphy_enable_dp_aux_t8122,
+-	.disable_aux = atcphy_disable_dp_aux_t8122,
+-	.set_rate = atcphy_dp_set_rate_t8122,
+-	.stop = atcphy_dp_stop_link_t8122,
+-};
+-
 -static const struct atcphy_hw atcphy_hw_t8103 = {
+-	.dp = &atcphy_dp_ops_t8103,
 -	.need_dp_tunables = true,
 -	.aciophy_lane_mode = ACIOPHY_LANE_MODE_T8103,
 -	.aciophy_crossbar = ACIOPHY_CROSSBAR_T8103,
@@ -2528,11 +2578,10 @@ index 5c0688339353..534319a4afb7 100644
 -	.configure_pipehandler_usb3_host = atcphy_configure_pipehandler_usb3_host_t8103,
 -	.enable_cio3pll_clk = atcphy_enable_cio3pll_clk_t8103,
 -	.configure_lane_pmafsm = atcphy_configure_lane_pmafsm_t8103,
--	.dp_enable_aux = atcphy_enable_dp_aux_t8103,
--	.dp_disable_aux = atcphy_disable_dp_aux_t8103,
 -};
 -
 -static const struct atcphy_hw atcphy_hw_t8122 = {
+-	.dp = &atcphy_dp_ops_t8122,
 -	.need_dp_tunables = false,
 -	.aciophy_lane_mode = ACIOPHY_LANE_MODE_T8122,
 -	.aciophy_crossbar = ACIOPHY_CROSSBAR_T8122,
@@ -2540,10 +2589,6 @@ index 5c0688339353..534319a4afb7 100644
 -	.configure_pipehandler_usb3_host = atcphy_configure_pipehandler_usb3_host_t8122,
 -	.configure_usb2_evt_ctl = atcphy_configure_usb2_evt_ctl_t8122,
 -	.wait_rcal1_done = atcphy_wait_rcal1_done_t8122,
--	.dp_enable_aux = atcphy_enable_dp_aux_t8122,
--	.dp_disable_aux = atcphy_disable_dp_aux_t8122,
--	.dp_set_rate = atcphy_dp_set_rate_t8122,
--	.dp_stop = atcphy_dp_stop_link_t8122,
 -};
 -
  static const struct of_device_id atcphy_match[] = {
@@ -2551,13 +2596,12 @@ index 5c0688339353..534319a4afb7 100644
  	{ .compatible = "apple,t8122-atcphy", .data = &atcphy_hw_t8122 },
 diff --git a/drivers/phy/apple/atc.h b/drivers/phy/apple/atc.h
 new file mode 100644
-index 000000000000..e8bda29553e2
+index 000000000000..d6a608c67769
 --- /dev/null
 +++ b/drivers/phy/apple/atc.h
-@@ -0,0 +1,340 @@
+@@ -0,0 +1,806 @@
 +/* SPDX-License-Identifier: GPL-2.0 OR BSD-2-Clause */
 +
-+#include <linux/bitfield.h>
 +#include <linux/of_device.h>
 +#include <linux/platform_device.h>
 +#include <linux/reset-controller.h>
@@ -2565,55 +2609,13 @@ index 000000000000..e8bda29553e2
 +#ifndef __ATC_H__
 +#define __ATC_H__
 +
-+enum atcphy_lane_mode {
-+	ACIOPHY_LANE_MODE_USB4 = 0,
-+	ACIOPHY_LANE_MODE_USB3 = 1,
-+	ACIOPHY_LANE_MODE_DP = 2,
-+	ACIOPHY_LANE_MODE_OFF = 3,
-+};
-+
-+enum atcphy_dp_link_rate {
-+	ATCPHY_DP_LINK_RATE_RBR,
-+	ATCPHY_DP_LINK_RATE_HBR,
-+	ATCPHY_DP_LINK_RATE_HBR2,
-+	ATCPHY_DP_LINK_RATE_HBR3,
-+};
-+
 +#define AUSPLL_FSM_CTRL 0x1014
-+
-+#define ACIOPHY_DP_PCLK_STAT 0x7044
-+#define ACIOPHY_AUSPLL_LOCK BIT(3)
-+
-+#define ACIOPHY_CFG0 0x08
-+#define ACIOPHY_CFG0_COMMON_BIG BIT(0)
-+#define ACIOPHY_CFG0_COMMON_BIG_OV BIT(1)
-+#define ACIOPHY_CFG0_COMMON_SMALL BIT(2)
-+#define ACIOPHY_CFG0_COMMON_SMALL_OV BIT(3)
-+#define ACIOPHY_CFG0_COMMON_CLAMP BIT(4)
-+#define ACIOPHY_CFG0_COMMON_CLAMP_OV BIT(5)
-+#define ACIOPHY_CFG0_RX_SMALL_OV GENMASK(9, 8)
-+#define ACIOPHY_CFG0_RX_BIG_OV GENMASK(13, 12)
-+#define ACIOPHY_CFG0_RX_CLAMP_OV GENMASK(17, 16)
-+
-+#define AUSPLL_BGR 0x2214
-+#define AUSPLL_BGR_CTRL_AVAIL BIT(0)
-+
-+#define AUSPLL_FREQ_CFG 0x2224
-+#define AUSPLL_FREQ_REFCLK GENMASK(1, 0)
 +
 +#define AUSPLL_APB_CMD_OVERRIDE 0x2000
 +#define AUSPLL_APB_CMD_OVERRIDE_REQ BIT(0)
 +#define AUSPLL_APB_CMD_OVERRIDE_ACK BIT(1)
 +#define AUSPLL_APB_CMD_OVERRIDE_UNK28 BIT(28)
 +#define AUSPLL_APB_CMD_OVERRIDE_CMD GENMASK(27, 3)
-+
-+#define AUSPLL_CLKOUT_DIV 0x2208
-+#define AUSPLL_CLKOUT_PLLA_REFBUFCLK_DI GENMASK(20, 16)
-+
-+#define AUSPLL_CLKOUT_MASTER 0x2200
-+#define AUSPLL_CLKOUT_MASTER_PCLK_DRVR_EN BIT(2)
-+#define AUSPLL_CLKOUT_MASTER_PCLK2_DRVR_EN BIT(4)
-+#define AUSPLL_CLKOUT_MASTER_REFBUFCLK_DRVR_EN BIT(6)
 +
 +#define AUSPLL_FREQ_DESC_A 0x2080
 +#define AUSPLL_FD_FREQ_COUNT_TARGET GENMASK(9, 0)
@@ -2638,6 +2640,162 @@ index 000000000000..e8bda29553e2
 +#define AUSPLL_FD_VCLK_OP_DIVN GENMASK(21, 20)
 +#define AUSPLL_FD_VCLK_PRE_DIVN BIT(22)
 +
++#define AUSPLL_DCO_EFUSE_SPARE 0x222c
++#define AUSPLL_RODCO_ENCAP_EFUSE GENMASK(10, 9)
++#define AUSPLL_RODCO_BIAS_ADJUST_EFUSE GENMASK(14, 12)
++
++#define AUSPLL_FRACN_CAN 0x22a4
++#define AUSPLL_DLL_START_CAPCODE GENMASK(18, 17)
++
++#define AUSPLL_CLKOUT_MASTER 0x2200
++#define AUSPLL_CLKOUT_MASTER_PCLK_DRVR_EN BIT(2)
++#define AUSPLL_CLKOUT_MASTER_PCLK2_DRVR_EN BIT(4)
++#define AUSPLL_CLKOUT_MASTER_REFBUFCLK_DRVR_EN BIT(6)
++
++#define AUSPLL_CLKOUT_DIV 0x2208
++#define AUSPLL_CLKOUT_PLLA_REFBUFCLK_DI GENMASK(20, 16)
++
++#define AUSPLL_BGR 0x2214
++#define AUSPLL_BGR_CTRL_AVAIL BIT(0)
++
++#define AUSPLL_CLKOUT_DTC_VREG 0x2220
++#define AUSPLL_DTC_VREG_ADJUST GENMASK(16, 14)
++#define AUSPLL_DTC_VREG_BYPASS BIT(7)
++
++#define AUSPLL_FREQ_CFG 0x2224
++#define AUSPLL_FREQ_REFCLK GENMASK(1, 0)
++
++#define AUS_COMMON_SHIM_BLK_BIAS_REG 0x0a00
++#define AUS_COMMON_SHIM_BLK_BIAS_REG_BGBIAS_OV BIT(1)
++
++#define AUS_COMMON_SHIM_BLK_VREG 0x0a04
++#define AUS_VREG_TRIM GENMASK(6, 2)
++
++#define AUS_COMMON_DIG_RCAL1 0x804
++#define AUS_COMMON_DIG_RCAL1_ALL_CODES_DONE BIT(0)
++
++#define AUS_UNK_A20 0x0a20
++#define AUS_UNK_A20_TX_CAL_CODE GENMASK(23, 20)
++
++#define ACIOPHY_CMN_SHM_STS_REG0 0x0a74
++#define ACIOPHY_CMN_SHM_STS_REG0_CMD_READY BIT(0)
++
++#define CIO3PLL_CLK_CTRL 0x2a00
++#define CIO3PLL_CLK_PCLK_EN BIT(1)
++#define CIO3PLL_CLK_REFCLK_EN BIT(5)
++
++#define CIO3PLL_DCO_NCTRL 0x2a38
++#define CIO3PLL_DCO_COARSEBIN_EFUSE0 GENMASK(6, 0)
++#define CIO3PLL_DCO_COARSEBIN_EFUSE1 GENMASK(23, 17)
++
++#define CIO3PLL_FRACN_CAN 0x2aa4
++#define CIO3PLL_DLL_CAL_START_CAPCODE GENMASK(18, 17)
++
++#define CIO3PLL_DTC_VREG 0x2a20
++#define CIO3PLL_DTC_VREG_ADJUST GENMASK(16, 14)
++
++#define ATCPHY_EVT_USB2_CTL 0x0
++#define ATCPHY_EVT_USB2_CTL_EVT_EN 0x1
++#define ATCPHY_EVT_USB2_CTL_LOAD_CNT 0x8
++
++#define ACIOPHY_CFG0 0x08
++#define ACIOPHY_CFG0_COMMON_BIG BIT(0)
++#define ACIOPHY_CFG0_COMMON_BIG_OV BIT(1)
++#define ACIOPHY_CFG0_COMMON_SMALL BIT(2)
++#define ACIOPHY_CFG0_COMMON_SMALL_OV BIT(3)
++#define ACIOPHY_CFG0_COMMON_CLAMP BIT(4)
++#define ACIOPHY_CFG0_COMMON_CLAMP_OV BIT(5)
++#define ACIOPHY_CFG0_RX_SMALL_OV GENMASK(9, 8)
++#define ACIOPHY_CFG0_RX_BIG_OV GENMASK(13, 12)
++#define ACIOPHY_CFG0_RX_CLAMP_OV GENMASK(17, 16)
++
++#define ACIOPHY_CROSSBAR_PROTOCOL GENMASK(4, 0)
++#define ACIOPHY_CROSSBAR_PROTOCOL_USB4 0x0
++#define ACIOPHY_CROSSBAR_PROTOCOL_USB4_SWAPPED 0x1
++#define ACIOPHY_CROSSBAR_PROTOCOL_USB3 0xa
++#define ACIOPHY_CROSSBAR_PROTOCOL_USB3_SWAPPED 0xb
++#define ACIOPHY_CROSSBAR_PROTOCOL_USB3_DP 0x10
++#define ACIOPHY_CROSSBAR_PROTOCOL_USB3_DP_SWAPPED 0x11
++#define ACIOPHY_CROSSBAR_PROTOCOL_DP 0x14
++#define ACIOPHY_CROSSBAR_DP_SINGLE_PMA GENMASK(16, 5)
++#define ACIOPHY_CROSSBAR_DP_SINGLE_PMA_NONE 0x0000
++#define ACIOPHY_CROSSBAR_DP_SINGLE_PMA_UNK100 0x100
++#define ACIOPHY_CROSSBAR_DP_SINGLE_PMA_UNK008 0x008
++#define ACIOPHY_CROSSBAR_DP_BOTH_PMA BIT(17)
++
++#define ACIOPHY_LANE_MODE_RX0 GENMASK(2, 0)
++#define ACIOPHY_LANE_MODE_TX0 GENMASK(5, 3)
++#define ACIOPHY_LANE_MODE_RX1 GENMASK(8, 6)
++#define ACIOPHY_LANE_MODE_TX1 GENMASK(11, 9)
++
++enum atcphy_lane_mode {
++	ACIOPHY_LANE_MODE_USB4 = 0,
++	ACIOPHY_LANE_MODE_USB3 = 1,
++	ACIOPHY_LANE_MODE_DP = 2,
++	ACIOPHY_LANE_MODE_OFF = 3,
++};
++
++#define ACIOPHY_TOP_BIST_CIOPHY_CFG1 0x84
++#define ACIOPHY_TOP_BIST_CIOPHY_CFG1_CLK_EN BIT(27)
++#define ACIOPHY_TOP_BIST_CIOPHY_CFG1_BIST_EN BIT(28)
++
++#define ACIOPHY_TOP_BIST_OV_CFG 0x8c
++#define ACIOPHY_TOP_BIST_OV_CFG_LN0_RESET_N_OV BIT(13)
++#define ACIOPHY_TOP_BIST_OV_CFG_LN0_PWR_DOWN_OV BIT(25)
++
++#define ACIOPHY_TOP_BIST_READ_CTRL 0x90
++#define ACIOPHY_TOP_BIST_READ_CTRL_LN0_PHY_STATUS_RE BIT(2)
++
++#define ACIOPHY_TOP_PHY_STAT 0x9c
++#define ACIOPHY_TOP_PHY_STAT_LN0_UNK0 BIT(0)
++#define ACIOPHY_TOP_PHY_STAT_LN0_UNK23 BIT(23)
++
++#define ACIOPHY_TOP_BIST_PHY_CFG0 0xa8
++#define ACIOPHY_TOP_BIST_PHY_CFG0_LN0_RESET_N BIT(0)
++
++#define ACIOPHY_TOP_BIST_PHY_CFG1 0xac
++#define ACIOPHY_TOP_BIST_PHY_CFG1_LN0_PWR_DOWN GENMASK(13, 10)
++
++#define ACIOPHY_BIST_CFG1 0x17000
++#define ACIOPHY_BIST_CFG1_CLOCK_EN BIT(0)
++#define ACIOPHY_BIST_CFG1_USB_EN BIT(2)
++
++#define ACIOPHY_BIST_CFG2 0x17004
++#define ACIOPHY_BIST_CFG2_LN0_PHY_STATUS_RE BIT(2)
++
++#define ACIOPHY_BIST_MAC_USBPHY_STATUS2 0x17080
++#define ACIOPHY_BIST_MAC_USBPHY_STATUS2_LN0_PHY_STATUS2 BIT(7)
++
++#define ACIOPHY_BIST_MAC_USBPHY_CFG_OV1 0x17088
++#define ACIOPHY_BIST_MAC_USBPHY_CFG_OV1_LN0_PIPE_RESET_N_OV 0x100000
++#define ACIOPHY_BIST_MAC_USBPHY_CFG_OV1_LN0_PWR_DOWN_OV GENMASK(26, 25)
++
++#define ACIOPHY_BIST_MAC_USBPHY_CFG_OV2 0x1708c
++#define ACIOPHY_BIST_MAC_USBPHY_CFG_OV2_LN0_RESET_N_OV 0x200
++#define ACIOPHY_BIST_MAC_USBPHY_CFG_OV2_LN0_PWR_DOWN_OV 0x20
++
++#define ACIOPHY_SLEEP_CTRL 0x1b0
++#define ACIOPHY_SLEEP_CTRL_TX_BIG_OV GENMASK(3, 2)
++#define ACIOPHY_SLEEP_CTRL_TX_SMALL_OV GENMASK(7, 6)
++#define ACIOPHY_SLEEP_CTRL_TX_CLAMP_OV GENMASK(11, 10)
++
++#define ACIOPHY_PLL_PCTL_FSM_CTRL1 0x1014
++#define ACIOPHY_PLL_APB_REQ_OV_SEL GENMASK(21, 13)
++#define ACIOPHY_PLL_COMMON_CTRL 0x1028
++#define ACIOPHY_PLL_WAIT_FOR_CMN_READY_BEFORE_RESET_EXIT BIT(24)
++
++#define ATCPHY_POWER_CTRL 0x20000
++#define ATCPHY_POWER_STAT 0x20004
++#define ATCPHY_POWER_SLEEP_SMALL BIT(0)
++#define ATCPHY_POWER_SLEEP_BIG BIT(1)
++#define ATCPHY_POWER_CLAMP_EN BIT(2)
++#define ATCPHY_POWER_APB_RESET_N BIT(3)
++#define ATCPHY_POWER_PHY_RESET_N BIT(4)
++
++#define ATCPHY_MISC 0x20008
++#define ATCPHY_MISC_RESET_N BIT(0)
++#define ATCPHY_MISC_LANE_SWAP BIT(2)
++
 +#define ACIOPHY_LANE_DP_CFG_BLK_TX_DP_CTRL0 0x7000
 +#define DP_PMA_BYTECLK_RESET BIT(0)
 +#define DP_MAC_DIV20_CLK_SEL BIT(1)
@@ -2650,8 +2808,8 @@ index 000000000000..e8bda29553e2
 +#define DPTX_PCLK2_ENABLE BIT(14)
 +#define DPRX_PCLK_ENABLE BIT(15)
 +
-+#define LN_AUSPMA_RX_TOP_TJ_CFG_RX_TXMODE 0x00F0
-+#define LN_RX_TXMODE BIT(0)
++#define ACIOPHY_DP_PCLK_STAT 0x7044
++#define ACIOPHY_AUSPLL_LOCK BIT(3)
 +
 +#define LN0_AUSPMA_RX_TOP 0x9000
 +#define LN0_AUSPMA_RX_EQ 0xA000
@@ -2664,6 +2822,355 @@ index 000000000000..e8bda29553e2
 +#define LN1_AUSPMA_RX_SHM 0x12000
 +#define LN1_AUSPMA_TX_TOP 0x13000
 +#define LN1_AUSPMA_TX_SHM 0x14000
++
++#define LN_AUSPMA_RX_TOP_PMAFSM 0x0010
++#define LN_AUSPMA_RX_TOP_PMAFSM_PCS_OV BIT(0)
++#define LN_AUSPMA_RX_TOP_PMAFSM_PCS_REQ BIT(9)
++
++#define LN_AUSPMA_RX_TOP_TJ_CFG_RX_TXMODE 0x00F0
++#define LN_RX_TXMODE BIT(0)
++
++#define LN_AUSPMA_RX_SHM_TJ_RXA_CTLE_CTRL0 0x00
++#define LN_TX_CLK_EN BIT(20)
++#define LN_TX_CLK_EN_OV BIT(21)
++
++#define LN_AUSPMA_RX_SHM_TJ_RXA_AFE_CTRL1 0x04
++#define LN_RX_DIV20_RESET_N_OV BIT(29)
++#define LN_RX_DIV20_RESET_N BIT(30)
++
++#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL2 0x08
++#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL3 0x0C
++#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL4 0x10
++#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL5 0x14
++#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL6 0x18
++#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL7 0x1C
++#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL8 0x20
++#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL9 0x24
++#define LN_AUSPMA_RX_SHM_TJ_RXA_DFE_CTRL10 0x28
++#define LN_DTVREG_ADJUST GENMASK(31, 27)
++
++#define LN_AUSPMA_RX_SHM_TJ_RXA_DFE_CTRL11 0x2C
++#define LN_DTVREG_BIG_EN BIT(23)
++#define LN_DTVREG_BIG_EN_OV BIT(24)
++#define LN_DTVREG_SML_EN BIT(25)
++#define LN_DTVREG_SML_EN_OV BIT(26)
++
++#define LN_AUSPMA_RX_SHM_TJ_RXA_DFE_CTRL12 0x30
++#define LN_TX_BYTECLK_RESET_SYNC_CLR BIT(22)
++#define LN_TX_BYTECLK_RESET_SYNC_CLR_OV BIT(23)
++#define LN_TX_BYTECLK_RESET_SYNC_EN BIT(24)
++#define LN_TX_BYTECLK_RESET_SYNC_EN_OV BIT(25)
++#define LN_TX_HRCLK_SEL BIT(28)
++#define LN_TX_HRCLK_SEL_OV BIT(29)
++#define LN_TX_PBIAS_EN BIT(30)
++#define LN_TX_PBIAS_EN_OV BIT(31)
++
++#define LN_AUSPMA_RX_SHM_TJ_RXA_DFE_CTRL13 0x34
++#define LN_TX_PRE_EN BIT(0)
++#define LN_TX_PRE_EN_OV BIT(1)
++#define LN_TX_PST1_EN BIT(2)
++#define LN_TX_PST1_EN_OV BIT(3)
++#define LN_DTVREG_ADJUST_OV BIT(15)
++
++#define LN_AUSPMA_RX_SHM_TJ_UNK_CTRL14A 0x38
++#define LN_AUSPMA_RX_SHM_TJ_UNK_CTRL14B 0x3C
++#define LN_AUSPMA_RX_SHM_TJ_UNK_CTRL15A 0x40
++#define LN_AUSPMA_RX_SHM_TJ_UNK_CTRL15B 0x44
++#define LN_AUSPMA_RX_SHM_TJ_RXA_SAVOS_CTRL16 0x48
++#define LN_RXTERM_EN BIT(21)
++#define LN_RXTERM_EN_OV BIT(22)
++#define LN_RXTERM_PULLUP_LEAK_EN BIT(23)
++#define LN_RXTERM_PULLUP_LEAK_EN_OV BIT(24)
++#define LN_TX_CAL_CODE GENMASK(29, 25)
++#define LN_TX_CAL_CODE_OV BIT(30)
++
++#define LN_AUSPMA_RX_SHM_TJ_RXA_TX_CTRL17 0x4C
++#define LN_TX_MARGIN GENMASK(19, 15)
++#define LN_TX_MARGIN_OV BIT(20)
++#define LN_TX_MARGIN_LSB BIT(21)
++#define LN_TX_MARGIN_LSB_OV BIT(22)
++#define LN_TX_MARGIN_P1 GENMASK(26, 23)
++#define LN_TX_MARGIN_P1_OV BIT(27)
++#define LN_TX_MARGIN_P1_LSB GENMASK(29, 28)
++#define LN_TX_MARGIN_P1_LSB_OV BIT(30)
++
++#define LN_AUSPMA_RX_SHM_TJ_RXA_TX_CTRL18 0x50
++#define LN_TX_P1_CODE GENMASK(3, 0)
++#define LN_TX_P1_CODE_OV BIT(4)
++#define LN_TX_P1_LSB_CODE GENMASK(6, 5)
++#define LN_TX_P1_LSB_CODE_OV BIT(7)
++#define LN_TX_MARGIN_PRE GENMASK(10, 8)
++#define LN_TX_MARGIN_PRE_OV BIT(11)
++#define LN_TX_MARGIN_PRE_LSB GENMASK(13, 12)
++#define LN_TX_MARGIN_PRE_LSB_OV BIT(14)
++#define LN_TX_PRE_LSB_CODE GENMASK(16, 15)
++#define LN_TX_PRE_LSB_CODE_OV BIT(17)
++#define LN_TX_PRE_CODE GENMASK(21, 18)
++#define LN_TX_PRE_CODE_OV BIT(22)
++
++#define LN_AUSPMA_RX_SHM_TJ_RXA_TERM_CTRL19 0x54
++#define LN_TX_TEST_EN BIT(21)
++#define LN_TX_TEST_EN_OV BIT(22)
++#define LN_TX_EN BIT(23)
++#define LN_TX_EN_OV BIT(24)
++#define LN_TX_CLK_DLY_CTRL_TAPGEN GENMASK(27, 25)
++#define LN_TX_CLK_DIV2_EN BIT(28)
++#define LN_TX_CLK_DIV2_EN_OV BIT(29)
++#define LN_TX_CLK_DIV2_RST BIT(30)
++#define LN_TX_CLK_DIV2_RST_OV BIT(31)
++
++#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL20 0x58
++#define LN_AUSPMA_RX_SHM_TJ_RXA_UNK_CTRL21 0x5C
++#define LN_AUSPMA_RX_SHM_TJ_RXA_VREF_CTRL22 0x60
++#define LN_VREF_ADJUST_GRAY GENMASK(11, 7)
++#define LN_VREF_ADJUST_GRAY_OV BIT(12)
++#define LN_VREF_BIAS_SEL GENMASK(14, 13)
++#define LN_VREF_BIAS_SEL_OV BIT(15)
++#define LN_VREF_BOOST_EN BIT(16)
++#define LN_VREF_BOOST_EN_OV BIT(17)
++#define LN_VREF_EN BIT(18)
++#define LN_VREF_EN_OV BIT(19)
++#define LN_VREF_LPBKIN_DATA GENMASK(29, 28)
++#define LN_VREF_TEST_RXLPBKDT_EN BIT(30)
++#define LN_VREF_TEST_RXLPBKDT_EN_OV BIT(31)
++
++#define LN_AUSPMA_TX_SHM_TXA_CFG_MAIN_REG0 0x00
++#define LN_BYTECLK_RESET_SYNC_EN_OV BIT(2)
++#define LN_BYTECLK_RESET_SYNC_EN BIT(3)
++#define LN_BYTECLK_RESET_SYNC_CLR_OV BIT(4)
++#define LN_BYTECLK_RESET_SYNC_CLR BIT(5)
++#define LN_BYTECLK_RESET_SYNC_SEL_OV BIT(6)
++
++#define LN_AUSPMA_TX_SHM_TXA_CFG_MAIN_REG1 0x04
++#define LN_TXA_DIV2_EN_OV BIT(8)
++#define LN_TXA_DIV2_EN BIT(9)
++#define LN_TXA_DIV2_RESET_OV BIT(10)
++#define LN_TXA_DIV2_RESET BIT(11)
++#define LN_TXA_CLK_EN_OV BIT(22)
++#define LN_TXA_CLK_EN BIT(23)
++
++#define LN_AUSPMA_TX_SHM_TXA_IMP_REG0 0x08
++#define LN_TXA_CAL_CTRL_OV BIT(0)
++#define LN_TXA_CAL_CTRL GENMASK(18, 1)
++#define LN_TXA_CAL_CTRL_BASE_OV BIT(19)
++#define LN_TXA_CAL_CTRL_BASE GENMASK(23, 20)
++#define LN_TXA_HIZ_OV BIT(29)
++#define LN_TXA_HIZ BIT(30)
++
++#define LN_AUSPMA_TX_SHM_TXA_IMP_REG1 0x0C
++#define LN_AUSPMA_TX_SHM_TXA_IMP_REG2 0x10
++#define LN_TXA_MARGIN_OV BIT(0)
++#define LN_TXA_MARGIN GENMASK(18, 1)
++#define LN_TXA_MARGIN_2R_OV BIT(19)
++#define LN_TXA_MARGIN_2R BIT(20)
++
++#define LN_AUSPMA_TX_SHM_TXA_IMP_REG3 0x14
++#define LN_TXA_MARGIN_POST_OV BIT(0)
++#define LN_TXA_MARGIN_POST GENMASK(10, 1)
++#define LN_TXA_MARGIN_POST_2R_OV BIT(11)
++#define LN_TXA_MARGIN_POST_2R BIT(12)
++#define LN_TXA_MARGIN_POST_4R_OV BIT(13)
++#define LN_TXA_MARGIN_POST_4R BIT(14)
++#define LN_TXA_MARGIN_PRE_OV BIT(15)
++#define LN_TXA_MARGIN_PRE GENMASK(21, 16)
++#define LN_TXA_MARGIN_PRE_2R_OV BIT(22)
++#define LN_TXA_MARGIN_PRE_2R BIT(23)
++#define LN_TXA_MARGIN_PRE_4R_OV BIT(24)
++#define LN_TXA_MARGIN_PRE_4R BIT(25)
++
++#define LN_AUSPMA_TX_SHM_TXA_UNK_REG0 0x18
++#define LN_AUSPMA_TX_SHM_TXA_UNK_REG1 0x1C
++#define LN_AUSPMA_TX_SHM_TXA_UNK_REG2 0x20
++
++#define LN_AUSPMA_TX_SHM_TXA_LDOCLK 0x24
++#define LN_LDOCLK_BYPASS_SML_OV BIT(8)
++#define LN_LDOCLK_BYPASS_SML BIT(9)
++#define LN_LDOCLK_BYPASS_BIG_OV BIT(10)
++#define LN_LDOCLK_BYPASS_BIG BIT(11)
++#define LN_LDOCLK_EN_SML_OV BIT(12)
++#define LN_LDOCLK_EN_SML BIT(13)
++#define LN_LDOCLK_EN_BIG_OV BIT(14)
++#define LN_LDOCLK_EN_BIG BIT(15)
++
++#define LN_AUSPMA_TX_TOP_EQ1 0x0050
++#define LN_AUSPMA_TX_TOP_EQ17 0x00d0
++#define LN_AUSPMA_TX_TOP_EQ18 0x00d4
++#define LN_AUSPMA_RX_TOP_EQ1 0x0210
++#define LN_AUSPMA_RX_TOP_EQ17 0x0244
++#define LN_AUSPMA_RX_TOP_EQ18 0x0248
++#define LN_EQ_SWING GENMASK(3, 0)
++#define LN_EQ_SWING_LSB GENMASK(15, 14)
++#define LN_EQ_SWING_OV BIT(28)
++#define LN_EQ_AUTO_CTRL_DP BIT(20)
++/* Deemphasis and override bits; individual fields unknown */
++#define LN_EQ_DEEMPH_FIELDS GENMASK(18, 0)
++
++#define LN_AUSPMA_TX_SHM_MAIN2 0x0004
++#define LN_MAIN2_BYTECLK_SYNC_SEL BIT(24)
++#define LN_MAIN2_BYTECLK_SYNC_SEL_OV BIT(25)
++#define LN_MAIN2_BYTECLK_SYNC_EN BIT(28)
++#define LN_MAIN2_BYTECLK_SYNC_EN_OV BIT(29)
++#define LN_AUSPMA_TX_SHM_MAIN4 0x000c
++#define LN_MAIN4_DIV2_4_EN GENMASK(25, 24)
++#define LN_MAIN4_DIV2_4_EN_OV BIT(26)
++#define LN_AUSPMA_TX_SHM_MAIN5 0x0010
++#define LN_MAIN5_CLK_EN BIT(9)
++#define LN_MAIN5_CLK_EN_OV BIT(10)
++#define LN_AUSPMA_TX_SHM_CLKMON1 0x001c
++#define LN_CLKMON1_HIZ BIT(22)
++#define LN_CLKMON1_HIZ_OV BIT(23)
++#define LN_AUSPMA_TX_SHM_LDOCLK1 0x0044
++#define LN_LDOCLK1_VREG_ADJ GENMASK(10, 6)
++#define LN_LDOCLK1_VREF_EN BIT(12)
++#define LN_LDOCLK1_VREF_FILTER_BOOST (GENMASK(18, 17) | GENMASK(15, 14))
++#define LN_LDOCLK1_BYPASS_SMALL BIT(20)
++#define LN_LDOCLK1_BYPASS_BIG BIT(22)
++#define LN_LDOCLK1_EN_SMALL BIT(24)
++#define LN_LDOCLK1_EN_BIG BIT(26)
++
++#define LN_AUSPMA_RX_TOP_TXMODE 0x0160
++#define LN_AUSPMA_RX_TOP_AFE1 0x01d4
++#define LN_AFE1_DIV20_RESET_N_OV BIT(0)
++#define LN_AFE1_DIV20_RESET_N BIT(1)
++#define LN_AUSPMA_RX_TOP_DCO1 0x01dc
++#define LN_DCO1_LPBKIN_RECOVERED_DATA GENMASK(16, 15)
++
++#define LN_AUSPMA_RX_SHM_CTLE2 0x0030
++#define LN_CTLE2_TX_CLK_EN BIT(10)
++#define LN_CTLE2_TX_CLK_EN_OV BIT(11)
++#define LN_AUSPMA_RX_SHM_DFE101 0x0064
++#define LN_DFE101_DFEH1FB_EN BIT(2)
++#define LN_DFE101_DFEH1FB_EN_OV BIT(3)
++#define LN_DFE101_DTVREG_ADJUST_FIELDS GENMASK(15, 10)
++#define LN_AUSPMA_RX_SHM_DFE111 0x0068
++#define LN_DFE111_DTVREG_BIG_EN BIT(5)
++#define LN_DFE111_DTVREG_BIG_EN_OV BIT(6)
++#define LN_DFE111_DTVREG_SMALL_EN BIT(7)
++#define LN_DFE111_DTVREG_SMALL_EN_OV BIT(8)
++#define LN_AUSPMA_RX_SHM_DFE121 0x006c
++#define LN_DFE121_TX_BYTECLK_SYNC_CLR BIT(9)
++#define LN_DFE121_TX_BYTECLK_SYNC_CLR_OV BIT(10)
++#define LN_DFE121_TX_BYTECLK_SYNC_EN BIT(11)
++#define LN_DFE121_TX_HRCLK_SEL BIT(13)
++#define LN_DFE121_TX_HRCLK_SEL_OV BIT(14)
++#define LN_DFE121_TX_PBIAS_EN BIT(15)
++#define LN_DFE121_TX_PBIAS_EN_OV BIT(16)
++#define LN_AUSPMA_RX_SHM_SAVOS161 0x00a4
++#define LN_SAVOS161_RXTERM_EN BIT(0)
++#define LN_SAVOS161_RXTERM_EN_OV BIT(1)
++#define LN_AUSPMA_RX_SHM_TERM191 0x00a8
++#define LN_TERM191_TX_TEST_EN BIT(15)
++#define LN_TERM191_TX_TEST_EN_OV BIT(16)
++#define LN_TERM191_TX_EN BIT(17)
++#define LN_TERM191_TX_EN_OV BIT(18)
++#define LN_TERM191_TX_DIV2_EN GENMASK(20, 19)
++#define LN_TERM191_TX_DIV2_EN_OV BIT(21)
++#define LN_TERM191_TX_DIV2_RST BIT(22)
++#define LN_TERM191_TX_DIV2_RST_OV BIT(23)
++#define LN_AUSPMA_RX_SHM_VREF221 0x00d4
++/* Adjust, filter and enable overrides; individual fields unknown */
++#define LN_VREF221_INIT_FIELDS (GENMASK(20, 16) | GENMASK(12, 7))
++#define LN_VREF221_BIAS_FIELDS GENMASK(15, 13)
++#define LN_VREF221_EN BIT(16)
++#define LN_VREF221_FILTER_ADJUST GENMASK(19, 18)
++#define LN_AUSPMA_RX_SHM_VREF231 0x00d8
++#define LN_VREF231_BOOST_CTRL GENMASK(1, 0)
++#define LN_VREF231_BOOST_CTRL_OV BIT(2)
++#define LN_AUSPMA_RX_SHM_VREG1 0x00dc
++#define LN_VREG1_DTVREG_POWER_MODE GENMASK(4, 3)
++
++/* LPDPTX registers */
++#define LPDPTX_AUX_CFG_BLK_AUX_CTRL 0x0000
++#define LPDPTX_BLK_AUX_CTRL_PWRDN BIT(4)
++#define LPDPTX_BLK_AUX_RXOFFSET GENMASK(25, 22)
++
++#define LPDPTX_AUX_CFG_BLK_AUX_LDO_CTRL 0x0008
++
++#define LPDPTX_AUX_CFG_BLK_AUX_MARGIN 0x000c
++#define LPDPTX_MARGIN_RCAL_RXOFFSET_EN BIT(5)
++#define LPDPTX_AUX_MARGIN_RCAL_TXSWING GENMASK(10, 6)
++
++#define LPDPTX_AUX_SHM_CFG_BLK_AUX_CTRL_REG0 0x0204
++#define LPDPTX_CFG_PMA_AUX_SEL_LF_DATA BIT(15)
++
++#define LPDPTX_AUX_SHM_CFG_BLK_AUX_CTRL_REG1 0x0208
++#define LPDPTX_CFG_PMA_PHYS_ADJ GENMASK(22, 20)
++#define LPDPTX_CFG_PMA_PHYS_ADJ_OV BIT(19)
++
++#define LPDPTX_AUX_CONTROL 0x4000
++#define LPDPTX_AUX_PWN_DOWN 0x10
++#define LPDPTX_AUX_CLAMP_EN 0x04
++#define LPDPTX_SLEEP_B_BIG_IN 0x02
++#define LPDPTX_SLEEP_B_SML_IN 0x01
++#define LPDPTX_TXTERM_CODEMSB 0x400
++#define LPDPTX_TXTERM_CODE GENMASK(9, 5)
++
++/* pipehandler registers */
++#define PIPEHANDLER_OVERRIDE 0x00
++#define PIPEHANDLER_OVERRIDE_RXVALID BIT(0)
++#define PIPEHANDLER_OVERRIDE_RXDETECT BIT(2)
++
++#define PIPEHANDLER_OVERRIDE_VALUES 0x04
++#define PIPEHANDLER_OVERRIDE_VAL_RXDETECT0 BIT(1)
++#define PIPEHANDLER_OVERRIDE_VAL_RXDETECT1 BIT(2)
++#define PIPEHANDLER_OVERRIDE_VAL_PHY_STATUS BIT(4)
++
++#define PIPEHANDLER_MUX_CTRL 0x0c
++#define PIPEHANDLER_MUX_CTRL_CLK GENMASK(5, 3)
++#define PIPEHANDLER_MUX_CTRL_DATA GENMASK(2, 0)
++#define PIPEHANDLER_MUX_CTRL_CLK_OFF 0
++#define PIPEHANDLER_MUX_CTRL_CLK_USB3 1
++#define PIPEHANDLER_MUX_CTRL_CLK_USB4 2
++#define PIPEHANDLER_MUX_CTRL_CLK_DUMMY 4
++
++#define PIPEHANDLER_MUX_CTRL_DATA_USB3 0
++#define PIPEHANDLER_MUX_CTRL_DATA_USB4 1
++#define PIPEHANDLER_MUX_CTRL_DATA_DUMMY 2
++
++#define PIPEHANDLER_LOCK_REQ 0x10
++#define PIPEHANDLER_LOCK_ACK 0x14
++#define PIPEHANDLER_LOCK_EN BIT(0)
++
++#define PIPEHANDLER_AON_GEN 0x1C
++#define PIPEHANDLER_AON_GEN_DWC3_FORCE_CLAMP_EN BIT(4)
++#define PIPEHANDLER_AON_GEN_DWC3_RESET_N BIT(0)
++
++#define PIPEHANDLER_NONSELECTED_OVERRIDE 0x20
++#define PIPEHANDLER_NATIVE_RESET BIT(12)
++#define PIPEHANDLER_DUMMY_PHY_EN BIT(15)
++#define PIPEHANDLER_NATIVE_POWER_DOWN GENMASK(3, 0)
++
++#define PIPEHANDLER_LOCK_ACK_TIMEOUT_US 1000
++
++/* USB2 PHY regs */
++#define USB2PHY_USBCTL 0x00
++#define USB2PHY_USBCTL_USB_MODE 0x7
++#define USB2PHY_USBCTL_RUN 2
++#define USB2PHY_USBCTL_ISOLATION 4
++
++#define USB2PHY_CTL 0x04
++#define USB2PHY_CTL_RESET BIT(0)
++#define USB2PHY_CTL_PORT_RESET BIT(1)
++#define USB2PHY_CTL_APB_RESET_N BIT(2)
++#define USB2PHY_CTL_SIDDQ BIT(3)
++
++#define USB2PHY_SIG 0x08
++#define USB2PHY_SIG_VBUSDET_FORCE_VAL BIT(0)
++#define USB2PHY_SIG_VBUSDET_FORCE_EN BIT(1)
++#define USB2PHY_SIG_VBUSVLDEXT_FORCE_VAL BIT(2)
++#define USB2PHY_SIG_VBUSVLDEXT_FORCE_EN BIT(3)
++#define USB2PHY_SIG_HOST (7 << 12)
++
++#define USB2PHY_MISCTUNE 0x1c
++#define USB2PHY_MISCTUNE_APBCLK_GATE_OFF BIT(29)
++#define USB2PHY_MISCTUNE_REFCLK_GATE_OFF BIT(30)
++
++enum atcphy_dp_link_rate {
++	ATCPHY_DP_LINK_RATE_RBR,
++	ATCPHY_DP_LINK_RATE_HBR,
++	ATCPHY_DP_LINK_RATE_HBR2,
++	ATCPHY_DP_LINK_RATE_HBR3,
++};
 +
 +#define ATCPHY_DP_LINK_RATE_IDLE		(-1)
 +#define ATCPHY_DP_LINK_RATE_PENDING	(-2)
@@ -2743,6 +3250,13 @@ index 000000000000..e8bda29553e2
 +
 +struct apple_atcphy;
 +
++struct atcphy_dp_ops {
++	void (*enable_aux)(struct apple_atcphy *atcphy);
++	void (*disable_aux)(struct apple_atcphy *atcphy);
++	int (*set_rate)(struct apple_atcphy *atcphy, enum atcphy_dp_link_rate lr);
++	int (*stop)(struct apple_atcphy *atcphy);
++};
++
 +struct atcphy_hw {
 +	void (*configure_post_tunable)(struct apple_atcphy *atcphy, enum atcphy_mode mode);
 +	void (*configure_pipehandler_usb3_host)(struct apple_atcphy *atcphy);
@@ -2751,10 +3265,7 @@ index 000000000000..e8bda29553e2
 +	int (*wait_rcal1_done)(struct apple_atcphy *atcphy, enum atcphy_mode mode);
 +	void (*configure_lane_pmafsm)(struct apple_atcphy *atcphy,
 +				      const struct atcphy_mode_configuration *mode_cfg);
-+	void (*dp_enable_aux)(struct apple_atcphy *atcphy);
-+	void (*dp_disable_aux)(struct apple_atcphy *atcphy);
-+	int (*dp_set_rate)(struct apple_atcphy *atcphy, enum atcphy_dp_link_rate lr);
-+	int (*dp_stop)(struct apple_atcphy *atcphy);
++	const struct atcphy_dp_ops *dp;
 +	int aciophy_lane_mode;
 +	int aciophy_crossbar;
 +	bool need_dp_tunables;
