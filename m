@@ -2,12 +2,12 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4A9C6606A320
-	for <linux-phy@archiver.kernel.org>; Sun, 22 Nov 2026 02:56:57 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 56B99606A320
+	for <linux-phy@archiver.kernel.org>; Sun, 22 Nov 2026 02:57:04 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=dzkCdG7t;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=hqWur2w8;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=gck3ogHs
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=N9RVIhNZ;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=K71w6Paw;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=BZVpTLbq
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,90 +15,91 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=3dKDh3s0GSq6Ft8FHKtMQ7inWh59jujzJk6bJGGhnyY=; b=dzkCdG7toZW1y7QWVPMRDkBgND
-	UypQwyjhBiIEheLNrwNpG1mOhyRu7DnPKqtbSfgvEvqh4X6w3uUWDWbNi9l7stO5JrUzFUwdwLnXu
-	8sTkS6+2AehWvRkq6VQBDoBuyKUlMbkEPDaIw8CMZDF34mA1Jz/p1arr2SJ7cXyXw6SwSj4W7FF1K
-	wtBDXZ3jLgFwHWfUkrKLq5R1g1plVFNOAFRJ1o0JA4oieW6EvrtfoH0kumHhVY1T8JUg+Uuh171xL
-	BBR7nafM32XWzfwaarNg+E4I08lEYi+wy8moZ+3ISrtMtSJjDw+elSy9kN0LqBga3eysRpchbEof0
-	sg7WPNug==;
+	bh=iGhwWo4RC6x5tjXmy/tBfQ71CuTxLftWCibNDbTfba8=; b=N9RVIhNZZh7sc61q/xXeA3DoZt
+	RmWQtihcA5r/lP4GYuH3NRiYKkZFSEyfuQBxdkwihoRT6+fcI7BcH79lMNuOzOUPAzxA4OJ04mRQp
+	jaUpLKp0Ctigszd5SRFxN1iew+ocFLBIm1VqUETRc1bnJIYQoQl9FjQZb5g76JoOgQ+3jGAngc2JY
+	9MUUCSOTl0tgg8iWekNXLAjFVTD9V1LruxMbK6hk/vPjM+trIWjVexh72KGj360XYzVt0Zi3CNn4A
+	HuXzLJ/6+8M0mjL8sj5XhGYSHDtAd1/RXN3dL6EEvPbFxP7cLRCgBLsrBrJ6cA1+GfjoA7Ui/18uY
+	M9+C8iQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUxlB-00000000h7c-09vB;
-	Sun, 22 Nov 2026 02:56:57 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1xUxlI-00000000h8Q-0OKi;
+	Sun, 22 Nov 2026 02:57:04 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUxl8-00000000h6u-0voT
+	id 1xUxlF-00000000h86-3INe
 	for linux-phy@lists.infradead.org;
-	Sun, 22 Nov 2026 02:56:56 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AM07rek1941209
-	for <linux-phy@lists.infradead.org>; Sun, 22 Nov 2026 02:56:53 GMT
+	Sun, 22 Nov 2026 02:57:02 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AM095Xq1539989
+	for <linux-phy@lists.infradead.org>; Sun, 22 Nov 2026 02:57:00 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	hNOKzPAn7+pXWluGC2/bHKGOVozO2Ky26vVL4ckdzBo=; b=hqWur2w8W55NOte0
-	25+pYAciUDWJ6ENxlF9RXINK4LY/WDrdolJH+Gf7l0EpY2OB+vvE4kH9G8WRejTp
-	MKeNetcdLc65tshrOleXckPJbR95hqM8UtaQ22Wp3dCHPnwSUEKAH72qEPERq/lG
-	0WPiM4EVzMxsBpvIpTGv5wUABviXAIzloOwdlQKs9xDuiyrTwzbSUyy/KedHYFFZ
-	FnfltOlw7BEgQ03SBlkWiGCa604MP78dPZxWAEJ1j9AkbxUs4CSyHPfxzws7ccYd
-	fDQXRW6mRmAnCtX8oRHL5jVeh8AxPVV90rYb3/KlFOLS3iE9sn1S1BzfI+piiZqK
-	iZipBA==
-Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j33h32hvq-1
+	RpNdZRCvOUqczt/I6p/62SfdiYMe0geYQBIESrCqGvM=; b=K71w6PawdporSph0
+	dnKuzUY4F29USvSCrf86yHj625sjEf14XoUba8J3V2lF1Jio/iZSLyE4RW2A5yUf
+	PxRYAEkNM+mz2tiZ63EvyUC9At1Pl0PT6iJonVfQNJro4WxQ7Q6Hehu7XaoJA0HF
+	tvr/AvbScps78NkPhtQsg6JKhuq1wXzVf0tp8pFadlU49zsFyEISoEqjNWyM/cqe
+	p4IgsWcbjHjx9VlA3cajuYFZsoYMyktl96jPYtgvdgXqanrwyftNhOM90NqejHjs
+	eBAJEXT5l05FJH5Fh8uQKUF0COBCkWxyDsUtkBJeGOiMypg7DCaTeCDt5zriihmI
+	kalV0A==
+Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j33p7tfmm-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sun, 22 Nov 2026 02:56:53 +0000 (GMT)
-Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-30bcb065bfdso2517919eec.0
-        for <linux-phy@lists.infradead.org>; Sat, 21 Nov 2026 18:56:53 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Sun, 22 Nov 2026 02:57:00 +0000 (GMT)
+Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-33c35f5ca6cso3056487eec.1
+        for <linux-phy@lists.infradead.org>; Sat, 21 Nov 2026 18:57:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795316213; x=1795921013; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1795316220; x=1795921020; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=hNOKzPAn7+pXWluGC2/bHKGOVozO2Ky26vVL4ckdzBo=;
-        b=gck3ogHs2Jiawpp9oXPRUTdygXv+XLBxtJWIRTyb7GbMA19G99vg23PKOnA0gqFAVB
-         eEWzuhYBv6AyzLQBpFWnbotgYZWxtPkM7P5aODVjsCFpYnxR+xwlHf2Nxx+WNTbcrVZ5
-         xa/Z95RO/Hi7Ut0yE84SyX5oddNF+a6/7NA0RGRVgvY/MJ1EfHv3Fvfdv6Lgq3jpCwhg
-         Ttn5XlLw1Rkcz+n9XXxHy0AvOXRa/pXJ4KO2npE2gn9K9pYDErkuew332DU8lo0cXoou
-         ez2xIlyv2rmItDywLcYFcd38ruBP6K0tInJO68gTi1KprZJ7YmuMLx9zsMQnTQOyrMIc
-         4cgA==
+        bh=RpNdZRCvOUqczt/I6p/62SfdiYMe0geYQBIESrCqGvM=;
+        b=BZVpTLbqO6nsnfFjiAs0+lGxE6Aji0qVZ66tVT4bfSYUUGykXrZqsTNGmkLyii1eqA
+         4dCvapOFDnm63039Rvvk6VGwfgPmMSuZNP2EjFIhr2oerzmWq/jwNPIXwzRstqZ/RUMQ
+         zuRjo46qcPaR2vhQMrFg19WUE8fEs997bNUzwrL0kMt12L0vaemwbBAhoueaFin2MiEr
+         h5/rNERiPLpfV/4VX6n6vlqNT3Trw3PqvjN6wnwCCgXUBBvZMPrizY+hdAGhq/t2wzjK
+         v9BVMLqa71pJRfFyYq1NopZLgqqIHxI0bzVqUMD2DwEvqMzyck1GrewAPGbUyp570zIo
+         aCSg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795316213; x=1795921013;
+        d=1e100.net; s=20260707; t=1795316220; x=1795921020;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=hNOKzPAn7+pXWluGC2/bHKGOVozO2Ky26vVL4ckdzBo=;
-        b=bOze7h+9Ncc+OOiW0x4AkRrBj+CKObsOUX69SfWdCdzqQZ42fTqvp2A8afN8X0nNkt
-         EVdzT/0ub8yP/D6Unrj7druUej8yLk6Sc8/JiXf+6RbCwYbC/TArcyOOFtRnX3zauIro
-         qvLwcA745bNz7vSE/ZSjZmDeUsNcwcc2/cBO10FqnZRmu+gICr/trLiNJTWX6eNYIL0H
-         +BRFjPLhSDtZ4cJJi4IdFQ/WgbXV4dhLEdODkayYryRrQqunIkU8yg6Izo26FRafjxB7
-         mUpPcGdafUBPVTJqsYky+2LJw9eKgO9em7krDuU0BNRH7BFf+JKftq1BAUrXzBCkBmoK
-         Q7/Q==
-X-Forwarded-Encrypted: i=1; AL+hErHkb4YZpHx8cXRxllFJKYQcQDnsAl/KuAssd3GAt/bTPle0qJhwYPGN8kMyu1eAV5B6kTE2fly1zlA=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+h4iIg1NK+upNYOrg5Dw8vJgHTZoZdZH/PabKzJLlBX0wzDpsi
-	S1ioO3NgOIqVkj/RT/JfjCXU6ZjbX1/gz9DQbQlicrdtaObbLPXWvyFKNNMS2hzzKlaqFwQkkod
-	a7kwTyydaXoJUE1Ajn1qqT3LKQ2NqwUM7/VoRM+jlLB50xMTcfG4HgK2ODYAQBOR345pU
-X-Gm-Gg: AZFdTZfkLmUgyTLhPFj9m/fPxl/RFfyFF3qEp0sfn04QAzHsPhwWzWAeLcFKXqm8+BI
-	OzDEmIYCZXy/Ed3/pC0/F7LIh4ESMe3ePSv0X7Nvq49hcuLwmcRWkR0ntbghsRZNAzS+ZIeL70m
-	9B8tRxXChtZp4m1dwNfcTPU2BE9peCDUCzrFzYwFGTERyz77uAiX1dTm1h+vVPs1Iw4JB3I7zKS
-	1kfIGbZTCqiCuZZLc/ui7e5f7NxCFUTl/lMljAvh3+pJrnaUC6Kz2KZsFecIAcSfo6l3za7EZCr
-	I3KUNGpS6FXTXtl68Y5BeLjsi7EIucSjtu2hKQeZoilwqJu2B+CpXF4bimsSbqeFUN97sgJVG15
-	u1ewZxLSzJrGQqXpsX8hpzUTHL4y3mfztRazS2CHIBCT/3ToQpIWr+XJ9LLXtrGpfh03fTAvvxH
-	9Dsdgk+NtR
-X-Received: by 2002:a05:7300:e9ce:10b0:385:2564:c509 with SMTP id 5a478bee46e88-385700541a6mr9071431eec.24.1795316213019;
-        Sat, 21 Nov 2026 18:56:53 -0800 (PST)
-X-Received: by 2002:a05:7300:e9ce:10b0:385:2564:c509 with SMTP id 5a478bee46e88-385700541a6mr9071403eec.24.1795316212484;
-        Sat, 21 Nov 2026 18:56:52 -0800 (PST)
+        bh=RpNdZRCvOUqczt/I6p/62SfdiYMe0geYQBIESrCqGvM=;
+        b=usHT1i/LQJDahyebRdg4tZ4H6QGosQbwlfkdUWScHilJo7L0dPdQKFJ5Injuag4T0s
+         inknsFaNGne/Va9ieI9FornJt5mtw+QXLNJQKl01RXn3wuAos4JB+S1Uu7STEaN+zfPZ
+         Mkur8cbB8ACDrZmD2poPjd/SGM1VHHP0jtGDAVe11yuuEA/BVVFqUnxwqd5TIj9CEhWI
+         PM2xoAqByIWLFrvdanPkFOkG4JYnPT9LsqLQrY3uhocjyKhpVC55ZcGAR/ZU2dSP/N03
+         AC7CwRvxtS0QTD3968o/UDVSpBc1LWgK5Dbo3+9xA56kVPgshHTsgOyeUswsHFGt5JRb
+         9s5A==
+X-Forwarded-Encrypted: i=1; AL+hErGwE1H47+vxmLuZrzzdXpbaPweKcFw5iXm1bLo9uGk4zEDqaWUFByelWem3dY8/DOAF0XdyS0s2Pb4=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/BZ9QNxzCi5GlNIwbRdeLzUSlZjpQvMEeyJ4vW3ldBNzqr+4U/
+	RVJd1TRKU2EMgApwc9upBKn6wEM9UMjTazh2iaLAWUxKxfysjHYfH2HVGyacvbAlwyuY3Cx+yVh
+	SNcNjGVah12B40vTiFIOu1qdpepxlmC9cqQxojufr8GK0vVuk1aJebW/7q4cZ7Et25azR
+X-Gm-Gg: AZFdTZdkgBs4EQM8iGItZXCQzdP1xy8JXqNEzWHBvkkVIFPv+2nYcH9p//Sb9Rdd6qL
+	OO6bbZx4i0ihJAXLcMoK+xKhF7LZBHGBaEc802AUoxxous+hE40AFZWfhNopHsSx0nv36YlDSkX
+	D/KoMtzUplQMXaxx6t76PnZk5k72ACaXAgkU1zlogDx9FD7adHty35keFVIclGgPIafBfRVQWr1
+	4xWQMI78657OaMX1yEugHcghPiWGtNrWwmsET29OFm1bQrQuk5gDE7XZWVSHwuDuR90cVN2LTGG
+	csHlL+k252OzlmRb8G48V1bFUUuLDWlISj8c8/zSh7P86wCho9hh5AqDEt/wvR0EeE8v2ZHk1vF
+	r4mhf5P/k6qgiJDM7w/EH+N4rrOvXvWtQqYRggV4S5Y0tsFoMUEBSTtYR9ZpN8PABenQgYK9j5I
+	zk5lUa3AHc
+X-Received: by 2002:a05:693c:6010:b0:385:2057:eb95 with SMTP id 5a478bee46e88-3857073f2a3mr10087782eec.31.1795316219719;
+        Sat, 21 Nov 2026 18:56:59 -0800 (PST)
+X-Received: by 2002:a05:693c:6010:b0:385:2057:eb95 with SMTP id 5a478bee46e88-3857073f2a3mr10087748eec.31.1795316219213;
+        Sat, 21 Nov 2026 18:56:59 -0800 (PST)
 Received: from hu-krichai-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-386aaae4960sm312044eec.18.2026.11.21.18.56.45
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-386aaae4960sm312044eec.18.2026.11.21.18.56.52
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Nov 2026 18:56:52 -0800 (PST)
+        Sat, 21 Nov 2026 18:56:58 -0800 (PST)
 From: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-Date: Sun, 22 Nov 2026 08:26:16 +0530
-Subject: [PATCH 03/11] PCI: epf-mhi: Add MSI-X support
+Date: Sun, 22 Nov 2026 08:26:17 +0530
+Subject: [PATCH 04/11] PCI: dwc: Preserve glue-provided eDMA HDMA channel
+ separation
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261122-nord_ep-v1-3-6d8839ffa9aa@oss.qualcomm.com>
+Message-Id: <20261122-nord_ep-v1-4-6d8839ffa9aa@oss.qualcomm.com>
 References: <20261122-nord_ep-v1-0-6d8839ffa9aa@oss.qualcomm.com>
 In-Reply-To: <20261122-nord_ep-v1-0-6d8839ffa9aa@oss.qualcomm.com>
 To: Manivannan Sadhasivam <mani@kernel.org>,
@@ -119,47 +120,45 @@ To: Manivannan Sadhasivam <mani@kernel.org>,
 Cc: mhi@lists.linux.dev, linux-arm-msm@vger.kernel.org,
         linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
         linux-phy@lists.infradead.org,
-        Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
-        Anvita T <anvita.t@oss.qualcomm.com>
+        Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795316183; l=5864;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795316183; l=1310;
  i=krishna.chundru@oss.qualcomm.com; s=20230907; h=from:subject:message-id;
- bh=7QjmuTlVRoKXrIZssiDHzu7/1X+z/zLg7WzPuVHICII=;
- b=A+SSmX+nlmQiS0zohEwoQRgbuhdqSdqltmeiJRJ4cuV6hvQdHXPdssILPJFHnDIKWCA7pMPvW
- lmYm2D9QhSWB0lAbIJnkZ+p401ZCAT36i2ymGTzuXi+p2JBNrfdJLcM
+ bh=rD9zOfPOcAYlNN684/JsuvviV/gb5ok1TJTsrxdDyck=;
+ b=/lOwFB1qjP7iTr8eSfhVpDz71Nc9Af2j4lHx6UdjaMj/dm9tVfScEt2jnKrs8S68TXY5KV5yF
+ KEyzdXp8En6Dfq8cCoXNyUl6qyeeiGruxZavENr+qcudrrjvKu9e4aG
 X-Developer-Key: i=krishna.chundru@oss.qualcomm.com; a=ed25519;
  pk=10CL2pdAKFyzyOHbfSWHCD0X0my7CXxj8gJScmn1FAg=
-X-Authority-Analysis: v=2.4 cv=EsxHPicA c=1 sm=1 tr=0 ts=6b0259f5 cx=c_pps
- a=cFYjgdjTJScbgFmBucgdfQ==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+X-Authority-Analysis: v=2.4 cv=OrHaWC/t c=1 sm=1 tr=0 ts=6b0259fc cx=c_pps
+ a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=EUspDBNiAAAA:8 a=aWPhZf5PStJQkATrKZ4A:9 a=QEXdDO2ut3YA:10
- a=scEy_gLbYbu1JhEsrz4S:22
-X-Proofpoint-ORIG-GUID: 1cNClUKoYT36OkOVBdvRMK7ucqDAWMfZ
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTIyMDAxMSBTYWx0ZWRfX3XakHVKICyU/
- JBJyKMmDoRzfT5p4gzNUJfgWE/7/uOXe3vcrubuorTDTuV5JswPQK4zwSlf74W8+pB34SM/juCc
- 7beFIlOfER400HKyYUfKqOZeEhhNarZRNK7oG/d1QVa5+I18Dp7tYDHoIdCJ/uMSiDtsbAThwVg
- 3fqER4CPryVV4pn/rRU8EzH+/oDOnNYEcXI7e6L2bgHYwlE1ZBYt38oATP4o8+7U6hpZ9ClyamL
- 0agrc+mYTpl8jDmKk01pxvTrsZpmhAW5B0j8+iDvd3IYsmB2v1su1ol7772W5ZHEja/B32mW/Gw
- pNRCBJORjds6BS3RoYSFdrZlkLkf89TXmwKsjnx8OnURcuQlyw0G3q/Ng675XiVe17S/7/8aWGz
- 52wZif53Cp+eTp1zgSxkTbjeUXnmx6N6S5yUa8sZ0Rdg36pkpFSrmHZSRqf4KTSCgQabNoymHvF
- 4QL8gSwFmPY3+OYWrqw==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTIyMDAxMSBTYWx0ZWRfXwrNqoRduOyBn
- rUyGDfJxXQLJOZTROW7H+kP6rciLaG7qL8/r+sWqufkA/SU4SG7Tu012DGe3pymdiWIkLBQtpHs
- alymGoYUydnaZ/+vbf5hloK60XE4mBo=
-X-Proofpoint-GUID: 1cNClUKoYT36OkOVBdvRMK7ucqDAWMfZ
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
+ a=EUspDBNiAAAA:8 a=Py5lcOcq67Lbq8UMOfUA:9 a=QEXdDO2ut3YA:10
+ a=6Ab_bkdmUrQuMsNx7PHu:22
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTIyMDAxMSBTYWx0ZWRfX+M+fkCybe4oT
+ L/z7YsOZ5pL/Ej2MuTsI2m4KKxHo7lN+O+sn9wkEdNtdg1bqdaOrciwcTlQ6DTP17fkVIuZjYO+
+ JLuFCCTZ13B3FHSz8B+ZV5XHhhdjgkY=
+X-Proofpoint-GUID: QgRdTNM665KCXDctl3Ch-ey2YqneYAco
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTIyMDAxMSBTYWx0ZWRfX+u9/iqhb6HZZ
+ KiA7aINDU9UUUIE+8j78oq3ZInnqtv+RUKO/+S8YoupAFPUdm68SUsdXMTCyDcLD0LlSkJzyBvT
+ MvRrqfvOFxB4g57KFPhWz2Aowteul3i9Gf1LWWH7BhP/5YwzLLw6VMyV4RZfR5+33X3k1h/yY6S
+ 1e4jFrXR9u4bmgMqUkdVDJc/FXi2olvB++sX351/y6Z8b+IOw8vHgWnJ9NLUeBjegNVLZMGTMoG
+ fLHkbCjOnFyiYiARPBMWcNVG3E/iZtDVuUHvV2Oi+htuTN8MiabCcGpsocFXBV+z1Vl0K1P+kJN
+ +kH20KiR96s9JrZLStxWP2q+VWMNfBtXr56ozVO88Q7+uflJhqQFvwErn8fPR0Lmavp0TcrQ6Vq
+ aD4hJoFE30+KmbA3f2OjbPQC/TXGXOInRxzoA4SiYfDi+yARyYygc4ubYX9pbNRpXamsSIf7nSR
+ R4ervnYRZ4aG3wbgJtA==
+X-Proofpoint-ORIG-GUID: QgRdTNM665KCXDctl3Ch-ey2YqneYAco
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-21_06,2026-11-19_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 priorityscore=1501 suspectscore=0 clxscore=1015
- adultscore=0 spamscore=0 impostorscore=0 phishscore=0 bulkscore=0
- malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
- definitions=main-2611220011
+ bulkscore=0 spamscore=0 clxscore=1015 phishscore=0 lowpriorityscore=0
+ suspectscore=0 priorityscore=1501 malwarescore=0 impostorscore=0 adultscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611220011
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261121_185655_035864_47AA70F7 
-X-CRM114-Status: GOOD (  22.00  )
+X-CRM114-CacheID: sfid-20261121_185701_953847_5A56BF89 
+X-CRM114-Status: GOOD (  13.73  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -180,166 +179,36 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Anvita T <anvita.t@oss.qualcomm.com>
+dw_pcie_edma_init_data() unconditionally programs the HDMA channel
+register space size (ch_space_sz) to 256 bytes. Some controllers space
+their per-channel HDMA register blocks further apart, and a glue driver
+knows the correct separation for its hardware.
 
-Allow the MHI endpoint function to signal interrupts using MSI-X when the
-endpoint controller supports it. On controllers whose epc_features
-advertise msix_capable, set up a dedicated MSI-X BAR (BAR_0) from a
-"msix" memory region supplied by the platform and program the MSI-X
-configuration.
+Only apply the 256-byte default when the glue driver has not already set
+ch_space_sz, so a glue-provided value is preserved. No functional change
+for existing drivers, which do not set it.
 
-The "msix" resource is optional and only looked up during bind; it is
-required only when the controller reports MSI-X capability. At interrupt
-time, select PCI_IRQ_MSIX over PCI_IRQ_MSI based on whether MSI-X has
-been enabled by the host.
-
-Fetch epc_features earlier in epc_init() so the MSI-X capability can be
-checked before setting up the BARs.
-
-Signed-off-by: Anvita T <anvita.t@oss.qualcomm.com>
 Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 ---
- drivers/pci/endpoint/functions/pci-epf-mhi.c | 54 +++++++++++++++++++++++++---
- 1 file changed, 49 insertions(+), 5 deletions(-)
+ drivers/pci/controller/dwc/pcie-designware.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/pci/endpoint/functions/pci-epf-mhi.c b/drivers/pci/endpoint/functions/pci-epf-mhi.c
-index 52cfffcfd5ca..a8765beffe06 100644
---- a/drivers/pci/endpoint/functions/pci-epf-mhi.c
-+++ b/drivers/pci/endpoint/functions/pci-epf-mhi.c
-@@ -148,6 +148,7 @@ struct pci_epf_mhi {
- 	struct mutex lock;
- 	void __iomem *mmio;
- 	resource_size_t mmio_phys;
-+	resource_size_t msix_phys;
- 	struct dma_chan *dma_chan_tx;
- 	struct dma_chan *dma_chan_rx;
- 	struct workqueue_struct *dma_wq;
-@@ -155,6 +156,7 @@ struct pci_epf_mhi {
- 	struct list_head dma_list;
- 	spinlock_t list_lock;
- 	u32 mmio_size;
-+	u32 msix_size;
- 	int irq;
- };
+diff --git a/drivers/pci/controller/dwc/pcie-designware.c b/drivers/pci/controller/dwc/pcie-designware.c
+index 12f102f48d5d..d55d4213be33 100644
+--- a/drivers/pci/controller/dwc/pcie-designware.c
++++ b/drivers/pci/controller/dwc/pcie-designware.c
+@@ -1041,7 +1041,10 @@ static void dw_pcie_edma_init_data(struct dw_pcie *pci)
+ 		pci->edma.ops = &dw_pcie_edma_ops;
  
-@@ -230,12 +232,16 @@ static void pci_epf_mhi_raise_irq(struct mhi_ep_cntrl *mhi_cntrl, u32 vector)
- 	struct pci_epf_mhi *epf_mhi = to_epf_mhi(mhi_cntrl);
- 	struct pci_epf *epf = epf_mhi->epf;
- 	struct pci_epc *epc = epf->epc;
-+	unsigned int type = PCI_IRQ_MSI;
+ 	pci->edma.flags |= DW_EDMA_CHIP_LOCAL;
+-	pci->edma.ch_space_sz = 256;
 +
-+	if (pci_epc_get_msix(epc, epf->func_no, epf->vfunc_no) > 0)
-+		type = PCI_IRQ_MSIX;
- 
- 	/*
- 	 * MHI supplies 0 based MSI vectors but the API expects the vector
- 	 * number to start from 1, so we need to increment the vector by 1.
- 	 */
--	pci_epc_raise_irq(epc, epf->func_no, epf->vfunc_no, PCI_IRQ_MSI,
-+	pci_epc_raise_irq(epc, epf->func_no, epf->vfunc_no, type,
- 			  vector + 1);
++	/* Default unless a glue driver programmed a different separation */
++	if (!pci->edma.ch_space_sz)
++		pci->edma.ch_space_sz = 256;
  }
  
-@@ -714,11 +720,40 @@ static int pci_epf_mhi_epc_init(struct pci_epf *epf)
- {
- 	struct pci_epf_mhi *epf_mhi = epf_get_drvdata(epf);
- 	const struct pci_epf_mhi_ep_info *info = epf_mhi->info;
-+	struct pci_epf_bar *msix_bar = &epf->bar[BAR_0];
- 	struct pci_epf_bar *epf_bar = &epf->bar[info->bar_num];
- 	struct pci_epc *epc = epf->epc;
- 	struct device *dev = &epf->dev;
- 	int ret;
- 
-+	epf_mhi->epc_features = pci_epc_get_features(epc, epf->func_no, epf->vfunc_no);
-+	if (!epf_mhi->epc_features)
-+		return -ENODATA;
-+
-+	if (epf_mhi->epc_features->msix_capable) {
-+		if (!epf_mhi->msix_phys) {
-+			dev_err(dev, "MSI-X BAR address not configured in DT\n");
-+			return -EINVAL;
-+		}
-+
-+		msix_bar->phys_addr = epf_mhi->msix_phys;
-+		msix_bar->size = epf_mhi->msix_size;
-+		msix_bar->barno = BAR_0;
-+		msix_bar->flags = info->epf_flags;
-+		ret = pci_epc_set_bar(epc, epf->func_no, epf->vfunc_no, msix_bar);
-+		if (ret) {
-+			dev_err(dev, "Failed to set MSI-X BAR: %d\n", ret);
-+			return ret;
-+		}
-+
-+		ret = pci_epc_set_msix(epc, epf->func_no, epf->vfunc_no,
-+				       info->msi_count, BAR_0, 0);
-+		if (ret) {
-+			dev_err(dev, "Failed to set MSI-X configuration: %d\n", ret);
-+			return ret;
-+		}
-+	}
-+
- 	epf_bar->phys_addr = epf_mhi->mmio_phys;
- 	epf_bar->size = epf_mhi->mmio_size;
- 	epf_bar->barno = info->bar_num;
-@@ -743,10 +778,6 @@ static int pci_epf_mhi_epc_init(struct pci_epf *epf)
- 		return ret;
- 	}
- 
--	epf_mhi->epc_features = pci_epc_get_features(epc, epf->func_no, epf->vfunc_no);
--	if (!epf_mhi->epc_features)
--		return -ENODATA;
--
- 	if (info->flags & MHI_EPF_USE_DMA) {
- 		ret = pci_epf_mhi_dma_init(epf_mhi);
- 		if (ret) {
-@@ -763,6 +794,7 @@ static void pci_epf_mhi_epc_deinit(struct pci_epf *epf)
- 	struct pci_epf_mhi *epf_mhi = epf_get_drvdata(epf);
- 	const struct pci_epf_mhi_ep_info *info = epf_mhi->info;
- 	struct pci_epf_bar *epf_bar = &epf->bar[info->bar_num];
-+	struct pci_epf_bar *msix_bar = &epf->bar[BAR_0];
- 	struct mhi_ep_cntrl *mhi_cntrl = &epf_mhi->mhi_cntrl;
- 	struct pci_epc *epc = epf->epc;
- 
-@@ -773,6 +805,8 @@ static void pci_epf_mhi_epc_deinit(struct pci_epf *epf)
- 		mhi_ep_unregister_controller(mhi_cntrl);
- 	}
- 
-+	if (epf_mhi->epc_features && epf_mhi->epc_features->msix_capable)
-+		pci_epc_clear_bar(epc, epf->func_no, epf->vfunc_no, msix_bar);
- 	pci_epc_clear_bar(epc, epf->func_no, epf->vfunc_no, epf_bar);
- }
- 
-@@ -880,6 +914,13 @@ static int pci_epf_mhi_bind(struct pci_epf *epf)
- 	if (!epf_mhi->mmio)
- 		return -ENOMEM;
- 
-+	/* MSI-X BAR address is optional; only present on EPCs that support MSI-X */
-+	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "msix");
-+	if (res) {
-+		epf_mhi->msix_phys = res->start;
-+		epf_mhi->msix_size = resource_size(res);
-+	}
-+
- 	ret = platform_get_irq_byname(pdev, "doorbell");
- 	if (ret < 0) {
- 		iounmap(epf_mhi->mmio);
-@@ -896,6 +937,7 @@ static void pci_epf_mhi_unbind(struct pci_epf *epf)
- 	struct pci_epf_mhi *epf_mhi = epf_get_drvdata(epf);
- 	const struct pci_epf_mhi_ep_info *info = epf_mhi->info;
- 	struct pci_epf_bar *epf_bar = &epf->bar[info->bar_num];
-+	struct pci_epf_bar *msix_bar = &epf->bar[BAR_0];
- 	struct mhi_ep_cntrl *mhi_cntrl = &epf_mhi->mhi_cntrl;
- 	struct pci_epc *epc = epf->epc;
- 
-@@ -912,6 +954,8 @@ static void pci_epf_mhi_unbind(struct pci_epf *epf)
- 	}
- 
- 	iounmap(epf_mhi->mmio);
-+	if (epf_mhi->epc_features && epf_mhi->epc_features->msix_capable)
-+		pci_epc_clear_bar(epc, epf->func_no, epf->vfunc_no, msix_bar);
- 	pci_epc_clear_bar(epc, epf->func_no, epf->vfunc_no, epf_bar);
- }
- 
+ static int dw_pcie_edma_find_mf(struct dw_pcie *pci)
 
 -- 
 2.34.1
