@@ -2,58 +2,116 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BA5F1606A336
-	for <linux-phy@archiver.kernel.org>; Sun, 22 Nov 2026 03:19:21 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2A909606A320
+	for <linux-phy@archiver.kernel.org>; Sun, 22 Nov 2026 03:36:21 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=iAE5nWWS;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=a9Lsb/FX
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=mc1CEPen
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ws9RTDh1aHBTvDK0GupNCC6sbb3VkM50QlHMBrNp+5Y=; b=iAE5nWWSrCSYA9I0WdxsyTttWt
-	iWKETLugC5TcQn6ybMo7ptLXfy7xRjnzsPZb8eiICIMS0z4zSNiQW57+nDb1Oigx4oaEIBoDp/9xS
-	PFaL8sAbIwEmkZBGl+icKyEF8imYH1z4kGKt41hfPR491AdjDrsYVrT3SsL0lTvoru8tEaW5oEWgG
-	kIrANvXjQimQJkkaeUiP0jux0oRHrRPoWoJAy/Q0KHvturCNtLlU/P0rgwaVy5WceFy1GcmDtmJpN
-	Xw8UM9mz6H30u5prz+3tSsmzniVsPXPAx8a1Kf6t+598MU6TrixcA73njJZXsUmcgYs4gmegLIP/z
-	WPZ0Krdg==;
+	bh=lPsSvTJ9eitTsGtiaYsOWfXBqw97kDSlVbmx6X/Aceo=; b=mc1CEPenumpn4HE107aEBP2Wve
+	L39I40hmvMTroEwT+zcaIYLOgsuFIjd8RiEqKIgP/3cUY1SCEjwIDGqgEB3kKRtsRUKlawnHX3mrN
+	Hu3ybgNplUgwRv1EKcNWJ+aJ7S6/MGchabdx7FNZqtIseMM6vIFgeEVNoAy718whKC9UAxy7xGObC
+	b3qzRfJ7QKu7rtQA/fdND9woQZuFmXj2tTNZg2Lfdo+OESU6l4KPi0ulc3L/3YBK1JBrrOANU5gGo
+	D0yAC1HnyvZxp047OdMZIGBkNDUXICFJeV9jlkklT3Ksxh43t5cQGFAEJ5BVb8yuEo72Q9s+ln+QV
+	4X3NZGsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUy6r-00000000hwO-1VOo;
-	Sun, 22 Nov 2026 03:19:21 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xUyNI-00000000iRz-2uz6;
+	Sun, 22 Nov 2026 03:36:20 +0000
+Received: from mail-japaneastazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c405::5] helo=TYPPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUy6q-00000000hwD-27QD
-	for linux-phy@lists.infradead.org;
-	Sun, 22 Nov 2026 03:19:20 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1576E411C3;
-	Sun, 22 Nov 2026 03:19:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 88F041F000C4;
-	Sun, 22 Nov 2026 03:19:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795317559;
-	bh=Fy8V29D8kYwB6Exatu7VPdyzmc2sUNsTaNpcQ+njmJg=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=a9Lsb/FXYTzMUOFS13AmCjw/7nXycTZGmop8SvOa9yod/pUfIxCvpnVM0YaK+dl0S
-	 BR1LmG+QBjs/5BT3GKWwgIU1hVvfbHJ4UL7xkgiUumi8b7r3D5l59UZ3XC7OJDxhZO
-	 oXR3SLjRgY/+KSdB2o+ZVBbAWm/QTCPAodrO9tSnHZ1qWUZrvx0fmh+NE9inrIO3FI
-	 UGWaqUu5seXiW1z3SJL0HiwmUWlVs63RT2aURGuBtOF+vZHVd19tmDuWxQLOosa9rL
-	 nSPjlHzSNG4p9HcTS6L4BoFfi9sEsytbZTcrm6T089DawbHOA37xEHEF4zKUiGqCEk
-	 wfwolksc4w8+Q==
-Message-ID: <sashiko-outbox-227669@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH 10/11] bus: mhi: host: pci_generic: Add support for
- Qualcomm Nord
-To: "Krishna Chaitanya Chundru" <krishna.chundru@oss.qualcomm.com>
-Cc: linux-pci@vger.kernel.org, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261122-nord_ep-v1-10-6d8839ffa9aa@oss.qualcomm.com>
-References: <20261122-nord_ep-v1-0-6d8839ffa9aa@oss.qualcomm.com>
- <20261122-nord_ep-v1-10-6d8839ffa9aa@oss.qualcomm.com>
-Date: Sun, 22 Nov 2026 03:19:19 +0000
+	id 1xUyNF-00000000iRJ-1qQS;
+	Sun, 22 Nov 2026 03:36:19 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=e+eh3vTSeFr6xsXHJOYXR0dQBu1jfKkqXU0owIK5+vN2DCGoewIlA1BKP4NfMkC2bCEo4YJZ7Ib1J3F2juy2vNlSo+3kHIvCvdpDxrJ1NRwK54W6I5cR4MyzR8d4KxjF8B1kqKyxAoWeyNJBRI9y6FDDjjVLTcMo2A1hqv3J30uJbSYnx59rEV73aQojthD+J9UBPhKh59KG2ql6VM7tCrIAmg/47qfl7CxHqY9lxVVerLjJKPpSo+hW88OlutmKIlflFO5UiSWUGWXGLMGtApE4+h1gFRhYER8IQURrzEyPTX8Cc8gGrfY9R8K3/qwuQY1+Y4OsEAcLLoJyie3wjQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=wjWNvasiebAydZfgtj6Bb+cSuhx7ngQOzsh9oRyAYYY=;
+ b=WcoyF8sZyC6khOha8S0Vy/gw+RxsM0ltwMK6Jy+F90f6YJ6bLe56ikp9CdtPPgVzRG/FuvkzH61yiPqyMt7POz1k/JKAbLoRvRnmfBYdibNwOo2BmAesf7a9klLqT6NW2XpmDOVrf1Y0vMrj7vxaYXF5vT/arwpzseWnkUBcPJ+7iSmVy7ajEGunQy474dVKnTygQ6yz3RlbHRhtcnIYTkr+0ydrOu2WAeMuNcRAGuTe0ADweJuLxngRAvmsxnQP5mO8UYFDqVNuBZU8yy4+H3Cgs8JcDYYNOatlVNIEsiL715QIekCVsdsX5v7dPwSHEx0p16pTbpQ7TF3jol9kug==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 222.71.101.198) smtp.rcpttodomain=cixtech.com smtp.mailfrom=cixtech.com;
+ dmarc=bestguesspass action=none header.from=cixtech.com; dkim=none (message
+ not signed); arc=none (0)
+Received: from TYCP286CA0083.JPNP286.PROD.OUTLOOK.COM (2603:1096:400:2b3::11)
+ by KL1PR06MB6426.apcprd06.prod.outlook.com (2603:1096:820:f7::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.662.3; Sun, 22 Nov
+ 2026 03:36:03 +0000
+Received: from TY2PEPF0000AB83.apcprd03.prod.outlook.com
+ (2603:1096:400:2b3:cafe::9a) by TYCP286CA0083.outlook.office365.com
+ (2603:1096:400:2b3::11) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.639.13 via Frontend Transport; Sun,
+ 22 Nov 2026 03:36:03 +0000
+X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
+ is 222.71.101.198) smtp.mailfrom=cixtech.com; dkim=none (message not signed)
+ header.d=none;dmarc=bestguesspass action=none header.from=cixtech.com;
+Received-SPF: Pass (protection.outlook.com: domain of cixtech.com designates
+ 222.71.101.198 as permitted sender) receiver=protection.outlook.com;
+ client-ip=222.71.101.198; helo=smtprelay.cixcomputing.com; pr=C
+Received: from smtprelay.cixcomputing.com (222.71.101.198) by
+ TY2PEPF0000AB83.mail.protection.outlook.com (10.167.253.4) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.639.5 via Frontend Transport; Sun, 22 Nov 2026 03:36:02 +0000
+Received: from hongliang-System-Product-Name (unknown [172.20.64.180])
+	by smtprelay.cixcomputing.com (Postfix) with ESMTPSA id 3654A427EFD4;
+	Sun, 22 Nov 2026 11:36:01 +0800 (CST)
+From: Hongliang Yang <hongliang.yang@cixtech.com>
+To: krzk@kernel.org
+Cc: vkoul@kernel.org,
+	neil.armstrong@linaro.org,
+	mani@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	p.zabel@pengutronix.de,
+	Gary.Yang@cixtech.com,
+	fugang.duan@cixtech.com,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	cix-kernel-upstream@cixtech.com,
+	Hongliang Yang <hongliang.yang@cixtech.com>
+Subject: Re: [PATCH v8 1/2] dt-bindings: phy: Add CIX Sky1 USB3 PHY
+Date: Sun, 22 Nov 2026 11:36:00 +0800
+Message-ID: <20261122033600.25806-1-hongliang.yang@cixtech.com>
+X-Mailer: git-send-email 2.54.0
+In-Reply-To: <20261121-friendly-slim-jackal-fecccb@quoll>
+References: <20261117022858.2210212-1-hongliang.yang@cixtech.com> <20261117022858.2210212-2-hongliang.yang@cixtech.com> <20261121-friendly-slim-jackal-fecccb@quoll>
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: TY2PEPF0000AB83:EE_|KL1PR06MB6426:EE_
+X-MS-Office365-Filtering-Correlation-Id: 231b45c4-5653-4c67-de80-08df4849bbd4
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|1800799024|376014|7416014|36860700016|23010399003|22082099003|18002099003|261009223027099003|4143699003|56012099006|261026121527099003|261026140227099003|261028144727099003|261022105027099003|10067099003;
+X-Microsoft-Antispam-Message-Info: 7T8lDeJsKHsEisAVHyAwqCVi8jVWVbAT3ep6I0anhn4Ko0RR4F7jd7iUMjkQspY7bTcUexvW8pKbNBw3gGSYFLhnA1P49omBCF7ER9Q+Spx64CKJ2+nKxHiYEQsxN5SsqYBQbxk5RSzkwZpUSoBP+ul//HsHdk+DrwRMYag2qBonyvUPTHOYfarkRLxu5nS5zoHwjHxqtjpsFQXcyxR8bYjQiL9ilXhiqyTfAexnJCZsinnpQr4nAyjmWozXoy293XJNYW+rU/OwUuqI3ohcU6bSx9xvxwwgsmnjkCU7ilBz6uDUShcgKtj8aNo2OrZ/VDXiuDw8KXRJO3EAuiKm44v6hbXvAAa8rp2VO6mtL3mGwlHI1y3jZZqUgsWS0px8/istWoBz7c9DrRxSqTW+8As1XKBwlQWZK4mKFkRhbShPrFROlKmcfsYPHc2a2DuhB4LWM47U4+f4BRrNcBBVMZFH1HlrFNX+l/hxrrBUFKhBwz8Ggpns9kf6ryy55Tkcc7vL6mOO4EwrP9cgsb0dW3e6OksEupCcU8maaJ/NqFfJ68IbFG8BMVGLTeXmQWWEZV07fycQBsv8GbYpoVZCdQee40bpsk6Acw7PfyCTzAez/zvYEcvVZhKrPDeCAyWaa17YBZbdAghxJazw4/KtfwMO5jCw48wuH2eCbiC5St2Cg6Li/sFlYgigY+48gkJNuoQpLRlBbgWxFWMyfvJ2cw==
+X-Forefront-Antispam-Report: CIP:222.71.101.198;CTRY:CN;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtprelay.cixcomputing.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(82310400026)(1800799024)(376014)(7416014)(36860700016)(23010399003)(22082099003)(18002099003)(261009223027099003)(4143699003)(56012099006)(261026121527099003)(261026140227099003)(261028144727099003)(261022105027099003)(10067099003);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: cXM3CZQ01/wEYBQMwxO1rb7+Zmo9RoMIJdMlAtK1pCbNJjtDoRKLdfVss65smickz713LASkU8vC4Qmc9+2ZGXPK2Py9zzkPTNvcbeYQx/ma8zQLkB5QvEnk/0AdI8HH8cJ4mTKuodhW5AtW4Xl5l3gTo1jRzYIEZ+zozA1kks/NL88u54Qp32Me5wxyDlHVTVnKqLKiDlqY5yeCO204BSiv1+eyZDAH3UVx/oEVvn6dVBkpMTiboHh2fK5mM82l+BwsBE61okQ5/BxoPNSc2R5xVniDVgVvnt49DJaZi4dUb+OrAEJbnZ/UPISXuCoMVFvu2wOtbYtL+ARViTUxReMiberrW3AalQD4JCQeazFDqD9zQPiT3acjVzWm7L4W1doiTuQ6JFk95nAEGH1dW5zkxaCJuRHgpMfrqw4Wp5EADgpBiJ0+fJVpijsClI1k
+X-OriginatorOrg: cixtech.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Nov 2026 03:36:02.8881
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 231b45c4-5653-4c67-de80-08df4849bbd4
+X-MS-Exchange-CrossTenant-Id: 0409f77a-e53d-4d23-943e-ccade7cb4811
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=0409f77a-e53d-4d23-943e-ccade7cb4811;Ip=[222.71.101.198];Helo=[smtprelay.cixcomputing.com]
+X-MS-Exchange-CrossTenant-AuthSource: TY2PEPF0000AB83.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: KL1PR06MB6426
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261121_193617_484977_E969B4BF 
+X-CRM114-Status: UNSURE (   7.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.9 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,59 +121,61 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-6.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no
 	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtNZWRpdW1dIGJ1czogbWhpOiBob3N0
-OiBwY2lfZ2VuZXJpYzogMHgwMTIwIHdpbGRjYXJkIGNsYXNzIG1hdGNoZXMKICBRQ09NIFJvb3Qg
-UG9ydAotIFtMb3ddIGJ1czogbWhpOiBob3N0OiBwY2lfZ2VuZXJpYzogdW5zb3J0ZWQgUElEIDB4
-MDEyMCBlbnRyeSBpbgogIG1oaV9wY2lfaWRfdGFibGUKLS0KCmNvbW1pdCBiZjk5N2QxYWM1ZTNm
-MjYzZGVhNjY1NjBiM2U4NWM5ZmRkOTcwM2UzCkF1dGhvcjogS3Jpc2huYSBDaGFpdGFueWEgQ2h1
-bmRydSA8a3Jpc2huYS5jaHVuZHJ1QG9zcy5xdWFsY29tbS5jb20+CgpidXM6IG1oaTogaG9zdDog
-cGNpX2dlbmVyaWM6IEFkZCBzdXBwb3J0IGZvciBRdWFsY29tbSBOb3JkCgpUaGlzIGNvbW1pdCBh
-ZGRzIGFuIE1ISSBQQ0kgZGV2aWNlIGVudHJ5IGZvciB0aGUgUXVhbGNvbW0gTm9yZCBlbmRwb2lu
-dAooZGV2aWNlIElEIDB4MDEyMCksIHJldXNpbmcgdGhlIHNhODc3NXAgTUhJIGNvbnRyb2xsZXIg
-Y29uZmlndXJhdGlvbi4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvYnVzL21oaS9ob3N0L3BjaV9n
-ZW5lcmljLmMgYi9kcml2ZXJzL2J1cy9taGkvaG9zdC9wY2lfZ2VuZXJpYy5jCj4gaW5kZXggY2E5
-ZWY0YWFhMDE0MC4uNjUyMDFlYzhkYzc2YyAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2J1cy9taGkv
-aG9zdC9wY2lfZ2VuZXJpYy5jCj4gKysrIGIvZHJpdmVycy9idXMvbWhpL2hvc3QvcGNpX2dlbmVy
-aWMuYwoKWyAuLi4gXQoKPiBAQCAtOTY2LDYgKzk3Nyw4IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3Qg
-bWhpX3BjaV9kZXZfaW5mbyBtaGlfbmV0cHJpc21hX2ZjdW42OV9pbmZvID0gewo+ICBzdGF0aWMg
-Y29uc3Qgc3RydWN0IHBjaV9kZXZpY2VfaWQgbWhpX3BjaV9pZF90YWJsZVtdID0gewo+ICAJe1BD
-SV9ERVZJQ0UoUENJX1ZFTkRPUl9JRF9RQ09NLCAweDAxMTYpLAo+ICAJCS5kcml2ZXJfZGF0YSA9
-IChrZXJuZWxfdWxvbmdfdCkgJm1oaV9xY29tX3NhODc3NXBfaW5mbyB9LAo+ICsJe1BDSV9ERVZJ
-Q0UoUENJX1ZFTkRPUl9JRF9RQ09NLCAweDAxMjApLAo+ICsJCS5kcml2ZXJfZGF0YSA9IChrZXJu
-ZWxfdWxvbmdfdCkgJm1oaV9xY29tX25vcmRfaW5mbyB9LAo+ICAJLyogVGVsaXQgRk45MjBDMDQg
-KHNkeDM1KSAqLwo+ICAJe1BDSV9ERVZJQ0VfU1VCKFBDSV9WRU5ET1JfSURfUUNPTSwgMHgwMTFh
-LCAweDFjNWQsIDB4MjAyMCksCj4gIAkJLmRyaXZlcl9kYXRhID0gKGtlcm5lbF91bG9uZ190KSAm
-bWhpX3RlbGl0X2ZuOTIwYzA0X2luZm8gfSwKCltTZXZlcml0eTogTWVkaXVtXQpEb2VzIHRoaXMg
-bWF0Y2ggMTdjYjowMTIwIFBDSWUgUm9vdCBQb3J0cyBpbiBhZGRpdGlvbiB0byB0aGUgTm9yZCBN
-SEkKZW5kcG9pbnQ/CgpEZXZpY2UgSUQgMHgwMTIwIGlzIGFsc28gdXNlZCBieSBRdWFsY29tbSBS
-b290IFBvcnRzOgoKZHJpdmVycy9wY2kvcXVpcmtzLmM6cGNpX2Rldl9hY3NfZW5hYmxlZCgpIHsK
-ICAgIC4uLgoJLyogUUNPTSBHbHltdXIgcm9vdCBwb3J0ICovCgl7IFBDSV9WRU5ET1JfSURfUUNP
-TSwgMHgwMTIwLCBwY2lfcXVpcmtfcWNvbV9ycF9hY3MgfSwKICAgIC4uLgp9CgpCZWNhdXNlIFBD
-SV9ERVZJQ0UoKSBsZWF2ZXMgLmNsYXNzIGFuZCAuY2xhc3NfbWFzayBhdCAwLCB1ZGV2IGF1dG9s
-b2FkcwptaGlfcGNpX2dlbmVyaWMgZm9yIDE3Y2I6MDEyMCBSb290IFBvcnRzLCBhbmQgaWYgcGNp
-ZXBvcnQgaXMgbm90IGJvdW5kCihmb3IgZXhhbXBsZSB3aXRoIENPTkZJR19QQ0lFUE9SVEJVUz1u
-IG9yIHBjaWVfcG9ydHM9Y29tcGF0KSwKbWhpX3BjaV9wcm9iZSgpIGJpbmRzIHRvIHRoZSBSb290
-IFBvcnQgYnJpZGdlIGFuZCB0cmllcyB0byBtYXAgQkFSIDEgYXMKTUhJIHJlZ2lzdGVycy4gIFNo
-b3VsZCB0aGlzIGVudHJ5IHJlc3RyaWN0IC5jbGFzcyBhbmQgLmNsYXNzX21hc2sgdG8KbWF0Y2gg
-bm9yZF9oZWFkZXIncyBQQ0lfQ0xBU1NfT1RIRVJTPwoKW1NldmVyaXR5OiBMb3ddClRoaXMgaXNu
-J3QgYSBidWcsIGJ1dCB0aGUgY29tbWVudCBhYm92ZSBtaGlfcGNpX2lkX3RhYmxlIGFza3MgdG8g
-a2VlcCB0aGUKZW50cmllcyBzb3J0ZWQgYnkgUElELCBzbyAweDAxMjAgc2hvdWxkIGdvIGFmdGVy
-IHRoZSAweDAxMWEgZW50cmllcy4KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nh
-c2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjExMjItbm9yZF9lcC12MS0wLTZkODgzOWZmYTlhYUBv
-c3MucXVhbGNvbW0uY29tP3BhcnQ9MTAKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
-LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+> Neither two clocks from clock controller are separate devices... that's
+> really not the point. I don't get what exactly is here common between
+> these two lanes, but you have several per-lane registers suggesting they
+> might be independent.
+
+The lanes are the two lanes of one PHY. The two controllers above it are
+separate devices, each with its own PIPE interface:
+
+                        Sky1 SoC
+  +----------------------------------------------------------+
+  | usb3_typea_drd_tcp                                       |
+  |                                                          |
+  |   +--------------------+     +--------------------+      |
+  |   | usb3_typea_drd0    |     | usb3_typea_drd1    |      |
+  |   |                    |     |                    |      |
+  |   |   USB3 Ctrl        |     |   USB3 Ctrl        |      |
+  |   |       | UTMI       |     |       | UTMI       |      |
+  |   |       v            |     |       v            |      |
+  |   |   USB2 PHY         |     |   USB2 PHY         |      |
+  |   +-------+------------+     +-------+------------+      |
+  |           | PIPE                     | PIPE              |
+  |           v                          v                   |
+  |   +------------------------------------------------+     |
+  |   |              USB3 PHY, 2 lanes                 |     |
+  |   |                                                |     |
+  |   |  lane 0      common block          lane 1      |     |
+  |   |  TX 0x4000   bias, calibration     TX 0x4200   |     |
+  |   |  RX 0x8000   PLLs, at 0x0000       RX 0x8200   |     |
+  |   +------------------------------------------------+     |
+  |                                                          |
+  |   one register range, one APB clock, one reference       |
+  |   clock, one reset pair for the whole block              |
+  +----------------------------------------------------------+
+
+The per-lane registers are the two PMA windows; the bias, the calibration
+and the PLLs they use are in the common block, and there is one reset pair
+and one reference clock for both lanes. The SoC has no per-lane clock,
+reset or power control, so the lanes cannot be brought up or down
+separately, and the driver programs both of them in one sequence.
+
+If the lanes should still be separate providers in devicetree, they can be
+described as two phys of one node with a lane index; there is no per-lane
+resource to give them separate nodes.
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
