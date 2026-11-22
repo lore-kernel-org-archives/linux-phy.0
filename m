@@ -2,115 +2,97 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 42704606A320
-	for <linux-phy@archiver.kernel.org>; Sun, 22 Nov 2026 03:40:20 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F3680606A320
+	for <linux-phy@archiver.kernel.org>; Sun, 22 Nov 2026 09:28:17 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=tPwfFCBP
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=lFyYRYKA;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=dEYXQW6w
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=IcnBMYHOshpXvp6vNPChBFsVvSBoBeYKdgfl2uVIb3o=; b=tPwfFCBPBohaktdoSdGEpLMPnd
-	Lwkk7ln82KZTMvuDw3rSIXpTLPh/WLf735dyDPFz0F2+anxiXLAyITOgWbyXl/ASAZWbwtFBoAL/u
-	DzJJh4t6Xe5mWM4Ot1rRRf3G8VGH4ZTnk9LjOFbjLLtBsWD2CYsyGE9lkF+53woSf/weiqdoQRea3
-	AKZ2J6IiEEg/hZoLMEy17jhUY9Y0K6IOtH9SYsrSDGzyK3IOeeC2v68UqG6RkYH2tyDS8IdlAvHLN
-	aIy7elA8ZvNvaSLh/YlImEq1xjnkkW1smTuw9wewOjH97DLcSMVDHix9PhEICg3hcXccHca75c/IU
-	GBiYDMdQ==;
+	bh=yR05H3L99xCsaovBKNYNBHTl/X1kMRlOkGPdOF5rDnI=; b=lFyYRYKAfvFB3zTNcDUJcWhSdI
+	SpVtQd/CBShHxEKXVJ/pc+GjFt9x2PnRKtATkUGP2Idoi0elKJSCzqctt3X9x0UcWI4yA4GU+jJML
+	VXEx+I5/jhq3PqDUQBn85t93CFaN6u8UGAdNp9eEf/qclqY+VJNYLhusMikGITlcc+06dU/uZToeU
+	x2WFV1ABsTCYPvPei7qcK+jSyCK9ouojAXmGGakAKD+N5De4qq7EruMX7U5WRC9B+sUV9iUOyJIl6
+	2pI4ANGBiP5uINq4PPPrI787tsDUDdBmQFmNGnL2mDQAvc9e8Ezlw7c6lNKtXR+vWys35eKycf7yP
+	Wtj0iolQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUyR9-00000000icw-4C2y;
-	Sun, 22 Nov 2026 03:40:20 +0000
-Received: from mail-koreacentralazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c40f::6] helo=SEYPR02CU001.outbound.protection.outlook.com)
+	id 1xV3rt-00000000ufC-2RdE;
+	Sun, 22 Nov 2026 09:28:17 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xUyR7-00000000icJ-2QUQ;
-	Sun, 22 Nov 2026 03:40:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=qq4KSF0ngZki4I8//gGkOT62j8T99cRensDoUOaG19bkf6rgOVl7pp4VEnGgvveWIYAKR8PO//Rt48PwMjQL/FYknigmtBmILyVmWXMkJjU93lVVDjhYrPHlyqgCAg2+X8CMD/8EuJ43y4BJ2IxMyfejYE4Vn6ZFsLS4CRRgliGaYrpMZZovboFfhP6LgIXHf+Vxy93HXliKyri8v4syyov74RAmuTi14BweHpIX+QlP4MrzrY53Y/l2/aQf2j5VjZ7SvMrcCIZtvmEosHWd/pCOcyZG1Z8dmPE7s+slVrfXVJqey9OgJADK619A4ZtuabCB0z1aPc+Gjm/+PseIQg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=xDy83OiE+T1PIZxoFjmdl6kDbnjjIYoLWb+VsTW6qzk=;
- b=dyPqwUA2N0xUROfOO86R45LV0zghtS4fLXvypvTg8ANxsdx7ZrKExTComXMngCdoD6E56FlWq+gmswPSzdUCPXNxD9oX0XFR7JdfzjkjtA9WU5Mpd0xv0E6m6j6PnpSN9DdveOj8ImbcIs0kaqg0M+UC7gNORXERgEhbw6sICOp6gp/XVTGy30tHb6FqPhAY9pI0J852TQSmEguPCz357ifS6yza/oYE4wTotwN4zilLrzw+g/6MuYNDS/+0I3Pyy60qBwn7AfgQL+f+2loldo5PBonVHVgpxbsrqS2VM+C6C8IhJAmuB5SLpgM+d57a+niZ2qYzRvy732pPAG8KHw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 222.71.101.198) smtp.rcpttodomain=cixtech.com smtp.mailfrom=cixtech.com;
- dmarc=bestguesspass action=none header.from=cixtech.com; dkim=none (message
- not signed); arc=none (0)
-Received: from SI3PR03CA0011.apcprd03.prod.outlook.com (2603:1096:4:297::6) by
- KUZPR06MB8291.apcprd06.prod.outlook.com (2603:1096:d10:63::16) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.662.3; Sun, 22 Nov 2026 03:40:07 +0000
-Received: from SG2PEPF000B66D0.apcprd03.prod.outlook.com
- (2603:1096:4:297:cafe::a0) by SI3PR03CA0011.outlook.office365.com
- (2603:1096:4:297::6) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.662.3 via Frontend Transport; Sun, 22
- Nov 2026 03:40:06 +0000
-X-MS-Exchange-Authentication-Results: mx.microsoft.com 1; spf=pass (sender IP
- is 222.71.101.198) smtp.mailfrom=cixtech.com; dkim=none (message not signed)
- header.d=none;dmarc=bestguesspass action=none header.from=cixtech.com;
-Received-SPF: Pass (protection.outlook.com: domain of cixtech.com designates
- 222.71.101.198 as permitted sender) receiver=protection.outlook.com;
- client-ip=222.71.101.198; helo=smtprelay.cixcomputing.com; pr=C
-Received: from smtprelay.cixcomputing.com (222.71.101.198) by
- SG2PEPF000B66D0.mail.protection.outlook.com (10.167.240.26) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.639.5 via Frontend Transport; Sun, 22 Nov 2026 03:40:06 +0000
-Received: from hongliang-System-Product-Name (unknown [172.20.64.180])
-	by smtprelay.cixcomputing.com (Postfix) with ESMTPSA id 3E9D240920E1;
-	Sun, 22 Nov 2026 11:40:05 +0800 (CST)
-From: Hongliang Yang <hongliang.yang@cixtech.com>
-To: krzk@kernel.org
-Cc: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	mani@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	p.zabel@pengutronix.de,
-	Gary.Yang@cixtech.com,
-	fugang.duan@cixtech.com,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	cix-kernel-upstream@cixtech.com,
-	Hongliang Yang <hongliang.yang@cixtech.com>
-Subject: Re: [PATCH v8 1/2] dt-bindings: phy: Add CIX Sky1 USB3 PHY
-Date: Sun, 22 Nov 2026 11:40:04 +0800
-Message-ID: <20261122034004.27137-1-hongliang.yang@cixtech.com>
-X-Mailer: git-send-email 2.54.0
-In-Reply-To: <20261122033600.25806-1-hongliang.yang@cixtech.com>
-References: <20261117022858.2210212-1-hongliang.yang@cixtech.com> <20261117022858.2210212-2-hongliang.yang@cixtech.com> <20261121-friendly-slim-jackal-fecccb@quoll> <20261122033600.25806-1-hongliang.yang@cixtech.com>
+	id 1xV3rq-00000000ueP-3iD5
+	for linux-phy@lists.infradead.org;
+	Sun, 22 Nov 2026 09:28:16 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-4a9be758734so1337509f8f.1
+        for <linux-phy@lists.infradead.org>; Sun, 22 Nov 2026 01:28:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795339693; x=1795944493; darn=lists.infradead.org;
+        h=content-type:mime-version:references:in-reply-to:message-id:date
+         :subject:cc:to:from:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=+XU/L3s3AR1zRZpGx05jem8OuHu+Aq/54xxilnMM65s=;
+        b=dEYXQW6wd3BgGw5yMq5XpUluHg/hj0gvTFha8N2PFyHoYJT3D+yW0m+9uZIk+wI3Wb
+         NFMTGxpCnwWssAENCqHqxPXx1IkhSbnGncSXBp16dI2O0tPuw+LvTvIa/d7A3h+vdw1y
+         yDZMDWTQJeuaVKWE68pYe3ub/5PcPFdJojB+aqo2NWiCyVXMEyDJbXCOTlne2gMfkLNR
+         AygDizu5szuwf1AmRDJ4Fxa3Vrx9U79B8cJnBIFKVvQfXrUoiK7uMFgHEGfVzJAITu/+
+         sPn7VHEP1bYXsh3Rv1M8pje+wt+DiuLYOsRDU71LNuc+ru2oTqU2Hc7DdFzrIEW+V830
+         ij5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795339693; x=1795944493;
+        h=content-type:mime-version:references:in-reply-to:message-id:date
+         :subject:cc:to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=+XU/L3s3AR1zRZpGx05jem8OuHu+Aq/54xxilnMM65s=;
+        b=EtOm2C7cHZqNalErL5X0ABdK9tE9QOpZcLOgu0yM0Vee5nyJAXqSLFcpG3+duBnzCM
+         O56cIyTg64TDxkze5l1S/8nGT6tHqs4DXuFDi1XxgXzp1uESWQaunnE0uu2UJd8a0wX8
+         i5tTETSoRPdOKrdUuWKvgsM97smbmdVlCkX63qPtzK/D18rXfyccuwFDzOhAgZGYozQ1
+         bx5TIfFdJT/2K3eOWlVTw1+Zh3II3+2cLSYcAbEUmoJTPHqgbwZ3W2LByu1Q18lxotFv
+         HN2pSo/zxKDB7lY+gmiQ3BnEfr9+m1GhjYZe2Up4gYp66GU52oYZj7aPc0bnpY1vfTKQ
+         /Fhw==
+X-Forwarded-Encrypted: i=1; AL+hErHhg7fFh99z13zYgF7nxUapYznuJJOhliS5VJXYxcSIM9eaSuMo6TsBjriPjTarrxaHnBFBs2kudMM=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8vzTKe81li0QtWor1ULegm2MDFNeZwNJ7U+91eGY8q3x8EJBP3
+	acaAZDKnc/UgNMsLsC7YqNy6F1hEd1p38Ip5zA8vHxSwrRZyRInRjm2T0r8AJ3WYOH+n0g==
+X-Gm-Gg: AZFdTZedx2x6lwiXHmgfc1TIXbiQXow5LLOVNT7C4P4W1JYwu/OIWv79BK3M9x2ZHIL
+	IrsDvtBy2XQIgccbITojvEi9rbV8EFL9vFSdXZPr2U6QsPiekDkElEMMEoeS6+FaA1Y5v7BRorm
+	LJeHoM+TQ3ju4s9aTwxge/krCe7ayGVjV0fwYan5qZEdbapX3lehS/BIuwbY6CMwZ+hqim93yPQ
+	7P4rGtzhDoBfj7IPmy6YUMrY+cXkBosoD6dIFigjoL55DJNd8op3wj+BkSDu5G2VyOFRKcdnqwR
+	WhKSTdVus98WEohgSKoLyAJhH1dCXNll1VXtsnGRBwSssryFVPwq04oQt3lxZelg/ncrDfUFy0s
+	uqy7MjdSZAMU1IeRTQlpdCtgqu1hKmekZAp1DTufn3wDImMKswqrRkXaDScdphP128F9x9+cIeY
+	YMoQ/mZE0sZVNn8kBlhAzXpl5YhAUU4VEWj7KV+QVYseiNYEcyBujVjgym0qTM76yaNoglp25tV
+	S1+qH0OHgHenRH1Jv/2SUbYxAEjCUXF6OAO0KaCg/h2jBUx1/L9BBafwNblfppib3wmUy6DbzfE
+	wSXqHIyEKkMt089i0IIbz33WhxQNh/mR3KthIggrBA==
+X-Received: by 2002:a05:6000:299c:20b0:4aa:2bf2:4d98 with SMTP id ffacd0b85a97d-4abb0f3b4b0mr12062401f8f.29.1795339692451;
+        Sun, 22 Nov 2026 01:28:12 -0800 (PST)
+Received: from strix.localnet ([197.250.160.206])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4ad644140b5sm12250751f8f.17.2026.11.22.01.28.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 22 Nov 2026 01:28:11 -0800 (PST)
+From: Stefan =?UTF-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
+To: sashiko-reviews@lists.linux.dev
+Cc: devicetree@vger.kernel.org, mfd@lists.linux.dev,
+ linux-phy@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org,
+ vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com,
+ lee@kernel.org
+Subject: Re: [PATCH 3/6] pmdomain: zte: Add a zx297520v3 power domain driver
+Date: Sun, 22 Nov 2026 12:27:50 +0300
+Message-ID: <pmvkAYeQQxqf6KX1o0NWJw@gmail.com>
+In-Reply-To: <sashiko-outbox-225964@kernel.org>
+References: <20261120-zx29usb-v1-0-b0433258e51b@gmail.com>
+ <20261120-zx29usb-v1-3-b0433258e51b@gmail.com>
+ <sashiko-outbox-225964@kernel.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SG2PEPF000B66D0:EE_|KUZPR06MB8291:EE_
-X-MS-Office365-Filtering-Correlation-Id: c0daace5-4de8-4425-3c19-08df484a4d10
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|23010399003|82310400026|1800799024|376014|7416014|261026121527099003|261026140227099003|261022105027099003|261028144727099003|4143699003|56012099006|10067099003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: 6/pmBHTWiwqSPjHjdf9eFx1HAM8rSpqbOYUsH+snWOBM35wF6jTojC7Rty2idkQTIvsWXVZyZr8QFjexraAQNBgMB/c9033ZnbJQZsQXxYJl1LRn7EUezx5ZPnc8WtyuYOtJ21t4zIvktgWFcDbRjzEku8vrN1iqQZo6PcvcAVaJM9HujRb6ZrKYxeOS+622Ci2rKY6ArOLYC46w/sO8OLj2vhiu6XEdRLILgk3mVEY7+snG5N9vqKxsNJ60+gIAMQtY2WL/tcMdWJCFluIXZgjai1isj+rFXoRtZInGer9u8b9gq4aOd9+wWTmUmh58w1go+2OaEz/3KGX47DVpiQSim+dwxXPr3/5paw0OKgy9dExHG9y+nJgQFcDJryjq7J+gt2yvNu7f2qjk+xOn0uM1ekCJKiFtbLKoc25q3RdqMsQ43InQrZVFRwtPXiFAiNIQUOkCyRoYIHUjf9l+2R5txhm+Ellzc0AK8ztlnNPznWpXeNOx+aV4Nw+2P0tXUwPqXDqYt1m/CqJBR6IjeMLsMicAvQLZtY1TG1Z7GpnLokW5ElsNabwGHb+G955kgwZyIg2Ynph8ZpfEzodPRf88YHj3WJOO0RfvJOEtWsSID/IZnHtTWwK2FuA4tdMTQuYa4MN+zh7espd94vtxTYxD2ZTmAj+VIspeguomTYpIYXJdvVmngeYQKoW5MjQQ8RV7uS/NftMBY1MNBkX1aw==
-X-Forefront-Antispam-Report: CIP:222.71.101.198;CTRY:CN;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtprelay.cixcomputing.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700016)(23010399003)(82310400026)(1800799024)(376014)(7416014)(261026121527099003)(261026140227099003)(261022105027099003)(261028144727099003)(4143699003)(56012099006)(10067099003)(18002099003)(22082099003);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 5o2x1QS/S4x3kA9tp4O4OLG8ak8ZevasGPAFHQhjC+DBNRmeuasYnGhndjoYGF/sCF2mw6R/FCGv8fRil6RdSOPW23pbjas18KeB3T/SZ1FWWJNllJPhPTdwRFbQFZubzVawfEskTCX4MB94PdUF7g37O1m9qjkelHleL1Eqa0TBGueDASA2FY1uFR//qq5U4BBb2UHopbTZtxq/k/45e1i8F4oXVcNNWgtEJ1iUq568auryyeue2Huc0X8+7ILyZ6Yz+e/7tLBlK2eDhw/9l4x2awpzHZ12EsIUoYYbc9q2DX8Y+dwD/zb4e23qautT/aHLqUI5GcRRbfrHUu8z14DRouAh9juWpTiPWTKO2un1tZOlaurMAD7MTzQwVPCLYpJcE4xD3mjr0tE3mRvVv8BojIERCyIuqS0Ll9Yvyb3smoEX2X8wCejhDcoq9L7X
-X-OriginatorOrg: cixtech.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Nov 2026 03:40:06.5747
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: c0daace5-4de8-4425-3c19-08df484a4d10
-X-MS-Exchange-CrossTenant-Id: 0409f77a-e53d-4d23-943e-ccade7cb4811
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=0409f77a-e53d-4d23-943e-ccade7cb4811;Ip=[222.71.101.198];Helo=[smtprelay.cixcomputing.com]
-X-MS-Exchange-CrossTenant-AuthSource: SG2PEPF000B66D0.apcprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: KUZPR06MB8291
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261121_194017_922499_5186FD59 
-X-CRM114-Status: UNSURE (   3.49  )
+X-CRM114-CacheID: sfid-20261122_012814_944198_1B6CBBE0 
+X-CRM114-Status: UNSURE (   9.63  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.9 (-)
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,23 +102,88 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3345347590160065090=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-6.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no
-	autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-To make the last point explicit: there is one instance of the PHY IP. The
-two lanes share the same APB clock, the same reference clock and the same
-reset pair; they have no separate clock or reset control of their own, so
-they cannot be enabled, reset or powered independently. The per-lane
-register windows only describe the two PMAs inside that instance.
+--===============3345347590160065090==
+Content-Type: multipart/signed; boundary="nextPart7pWE9LkGQbyJZPD4mlTCyg";
+ micalg="pgp-sha256"; protocol="application/pgp-signature"
+
+--nextPart7pWE9LkGQbyJZPD4mlTCyg
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="utf-8"; protected-headers="v1"
+From: Stefan =?UTF-8?B?RMO2c2luZ2Vy?= <stefandoesinger@gmail.com>
+To: sashiko-reviews@lists.linux.dev
+Subject: Re: [PATCH 3/6] pmdomain: zte: Add a zx297520v3 power domain driver
+Date: Sun, 22 Nov 2026 12:27:50 +0300
+Message-ID: <pmvkAYeQQxqf6KX1o0NWJw@gmail.com>
+In-Reply-To: <sashiko-outbox-225964@kernel.org>
+MIME-Version: 1.0
+
+Am Freitag, 20. November 2026, 22:51:31 Ostafrikanische Zeit schrieb sashiko-
+bot@kernel.org:
+> Thank you for your contribution! Sashiko AI review found 2 potential
+> issues to consider:
+> - [High] pmdomain: zte: child-to-parent device link deadlock in
+>   zx29_pd_probe()
+
+This looks correct - the particular line shouldn't be there, it was a leftover 
+from earlier attempts to handle device unbind.
+
+> - [High] pmdomain: zte: wrong supplier device in zx29_pd_attach_dev()
+>   device link
+
+This one is likely correct, but I'll have to do more reading to be sure
+
+
+--nextPart7pWE9LkGQbyJZPD4mlTCyg
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJPBAABCAA5FiEEQxb0tqoFWyeVMl1sPRO8yFRPGiIFAmsCtZYbFIAAAAAABAAO
+bWFudTIsMi41KzEuMTIsMiwyAAoJED0TvMhUTxoiWwUP/1zrUTig3p1zQi1yN49m
+lZsHM1mGoC+rZz8b6Gofd32dOfizYgpEF7nTr/TVadx3oSzKlKF5ayXHR/Q8Bgfo
+ke9bKibuDSpORGTL5M5S4hxiwi9xIJ9Ut6alnVApxneNS1AkYMNFW/mDbSQGaY9n
+RdRD6/yKt4miuWmJQdWJLCPaiwcM6e8AbUjCavhkMWEL8z1yxQaUGDNJKIdSrv74
+OubQcJfVPr4v6UN7JfUvg/aBCyVH4L/hYNSBaasfH5Gu+BjgB0S6j/i1FY8TRhHe
+/+LKiKGph3Bqq5Mh9Ho197e7vfKbK4R4agnxrJV5Iad52JhPtWYhiKUEdeRvduxB
+fngHWLMNa2jDLI6iie9bWLAZGAP1Hi5ZeBQrkl2BhXN+BulUPfdNWH8nNzJduDMI
+a5NNnM85VdY+jnIMl/D920QGXAii613m+nJg8R5jGg6LrGNt4lV+pcJO3tS7BhOu
+vL7UsI2tna7TUMj7bwnVdzmbLMipw8prPWpRTNUNBkP0KaSl5CnKfce7OEYFfgvY
+tLLl/eLGF+sOQ7Mx+ZQE6KE50wx23vPSrpjXfERtrFGwm5PyI9OO1fxrctm5cwdd
+j7kTk7HZcAiZQUsC+qN436NqIkBHCNR9CCm5VLlOVCRxq9yqYNH0+00P5+jKGjmb
+OkG3sJu7139jhrSQYgGPFpFC
+=7yFm
+-----END PGP SIGNATURE-----
+
+--nextPart7pWE9LkGQbyJZPD4mlTCyg--
+
+
+
+
+
+--===============3345347590160065090==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============3345347590160065090==--
+
+
+
+
