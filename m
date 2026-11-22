@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 003A2606A32C
-	for <linux-phy@archiver.kernel.org>; Sun, 22 Nov 2026 20:24:33 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CC0D6606A33A
+	for <linux-phy@archiver.kernel.org>; Sun, 22 Nov 2026 21:37:58 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Jujny/i2;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=gQjDjpka
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=jN3ruoGS;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=SWXjVI5D
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,52 +14,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=YRjEOsMTZjQ4+i1LpTw8J88xw0ObmcpbPnLz4+6oWVA=; b=Jujny/i2l3eS2KaSNHztW9VkzA
-	hw5qplNc6Vr04ekzggd+OXRbxoFwCeGgGNRZH9eGr6QlNYHivCzis9GIkOgvWwRxTvhnRVqVZuae+
-	tMHf3vosGfREJgmHdybx0suO7T6LvsQmRuV2mIzzGqQK0SmNgr92ftkOdo4abNsQRfAlA0/bDo4q1
-	ZmytPvfp8RIEXMD0NgCL6AKia6Cp2qOgkg+R5fgjMoBV4RxQq1pPCxFdH2H5Hxv/c+90coO+VIFbM
-	57yXkIl2/ZaNPATLN8jlZ9Z/55GCquU7FTcoWeofmk8PmoLrPPK4bgX+tMr9vSO7Stw6QZKp8EhG4
-	cG10CcFg==;
+	bh=5MSkpvS8KWD1oWtkYvVl76iaWn/GhI24xmsFOSxlexM=; b=jN3ruoGSc1Tvt4pbmgUYkv9WBH
+	Mf0TYYOAQ/ccehGwoZUNs/YlwAPilBlyWJK74RXreSUgZNlyXJmP1VO3ETZFIUN7bzLUQkwX9Exmf
+	oL/SQP6oAEkHeVqfCKWL1L2LmRyD5U2jlQZf5FqV2qwWqcIDSVOwULdcDnCGSkReG8ztX+cBSpfAV
+	FhIWOxQudxzmv1kLl+e31krobhoDEGjX1mJ02d+/fiInXv18miIf9uyioClRlxiruyl0vAbcrx0th
+	euJV2a+TnIN/uV7X5msb1aMUDSivOvBhUCO51pphWEVOUKC836ya4t9jHoG5NflYHbxdXNWSNe2dy
+	ahY1vIjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVE6y-00000001hn1-1fGa;
-	Sun, 22 Nov 2026 20:24:32 +0000
-Received: from mgamail.intel.com ([198.175.65.16])
+	id 1xVFG2-00000001oER-2S0L;
+	Sun, 22 Nov 2026 21:37:58 +0000
+Received: from mgamail.intel.com ([198.175.65.11])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVE6v-00000001hmM-49YJ;
-	Sun, 22 Nov 2026 20:24:31 +0000
+	id 1xVFFz-00000001oDS-3uVg;
+	Sun, 22 Nov 2026 21:37:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1795379070; x=1826915070;
+  t=1795383476; x=1826919476;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=5rcgeMoxIEWePPJAz1f4GqmHb62WxQrALOVeHJzO0yU=;
-  b=gQjDjpkaLN5NAyAinXMu9uhzHC49filWOiyRDWYUuDHoDAEFiZ7WbANt
-   V8SDWjqajQAjHBosQ/3kCV1k5/wNms23mhDDu+apVr3MT0lJXvz9w2sZj
-   KGuSyLO3yiKiusEq2rHdwokBqBs89JBxYbebF2UejmO3zz5Yvbe6v6461
-   hP+K9erw7/uS133M5Jm3Cp9RBchNK+91r16z6AfzQNEusbp1Npdom4W1y
-   fVwHwYLRZkXnrgR4n3NRbbw+V75aea4kMqb7EQhes/Nmo1ciSp6nYFtmY
-   PPeQzFU/sNtXZO127cTKcsoSP7sqB9wfALZ5SazkyY6SrxTk/E7DCTleh
-   g==;
-X-CSE-ConnectionGUID: xVsqcbToRAmuHfj65JfGUg==
-X-CSE-MsgGUID: i0o/kuT2S9yHxO5ay1lQRA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11974"; a="4185924"
+  bh=47WiqbuVGJhCQD/UFYev9AOeQxncNO/1VcFLwy5fqR8=;
+  b=SWXjVI5DXsceopy6KNyUIyhbbEeHJ7jAhgBTIwh/ZLSSDVrIUpD6q+to
+   R00tXGcAgKkCmeZNM35uvVJjWDj9KdCk6ONAqZgWnCUXUUlGsup/er3jq
+   5jmwniMoN+uvTIyInflKoC/Dni2AXWvv72ynpJkJugyRDTsLcC9jeBi1G
+   328OShbdYew+AvRFMTFHbIAsUafJXs/FH9lfLx7f7smfsK5Eiob7DC3ZL
+   jIgNnyMMG6CtWouA0o82uXmo6KjgXrA7rItnQSticTrPjd4vqj1vQNlxo
+   Vu9CajUpQ4hN3OYm/P431ABERATGGDUOOBrEaiQnRT9KlIWpvZwSFZAUI
+   w==;
+X-CSE-ConnectionGUID: Gpymdbi5QEyR2LSFQXAZCA==
+X-CSE-MsgGUID: Fe9BGeHGSCuMmCTkE8L9TA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11974"; a="4085143"
 X-IronPort-AV: E=Sophos;i="6.27,227,1787036400"; 
-   d="scan'208";a="4185924"
-Received: from fmviesa008.fm.intel.com ([10.60.135.148])
-  by orvoesa108.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 22 Nov 2026 12:24:28 -0800
-X-CSE-ConnectionGUID: yO1d1dXORbWAun2YOPiApQ==
-X-CSE-MsgGUID: olybKecSQRakBg0RJAb4vQ==
+   d="scan'208";a="4085143"
+Received: from orviesa007.jf.intel.com ([10.64.159.147])
+  by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 22 Nov 2026 13:37:54 -0800
+X-CSE-ConnectionGUID: a+H/fAZnQ1WSPIPsfJH+bw==
+X-CSE-MsgGUID: V9DTBvzdRyOQ6xxQb8LhZA==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.27,227,1787036400"; 
-   d="scan'208";a="11392727"
+   d="scan'208";a="11082364"
 Received: from lkp-server01.sh.intel.com (HELO 0caa9d2d175c) ([10.239.97.150])
-  by fmviesa008.fm.intel.com with ESMTP; 22 Nov 2026 12:24:24 -0800
+  by orviesa007.jf.intel.com with ESMTP; 22 Nov 2026 13:37:50 -0800
 Received: from kbuild by 0caa9d2d175c with local (Exim 4.98.2)
 	(envelope-from <lkp@intel.com>)
-	id 1xVE6n-00000001M34-0rot;
-	Sun, 22 Nov 2026 20:24:21 +0000
-Date: Mon, 23 Nov 2026 04:23:58 +0800
+	id 1xVFFs-00000001M6c-0KH7;
+	Sun, 22 Nov 2026 21:37:48 +0000
+Date: Mon, 23 Nov 2026 05:36:51 +0800
 From: kernel test robot <lkp@intel.com>
 To: Sasha Finkelstein <k@chaosmail.tech>, Sven Peter <sven@kernel.org>,
 	Janne Grunau <j@jannau.net>, Vinod Koul <vkoul@kernel.org>,
@@ -68,20 +68,20 @@ To: Sasha Finkelstein <k@chaosmail.tech>, Sven Peter <sven@kernel.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>
-Cc: oe-kbuild-all@lists.linux.dev, asahi@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	Sasha Finkelstein <k@chaosmail.tech>
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, Sasha Finkelstein <k@chaosmail.tech>
 Subject: Re: [PATCH v2 5/5] phy: apple: atc: Split generation-specific code
-Message-ID: <202611230426.XGazeYTu-lkp@intel.com>
+Message-ID: <202611230532.xXpnoRHP-lkp@intel.com>
 References: <20261122-t8122-phy-v2-5-8d5c8fdf31ba@chaosmail.tech>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20261122-t8122-phy-v2-5-8d5c8fdf31ba@chaosmail.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261122_122430_105612_181797F3 
-X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-CacheID: sfid-20261122_133756_044061_4EDC4890 
+X-CRM114-Status: UNSURE (   9.04  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -4.4 (----)
 X-BeenThere: linux-phy@lists.infradead.org
@@ -113,26 +113,44 @@ url:    https://github.com/intel-lab-lkp/linux/commits/Sasha-Finkelstein/dt-bind
 base:   6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
 patch link:    https://lore.kernel.org/r/20261122-t8122-phy-v2-5-8d5c8fdf31ba%40chaosmail.tech
 patch subject: [PATCH v2 5/5] phy: apple: atc: Split generation-specific code
-config: x86_64-buildonly-randconfig-1005-20261122 (https://download.01.org/0day-ci/archive/20261123/202611230426.XGazeYTu-lkp@intel.com/config)
-compiler: gcc-14 (Debian 14.2.0-19) 14.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20261123/202611230426.XGazeYTu-lkp@intel.com/reproduce)
+config: s390-allmodconfig (https://download.01.org/0day-ci/archive/20261123/202611230532.xXpnoRHP-lkp@intel.com/config)
+compiler: clang version 24.0.0git (https://github.com/llvm/llvm-project 2012344e5da8e03ea4b8283ecd6fad6e13f09d64)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20261123/202611230532.xXpnoRHP-lkp@intel.com/reproduce)
 
 If you fix the issue in a separate patch/commit (i.e. not just a new version of
 the same patch/commit), kindly add following tags
 | Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202611230426.XGazeYTu-lkp@intel.com/
+| Closes: https://lore.kernel.org/oe-kbuild-all/202611230532.xXpnoRHP-lkp@intel.com/
 
 All errors (new ones prefixed by >>):
 
-   drivers/phy/apple/atc-t8103.c: In function 'atcphy_configure_pipehandler_usb3_host_t8103':
->> drivers/phy/apple/atc-t8103.c:33:21: error: implicit declaration of function 'FIELD_PREP' [-Wimplicit-function-declaration]
+>> drivers/phy/apple/atc-t8103.c:33:7: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
       33 |                     FIELD_PREP(ACIOPHY_TOP_BIST_PHY_CFG1_LN0_PWR_DOWN, 3));
-         |                     ^~~~~~~~~~
+         |                     ^
+   drivers/phy/apple/atc-t8103.c:71:7: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+      71 |                     FIELD_PREP(DPRX_PCLK_SELECT, 1));
+         |                     ^
+   drivers/phy/apple/atc-t8103.c:146:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     146 |                FIELD_PREP(ACIOPHY_SLEEP_CTRL_TX_SMALL_OV, 3));
+         |                ^
+   3 errors generated.
 --
-   drivers/phy/apple/atc-t8122.c: In function 'atcphy_configure_pipehandler_usb3_host_t8122':
->> drivers/phy/apple/atc-t8122.c:78:16: error: implicit declaration of function 'FIELD_PREP' [-Wimplicit-function-declaration]
+>> drivers/phy/apple/atc-t8122.c:78:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
       78 |                FIELD_PREP(ACIOPHY_BIST_MAC_USBPHY_CFG_OV1_LN0_PWR_DOWN_OV, 2),
-         |                ^~~~~~~~~~
+         |                ^
+   drivers/phy/apple/atc-t8122.c:158:7: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     158 |                     FIELD_PREP(AUSPLL_APB_CMD_OVERRIDE_CMD, command) |
+         |                     ^
+   drivers/phy/apple/atc-t8122.c:173:7: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     173 |                     FIELD_PREP(DPTX_PCLK1_SELECT, 1) | FIELD_PREP(DPTX_PCLK2_SELECT, 1) |
+         |                     ^
+   drivers/phy/apple/atc-t8122.c:249:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     249 |                FIELD_PREP(LN_LDOCLK1_VREG_ADJ, 12));
+         |                ^
+   drivers/phy/apple/atc-t8122.c:307:25: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     307 |                LN_VREF221_EN | FIELD_PREP(LN_VREF221_FILTER_ADJUST, 1));
+         |                                ^
+   5 errors generated.
 
 
 vim +/FIELD_PREP +33 drivers/phy/apple/atc-t8103.c
