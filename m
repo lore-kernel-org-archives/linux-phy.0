@@ -2,124 +2,88 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CA99E606A32C
-	for <linux-phy@archiver.kernel.org>; Sun, 22 Nov 2026 16:18:30 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 003A2606A32C
+	for <linux-phy@archiver.kernel.org>; Sun, 22 Nov 2026 20:24:33 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=4/112Hvd;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=baylibre.com header.i=@baylibre.com header.a=rsa-sha256 header.s=google header.b=mORWcICL
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Jujny/i2;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=gQjDjpka
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=gXs6k1i9E6KOE8RzpWjU04OTOLKaGBH1KMG7TYCizG4=; b=4/112Hvd4IuT9ftztHbSgdP5PI
-	/9+Sk8Cf85/PJ7+WJ23qwgdNAnij1l4DH474fvP40oUWQDJ7lWsbR3kJ7lyC6EglJIejxrkv7SPhC
-	xHrdOqbV4/TFygIYOps0xXcVVm5NSRL5CvsDhOxmBN7vSv1J3uZ3gVMfHcVQoPo1zKIv31wG5/w8h
-	QCXo5tR6JhxBD8NjDTpq99wAMWgrlQvDW1KyJomBJ/fFfHy6nlRAJE9+cfd3uwZiZT6Hh9nz1hHiy
-	9ImErkUHi+RSfJZIMuFHrZcssG23YESDnqUOpaO5fJNWdyrqv/nwZA3g5w8Owc5zVa4QkSq3LUNUo
-	F9v8uvqg==;
+	bh=YRjEOsMTZjQ4+i1LpTw8J88xw0ObmcpbPnLz4+6oWVA=; b=Jujny/i2l3eS2KaSNHztW9VkzA
+	hw5qplNc6Vr04ekzggd+OXRbxoFwCeGgGNRZH9eGr6QlNYHivCzis9GIkOgvWwRxTvhnRVqVZuae+
+	tMHf3vosGfREJgmHdybx0suO7T6LvsQmRuV2mIzzGqQK0SmNgr92ftkOdo4abNsQRfAlA0/bDo4q1
+	ZmytPvfp8RIEXMD0NgCL6AKia6Cp2qOgkg+R5fgjMoBV4RxQq1pPCxFdH2H5Hxv/c+90coO+VIFbM
+	57yXkIl2/ZaNPATLN8jlZ9Z/55GCquU7FTcoWeofmk8PmoLrPPK4bgX+tMr9vSO7Stw6QZKp8EhG4
+	cG10CcFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVAGs-00000001L4y-1arb;
-	Sun, 22 Nov 2026 16:18:30 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1xVE6y-00000001hn1-1fGa;
+	Sun, 22 Nov 2026 20:24:32 +0000
+Received: from mgamail.intel.com ([198.175.65.16])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVAGo-00000001L4J-2Jkv
-	for linux-phy@lists.infradead.org;
-	Sun, 22 Nov 2026 16:18:28 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-4bb77a462c6so26414165e9.1
-        for <linux-phy@lists.infradead.org>; Sun, 22 Nov 2026 08:18:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre.com; s=google; t=1795364304; x=1795969104; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:mime-version:date:message-id
-         :subject:references:in-reply-to:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=8ZiEeOYhVKS03CHr35HdwHPjYPpUXJNlNyaUVNFPqXQ=;
-        b=mORWcICLLnFGT8PQ4pzwkcStiW4XU6FzKxwigWijSvXyqaWl+aKITJ1FpbJF0W6HXc
-         jAWS8JB30MoKr1X/Zi0RPy8JjtV36eCfJ01LiC0yeSS4E7khIU4xfkpQRAJUL3GCdlz2
-         gAOS9v1T/doayupfjpFTKcCKk6B0BC8ortrmGsUVg3SvSSYiKTRZiTMGt1fCvxjtDXya
-         utCHA/9llQoUEAsaOoY6DDYxZbkxLy5nyWz1EDGtImiiaACXrmz0mYCzqaj5lWUMjyS3
-         +TboO4ArOvnTwVXWLG2o21YNEhl/BUxUyTtm1NUgM5bRB1cmb/N2JGz/G7aaYoDeHoQS
-         ISvw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795364304; x=1795969104;
-        h=content-transfer-encoding:content-type:mime-version:date:message-id
-         :subject:references:in-reply-to:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=8ZiEeOYhVKS03CHr35HdwHPjYPpUXJNlNyaUVNFPqXQ=;
-        b=XwApMY9jceOj1X45TXMOuPTcR2yinETt4yCIDFkNfLqSbZfeQnfUUhrI8u7zRCPZ4p
-         zmxYp2wDL1MR3ZzJw55wIe+4cDns9T42L0J+XtuZfILql2RUD28n1BScwq0vyI6+NDy/
-         4Py6lzctfOZDE7A7d4lqKimlHkIKX1h/WvP73PvYwjzFBK8Go0bPJW9+j85Vh7OGuSut
-         zeYwVMm55+d0yKEqtcZqylmXsgfpfYHZT54qCwh6XefD9lxeh0ohzil63XE1mh7yA2Vi
-         nKt1JLLf2+9+Ev5Djyt21BmSTZkCj+ksEoGdiKU/qLf0dfJRdQ/M1nmPEwzztnjsDfK8
-         VXKQ==
-X-Forwarded-Encrypted: i=1; AL+hErF0IxwLgRHh7ONgY7/bKBIIPXfiP9og+gRaJowTeOXV+1yir2vzHTZ2FBJ4/gSx9U5rPDs2g3pKv8U=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/MIZnkYfKQTNFIKkWjni91fUwSoa3gxZ3zM0xwyPn+Ird0s/AS
-	TSCDEo5pplIPA+ogT2+PMtOcXasnos5sylg66LmO5Sm8bkjU11S7NcieFgA8P98IaLk=
-X-Gm-Gg: AZFdTZfGvLUF3BbdpbjfzkT0ELoAZ8kDP5zB5tSINy+YJxITXwisjc6x8aFHv/0Kzwk
-	JZio0klPvYLDzQSrQsIBeoh2Yn4STd0kqRH/XSQ/5UjOxjJ7F9jJk7Bd81y2S6uR+pzCnouSl+i
-	vXR7/3ZUmqvqUw1MSkPzHxUpv2KG+mxrYwmyLwXyU2l/4phDagXnbkbSzD28nDajqjJ0RcZj+Rh
-	sDGfOilMupuBcmCVlG4eBWC2flIOgI3dQ7W0nIaUQc6LurcM/JXCdAIfccWpD/Xz+fo5l4InzsW
-	w6G6jiTvLLgDUG4qaGxsx3sFJAy7P47LSGItvjzf2coBsV4p+5UGfJrSgKFkfchjg4H+YAc0Mni
-	1eyx47WWGgdYJTSv2FFFhnTAhaE6y+C94rGeBiDuuqVehPBxvOyozIt9G8TneeCKyhcDVXjzJ9C
-	r79LRXnTMqwFCRNXqXHyDyUF1M/w+1lv09no6xQ1Hf0+yEXeCezqlMFR+pz3j1GiRK2Sj2TDPr5
-	elN7S2oChwAN8ZrPXjoWjkyGNvaFQJwZLxL2mJbjMwvz6nRHccY5tiYNwVTt3b2umqtuKE4+5vP
-	m8TOnkt6rMtLfrC9kRu3Corsh8RU4YirWKcgGak4rVPcsAP5
-X-Received: by 2002:a05:600c:e553:b0:4bb:9457:3c93 with SMTP id 5b1f17b1804b1-4bb94573c9amr46862925e9.2.1795364304705;
-        Sun, 22 Nov 2026 08:18:24 -0800 (PST)
-Received: from localhost (82-67-6-57.subs.proxad.net. [82.67.6.57])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb8d4f9aa8sm226037545e9.4.2026.11.22.08.18.23
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 22 Nov 2026 08:18:24 -0800 (PST)
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>, 
- Troy Mitchell <troy.mitchell@linux.spacemit.com>, 
- Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Haylen Chu <heylenay@4d2.org>, 
- Michael Turquette <mturquette@baylibre.com>, 
- Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney+clk@redhat.com>, 
- Philipp Zabel <p.zabel@pengutronix.de>, Paul Walmsley <pjw@kernel.org>, 
- Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
- Alexandre Ghiti <alex@ghiti.fr>, Yao Zi <me@ziyao.cc>, 
- =?utf-8?q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>, 
- Guodong Xu <docular.xu@gmail.com>, Icenowy Zheng <uwu@icenowy.me>, 
- Jerome Brunet <jbrunet+clk@baylibre.com>, 
- Sarah Emery <sarah.emery@canonical.com>, 
- Ze Huang <ze.huang@oss.qualcomm.com>, Dmitry Baryshkov <lumag@kernel.org>, 
- Cody Kang <codykang.hk@gmail.com>
-Cc: Cody Kang <codykang@vsit.ai>, dri-devel@lists.freedesktop.org, 
- linux-riscv@lists.infradead.org, devicetree@vger.kernel.org, 
- spacemit@lists.linux.dev, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org, linux-clk@vger.kernel.org
-In-Reply-To: <20261121-k3-display-v3-0-ec419e8e96b8@gmail.com>
-References: <20261121-k3-display-v3-0-ec419e8e96b8@gmail.com>
-Subject: Re: (subset) [PATCH v3 00/17] drm/spacemit: add SpacemiT K3
- display support
-Message-Id: <179536429642.2728475.2044119204203952258.b4-ty@b4>
-Date: Sun, 22 Nov 2026 17:18:16 +0100
+	id 1xVE6v-00000001hmM-49YJ;
+	Sun, 22 Nov 2026 20:24:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1795379070; x=1826915070;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=5rcgeMoxIEWePPJAz1f4GqmHb62WxQrALOVeHJzO0yU=;
+  b=gQjDjpkaLN5NAyAinXMu9uhzHC49filWOiyRDWYUuDHoDAEFiZ7WbANt
+   V8SDWjqajQAjHBosQ/3kCV1k5/wNms23mhDDu+apVr3MT0lJXvz9w2sZj
+   KGuSyLO3yiKiusEq2rHdwokBqBs89JBxYbebF2UejmO3zz5Yvbe6v6461
+   hP+K9erw7/uS133M5Jm3Cp9RBchNK+91r16z6AfzQNEusbp1Npdom4W1y
+   fVwHwYLRZkXnrgR4n3NRbbw+V75aea4kMqb7EQhes/Nmo1ciSp6nYFtmY
+   PPeQzFU/sNtXZO127cTKcsoSP7sqB9wfALZ5SazkyY6SrxTk/E7DCTleh
+   g==;
+X-CSE-ConnectionGUID: xVsqcbToRAmuHfj65JfGUg==
+X-CSE-MsgGUID: i0o/kuT2S9yHxO5ay1lQRA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11974"; a="4185924"
+X-IronPort-AV: E=Sophos;i="6.27,227,1787036400"; 
+   d="scan'208";a="4185924"
+Received: from fmviesa008.fm.intel.com ([10.60.135.148])
+  by orvoesa108.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 22 Nov 2026 12:24:28 -0800
+X-CSE-ConnectionGUID: yO1d1dXORbWAun2YOPiApQ==
+X-CSE-MsgGUID: olybKecSQRakBg0RJAb4vQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,227,1787036400"; 
+   d="scan'208";a="11392727"
+Received: from lkp-server01.sh.intel.com (HELO 0caa9d2d175c) ([10.239.97.150])
+  by fmviesa008.fm.intel.com with ESMTP; 22 Nov 2026 12:24:24 -0800
+Received: from kbuild by 0caa9d2d175c with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1xVE6n-00000001M34-0rot;
+	Sun, 22 Nov 2026 20:24:21 +0000
+Date: Mon, 23 Nov 2026 04:23:58 +0800
+From: kernel test robot <lkp@intel.com>
+To: Sasha Finkelstein <k@chaosmail.tech>, Sven Peter <sven@kernel.org>,
+	Janne Grunau <j@jannau.net>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>
+Cc: oe-kbuild-all@lists.linux.dev, asahi@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	Sasha Finkelstein <k@chaosmail.tech>
+Subject: Re: [PATCH v2 5/5] phy: apple: atc: Split generation-specific code
+Message-ID: <202611230426.XGazeYTu-lkp@intel.com>
+References: <20261122-t8122-phy-v2-5-8d5c8fdf31ba@chaosmail.tech>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-Mailer: b4 0.17-dev
-X-Developer-Signature: v=1; a=openpgp-sha256; l=207; i=jbrunet@baylibre.com;
- h=from:subject:message-id; bh=v3hfU9UHf+Kw6j8mPInDkRCmcdQcn/tFYuhWer9PVLA=;
- b=owGbwMvMwCW2VtK+WnvWU3HG02pJDNnMouffLtac7bcg5TPvFslVKz/IiM43L2d2W3La8FzzF
- i6bCx9Xd5SyMIhxMciKKbLUcFeLv5PU+jJrus5tmDmsTCBDGLg4BWAim44zMmxxe2hesHqmrEzE
- C5a4iu+CTLL9sfqpvwrzRPpPFr2X/8XwPyhe6sxK569/On8WiM9u/vRjfl5c4ZyfsjXJvPYlub7
- z2QA=
-X-Developer-Key: i=jbrunet@baylibre.com; a=openpgp;
- fpr=F29F26CF27BAE1A9719AE6BDC3C92AAF3E60AED9
+Content-Disposition: inline
+In-Reply-To: <20261122-t8122-phy-v2-5-8d5c8fdf31ba@chaosmail.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261122_081826_632655_5B2AAA34 
-X-CRM114-Status: UNSURE (   3.85  )
+X-CRM114-CacheID: sfid-20261122_122430_105612_181797F3 
+X-CRM114-Status: UNSURE (   8.87  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-Spam-Score: -4.4 (----)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,22 +96,105 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Applied to clk/linux.git (clk-spacemit), thanks!
+Hi Sasha,
 
-[06/17] clk: spacemit: k3: parent eDP/DP pixel clock to the PHY PLL
-        https://git.kernel.org/clk/linux/c/dd010f2b662d
+kernel test robot noticed the following build errors:
 
-Best regards,
+[auto build test ERROR on 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Sasha-Finkelstein/dt-bindings-phy-atcphy-Add-M3-series/20261122-132757
+base:   6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
+patch link:    https://lore.kernel.org/r/20261122-t8122-phy-v2-5-8d5c8fdf31ba%40chaosmail.tech
+patch subject: [PATCH v2 5/5] phy: apple: atc: Split generation-specific code
+config: x86_64-buildonly-randconfig-1005-20261122 (https://download.01.org/0day-ci/archive/20261123/202611230426.XGazeYTu-lkp@intel.com/config)
+compiler: gcc-14 (Debian 14.2.0-19) 14.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20261123/202611230426.XGazeYTu-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202611230426.XGazeYTu-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+   drivers/phy/apple/atc-t8103.c: In function 'atcphy_configure_pipehandler_usb3_host_t8103':
+>> drivers/phy/apple/atc-t8103.c:33:21: error: implicit declaration of function 'FIELD_PREP' [-Wimplicit-function-declaration]
+      33 |                     FIELD_PREP(ACIOPHY_TOP_BIST_PHY_CFG1_LN0_PWR_DOWN, 3));
+         |                     ^~~~~~~~~~
 --
-Jerome
+   drivers/phy/apple/atc-t8122.c: In function 'atcphy_configure_pipehandler_usb3_host_t8122':
+>> drivers/phy/apple/atc-t8122.c:78:16: error: implicit declaration of function 'FIELD_PREP' [-Wimplicit-function-declaration]
+      78 |                FIELD_PREP(ACIOPHY_BIST_MAC_USBPHY_CFG_OV1_LN0_PWR_DOWN_OV, 2),
+         |                ^~~~~~~~~~
 
+
+vim +/FIELD_PREP +33 drivers/phy/apple/atc-t8103.c
+
+    11	
+    12	static void atcphy_configure_pipehandler_usb3_host_t8103(struct apple_atcphy *atcphy)
+    13	{
+    14		int ret;
+    15		u32 reg;
+    16	
+    17		core_set32(atcphy, ACIOPHY_TOP_BIST_PHY_CFG0,
+    18			   ACIOPHY_TOP_BIST_PHY_CFG0_LN0_RESET_N);
+    19		core_set32(atcphy, ACIOPHY_TOP_BIST_OV_CFG, ACIOPHY_TOP_BIST_OV_CFG_LN0_RESET_N_OV);
+    20		ret = readl_poll_timeout(atcphy->regs.core + ACIOPHY_TOP_PHY_STAT, reg,
+    21					 !(reg & ACIOPHY_TOP_PHY_STAT_LN0_UNK23), 10, 10000);
+    22		if (ret)
+    23			dev_warn(atcphy->dev,
+    24				 "Timed out waiting for ACIOPHY_TOP_PHY_STAT_LN0_UNK23\n");
+    25	
+    26		core_set32(atcphy, ACIOPHY_TOP_BIST_READ_CTRL,
+    27			   ACIOPHY_TOP_BIST_READ_CTRL_LN0_PHY_STATUS_RE);
+    28		core_clear32(atcphy, ACIOPHY_TOP_BIST_READ_CTRL,
+    29			     ACIOPHY_TOP_BIST_READ_CTRL_LN0_PHY_STATUS_RE);
+    30	
+    31		core_mask32(atcphy, ACIOPHY_TOP_BIST_PHY_CFG1,
+    32			    ACIOPHY_TOP_BIST_PHY_CFG1_LN0_PWR_DOWN,
+  > 33			    FIELD_PREP(ACIOPHY_TOP_BIST_PHY_CFG1_LN0_PWR_DOWN, 3));
+    34	
+    35		core_set32(atcphy, ACIOPHY_TOP_BIST_OV_CFG,
+    36			   ACIOPHY_TOP_BIST_OV_CFG_LN0_PWR_DOWN_OV);
+    37		core_set32(atcphy, ACIOPHY_TOP_BIST_CIOPHY_CFG1,
+    38			   ACIOPHY_TOP_BIST_CIOPHY_CFG1_CLK_EN);
+    39		core_set32(atcphy, ACIOPHY_TOP_BIST_CIOPHY_CFG1,
+    40			   ACIOPHY_TOP_BIST_CIOPHY_CFG1_BIST_EN);
+    41		writel(0, atcphy->regs.core + ACIOPHY_TOP_BIST_CIOPHY_CFG1);
+    42	
+    43		ret = readl_poll_timeout(atcphy->regs.core + ACIOPHY_TOP_PHY_STAT, reg,
+    44					 (reg & ACIOPHY_TOP_PHY_STAT_LN0_UNK0), 10, 10000);
+    45		if (ret)
+    46			dev_warn(atcphy->dev,
+    47				 "timed out waiting for ACIOPHY_TOP_PHY_STAT_LN0_UNK0\n");
+    48	
+    49		ret = readl_poll_timeout(atcphy->regs.core + ACIOPHY_TOP_PHY_STAT, reg,
+    50					 !(reg & ACIOPHY_TOP_PHY_STAT_LN0_UNK23), 10, 10000);
+    51		if (ret)
+    52			dev_warn(atcphy->dev,
+    53				 "timed out waiting for ACIOPHY_TOP_PHY_STAT_LN0_UNK23\n");
+    54	
+    55		atcphy_clear_nonselected_phy_reset(atcphy);
+    56	
+    57		/* More BIST stuff (?) */
+    58		writel(0, atcphy->regs.core + ACIOPHY_TOP_BIST_OV_CFG);
+    59		core_set32(atcphy, ACIOPHY_TOP_BIST_CIOPHY_CFG1,
+    60			   ACIOPHY_TOP_BIST_CIOPHY_CFG1_CLK_EN);
+    61		core_set32(atcphy, ACIOPHY_TOP_BIST_CIOPHY_CFG1,
+    62			   ACIOPHY_TOP_BIST_CIOPHY_CFG1_BIST_EN);
+    63	}
+    64	
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
