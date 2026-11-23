@@ -2,74 +2,128 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AFEBA606A31F
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 07:56:17 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 02287607150E
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 08:06:48 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=A+6imYZC;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=YXAvsKFi
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=tdpmhv3s;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=NQkMKeUJ
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=h+UIviM1K+02trPPNOWFB3TzQm2Bk/+10ZmlEicqluM=; b=A+6imYZCV7y+Eg3SVazz3sMyNM
-	xbNOqSBRxtsRXR+kVbHTBfmtGcIC2QRCVYRKeuWyEGfacfmuP7P6mRmI+iphDd+UfTNcBo6qKXyJm
-	SE271SJpp70j3xyj5961drE54C0JGNWtvJxwCBVARVyfYcXkxjT36JnCHtpXCVp775iNC6r9DaZ7W
-	Whev8vSVAT8iBnk7F0B9otirK7kYgFO2gZoa7X0foLqqnbjANPIVbTXhLUevxHsEBPmu2CVc/5X34
-	L5tWUmIL5m4TckyjSX5vW1YPh+RzXFcxFg2cBg9HmLN6hvfhV7ra3Odm6US/Jc6QcaNo4Qnq8CxIk
-	WtwECbZg==;
+	bh=dZKwLCRehMRu9DxR0qxfRVLotelqW6zClt2kuecat3Y=; b=tdpmhv3sEJKj1SRUGpmGS7oMSH
+	CGjnGuZcWlkWGO7gGonAQKFvI/V1VLQs9lgb3qE++wvQ6da5RwVDNpiuL/yURHf3hF+ZAgn9qn5yb
+	V2EX0IdMJ0Isz/oebtW7UuSXKMjgUda0mUgQs+zlprmTCAPlzqePs48hiYh1Y3lsdRp5RZtUw1+eR
+	Tj0U5SzNHEWVQlhTetIc8hXfgrN4EMy1UO99hqAYrmV2RWPx0Xvb5H7S0Yc4XFQELkHAgigCjjMR+
+	ojJHKekb+0DH4bZLySfMin4s7NKffvLyiVaqFChf5hbcov2ALv5qjsWG62mwZoV8EYJQs3euNKB6G
+	RjmWrMaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVOuN-00000002VpZ-2iid;
-	Mon, 23 Nov 2026 07:56:16 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xVP4Z-00000002XK4-2YDG;
+	Mon, 23 Nov 2026 08:06:47 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVOts-00000002VfE-3fp7;
-	Mon, 23 Nov 2026 07:55:49 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id B4E9461D5B;
-	Mon, 23 Nov 2026 07:55:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6AA821F000C6;
-	Mon, 23 Nov 2026 07:55:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795420543;
-	bh=nYLwjkPeDoYKPQ9fpj7sj29JLi9BGT+W9npk3A58FDA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=YXAvsKFiWSvpBAh0r/bLzhP/mDijS6wWiRAI/eNzzlW42pXDN4k8BL54YfASB4YyZ
-	 KDaG4gPrLUiNxP8Y53xiVgpDqyQYPNbffcEa5ycmQNLiBTR+5HEYIMJYvdAThv6YH9
-	 HpUjHRD3AKwKVwH6wIB1q+2q2wI63zezLOdt1UVU2EDTOuJDj6XbRN9XB1c4M1qRwJ
-	 nNsYrkMkn/h6oyq0H7wZPcnDLbwg1Mo1uDNj1WKorr/U67FRXRdTJ2zYV89UO4yI1c
-	 A8yJwwgZo6rSUPiINE2/hvWe4cJZZZanigQdCdzOb55tcn4lLBhSTUMLTCFRqbJA6u
-	 SjNDfuq17V90Q==
-Date: Mon, 23 Nov 2026 08:55:40 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: codykang.hk@gmail.com
-Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Thomas Zimmermann <tzimmermann@suse.de>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>, 
-	Troy Mitchell <troy.mitchell@linux.spacemit.com>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
-	Haylen Chu <heylenay@4d2.org>, Michael Turquette <mturquette@baylibre.com>, 
-	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney+clk@redhat.com>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Paul Walmsley <pjw@kernel.org>, 
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
-	Alexandre Ghiti <alex@ghiti.fr>, Yao Zi <me@ziyao.cc>, 
-	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>, Guodong Xu <docular.xu@gmail.com>, 
-	Icenowy Zheng <uwu@icenowy.me>, Jerome Brunet <jbrunet+clk@baylibre.com>, 
-	Sarah Emery <sarah.emery@canonical.com>, Ze Huang <ze.huang@oss.qualcomm.com>, 
-	Dmitry Baryshkov <lumag@kernel.org>, Cody Kang <codykang@vsit.ai>, dri-devel@lists.freedesktop.org, 
-	linux-riscv@lists.infradead.org, devicetree@vger.kernel.org, spacemit@lists.linux.dev, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-clk@vger.kernel.org
-Subject: Re: [PATCH v3 10/17] drm/spacemit: add Saturn DPU KMS pipeline
-Message-ID: <awPxPHpr4NYxqdmf@houat>
-References: <20261121-k3-display-v3-0-ec419e8e96b8@gmail.com>
- <20261121-k3-display-v3-10-ec419e8e96b8@gmail.com>
+	id 1xVP4W-00000002XIx-1jfF
+	for linux-phy@lists.infradead.org;
+	Mon, 23 Nov 2026 08:06:46 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-4a207b02a2cso20636365e9.1
+        for <linux-phy@lists.infradead.org>; Mon, 23 Nov 2026 00:06:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1795421199; x=1796025999; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:organization
+         :autocrypt:content-language:references:cc:to:subject:reply-to:from
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=0/cAHzp2byEXTdt5JI13O+MKxbnMcLe/w5DVxG6Ogbo=;
+        b=NQkMKeUJa/UeJtgIeyE3B24SB2TE0ijLoSM4Zp7X9pFDPmduMQqKZLKf9Tfxs5cWBq
+         wNLIqSt2aoH5mT7mfovwI1BeN9ps9aNWn7CBPQAs1cqU/PdDH8J0yxsWNho/H/FHUUk7
+         8icIpjlHThc71VTIRopNaOz5t+AhXnedS704JQ95w2PQXfFAj/ARPKvVqg2d+bjXKLaO
+         tJfCBaZDiR/ulq64KdGw8RQCknNGI1ztFrl6AUVD4TQInY4kFJVyyD7Rh9TYReGjuLgz
+         I0NXYg5dHcmFnV31rP+WDQp4OZ8L5Xzb/KXYna4UmRNhVyj9fBqLtWyYt9lVKvDpaWAC
+         xppg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795421199; x=1796025999;
+        h=content-transfer-encoding:content-type:in-reply-to:organization
+         :autocrypt:content-language:references:cc:to:subject:reply-to:from
+         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=0/cAHzp2byEXTdt5JI13O+MKxbnMcLe/w5DVxG6Ogbo=;
+        b=sLY+OuCKF+W+rlNxxAxjKP9IIxS5g+B/6OIV8tkRHjzvL9BcwrOqo+9zNo9k+LI82A
+         awJTLdk3jOFW8xyQKtrYyTeHCU9Y0vQB6QrSjKXUDybBiV//ae0gEHvBB8RAtLOXdcmM
+         KoDtWxYdgaRlpuY49Q5YhTd3vfOfO6osgjvwFZX7MROPknEMbT0/vfstyuo+Z7HTbR8o
+         6Jue1dMp0MLqz6/4pBJUW3xscH3uQw5fT6kg0HzcCnUVtve8ZOUlahmh+GxjVEr6YKvc
+         yES6iBkWb7/WGEEV8zQd+D4syiQFCCMCtDYqqydaNVvBYJmXPeVfpNu/VXgZ+98rAOa0
+         RzEA==
+X-Forwarded-Encrypted: i=1; AL+hErFaTwtfYuq7LpgSp0IJ2Axu+wKheQg3fn0x6b4Mi/K/mb1G5cQoAY5koAZh6NR3XTtNXI+VAcplC4w=@lists.infradead.org
+X-Gm-Message-State: APuU4Z9ui25aVznBT6GOmUv/b3x3jvZ/umq/MTLi0d6/petGvx/doeqh
+	XuyjGfwCSZbLk5amhqY+iS/gD0PS7dUvyLk1GQmyfBwtXHhuBL0XZbWEPAfZSvevpWc=
+X-Gm-Gg: AZFdTZemSTG45YP1TZF/VaMkLItJMkJEtVK4uFa1xJEG6FiqSseTDxHLa2RLPckKP9d
+	ym++2GN2oxMtbJdj+xQd47uHUm78YDGemwjRwqWH9TUEinLcrn2n5cB3NR4yyiGKrZQTPiQGysW
+	vhzKdUJa55DT4QHDGmD5Rq0CcXUARm5tN44zq8XzPnsf5HK9SSjSDXI+2bdwkZl99LKqjMfaGP+
+	qmMpRtrbAk4F0b7ZlZmeGZQVff/fX81ghun6VCgULLaARAfx8gksdRFUhP0a2rJHDdaIvkWzQya
+	FrqRPZd69JIfNjwhVI+SLc2glrQIp6UySN7XwPIpD5T7x6IL6BeEkfFHlduHQFl2WPGkKFzK1eV
+	r8lpnes8GJIdChoWi/lASVH7r3eRvW3eCAcKlcDO4BE4SXpyMIRn9Ne5fPbUzvbxIyRg7+1c9my
+	DK3jmHLnb3IoYuN2s6XLDeXxzZcFCBtcbGvFG2iAUMKKLxPvL8sxBSudOO9f/owlgRhd185Cl64
+	5OPx0rjWqlvEax1+q+JtuTMOiJJzxcFcH0dDhewiciZE/vuyNq0iYimA8r3Mlp4XwwWQG7tw9Ub
+	x7MxX1EnYNpyomdVoWeta2ihWbUoOXH8AFqF+hJNUOvpnI2cHGtFLhZSnTdV8FxZ+CwSY6T+DmU
+	F0vkZIsLn
+X-Received: by 2002:a05:600c:c09b:b0:4bb:665f:7e52 with SMTP id 5b1f17b1804b1-4bb8880995dmr161630505e9.10.1795421199031;
+        Mon, 23 Nov 2026 00:06:39 -0800 (PST)
+Received: from ?IPV6:2a01:e0a:106d:1080:121b:474b:8d1f:a239? ([2a01:e0a:106d:1080:121b:474b:8d1f:a239])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb853a12acsm360424565e9.8.2026.11.23.00.06.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 23 Nov 2026 00:06:38 -0800 (PST)
+Message-ID: <2d8dd4ba-26ec-4b01-8361-09e6dfcfa5ed@linaro.org>
+Date: Mon, 23 Nov 2026 09:06:38 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20261121-k3-display-v3-10-ec419e8e96b8@gmail.com>
+User-Agent: Mozilla Thunderbird
+From: neil.armstrong@linaro.org
+Subject: Re: [PATCH v3 02/11] dt-bindings: phy: amlogic: Add Meson HDMI TX PHY
+ binding
+To: sashiko-reviews@lists.linux.dev,
+ Ronald Claveau <linux-kernel-dev@aliel.fr>
+Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, olteanv@gmail.com
+References: <20261121-meson-drm-create-hdmitx-phy-v3-0-f8f471788076@aliel.fr>
+ <20261121-meson-drm-create-hdmitx-phy-v3-2-f8f471788076@aliel.fr>
+ <sashiko-outbox-227302@kernel.org>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <sashiko-outbox-227302@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261123_000644_473969_F7BB6277 
+X-CRM114-Status: UNSURE (   8.46  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,105 +133,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2937441098934440761=="
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
+On 11/21/26 20:26, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential
+> issue to consider:
+> - [Low] dt-bindings: phy: amlogic: redundant word binding in commit
+>    subject
+> --
+> 
+> commit fbd4563b5cd10db3f75db052197f808e3b36bc55
+> Author: Ronald Claveau <linux-kernel-dev@aliel.fr>
+> 
+> dt-bindings: phy: amlogic: Add Meson HDMI TX PHY binding
+> 
+> This commit adds a Device Tree binding schema for the HDMI TX PHY found on
+> Amlogic Meson GXBB, GXL, and G12A SoCs.
+> 
+>> dt-bindings: phy: amlogic: Add Meson HDMI TX PHY binding
+> 
+> [Severity: Low]
+> The dt-bindings: prefix already indicates that this patch adds a binding,
+> so repeating "binding" at the end of the subject is redundant ("dt-bindings:
+> phy: amlogic: Add Meson HDMI TX PHY").
+> 
 
---===============2937441098934440761==
-Content-Type: multipart/signed; micalg=pgp-sha384;
-	protocol="application/pgp-signature"; boundary="psp6wiqhchja3kyl"
-Content-Disposition: inline
-
-
---psp6wiqhchja3kyl
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Subject: Re: [PATCH v3 10/17] drm/spacemit: add Saturn DPU KMS pipeline
-MIME-Version: 1.0
-
-Hi,
-
-On Sat, Nov 21, 2026 at 03:40:49PM +0800, Cody Kang via B4 Relay wrote:
-> +static int spacemit_drm_master_bind(struct device *dev)
-> +{
-> +	struct spacemit_drm_private *priv = dev_get_drvdata(dev);
-> +	struct spacemit_crtc *a_crtc;
-> +	struct drm_device *drm;
-> +	int ret;
-> +
-> +	ret = aperture_remove_all_conflicting_devices(spacemit_drm_drv.name);
-> +	if (ret)
-> +		return dev_err_probe(dev, ret,
-> +				     "failed to remove existing framebuffers\n");
-> +
-> +	/*
-> +	 * Bind-scoped, not devm: the aggregate can rebind without this
-> +	 * device being re-probed, and each bind must release its own
-> +	 * drm_device.
-> +	 */
-> +	drm = drm_dev_alloc(&spacemit_drm_drv, dev);
-> +	if (IS_ERR(drm))
-> +		return PTR_ERR(drm);
-> +	priv->ddev = drm;
-> +	drm->dev_private = priv;
-> +
-> +	ret = spacemit_drm_mode_config_init(drm);
-> +	if (ret)
-> +		goto err_dc;
-> +
-> +	a_crtc = spacemit_drm_pipeline_init(drm);
-> +	if (IS_ERR(a_crtc)) {
-> +		ret = PTR_ERR(a_crtc);
-> +		goto err_dc;
-> +	}
-> +	priv->a_crtc = a_crtc;
-> +
-> +	/*
-> +	 * component_bind_all() unbinds what it bound before returning an error.
-> +	 */
-> +	ret = component_bind_all(dev, drm);
-> +	if (ret) {
-> +		dev_err_probe(dev, ret, "failed to bind all components\n");
-> +		goto err_dc;
-> +	}
-> +
-> +	drm_mode_config_reset(drm);
-
-You need to use drm_mode_config_create_initial_state().
-
-Maxime
-
---psp6wiqhchja3kyl
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iJUEABMJAB0WIQTkHFbLp4ejekA/qfgnX84Zoj2+dgUCawPxewAKCRAnX84Zoj2+
-dnHQAX9iDOtufQbymoduwPA/eIzFT4DPhesCne28+rDvff2JXlYtbNrRxUrTcGWq
-XGPo3ywBgIkbYttgELJJr4UywnFDhIGMTRi83oG6Mg+R1tb0t9izOxptosxvIQK+
-fEnXpcLERQ==
-=seld
------END PGP SIGNATURE-----
-
---psp6wiqhchja3kyl--
-
-
---===============2937441098934440761==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Use the "dt-bindings: phy: amlogic: document the Amlogic Meson HDMI TX PHY"
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2937441098934440761==--
-
