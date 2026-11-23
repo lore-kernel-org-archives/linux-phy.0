@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 35A4B606A321
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 12:06:36 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A85E1606A31A
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 12:06:52 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=L/dsSx+j;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jvkOvvVL
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ykUMtX6A;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=ScqeuJIC
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,36 +14,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=y2G0MGqDmjphdAA+Fot/R+A0y4sI3hfq/7LmyD0TBrk=; b=L/dsSx+j1bX1Q7pc1Af8D47H5t
-	UVOb0koaGwFNeXtiHbbsC1ES0Y5DSfVs+sZijpYeWdFdFnozDK9dM4rhJzkSxPdD+OELynUdAVsix
-	sWiOsEZeLR4FhCHrfjRQR4wI151ps75pbgqPmDw9cLHkmdxsz4MMm78yir5plUWwRg1c9Tf/voiBA
-	vg/ebpmxjNP9R8My3Q8zxFxMlbVkcjsjo8OszTjoCs6+stmSKYaNmmv4cc4mI1J+fYea40H2yl8AW
-	Zl7O2PPIrHTZebphnoSXuGkzI0qcwyQ8ja7A9uDcgRYeEYStE+gN7e9Sryivg2LHlVIODbedOIfun
-	TL6LuBiw==;
+	bh=kRsCt/gqdem4/R52qRCiV788uBI0d7dAdYVSRhSW2Gk=; b=ykUMtX6AyH8HUHbi79KB5yC5K+
+	geN/C45HuR4dLuEFNa8rq9z5MrTlahxfrib8oW8YzZmRUrmtgm1sqFic4l/JuqSuu9oWNB4+Qn7cf
+	vjyKR9MYHLVkPGNJZDHp1kIXu79H/R4qLGRzaUjJkI8s05FMMpOVKm48qpL4HXxUy8KGZiyoHF69h
+	2inDEuTtqXY1TmHzPRQfge9sW/HqoM+FDX7SHyUxrnZdvyLpYrdoVrfu/JBzh1AxyzaLKDaqcEVpR
+	AeUG+gyRYN3lfQQksx5Ic1O/HPME/IWtBki60P5q+SwN8Ad7kov/GJekJ/4ecvVH5VrAX0hdToR1V
+	PWhfeiZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVSod-00000003HCe-40P9;
-	Mon, 23 Nov 2026 12:06:35 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xVSou-00000003HHq-111v;
+	Mon, 23 Nov 2026 12:06:52 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVSod-00000003HCH-0doL;
-	Mon, 23 Nov 2026 12:06:35 +0000
+	id 1xVSol-00000003HEw-4Biy;
+	Mon, 23 Nov 2026 12:06:44 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 48F50620B0;
-	Mon, 23 Nov 2026 12:06:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D45951F000C0;
-	Mon, 23 Nov 2026 12:06:32 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 756DF4508B;
+	Mon, 23 Nov 2026 12:06:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5EE861F000D0;
+	Mon, 23 Nov 2026 12:06:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795435594;
-	bh=fU0qgGX6rvDQa6Hs2GlCa9ePVhgC0MKqV7droMC1ftE=;
+	s=k20260515; t=1795435603;
+	bh=YcMb+PLs/AWZj6CMeHYvkaPehmudD/DmEHA3ZbplGK4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=jvkOvvVLjNnnARXxCGjXocJep2IHYAS5xr97CekeRfZqkxcyNIittO7p7o5Z2Po2U
-	 j+W0OBWU7/+D1HwZtwzqRhsIc/N0TpXgsv2yRQuf+hid+1mROTjg9REZV7h7UOsCIK
-	 kmTlgo1HhVKzON+bjQ3wy6EuB4QXwfvW5fYM7ZDIDOHXknOGQjn7dF09n8n+3wLUYj
-	 sICuXcCKEaXfQDx9zAg5yrYMDkRg/O/6K9TP26Ac384R5KJ+oTWJuBZ3mtBrDIxU5D
-	 COJ6Jbn5nvsnLGN1eMWRar3a/+FPn2E7T2qBtgLdVWZ8TlKdm7L0/Ltpa+TlaThTy/
-	 8HSdscy6zICEw==
-Date: Mon, 23 Nov 2026 13:06:30 +0100
+	b=ScqeuJICiSa3yA0PGnXYuPrVQpQGvFiqYra0ZrcRbjqbchIMnB2YmFxs4mOzXVt7L
+	 yY4P7wQAFA23kn7IQc5LBKacbRLjf/QsGRqCOdSTtaYlPhzAQZaxZ/MoqXGBRTqE63
+	 zQzwaIYPHLy7kt1cxhJuZvBfEK1WvWs/i2O5kZj7i347L4qlH6rZqXudyRE4N1jHUe
+	 yjudaXrmmJ1jAI52px/2ikKpC+qc/AUTaJN7t0Ag7TXUrHdFSJzTh8y74J+B+ebX0P
+	 G+eMQk0g44ctWuJOKzNAtU68QrzbujZN5/KyWR0h10mxKH8fC3xgoB5mt5nzHtcJIQ
+	 B75cTRP3G+ZWw==
+Date: Mon, 23 Nov 2026 13:06:40 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Stanislav Aleksandrov <lightofmysoul@gmail.com>
 Cc: Bjorn Andersson <andersson@kernel.org>, 
@@ -67,14 +67,15 @@ Cc: Bjorn Andersson <andersson@kernel.org>,
 	linux-arm-kernel@lists.infradead.org, iommu@lists.linux.dev, linux-usb@vger.kernel.org, 
 	linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org, linux-crypto@vger.kernel.org, 
 	linux-pm@vger.kernel.org
-Subject: Re: [PATCH v2 05/16] dt-bindings: usb: qcom,snps-dwc3: Add Halliday
-Message-ID: <20261123-uptight-zealous-tench-ccfb03@quoll>
+Subject: Re: [PATCH v2 06/16] dt-bindings: phy: qcom,usb-snps-femto-v2: Add
+ Halliday HS PHY
+Message-ID: <20261123-azure-wolf-of-whirlwind-43caef@quoll>
 References: <20261116-halliday-dts-v2-0-2c92438c6c46@gmail.com>
- <20261116-halliday-dts-v2-5-2c92438c6c46@gmail.com>
+ <20261116-halliday-dts-v2-6-2c92438c6c46@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261116-halliday-dts-v2-5-2c92438c6c46@gmail.com>
+In-Reply-To: <20261116-halliday-dts-v2-6-2c92438c6c46@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,15 +95,16 @@ X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Mon, Nov 16, 2026 at 09:26:21PM +0000, Stanislav Aleksandrov wrote:
-> Document the DWC3 USB controller on the Qualcomm Halliday SoC.
+On Mon, Nov 16, 2026 at 09:26:22PM +0000, Stanislav Aleksandrov wrote:
+> Document the Synopsys femto USB high-speed PHY on the Qualcomm Halliday
+> SoC.
 > 
 > Signed-off-by: Stanislav Aleksandrov <lightofmysoul@gmail.com>
 > ---
->  Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml | 3 +++
->  1 file changed, 3 insertions(+)
+>  Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
 Best regards,
 Krzysztof
