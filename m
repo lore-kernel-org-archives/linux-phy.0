@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DB6CD606A32E
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 12:09:13 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3AB38606A31A
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 12:09:21 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=p9lunVPG;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Cu5iR40U
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=EP6MvFHQ;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=dk2QAjiR
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,68 +14,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=8Kefw1qDhjR60aCcZA5+K5CBIw2DZBzCVWOGf9j0OsI=; b=p9lunVPGiS5V3zVr6biuY12m4k
-	S7+AT/yECQG7PyViP7t6e1JKjVi6ZGsYjQiL75Cd8a058CBqFyigEkMiUqY1ShInaNTPR5qozbvyE
-	aeKZzqP8xDon2hwyl851QuD7pylgGDD50pRH9HD+zqPGF8mHrGehkXo3wn4L7SsQzfgEIm2n1BlSX
-	XyO1oP30CW4AfLmzlmMftt+rDGPxb/lnYJ5JhZ0MQ3AeV73L7ghuEUmwsdfxW+Ilv/sNvG7A4Rclf
-	CHctm/Wh6FTwjqknLF0HEIqUj3j0yJqi3VLzBJ/uuIyS9X3pLegv+d2gKdSI/LYK76uSKNP8qOfjT
-	3ZedIbJw==;
+	bh=yMuAXg7MdSuArl+NTX2WIooLFyn9RHIFO93U38d1Zmg=; b=EP6MvFHQYPDRiPO85SwviJ2jg+
+	dw4gf4fyJOyg3dtvq+3se9rFXH8pYAQq3nFbUYZGcfWxh4E8+t/hFRnrDhpJ+JnyfFJKaD4kuPo5I
+	oW9znpJ8TuisFO+ybuZiu2PkbMp+/vH3DYjMTHezjMwlBNH806o5+UFy+GVDS7TDpk57oz6GSPK22
+	QN2uyUMUsezmaPGkL69N1ftYDzK0fzyPpyi1P6AVFHYRmOIc2rghjO3EsPSLYSgb2Y0Atbk8pBX4r
+	/7WmDbWLK3R+V5s+l9c+8rdvGASUc70tsZ1ni7P8QqNfw4VnkFmpp/TGpd7/zRkWlOPqXO15ID36q
+	UnK8LWsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVSrB-00000003HsK-2fZP;
-	Mon, 23 Nov 2026 12:09:13 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xVSrI-00000003Hvz-3cxY;
+	Mon, 23 Nov 2026 12:09:20 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVSqw-00000003Hnb-33d1;
-	Mon, 23 Nov 2026 12:08:58 +0000
+	id 1xVSrB-00000003HsJ-49bp;
+	Mon, 23 Nov 2026 12:09:14 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7B30B4583D;
-	Mon, 23 Nov 2026 12:08:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E9EC1F000D0;
-	Mon, 23 Nov 2026 12:08:57 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 56A7D620B0;
+	Mon, 23 Nov 2026 12:09:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E82331F000CF;
+	Mon, 23 Nov 2026 12:09:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795435738;
-	bh=VRuIav6YHmvsMLh7gooEE44y2XxBVR4YlFmEfHcC8FI=;
+	s=k20260515; t=1795435752;
+	bh=jVlva3tLXdBvj0xTe4FKUpeZOW8lUXKWogIklw4JJwM=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=Cu5iR40UMCTAEJ2wd+p/QNZOSHA0mxj629+dI25oJd65SS6aiEUmMtuSP+EfqBpzw
-	 P4bLrKFTX+y+WWgpS+CeXywKXfqZeHWEzvyA5bfU5ZnxkvF+yZwvF+G0+lnZi0a8c9
-	 tIPT2c6albgAONuFapnuKdUFG9SEC6xbweoTze+swOQyd3lctsBOYmzEacZe9CdUMk
-	 YHIg5fEmkMer30U7Cl+qQNqfsvmpbupBrp0Jfu+IqXUOfj8wp6ISR41AL2a27PuMQu
-	 smXmYbXn9HrsGtjA/oFOXfqLbcRWx1prekSdgW57mJpiqDPNjsGwqlYVgE2by/qhRx
-	 fRE4ldhhSfcJA==
-Date: Mon, 23 Nov 2026 13:08:55 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Stanislav Aleksandrov <lightofmysoul@gmail.com>
-Cc: Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Robert Marko <robimarko@gmail.com>, Guru Das Srinagesh <linux@gurudas.dev>, 
-	Thomas Gleixner <tglx@kernel.org>, Radu Rendec <radu@rendec.net>, Lee Jones <lee@kernel.org>, 
-	Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>, 
-	"Joerg Roedel (AMD)" <joro@8bytes.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	Wesley Cheng <wesley.cheng@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
-	Alim Akhtar <alim.akhtar@samsung.com>, Bart Van Assche <bvanassche@acm.org>, 
-	Bean Huo <beanhuo@micron.com>, Stanley Jhu <stanleyjhu@google.com>, 
-	Herbert Xu <herbert@gondor.apana.org.au>, "David S. Miller" <davem@davemloft.net>, 
-	"Rafael J. Wysocki" <rafael@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>, 
-	Amit Kucheria <amitk@kernel.org>, Thara Gopinath <thara.gopinath@gmail.com>, 
-	Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>, 
-	Lukasz Luba <lukasz.luba@arm.com>, Georgi Djakov <djakov@kernel.org>, 
-	Sibi Sankar <sibi.sankar@oss.qualcomm.com>, Ulf Hansson <ulfh@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, mfd@lists.linux.dev, 
-	linux-arm-kernel@lists.infradead.org, iommu@lists.linux.dev, linux-usb@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org, linux-crypto@vger.kernel.org, 
-	linux-pm@vger.kernel.org
-Subject: Re: [PATCH v2 10/16] dt-bindings: thermal: qcom-tsens: Document the
- Halliday Temperature Sensor
-Message-ID: <20261123-calculating-auspicious-terrier-0bf9fa@quoll>
-References: <20261116-halliday-dts-v2-0-2c92438c6c46@gmail.com>
- <20261116-halliday-dts-v2-10-2c92438c6c46@gmail.com>
+	b=dk2QAjiRAqck4u5mgcf43nHan6L+gOBuX9pht3YrjJTiNTsU9Zp1iVx94SEsBM5wt
+	 ELbvLjdSGKZSLvTL6UAhw9MMMH247X6kI14+OIKt6kBsgbBn4NpNBKRA/AUnwdw9c4
+	 KzCpgReRLOEfXyzQPS0VRCbjaw+RiI62FG5hD9hu/9j0QXNRHDOcyTG5+IyDvN6Upo
+	 HwaP0VL+MyB1O8afnqzeAAPVyFPoOEPVJ6jEJV0BQKfFh1eSBp4ENpoLrrqJKsNU+i
+	 LJp++Z/x/IEO0zTGIZDswSK6OFFbSUlHCGOpQJug7tXCr3Z9UoNWU4g2L1du3qONWK
+	 Xw65fHkoW6bRQ==
+Date: Mon, 23 Nov 2026 17:39:08 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Michal Wilczynski <m.wilczynski@samsung.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Emil Renner Berthing <kernel@esmil.dk>,
+	Hal Feng <hal.feng@starfivetech.com>,
+	Dominique Belhachemi <db@domibel.de>, Andy Yan <andyshrk@163.com>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Icenowy Zheng <zhengxingda@iscas.ac.cn>,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	Joshua Peisach <jpeisach@ubuntu.com>,
+	Byron Stanoszek <gandalf@winds.org>, OOHehir <oo.hehir@gmail.com>
+Subject: Re: [PATCH v7 0/5] phy: Add the StarFive JH7110 Innosilicon HDMI PHY
+Message-ID: <awQs5JgFZko9rTo9@parshuram>
+References: <CGME20261106135504eucas1p14138c1ce829febb8bcd63c4de1f29ffb@eucas1p1.samsung.com>
+ <20261106-jh7110-inno-hdmi-phy-v7-0-d49368303800@samsung.com>
+ <b6dc6c36-9ce1-49dd-bae5-245d983610bc@samsung.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261116-halliday-dts-v2-10-2c92438c6c46@gmail.com>
+In-Reply-To: <b6dc6c36-9ce1-49dd-bae5-245d983610bc@samsung.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,26 +84,23 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Mon, Nov 16, 2026 at 09:26:26PM +0000, Stanislav Aleksandrov wrote:
-> Document the Temperature Sensor (TSENS) on the Qualcomm Halliday SoC.
+On 20-11-26, 14:43, Michal Wilczynski wrote:
+
+> Gentle ping on this series.
 > 
-> Signed-off-by: Stanislav Aleksandrov <lightofmysoul@gmail.com>
-> ---
->  Documentation/devicetree/bindings/thermal/qcom-tsens.yaml | 1 +
->  1 file changed, 1 insertion(+)
+> Is there anything else needed from my side ?
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Can you please resolve the shasiko issues reported
 
-Best regards,
-Krzysztof
-
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
