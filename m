@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3AB38606A31A
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 12:09:21 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 94D86606A31A
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 12:09:44 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=EP6MvFHQ;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=dk2QAjiR
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=OKTojr7X;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=E+6H/6oP
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,64 +14,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=yMuAXg7MdSuArl+NTX2WIooLFyn9RHIFO93U38d1Zmg=; b=EP6MvFHQYPDRiPO85SwviJ2jg+
-	dw4gf4fyJOyg3dtvq+3se9rFXH8pYAQq3nFbUYZGcfWxh4E8+t/hFRnrDhpJ+JnyfFJKaD4kuPo5I
-	oW9znpJ8TuisFO+ybuZiu2PkbMp+/vH3DYjMTHezjMwlBNH806o5+UFy+GVDS7TDpk57oz6GSPK22
-	QN2uyUMUsezmaPGkL69N1ftYDzK0fzyPpyi1P6AVFHYRmOIc2rghjO3EsPSLYSgb2Y0Atbk8pBX4r
-	/7WmDbWLK3R+V5s+l9c+8rdvGASUc70tsZ1ni7P8QqNfw4VnkFmpp/TGpd7/zRkWlOPqXO15ID36q
-	UnK8LWsw==;
+	bh=GrciOASzhwArsgVQnmQF2SYRpj1VPX3vaXI3rpvdm58=; b=OKTojr7XpG5z5KR9/uco0u8Ue7
+	huq5iOE9PiN5dt2TAQpB3Vy1yf5Zkj6RyEzpu+osaje5JwQAmMgZIuNwKFGeEbhJ63Py6ryoDzekR
+	WptkLMxbwNmQP4fnAQiJc/XKhkIsAH5e/HRF1ctm2mhv8McUjmbFOuHTb7MmnVUSORqGYesZEiZ+M
+	Q3vUyqsKrYKGmdEX4v6pHlsgQnJ46KHJAVZCtPSHKX6EvqaqCkCVCd4qaQ3Rkgn6fqw8Z2HYiVhIc
+	LUGYcg5wqEkfEiZeciO50qSY8yaombWyWlXYmR2VGkE1UW5pheXxKdRWCPaDAG8c/aBMPMuY05Xrh
+	osInVaBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVSrI-00000003Hvz-3cxY;
-	Mon, 23 Nov 2026 12:09:20 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xVSrf-00000003IAM-1Pfm;
+	Mon, 23 Nov 2026 12:09:44 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVSrB-00000003HsJ-49bp;
-	Mon, 23 Nov 2026 12:09:14 +0000
+	id 1xVSrS-00000003I3H-3Zx5;
+	Mon, 23 Nov 2026 12:09:30 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 56A7D620B0;
-	Mon, 23 Nov 2026 12:09:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E82331F000CF;
-	Mon, 23 Nov 2026 12:09:11 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 803D343654;
+	Mon, 23 Nov 2026 12:09:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 296FD1F000D3;
+	Mon, 23 Nov 2026 12:09:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795435752;
-	bh=jVlva3tLXdBvj0xTe4FKUpeZOW8lUXKWogIklw4JJwM=;
+	s=k20260515; t=1795435770;
+	bh=EBAlgyArUaIDoaFWbczuSy+qeFGqGHKDwrHB/xbYHXM=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=dk2QAjiRAqck4u5mgcf43nHan6L+gOBuX9pht3YrjJTiNTsU9Zp1iVx94SEsBM5wt
-	 ELbvLjdSGKZSLvTL6UAhw9MMMH247X6kI14+OIKt6kBsgbBn4NpNBKRA/AUnwdw9c4
-	 KzCpgReRLOEfXyzQPS0VRCbjaw+RiI62FG5hD9hu/9j0QXNRHDOcyTG5+IyDvN6Upo
-	 HwaP0VL+MyB1O8afnqzeAAPVyFPoOEPVJ6jEJV0BQKfFh1eSBp4ENpoLrrqJKsNU+i
-	 LJp++Z/x/IEO0zTGIZDswSK6OFFbSUlHCGOpQJug7tXCr3Z9UoNWU4g2L1du3qONWK
-	 Xw65fHkoW6bRQ==
-Date: Mon, 23 Nov 2026 17:39:08 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Michal Wilczynski <m.wilczynski@samsung.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Emil Renner Berthing <kernel@esmil.dk>,
-	Hal Feng <hal.feng@starfivetech.com>,
-	Dominique Belhachemi <db@domibel.de>, Andy Yan <andyshrk@163.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,
-	Marek Szyprowski <m.szyprowski@samsung.com>,
-	Icenowy Zheng <zhengxingda@iscas.ac.cn>,
-	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Joshua Peisach <jpeisach@ubuntu.com>,
-	Byron Stanoszek <gandalf@winds.org>, OOHehir <oo.hehir@gmail.com>
-Subject: Re: [PATCH v7 0/5] phy: Add the StarFive JH7110 Innosilicon HDMI PHY
-Message-ID: <awQs5JgFZko9rTo9@parshuram>
-References: <CGME20261106135504eucas1p14138c1ce829febb8bcd63c4de1f29ffb@eucas1p1.samsung.com>
- <20261106-jh7110-inno-hdmi-phy-v7-0-d49368303800@samsung.com>
- <b6dc6c36-9ce1-49dd-bae5-245d983610bc@samsung.com>
+	b=E+6H/6oP8nLnOr4iihKZsT5mFLOzHyhwUMzMxmC6pmAe+pt5ais3/kGYPwi8oF5zr
+	 GjAUPCdau77AfYr2a7Mpi/s9QIus/zoxYa14PAqfbidqxzxwPdaC4msn8xdwhGgYbY
+	 nrWqf+M6Mn+OtAJyvAriYXzms38kkQbkOj2aCC5vFExcHvLJrAW61nRLiv+esgmheb
+	 hmdZLQDBBvmHVNc3/BLfmVLqfolD+YZt5NvD63SBFtb0XhEPrhJcH4DKSycDVALgmF
+	 Vepzp38JoPHLXSbuUbw56Yo0Q2S6VCXBAySB6aIOmtu9udEKeBIynyCXinbFCiTHjE
+	 1yVG1ElUOlkmw==
+Date: Mon, 23 Nov 2026 13:09:26 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Stanislav Aleksandrov <lightofmysoul@gmail.com>
+Cc: Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Robert Marko <robimarko@gmail.com>, Guru Das Srinagesh <linux@gurudas.dev>, 
+	Thomas Gleixner <tglx@kernel.org>, Radu Rendec <radu@rendec.net>, Lee Jones <lee@kernel.org>, 
+	Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>, 
+	"Joerg Roedel (AMD)" <joro@8bytes.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Wesley Cheng <wesley.cheng@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+	Alim Akhtar <alim.akhtar@samsung.com>, Bart Van Assche <bvanassche@acm.org>, 
+	Bean Huo <beanhuo@micron.com>, Stanley Jhu <stanleyjhu@google.com>, 
+	Herbert Xu <herbert@gondor.apana.org.au>, "David S. Miller" <davem@davemloft.net>, 
+	"Rafael J. Wysocki" <rafael@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>, 
+	Amit Kucheria <amitk@kernel.org>, Thara Gopinath <thara.gopinath@gmail.com>, 
+	Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>, 
+	Lukasz Luba <lukasz.luba@arm.com>, Georgi Djakov <djakov@kernel.org>, 
+	Sibi Sankar <sibi.sankar@oss.qualcomm.com>, Ulf Hansson <ulfh@kernel.org>, linux-arm-msm@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, mfd@lists.linux.dev, 
+	linux-arm-kernel@lists.infradead.org, iommu@lists.linux.dev, linux-usb@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org, linux-crypto@vger.kernel.org, 
+	linux-pm@vger.kernel.org, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Subject: Re: [PATCH v2 13/16] dt-bindings: arm: qcom,ids: Add SoC ID for
+ SXR2250P
+Message-ID: <20261123-pastel-barracuda-of-rain-bce8ac@quoll>
+References: <20261116-halliday-dts-v2-0-2c92438c6c46@gmail.com>
+ <20261116-halliday-dts-v2-13-2c92438c6c46@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <b6dc6c36-9ce1-49dd-bae5-245d983610bc@samsung.com>
+In-Reply-To: <20261116-halliday-dts-v2-13-2c92438c6c46@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,23 +88,26 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 20-11-26, 14:43, Michal Wilczynski wrote:
-
-> Gentle ping on this series.
+On Mon, Nov 16, 2026 at 09:26:29PM +0000, Stanislav Aleksandrov wrote:
+> Add the ID for the Qualcomm SXR2250P (Snapdragon XR2+ Gen 2) SoC.
 > 
-> Is there anything else needed from my side ?
+> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+> Signed-off-by: Stanislav Aleksandrov <lightofmysoul@gmail.com>
+> ---
+>  include/dt-bindings/arm/qcom,ids.h | 1 +
 
-Can you please resolve the shasiko issues reported
+This should be rebased on my patch removing the IDs.
 
--- 
-~Vinod
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
