@@ -2,88 +2,65 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CC0D6606A33A
-	for <linux-phy@archiver.kernel.org>; Sun, 22 Nov 2026 21:37:58 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F2270606A31E
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 01:25:40 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=jN3ruoGS;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=intel.com header.i=@intel.com header.a=rsa-sha256 header.s=Intel header.b=SWXjVI5D
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=jkUeG5s3;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=rock-chips.com header.i=@rock-chips.com header.a=rsa-sha256 header.s=default header.b=GT3jbs/W
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=5MSkpvS8KWD1oWtkYvVl76iaWn/GhI24xmsFOSxlexM=; b=jN3ruoGSc1Tvt4pbmgUYkv9WBH
-	Mf0TYYOAQ/ccehGwoZUNs/YlwAPilBlyWJK74RXreSUgZNlyXJmP1VO3ETZFIUN7bzLUQkwX9Exmf
-	oL/SQP6oAEkHeVqfCKWL1L2LmRyD5U2jlQZf5FqV2qwWqcIDSVOwULdcDnCGSkReG8ztX+cBSpfAV
-	FhIWOxQudxzmv1kLl+e31krobhoDEGjX1mJ02d+/fiInXv18miIf9uyioClRlxiruyl0vAbcrx0th
-	euJV2a+TnIN/uV7X5msb1aMUDSivOvBhUCO51pphWEVOUKC836ya4t9jHoG5NflYHbxdXNWSNe2dy
-	ahY1vIjw==;
+	bh=aEi9C/hUvflHUHltJ4eYyUxpjApoIOTVhuv/tvQ3RBI=; b=jkUeG5s393wrEc05956TY9BYzT
+	kV1AJ26ajPUNk9JNuO8PFtmy43bz2Gdm7ai9OiiL6F/Ft3tqpmnm8UvwmWOz8Q8r6pEMOSgZOZORC
+	1T1HgZy9HYVs1W6GOiAD1m/G3rW6TyoyGIeG+6hTRfrXAD/IjK58S8jaVQ8xLTSyT8c/W2C+iNlAp
+	C22shRy4/dJCSZr9Ltx3xaB0Q7EQsYTmWscl1rzQISLwe5b+fCOzFThE952jUygValaK3K5340Pze
+	/5BjhDIO2kxRmsS7IyrrM7o/f3WBrDv6NkctoSXvnlU6ko3dPjRvd2iRb1rPNHhM+0NPukO1a6HNZ
+	G86/A9Vw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVFG2-00000001oER-2S0L;
-	Sun, 22 Nov 2026 21:37:58 +0000
-Received: from mgamail.intel.com ([198.175.65.11])
+	id 1xVIoO-000000024vP-2HoX;
+	Mon, 23 Nov 2026 01:25:40 +0000
+Received: from mail-m83212.xmail.ntesmail.com ([156.224.83.212])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVFFz-00000001oDS-3uVg;
-	Sun, 22 Nov 2026 21:37:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1795383476; x=1826919476;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=47WiqbuVGJhCQD/UFYev9AOeQxncNO/1VcFLwy5fqR8=;
-  b=SWXjVI5DXsceopy6KNyUIyhbbEeHJ7jAhgBTIwh/ZLSSDVrIUpD6q+to
-   R00tXGcAgKkCmeZNM35uvVJjWDj9KdCk6ONAqZgWnCUXUUlGsup/er3jq
-   5jmwniMoN+uvTIyInflKoC/Dni2AXWvv72ynpJkJugyRDTsLcC9jeBi1G
-   328OShbdYew+AvRFMTFHbIAsUafJXs/FH9lfLx7f7smfsK5Eiob7DC3ZL
-   jIgNnyMMG6CtWouA0o82uXmo6KjgXrA7rItnQSticTrPjd4vqj1vQNlxo
-   Vu9CajUpQ4hN3OYm/P431ABERATGGDUOOBrEaiQnRT9KlIWpvZwSFZAUI
-   w==;
-X-CSE-ConnectionGUID: Gpymdbi5QEyR2LSFQXAZCA==
-X-CSE-MsgGUID: Fe9BGeHGSCuMmCTkE8L9TA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11974"; a="4085143"
-X-IronPort-AV: E=Sophos;i="6.27,227,1787036400"; 
-   d="scan'208";a="4085143"
-Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 22 Nov 2026 13:37:54 -0800
-X-CSE-ConnectionGUID: a+H/fAZnQ1WSPIPsfJH+bw==
-X-CSE-MsgGUID: V9DTBvzdRyOQ6xxQb8LhZA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.27,227,1787036400"; 
-   d="scan'208";a="11082364"
-Received: from lkp-server01.sh.intel.com (HELO 0caa9d2d175c) ([10.239.97.150])
-  by orviesa007.jf.intel.com with ESMTP; 22 Nov 2026 13:37:50 -0800
-Received: from kbuild by 0caa9d2d175c with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1xVFFs-00000001M6c-0KH7;
-	Sun, 22 Nov 2026 21:37:48 +0000
-Date: Mon, 23 Nov 2026 05:36:51 +0800
-From: kernel test robot <lkp@intel.com>
-To: Sasha Finkelstein <k@chaosmail.tech>, Sven Peter <sven@kernel.org>,
-	Janne Grunau <j@jannau.net>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, Sasha Finkelstein <k@chaosmail.tech>
-Subject: Re: [PATCH v2 5/5] phy: apple: atc: Split generation-specific code
-Message-ID: <202611230532.xXpnoRHP-lkp@intel.com>
-References: <20261122-t8122-phy-v2-5-8d5c8fdf31ba@chaosmail.tech>
+	id 1xVIoJ-000000024ud-3C9e;
+	Mon, 23 Nov 2026 01:25:39 +0000
+Received: from [172.16.12.90] (unknown [61.154.14.86])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 5594cef32;
+	Mon, 23 Nov 2026 09:25:29 +0800 (GMT+08:00)
+Message-ID: <0befeff5-c51d-4c4b-a85a-b00835889664@rock-chips.com>
+Date: Mon, 23 Nov 2026 09:25:27 +0800
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261122-t8122-phy-v2-5-8d5c8fdf31ba@chaosmail.tech>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2] phy: rockchip: inno-dsidphy: fix 1.5 GHz rate units
+To: ZhuXiangyu <1194781887@qq.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Heiko Stuebner <heiko@sntech.de>,
+ Manivannan Sadhasivam <mani@kernel.org>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <tencent_6A9CF9A2529C8FA2C04933F2D5D1A259B506@qq.com>
+Content-Language: en-US
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+In-Reply-To: <tencent_6A9CF9A2529C8FA2C04933F2D5D1A259B506@qq.com>
+X-HM-Tid: 0aa2060212fb03a7kunm415fa07ab4eba9
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkZTE4YVhgfQxpKHUweThkYHVYVFA
+	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSU
+	9PT0hVSktLVUpCS0tZBg++
+DKIM-Signature: a=rsa-sha256;
+	b=GT3jbs/WA5Wwx71x54Vye2Ydhd1iE17VsTClqOa7d6cCPDGkX8CbWc7o5X5NBn9zVdfZp66mexixazzG2g15WTqX1CcAUxdW9phTnwi4Q3mrOlCnuuuoIcf97JxnBauQ3YUyHxV9cVtSWjEJSZ1e0IFNxhHEsVjUMi5/Uzre2S8=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=LliMgjnXMFNyw0KxKrefKqjXgD5lvXyOXgtZPmEuFlM=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261122_133756_044061_4EDC4890 
-X-CRM114-Status: UNSURE (   9.04  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -4.4 (----)
+X-CRM114-CacheID: sfid-20261122_172537_383698_8D9C5A66 
+X-CRM114-Status: GOOD (  15.51  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,123 +73,93 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Sasha,
+Hi Xiangyu,
 
-kernel test robot noticed the following build errors:
+On 11/22/2026 1:11 AM, ZhuXiangyu wrote:
+> The 1.5 GHz Innosilicon DSI PHY timing table stores its rates in Mbps,
+> whereas the other timing tables and the lookup loop use Hz. When
+> enabling a mode, the driver compares inno->pll.rate in Hz (e.g.
+> 372000000) against timings[].rate in Mbps (e.g. 400), so no entry
+> matches. The loop falls through to the last, fastest entry and programs
+> an excessively large TLPX/LPX counter, preventing panels from decoding
+> low-power DCS initialization commands.
+> 
+> Convert the 1.5 GHz timing table rate values to Hz so the lookup
+> selects the matching entry.
+> 
+> Tested on an RK3506B board: the panel receives the low-power init
+> sequence and the framebuffer console displays properly.
+> 
+> Fixes: 785a9d5bb145 ("phy: rockchip: inno-dsidphy: Add support for rk3506")
+> Signed-off-by: Xiangyu Zhu <1194781887@qq.com>
+> ---
+> Changes in v2:
+> - Split out from the combined drm/phy patch into a standalone phy
+>   subsystem patch per Heiko's review.
+> - Limit recipients to phy and Rockchip maintainers/lists.
+> - Fix Signed-off-by author name formatting.
+> 
+>  .../phy/rockchip/phy-rockchip-inno-dsidphy.c  | 28 +++++++++----------
+>  1 file changed, 14 insertions(+), 14 deletions(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
+> index 6ad04b0c..fcf7aa17 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
+> @@ -282,20 +282,20 @@ struct inno_mipi_dphy_timing inno_mipi_dphy_timing_table_max_1ghz[] = {
+>  
+>  static const
+>  struct inno_mipi_dphy_timing inno_mipi_dphy_timing_table_max_1_5ghz[] = {
+> -	{ 110, 0x02, 0x7f, 0x16, 0x02, 0x02},
+> -	{ 150, 0x02, 0x7f, 0x16, 0x03, 0x02},
+> -	{ 200, 0x02, 0x7f, 0x17, 0x04, 0x02},
+> -	{ 250, 0x02, 0x7f, 0x17, 0x05, 0x04},
+> -	{ 300, 0x02, 0x7f, 0x18, 0x06, 0x04},
+> -	{ 400, 0x03, 0x7e, 0x19, 0x07, 0x04},
+> -	{ 500, 0x03, 0x7c, 0x1b, 0x07, 0x08},
+> -	{ 600, 0x03, 0x70, 0x1d, 0x08, 0x10},
+> -	{ 700, 0x05, 0x40, 0x1e, 0x08, 0x30},
+> -	{ 800, 0x05, 0x02, 0x1f, 0x09, 0x30},
+> -	{1000, 0x05, 0x08, 0x20, 0x09, 0x30},
+> -	{1200, 0x06, 0x03, 0x32, 0x14, 0x0f},
+> -	{1400, 0x09, 0x03, 0x32, 0x14, 0x0f},
+> -	{1500, 0x0d, 0x42, 0x36, 0x0e, 0x0f},
+> +	{ 110000000, 0x02, 0x7f, 0x16, 0x02, 0x02},
+> +	{ 150000000, 0x02, 0x7f, 0x16, 0x03, 0x02},
+> +	{ 200000000, 0x02, 0x7f, 0x17, 0x04, 0x02},
+> +	{ 250000000, 0x02, 0x7f, 0x17, 0x05, 0x04},
+> +	{ 300000000, 0x02, 0x7f, 0x18, 0x06, 0x04},
+> +	{ 400000000, 0x03, 0x7e, 0x19, 0x07, 0x04},
+> +	{ 500000000, 0x03, 0x7c, 0x1b, 0x07, 0x08},
+> +	{ 600000000, 0x03, 0x70, 0x1d, 0x08, 0x10},
+> +	{ 700000000, 0x05, 0x40, 0x1e, 0x08, 0x30},
+> +	{ 800000000, 0x05, 0x02, 0x1f, 0x09, 0x30},
+> +	{1000000000, 0x05, 0x08, 0x20, 0x09, 0x30},
+> +	{1200000000, 0x06, 0x03, 0x32, 0x14, 0x0f},
+> +	{1400000000, 0x09, 0x03, 0x32, 0x14, 0x0f},
+> +	{1500000000, 0x0d, 0x42, 0x36, 0x0e, 0x0f},
+>  };
+>  
+>  static const
 
-[auto build test ERROR on 6628e7d4c6b25c8d18f1345e3a20d21829aae7e4]
+It seems I cannot apply your patch. Please consider rebase it.
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Sasha-Finkelstein/dt-bindings-phy-atcphy-Add-M3-series/20261122-132757
-base:   6628e7d4c6b25c8d18f1345e3a20d21829aae7e4
-patch link:    https://lore.kernel.org/r/20261122-t8122-phy-v2-5-8d5c8fdf31ba%40chaosmail.tech
-patch subject: [PATCH v2 5/5] phy: apple: atc: Split generation-specific code
-config: s390-allmodconfig (https://download.01.org/0day-ci/archive/20261123/202611230532.xXpnoRHP-lkp@intel.com/config)
-compiler: clang version 24.0.0git (https://github.com/llvm/llvm-project 2012344e5da8e03ea4b8283ecd6fad6e13f09d64)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20261123/202611230532.xXpnoRHP-lkp@intel.com/reproduce)
+Other than that, it looks good.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202611230532.xXpnoRHP-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
->> drivers/phy/apple/atc-t8103.c:33:7: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-      33 |                     FIELD_PREP(ACIOPHY_TOP_BIST_PHY_CFG1_LN0_PWR_DOWN, 3));
-         |                     ^
-   drivers/phy/apple/atc-t8103.c:71:7: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-      71 |                     FIELD_PREP(DPRX_PCLK_SELECT, 1));
-         |                     ^
-   drivers/phy/apple/atc-t8103.c:146:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     146 |                FIELD_PREP(ACIOPHY_SLEEP_CTRL_TX_SMALL_OV, 3));
-         |                ^
-   3 errors generated.
---
->> drivers/phy/apple/atc-t8122.c:78:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-      78 |                FIELD_PREP(ACIOPHY_BIST_MAC_USBPHY_CFG_OV1_LN0_PWR_DOWN_OV, 2),
-         |                ^
-   drivers/phy/apple/atc-t8122.c:158:7: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     158 |                     FIELD_PREP(AUSPLL_APB_CMD_OVERRIDE_CMD, command) |
-         |                     ^
-   drivers/phy/apple/atc-t8122.c:173:7: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     173 |                     FIELD_PREP(DPTX_PCLK1_SELECT, 1) | FIELD_PREP(DPTX_PCLK2_SELECT, 1) |
-         |                     ^
-   drivers/phy/apple/atc-t8122.c:249:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     249 |                FIELD_PREP(LN_LDOCLK1_VREG_ADJ, 12));
-         |                ^
-   drivers/phy/apple/atc-t8122.c:307:25: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     307 |                LN_VREF221_EN | FIELD_PREP(LN_VREF221_FILTER_ADJUST, 1));
-         |                                ^
-   5 errors generated.
-
-
-vim +/FIELD_PREP +33 drivers/phy/apple/atc-t8103.c
-
-    11	
-    12	static void atcphy_configure_pipehandler_usb3_host_t8103(struct apple_atcphy *atcphy)
-    13	{
-    14		int ret;
-    15		u32 reg;
-    16	
-    17		core_set32(atcphy, ACIOPHY_TOP_BIST_PHY_CFG0,
-    18			   ACIOPHY_TOP_BIST_PHY_CFG0_LN0_RESET_N);
-    19		core_set32(atcphy, ACIOPHY_TOP_BIST_OV_CFG, ACIOPHY_TOP_BIST_OV_CFG_LN0_RESET_N_OV);
-    20		ret = readl_poll_timeout(atcphy->regs.core + ACIOPHY_TOP_PHY_STAT, reg,
-    21					 !(reg & ACIOPHY_TOP_PHY_STAT_LN0_UNK23), 10, 10000);
-    22		if (ret)
-    23			dev_warn(atcphy->dev,
-    24				 "Timed out waiting for ACIOPHY_TOP_PHY_STAT_LN0_UNK23\n");
-    25	
-    26		core_set32(atcphy, ACIOPHY_TOP_BIST_READ_CTRL,
-    27			   ACIOPHY_TOP_BIST_READ_CTRL_LN0_PHY_STATUS_RE);
-    28		core_clear32(atcphy, ACIOPHY_TOP_BIST_READ_CTRL,
-    29			     ACIOPHY_TOP_BIST_READ_CTRL_LN0_PHY_STATUS_RE);
-    30	
-    31		core_mask32(atcphy, ACIOPHY_TOP_BIST_PHY_CFG1,
-    32			    ACIOPHY_TOP_BIST_PHY_CFG1_LN0_PWR_DOWN,
-  > 33			    FIELD_PREP(ACIOPHY_TOP_BIST_PHY_CFG1_LN0_PWR_DOWN, 3));
-    34	
-    35		core_set32(atcphy, ACIOPHY_TOP_BIST_OV_CFG,
-    36			   ACIOPHY_TOP_BIST_OV_CFG_LN0_PWR_DOWN_OV);
-    37		core_set32(atcphy, ACIOPHY_TOP_BIST_CIOPHY_CFG1,
-    38			   ACIOPHY_TOP_BIST_CIOPHY_CFG1_CLK_EN);
-    39		core_set32(atcphy, ACIOPHY_TOP_BIST_CIOPHY_CFG1,
-    40			   ACIOPHY_TOP_BIST_CIOPHY_CFG1_BIST_EN);
-    41		writel(0, atcphy->regs.core + ACIOPHY_TOP_BIST_CIOPHY_CFG1);
-    42	
-    43		ret = readl_poll_timeout(atcphy->regs.core + ACIOPHY_TOP_PHY_STAT, reg,
-    44					 (reg & ACIOPHY_TOP_PHY_STAT_LN0_UNK0), 10, 10000);
-    45		if (ret)
-    46			dev_warn(atcphy->dev,
-    47				 "timed out waiting for ACIOPHY_TOP_PHY_STAT_LN0_UNK0\n");
-    48	
-    49		ret = readl_poll_timeout(atcphy->regs.core + ACIOPHY_TOP_PHY_STAT, reg,
-    50					 !(reg & ACIOPHY_TOP_PHY_STAT_LN0_UNK23), 10, 10000);
-    51		if (ret)
-    52			dev_warn(atcphy->dev,
-    53				 "timed out waiting for ACIOPHY_TOP_PHY_STAT_LN0_UNK23\n");
-    54	
-    55		atcphy_clear_nonselected_phy_reset(atcphy);
-    56	
-    57		/* More BIST stuff (?) */
-    58		writel(0, atcphy->regs.core + ACIOPHY_TOP_BIST_OV_CFG);
-    59		core_set32(atcphy, ACIOPHY_TOP_BIST_CIOPHY_CFG1,
-    60			   ACIOPHY_TOP_BIST_CIOPHY_CFG1_CLK_EN);
-    61		core_set32(atcphy, ACIOPHY_TOP_BIST_CIOPHY_CFG1,
-    62			   ACIOPHY_TOP_BIST_CIOPHY_CFG1_BIST_EN);
-    63	}
-    64	
+Reviewed-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Best, 
+Chaoyi
+
 
 -- 
 linux-phy mailing list
