@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D602B606A334
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 12:09:03 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DB6CD606A32E
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 12:09:13 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=FQ6pjb+d;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=YCnUYlR0
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=p9lunVPG;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Cu5iR40U
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,36 +14,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=hXrnxf9M11Ix8Z2l6oq8Tt0hcLUEQmyBrGh4qwI0XOs=; b=FQ6pjb+dkRUWX3NIethYEm8HzZ
-	3D9xBsNpIkwQDmLOooflpb2aODwCJmUlN/kXdfrXnjy2sfTImy7OAStMcLOvPNsti6a0yazozz5l2
-	M+ZJa64Z0X525niOWx1Ttrv7/xlkLyAqxvTYudLSQPvbypzZP0e89HLUCkSYPGIQTxi/ujVHhxqgA
-	uiqnncOwLFE+VW+aqf85QPu4ANv/O3kds9uAKQlbCs/yNUWfiX1hDrUEbvpckcQkN0iMDz0/n5sLP
-	6kQpuPLVly9r1AYSZC1aoYoRXE9Ej0rZKwxQeFKehYlJmKUWWjzTA2XzIcLH4ALZE+wHTgvB1wJ0h
-	UySn0h4Q==;
+	bh=8Kefw1qDhjR60aCcZA5+K5CBIw2DZBzCVWOGf9j0OsI=; b=p9lunVPGiS5V3zVr6biuY12m4k
+	S7+AT/yECQG7PyViP7t6e1JKjVi6ZGsYjQiL75Cd8a058CBqFyigEkMiUqY1ShInaNTPR5qozbvyE
+	aeKZzqP8xDon2hwyl851QuD7pylgGDD50pRH9HD+zqPGF8mHrGehkXo3wn4L7SsQzfgEIm2n1BlSX
+	XyO1oP30CW4AfLmzlmMftt+rDGPxb/lnYJ5JhZ0MQ3AeV73L7ghuEUmwsdfxW+Ilv/sNvG7A4Rclf
+	CHctm/Wh6FTwjqknLF0HEIqUj3j0yJqi3VLzBJ/uuIyS9X3pLegv+d2gKdSI/LYK76uSKNP8qOfjT
+	3ZedIbJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVSr1-00000003Hp5-2NMt;
-	Mon, 23 Nov 2026 12:09:03 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xVSrB-00000003HsK-2fZP;
+	Mon, 23 Nov 2026 12:09:13 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVSqq-00000003Hm3-3GbP;
-	Mon, 23 Nov 2026 12:08:52 +0000
+	id 1xVSqw-00000003Hnb-33d1;
+	Mon, 23 Nov 2026 12:08:58 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3B14361F4B;
-	Mon, 23 Nov 2026 12:08:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EFB6C1F000EF;
-	Mon, 23 Nov 2026 12:08:50 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 7B30B4583D;
+	Mon, 23 Nov 2026 12:08:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E9EC1F000D0;
+	Mon, 23 Nov 2026 12:08:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795435731;
-	bh=/SiwyGPERRZ+wI7IGJpaGAyT67P6/mQY+ZPMOD9UOv8=;
+	s=k20260515; t=1795435738;
+	bh=VRuIav6YHmvsMLh7gooEE44y2XxBVR4YlFmEfHcC8FI=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=YCnUYlR06NIXDwlkMqxoqluJqGGwvJWyF5BytmNeQvqkCwBMflpmZawVrGD6583TA
-	 VvkJWpwZg9AJOQs0jZYfRYZnDOwXQi/mfjpx51kYz2RQn851jLG5fx0YOIs7qI5utw
-	 lskmBmAGTmAfWa6HUCXFltCKYqf05BLYLOOhSRQ8wuhUYANAgcQ8z1Me0hltHfLwBU
-	 c+i1tHdzrUEzUMMP8dgqDx1CCLVlEVq804U3n+BpezSTjSnkwXm7V23EgmC/FvWRl0
-	 zStihzQ1ZcJOOWAo9kE1yvVsIPUL8FHvo667wgP9uTBpNUaLq1tT+zGcOrdQgBivz6
-	 npkH1DPGOGGiw==
-Date: Mon, 23 Nov 2026 13:08:48 +0100
+	b=Cu5iR40UMCTAEJ2wd+p/QNZOSHA0mxj629+dI25oJd65SS6aiEUmMtuSP+EfqBpzw
+	 P4bLrKFTX+y+WWgpS+CeXywKXfqZeHWEzvyA5bfU5ZnxkvF+yZwvF+G0+lnZi0a8c9
+	 tIPT2c6albgAONuFapnuKdUFG9SEC6xbweoTze+swOQyd3lctsBOYmzEacZe9CdUMk
+	 YHIg5fEmkMer30U7Cl+qQNqfsvmpbupBrp0Jfu+IqXUOfj8wp6ISR41AL2a27PuMQu
+	 smXmYbXn9HrsGtjA/oFOXfqLbcRWx1prekSdgW57mJpiqDPNjsGwqlYVgE2by/qhRx
+	 fRE4ldhhSfcJA==
+Date: Mon, 23 Nov 2026 13:08:55 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Stanislav Aleksandrov <lightofmysoul@gmail.com>
 Cc: Bjorn Andersson <andersson@kernel.org>, 
@@ -67,15 +67,15 @@ Cc: Bjorn Andersson <andersson@kernel.org>,
 	linux-arm-kernel@lists.infradead.org, iommu@lists.linux.dev, linux-usb@vger.kernel.org, 
 	linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org, linux-crypto@vger.kernel.org, 
 	linux-pm@vger.kernel.org
-Subject: Re: [PATCH v2 09/16] dt-bindings: crypto: qcom,inline-crypto-engine:
- Add Halliday
-Message-ID: <20261123-cherubic-sparkling-mussel-e94df1@quoll>
+Subject: Re: [PATCH v2 10/16] dt-bindings: thermal: qcom-tsens: Document the
+ Halliday Temperature Sensor
+Message-ID: <20261123-calculating-auspicious-terrier-0bf9fa@quoll>
 References: <20261116-halliday-dts-v2-0-2c92438c6c46@gmail.com>
- <20261116-halliday-dts-v2-9-2c92438c6c46@gmail.com>
+ <20261116-halliday-dts-v2-10-2c92438c6c46@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261116-halliday-dts-v2-9-2c92438c6c46@gmail.com>
+In-Reply-To: <20261116-halliday-dts-v2-10-2c92438c6c46@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,12 +95,12 @@ X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Mon, Nov 16, 2026 at 09:26:25PM +0000, Stanislav Aleksandrov wrote:
-> Document the Inline Crypto Engine on the Qualcomm Halliday SoC.
+On Mon, Nov 16, 2026 at 09:26:26PM +0000, Stanislav Aleksandrov wrote:
+> Document the Temperature Sensor (TSENS) on the Qualcomm Halliday SoC.
 > 
 > Signed-off-by: Stanislav Aleksandrov <lightofmysoul@gmail.com>
 > ---
->  Documentation/devicetree/bindings/crypto/qcom,inline-crypto-engine.yaml | 1 +
+>  Documentation/devicetree/bindings/thermal/qcom-tsens.yaml | 1 +
 >  1 file changed, 1 insertion(+)
 
 Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
