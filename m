@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 39054606A330
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 20:32:40 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4C04C60A2624
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 20:32:50 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=uLymWKDi;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=KQNLeil0
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=AySd4s4x;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=QTV+OLqE
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
@@ -14,71 +14,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=+1qpXOv/UXv+ZCE3vHmJA7Kitkbcz1tBiDzeV+mZrQk=; b=uLymWKDicuoQQ3X1NIIYDKVsTV
-	RPcPE8wIyk8ubXJ96is37ydI1k5+Q+M1rVE4Pqzj3wpNFJ0gWiCDQ0n0k5kKvC8l8MDMRE4paRIVi
-	rybReA67isn91HGx6C4nAK0G7qDzdqD29jSdW1GbaTc5adJtdi8KzcoT9Ib67jpnc0KRBf2b1wQzd
-	EUWkCv6QeWu5wIszdax46WbWK+jHD2nrolZYLtRYDplhFubv+VWY1wTa9dJqvLMwE0edv7NJx31gV
-	HEZL3RN1bS+lpyKLOWkWuHqouiJBfjymnXMkEYSNMJ6lzU7XRlV7Ldrz+eblgXm1FZTn63jI/o0iO
-	LlnsovGg==;
+	bh=/JTWtPlyf0LcnMO+uXeo3Gh6OysapT6nJeu8VFQHG10=; b=AySd4s4x96df1Jfb5s5W67K7Fm
+	yvTgCzQcin1n8KNrehBcRa/Tu0q//hNv9/Unn/O/LaX/8g+vsaRTiTp11B3KDvVmgRpdnmWd1Cn6T
+	ri2envho34EI/+k1TNdWr4AYGQoJsUs7DYcex7Zwsl+RgJXGZVFpre1YNmKVW2kGQD3OzWmoGmfdV
+	wn0GXooYoPEqRGAy6sW12DqYJ7rGcqlm8vEclw051QH4YUP9F8B+Nz65wH1JXdeS9rplTvyKFQWdq
+	SiUlNnHfsfcPtcgAdCvyXgknh6UTE1Bna9xgxUWqQUPH5N4LG7OefDQ93A5sJ+oUqM5MYWac3/FCS
+	XNEucR7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVaiN-00000004qWE-3OAr;
-	Mon, 23 Nov 2026 20:32:39 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xVaiX-00000004qbN-4BmK;
+	Mon, 23 Nov 2026 20:32:50 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVaiM-00000004qVC-1K3z;
-	Mon, 23 Nov 2026 20:32:38 +0000
+	id 1xVaiO-00000004qWN-12Uh;
+	Mon, 23 Nov 2026 20:32:40 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 00F7144287;
-	Mon, 23 Nov 2026 20:32:38 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id D9E824130D;
+	Mon, 23 Nov 2026 20:32:39 +0000 (UTC)
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795465957;
-	b=iOtjEsL2Q+i3LzgiE3w+KuJluBjxBbo8EwFX/moGyUba1kn+UbIuLex6pPFm5UeHFvwM
-	 H8ig3agIoHRCwwAunmlZwX97AMxtqOHoGlWKGT1EGb8JqLmM/gMIroTAT2KTR9qDfcueo
-	 zjblP0hyjnZN6ba/DIXf/y6FsZrDJbUxVsUnsWWI6fVbVV+Omq2hvBr2ArRGsAmT/+QWt
-	 vwEnOc5GFFDMiJj7Xyv7r+PX9Gr+UuThajO/M5OI1guQfwEWNqaxut7Nwk/utZLNwWUVV
-	 ejCn1PmvuyXnT2R8yVeixCOr+daR4TqjN6alCpOrKTBNdExupWsQSJeRYemPSd9axEw==
+	t=1795465959;
+	b=x1XuYOcOsPPdpVxE8YCrOHBJamovsqznqOmaKR0PkGyyoefdXu5kkg5SPjpPlkQl85t1
+	 w7Ri7Cpd2VOHduwTS9F2YNXANn71XGQOSaw3OjeWLgy5jRnLXXh+s2zSZ91+RbyltRYBY
+	 65kpCkl92Y0iPTNLZLlt+F5VaOiJzh5P9Ny5tNx0dq6abcfOmFxv4/716Mq8E/YYA8Bby
+	 yXtOLxvd/n88k1t/LOR3C/0Gp/fEP2zDorcnY7IysMQsN0p6HlFy3p6363r1RGF/83stz
+	 eYoG2WSV1k2DPEaPABMbAfsnDzv6JP9pwP7qdydtYX0ZXekG/bPL3x7mIh/YXAW1Z5Q==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795465957;
+	c=relaxed/relaxed; t=1795465959;
 	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
 	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
 	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
 	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=9tyMkUr9+zYWv3mAdl+/oTYNIcjMUy1JAChBbK6vIio=;
-	b=z9dSqIBGAboFrpQnMo61whta9IURKSojLxc9ri2KnSbBYbMYyOhPLoyTlRc9cNjszCwf
-	 PkH3D2rXPc9XDqbmNukH9j+1AW/VhrhMVJqg0jj9k2AaAk6pUKF+2HcoSD1tao7Bg4OCs
-	 wcb77IF7/QahfMs5CMJKz1IYLdydkkKAaUFzsU3bxM1pFhtofvDcsrTifK3ilV2SeWUWD
-	 JeSOc3wCnMmxC7J1TWE27yZ1irO7Tw3Lwl1j+vQq9Dd49t31mDqIBALGWaFcamQE0DSVM
-	 THM9swcm4VhGHluEQ4Gk3KuAs/dbKkNOy7tB4HT49jlw+dGvf4iPYAUPh7nwilLCDHQ==
+	bh=lSA+wX9NNEY3sTm7hObzBOSDNhatk2iNQOlIwAan+js=;
+	b=17Y4UXSHWV7frmYT/v/Pe/UXZcol0dRbA8yfqCPRLy1lAvGJ1H41G+DPalFYZcVXn18r
+	 BD09XXP/YbY6GimG+jMRczrYloYSLSbTfy9OlwqauaGk88aIGl378d+4D3L1p7CWuJlLJ
+	 iXQ65adVPXV0LgYg354dtazVp94iwPDWhP1We0nenQcg35qhSA4VNkRQ7FasGixa9TsKk
+	 p2UwZx0MAJtzC2Hfepa6GhcH5mdViwBs7tF6vY93tev1SDQVLvkCwBDhoL0I4IgRKrpYp
+	 kAl9URld72AVAVfS9kDgNrG08Iq7j8XsTKj4B966KqcWhuu5fu0YtRVs8s0kvhgjh+A==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id DC98B1F000D3;
-	Mon, 23 Nov 2026 20:32:17 +0000 (UTC)
+	by smtp.kernel.org (Postfix) with ESMTPS id 32B771F000D1;
+	Mon, 23 Nov 2026 20:32:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795465957;
-	bh=9tyMkUr9+zYWv3mAdl+/oTYNIcjMUy1JAChBbK6vIio=;
+	s=k20260515; t=1795465959;
+	bh=lSA+wX9NNEY3sTm7hObzBOSDNhatk2iNQOlIwAan+js=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=KQNLeil0pnY3SrpZpmzEetia+5h2ujIhwz395ANnl5+CGDA4FJrm6su6cs0RtKQR1
-	 b9qrMND+GQ4PWNWC0tdvTwcrjjFt9HXQV7Scq5uXfnixwVAZ/gdYI6AldMGh94GSpH
-	 aA997h2qIxXWaumeCqUxezbRuMZ0abYn6PlOQkT70461iQS7lz+V4J4kToFJ4UdZFb
-	 WKPJ8G13SlT1HYrc76oYGqBSEe1PqxyAWVw7RtvkurczwjVIPpvvNHaCISMiltdMQs
-	 eTQ/cDaZU3EvFhWcNB9pw7H9cDHSV+ZU2+g0u53vUm0VDHPya55EU9ii81hnS6L49r
-	 kagMxuPPI0wsA==
+	b=QTV+OLqEpMuSgJeTfvIE27E7FRr2wDGmlAhczjlfNK48DJ/Aissrs+qXqzcWCq2SM
+	 UqWoDnvLPM7L+HfF6jxeRcN+HwtoQFWDsP5URjP5DRxsyHVwgKvCwPays99umwTnpJ
+	 XvdCPMUEG/gCJFF5yh3qoun30rn9SX0axuA41HqLlu2yyF52sMAGPB8mVkL/gVNROa
+	 wffGEGrmMn2i6/G1hsUSSHAZiL+HuKyPsYK//Lj9ycLW5YnyPMfOS+c/oHXlOJc+ic
+	 K5OoJnJohhrneaNng9x9+phb3ibDCOqUWYeoVdbCi/2XSe2gIkK3463O5KnNdomZGz
+	 hd1DlMuA/74RA==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 5E1B54C6FF;
+	by lkml.kernel.org (Postfix) with ESMTP id B09C64C70A;
 	Mon, 23 Nov 2026 20:32:17 +0000 (UTC)
 From: Fil Dunsky via B4 Relay <devnull+filipp.dunsky.gmail.com@kernel.org>
-Date: Mon, 23 Nov 2026 23:32:15 +0300
-Subject: [PATCH v2 1/8] PCI: dwc: Export the multiplexed MSI interrupt
- handler
+Date: Mon, 23 Nov 2026 23:32:18 +0300
+Subject: [PATCH v2 4/8] dt-bindings: phy: Describe CS7542 PCIe SerDes
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261123-b4-cs7542-pcie-v2-1-f589a9cd0bef@gmail.com>
+Message-Id: <20261123-b4-cs7542-pcie-v2-4-f589a9cd0bef@gmail.com>
 References: <20261123-b4-cs7542-pcie-v2-0-f589a9cd0bef@gmail.com>
 In-Reply-To: <20261123-b4-cs7542-pcie-v2-0-f589a9cd0bef@gmail.com>
 To: Manivannan Sadhasivam <mani@kernel.org>, 
@@ -96,11 +95,11 @@ Cc: Jingoo Han <jingoohan1@gmail.com>,
  linux-clk@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795465935; l=872;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795465935; l=2484;
  i=filipp.dunsky@gmail.com; s=20260930; h=from:subject:message-id;
- bh=Mna9V2FvctfGCov2fj28CrWMP+FmQdEcH5a5uq4pt5U=;
- b=iPA0bYRf79FFPZCfNmPxcL55dq3dCI1ypOQzRlCncf7ujc4VHkSd+c3JzvJjVekdl6zTVt/SN
- I53Le0IATu0AVXqUzEOQetC/fcE6WJgt8jFDHqqTTa+3cqZRXGvbTNs
+ bh=MyL1iV5O/zQ+yKb0w2UWGAKIr38mntIf4hXKW1lxhNg=;
+ b=UXKv6FgpeRwIkYXwJFceJBFMvFDJqHn2ytGbIl4h2Wd1rCSHkXQDOUS12Q5Lx1HC8egNLGh1g
+ c89qdqk9MSACOCZ+I3uYzMj8RQtRoYJuSPK3TCzQWILStTqZXKbmnjk
 X-Developer-Key: i=filipp.dunsky@gmail.com; a=ed25519;
  pk=JAYP8e2rJ54DHOmhNtXud8rl1igAaAXoOHxtJmVXI1g=
 X-Endpoint-Received: by B4 Relay for filipp.dunsky@gmail.com/20260930 with
@@ -128,26 +127,87 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 From: Fil Dunsky <filipp.dunsky@gmail.com>
 
-Allow modular host glue with a combined application interrupt to dispatch
-the internal MSI receiver without installing a second chained handler.
+Describe three Snow Bush lanes, their shared status bank, global reset
+controls and 24 MHz reference. PCIe is the only supported operating mode.
 
 Signed-off-by: Fil Dunsky <filipp.dunsky@gmail.com>
 ---
- drivers/pci/controller/dwc/pcie-designware-host.c | 1 +
- 1 file changed, 1 insertion(+)
+ .../bindings/phy/cortina,cs7542-pcie-phy.yaml      | 67 ++++++++++++++++++++++
+ 1 file changed, 67 insertions(+)
 
-diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
-index bbb02458a..1d076bb62 100644
---- a/drivers/pci/controller/dwc/pcie-designware-host.c
-+++ b/drivers/pci/controller/dwc/pcie-designware-host.c
-@@ -85,6 +85,7 @@ void dw_handle_msi_irq(struct dw_pcie_rp *pp)
- 			generic_handle_demux_domain_irq(pp->msi_irq_domain, irq_off + pos);
- 	}
- }
-+EXPORT_SYMBOL_GPL(dw_handle_msi_irq);
- 
- /* Chained MSI interrupt service routine */
- static void dw_chained_msi_isr(struct irq_desc *desc)
+diff --git a/Documentation/devicetree/bindings/phy/cortina,cs7542-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/cortina,cs7542-pcie-phy.yaml
+new file mode 100644
+index 000000000..9ccde6e05
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/cortina,cs7542-pcie-phy.yaml
+@@ -0,0 +1,67 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/cortina,cs7542-pcie-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Cortina Systems CS7542 PCIe SerDes
++
++maintainers:
++  - Fil Dunsky <filipp.dunsky@gmail.com>
++
++description: |
++  Three Snow Bush SerDes lanes shared by PCIe and SATA. Only PCIe mode
++  with a 24 MHz reference is described. The PHY specifier is the lane
++  number, 0 through 2. The status resource contains the shared PHY
++  status registers, with a stride of 0x80 bytes per lane.
++
++properties:
++  compatible:
++    const: cortina,cs7542-pcie-phy
++
++  reg:
++    items:
++      - description: Lane 0 programming registers
++      - description: Lane 1 programming registers
++      - description: Lane 2 programming registers
++      - description: Shared PHY status registers
++
++  reg-names:
++    items:
++      - const: phy0
++      - const: phy1
++      - const: phy2
++      - const: status
++
++  clocks:
++    maxItems: 1
++    description: 24 MHz SerDes reference clock
++
++  cortina,global-syscon:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description: Global control syscon providing lane reset and mode selection
++
++  "#phy-cells":
++    const: 1
++
++required:
++  - compatible
++  - reg
++  - reg-names
++  - clocks
++  - cortina,global-syscon
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    phy@f00a1000 {
++        compatible = "cortina,cs7542-pcie-phy";
++        reg = <0xf00a1000 0x400>, <0xf00a5000 0x400>,
++              <0xf00a9000 0x400>, <0xf00a0e00 0x180>;
++        reg-names = "phy0", "phy1", "phy2", "status";
++        clocks = <&ref24>;
++        cortina,global-syscon = <&global>;
++        #phy-cells = <1>;
++    };
 
 -- 
 2.53.0
