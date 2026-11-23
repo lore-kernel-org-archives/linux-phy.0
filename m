@@ -2,133 +2,71 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E9236606A326
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 22:15:45 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1FC6A606A321
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 22:24:10 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=gXFf2fds;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=IUfnCFTe
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=AKoxz57j;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=V3vAe04Q
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=tQoA5RH4Aavwlw918ovrUvbPWYKXRwvTlNPiq9kkgVk=; b=gXFf2fdsdzoswVcIzmvvZqiFeh
-	l0RX+c1mVNUZp6vOW/WIklz/pZP6HVBXBpOUOognu10QKB81IkDoy7TPkWe+UQdgNfrQYwEKCIMjM
-	VGnzAydKENFp9O96Rxcj71PhP+EQejjY41wPho9ZEcdneZMDvJtbFbQNYABgwqD8fnDBxFB3OtmEU
-	1nI3OBCc+wmf/Fg38Y0Fzuk42ZTe7juxWieeQUthqagRYEx/Optiq4ThCM4ycTE/Zd6DDxeCLYqCn
-	2gSOU80eqa/G6v7/cXnT8z4mUcki4PXApDMI+PROYqOJbPRL0a67y/vpEThJqZ9WaG95X1WL3KBVY
-	5Ih+YNaQ==;
+	bh=eYQYm/Z7ljqEWOIlu7ivARIobbDDoSun7uQQFEXy8wg=; b=AKoxz57jH/DkzV4uo5++tZBL8d
+	btgaMr4JRzzKrvvEqDvwZfmVABjTGZLIWZB1ywryQBRe38Yj3ElsfnXJNiHVCvN6+FaHbaVTzHJlZ
+	mOKe5iZN0mic8gKnWLE1iRXyZyTDozdTKXnxo4HUggh0KVPDk+mgPbarYwiERe1Q6QCvKReO2fuHM
+	rXZqVbDPACdSWjxDuyFL0HtPoujieqgX8E1v3deSMgjcYL8qk+xglIcWcDGW1rt/1FO+lO8GQ62ka
+	g6LqDlBxH1vldVZh6OmPjWwTbfsUQMyzZz9+xNy6EdIq2JHEK0hzOjThr7wFjaMfhchGDJPQk/Zp9
+	xGAaoOTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVcK9-000000053lT-2vDT;
-	Mon, 23 Nov 2026 22:15:45 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xVcSH-000000054Jr-2pOi;
+	Mon, 23 Nov 2026 22:24:09 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVcK5-000000053l7-0QBt;
-	Mon, 23 Nov 2026 22:15:41 +0000
+	id 1xVcSF-000000054J7-0vCf;
+	Mon, 23 Nov 2026 22:24:08 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id B042061CA6;
-	Mon, 23 Nov 2026 22:15:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 71A6B1F000C0;
-	Mon, 23 Nov 2026 22:15:22 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 6AB0861F2F;
+	Mon, 23 Nov 2026 22:24:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE7B31F000C4;
+	Mon, 23 Nov 2026 22:24:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795472138;
-	bh=zZOr86x6Nbcrswj0/CdPx/id2jV0MiHrJmrhX/el+Dk=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=IUfnCFTe+dBvsPU7O06E2fZSVhth+KzFXsodtvncGuI0ZJrIUURRRNuTzOpaaXs8w
-	 Yx9tfQxFf0bhkud/FZpgu8M5GraijG/vUGk9+qgLWv+yC4PuuWis9FcdtnPM2p8/tG
-	 NklJrEq+wTwwduRL6DBLbHPZLz+aXeAy3qLhhsEFf9ixKzUsda7LHBGm13m+YJOsTj
-	 +gWPX2J9lF6u1D3o3sYOKIey0FJQdYR9Jjzcr3TUQ/YuUOZy6BswMLeTvEZxX29xaW
-	 Gu+Kppy1E9Sp1P5RVB5zVWQpcZkzx78goOMCIq4LogvU6xwyAC4c4KQGNxt064WKP0
-	 npRyr50ofJOxw==
-Message-ID: <356dfc79-1918-4024-b40a-57a8cb05418d@kernel.org>
-Date: Mon, 23 Nov 2026 23:15:19 +0100
+	s=k20260515; t=1795472645;
+	bh=qzd0U968czwvMj/9p/4Nkt36zvHiXdLxt3c/sS+amrc=;
+	h=Date:From:To:Cc:Subject:In-Reply-To;
+	b=V3vAe04QALcwaxBV31+lXMzc74k4pzF7LSUDtlLlWFAwGI4ueaj6rbo2BtDZCRFB2
+	 d/WahPAe+qdk3pIVwkj2djdCkuaKjZo82Jg7AqBUfe5KkXLpv6wf3woAqWGbREFc6P
+	 bQlLRAz2E8M7Nzm3xNDZ4LAOFyzIDVgW/Pc+QIM3MF5O2z2MC+MXjWSTgc/thBvwfH
+	 8HoLo+CCq39XULgAFR9XSXO0KQOMWZhrBRY6j0snLgjCtsbV5IYTdA9xu+X4pM75oH
+	 A0EZJ4u7Xp1qbVfxDADiBraodr4Uctt0uKERAs7axSwKvzuTLrcfHNeC48IFh5SO/E
+	 cPVTGsCvTVyTQ==
+Date: Mon, 23 Nov 2026 16:24:04 -0600
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Fil Dunsky <filipp.dunsky@gmail.com>
+Cc: Manivannan Sadhasivam <mani@kernel.org>,
+	Stephen Boyd <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Jingoo Han <jingoohan1@gmail.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof Wilczynski <kwilczynski@kernel.org>,
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Brian Masney <bmasney+clk@redhat.com>,
+	Jerome Brunet <jbrunet+clk@baylibre.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>, linux-pci@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 7/8] PCI: cs7542: Add CS7542 PCIe host support
+Message-ID: <20261123222404.GA1110511@bhelgaas>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 13/16] dt-bindings: arm: qcom,ids: Add SoC ID for
- SXR2250P
-To: Stanislav Aleksandrov <lightofmysoul@gmail.com>
-Cc: Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Robert Marko <robimarko@gmail.com>,
- Guru Das Srinagesh <linux@gurudas.dev>, Thomas Gleixner <tglx@kernel.org>,
- Radu Rendec <radu@rendec.net>, Lee Jones <lee@kernel.org>,
- Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- "Joerg Roedel (AMD)" <joro@8bytes.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Wesley Cheng <wesley.cheng@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>,
- Alim Akhtar <alim.akhtar@samsung.com>, Bart Van Assche <bvanassche@acm.org>,
- Bean Huo <beanhuo@micron.com>, Stanley Jhu <stanleyjhu@google.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- "David S. Miller" <davem@davemloft.net>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, Amit Kucheria <amitk@kernel.org>,
- Thara Gopinath <thara.gopinath@gmail.com>,
- Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
- Lukasz Luba <lukasz.luba@arm.com>, Georgi Djakov <djakov@kernel.org>,
- Sibi Sankar <sibi.sankar@oss.qualcomm.com>, Ulf Hansson <ulfh@kernel.org>,
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, mfd@lists.linux.dev,
- linux-arm-kernel@lists.infradead.org, iommu@lists.linux.dev,
- linux-usb@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-scsi@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-pm@vger.kernel.org, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-References: <20261116-halliday-dts-v2-0-2c92438c6c46@gmail.com>
- <20261116-halliday-dts-v2-13-2c92438c6c46@gmail.com>
- <20261123-pastel-barracuda-of-rain-bce8ac@quoll>
- <20261123211723.1065310-1-lightofmysoul@gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <20261123211723.1065310-1-lightofmysoul@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20261123-b4-cs7542-pcie-v1-7-4cde5201d404@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,29 +79,655 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
-	autolearn=no autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 23/11/2026 22:17, Stanislav Aleksandrov wrote:
-> On Mon, Nov 23, 2026 at 01:09:26PM +0100, Krzysztof Kozlowski wrote:
->> This should be rebased on my patch removing the IDs.
+On Mon, Nov 23, 2026 at 09:43:35PM +0300, Fil Dunsky wrote:
+> Add DesignWare host glue consuming separate clock, reset and PHY
+> providers. Use live link status and stop previous training before
+> enumeration. Finish endpoint teardown before draining the shared IRQ and
+> freeing MSI domains. Dispatch enabled INTx/MSI sources through one
+> application interrupt and use its MSI target window.
 > 
-> Thanks for review. I will rebase it, but I am not sure about
-> the order, could you please clarify?
+> Prevent root configuration accesses at and above 0x200, including direct
+> DesignWare DBI reads, while preserving the private CSR bank and separate
+> iATU callback base. Unwind power and IRQ domains on failure and removal.
 > 
-> 1. Should I wait for sending v3 until your patch is applied?
-> or
-> 2. Should I apply your patch locally and then send v3 based on it?
-> (but if something changes in your patch a v4 might be needed)
+> Read live link/LTSSM state through the application wrapper. After link
+> loss, block configuration and DBI accesses until controller reset and
+> reprobe.
 
-I suggest rebasing on top of my set, so the (2).
+Structure the DT and driver to allow for support of multiple Root
+Ports in the future.  See details in
+https://lore.kernel.org/linux-pci/20250625221653.GA1590146@bhelgaas/
 
-Best regards,
-Krzysztof
+> Signed-off-by: Fil Dunsky <filipp.dunsky@gmail.com>
+> ---
+>  drivers/pci/controller/dwc/Kconfig       |  12 +
+>  drivers/pci/controller/dwc/Makefile      |   2 +
+>  drivers/pci/controller/dwc/pcie-cs7542.c | 508 +++++++++++++++++++++++++++++++
+>  3 files changed, 522 insertions(+)
+> 
+> diff --git a/drivers/pci/controller/dwc/Kconfig b/drivers/pci/controller/dwc/Kconfig
+> index 0a0d56fcf..88415954e 100644
+> --- a/drivers/pci/controller/dwc/Kconfig
+> +++ b/drivers/pci/controller/dwc/Kconfig
+> @@ -577,4 +577,16 @@ config PCIE_ULTRARISC
+>  	  By default, this symbol is enabled when ARCH_ULTRARISC is active,
+>  	  requiring no further configuration on that platform.
+>  
+> +config PCIE_CS7542
+> +	tristate "Cortina Systems CS7542 PCIe controller"
+> +	depends on OF && HAS_IOMEM && PCI_MSI && COMMON_CLK
+> +	select PCIE_DW_HOST
+> +	select GENERIC_PHY
+> +	select RESET_CONTROLLER
+> +	help
+> +	  Enable the DesignWare PCIe host controllers on Cortina CS7542.
+> +	  Separate clock, reset and generic PHY providers are required.
+> +	  The application interrupt handles both legacy INTx and MSI.
+> +	  The module is called pcie-cs7542.
+
+Move this item so the menu remains sorted by vendor.
+
+>  endmenu
+> diff --git a/drivers/pci/controller/dwc/Makefile b/drivers/pci/controller/dwc/Makefile
+> index d4f88cfc6..4a6ae9037 100644
+> --- a/drivers/pci/controller/dwc/Makefile
+> +++ b/drivers/pci/controller/dwc/Makefile
+> @@ -61,3 +61,5 @@ obj-$(CONFIG_ARM64) += pcie-hisi.o
+>  obj-$(CONFIG_ARM64) += pcie-tegra194-acpi.o
+>  endif
+>  endif
+> +
+> +obj-$(CONFIG_PCIE_CS7542) += pcie-cs7542.o
+> diff --git a/drivers/pci/controller/dwc/pcie-cs7542.c b/drivers/pci/controller/dwc/pcie-cs7542.c
+> new file mode 100644
+> index 000000000..19225e9a2
+> --- /dev/null
+> +++ b/drivers/pci/controller/dwc/pcie-cs7542.c
+> @@ -0,0 +1,508 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +#include <linux/bitfield.h>
+> +#include <linux/clk.h>
+> +#include <linux/iopoll.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/reset.h>
+> +#include <linux/delay.h>
+> +#include <linux/gpio/consumer.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/irqchip/chained_irq.h>
+> +#include <linux/irqdomain.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_irq.h>
+> +#include <linux/pci.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/resource.h>
+
+Sort in alpha order as other drivers do.
+
+> +#include "pcie-designware.h"
+> +
+> +#define APP_INT_STATUS		0x00
+> +#define APP_INT_ENABLE		0x04
+> +#define APP_CORE_CONFIG		0x1c
+> +#define APP_PM_STATUS		0x20
+> +#define APP_LINK_ACTIVE		BIT(18)
+> +#define APP_LTSSM_STATE		GENMASK(9, 4)
+> +#define APP_CFG_START		0x80
+> +#define APP_CFG_END		0x84
+> +
+> +#define INT_INTX_ASSERT(x)	BIT((x) * 2)
+> +#define INT_INTX_ASSERT_MASK	(BIT(0) | BIT(2) | BIT(4) | BIT(6))
+> +#define INT_MSI			BIT(8)
+> +#define INT_LINK_UP		BIT(9)
+> +#define INT_RADM_NONFATAL_ERR	BIT(12)
+> +#define INT_RADM_FATAL_ERR	BIT(13)
+> +#define INT_GM_COMPOSER_ERR	BIT(16)
+> +#define INT_RADMX_COMPOSER_ERR	BIT(17)
+> +#define INT_ELASTIC_OVF		BIT(18)
+> +#define INT_ELASTIC_UNF		BIT(19)
+> +#define INT_LINK_DOWN		BIT(22)
+> +#define INT_ERR_MASK		(INT_RADM_NONFATAL_ERR | INT_RADM_FATAL_ERR | \
+> +				 INT_GM_COMPOSER_ERR | INT_RADMX_COMPOSER_ERR | \
+> +				 INT_ELASTIC_OVF | INT_ELASTIC_UNF | INT_LINK_DOWN)
+
+Wrap so this fits in 80-chars (throughout), except for printf strings.
+
+> +#define CORE_CFG_LTSSM_EN	BIT(0)
+> +#define CORE_CFG_AXI_UR_MASK	BIT(5)
+> +
+> +#define APP_PORT_STRIDE		0x400
+> +#define APP_PHYS_BASE		0xF00A0000
+> +#define APP_CFG_WINDOW_LEN	0x1000
+> +#define APP_MSI_TARGET		0xC0
+> +#define RC_CFG_LIMIT		0x200
+> +
+> +struct cortina_pcie {
+> +	struct dw_pcie		pci;
+> +	void __iomem		*app;
+> +	struct clk		*clk;
+> +	struct phy		*phy;
+> +	struct reset_control	*reset;
+> +	struct gpio_desc	*perst;
+> +	int			irq;
+> +	bool			msi_ready;
+> +	bool			link_lost;
+> +	struct irq_domain	*intx_domain;
+> +	raw_spinlock_t		lock;
+> +	resource_size_t		dbi_phys;
+> +	resource_size_t		app_phys;
+> +	int			port;
+> +};
+> +
+> +#define to_cortina_pcie(x)	container_of((x), struct cortina_pcie, pci)
+> +
+> +static int cortina_pcie_port_init(struct cortina_pcie *cp)
+> +{
+> +	u32 value;
+> +	int ret;
+> +
+> +	writel(cp->dbi_phys, cp->app + APP_CFG_START);
+> +	writel(cp->dbi_phys + APP_CFG_WINDOW_LEN - 1, cp->app + APP_CFG_END);
+> +	ret = readl_poll_timeout(cp->app + APP_CFG_END, value,
+> +				 value == cp->dbi_phys + APP_CFG_WINDOW_LEN - 1, 10, 10000);
+
+This timeout should be based on a #define.
+
+> +	if (ret)
+> +		return ret;
+> +	writel(0, cp->app + APP_INT_ENABLE);
+> +	writel(readl(cp->app + APP_INT_STATUS), cp->app + APP_INT_STATUS);
+> +	return 0;
+> +}
+> +
+> +/* APP remains accessible after link loss, unlike the DBI port debug bank. */
+> +static bool cortina_pcie_link_up(struct dw_pcie *pci)
+> +{
+> +	struct cortina_pcie *cp = to_cortina_pcie(pci);
+> +
+> +	return !READ_ONCE(cp->link_lost) &&
+> +	       !!(readl(cp->app + APP_PM_STATUS) & APP_LINK_ACTIVE);
+> +}
+> +
+> +static enum dw_pcie_ltssm cortina_pcie_get_ltssm(struct dw_pcie *pci)
+> +{
+> +	struct cortina_pcie *cp = to_cortina_pcie(pci);
+> +
+> +	return FIELD_GET(APP_LTSSM_STATE, readl(cp->app + APP_PM_STATUS));
+> +}
+> +
+> +static int cortina_pcie_start_link(struct dw_pcie *pci)
+> +{
+> +	struct cortina_pcie *cp = to_cortina_pcie(pci);
+> +	u32 v;
+> +
+> +	v = readl(cp->app + APP_CORE_CONFIG);
+> +	v |= CORE_CFG_LTSSM_EN | CORE_CFG_AXI_UR_MASK;
+> +	writel(v, cp->app + APP_CORE_CONFIG);
+> +	return 0;
+> +}
+> +
+> +static void cortina_pcie_stop_link(struct dw_pcie *pci)
+> +{
+> +	struct cortina_pcie *cp = to_cortina_pcie(pci);
+> +	u32 value = readl(cp->app + APP_CORE_CONFIG);
+
+Use same local variable names in similar code, e.g., we have "v" in
+cortina_pcie_start_link() but "value" here, even though they're
+exactly the same thing.  I don't care which, but pick one.
+
+> +	writel(value & ~CORE_CFG_LTSSM_EN, cp->app + APP_CORE_CONFIG);
+> +}
+> +
+> +static void cortina_pcie_irq_handler(struct irq_desc *desc)
+> +{
+> +	struct cortina_pcie *cp = irq_desc_get_handler_data(desc);
+> +	struct irq_chip *chip = irq_desc_get_chip(desc);
+> +	u32 status, clear;
+> +	int i;
+> +
+> +	chained_irq_enter(chip, desc);
+> +
+> +	status = readl(cp->app + APP_INT_STATUS);
+> +	status &= readl(cp->app + APP_INT_ENABLE);
+> +	clear = status & ~INT_LINK_UP;
+> +	if (status & INT_LINK_DOWN)
+> +		clear |= INT_LINK_UP;
+> +	writel(clear, cp->app + APP_INT_STATUS);
+> +
+> +	if (status & INT_LINK_DOWN) {
+> +		/* The DBI interface needs a controller reset after link loss. */
+> +		raw_spin_lock(&cp->lock);
+> +		WRITE_ONCE(cp->link_lost, true);
+> +		writel(0, cp->app + APP_INT_ENABLE);
+> +		raw_spin_unlock(&cp->lock);
+> +		dev_warn_ratelimited(cp->pci.dev, "link lost; controller reprobe required\n");
+> +		goto out;
+> +	}
+> +
+> +	if (status & INT_ERR_MASK)
+> +		dev_err_ratelimited(cp->pci.dev, "port %d: PCIe error, status %#x\n",
+> +				    cp->port, status);
+> +
+> +	for (i = 0; i < PCI_NUM_INTX; i++)
+> +		if (status & INT_INTX_ASSERT(i))
+> +			generic_handle_domain_irq(cp->intx_domain, i);
+> +	if ((status & INT_MSI) && cp->msi_ready)
+> +		dw_handle_msi_irq(&cp->pci.pp);
+> +
+> +out:
+> +	chained_irq_exit(chip, desc);
+> +}
+> +
+> +static void cortina_intx_mask(struct irq_data *d)
+> +{
+> +	struct cortina_pcie *cp = irq_data_get_irq_chip_data(d);
+> +	u32 bit = INT_INTX_ASSERT(d->hwirq);
+> +	unsigned long flags;
+> +
+> +	raw_spin_lock_irqsave(&cp->lock, flags);
+> +	writel(readl(cp->app + APP_INT_ENABLE) & ~bit, cp->app + APP_INT_ENABLE);
+> +	raw_spin_unlock_irqrestore(&cp->lock, flags);
+> +}
+> +
+> +static void cortina_intx_unmask(struct irq_data *d)
+> +{
+> +	struct cortina_pcie *cp = irq_data_get_irq_chip_data(d);
+> +	u32 bit = INT_INTX_ASSERT(d->hwirq);
+> +	unsigned long flags;
+> +
+> +	raw_spin_lock_irqsave(&cp->lock, flags);
+> +	if (!READ_ONCE(cp->link_lost))
+
+Why do we need to check link_lost?
+
+> +		writel(readl(cp->app + APP_INT_ENABLE) | bit, cp->app + APP_INT_ENABLE);
+> +	raw_spin_unlock_irqrestore(&cp->lock, flags);
+> +}
+> +
+> +static struct irq_chip cortina_intx_chip = {
+> +	.name		= "cortina-INTx",
+> +	.irq_mask	= cortina_intx_mask,
+> +	.irq_unmask	= cortina_intx_unmask,
+> +};
+> +
+> +static int cortina_pcie_intx_map(struct irq_domain *domain, unsigned int irq,
+> +				 irq_hw_number_t hwirq)
+> +{
+> +	irq_set_chip_and_handler(irq, &cortina_intx_chip, handle_simple_irq);
+> +	irq_set_chip_data(irq, domain->host_data);
+> +	return 0;
+> +}
+> +
+> +static const struct irq_domain_ops cortina_intx_domain_ops = {
+> +	.map = cortina_pcie_intx_map,
+> +	.xlate = pci_irqd_intx_xlate,
+> +};
+> +
+> +static int cortina_pcie_init_irq_domain(struct cortina_pcie *cp)
+> +{
+> +	struct device *dev = cp->pci.dev;
+> +	struct device_node *intc;
+> +
+> +	intc = of_get_child_by_name(dev->of_node, "interrupt-controller");
+> +	if (!intc)
+> +		return dev_err_probe(dev, -ENODEV, "no interrupt-controller child\n");
+> +
+> +	cp->intx_domain = irq_domain_create_linear(of_fwnode_handle(intc), PCI_NUM_INTX,
+> +						   &cortina_intx_domain_ops, cp);
+> +	of_node_put(intc);
+> +	if (!cp->intx_domain)
+> +		return dev_err_probe(dev, -ENOMEM, "cannot create INTx domain\n");
+> +	return 0;
+> +}
+> +
+> +static int cortina_pcie_rd_own_conf(struct pci_bus *bus, unsigned int devfn,
+> +				    int where, int size, u32 *val)
+> +{
+> +	struct cortina_pcie *cp = to_cortina_pcie(to_dw_pcie_from_pp(bus->sysdata));
+> +
+> +	*val = ~0U;
+
+PCI_SET_ERROR_RESPONSE()
+
+> +	if (where < 0 || (size != 1 && size != 2 && size != 4) ||
+> +	    (where & (size - 1)))
+> +		return PCIBIOS_BAD_REGISTER_NUMBER;
+> +	if (READ_ONCE(cp->link_lost))
+
+Looks racy, so would need a comment to that effect if we can't
+eliminate this altogether.
+
+What happens if the config read fails because the link is down?  Why
+would that even matter, since it looks like this access is to RC
+devices on the root bus, i.e., on the upstream end of the link?
+
+> +		return PCIBIOS_DEVICE_NOT_FOUND;
+> +	if (where >= RC_CFG_LIMIT || size > RC_CFG_LIMIT - where) {
+> +		*val = 0;
+> +		return PCIBIOS_SUCCESSFUL;
+> +	}
+> +	return pci_generic_config_read(bus, devfn, where, size, val);
+> +}
+> +
+> +static int cortina_pcie_wr_own_conf(struct pci_bus *bus, unsigned int devfn,
+> +				    int where, int size, u32 val)
+> +{
+> +	struct cortina_pcie *cp = to_cortina_pcie(to_dw_pcie_from_pp(bus->sysdata));
+> +
+> +	if (where < 0 || (size != 1 && size != 2 && size != 4) ||
+> +	    (where & (size - 1)))
+> +		return PCIBIOS_BAD_REGISTER_NUMBER;
+> +	if (READ_ONCE(cp->link_lost))
+> +		return PCIBIOS_DEVICE_NOT_FOUND;
+> +	if (where >= RC_CFG_LIMIT || size > RC_CFG_LIMIT - where) {
+> +		dev_dbg(bus->dev.parent, "ignoring RC config write at %#x\n", where);
+> +		return PCIBIOS_SUCCESSFUL;
+> +	}
+> +	return pci_generic_config_write(bus, devfn, where, size, val);
+> +}
+> +
+> +static struct pci_ops cortina_own_pci_ops = {
+> +	.map_bus	= dw_pcie_own_conf_map_bus,
+> +	.read		= cortina_pcie_rd_own_conf,
+> +	.write		= cortina_pcie_wr_own_conf,
+> +};
+> +
+> +static int cortina_pcie_host_init(struct dw_pcie_rp *pp)
+> +{
+> +	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
+> +	u8 cap = dw_pcie_find_capability(pci, PCI_CAP_ID_MSI);
+> +	u16 flags;
+> +
+> +	pp->bridge->ops = &cortina_own_pci_ops;
+> +	pp->keep_rp_msi_en = true;
+> +	if (cap) {
+> +		flags = dw_pcie_readw_dbi(pci, cap + PCI_MSI_FLAGS);
+> +		dw_pcie_writew_dbi(pci, cap + PCI_MSI_FLAGS, flags | PCI_MSI_FLAGS_ENABLE);
+> +	}
+> +	return 0;
+> +}
+> +
+> +static int cortina_pcie_msi_init(struct dw_pcie_rp *pp)
+> +{
+> +	struct cortina_pcie *cp = to_cortina_pcie(to_dw_pcie_from_pp(pp));
+> +	u32 ctrl;
+> +	int ret;
+> +
+> +	/* The application IRQ multiplexes MSI and INTx, so do not chain it twice. */
+> +	pp->msi_irq[0] = -ENODEV;
+> +	ret = dw_pcie_msi_host_init(pp);
+> +	if (ret)
+> +		return ret;
+> +	/* CS7542 routes endpoint MSI writes through its application target. */
+> +	pp->msi_data = cp->app_phys + APP_MSI_TARGET;
+
+This looks like a CPU address, but MSI transactions use bus addresses,
+so it looks like this assumes bus addresses are identical to CPU
+addresses?
+
+> +	/* A custom MSI hook owns setup and teardown of the multiplexed receiver. */
+> +	for (ctrl = 0; ctrl < pp->num_vectors / MAX_MSI_IRQS_PER_CTRL; ctrl++) {
+> +		dw_pcie_writel_dbi(&cp->pci, PCIE_MSI_INTR0_MASK + ctrl * MSI_REG_CTRL_BLOCK_SIZE,
+> +				   pp->irq_mask[ctrl]);
+> +		dw_pcie_writel_dbi(&cp->pci, PCIE_MSI_INTR0_ENABLE + ctrl * MSI_REG_CTRL_BLOCK_SIZE,
+> +				   ~0);
+> +	}
+> +	dw_pcie_writel_dbi(&cp->pci, PCIE_MSI_ADDR_LO, lower_32_bits(pp->msi_data));
+> +	dw_pcie_writel_dbi(&cp->pci, PCIE_MSI_ADDR_HI, upper_32_bits(pp->msi_data));
+> +	cp->msi_ready = true;
+> +	return 0;
+> +}
+> +
+> +static void cortina_pcie_host_deinit(struct dw_pcie_rp *pp)
+> +{
+> +	struct cortina_pcie *cp = to_cortina_pcie(to_dw_pcie_from_pp(pp));
+> +
+> +	/* Endpoints have stopped; now drain the shared IRQ before freeing domains. */
+> +	writel(0, cp->app + APP_INT_ENABLE);
+> +	readl(cp->app + APP_INT_ENABLE);
+> +	synchronize_irq(cp->irq);
+
+No other drivers use synchronize_irq(), which raises the question of
+why we need it here.
+
+> +	if (cp->msi_ready) {
+> +		cp->msi_ready = false;
+> +		dw_pcie_free_msi(pp);
+> +		pp->msi_irq_domain = NULL;
+> +	}
+> +}
+> +
+> +static const struct dw_pcie_host_ops cortina_pcie_host_ops = {
+> +	.init		= cortina_pcie_host_init,
+> +	.deinit		= cortina_pcie_host_deinit,
+> +	.msi_init	= cortina_pcie_msi_init,
+> +};
+> +
+> +/* Standard RC configuration above 512 bytes wedges the CS7542 bus.
+> + * The DesignWare private register bank at 0x700 and above remains accessible.
+> + */
+
+Block comment style is:
+
+  /*
+   * Standard RC ...
+   */
+
+Wrap to fill 75 columns or so.
+
+> +static u32 cortina_pcie_read_dbi(struct dw_pcie *pci, void __iomem *base,
+> +				 u32 reg, size_t size)
+> +{
+> +	struct cortina_pcie *cp = to_cortina_pcie(pci);
+> +	u32 value = 0;
+> +
+> +	if (READ_ONCE(cp->link_lost))
+> +		return ~0U;
+
+Again seems racy.
+
+> +	if (base == pci->dbi_base && reg < 0x700 && reg + size > RC_CFG_LIMIT)
+
+#define for 0x700?
+
+> +		return 0;
+> +	dw_pcie_read(base + reg, size, &value);
+> +	return value;
+> +}
+> +
+> +static void cortina_pcie_write_dbi(struct dw_pcie *pci, void __iomem *base,
+> +				   u32 reg, size_t size, u32 value)
+> +{
+> +	struct cortina_pcie *cp = to_cortina_pcie(pci);
+> +
+> +	if (READ_ONCE(cp->link_lost))
+> +		return;
+> +	if (base == pci->dbi_base && reg < 0x700 && reg + size > RC_CFG_LIMIT)
+> +		return;
+> +	dw_pcie_write(base + reg, size, value);
+> +}
+> +
+> +static const struct dw_pcie_ops cortina_dw_pcie_ops = {
+> +	.read_dbi = cortina_pcie_read_dbi,
+> +	.write_dbi = cortina_pcie_write_dbi,
+> +	.link_up = cortina_pcie_link_up,
+> +	.get_ltssm = cortina_pcie_get_ltssm,
+> +	.start_link = cortina_pcie_start_link,
+> +	.stop_link = cortina_pcie_stop_link,
+> +};
+> +
+> +static void cortina_pcie_power_off(struct cortina_pcie *cp)
+> +{
+> +	gpiod_set_value_cansleep(cp->perst, 1);
+> +	reset_control_assert(cp->reset);
+> +	phy_power_off(cp->phy);
+> +	phy_exit(cp->phy);
+> +	clk_disable_unprepare(cp->clk);
+> +}
+> +
+> +static int cortina_pcie_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct cortina_pcie *cp;
+> +	struct dw_pcie *pci;
+> +	struct resource *res;
+> +	int ret;
+> +
+> +	cp = devm_kzalloc(dev, sizeof(*cp), GFP_KERNEL);
+> +	if (!cp)
+> +		return -ENOMEM;
+
+Typical to add a blank line here and similar places after error
+exit.  Look at peer drivers to see.
+
+> +	pci = &cp->pci;
+> +	pci->dev = dev;
+> +	pci->ops = &cortina_dw_pcie_ops;
+> +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dbi");
+> +	if (!res)
+> +		return -EINVAL;
+> +	cp->dbi_phys = res->start;
+> +	cp->app = devm_platform_ioremap_resource_byname(pdev, "app");
+> +	if (IS_ERR(cp->app))
+> +		return PTR_ERR(cp->app);
+> +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "app");
+> +	cp->app_phys = res->start;
+> +	if (res->start < APP_PHYS_BASE ||
+> +	    (res->start - APP_PHYS_BASE) % APP_PORT_STRIDE ||
+> +	    (res->start - APP_PHYS_BASE) / APP_PORT_STRIDE >= 3)
+> +		return -EINVAL;
+> +	cp->port = (res->start - APP_PHYS_BASE) / APP_PORT_STRIDE;
+> +	raw_spin_lock_init(&cp->lock);
+
+Follow Cortina recommended sequence for controller init if given,
+otherwise try to align with peer drivers and
+https://lore.kernel.org/all/20260916155504.GA926264@bhelgaas/
+
+> +	cp->clk = devm_clk_get(dev, NULL);
+> +	if (IS_ERR(cp->clk))
+> +		return dev_err_probe(dev, PTR_ERR(cp->clk), "controller clock\n");
+> +	cp->reset = devm_reset_control_get_exclusive(dev, NULL);
+> +	if (IS_ERR(cp->reset))
+> +		return dev_err_probe(dev, PTR_ERR(cp->reset), "controller reset\n");
+> +	cp->phy = devm_phy_get(dev, "pcie");
+> +	if (IS_ERR(cp->phy))
+> +		return dev_err_probe(dev, PTR_ERR(cp->phy), "SerDes\n");
+> +	cp->perst = devm_gpiod_get_optional(dev, "reset", GPIOD_OUT_HIGH);
+> +	if (IS_ERR(cp->perst))
+> +		return dev_err_probe(dev, PTR_ERR(cp->perst), "PERST# GPIO\n");
+> +	cp->irq = platform_get_irq(pdev, 0);
+> +	if (cp->irq < 0)
+> +		return cp->irq;
+> +
+> +	ret = clk_prepare_enable(cp->clk);
+> +	if (ret)
+> +		return ret;
+> +	ret = phy_init(cp->phy);
+> +	if (ret)
+> +		goto disable_clk;
+> +	ret = phy_set_mode(cp->phy, PHY_MODE_PCIE);
+> +	if (ret)
+> +		goto exit_phy;
+> +	ret = phy_power_on(cp->phy);
+> +	if (ret)
+> +		goto exit_phy;
+> +	ret = reset_control_reset(cp->reset);
+> +	if (ret)
+> +		goto power_off;
+> +	writel(0, cp->app + APP_INT_ENABLE);
+> +	cortina_pcie_stop_link(pci);
+> +	writel(readl(cp->app + APP_INT_STATUS), cp->app + APP_INT_STATUS);
+> +	gpiod_set_value_cansleep(cp->perst, 0);
+> +	msleep(100);
+
+There should be a #define for this msleep() in drivers/pci/pci.h.
+
+> +	ret = cortina_pcie_port_init(cp);
+> +	if (ret)
+> +		goto power_off;
+> +	ret = cortina_pcie_init_irq_domain(cp);
+> +	if (ret)
+> +		goto power_off;
+> +	irq_set_chained_handler_and_data(cp->irq, cortina_pcie_irq_handler, cp);
+> +	writel(INT_MSI | INT_ERR_MASK, cp->app + APP_INT_ENABLE);
+> +	pci->pp.ops = &cortina_pcie_host_ops;
+> +	ret = dw_pcie_host_init(&pci->pp);
+> +	if (ret) {
+> +		writel(0, cp->app + APP_INT_ENABLE);
+> +		irq_set_chained_handler_and_data(cp->irq, NULL, NULL);
+> +		irq_domain_remove(cp->intx_domain);
+> +		goto power_off;
+
+Sort of a weird mix of inline and out-of-line error handling.  Maybe
+move these down with another goto label?
+
+> +	}
+> +	platform_set_drvdata(pdev, cp);
+> +	return 0;
+> +
+> +power_off:
+> +	gpiod_set_value_cansleep(cp->perst, 1);
+> +	reset_control_assert(cp->reset);
+> +	phy_power_off(cp->phy);
+> +exit_phy:
+> +	phy_exit(cp->phy);
+> +disable_clk:
+> +	reset_control_assert(cp->reset);
+> +	clk_disable_unprepare(cp->clk);
+> +	return dev_err_probe(dev, ret, "host initialization\n");
+> +}
+> +
+> +static void cortina_pcie_remove(struct platform_device *pdev)
+> +{
+> +	struct cortina_pcie *cp = platform_get_drvdata(pdev);
+> +
+> +	dw_pcie_host_deinit(&cp->pci.pp);
+> +	irq_set_chained_handler_and_data(cp->irq, NULL, NULL);
+> +	irq_domain_remove(cp->intx_domain);
+> +	cortina_pcie_power_off(cp);
+> +}
+> +
+> +static void cortina_pcie_shutdown(struct platform_device *pdev)
+> +{
+> +	struct cortina_pcie *cp = platform_get_drvdata(pdev);
+> +
+> +	writel(0, cp->app + APP_INT_ENABLE);
+> +	cortina_pcie_stop_link(&cp->pci);
+> +	gpiod_set_value_cansleep(cp->perst, 1);
+> +	reset_control_assert(cp->reset);
+> +}
+> +
+> +static const struct of_device_id cortina_pcie_of_match[] = {
+> +	{ .compatible = "cortina,cs7542-pcie" },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, cortina_pcie_of_match);
+> +
+> +static struct platform_driver cortina_pcie_driver = {
+> +	.probe = cortina_pcie_probe,
+> +	.remove = cortina_pcie_remove,
+> +	.shutdown = cortina_pcie_shutdown,
+> +	.driver = {
+> +		.name = "cs7542-pcie",
+> +		.of_match_table = cortina_pcie_of_match,
+> +	},
+> +};
+> +module_platform_driver(cortina_pcie_driver);
+> +
+> +MODULE_DESCRIPTION("Cortina Systems CS7542 PCIe host controller");
+> +MODULE_LICENSE("GPL");
+> 
+> -- 
+> 2.53.0
+> 
 
 -- 
 linux-phy mailing list
