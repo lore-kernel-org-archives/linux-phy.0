@@ -2,57 +2,110 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D55DA606A31E
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 19:46:27 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 39054606A330
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 20:32:40 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=f4gsEb7o;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=AvhsxErT
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=uLymWKDi;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=KQNLeil0
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=OV7D+gYIf+mtYzRsztZssGSy0f4LWH+VmKC8fIrKay0=; b=f4gsEb7oi5nd2crzkbU4ttYz86
-	hmElTO3iI18JM9lO9WAxdCF1ufNqIvONqP3k0ULog0jaontEBYlYO4LA9ZBaS3gUyiQPmEGHeLh+j
-	REDH3A6v922Je7jVAaM2JZ0QIDKjNgTGAlasrxvMCROQmYg8V/aEXvPjPdy9PrRuELqf89O0ANqtL
-	JytlR/0a38dfUx/Dq0G9zuTeMmhNKs23FK0CoyHTzpuZ6krdHx+4ZDGhPCguJV42jF7WhbE6i3FVS
-	cgSXZW+www3j+2s24k/oJCfRKmigjBuZjSIJZpQag5JAzqWOMtB0CfKmUxIlqDzcvfHnrItXY5xiN
-	QGd/GR0Q==;
+	bh=+1qpXOv/UXv+ZCE3vHmJA7Kitkbcz1tBiDzeV+mZrQk=; b=uLymWKDicuoQQ3X1NIIYDKVsTV
+	RPcPE8wIyk8ubXJ96is37ydI1k5+Q+M1rVE4Pqzj3wpNFJ0gWiCDQ0n0k5kKvC8l8MDMRE4paRIVi
+	rybReA67isn91HGx6C4nAK0G7qDzdqD29jSdW1GbaTc5adJtdi8KzcoT9Ib67jpnc0KRBf2b1wQzd
+	EUWkCv6QeWu5wIszdax46WbWK+jHD2nrolZYLtRYDplhFubv+VWY1wTa9dJqvLMwE0edv7NJx31gV
+	HEZL3RN1bS+lpyKLOWkWuHqouiJBfjymnXMkEYSNMJ6lzU7XRlV7Ldrz+eblgXm1FZTn63jI/o0iO
+	LlnsovGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVZzf-00000004k6Q-2I3M;
-	Mon, 23 Nov 2026 19:46:27 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xVaiN-00000004qWE-3OAr;
+	Mon, 23 Nov 2026 20:32:39 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVZzb-00000004k4V-3uHq;
-	Mon, 23 Nov 2026 19:46:24 +0000
+	id 1xVaiM-00000004qVC-1K3z;
+	Mon, 23 Nov 2026 20:32:38 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 22FDC624B6;
-	Mon, 23 Nov 2026 19:46:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 11B211F000CF;
-	Mon, 23 Nov 2026 19:46:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 00F7144287;
+	Mon, 23 Nov 2026 20:32:38 +0000 (UTC)
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1795465957;
+	b=iOtjEsL2Q+i3LzgiE3w+KuJluBjxBbo8EwFX/moGyUba1kn+UbIuLex6pPFm5UeHFvwM
+	 H8ig3agIoHRCwwAunmlZwX97AMxtqOHoGlWKGT1EGb8JqLmM/gMIroTAT2KTR9qDfcueo
+	 zjblP0hyjnZN6ba/DIXf/y6FsZrDJbUxVsUnsWWI6fVbVV+Omq2hvBr2ArRGsAmT/+QWt
+	 vwEnOc5GFFDMiJj7Xyv7r+PX9Gr+UuThajO/M5OI1guQfwEWNqaxut7Nwk/utZLNwWUVV
+	 ejCn1PmvuyXnT2R8yVeixCOr+daR4TqjN6alCpOrKTBNdExupWsQSJeRYemPSd9axEw==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1795465957;
+	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
+	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
+	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To:Content-Transfer-Encoding;
+	bh=9tyMkUr9+zYWv3mAdl+/oTYNIcjMUy1JAChBbK6vIio=;
+	b=z9dSqIBGAboFrpQnMo61whta9IURKSojLxc9ri2KnSbBYbMYyOhPLoyTlRc9cNjszCwf
+	 PkH3D2rXPc9XDqbmNukH9j+1AW/VhrhMVJqg0jj9k2AaAk6pUKF+2HcoSD1tao7Bg4OCs
+	 wcb77IF7/QahfMs5CMJKz1IYLdydkkKAaUFzsU3bxM1pFhtofvDcsrTifK3ilV2SeWUWD
+	 JeSOc3wCnMmxC7J1TWE27yZ1irO7Tw3Lwl1j+vQq9Dd49t31mDqIBALGWaFcamQE0DSVM
+	 THM9swcm4VhGHluEQ4Gk3KuAs/dbKkNOy7tB4HT49jlw+dGvf4iPYAUPh7nwilLCDHQ==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.kernel.org (Postfix) with ESMTPS id DC98B1F000D3;
+	Mon, 23 Nov 2026 20:32:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795463182;
-	bh=KE41Jy27ffz827pHQMFOPzKZ8B9e/3qLveo/Z2KJPcU=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=AvhsxErTE3cwKxdVFuZSnPngjpWN7dWNwsNGzx9Y7ZvMER2FkYRSTHy4aphsMAnUp
-	 M30rnU2L2AHgYioi+sKcVXFci2RltrGjRULL8PiA6GXgzAfCYq/+sXJwO4ajhtJj3V
-	 3O58Vb072H02/BM5FuvzfxIdfyt7q1jNl/T4db7/7+aRn5liTdEvJXoZuMGzZ9OD+X
-	 aZtLcw8hT+UQJX7+MWdhmMPpv0NWrLp4YqQD9b4h8GdMknkCuDfM+b+o9qZMEt2Oi9
-	 xsoxDhNYk2/7PXnUx7RGTqmt1sE9TnD6j7g1HvFRu+lmr86Ok4yZEua3jBhn3U5pxo
-	 mTLPI+Qu7OEeQ==
-Message-ID: <sashiko-outbox-229956@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v4 01/11] dt-bindings: soc: amlogic:
- meson-gx-hhi-sysctrl: Fix compatible matching in conditionals
-To: "Ronald Claveau" <linux-kernel-dev@aliel.fr>
-Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org, linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org, robh@kernel.org, conor+dt@kernel.org, neil.armstrong@linaro.org, vkoul@kernel.org, olteanv@gmail.com
-In-Reply-To: <20261123-meson-drm-create-hdmitx-phy-v4-1-3fb94f5534ca@aliel.fr>
-References: <20261123-meson-drm-create-hdmitx-phy-v4-0-3fb94f5534ca@aliel.fr>
- <20261123-meson-drm-create-hdmitx-phy-v4-1-3fb94f5534ca@aliel.fr>
-Date: Mon, 23 Nov 2026 19:46:21 +0000
+	s=k20260515; t=1795465957;
+	bh=9tyMkUr9+zYWv3mAdl+/oTYNIcjMUy1JAChBbK6vIio=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
+	b=KQNLeil0pnY3SrpZpmzEetia+5h2ujIhwz395ANnl5+CGDA4FJrm6su6cs0RtKQR1
+	 b9qrMND+GQ4PWNWC0tdvTwcrjjFt9HXQV7Scq5uXfnixwVAZ/gdYI6AldMGh94GSpH
+	 aA997h2qIxXWaumeCqUxezbRuMZ0abYn6PlOQkT70461iQS7lz+V4J4kToFJ4UdZFb
+	 WKPJ8G13SlT1HYrc76oYGqBSEe1PqxyAWVw7RtvkurczwjVIPpvvNHaCISMiltdMQs
+	 eTQ/cDaZU3EvFhWcNB9pw7H9cDHSV+ZU2+g0u53vUm0VDHPya55EU9ii81hnS6L49r
+	 kagMxuPPI0wsA==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 5E1B54C6FF;
+	Mon, 23 Nov 2026 20:32:17 +0000 (UTC)
+From: Fil Dunsky via B4 Relay <devnull+filipp.dunsky.gmail.com@kernel.org>
+Date: Mon, 23 Nov 2026 23:32:15 +0300
+Subject: [PATCH v2 1/8] PCI: dwc: Export the multiplexed MSI interrupt
+ handler
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Message-Id: <20261123-b4-cs7542-pcie-v2-1-f589a9cd0bef@gmail.com>
+References: <20261123-b4-cs7542-pcie-v2-0-f589a9cd0bef@gmail.com>
+In-Reply-To: <20261123-b4-cs7542-pcie-v2-0-f589a9cd0bef@gmail.com>
+To: Manivannan Sadhasivam <mani@kernel.org>, 
+ Stephen Boyd <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Jingoo Han <jingoohan1@gmail.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ Krzysztof Wilczynski <kwilczynski@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
+ Brian Masney <bmasney+clk@redhat.com>, 
+ Jerome Brunet <jbrunet+clk@baylibre.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
+ linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-clk@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795465935; l=872;
+ i=filipp.dunsky@gmail.com; s=20260930; h=from:subject:message-id;
+ bh=Mna9V2FvctfGCov2fj28CrWMP+FmQdEcH5a5uq4pt5U=;
+ b=iPA0bYRf79FFPZCfNmPxcL55dq3dCI1ypOQzRlCncf7ujc4VHkSd+c3JzvJjVekdl6zTVt/SN
+ I53Le0IATu0AVXqUzEOQetC/fcE6WJgt8jFDHqqTTa+3cqZRXGvbTNs
+X-Developer-Key: i=filipp.dunsky@gmail.com; a=ed25519;
+ pk=JAYP8e2rJ54DHOmhNtXud8rl1igAaAXoOHxtJmVXI1g=
+X-Endpoint-Received: by B4 Relay for filipp.dunsky@gmail.com/20260930 with
+ auth_id=1085
+X-Original-From: Fil Dunsky <filipp.dunsky@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,53 +115,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: filipp.dunsky@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwKaXNzdWUgdG8gY29uc2lkZXI6Ci0gW0xvd10gZHQtYmluZGluZ3M6IHNvYzog
-YW1sb2dpYzogbWlzc2luZyBGaXhlcyB0cmFpbGVycyBmb3IKICBjb25kaXRpb25hbCBtYXRjaGlu
-ZyBmaXgKLS0KCmNvbW1pdCAwY2RhMzU1ZDgxZmIxNGI3YThiMWM1ZGFmYzliNmQzZjIxMTRkNjc5
-CkF1dGhvcjogUm9uYWxkIENsYXZlYXUgPGxpbnV4LWtlcm5lbC1kZXZAYWxpZWwuZnI+Cgo+IGR0
-LWJpbmRpbmdzOiBzb2M6IGFtbG9naWM6IG1lc29uLWd4LWhoaS1zeXNjdHJsOiBGaXggY29tcGF0
-aWJsZSBtYXRjaGluZyBpbiBjb25kaXRpb25hbHMKPgo+IFRoZSBjb25kaXRpb25hbCBzY2hlbWFz
-IHNlbGVjdCBvbiAiY29tcGF0aWJsZSIgd2l0aCBhIGJhcmUgZW51bS4gT24gYQo+IGxpc3Qgc3Vj
-aCBhczoKPgo+ICAgY29tcGF0aWJsZSA9ICJhbWxvZ2ljLG1lc29uLWd4LWhoaS1zeXNjdHJsIiwg
-InN5c2NvbiIsICJzaW1wbGUtbWZkIjsKPgo+IGFuIGVudW0gYXBwbGllZCB0byB0aGUgd2hvbGUg
-YXJyYXkgb25seSBtYXRjaGVzIHNpbmdsZS1lbnRyeSBsaXN0cywgc28KPiB0aGUgaWY6IGJsb2Nr
-cyBuZXZlciBtYXRjaCBhcyBpbnRlbmRlZCBhbmQgdGhlIHBlci12YXJpYW50IGNvbnN0cmFpbnRz
-Cj4gYXJlIG5vdCBhcHBsaWVkIHJlbGlhYmx5Lgo+Cj4gV3JhcCB0aGUgZW51bXMgaW4gImNvbnRh
-aW5zIiBzbyB0aGF0IHRoZSBjb25kaXRpb25zIG1hdGNoIG9uIGFueSBlbnRyeQo+IG9mIHRoZSBj
-b21wYXRpYmxlIGxpc3QuCj4KPiBEb2luZyBzbyBleHBvc2VzIHRoZSAicGh5IiBjaGlsZCBub2Rl
-IG9mICJhbWxvZ2ljLG1lc29uLWd4LWhoaS1zeXNjdHJsIjoKPiBpdCB3YXMgZm9yYmlkZGVuIChw
-aHk6IGZhbHNlKSwgYnV0IHNvbWUgRFQgbGVnaXRpbWF0ZWx5IGRlc2NyaWJlIGFuCj4gImFtbG9n
-aWMsZzEyYS1taXBpLWRwaHktYW5hbG9nIiBQSFkgbm9kZSB1bmRlciB0aGlzIHN5c3RlbSBjb250
-cm9sbGVyLAo+IHdoaWNoIHJlc3VsdGVkIGluIGR0YnNfY2hlY2sgd2FybmluZ3Mgc3VjaCBhczoK
-Pgo+ICAgc3lzdGVtLWNvbnRyb2xsZXJAMCAoYW1sb2dpYyxtZXNvbi1neC1oaGktc3lzY3RybCk6
-IEZhbHNlIHNjaGVtYSBkb2VzCj4gICBub3QgYWxsb3cgeydjb21wYXRpYmxlJzogWydhbWxvZ2lj
-LGcxMmEtbWlwaS1kcGh5LWFuYWxvZyddLAo+ICAgJyNwaHktY2VsbHMnOiAwLCAuLi59Cj4KPiBB
-bGxvdyB0aGUgcGh5IGNoaWxkIG5vZGUgZm9yIGFtbG9naWMsbWVzb24tZ3gtaGhpLXN5c2N0cmwg
-YnkgcmVmZXJlbmNpbmcKPiB0aGUgYW1sb2dpYyxnMTJhLW1pcGktZHBoeS1hbmFsb2cgYmluZGlu
-ZyBpbnN0ZWFkIG9mIHJlamVjdGluZyBpdC4KPgo+IFNpZ25lZC1vZmYtYnk6IFJvbmFsZCBDbGF2
-ZWF1IDxsaW51eC1rZXJuZWwtZGV2QGFsaWVsLmZyPgoKW1NldmVyaXR5OiBMb3ddClNob3VsZCB0
-aGlzIGluY2x1ZGUgRml4ZXM6IHRhZ3MgZm9yIHRoZSBjb21taXRzIHRoYXQgaW50cm9kdWNlZCB0
-aGUgYmFyZQpjb21wYXRpYmxlIGVudW0gY29uZGl0aW9uYWxzIGFuZCB0aGUgcGh5OiBmYWxzZSBy
-ZXN0cmljdGlvbj8KCiAgRml4ZXM6IDRkMDIzYmViMzk5OCAoImR0LWJpbmRpbmdzOiBzb2M6IGFt
-bG9naWM6IGRvY3VtZW50IFN5c3RlbSBDb250cm9sIHJlZ2lzdGVycyIpCiAgRml4ZXM6IDk2MGE0
-MTQwYWRlOCAoImR0LWJpbmRpbmdzOiBzb2M6IGFtbG9naWMsbWVzb24tZ3gtaGhpLXN5c2N0cmw6
-IERvY3VtZW50IHRoZSBTeXN0ZW0gQ29udHJvbCByZWdpc3RlcnMgZm91bmQgb24gZWFybHkgTWVz
-b24gU29DIikKCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMv
-cGF0Y2hzZXQvMjAyNjExMjMtbWVzb24tZHJtLWNyZWF0ZS1oZG1pdHgtcGh5LXY0LTAtM2ZiOTRm
-NTUzNGNhQGFsaWVsLmZyP3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
-cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+From: Fil Dunsky <filipp.dunsky@gmail.com>
+
+Allow modular host glue with a combined application interrupt to dispatch
+the internal MSI receiver without installing a second chained handler.
+
+Signed-off-by: Fil Dunsky <filipp.dunsky@gmail.com>
+---
+ drivers/pci/controller/dwc/pcie-designware-host.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
+index bbb02458a..1d076bb62 100644
+--- a/drivers/pci/controller/dwc/pcie-designware-host.c
++++ b/drivers/pci/controller/dwc/pcie-designware-host.c
+@@ -85,6 +85,7 @@ void dw_handle_msi_irq(struct dw_pcie_rp *pp)
+ 			generic_handle_demux_domain_irq(pp->msi_irq_domain, irq_off + pos);
+ 	}
+ }
++EXPORT_SYMBOL_GPL(dw_handle_msi_irq);
+ 
+ /* Chained MSI interrupt service routine */
+ static void dw_chained_msi_isr(struct irq_desc *desc)
+
+-- 
+2.53.0
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
