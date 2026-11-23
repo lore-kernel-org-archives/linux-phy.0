@@ -2,109 +2,139 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 65395606A31E
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 20:34:02 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9383A606A31E
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Nov 2026 21:17:47 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=MtXHT/fM;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=j3TuCmyq
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=WsAMOAc7;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=v37dM4rC
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=fM1888P4NMyPCG1LRKsHZC9YLKtYa404mv02iuMuGGk=; b=MtXHT/fM8k7C8Zij9lq9+rUR4z
-	73A/PBje/h05R6OcLZVvZNyGT4bDmFW9MoLzmV70CoQDM7vATe97nekA+7YBUTcX6qB+w/OOR/bsS
-	/zx3PLLLurv+Z42eeORTtlqQAepuESVEz49AoahvUGIdBZzeUdwYYVuOjPgn+82rok6Zt15Ak04bC
-	BzVVCIgaHyDWYpJQ+aFHNeELEdSFkR71ALR1J7jsiktMSuVq1GybYq4C2dBApp+CXRYQJubWUdA+7
-	nXmyDZ7zXlpLUqtUeoIB0JZalqFGNyO7T2sfiRO1MDhzf8zaJaYjV+znEJaJ4AU9Kq7Bzhbucn4qR
-	H+xJdYJw==;
+	bh=PA/fNyHJICTEovMWaCGBbxUZ/joDZS4NEw2ZJNxzObk=; b=WsAMOAc7uUnazZb9YIaT7mQq8A
+	8xNBfQZ6MB9fXYZCOlfyIdRZii8D7Xilpxie3mb/C609JUSYRIKRTcen9AoWo22M58m5vHscI1y3z
+	gVRdgx+vLIf+tz7R+yRTKDGIP0G9oCpO2kzFtNOGvN7bU8Fr9DOFW0FNjhVggDIkX/cTzhQVXRWgh
+	DShkwJjoI3OJGzmWKrno3aZdVDGjluD8dtSftEY4Z/mzfuoSmK/NWBLqZVsjgRYQSs8opmgiFRC+P
+	wh0lnwZGeVvvDL1LXOEDkLzLNWbSocjQh5jf86cjWZB3L0XTNifsdnN8sf59NPI8R2D/WzfPVr3Uj
+	OxOFCYVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVaji-00000004rGv-03Td;
-	Mon, 23 Nov 2026 20:34:02 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xVbQ3-00000004x0c-1PVc;
+	Mon, 23 Nov 2026 21:17:47 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVaif-00000004qev-3PKP;
-	Mon, 23 Nov 2026 20:33:01 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0067C624B9;
-	Mon, 23 Nov 2026 20:32:57 +0000 (UTC)
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795465976;
-	b=rZ+uTr+orARP/Vcb2rVjKEsCV4/tylX0sYou8d8WmpJka1WFhlYhOsKA4NTApHuImCX3
-	 EmD2qli6Fgx+BqosiciAn/o9APZWP4DCof9c5wZn6ucNvV45yuZsmudpHXvCOSfbh3lSf
-	 h0rJzRFxInIJGGO3kWc7hO+KwAZF8l+A2uMtg2PExjJasvt453G/ESvEAoqejLvp7uYyR
-	 Kz7zjl6bE/L6FUQj3gkhmvNi00epoQ3LrlFGZ6xOCWEox1U+vrOezitK3MXs2RK7cDTXa
-	 vYZ/qyAVz/JUS/QEsL5vPxkz8HsFRzp3KK6XhtGbuDgUM/6jqgNJcR/K9YKNtWtuJVw==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795465976;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=Lej6RTvtrpI2hEP/db8Qbcau2rotxEBHFNsfNijRJu8=;
-	b=yjtaHckWJk6LRVVoQ4h7gHVDl8ASFaWgZczE1AWjjGxIJlpd6xutZIuRtXc8mHCFAkm9
-	 lf2WZhjNksFiCb/GQJAyKxFOStWwKlGC84QBErk8MkqguRzRBHCW8yQnaSvEAZTfGcKvV
-	 ZomfCDZ2jYVV0V3yohKZL4ZLqcAyYlQBIE8txeT57lv+j7ng9wAArE+ghr26DCSDKeItA
-	 BA/S3enpMmGj7O/gF9Mtq6zJlhWJSqbjG/pilI0J+rsxMy0ewgr+eTZReobOMhCmE0Ltb
-	 B5OWk86JjCXV/symfIk9EWBpz786/PgeFf5LiMZls8Ri6tmqR8HvYsiwAVLnqGwu6pg==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 1C5751F0093C;
-	Mon, 23 Nov 2026 20:32:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795465976;
-	bh=Lej6RTvtrpI2hEP/db8Qbcau2rotxEBHFNsfNijRJu8=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=j3TuCmyqIDDR8NGD5LuQq5sXRj6fH32sOmv8uCX+++9Fem+v9yg6pXxafl552aMco
-	 fdfgPP9C+1FFxsAqzZ7Heuac1Qm+3+2PWTnFhLgBMQvfZXy1n5TMgKdFL6uCrk02j3
-	 nPSH4SioRgMHqPsxOBk394Tu+01/OL7DCeP+jXbjWoEdzcPGAl3PN2yIwvL6dy/OS4
-	 bMSzNCbWSVREEXjj/UcerYGGoY95hSWPUXLpDx+e8vKaqvbHFoTPtnhA7yBIGWYMpS
-	 68dXjwStQsrN6b0B3natzvKxyfwih6/oA1MpsrHgSRx6orNSf1dFh62s+yTHtaHVK/
-	 p9YHKOe32HZag==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 34DAC4C71A;
-	Mon, 23 Nov 2026 20:32:18 +0000 (UTC)
-From: Fil Dunsky via B4 Relay <devnull+filipp.dunsky.gmail.com@kernel.org>
-Date: Mon, 23 Nov 2026 23:32:22 +0300
-Subject: [PATCH v2 8/8] MAINTAINERS: Add CS7542 PCIe support
+	id 1xVbQ0-00000004wyp-1YHa
+	for linux-phy@lists.infradead.org;
+	Mon, 23 Nov 2026 21:17:45 +0000
+Received: by mail-wr1-x42d.google.com with SMTP id ffacd0b85a97d-4a357b1c649so2251177f8f.3
+        for <linux-phy@lists.infradead.org>; Mon, 23 Nov 2026 13:17:43 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795468662; x=1796073462; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=mEI2MWJHKjiB6vj3bpQygFD6VsBJJyxeJ4zAlBvCIuE=;
+        b=v37dM4rCQ8S8IaVMpFqQYwXkZDG2MsoGLGhJBlCTxgJ65OvyJMc2fN6lnphy3+kur2
+         7DAwO9BHt0x60cBnROjqSOJQsQmaSD+Ng1sa7cWpQ5b61oeWQgDQdRqqV7rZp2u064n8
+         2k25JOo5KjI11Szw5f+wTFCZmb+49bep7gj8m80iRHnvzgOwjkzAlH0eAFCQImnuR98b
+         fEyrQunyov3Pce30qpbBzh26Hr0NR7cH1EU0HADVeDIxh7KPAkHC+vDPykvaRwwVzfDw
+         ni2wYAfmpWnQ1x85i2OJPJ0G5z6r+aluYsCamrnHo5lcMU75HAXf1gdMILz17onEpJkP
+         j3Jg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795468662; x=1796073462;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=mEI2MWJHKjiB6vj3bpQygFD6VsBJJyxeJ4zAlBvCIuE=;
+        b=EJ1YZtfT0rTzPzRf1ajUQIZANuONNNYR4EAo+tQXkMuxfMNZ0TwMGT0P/RL8aC8M2n
+         NJZlqJ4WdciPCjQ9qtYaUeEl7Kxn0lMZKZl71zGrv5D4CSzDClK1W0H8ymOxUDRZLTpP
+         OKYjqDTSvioweQ4asw0NSfM+R4aVzjHIbTK/gECFlb4U9/jSAofi6isdpp4NO90Ljj3H
+         c5ZbxSC6EfXETzLjEDOVZVVtsLhpY5Wx3vTWzzyUKpJZyKJL95G31C/9DU7o6Zkn00+u
+         jRtgmBXiE90t+9H6lg7WKkVu/i3f9vevYkSrXUyLajCIMICN8j4S9RH7J+0OzdWzi82o
+         GdsQ==
+X-Forwarded-Encrypted: i=1; AL+hErGrBHgRUX2yF1r1Zu4i1Eb05NaQ7k+H1MVKFncapZH4SN0N9OajlVgMFALyqsIZK3Rls2TkEvd0MxE=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/aa0PK99h8VI0Ovf2BRv5kNJ3mEskjJJTNwPkxQJLyPch+Ihqf
+	yMEpC7Hb1HcTY54DANDu2wXEEiBcurNG7M8BSdirZzkUFu1OmHozjGRn
+X-Gm-Gg: AZFdTZeSo9l9HjSo0uZWs4oh8h7+YVa/saV21S4DXAvBwcJVmkrmiZZ025NTShbD6Q5
+	FIQNVQaztpY9g+j2786lI+idKvxWiUk7XzNKzX+PdRGMcv7I0SxOwaQZhxgG/9ppHlk6IlAVjNI
+	bV8IllYMpHl0y8nJ32oLpVVLUFjbV8sury+YQJ0t0G/3fuGoKa0mAvTRmslNrvbJA4UWnFMBpzn
+	ocjsqpeFd/TJIG14lFOB/iMbx8/+8i20x88PZh+iaiQEhcWZCNPTyJHYiiuV4tbGi0MEcPypwnN
+	HuaZ0OfjDiZG+uXn3MbYToCTOohQXmPNatFTw10IVxiHnm0DyL4rMuN/bDVML3zLZk3DT5Bo3Ir
+	RDzYBV78pQ1hroJnPciOSAHi9WpEHyNobKcjIkevOjMaxrYfFV3jst42gmO46QQwmmDAEXO66eo
+	MxqQsF+0TyLnAb11ehcZGNxbPY+4R5nIG5LYtNPkVOgtnOmVeyL9fSpH2HW/RGi5NR37ty7kAaV
+	tyRpkjjsMeYOa9v2tE2he5i0JLcZ6jkYURuHbmNMcCVe00xbpM/EAebJCht9NrM9HDT+jIc70/Q
+	DDVXoEaZLf2IJWGHihLMLZJt8OQ6wLTEvR3g0tpHPkrBSncu
+X-Received: by 2002:a5d:4605:0:b0:4a4:14db:2348 with SMTP id ffacd0b85a97d-4abb29105d1mr18698069f8f.35.1795468661504;
+        Mon, 23 Nov 2026 13:17:41 -0800 (PST)
+Received: from flare5 ([212.58.121.92])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4ab658e2e6dsm24513121f8f.6.2026.11.23.13.17.35
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 23 Nov 2026 13:17:40 -0800 (PST)
+From: Stanislav Aleksandrov <lightofmysoul@gmail.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	Abel Vesa <abelvesa@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Robert Marko <robimarko@gmail.com>,
+	Guru Das Srinagesh <linux@gurudas.dev>,
+	Thomas Gleixner <tglx@kernel.org>,
+	Radu Rendec <radu@rendec.net>,
+	Lee Jones <lee@kernel.org>,
+	Will Deacon <will@kernel.org>,
+	Robin Murphy <robin.murphy@arm.com>,
+	"Joerg Roedel (AMD)" <joro@8bytes.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Bart Van Assche <bvanassche@acm.org>,
+	Bean Huo <beanhuo@micron.com>,
+	Stanley Jhu <stanleyjhu@google.com>,
+	Herbert Xu <herbert@gondor.apana.org.au>,
+	"David S. Miller" <davem@davemloft.net>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Viresh Kumar <viresh.kumar@linaro.org>,
+	Amit Kucheria <amitk@kernel.org>,
+	Thara Gopinath <thara.gopinath@gmail.com>,
+	Daniel Lezcano <daniel.lezcano@kernel.org>,
+	Zhang Rui <rui.zhang@intel.com>,
+	Lukasz Luba <lukasz.luba@arm.com>,
+	Georgi Djakov <djakov@kernel.org>,
+	Sibi Sankar <sibi.sankar@oss.qualcomm.com>,
+	Ulf Hansson <ulfh@kernel.org>,
+	linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	mfd@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org,
+	iommu@lists.linux.dev,
+	linux-usb@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-scsi@vger.kernel.org,
+	linux-crypto@vger.kernel.org,
+	linux-pm@vger.kernel.org,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Subject: Re: [PATCH v2 13/16] dt-bindings: arm: qcom,ids: Add SoC ID for SXR2250P
+Date: Mon, 23 Nov 2026 21:17:23 +0000
+Message-ID: <20261123211723.1065310-1-lightofmysoul@gmail.com>
+X-Mailer: git-send-email 2.55.0
+In-Reply-To: <20261123-pastel-barracuda-of-rain-bce8ac@quoll>
+References: <20261116-halliday-dts-v2-0-2c92438c6c46@gmail.com> <20261116-halliday-dts-v2-13-2c92438c6c46@gmail.com> <20261123-pastel-barracuda-of-rain-bce8ac@quoll>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261123-b4-cs7542-pcie-v2-8-f589a9cd0bef@gmail.com>
-References: <20261123-b4-cs7542-pcie-v2-0-f589a9cd0bef@gmail.com>
-In-Reply-To: <20261123-b4-cs7542-pcie-v2-0-f589a9cd0bef@gmail.com>
-To: Manivannan Sadhasivam <mani@kernel.org>, 
- Stephen Boyd <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Jingoo Han <jingoohan1@gmail.com>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- Krzysztof Wilczynski <kwilczynski@kernel.org>, 
- Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
- Brian Masney <bmasney+clk@redhat.com>, 
- Jerome Brunet <jbrunet+clk@baylibre.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
- linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-clk@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795465935; l=1356;
- i=filipp.dunsky@gmail.com; s=20260930; h=from:subject:message-id;
- bh=jDKZmt7guwHzNgRKzZtW9q1sZuhebiJ5PQkmWsr+DNk=;
- b=COAIM9n7CTGeI8/L4LkcbqnsEldMGtaqCfIl/GPNmucZysECPadrp5Gs0ZzEUCWCmxfqt0Ccb
- lEinjDjWYRmCm41Fm5Fkw5271BcAEUcjoMXeS16jSw1BCeT47F5tcqn
-X-Developer-Key: i=filipp.dunsky@gmail.com; a=ed25519;
- pk=JAYP8e2rJ54DHOmhNtXud8rl1igAaAXoOHxtJmVXI1g=
-X-Endpoint-Received: by B4 Relay for filipp.dunsky@gmail.com/20260930 with
- auth_id=1085
-X-Original-From: Fil Dunsky <filipp.dunsky@gmail.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261123_131744_430025_793C9FF5 
+X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.1 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,58 +144,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: filipp.dunsky@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-2.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FORGED_GMAIL_RCVD,
+	FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Fil Dunsky <filipp.dunsky@gmail.com>
+On Mon, Nov 23, 2026 at 01:09:26PM +0100, Krzysztof Kozlowski wrote:
+> This should be rebased on my patch removing the IDs.
 
-Cover the new PCIe control, SerDes and host drivers and their bindings
-under the existing CS7542 entry.
+Thanks for review. I will rebase it, but I am not sure about
+the order, could you please clarify?
 
-Signed-off-by: Fil Dunsky <filipp.dunsky@gmail.com>
----
- MAINTAINERS | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+1. Should I wait for sending v3 until your patch is applied?
+or
+2. Should I apply your patch locally and then send v3 based on it?
+(but if something changes in your patch a v4 might be needed)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index d8835aeca..511a6cb34 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -2949,15 +2949,20 @@ F:	tools/perf/tests/shell/coresight/*
- F:	tools/perf/util/cs-etm-decoder/*
- F:	tools/perf/util/cs-etm.*
- 
--ARM/CORTINA SYSTEMS CS7542 GLOBAL CONTROL
-+ARM/CORTINA SYSTEMS CS7542 GLOBAL CONTROL AND PCIE
- M:	Fil Dunsky <filipp.dunsky@gmail.com>
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
- S:	Maintained
-+F:	Documentation/devicetree/bindings/pci/cortina,cs7542-pcie.yaml
-+F:	Documentation/devicetree/bindings/phy/cortina,cs7542-pcie-phy.yaml
- F:	Documentation/devicetree/bindings/pinctrl/cortina,cs7542-pinctrl.yaml
- F:	Documentation/devicetree/bindings/soc/cortina/
- F:	drivers/clk/clk-cs7542.c
-+F:	drivers/pci/controller/dwc/pcie-cs7542.c
-+F:	drivers/phy/phy-cs7542-pcie.c
- F:	drivers/pinctrl/pinctrl-cs7542.c
- F:	include/dt-bindings/clock/cortina,cs7542-clock.h
-+F:	include/dt-bindings/reset/cortina,cs7542-reset.h
- 
- ARM/CORTINA SYSTEMS GEMINI ARM ARCHITECTURE
- M:	Hans Ulli Kroll <ulli.kroll@googlemail.com>
-
--- 
-2.53.0
-
-
+Best regards,
+Stanislav
 
 -- 
 linux-phy mailing list
