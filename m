@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0CFF8606A326
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 12:22:58 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E51C2606A33A
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 12:23:00 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=DLRVBfDr;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=QNaGY98f
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=vJA1DfZI;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=nf+81qer
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,49 +14,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=ThZnfm8JiDWfwJaRQvykjAbIXKMufEfXWUPfL6slH/I=; b=DLRVBfDrrLMWZ2+3NFoepui8ag
-	27+sMkaqGuyWj/OkJzGaGBnNHxZofT7yICeSwP0oETQ1kTai4rsj2bwciw4P0X+nNWpq50jwJm2Ox
-	/SDzVoYNkJQb14P4z2eDFrirMGkIqdnaNtSJM1bOd8WINwOzSNKIjKwHyxvr0PzAwD4dqC5W1FUdD
-	g0TcPvEBTg0gb1KD7o/7+XS0KV/ud9uFfGDsQeeIF9vfty2jWjEeqtsbPbZKtwDA4UeYiiAWK0EBS
-	UFAvbPr7geKqAWsDivVKJ064hgHz6ikPPAU6L5zGizUAn4JwReBlX+gh37CaPBq/Bkkfr8LMxV+j/
-	en48I0uw==;
+	bh=ONN9x96lWbe3dLGEk/SsSICIAtwqnSCUOMKFhwXc69Q=; b=vJA1DfZIf9BiSKF1tV84WZrEPb
+	IrbIt8Ok9MSfRskoh3tk+BI0hgAb5u0OP3evbzBoKItAJ6YBxG3r4c+ZybSUDjUPAvVZWuFh5ALNQ
+	gMYq4PAHax4JFCQP6PATN0fUl35FXbnsIPWT4N1xHQFQA0jVVYsVgMHO3IehQT4+pTy2MazW3SuGu
+	0V2Q2T07OrYbc39GmklwMpEavZD4L4ht0p8vbcb0j96CLqpA7JAWSTpjE+HZ7DnvlyXaLOewl9yCN
+	0+P/CXck9gTgl99wx9KV/fTyzZTSNWwwW2M/wfjWEeAZMLf3OrBbFSGH0GauFrVm9kxajnlb+/WRY
+	Wh1J9u9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVpY1-00000006VUH-2jqR;
-	Tue, 24 Nov 2026 12:22:57 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xVpY4-00000006VVI-2tTq;
+	Tue, 24 Nov 2026 12:23:00 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVpY0-00000006VTk-1b5q
+	id 1xVpY2-00000006VUX-2gmz
 	for linux-phy@lists.infradead.org;
-	Tue, 24 Nov 2026 12:22:56 +0000
+	Tue, 24 Nov 2026 12:22:58 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 271BA43EC6;
+	by sea.source.kernel.org (Postfix) with ESMTP id 55D3944F41;
+	Tue, 24 Nov 2026 12:22:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A12251F000D2;
 	Tue, 24 Nov 2026 12:22:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DCCED1F000C4;
-	Tue, 24 Nov 2026 12:22:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795522975;
-	bh=JB7XXVrcqNhiMQO53OXYzOYPpCwhyCEvNY7bBBKJcTA=;
+	s=k20260515; t=1795522978;
+	bh=CZmnlRLrVn7TKC0eRYBcOv8qoLYbJZDm6R825+quuX8=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=QNaGY98fRgb98Uz8ux0r5n7xu+AwoU73EeSruV/rkMHGFuQgHW3CRbFTzbHsVYpel
-	 fCxQWJmQYDh/5rwVTYaRCaH/3HMNHPV1Y8husdoSyvfA4x4lbkbf4qe5zDU7dLBXdF
-	 3KkwbbuqznP/Q8h74hO2NYwXjpo5coCnAxsQL8QII6sqPXK28A90ceYiy7q3LKuTH8
-	 nsuZ7BiqPu/VuQDK958Wz5ZKcSZiUbSaz7pHG5xrUZQtIK1l9PlQjDtp2YiAdCf5/z
-	 cBL8vo3FP/uI0pzMk7+5AKsr+lOTU7bgzp7yKf33qJFNxDdL894CNLbjrteD0d/pub
-	 9nl7RGSh/WDUw==
+	b=nf+81qerX3QWP87nKis5VHpOeiytntaO6Tt+zsS0VfhUnVtc9Gp0Qlui0Xe6bmWdL
+	 AxoPZH0zXdx6MLO22CllsbfDe562pk8cDEsyNR2PBrzLVnktmQs/P+1Cq2auZqJn2R
+	 08j2WPQyFIW83F9Z0eN8HuWYLKhX0/zIsybUYqOAzh+5La7EMu97AtP+upTpuSbEWk
+	 1jSG1ZPHsmXzlWskT4A0+JtuJex0bQUuYt7uMrY314j706j0XlZmWGGJ7GXRRkMHbg
+	 9DPOuUl9RmMpyhZc6AxeAblS0Vhw9HrfHPUOxebQs/yVjM2fIfDkslUTm5PXvSIEgg
+	 O2t6TUE3fs4VA==
 From: Vinod Koul <vkoul@kernel.org>
 To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, linux-phy@lists.infradead.org, 
- Ioana Ciornei <ioana.ciornei@nxp.com>
-Cc: devicetree@vger.kernel.org, netdev@vger.kernel.org, 
- Vladimir Oltean <vladimir.oltean@nxp.com>
-In-Reply-To: <20261118163134.2149894-1-ioana.ciornei@nxp.com>
-References: <20261118163134.2149894-1-ioana.ciornei@nxp.com>
-Subject: Re: [PATCH 0/3] phy: lynx: add support for downstream retimer PHYs
-Message-Id: <179552297252.405998.9355453865503403005.b4-ty@kernel.org>
-Date: Tue, 24 Nov 2026 17:52:52 +0530
+ Manivannan Sadhasivam <mani@kernel.org>, Brian Masney <bmasney@redhat.com>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20261106-phy-subsys-v1-0-9a443422e563@redhat.com>
+References: <20261106-phy-subsys-v1-0-9a443422e563@redhat.com>
+Subject: Re: [PATCH 0/2] phy: convert to subsys_platform_driver()
+Message-Id: <179552297628.405998.9109278185683497000.b4-ty@kernel.org>
+Date: Tue, 24 Nov 2026 17:52:56 +0530
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-Mailer: b4 0.14.3
@@ -80,24 +76,18 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
-On Wed, 18 Nov 2026 18:31:31 +0200, Ioana Ciornei wrote:
-> This patch set adds support in the Lynx SerDes PHY drivers for
-> retimer PHYs which can be found on the board downstream of the SerDes
-> lane towards any connector such as an SFP cage.
+On Fri, 06 Nov 2026 19:25:19 -0500, Brian Masney wrote:
+> Reduce boilerplate code in these drivers and convert them over to use
+> the macro subsys_platform_driver().
 > 
-> The first patch extends the Lynx 10G and Lynx 28G dt bindings so that we
-> allow the phys and phy-names properties at the SerDes lane level.
 > 
-> [...]
 
 Applied, thanks!
 
-[1/3] dt-bindings: phy: lynx: allow downstream phys on the lane nodes
-      commit: 5f7f673778dde3fca552cb7ad30b5f145774da3c
-[2/3] phy: lynx: get the PHYs listed in the lane nodes
-      commit: 9b98db3e56ded4e2990c5f1fb508cf45a78fb547
-[3/3] phy: lynx: forward the phy_ops to the downstream PHYs of a lane
-      commit: 3e10636038ee8a9430f791777f50f73c48afc5ad
+[1/2] phy: ti: omap-control: convert to subsys_platform_driver()
+      commit: 849bb62d5c2c30950ec5b8d497de6fb3f4060acd
+[2/2] phy: ti: phy-twl4030-usb: convert to subsys_platform_driver()
+      commit: 495f98f8dc61da7c5d9ad11ac7d07ee2cd2154cc
 
 Best regards,
 -- 
