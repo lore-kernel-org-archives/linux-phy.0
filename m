@@ -2,67 +2,93 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8C505606A338
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 09:22:33 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 08E59606A33C
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 09:56:16 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=2PzdesiU;
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=163.com header.i=@163.com header.a=rsa-sha256 header.s=s110527 header.b=JeLjbpe2
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=bfMCmk98;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=samsung.com header.i=@samsung.com header.a=rsa-sha256 header.s=mail20170921 header.b=pvqa49wr
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:References:Cc:To:In-Reply-To:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=0okG8M7+TheJSG1MqTSDLPDH9dq7tTjrjIUWWhM3M0g=; b=2PzdesiUgLbGVeN97Krtd7nfOX
-	2gefWcUL3fFP78y5lwlVuAS4EMfcipm4mTiYdGniOLArKd1hxfXqxHSYzYZtfjwKTSaYrbumStpuG
-	Dlom2Grrl6amxFjljiUB/dR4VcB/hmLY/4WV8BVCk4ZIlikArdvECCSmoTJduJwFBYPRR3NvcCCxM
-	a0LFB0eq4WrqVCNHh3UPrs8G8kgQ/eEji2iEvbZ8ETlCudqPFYlwwfuC9z/Kdj42E8cXJYQAEodCi
-	tHVE738lUjKMohWgNV7i3q88CDH4sAdBAICibFgB8vtpg7eHYFKG7h//yOshuyDD/d8f8luZytAu5
-	gvk9AmBQ==;
+	bh=56pDfRLwWKWns7Bioo9Zzjp0r8Y5IGjSCeBKcEGoe5s=; b=bfMCmk98VwVZUDg/pcJKs5ASla
+	YLmiyeSyVF5phAoJZI2JFMTd0NFqdfbQKqyTtlHE+dDMyaACT8QOoOkrkhKvcDjJYE1eHlnEJqdwF
+	XRnzkrPS7wXKplWPU15uPPTr7UUzzPERWR5FuGRnKth8o2/sB64r/W7c30Dv2yvxLpwky8H8lAiEn
+	oFd3BHZbnFH1aM6I4BCGE8pPFs3ow5ptKyfvhT/ntWLDyL13U7aqj4DlSGJVHbWR9/v0xcTcaF9mF
+	C3sX9WgbylYn5mtKlRVQF/+ciJ2eorMwz6O2FJwaLzoaGJNF8s1v2+I/L3HywMwA4hOT/sDrgG0wV
+	/IiH/u3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVmjR-000000062oJ-07Xh;
-	Tue, 24 Nov 2026 09:22:33 +0000
-Received: from m16.mail.163.com ([220.197.31.3])
+	id 1xVnFx-000000068Vl-3PRH;
+	Tue, 24 Nov 2026 09:56:09 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVmjM-000000062mv-3KqR;
-	Tue, 24 Nov 2026 09:22:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=From:To:Subject:Date:Message-Id:MIME-Version; bh=Hf
-	ZYu0W7xpmEBnGkS1JSMJR6zNAkfxoy56BJHRDK2zA=; b=JeLjbpe2UQGKudxBFe
-	Po6qY8BTnOKg22yL3B2DidC8euyqV5bdhqSnOOZI7d/pPYhD9gN3YueXcezFlwNb
-	lPYgy5h4w7HxuZmaqYj1MVIeYh7fxP/Gmp1L6DET54CZ6bxSgIfrcpgy6kTwsO4A
-	wuYLaPTtpkkhMDgInCoGoJnA0=
-Received: from localhost (unknown [])
-	by gzsmtp3 (Coremail) with SMTP id PigvCgDXPEAyVwVrbijMHw--.22110S2;
-	Tue, 24 Nov 2026 17:21:55 +0800 (CST)
-From: Xiangyu Zhu <jerrytech92@163.com>
-To: vkoul@kernel.org
-Cc: neil.armstrong@linaro.org,
-	mani@kernel.org,
-	heiko@sntech.de,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	jerrytech92@163.com
-Subject: [PATCH v3] phy: rockchip: inno-dsidphy: Fix 1.5GHz timing table rate units
-Date: Tue, 24 Nov 2026 17:21:54 +0800
-Message-Id: <20261124092154.2280807-1-jerrytech92@163.com>
-X-Mailer: git-send-email 2.34.1
+	id 1xVnFm-000000068MW-1D2h
+	for linux-phy@lists.infradead.org;
+	Tue, 24 Nov 2026 09:56:06 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+	by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id 20261124095555euoutp02e76520b59accfc12aed712013573d7dc~q8pyeHgMQ2627426274euoutp02_
+	for <linux-phy@lists.infradead.org>; Tue, 24 Nov 2026 09:55:55 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com 20261124095555euoutp02e76520b59accfc12aed712013573d7dc~q8pyeHgMQ2627426274euoutp02_
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1795514155;
+	bh=06AQXyihJq/OEvwcZMATqFb1XaBS16clhoCnTaBSROQ=;
+	h=From:Date:Subject:In-Reply-To:To:Cc:References:From;
+	b=pvqa49wrmPt0LaAiWFltuMuK6m+3bLZuXgR8XfutCoE1yaCF2zTYAkePJkVDGHk/P
+	 q2d15v/VU+kBDuSPXYsFxKxJLC/yIstc1LN2DJ0+1UF1//zrugN2i7JBV75cSTgzX6
+	 xTTJs0qhNdyWbXyC1/p7ZEMyZnflS3jeOxg+O/Ao=
+Received: from eusmtip2.samsung.com (unknown [203.254.199.222]) by
+	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+	20261124095555eucas1p1bf8a1e59f2197aafda6bc4f048384eec~q8pyNkyh21824718247eucas1p1R;
+	Tue, 24 Nov 2026 09:55:55 +0000 (GMT)
+Received: from AMDC4942.eu.corp.samsungelectronics.net (unknown
+	[106.210.136.40]) by eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+	20261124095554eusmtip24b9eb202848a11b54137244f0282c269~q8pxZUQWH3142631426eusmtip2b;
+	Tue, 24 Nov 2026 09:55:54 +0000 (GMT)
+From: Michal Wilczynski <m.wilczynski@samsung.com>
+Date: Tue, 24 Nov 2026 10:53:58 +0100
+Subject: [PATCH v8 1/5] dt-bindings: phy: Add starfive,jh7110-inno-hdmi-phy
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-CM-TRANSID: PigvCgDXPEAyVwVrbijMHw--.22110S2
-X-Coremail-Antispam: 1Uf129KBjvJXoWxZrWkWry7AF1xGFy3Cr15Arb_yoW5ArW8pw
-	1UG3y8CFZ5Gr1FqF9xXw1Utr4rXa97A3WUJ3yxGw1rXwn0g3ZYqF13GryDZa47Ars7ZF1Y
-	vrn0yF4UKw18uw7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07UkCz_UUUUU=
-X-CM-SenderInfo: xmhu25xwhfxmqs6rljoofrz/xtbC5BP9NWsFVzNBrQAA3Z
+Message-Id: <20261124-jh7110-inno-hdmi-phy-v8-1-5e3008122cba@samsung.com>
+In-Reply-To: <20261124-jh7110-inno-hdmi-phy-v8-0-5e3008122cba@samsung.com>
+To: Vinod Koul <vkoul@kernel.org>,  Neil Armstrong
+	<neil.armstrong@linaro.org>,  Manivannan Sadhasivam <mani@kernel.org>, Rob
+	Herring <robh@kernel.org>,  Krzysztof Kozlowski <krzk+dt@kernel.org>,  Conor
+	Dooley <conor+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,  Emil Renner
+	Berthing <kernel@esmil.dk>,  Hal Feng <hal.feng@starfivetech.com>, Dominique
+	Belhachemi <db@domibel.de>,  Michal Wilczynski <m.wilczynski@samsung.com>,
+	Andy Yan <andyshrk@163.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-riscv@lists.infradead.org,  Marek
+	Szyprowski <m.szyprowski@samsung.com>,  Icenowy Zheng
+	<zhengxingda@iscas.ac.cn>,  Chaoyi Chen <chaoyi.chen@rock-chips.com>, 
+	Joshua Peisach <jpeisach@ubuntu.com>
+X-Mailer: b4 0.15-dev
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2057;
+	i=m.wilczynski@samsung.com; h=from:subject:message-id;
+	bh=6AQm50xtAvbrSQTSn64RxXqfjCuQ7qgMNyPcGxB0fq8=;
+	b=owGbwMvMwCGWumv6zndzRCIZT6slMWSzxmuq14sV/uf5x3FGacaLf0oXq/0WH8xNzNl//IJlz
+	rG556P+d5SyMIhxMMiKKbKc3RhtJPmP4Wn58ce/YOawMoEMYeDiFICJiH9k+O/2y7lZdHbMbX2h
+	LTphQpWWh2N0tr9ewt58T9locsD6xjJGhuk/n3z+wB4vuSAh3FDmlaf0lX1bEmeabayYJ/e8I2r
+	XAgYA
+X-Developer-Key: i=m.wilczynski@samsung.com; a=openpgp;
+	fpr=CDB15B3219FE00E577C7E3FA65BA97B9EE9C1459
+X-CMS-MailID: 20261124095555eucas1p1bf8a1e59f2197aafda6bc4f048384eec
+X-Msg-Generator: CA
+X-RootMTR: 20261124095555eucas1p1bf8a1e59f2197aafda6bc4f048384eec
+X-EPHeader: CA
+X-CMS-RootMailID: 20261124095555eucas1p1bf8a1e59f2197aafda6bc4f048384eec
+References: <20261124-jh7110-inno-hdmi-phy-v8-0-5e3008122cba@samsung.com>
+	<CGME20261124095555eucas1p1bf8a1e59f2197aafda6bc4f048384eec@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261124_012229_410816_1CAA5EA2 
-X-CRM114-Status: UNSURE (   9.60  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.8 (-)
+X-CRM114-CacheID: sfid-20261124_015559_438853_B3FD1CC8 
+X-CRM114-Status: GOOD (  12.89  )
+X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,79 +101,82 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The 1.5 GHz Innosilicon DSI PHY timing table stores its rates in Mbps,
-whereas the other timing tables and the lookup loop use Hz. When
-enabling a mode, the driver compares inno->pll.rate in Hz (e.g.
-372000000) against timings[].rate in Mbps (e.g. 400), so no entry
-matches. The loop falls through to the last, fastest entry and programs
-an excessively large TLPX/LPX counter, preventing panels from decoding
-low-power DCS initialization commands.
+Add the dt-binding for the StarFive JH7110 Innosilicon HDMI PHY.
 
-Convert the 1.5 GHz timing table rate values to Hz so the lookup
-selects the matching entry.
+This device is a child of the starfive,jh7110-hdmi-subsystem node. It
+functions as both a PHY provider for the controller and as a clock
+provider for the variable pixel clock (hdmi_pclk), which it generates
+from its refoclk.
 
-Tested on an RK3506B board: the panel receives the low-power init
-sequence and the framebuffer console displays properly.
-
-Fixes: 785a9d5bb145 ("phy: rockchip: inno-dsidphy: Add support for rk3506")
-Signed-off-by: Xiangyu Zhu <jerrytech92@163.com>
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Signed-off-by: Michal Wilczynski <m.wilczynski@samsung.com>
 ---
-Changes in v3:
-- Rebase onto the current linux-phy tree so the patch applies cleanly.
-- Regenerate the diff against the current phy-rockchip-inno-dsidphy.c
-  blob, including a matching index line for git am -3.
-- Change tencent mail to 163 mail to solve threading bug.
+ .../phy/starfive,jh7110-inno-hdmi-phy.yaml         | 49 ++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
 
- .../phy/rockchip/phy-rockchip-inno-dsidphy.c  | 28 +++++++++----------
- 1 file changed, 14 insertions(+), 14 deletions(-)
+diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-inno-hdmi-phy.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-inno-hdmi-phy.yaml
+new file mode 100644
+index 0000000000000000000000000000000000000000..8dbd113b1534a37d00dfd60454f300531a813b8b
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-inno-hdmi-phy.yaml
+@@ -0,0 +1,49 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/starfive,jh7110-inno-hdmi-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: StarFive JH7110 Innosilicon INNO HDMI PHY
++
++maintainers:
++  - Michal Wilczynski <m.wilczynski@samsung.com>
++
++description:
++  The PHY portion of the StarFive JH7110 INNO HDMI IP.
++
++properties:
++  compatible:
++    const: starfive,jh7110-inno-hdmi-phy
++
++  clocks:
++    maxItems: 1
++    description: Reference oscillator.
++
++  '#clock-cells':
++    const: 0
++
++  '#phy-cells':
++    const: 0
++
++required:
++  - compatible
++  - clocks
++  - '#clock-cells'
++  - '#phy-cells'
++
++additionalProperties: false
++
++examples:
++  # Shown as a child of the HDMI subsystem node; see
++  # Documentation/devicetree/bindings/display/starfive/starfive,jh7110-hdmi-subsystem.yaml
++  # for the full node.
++  - |
++    phy {
++        compatible = "starfive,jh7110-inno-hdmi-phy";
++        #clock-cells = <0>;
++        clocks = <&xin24m>;
++        #phy-cells = <0>;
++    };
++
++...
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-index 6ad04b0c9f8c..fcf7aa17f94a 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-@@ -282,20 +282,20 @@ struct inno_mipi_dphy_timing inno_mipi_dphy_timing_table_max_1ghz[] = {
- 
- static const
- struct inno_mipi_dphy_timing inno_mipi_dphy_timing_table_max_1_5ghz[] = {
--	{ 110, 0x02, 0x7f, 0x16, 0x02, 0x02},
--	{ 150, 0x02, 0x7f, 0x16, 0x03, 0x02},
--	{ 200, 0x02, 0x7f, 0x17, 0x04, 0x02},
--	{ 250, 0x02, 0x7f, 0x17, 0x05, 0x04},
--	{ 300, 0x02, 0x7f, 0x18, 0x06, 0x04},
--	{ 400, 0x03, 0x7e, 0x19, 0x07, 0x04},
--	{ 500, 0x03, 0x7c, 0x1b, 0x07, 0x08},
--	{ 600, 0x03, 0x70, 0x1d, 0x08, 0x10},
--	{ 700, 0x05, 0x40, 0x1e, 0x08, 0x30},
--	{ 800, 0x05, 0x02, 0x1f, 0x09, 0x30},
--	{1000, 0x05, 0x08, 0x20, 0x09, 0x30},
--	{1200, 0x06, 0x03, 0x32, 0x14, 0x0f},
--	{1400, 0x09, 0x03, 0x32, 0x14, 0x0f},
--	{1500, 0x0d, 0x42, 0x36, 0x0e, 0x0f},
-+	{ 110000000, 0x02, 0x7f, 0x16, 0x02, 0x02},
-+	{ 150000000, 0x02, 0x7f, 0x16, 0x03, 0x02},
-+	{ 200000000, 0x02, 0x7f, 0x17, 0x04, 0x02},
-+	{ 250000000, 0x02, 0x7f, 0x17, 0x05, 0x04},
-+	{ 300000000, 0x02, 0x7f, 0x18, 0x06, 0x04},
-+	{ 400000000, 0x03, 0x7e, 0x19, 0x07, 0x04},
-+	{ 500000000, 0x03, 0x7c, 0x1b, 0x07, 0x08},
-+	{ 600000000, 0x03, 0x70, 0x1d, 0x08, 0x10},
-+	{ 700000000, 0x05, 0x40, 0x1e, 0x08, 0x30},
-+	{ 800000000, 0x05, 0x02, 0x1f, 0x09, 0x30},
-+	{1000000000, 0x05, 0x08, 0x20, 0x09, 0x30},
-+	{1200000000, 0x06, 0x03, 0x32, 0x14, 0x0f},
-+	{1400000000, 0x09, 0x03, 0x32, 0x14, 0x0f},
-+	{1500000000, 0x0d, 0x42, 0x36, 0x0e, 0x0f},
- };
- 
- static const
 -- 
 2.34.1
 
