@@ -2,116 +2,106 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EE2FA606A32E
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 06:38:33 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D0004606A334
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 07:00:42 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=4XvJ+aXL;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=B/3MInbc
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=kQKV2Fwe;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=MhhASjcc
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
+	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=FrhwhJ5jKq5NeoVcRLeFRtxzrzivcXLqyw/qO0ix55s=; b=4XvJ+aXLYn+SvR+WI/PoVsn+BX
-	rMowy8GTpBWaugIZYLref7TtgESfyw8n4WxdAop/kVJtRhpJjcaGeW4V6Cnoxxde+OQ1zaXqYI7D/
-	1cP/mtlCAUsjiK3olBJ2Ys8PuIHtxtUt3h5iVIZGHvidkU2X4jSALR90ySR8KvE6UnX9hHDVUE5ze
-	jLPvALqPK/cYeAr6EkQKxojbi41Qp3pVp7XmaPvJioqTiPs2wvUFWEfPAqiKah6C6yDm+ErCpaRdM
-	j9rebYUkRCFElIYahGWxKXRx0D/d6717Bjf5ktb+RFqwnmq2FE7quL+/1JZnlqYPZe/625Kn9/Qp6
-	tFGEmaug==;
+	bh=wEXIdaSgORyUSmtFHkK9iJLjAxjV8qv89azTsq1NUzw=; b=kQKV2Fwe79ui6mSfmqY6DZr9d+
+	NRZX6wwP6j4urMjmaujQf4dpEJi7ByTvBnByD9nfHFuw36YLl3jktCRsEBIJZob1h0dJvB8rs0jfJ
+	Op9bHJEdn8BgrI2cgjiiy0vOKM2ZOZA9dtVwV6t1aG4w4IovVFaJhgwDpo7TdHoyuHCaDWaSzUt3k
+	LIjf/h6UuKG9gOAoKE1tewNWvnXnb1moRMibWFNY5AI/LeWH2owrc/2jFk8wXFH2wIWeXKXly2oc0
+	BewhUJSnaDdJzsSihlS66dCHSdWQhZfdA5DAA1DN1PYMZoct8bssO3hOgsGZnv/h0MYeOAvoh55ed
+	O9knhRSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVkAj-00000005f2j-21xd;
-	Tue, 24 Nov 2026 06:38:33 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xVkWA-00000005hQB-1mpH;
+	Tue, 24 Nov 2026 07:00:42 +0000
+Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVkAh-00000005f2U-2UJV;
-	Tue, 24 Nov 2026 06:38:31 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0DF7241AC6;
-	Tue, 24 Nov 2026 06:38:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AFD911F000C6;
-	Tue, 24 Nov 2026 06:38:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795502310;
-	bh=G4Jws+luoVJ3BEeYNiEMEcC6CxB49mTq6uZPEZLGGks=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=B/3MInbc+7/0bDMIJBx5IpI7khMruoB3nanB6Qr6Ea1AR/zDoK4FSJ9uzLlLEPqdi
-	 hWQyJlkkVSq57rbY1JorQgZG6eeGCh4/t0gs4SpMfrtxDiZiFm/4jJffnl/d9W2aM9
-	 Yud68vicJZxeyqYsenMLhSgIl5gAyQYsO1qrBEgwSGITXC3Q5F1KhRg61ZkqbT1LVP
-	 bWwS8kQ3NYxHanEI5oTl2ocYbSaxB8BnOl7ctH/7NGWo1opvfAEzc7GnxXsMNckYNU
-	 JcGHalGxDkLnKM/+fccXSeZb/3mj6OJLe1zHuxp4/gvoxpZNA91DeoinsSqX9DbBVT
-	 qkQPr9dj60Jlw==
-Message-ID: <831a6498-9c1a-4829-b47d-52035fe15444@kernel.org>
-Date: Tue, 24 Nov 2026 07:38:22 +0100
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/8] dt-bindings: clock: Describe CS7542 PCIe gates and
- resets
-To: filipp.dunsky@gmail.com, Manivannan Sadhasivam <mani@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>
-Cc: Jingoo Han <jingoohan1@gmail.com>,
+	id 1xVkW2-00000005hMV-3d3G
+	for linux-phy@lists.infradead.org;
+	Tue, 24 Nov 2026 07:00:38 +0000
+Received: by mail-lj1-x22d.google.com with SMTP id 38308e7fff4ca-3adfed9a887so37392301fa.3
+        for <linux-phy@lists.infradead.org>; Mon, 23 Nov 2026 23:00:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795503630; x=1796108430; darn=lists.infradead.org;
+        h=content-type:mime-version:content-transfer-encoding:message-id:date
+         :references:in-reply-to:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=bUUKY0RsjD+IVYyi5SJxAofkyIWwSJR0q+NQRX7ZwwU=;
+        b=MhhASjccb1QzEUQllU6AZMkr+pEc9/ZEKmEsTmY1dQnVQcudEBz1kpFY7nCjZhWwXa
+         8V5K4QHLOflZzFlgsiWIICzEpd8jvL29EfQtCqhGqrAlJYvRawvaGVCOAm7NRSiRF7dB
+         5v2v5s8jqicfCoVwFir4efVluCYz4h3cykA7ibhHgbX8bFgH9OUNC7jDd7UWj2ZKJzMk
+         UyDVqft4A+GV+98ZPNzlxskNhBKCEkkPwBnLnNcHEjlofnaj2nDFWzSRQzGov1o+sUdq
+         6rw1Fe/BYeJyjS4bcMFwPL+AxTJ9iLXQHHme0lZpbLdeSlAuj0RSPR8uMPvwaCzTHj1s
+         Lkww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795503630; x=1796108430;
+        h=content-type:mime-version:content-transfer-encoding:message-id:date
+         :references:in-reply-to:subject:cc:to:from:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=bUUKY0RsjD+IVYyi5SJxAofkyIWwSJR0q+NQRX7ZwwU=;
+        b=WwIJVuRNVk44NPrlJL/0AgE5qmDJaFxyX0lu7UmMYfnn7pDWA1l3odR1L2G4ZoQ4Dm
+         XI9dpMzMyB1/8+xGrljebh9tlkksrXMDcsuJNCribZlKI+7GrcTRkjHuN9I2yjFbcFE9
+         N78jEs6Qid/os54GTzW7rRf7B0y23AJu7epzggoiIAdGWshl31h8JCWnDTxgg6ySGddO
+         Gtg4SlN1F4fLmtnF2quyPU+IZnO1p6eP+pCqUNURHFJtIMa/gUgKb7nW0w8P6SVC14sB
+         bcoWgBVpYxCA0sUhihrUIYgi0dFy8z/CDwnlmX3gjxgQx/4XADZV/Qgh16VAQb43QET5
+         nvxw==
+X-Forwarded-Encrypted: i=1; AL+hErG6Kj2KdoZvSHmfxGj2rEKYsuOgTRyR1DbtEDvn/1oVCVPoUXJk/TXTDB+1pMvq/J11RYbWha3ET7g=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+/f5J+OMRPhHdQGQjdBarv7Ca31TgKeEB/l19aHUtMBn81265X
+	L1ETgmTb1Is5yTj3YtBoElDjQ514NW6f8joORdDJPXAsbKfIVQSvcmog
+X-Gm-Gg: AZFdTZcKMiIEl1u1PqSO1rG8V4HwHMZbkeNjAmCxZjPAOjKMzlU3uphIbiDgd73YccL
+	4dVr0nYVSoqD8E77BjU+gw9/+bkWP1gm/uxP6eSnAy0EPoTW4NtUYdmswsUV3yFDA1t0D1ddzj3
+	i65i6zD+G3Rb8rsgctXfovNWwDc1m2GEDMjdz5ohEhKT86Xo0m0lbCMYhkXcY+K+j+qxeuSBQUZ
+	vHacXGI3JcgmYfcGMo3ZyUVHOyGufjiUw4Bnd8B6yygEV/CcIjeYwR4QK3404ufR8R5Vr6oJZB3
+	j/bv2K2c2HBk1vzcvmOSTDXrM4s2BPrqiWSXQS0PTWt0e2rK8hAplu/ApCPdG8EG2vKP520sW4A
+	XJ6HOO7rzmaDTxKVroE0mK73KQzVUL9zkJtQwhcb+Fjg/j4ivWEJ8JEVjJgT8Ts9qk/uewD3FY+
+	YOCNQjqygoslUDoja4gWqlQ524AoGlen7RfKJf/KmgHvCpnU7NtafzryHAxaIr10e6ccM7w4l2m
+	u1JCaPWNP2409jrBWN9gFmS6nDuKGUbqFjgB7JeOuwThMfHjW+hByPCJr8Tu85hI7lV8w+w5nlZ
+	VJHAFSZSszWRcKHiiNjpbiGNaA5xXBcntJ5Hjsiprfy9KLQ3DNIlVJQ=
+X-Received: by 2002:a05:6512:12c4:b0:5c1:563f:ff23 with SMTP id 2adb3069b0e04-5c1bc84ebc3mr3803268e87.61.1795503630067;
+        Mon, 23 Nov 2026 23:00:30 -0800 (PST)
+Received: from [127.0.1.1] (ip-024-180.users.dtel.ru. [91.210.24.180])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5c1bd05e235sm3481118e87.64.2026.11.23.23.00.26
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 23 Nov 2026 23:00:28 -0800 (PST)
+From: Fil Dunsky <filipp.dunsky@gmail.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Manivannan Sadhasivam <mani@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Jingoo Han <jingoohan1@gmail.com>,
  Lorenzo Pieralisi <lpieralisi@kernel.org>,
- Krzysztof Wilczynski <kwilczynski@kernel.org>, Rob Herring
- <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Brian Masney <bmasney+clk@redhat.com>,
+ Krzysztof Wilczynski <kwilczynski@kernel.org>, Rob Herring <robh@kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, Brian Masney <bmasney+clk@redhat.com>,
  Jerome Brunet <jbrunet+clk@baylibre.com>,
  Neil Armstrong <neil.armstrong@linaro.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, linux-pci@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 2/8] dt-bindings: clock: Describe CS7542 PCIe gates and resets
+In-Reply-To: <831a6498-9c1a-4829-b47d-52035fe15444@kernel.org>
 References: <20261123-b4-cs7542-pcie-v1-0-4cde5201d404@gmail.com>
  <20261123-b4-cs7542-pcie-v1-2-4cde5201d404@gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <20261123-b4-cs7542-pcie-v1-2-4cde5201d404@gmail.com>
+ <831a6498-9c1a-4829-b47d-52035fe15444@kernel.org>
+Date: Tue, 24 Nov 2026 09:58:48 +0300
+Message-ID: <179550352887.5.18085137758862458863@gmail.com>
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261123_230037_059721_86AE804E 
+X-CRM114-Status: UNSURE (   4.79  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,32 +111,31 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="fixed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
-	autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 23/11/2026 19:43, Fil Dunsky via B4 Relay wrote:
-> +properties:
-> +  compatible:
-> +    const: cortina,cs7542-pcie-control
-> +
-> +  "#clock-cells":
-> +    const: 1
-> +
-> +  "#reset-cells":
-> +    const: 1
-> +
+Hi Krzysztof,
 
-No resources here, not a separate device. Fold it into the parent.
+Agreed. I have folded these controls into the parent global syscon in the
+separately posted shared-global follow-up:
 
-Best regards,
-Krzysztof
+https://lore.kernel.org/all/20261124-b4-cs7542-global-controls-v1-0-12548785df2c@gmail.com/
+
+The parent node now provides both clocks and resets directly. The prepared
+PCIe revision removes this resource-less child binding/provider and uses
+the parent. I will let the ongoing reviews settle before reposting the
+PCIe series.
+
+Thanks,
+Fil
+
 
 -- 
 linux-phy mailing list
