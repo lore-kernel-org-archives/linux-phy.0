@@ -2,105 +2,66 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9CB76606A33E
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 10:32:11 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 2DF7A606A31E
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 10:59:49 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=v38+w+Zp;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=lQwQqMet
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Cl6Ki+zr;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=ZZZ5wkF7
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
-	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=QOQ08cmVjB0ELy9rY0k8F+l5ypcMbcoguoZucLd2iRQ=; b=v38+w+ZpbeQwOxz0tYdg6UzdBj
-	QSkkL4ajnFS174C/uM+RbxyJib4HLtxGLbZGTS8FdYzLYrrAtD2XY/eVU2lwRcBe7RiKON86zT/Wi
-	EtT/gzXR1MBWS0To9YoJQQ9T80R+r3bjrnQwe31S11jPCNiNBFILHLqgWG5Og48F4OB4oeXV+MTKX
-	o56Tln0hK8tCcGYrOR7HJ5UerWc/mdKnh6rdMiEvyz6nZscdXFc0FyWc/fkUuKX9Wf+JkUEAVMKk1
-	uALuup80o7VjiA3AIhRXpQ2HY2AJaMur5g1gVG2x+tu89IDPIYU418x8PZLHjo+EUac998q2Ct8A3
-	V6Q2YUEA==;
+	bh=E+aBScpCd8CyafgIuZCFpMRPm2vssvaQBHZ4YGqJEnA=; b=Cl6Ki+zroRSnpHOHoE8n13gwaU
+	gUns1JvfknjSG8dE5rpTx5M9m5abrUqE2MrJs0F18YIZzEvTITcQQ7CxXhFK0taa75kkVOEmx3+ka
+	4HV61aBbwWCfRfwlvXu58Yz3DJ2r97AgDe0CCTmi2q5MV3r3GreFw4BnrvqPBqNXFeMOXGNzxCyOk
+	9pcWkRU1lhf+VIsFS864MkpnM5R3s0Tg8GZ+/E3ZvGv4BKrzpeA+nKRGzrto5LhBTCNMo0wdXmNB1
+	FjoDwh7HdVm/FXqyVxPTZ9VwT3WrcyxYqUo6Pr/tfx1vRz26BzXdT9uIagVxDR/7CbXiptWBhI+1K
+	ukCFX5dg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVnop-00000006EQR-1bKk;
-	Tue, 24 Nov 2026 10:32:11 +0000
-Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
+	id 1xVoFY-00000006HcJ-1vEE;
+	Tue, 24 Nov 2026 10:59:48 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVnon-00000006EPO-242x
+	id 1xVoFX-00000006HcC-0mdM
 	for linux-phy@lists.infradead.org;
-	Tue, 24 Nov 2026 10:32:10 +0000
-Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-5c14f3dab09so2141308e87.0
-        for <linux-phy@lists.infradead.org>; Tue, 24 Nov 2026 02:32:08 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795516327; x=1796121127; darn=lists.infradead.org;
-        h=content-type:mime-version:content-transfer-encoding:message-id:date
-         :references:in-reply-to:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=L91r7jLCdgBrVDkCLs5wB8S82AZQlItQYcCNZU9WUC0=;
-        b=lQwQqMetqOT7LHvARgXM4NHa6StXoPY2Ib66kZje/jprMTqRVxKnHAPKdraRdCEhgQ
-         HNSw4gH8/B3Zc/5kMiqMZPatzJvWoMPj7cZUV+PmoqIimzjTMYiKMUTT/9b2+XjYEUOb
-         k8hS5dUoBKH/mCB5Wv7rAgTiYdxWBLarxw/YVfnmoVbIFW4TreuaxhJPTmVJp50fx/Hd
-         IQHlwmnoC6QgXjBSOP/30dvw/Pe8387EEe5W6Vga2nBa9ipXpP0ZLQXxXoA/0Xc87YOa
-         4h5wif0DbIwyXT5ftT78ovU8rq7z+LaBmMy1DBd0DbhXKhPkaiRjdPwcgixMgR3kNLdS
-         PjoA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795516327; x=1796121127;
-        h=content-type:mime-version:content-transfer-encoding:message-id:date
-         :references:in-reply-to:subject:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=L91r7jLCdgBrVDkCLs5wB8S82AZQlItQYcCNZU9WUC0=;
-        b=v4FMAhDqMWgZSYmKRrq+rX3+3aAQ7M2Pb7PxzqCGxk8qmvTqn2SeTyxL4AZPrYs2tZ
-         z0Rz2IL4D1J0gDR9LmbkR5YKXGEIa5p52PLFlA4iqIHBI152xYV6gTE9m4BZN7pznBHE
-         3r0ZDcA8FhbZuG0Vg2PSttr5ygGpocHyQVVZIfFJKu4UVuM4xgPa2Ay4My1uhRIlc90W
-         9HsKZlKYbHyJlOeCc49KcPcRy8jHIRNY/yYVjhJ00hXNbKB9EPh6yGAzyU+jqWrOHAda
-         yz585E5CJ6OTMKuY4sC4Rp1jBL3PNAfeRGgbMFICBdr8MlEq4WEn98dBlSPW+k+QRlX4
-         LWGg==
-X-Forwarded-Encrypted: i=1; AL+hErHJh3ChlfYyduljH1LsJUPrSozkG5038x79eAz8k470OlVPQ3rWR2XfU2TUYNYfP+Q13MbsApfmqBk=@lists.infradead.org
-X-Gm-Message-State: APuU4Z86dyEdwB5eBAKwkepV6RvSunprFxVS/hVznkBvTPvf26E17Zxs
-	aqju/8lGCQp4dBgtSgHlCxKvvkCnPtvM33W+NRSDTfzATUdeCzfOewVc
-X-Gm-Gg: AZFdTZfdc2gloSjAhC6Hqd3RfnSZHs4Q6t6jchsq31m6S5jR/CfP8Kx7ESxyB9oACMN
-	P3oI5whMIRVVdKXgzWLFb+Ggfm5ssQFsCxpbkKEvoLnqj1wxefgcnzMo+nFyv2QwPuQlkpU2UJh
-	v0B80RIFIm/jpRNZCqbhfiIQNZpiUNEVHqqwNfupRyWFEDQfE5Le+dPis5jyqf+FA1ZJIv/gE/j
-	qmTIbZYaCeSzO8e0f37/YjYGV+gwhM4OyCWNOCeiXACN3fQunTRsIWsw8TpdBLdIeBU0kMLc4SM
-	cEljd2xhdVhSton0jBMNI+QoWdIfJvmmGw5/LrPqDcKyincXyXcCHJVjAxQoP3REhKi3ynMCf4A
-	NMp1VaB1VcoXEUCMzHqGXTTJduAjciGEbRlCTmTzR72gsjsU3ec8NqJfUgqCZyXZyhazCCR6maL
-	5p5ORsfq3J9kBNSWrN8qyspzxL/P8jbfP4JMkd5VbDqXx81jo4SwS57OsLjGp2c6Jk/hYx+1tw0
-	HgU90BDrO73jOSs6xWxxjVhjcFUqt7/47WGrDWD6CKU0mfZhB2UVri+vhHUmaA5QjlhpEnYUmzl
-	1w03DN/R23LOMTU++9mNh56nNeWIHQFZpH6L5jhu629zHd8eIiGIK+c=
-X-Received: by 2002:a05:6512:3d0f:b0:5c0:4cb:2415 with SMTP id 2adb3069b0e04-5c1bc7c9a8bmr4202658e87.28.1795516327013;
-        Tue, 24 Nov 2026 02:32:07 -0800 (PST)
-Received: from [127.0.1.1] (ip-024-180.users.dtel.ru. [91.210.24.180])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5c1bcf332c9sm3680542e87.7.2026.11.24.02.32.01
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Nov 2026 02:32:06 -0800 (PST)
-From: Fil Dunsky <filipp.dunsky@gmail.com>
-To: Philipp Zabel <p.zabel@pengutronix.de>
-Cc: Manivannan Sadhasivam <mani@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Jingoo Han <jingoohan1@gmail.com>,
- Lorenzo Pieralisi <lpieralisi@kernel.org>,
- Krzysztof Wilczynski <kwilczynski@kernel.org>, Rob Herring <robh@kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>, Brian Masney <bmasney+clk@redhat.com>,
- Jerome Brunet <jbrunet+clk@baylibre.com>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
- linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 7/8] PCI: cs7542: Add CS7542 PCIe host support
-In-Reply-To: <f5d30781ae9502cd76ee2b6757f96a0e5ffa8b71.camel@pengutronix.de>
-References: <20261123-b4-cs7542-pcie-v2-0-f589a9cd0bef@gmail.com>
- <20261123-b4-cs7542-pcie-v2-7-f589a9cd0bef@gmail.com>
- <f5d30781ae9502cd76ee2b6757f96a0e5ffa8b71.camel@pengutronix.de>
-Date: Tue, 24 Nov 2026 13:31:25 +0300
-Message-ID: <179551628581.3.13614361091709904582@gmail.com>
+	Tue, 24 Nov 2026 10:59:47 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 4AFDB605F9;
+	Tue, 24 Nov 2026 10:59:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 679511F000D0;
+	Tue, 24 Nov 2026 10:59:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795517985;
+	bh=N6uRvXXdbzOgrjlg7A6t0V38H3wfSpwMq99VV1NJOwo=;
+	h=From:To:Cc:Subject:Date;
+	b=ZZZ5wkF7Y+r0J83uaENM5lJ6oQAKF/X3KqHuNs4rPvT5Q8nH7EOvpL4uEZVjANp+4
+	 onF9cQvlzDs/E7W88ZzLd/B1HP9p5+5AxuhkRrYHweJ0u1mTN5l+PRAwyB4RnrJiiH
+	 Wb59aCcHoj4ycg6ssLOX8r5+GOd3J3fXIdlVLC+lbQLIKfqRfHSpbA2xp5fOb4pssd
+	 H16eFyWkrMDKaXvgTZxLy7mhn88Ao65ItIIKnawtTUiw4NyG8A8rbJm/aiqZYBscpk
+	 n6mIgPQ6Tn6w2c27o+MphiQ2ocyppS180BXxpHFWmyMXUm8fUtJhQ/nKHnIH791s06
+	 6dPrf92RpGVdQ==
+From: Arnd Bergmann <arnd@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Cc: Arnd Bergmann <arnd@arndb.de>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Kees Cook <kees+treewide@kernel.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: [PATCH] phy: qcom-uniphy: avoid build failure from duplicate PHY_TYPE_PCIE
+Date: Tue, 24 Nov 2026 11:59:17 +0100
+Message-ID: <20261124105939.1440586-1-arnd@kernel.org>
+X-Mailer: git-send-email 2.53.0
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261124_023209_550279_73E65F93 
-X-CRM114-Status: UNSURE (   6.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,34 +71,89 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="fixed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Philipp,
+From: Arnd Bergmann <arnd@arndb.de>
 
-I'll drop the PCIe host's select of RESET_CONTROLLER. The host only
-uses the consumer API.
+Both the DT-binding and the driver define a PHY_TYPE_PCIE constant,
+which clashes at compile time:
 
-I looked at reset_control_pulse(). The CS7542 host asserts its
-exclusive reset before enabling the clock and powering up the PHY.
-The PHY has separate reset bits and leaves the host reset asserted.
-I'll keep it asserted for 10 ms after phy_power_on(), deassert it,
-then wait another 10 ms before accessing the host registers.
+In file included from include/linux/phy/phy.h:25,
+                 from drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c:15:
+include/dt-bindings/phy/phy.h:15:33: error: expected identifier before numeric constant
+   15 | #define PHY_TYPE_PCIE           2
+      |                                 ^
+drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c:47:9: note: in expansion of macro 'PHY_TYPE_PCIE'
+   47 |         PHY_TYPE_PCIE = 1,
+      |         ^~~~~~~~~~~~~
+drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c:127:27: error: 'PHY_TYPE_PCIE_GEN2' undeclared here (not in a function); did you mean 'PHY_TYPE_PCIE'?
+  127 |         .phy_type       = PHY_TYPE_PCIE_GEN2,
+      |                           ^~~~~~~~~~~~~~~~~~
+      |                           PHY_TYPE_PCIE
+drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c:135:27: error: 'PHY_TYPE_PCIE_GEN3' undeclared here (not in a function); did you mean 'PHY_TYPE_PCIE'?
+  135 |         .phy_type       = PHY_TYPE_PCIE_GEN3,
+      |                           ^~~~~~~~~~~~~~~~~~
+      |                           PHY_TYPE_PCIE
 
-The helper would cover the assertion and hold time for a standalone
-pulse. Here the line is already asserted across PHY setup and the
-controller also needs the delay after deassertion, so I'll use the
-explicit sequence in the host.
+Nothing uses the definition in the driver, so just remove it.
 
-Thanks,
-Fil
+Fixes: b28eecc89399 ("include: linux: phy: Add phy attribute "type" and associated helpers")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+ drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+index ef8709ff0e16..499ff3ce3b28 100644
+--- a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
++++ b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+@@ -43,12 +43,6 @@
+ #define PHY_CFG_EIOS_DTCT_REG			0x3e4
+ #define PHY_CFG_GEN3_ALIGN_HOLDOFF_TIME		0x3e8
+ 
+-enum qcom_uniphy_pcie_type {
+-	PHY_TYPE_PCIE = 1,
+-	PHY_TYPE_PCIE_GEN2,
+-	PHY_TYPE_PCIE_GEN3,
+-};
+-
+ struct qcom_uniphy_pcie_regs {
+ 	u32 offset;
+ 	u32 val;
+@@ -56,7 +50,6 @@ struct qcom_uniphy_pcie_regs {
+ 
+ struct qcom_uniphy_pcie_data {
+ 	int lane_offset; /* offset between the lane register bases */
+-	u32 phy_type;
+ 	const struct qcom_uniphy_pcie_regs *init_seq;
+ 	u32 init_seq_num;
+ 	u32 pipe_clk_rate;
+@@ -124,7 +117,6 @@ static const struct qcom_uniphy_pcie_regs ipq5332_regs[] = {
+ 
+ static const struct qcom_uniphy_pcie_data ipq5018_data = {
+ 	.lane_offset	= 0x800,
+-	.phy_type	= PHY_TYPE_PCIE_GEN2,
+ 	.init_seq	= ipq5018_regs,
+ 	.init_seq_num	= ARRAY_SIZE(ipq5018_regs),
+ 	.pipe_clk_rate	= 125 * MEGA,
+@@ -132,7 +124,6 @@ static const struct qcom_uniphy_pcie_data ipq5018_data = {
+ 
+ static const struct qcom_uniphy_pcie_data ipq5332_data = {
+ 	.lane_offset	= 0x800,
+-	.phy_type	= PHY_TYPE_PCIE_GEN3,
+ 	.init_seq	= ipq5332_regs,
+ 	.init_seq_num	= ARRAY_SIZE(ipq5332_regs),
+ 	.pipe_clk_rate	= 250 * MEGA,
+-- 
+2.53.0
 
 
 -- 
