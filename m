@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 576F7606A32A
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 11:33:18 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id EF92A606A322
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 11:47:09 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=eJ4fJjn4;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=CNmLzglP
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=1qjWKzsb;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Drf2d3kH
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
@@ -14,53 +14,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=SYeSMQMY9QFRdA9isSCDzz4sR7MTdvSgEGv2/dKlwa8=; b=eJ4fJjn4+tFDj96tyii9itQziy
-	kkHQi1I0NdcY4hG6LXGJchVjNJZjI3eSAehzGxLe/jdDH3wpPjgVYLYC9IBZ4qP0Pm7DyWGeAvTou
-	LUzqjfDlk3/HMzg4I8MNt2/hvpVV1AAI+V2Xv4hOOpHkWC8LCF1qwtMIUpboRspGgut61EPJHCS8e
-	BCljAh2asFV64S066yC4pJ8MrlCMhuXaSxYJc+OL/fDcU0C56WdT0thKPjllj11p+RQdw1JxYdpuU
-	4CWXCHI8V6rJzQrb7P5o6N0DgQ+n7rszaSBCQePe9H4v67R1Oe9naPtnbEa5Bl4xr6LfOncl+NUYU
-	Fsvyfc/A==;
+	bh=Ul6bujA4ctapuQLG8hK5RcvfqCnLmNw78xAvh33s6Hc=; b=1qjWKzsbdcD1b0gQQ7d9SmQZd7
+	3VyuJWL8dpFrw8F3cpoohfZ3NXujsVXC6RxHwB3hZpjvFAY4ddz3O28DHzoY93OsCzuXfs/U7MRLX
+	uUHaSiAvpGi+irVlKGxvy31eHuXeNAKPec8e66Dh8F38W+x9bp/6HIK9r76U34lq8/4ByG1bhrRty
+	R1a105dtFtkcPf52CRlBtdjsOtRkN+N+bFKdZe9bkOIsNyC5IUDAwc6lcmqNS0amXg92st5oIHPg8
+	QrxF16fbt0CLPAkW8qJ7l05g3AlFYFUbHw8p6hyxlY9GXKy6p7RbwOBTYKMgQbUpM/QI4pxYPTvpv
+	iq7M90Sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVolx-00000006MiU-3ZMs;
-	Tue, 24 Nov 2026 11:33:17 +0000
+	id 1xVozN-00000006PBu-2MoQ;
+	Tue, 24 Nov 2026 11:47:09 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVolu-00000006MhO-0pV7;
-	Tue, 24 Nov 2026 11:33:14 +0000
+	id 1xVozA-00000006Ovl-0hcu;
+	Tue, 24 Nov 2026 11:46:56 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 583AB61283;
-	Tue, 24 Nov 2026 11:33:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A95D1F000C0;
-	Tue, 24 Nov 2026 11:33:09 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 80A176025A;
+	Tue, 24 Nov 2026 11:46:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26E141F000C6;
+	Tue, 24 Nov 2026 11:46:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795519992;
-	bh=EiMYBgdIo+7Jld6p7aiOMau8jqoH62LYKTF989Hvq/Y=;
+	s=k20260515; t=1795520815;
+	bh=slDeNcL8nKCZniQIETBrb4VJOKJ5hyGXbFudBtIpRpk=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=CNmLzglPE9LHYi1mJezvBeOc7Q8Xzm8eeZEZtUF00B9ZlXidaJlB+eldfiCZjTWhy
-	 UlK4P+spLc2W6rLxidAmHc2jkMLbG3nWm6mO83c3ZRjQHVDo0vNBPr40J57PNEIcLQ
-	 UeM5qcsVS3pqtb8JwUnGXHkYy5JGnNwzWOPa5NEm3VTfj4UAIvWhMd9tlmyuGJikG6
-	 EvtzrPQ3SezcjIS0kdPDQvBzd/pHj2VlCNAa/tNK0prYLjrujf49LTsROOXsqEaoFT
-	 EhHjyxwELlrJm2846MUz2CaWFNfI3IyT3KalviSodugBq7RlAliQVKw2L5Yg+UH3YV
-	 KogiwPJe7hbEA==
-Message-ID: <52773445-ffe8-4a42-82ca-e74f18c944b3@kernel.org>
-Date: Tue, 24 Nov 2026 12:33:07 +0100
+	b=Drf2d3kH2oL7HKNlZ6XeGyqR3uji1dygb7rgeAVaeV2Kc+i6XafzH6vV8fsdclelw
+	 LiMld5nRkW1TqIRKkfvI5/g2+RaSxBNKBvHje6k8xiH/rWcnwxhngQWPei+/qMD4GN
+	 QhAF7bRqfmZCQecPqvIUKlyXl4DB6H8CkpzhjqUvea+hxQRz4ML+O1k980nvasSI3q
+	 Vk6CR3gB0qfiMNogf92PEqEmbIOjZIBNRdTVEQgYiqFdxprHVkbp6mPVUE28honZuF
+	 jgYyqcYoXrIWqZewFvBMUJRNh5kpkVNvzM6ynyQiAzdYsgLBxlTw0QRPxANmFcw73c
+	 pcUdskm0hmDww==
+Message-ID: <977c6810-8c9b-42d5-8f98-d2b15dbabad7@kernel.org>
+Date: Tue, 24 Nov 2026 12:46:50 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 3/5] phy: apple: atc: Add initial M3 series support
+Subject: Re: [PATCH v2 4/5] phy: apple: atc: Add T8122 DisplayPort support
 To: Sasha Finkelstein <k@chaosmail.tech>, Janne Grunau <j@jannau.net>,
  Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
  Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
 Cc: asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
+ linux-kernel@vger.kernel.org, Ramzi Abdiche <abdicheramzi@gmail.com>
 References: <20261122-t8122-phy-v2-0-8d5c8fdf31ba@chaosmail.tech>
- <20261122-t8122-phy-v2-3-8d5c8fdf31ba@chaosmail.tech>
+ <20261122-t8122-phy-v2-4-8d5c8fdf31ba@chaosmail.tech>
 Content-Language: en-US
 From: Sven Peter <sven@kernel.org>
-In-Reply-To: <20261122-t8122-phy-v2-3-8d5c8fdf31ba@chaosmail.tech>
+In-Reply-To: <20261122-t8122-phy-v2-4-8d5c8fdf31ba@chaosmail.tech>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,60 +73,82 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
 
 
-On 22.11.26 13:27, Sasha Finkelstein wrote:
-> Adds initial support for the new t8122 phy. USB/TB only for now, DP
-> will fail to negotiate
+On 22.11.26 13:28, Sasha Finkelstein wrote:
+> From: Ramzi Abdiche <abdicheramzi@gmail.com>
 > 
+> Add DisplayPort AUX and lane setup for T8122-family PHYs.
+> Select clock and lane settings by link rate and stop active
+> lanes before orientation changes.
+> 
+> Signed-off-by: Ramzi Abdiche <abdicheramzi@gmail.com>
 > Signed-off-by: Sasha Finkelstein <k@chaosmail.tech>
 > ---
 
 [...]
 
+>   
+> +struct atcphy_dp_ops {
+> +	void (*enable_aux)(struct apple_atcphy *atcphy);
+> +	void (*disable_aux)(struct apple_atcphy *atcphy);
+> +	int (*set_rate)(struct apple_atcphy *atcphy, enum atcphy_dp_link_rate lr);
+> +	int (*stop)(struct apple_atcphy *atcphy);
+> +};
+
+Couldn't we just make this part of atcphy_hw as well? That one already 
+contains a bunch of variant-specific function pointers now and I don't 
+see a reason why these here have to be separate.
+
 > +
-> +static void atcphy_configure_post_tunable_t8122(struct apple_atcphy *atcphy, enum atcphy_mode mode)
-> +{
+>   struct atcphy_hw {
+>   	void (*configure_post_tunable)(struct apple_atcphy *atcphy, enum atcphy_mode mode);
+>   	void (*configure_pipehandler_usb3_host)(struct apple_atcphy *atcphy);
+> @@ -600,6 +733,7 @@ struct atcphy_hw {
 
-This function ...
+[...]
 
-> +	if (atcphy_modes[mode].pipehandler_state != ATCPHY_PIPEHANDLER_STATE_USB3)
-> +		return;
-> +	core_set32(atcphy, ACIOPHY_CFG0, ACIOPHY_CFG0_COMMON_SMALL);
-> +	udelay(10);
-> +	core_set32(atcphy, ACIOPHY_CFG0, ACIOPHY_CFG0_COMMON_SMALL_OV);
-> +	udelay(10);
-> +	core_set32(atcphy, ACIOPHY_CFG0, ACIOPHY_CFG0_COMMON_BIG);
-> +	udelay(10);
-> +	core_set32(atcphy, ACIOPHY_CFG0, ACIOPHY_CFG0_COMMON_BIG_OV);
-> +	udelay(10);
-> +	core_clear32(atcphy, ACIOPHY_CFG0, ACIOPHY_CFG0_COMMON_CLAMP);
-> +	udelay(10);
-> +	core_set32(atcphy, ACIOPHY_CFG0, ACIOPHY_CFG0_COMMON_CLAMP_OV);
-> +	udelay(10);
-> +	core_set32(atcphy, AUS_COMMON_SHIM_BLK_BIAS_REG, AUS_COMMON_SHIM_BLK_BIAS_REG_BGBIAS_OV);
-> +	udelay(10);
-> +}
-> +
-> +static void atcphy_configure_post_tunable_t8122(struct apple_atcphy *atcphy, enum atcphy_mode mode)
-> +{
+>   static int atcphy_dp_configure_lane(struct apple_atcphy *atcphy, enum atcphy_lane lane,
+>   				    const struct atcphy_dp_link_rate_configuration *cfg)
+>   {
+> @@ -1452,20 +2013,11 @@ static int atcphy_dp_configure_lane(struct apple_atcphy *atcphy, enum atcphy_lan
+>   
+>   	lockdep_assert_held(&atcphy->lock);
+>   
+> -	switch (lane) {
+> -	case APPLE_ATCPHY_LANE_0:
+> -		tx_shm = atcphy->regs.core + LN0_AUSPMA_TX_SHM;
+> -		rx_shm = atcphy->regs.core + LN0_AUSPMA_RX_SHM;
+> -		rx_top = atcphy->regs.core + LN0_AUSPMA_RX_TOP;
+> -		break;
+> -	case APPLE_ATCPHY_LANE_1:
+> -		tx_shm = atcphy->regs.core + LN1_AUSPMA_TX_SHM;
+> -		rx_shm = atcphy->regs.core + LN1_AUSPMA_RX_SHM;
+> -		rx_top = atcphy->regs.core + LN1_AUSPMA_RX_TOP;
+> -		break;
+> -	default:
+> +	if ((unsigned int)lane > APPLE_ATCPHY_LANE_1)
+>   		return -EINVAL;
+> -	}
 
-... is defined again here and there's also a _t8103 variant so something 
-is off here. I think you want the second one only which doesn't have 
-atcphy_power_on_common_t8122 inline maybe?
+This is a bit weird, that thing is an enum so why not just keep the 
+switch? This is also the only place that checks if lane is valid before 
+calling atcphy_lane_reg(). I don't think it's even possible to have an 
+invalid value here so I'd maybe drop this check completely since it 
+always passes or change atcphy_lane_reg() to be something like
 
-> +	if (atcphy_modes[mode].pipehandler_state == ATCPHY_PIPEHANDLER_STATE_USB3 ||
-> +	    (atcphy->hw->dp && atcphy_modes[mode].enable_dp_aux))
-> +		atcphy_power_on_common_t8122(atcphy);
-> +}
-> +
+	int atcphy_lane_reg(void __iomem **reg, ....)
+
+and return an error and put the register into *reg.
+
 
 
 Sven
