@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8F82B606A326
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 22:25:08 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A6E12606A327
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 22:25:11 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=jM9yw587;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=f9V7vfXu
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=FAB+x+Me;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=tMBxIY++
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,66 +14,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=F/DLxlqBV77TcgKbSko336OMd8YsJPYECswpnQx8ns4=; b=jM9yw587H9UDbei5RKyH/oOzWx
-	i8upqYvicOokPJUq7mX5bN9V4MTwPKUNgGHKBLNS/0gNKllJkHtqogX/ZpzjC1wT6s5i0TZlMDhoh
-	S50yXWRLnJMJ8YsqlNJnPaoV6NOIvD+bcuPfayBCouH5Ohcum7rwKtN2J9A63cUJN/gM8T2fotGO7
-	GGJSsEUNu2jhZ1kAZae9ryNkiMVgQMRXn2kLWTTBWcskl3YaHBBBvthXEMhw+cfYPRkulelvSgJGW
-	y/mO5f1civCFR7jrouJMMNjsRj3cekY/jzeafAJiNqMFktOq/jbGR9D0qaKnEfxjGZKGquTaT4b/9
-	qtOPjO6w==;
+	bh=6//9b8xGjolRw5eJqsiUf/zZPFOm8A4Qh2SB3WNSU0U=; b=FAB+x+Megynreh+pxhsWUrA0a3
+	9Vj6N5tPYYWKm+3SyZI8SiQEK8/niBFXMmNk+8yUXxtrVjTRv0BxVELtGmYQL4r3FM0G48bGnuoup
+	07ENTmr8Bnl9GUJfsNI5GkeTzVNY6rRgd0UXn2go3EDYLIRz/DYB+XrP3u6qgyu4yV2I6l0n2mlbt
+	NazmvVG/QsUqvGlfRdRjdobbonNIrQaHsAEQppf7nGi4w2feWt8y6Z9JPcG+GCF0+iaJEiOz8YPaK
+	RXXAUTl11dImBoGCb8C9QwH0M3rACAD9Hfjrgqy3q9yRyh9mpVYbmUs0zIfOrt5paQmEvclAB3x6e
+	3ZtEfwOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVywm-00000007zHW-1LeW;
-	Tue, 24 Nov 2026 22:25:08 +0000
-Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
+	id 1xVywp-00000007zIw-1Wyt;
+	Tue, 24 Nov 2026 22:25:11 +0000
+Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVywj-00000007zGU-2koH
+	id 1xVywl-00000007zH0-2dOr
 	for linux-phy@lists.infradead.org;
-	Tue, 24 Nov 2026 22:25:07 +0000
-Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-48e3b22e971so2666553f8f.0
-        for <linux-phy@lists.infradead.org>; Tue, 24 Nov 2026 14:25:04 -0800 (PST)
+	Tue, 24 Nov 2026 22:25:09 +0000
+Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-4a2f4ca0dcfso2914312f8f.1
+        for <linux-phy@lists.infradead.org>; Tue, 24 Nov 2026 14:25:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795559103; x=1796163903; darn=lists.infradead.org;
+        d=gmail.com; s=20260707; t=1795559105; x=1796163905; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:to:from:from:to:cc:subject:date:message-id
          :reply-to:content-type;
-        bh=hbE4Q7q4TrDtAfvA5QvxISTriMkp04Un/AU1m5jHodE=;
-        b=f9V7vfXuUrioM2xQp42H5wzimo3dV8H+cdjHSPCEt9Gkz3OqwTx6+68MEb6tHVrCEX
-         oZGLHyFuskB53Voh5piS3KNtsrNlGCuVWesux8nMSGPJ7ZQh8A/hHYRjYRlZcEYPFxlh
-         RPMQdEMlveHqLyX2LAmqF/WHuwsziuhzZlE3ssfXVj00O5nQyoAS+GFM3lO+UHHfeiJX
-         t+WmTFk2SloPcb3cOKIv40Px73skh7ah74Ljew15j9j1zY/0tWp5V4tB/6MGiiQhHOZt
-         CvNUFK2R7CyHav3ju+LOpNVUX+MxfMAk/pm9lUMzftNkSkTlCuNe0cuxwFXfKvRI2fnC
-         DhBw==
+        bh=JSzQSnco7VI2G/k8ySDHQjYOEaRc/td443pgDxBiMtM=;
+        b=tMBxIY++kvwvSoZPc1gK0DU3OBU4lbaCP3tM6miV2GgaQs0680i50PRqEWTtThHjWP
+         z5Eh3VitO1EM98pW1FuqG59tJs8MUuLkEx1C9HTd0GZo5rzlMFkSfAI6GXvid/E+ayL/
+         NZFZSEyVmhxJEUAg8vs2JtB4TDYf5bBTb7HbeOxWBqiv4n33xCqHtY3E2DSHsTx8geu5
+         7vo51a4Fw0+bci/OW5IO4xrIOO0EQXpgAkt5jfxL8P5afeCsyvb/1lfJP1ngyZ1UKdd8
+         3ZN7LPOjmKX7JxTY90wz2hwMKmG9UoxRMpgls+/ENlAnw1wkXz0o9TQtOp/0T8+yUPeH
+         r8Fg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795559103; x=1796163903;
+        d=1e100.net; s=20260707; t=1795559105; x=1796163905;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:to:from:x-gm-gg:x-gm-message-state:from:to
          :cc:subject:date:message-id:reply-to:content-type;
-        bh=hbE4Q7q4TrDtAfvA5QvxISTriMkp04Un/AU1m5jHodE=;
-        b=Ipnwtn7WMl1jetNatKOWhTvqT7dIKfYH3XdGdTaTRP5sl2P70XzJ+jgJPx5Mk1xNOk
-         g7NalMNbekJXwOGPytxsnBdykkb5TeUx4aQm1jAuzYHOvTZxfQuDMQ9H8jyJCi+XWkHx
-         CAoj0lsPPp5DJMvlPVllwSb2BFIkGbicPO+4D6E6WoglJwp0xgsuIoMMgBEhsD2eqD0N
-         ZFW1CdRwHnEwShGe1eGvvRgsf6Rf0vSmFAY1fUii72L1f32aHfCdIza1OWAW+2oeu104
-         ohleKYadXt1mKOSUkAHyfxkeE2nudOVVGCd04KkB5P7fl45/8zmwqnRgVYlJWHmNp3H1
-         gsoA==
-X-Forwarded-Encrypted: i=1; AL+hErE0zrUiFGvFE1239vjt+Z926Y5y/ONp7SBFMrFOkWm3is23jNjgXK3tlhZM10jdkjby6IFGOEGeHdQ=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+SH6hoXAoSfI6lWzhm3q+OIL7FLvwGdfsMzV1FPaL/C6rHJKdi
-	XOigyXSrzlV1pQKzQlqSPl0iqFcqiEb5vfJv/HFgENVnN5rLe34hKHjcyKNRYA==
-X-Gm-Gg: AZFdTZc7j+clYiwBJlH9iRmxQ3cmxAaZKy0lfYPxYD2PjXTSLYtqJNzpIVjp/FlKlEF
-	vjaxElcE0p2qA3eK3VjsZPD3q4FHcnL3+N3R0n4KfOnpjKNH88awusUSfMDWhdhD0tbdtV4Xlf2
-	pMVuBY/pc1+l5VbHwpVL1vslLLhBl7rRmyvKFeFQTkz/5hVLC0JnsbnznTCFpPxYa+grhrpcYxo
-	2srV5sr+vrpmJwO8Z8UplaXCAmXSOoFlw48OT91Aqka97V/++Xm3jVfzFcyDsVKnhUzVwo9wYcu
-	ES6EDgRgrK9NjmA7IIHjBEyqKSa6jAgMIxx14auTyLkmjm3aLF108oyQfwbGxR6B4t3FRb5Q2wO
-	MO/ZZpxbJF2ZLqzhBFK882rp62K1B3SKhdXm7c4lnELow+5f6KyILZMmiLtGpudFJOgLg3Swgli
-	QpjLBfcoX3XztS+1UXMh5OoDRJW4G2/qXRjoF6rFo6iS8dFZBSoRkz+GLN02bL/QTl1vLGHICMk
-	pjOf0R0NsbI9EdbvP6U6O3vQLlUY3meZtit12xRYi7praD1sIp3fka1jGAGpi6/J2OpUIOrVX8J
-	I/I62/Eqpyz8yuzzJi/xvOIoFt2jM3t+guwYwIHYwULG9KNykBNEWiB0z6sz6gCVnk3PCYzODKd
-	rS9o=
-X-Received: by 2002:a05:6000:2f87:b0:4a3:7954:ac75 with SMTP id ffacd0b85a97d-4abb2910fb2mr29043091f8f.37.1795559103518;
-        Tue, 24 Nov 2026 14:25:03 -0800 (PST)
+        bh=JSzQSnco7VI2G/k8ySDHQjYOEaRc/td443pgDxBiMtM=;
+        b=RlyLUCfqzhltfsfAv5vnKdR3lXTzgCk+1/f/uYTxpC4wa7+qWZ3QNuiE7HYB15R13M
+         HiiIJ3+HJvciccszGmAGzCuU60ViSmx/KYnul3j6+wrwTOCaC1RoJ526GH07ICEAtwyb
+         VZHuezz9lBM2+nQAjMjDN9UDWuV9qbIeJ3YlMtv9UkF2H/8TmbGr26U4ZLwIar65/RfO
+         94r+75CzSzC1DUremYA3lIC4TGjBt0os9nCywFEemXYQN1UoX6MJV5MLtCNGtI24cpKZ
+         PAbO2k4YhMznq1BRTQYtFa/b9TiF3B7OxtG95EeF5THn8YFsVg/CscyQVYqa/+I6drtb
+         EBGA==
+X-Forwarded-Encrypted: i=1; AL+hErE4Y1uGKRzCQtXkfq0oZc/PFwm3ebv4UopcGyxbpGCqZ5L8toAttom1/RXMYim4oLW7M9lMOmHHMnE=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8o8Egt6LNm7sJwW5lMYlvEdH3wHJ+T4mmmdfvpmM4fQSg4qByc
+	VQd3F8AOoSljwY8IeX1yCldmi87LW2dr+BzKB/GJJwJZQA7lovYokQyd
+X-Gm-Gg: AZFdTZe9G+/5mjKQtzcHgt1sKyThLrBGbXCdMnJxspJ4kCQv1RMFfv90CSALiPAwztn
+	irGKX7t5+0lrt9mOuvxOBDj4QRhRy6oeYZ4pOrmruvI7PUZ8qG4yO3A8LKrAqEkg/+FxFinVUg5
+	vnBoAsNV4tw0zk+2UZiQhilfvWISLUINF1efDI9W63GpbKAQqN1dpo2xid8t69sP8UwIlc7wtaK
+	76fO8sxq5bad+0BoHH0qJbN6/g6O5N58jtixhG3QJdWvNDaMqZWqX5tj3pDGnjaKJyCQhDp39FS
+	zDd9EuJ+IA3tg/KI7HGYymHrjyrYyPjt4/mQh37ArIs03eH2cynxKw85luKFHoczmgbbWmEF0B4
+	xBI21KDRgPb2o7iPUeFLkf5VL14gbz3pDdyaAEfvBkuIFsiPAOrtE2rypYvYRoSQJ5wqlL8GF+2
+	B48MvER6s7oBIZW59A2ms1YK1lgEohQqMIl3lKrZjHMCZdiou2RU/sUGZGxLwVrKLCBgw34K21M
+	fkvAty408T1DTUCDSgKdoR4TDn7AvK9tLXvy3w0WhOzNtvg5XgmbnSqqacPkf4v9x2cnH8pOShN
+	mxhossrBZ0rX36EKGLH94lU8nBzEwtv8TupIXP/SygNMtr0QswHKE8NwQwCfW5clQxpYlKMxdOR
+	J2oU=
+X-Received: by 2002:a05:6000:4704:b0:4a8:5a5b:3b7d with SMTP id ffacd0b85a97d-4abb5eacf4fmr32036412f8f.56.1795559105485;
+        Tue, 24 Nov 2026 14:25:05 -0800 (PST)
 Received: from Ansuel-XPS24.localdomain ([87.13.246.159])
-        by smtp.googlemail.com with ESMTPSA id ffacd0b85a97d-4ab69bf630esm31125711f8f.16.2026.11.24.14.25.01
+        by smtp.googlemail.com with ESMTPSA id ffacd0b85a97d-4ab69bf630esm31125711f8f.16.2026.11.24.14.25.03
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Nov 2026 14:25:03 -0800 (PST)
+        Tue, 24 Nov 2026 14:25:05 -0800 (PST)
 From: Christian Marangi <ansuelsmth@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -87,17 +87,17 @@ To: Vinod Koul <vkoul@kernel.org>,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	John Crispin <john@phrozen.org>
-Subject: [PATCH v5 1/3] dt-bindings: phy: airoha: Document support for AN7583 USB PHY
-Date: Tue, 24 Nov 2026 23:24:31 +0100
-Message-ID: <20261124222452.219832-2-ansuelsmth@gmail.com>
+Subject: [PATCH v5 2/3] dt-bindings: phy: airoha: Document support for AN7583 Gen2 PCIe PHY
+Date: Tue, 24 Nov 2026 23:24:32 +0100
+Message-ID: <20261124222452.219832-3-ansuelsmth@gmail.com>
 X-Mailer: git-send-email 2.55.0
 In-Reply-To: <20261124222452.219832-1-ansuelsmth@gmail.com>
 References: <20261124222452.219832-1-ansuelsmth@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261124_142505_727427_DCF207F9 
-X-CRM114-Status: GOOD (  17.60  )
+X-CRM114-CacheID: sfid-20261124_142507_686057_6285D36B 
+X-CRM114-Status: GOOD (  13.96  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -119,170 +119,87 @@ X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add documentation for Airoha AN7583 USB PHY that describe the USB PHY
-for the USB controller.
+Document support for AN7583 Gen2 PCIe PHY used to make the Gen2 PCIe port
+work. Add the required register to configure the PCIe PHY and provide an
+example for it.
 
-Airoha AN7583 SoC support a maximum of 2 USB port. The USB 2.0 mode is
-always supported. The USB 3.0 mode is optional and depends on the Serdes
-mode currently configured on the system for the relevant USB port.
-
-To correctly calibrate, the USB 2.0 port require correct value in
-"airoha,usb2-monitor-clk-sel" property. Both the 2 USB 2.0 port permit
-selecting one of the 4 monitor clock for calibration (internal clock not
-exposed to the system) but each port have only one of the 4 actually
-connected in HW hence the correct value needs to be specified in DT
-based on board and the physical port. Normally it's monitor clock 1 for
-USB1 and monitor clock 2 for USB2.
-
-To correctly setup the Serdes mode attached to the USB 3.0 mode, a phys
-property is required with the phandle pointing to the correct Serdes port
-provided by the SCU node. Providing the phys property is optional if USB
-3.0 is not used.
+Similar to the USB 3.0 PHY, a dedicated phys property is required to
+configure the serdes for PCIe or Ethernet usage.
 
 Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
 ---
- .../bindings/phy/airoha,an7583-usb-phy.yaml   | 133 ++++++++++++++++++
- 1 file changed, 133 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7583-usb-phy.yaml
+ .../phy/airoha,an7583-pcie-gen2-phy.yaml      | 63 +++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen2-phy.yaml
 
-diff --git a/Documentation/devicetree/bindings/phy/airoha,an7583-usb-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,an7583-usb-phy.yaml
+diff --git a/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen2-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen2-phy.yaml
 new file mode 100644
-index 000000000000..f1a5d83e8968
+index 000000000000..424da3c5ad01
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/airoha,an7583-usb-phy.yaml
-@@ -0,0 +1,133 @@
++++ b/Documentation/devicetree/bindings/phy/airoha,an7583-pcie-gen2-phy.yaml
+@@ -0,0 +1,63 @@
 +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/phy/airoha,an7583-usb-phy.yaml#
++$id: http://devicetree.org/schemas/phy/airoha,an7583-pcie-gen2-phy.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Airoha AN7583 SoC USB PHY
++title: Airoha AN7583 SoC PCIe Gen2 PHY
 +
 +maintainers:
 +  - Christian Marangi <ansuelsmth@gmail.com>
 +
 +description: >
-+  The Airoha AN7583 SoC USB PHY describes the USB PHY for the USB controller..
++  The Airoha AN7583 SoC PCIe Gen2 PHY describes the PCIe PHY for the
++  Gen2 PCIe controller.
 +
-+  Airoha AN7583 SoC support a maximum of 2 USB port. The USB 2.0 mode is
-+  always supported. The USB 3.0 mode is optional and depends on the Serdes
-+  mode currently configured on the system for the relevant USB port.
-+
-+  On Airoha AN7583 there is an unified PHY implementation where a single
-+  PHY provide support for both the 2 USB 2.0 port and
-+  optionally one 3.0 USB.
++  This PCIe PHY makes use of a dedicated USB PHY for PCIe usage and
++  can also be used for Ethernet usage for SGMII or HSGMII mode.
 +
 +properties:
 +  compatible:
-+    const: airoha,an7583-usb-phy
++    const: airoha,an7583-pcie-gen2-phy
 +
 +  reg:
 +    items:
-+      - description: phy register
 +      - description: ana register
 +      - description: pma register
 +      - description: dig register
 +
 +  reg-names:
 +    items:
-+      - const: phy
 +      - const: ana
 +      - const: pma
 +      - const: dig
 +
-+  '#address-cells':
-+    const: 1
++  phys:
++    items:
++      - description: phandle to Serdes PHY
 +
-+  '#size-cells':
++  '#phy-cells':
 +    const: 0
-+
-+  usb3-phy:
-+    type: object
-+
-+    properties:
-+      phys:
-+        items:
-+          - description: phandle to Serdes PHY
-+
-+      '#phy-cells':
-+        description: The cell contains the mode, PHY_TYPE_USB2 or PHY_TYPE_USB3,
-+          as defined in dt-bindings/phy/phy.h.
-+        const: 1
-+
-+    required:
-+      - phys
-+      - '#phy-cells'
-+
-+    additionalProperties: false
-+
-+patternProperties:
-+  '^usb2-phy@[0-9a-f]+$':
-+    type: object
-+
-+    properties:
-+      reg:
-+        enum: [0x0, 0x1000]
-+
-+      airoha,usb2-monitor-clk-sel:
-+        description: Describe what oscillator across the available 4
-+          should be selected for USB 2.0 Slew Rate calibration.
-+        $ref: /schemas/types.yaml#/definitions/uint32
-+        enum: [0, 1, 2, 3]
-+
-+      '#phy-cells':
-+        description: The cell contains the mode, PHY_TYPE_USB2 or PHY_TYPE_USB3,
-+          as defined in dt-bindings/phy/phy.h.
-+        const: 1
-+
-+    required:
-+      - reg
-+      - airoha,usb2-monitor-clk-sel
-+      - '#phy-cells'
-+
-+    additionalProperties: false
 +
 +required:
 +  - compatible
 +  - reg
 +  - reg-names
-+  - '#address-cells'
-+  - '#size-cells'
++  - phys
++  - '#phy-cells'
 +
-+unevaluatedProperties: false
++additionalProperties: false
 +
 +examples:
 +  - |
-+    phy@1fac0000 {
-+        compatible = "airoha,an7583-usb-phy";
-+        reg = <0x1fac0000 0x1200>,
-+              <0x1fa6f000 0x100>,
-+              <0x1fa6e000 0x400>,
-+              <0x1fa6a000 0x900>;
-+        reg-names = "phy", "ana", "pma", "dig";
++    phy@1fa5f000 {
++        compatible = "airoha,an7583-pcie-gen2-phy";
++        reg = <0x1fa5f000 0x100>,
++              <0x1fa5e000 0x400>,
++              <0x1fa5a000 0x900>;
++        reg-names = "ana", "pma", "dig";
 +
-+        #address-cells = <1>;
-+        #size-cells = <0>;
++        phys = <&serdes_phy>;
 +
-+        usb2-phy@0 {
-+            reg = <0x0>;
-+            airoha,usb2-monitor-clk-sel = <0>;
-+
-+            #phy-cells = <1>;
-+        };
-+
-+        usb2-phy@1000 {
-+            reg = <0x1000>;
-+            airoha,usb2-monitor-clk-sel = <1>;
-+
-+            #phy-cells = <1>;
-+        };
-+
-+        usb3-phy {
-+            phys = <&serdes_phy>;
-+
-+            #phy-cells = <1>;
-+        };
++        #phy-cells = <0>;
 +    };
 -- 
 2.55.0
