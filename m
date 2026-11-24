@@ -2,61 +2,65 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1386C606A326
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 11:00:00 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 576F7606A32A
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Nov 2026 11:33:18 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3jdHKJ0S;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=S5lkZfm+
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=eJ4fJjn4;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=CNmLzglP
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=jYABQ8RI5VGu9Ajr3SkjPsq6RoxXABYXPvaXavMMSEs=; b=3jdHKJ0S6BbF8n3kyUtJifr/T0
-	ukoJFKuUbZ31VAgeQtjcGgqTlKFnb78/hjQVRJ+NYs84LOkV1fewnUG+XUOHARvk4nWSXlgKscsjJ
-	8A1Am0zG5ujSURIdBJvYuozN6sZDAGzzWfhPyxpAMJIxkeUyhgXXR0fJRYFKQDvNpCTSYjhUcROTJ
-	8g96CYTyGflAqS4PI7analNxkJKSOsLnBBPeuPBWI9bvG8yQ8IJ1F0alewHpzb4Rd/2uA0CFu7hOh
-	+Fyzr3+nUUOqx8i4Qao9Vd+uxBN7uBdRCuPJqobwLhj3IT488OzD8qp6QPlPCqvHeI8+xPD5YWNY+
-	Vhwq4+aw==;
+	bh=SYeSMQMY9QFRdA9isSCDzz4sR7MTdvSgEGv2/dKlwa8=; b=eJ4fJjn4+tFDj96tyii9itQziy
+	kkHQi1I0NdcY4hG6LXGJchVjNJZjI3eSAehzGxLe/jdDH3wpPjgVYLYC9IBZ4qP0Pm7DyWGeAvTou
+	LUzqjfDlk3/HMzg4I8MNt2/hvpVV1AAI+V2Xv4hOOpHkWC8LCF1qwtMIUpboRspGgut61EPJHCS8e
+	BCljAh2asFV64S066yC4pJ8MrlCMhuXaSxYJc+OL/fDcU0C56WdT0thKPjllj11p+RQdw1JxYdpuU
+	4CWXCHI8V6rJzQrb7P5o6N0DgQ+n7rszaSBCQePe9H4v67R1Oe9naPtnbEa5Bl4xr6LfOncl+NUYU
+	Fsvyfc/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVoFj-00000006Hd6-2Azd;
-	Tue, 24 Nov 2026 10:59:59 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xVolx-00000006MiU-3ZMs;
+	Tue, 24 Nov 2026 11:33:17 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVoFh-00000006Hd0-3kPc
-	for linux-phy@lists.infradead.org;
-	Tue, 24 Nov 2026 10:59:58 +0000
+	id 1xVolu-00000006MhO-0pV7;
+	Tue, 24 Nov 2026 11:33:14 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 09E2340821;
-	Tue, 24 Nov 2026 10:59:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F1BD1F000C0;
-	Tue, 24 Nov 2026 10:59:54 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 583AB61283;
+	Tue, 24 Nov 2026 11:33:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A95D1F000C0;
+	Tue, 24 Nov 2026 11:33:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795517995;
-	bh=cF/6djvTEEZ8CwvBNurkZV9cycUNuzsQhk1QXHo3YTE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=S5lkZfm+MFeGOIpNjApOliu/J4XeoGuotqSW8wK/f7ig32L8dv3OhCmRrlU6jVo2b
-	 U9IaMqlp2njS6zluMCSHW58wHBZq9UF+PZusz+GfV1WtBYwTMQDxIWiI3DeDHNQTl+
-	 jrlMVuM/nBJ1lu/K37kbL4Q+CWfKqDAM5CyMnYt55k2yMjHyoZ/SNDkaW8g+OUxKFP
-	 8KLRQ0f8HQVbAaXcf6t+nJGAB5Rdr06S2PN8EkLY6iuYqkPku2UaUGoTDUwramM8Xg
-	 pfGvshmv1XsOvMaKul6u9Ke9pFmxfAUomnHM78JU83/452AoIrnEKYZFq1LL+wnNsO
-	 O0hIIYTkg4vqQ==
-Date: Tue, 24 Nov 2026 16:29:51 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: "Peng Fan (OSS)" <peng.fan@oss.nxp.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: ti: Convert to subsys_platform_driver()
-Message-ID: <awVuJ2z1N1ZTGFCy@parshuram>
-References: <20261104113337.1634199-1-peng.fan@oss.nxp.com>
+	s=k20260515; t=1795519992;
+	bh=EiMYBgdIo+7Jld6p7aiOMau8jqoH62LYKTF989Hvq/Y=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=CNmLzglPE9LHYi1mJezvBeOc7Q8Xzm8eeZEZtUF00B9ZlXidaJlB+eldfiCZjTWhy
+	 UlK4P+spLc2W6rLxidAmHc2jkMLbG3nWm6mO83c3ZRjQHVDo0vNBPr40J57PNEIcLQ
+	 UeM5qcsVS3pqtb8JwUnGXHkYy5JGnNwzWOPa5NEm3VTfj4UAIvWhMd9tlmyuGJikG6
+	 EvtzrPQ3SezcjIS0kdPDQvBzd/pHj2VlCNAa/tNK0prYLjrujf49LTsROOXsqEaoFT
+	 EhHjyxwELlrJm2846MUz2CaWFNfI3IyT3KalviSodugBq7RlAliQVKw2L5Yg+UH3YV
+	 KogiwPJe7hbEA==
+Message-ID: <52773445-ffe8-4a42-82ca-e74f18c944b3@kernel.org>
+Date: Tue, 24 Nov 2026 12:33:07 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261104113337.1634199-1-peng.fan@oss.nxp.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 3/5] phy: apple: atc: Add initial M3 series support
+To: Sasha Finkelstein <k@chaosmail.tech>, Janne Grunau <j@jannau.net>,
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
+Cc: asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20261122-t8122-phy-v2-0-8d5c8fdf31ba@chaosmail.tech>
+ <20261122-t8122-phy-v2-3-8d5c8fdf31ba@chaosmail.tech>
+Content-Language: en-US
+From: Sven Peter <sven@kernel.org>
+In-Reply-To: <20261122-t8122-phy-v2-3-8d5c8fdf31ba@chaosmail.tech>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,26 +70,67 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 04-11-26, 19:33, Peng Fan (OSS) wrote:
-> From: Peng Fan <peng.fan@nxp.com>
+
+
+On 22.11.26 13:27, Sasha Finkelstein wrote:
+> Adds initial support for the new t8122 phy. USB/TB only for now, DP
+> will fail to negotiate
 > 
-> Replace the open-coded subsys_initcall()/module_exit() platform driver
-> registration with subsys_platform_driver().
+> Signed-off-by: Sasha Finkelstein <k@chaosmail.tech>
+> ---
 
-You should have split by driver. I have picked similar change from Brian
+[...]
 
--- 
-~Vinod
+> +
+> +static void atcphy_configure_post_tunable_t8122(struct apple_atcphy *atcphy, enum atcphy_mode mode)
+> +{
+
+This function ...
+
+> +	if (atcphy_modes[mode].pipehandler_state != ATCPHY_PIPEHANDLER_STATE_USB3)
+> +		return;
+> +	core_set32(atcphy, ACIOPHY_CFG0, ACIOPHY_CFG0_COMMON_SMALL);
+> +	udelay(10);
+> +	core_set32(atcphy, ACIOPHY_CFG0, ACIOPHY_CFG0_COMMON_SMALL_OV);
+> +	udelay(10);
+> +	core_set32(atcphy, ACIOPHY_CFG0, ACIOPHY_CFG0_COMMON_BIG);
+> +	udelay(10);
+> +	core_set32(atcphy, ACIOPHY_CFG0, ACIOPHY_CFG0_COMMON_BIG_OV);
+> +	udelay(10);
+> +	core_clear32(atcphy, ACIOPHY_CFG0, ACIOPHY_CFG0_COMMON_CLAMP);
+> +	udelay(10);
+> +	core_set32(atcphy, ACIOPHY_CFG0, ACIOPHY_CFG0_COMMON_CLAMP_OV);
+> +	udelay(10);
+> +	core_set32(atcphy, AUS_COMMON_SHIM_BLK_BIAS_REG, AUS_COMMON_SHIM_BLK_BIAS_REG_BGBIAS_OV);
+> +	udelay(10);
+> +}
+> +
+> +static void atcphy_configure_post_tunable_t8122(struct apple_atcphy *atcphy, enum atcphy_mode mode)
+> +{
+
+... is defined again here and there's also a _t8103 variant so something 
+is off here. I think you want the second one only which doesn't have 
+atcphy_power_on_common_t8122 inline maybe?
+
+> +	if (atcphy_modes[mode].pipehandler_state == ATCPHY_PIPEHANDLER_STATE_USB3 ||
+> +	    (atcphy->hw->dp && atcphy_modes[mode].enable_dp_aux))
+> +		atcphy_power_on_common_t8122(atcphy);
+> +}
+> +
+
+
+Sven
+
 
 -- 
 linux-phy mailing list
