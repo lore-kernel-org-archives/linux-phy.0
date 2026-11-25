@@ -2,12 +2,12 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 1DCF7606A323
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 04:37:51 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5336C606A321
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 04:37:52 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=M+jEjiJ1;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=SYNQJ3oD;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=wVGKCHDs
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=HHL0Yer5;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=rhrjmgRs;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=aKXhvxJt
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,80 +15,80 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=NGnJcDHJRTo8XFyvCa7RI+AUYF5ORL7XeXrOM1xp93M=; b=M+jEjiJ13ZujDQc/tTVtbenBpc
-	6ds2GbLGQaV2WGFTD22PaTz8+xHqSN4WT5BJo2D+ZgRZTsK6lbj+4wCVPgOY2heJrkFxWks2UfT1X
-	wMttvhchPtjzmeqvvOjgBjiHsyfjrH6mLfSTbTGnFxp63ob4rEN9nXB+WX95UhHeTnMcOb4ebRrjn
-	OW1RdX8rzd/BxUqpyihgjucBiNRQdsQcv+GW2Mj+CpRCnldhc4H1vfQmQh2SXB8/K5g3tkzDRUwHZ
-	lONKIz4cd/PwKGH9NIQGH9yFTs1TQH6gZ+AX0DIIb68+AsU4rgB/1ZfJNFs3/BJLw3CbDf+Y8HsiF
-	jG4hqMFQ==;
+	bh=RvrluitlqtrCUAfk+K/wfkOZCNs1yZTypvvXjHqnbTQ=; b=HHL0Yer5MV9OmGMak0oR/NfyLy
+	jAOkCoLqQrd2/TgF+LeP//w1SrMeI7xzOL5xlxT0nuqj7LWkKH7K2Y9ME6o0yPz+UbHKHJiIOh0Ov
+	DFFfLswscAVMlray+C0jMIuuSwJvn4/WLEa49GT5GPdXYgCXgCKfK/fiKMgn2EbVPuttpjqqpxrW+
+	VeZ9x19wlWpRnebXx3rZ0whlc0Ady2/yszUko5Jl2mkFz885krB2p/WtKfwR/caSFfu8KVtEn79FC
+	9xYMIKSCGzaYJwwQ9NhH0MhdpDfCfM71G3+vqIQuWME33jdW5wX5+WJkx24DsdxL4KyLlUy+ZD8yV
+	3ZjeBksg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xW4lS-00000008Oxi-3VWa;
-	Wed, 25 Nov 2026 04:37:50 +0000
+	id 1xW4lU-00000008Oyh-0DQu;
+	Wed, 25 Nov 2026 04:37:52 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xW4lC-00000008OnF-44O7
+	id 1xW4lG-00000008Op3-03Lg
 	for linux-phy@bombadil.infradead.org;
-	Wed, 25 Nov 2026 04:37:35 +0000
+	Wed, 25 Nov 2026 04:37:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=yC0KWfjZslDYmreM0nokc8PEJN6eo4m1n8xq79uDONU=; b=SYNQJ3oDGl1ZrhBko0ntDdARDV
-	bKr6Rx5dvGdPq+iUcONzg+7SrMcm8Bf8aiXncf7onzC3+o8zI1xYrEssbTjAMHcJVBx7DIynsIUY3
-	odCab9ap8xwG+IPszerq/07Tilb04o3DSiBtDnkog1g+lww1mfL04v8CC+wK54ad8ieFJfTvLvPCV
-	ePypzBttEdfy01a9717BcBp2RJ+Zei2sCjt+/Vdu6b26jJAt51Pq97eybOPGk/ECeRctjULkgqv2b
-	4pHt4CS8lZMxkR2tpsWzmBjxUV4BUnqQZKJ1M3GkBBoUDj/gyHzkbTlIJwg8CZjdWSs0VL3uD0NtO
-	0cZQ/oEA==;
-Received: from mail-pf1-f182.google.com ([209.85.210.182])
+	bh=rkE7p4aQLSp2kYV7vRBIkJ3P+8n0i8bdfYVP4ePHIkQ=; b=rhrjmgRsVzBAKBrSZ3RwvFd49l
+	3fWhlnfzBstp/jc/nmc3JTKLDAOADLKhcJRuBSYMERrjSUmmBKGxVO12CJ492cXeZNXPtxvOfV6xn
+	ErBQ5zowDdMib/HOw9BsrscLaH8tjlTZ/sxUHSsaUl346qiMHgAbiBDM1Y/v/r2mBckrrwFReKAyN
+	4noN5j4yVP3xAwMTUhIoariNcaSJg1neFXg0sIzifwQ36Mzs/V1THgRW5bNheatlSoblghdv7VppI
+	dVW7diILDGBw8nAczF0duHVVEoykg16XkPixEXRUju2O/vXBIZ6H9YUUBk0guu40nxeCvRY7w6Ro4
+	GaDYm/8Q==;
+Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
 	by desiato.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xW4lA-00000004pu8-0uIi
+	id 1xW4lD-00000004pvD-0lZm
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Nov 2026 04:37:33 +0000
-Received: by mail-pf1-f182.google.com with SMTP id d2e1a72fcca58-8b32bc605d9so2527862b3a.2
-        for <linux-phy@lists.infradead.org>; Tue, 24 Nov 2026 20:37:31 -0800 (PST)
+	Wed, 25 Nov 2026 04:37:36 +0000
+Received: by mail-pf1-x42a.google.com with SMTP id d2e1a72fcca58-8a0880a46e7so3183962b3a.1
+        for <linux-phy@lists.infradead.org>; Tue, 24 Nov 2026 20:37:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795581449; x=1796186249; darn=lists.infradead.org;
+        d=gmail.com; s=20260707; t=1795581452; x=1796186252; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=yC0KWfjZslDYmreM0nokc8PEJN6eo4m1n8xq79uDONU=;
-        b=wVGKCHDsbUmw1sj3cBr5tDJ98zV0aPWmKvShnqyRIpoRrqVhvH5RhbxDnhG+Y2I9d1
-         Wx5ZPJhn9rdEbeEbgt8eUG8Z2kuGN9W9Exn2swCtLDy2TYskIOjnXZtwneV2mt/iHT1s
-         xgRWREoLqAzn9/g5mHuuqT6j/E2mHQ+mRHav9VJGQb7usij/NTOAmq3jY1KLEKOLZ/Vf
-         2uQ1pgumatxHfF6d87BChTYjV6ZR8M5vOS3O6kMGskYkKzY1jI4sKrp9vkeluT9nAk/Z
-         OlvZy2QskQWb/H5V12/pKnKR2kuk+AxtlEEtxOt8rj5NN2t3AC7pp7PeWarXoDTbOmrz
-         bwZw==
+        bh=rkE7p4aQLSp2kYV7vRBIkJ3P+8n0i8bdfYVP4ePHIkQ=;
+        b=aKXhvxJtX7N7I8kvn/b2Nhwrqg7Vf+QB7NgGZMMB2WF+8hi9/dmqs+pHm3M8dUcDL5
+         P9zawTA6oHRShW1T4fyw8E1yoDtRhUdDviKnjeD2zK/Yr7y5UkFLpmln2CV19ZRMFmSl
+         B2IAUr/DtK6a+XXXJmNGwDOh1Z9Ij0C/Wfu2ad3s7pCIzmSlKc8dofBWtD7t2EBhIKY4
+         YrX/X0s/8JIW5RL8t5je5LlQ+3YLc0jQh9ddVng+aIKI9zSp8wrklqzrCSpT8PEJ19no
+         bnDln8T7tQ2RcfSje7e7G7fpn4YhJB6+UPga+GECvsAYleNOlruJQzHQxgtpRvLUTuGC
+         7BXQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795581449; x=1796186249;
+        d=1e100.net; s=20260707; t=1795581452; x=1796186252;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=yC0KWfjZslDYmreM0nokc8PEJN6eo4m1n8xq79uDONU=;
-        b=klbWOCvTt8K8dX+N27QaKR8MGBy0BFwXUsSfTSiNpY1NAWgcEauqUlCtIfaCux881g
-         b0MFhdVUCunZO739bvt7FoYz9BskTKNQBWzRbQK3liKKB4JnhxWVgrclKBH3HCyOMkz8
-         GPZDMoaHhR91SmGSMbdiiA+SjsmqAkdLq8JqnwQ7Q1+Z4MEydQJff1ALXyBEGQRdywfo
-         FIlwDprYJ7ddticyAnUCCOtUrMPL8mz5f2AaNIlHK8Tw1ztXd/pBO+wW9c8GMfng1Ilp
-         aXU+4ZgyIeOfW7W/WW5kGVWxCSSBGkCDF0JFvq6DZHfmYWTezP3DTKMsQALzEEzaUjNo
-         k1wg==
-X-Forwarded-Encrypted: i=1; AL+hErE2c8tn7AHTXfVUNG8NpEj4H0IxvXckwTRhEje9kWA2SYYi1sdW6cGEFlt4rMvNc1WQXXdglQZofG8=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/BPViA2A61EcbYnTBWfVVFRjfdpXPvTtVRjLvl4xXL5MCOG6Hj
-	h6O6hBXsJlXo2gyFA66a5KIIoLL31UEz4lE3FauiZ8kxQuEUfrah29xD
-X-Gm-Gg: AZFdTZcG4ee8gulc0ygQyeZvQVvmfs6s9Oy8ruww6qOb3PTaJGcPJ+9qnVCMuoX+i+N
-	T/PpTOlr3ElGEFB6JoDLBypdGTHQ4xAJCI046jiGnM+IgNnBoclu8dou+xdYeQULu/a0eZfwSXy
-	+LiES3Pp5yWRKX+KsfaShu0D0JGr3VJm+leZp1m2GLPa7Z980GXenIuGh/ekHkE/0DpXFe4NW7T
-	51fZ2JpygpAQyrkqacB5ltxOEm1xgOuXGyTiJM5ikKByUUIgVkEvRbF8zSXp3Tiv51dRuD0h/Bo
-	TsuITMCOydi9hueETA/tlA8oK/Zab+ZJfDuchWGn5RN9yIPk4712HX4Avf2pTMsOgAk4hCZ+Y5r
-	3mNjefw46Fnvc2yaBMINXSODbJ6mu69rhSVF267p5w7YEEYalVXfpgeM/9+rJ91B4oXywRZ6Xcd
-	GHQBgcMFcwxvu8qY2DmNEQXPvGfowiBM3NBzm/BbN46d3e7hxlIJy+5IKm99J3E9hJnrM0gzLow
-	kw61mOCJ7Nr7RmbCvjix4BM3UxjopJBHGplfoy63JwxpWF3lknTD9k0eqD32en67NI0ZSaEyJNx
-	NTPaT8IrmoT76/YPVGRRK0PxGj0=
-X-Received: by 2002:a17:90a:d2cf:b0:3ac:9772:8da3 with SMTP id 98e67ed59e1d1-3b41c8fed4bmr13992683a91.31.1795581449240;
-        Tue, 24 Nov 2026 20:37:29 -0800 (PST)
+        bh=rkE7p4aQLSp2kYV7vRBIkJ3P+8n0i8bdfYVP4ePHIkQ=;
+        b=LWq5tp8UzBV70vjka8+lQcH8Op/B/nLXJnG1EpmMzSFrOm81E1rJI8RLlXK/UDqObh
+         hsBrZH+pa/6Jdx/EJws3m+ojwuJtsVgqHagMSiL2pOD/PFMo0zrrPmYYSbV1uVIXRau/
+         l82ljJhM/67lF2PpdY0pgO1baHHBmI+wq2Ul+BAKSuzuOdYp/WS66jEW5via36DKbR3C
+         KzCp29cHrseiBIXJpAs1zLQtjysDFMj60O4gB286rYnsy89EliR7UaRxWp7ovFi76w7f
+         b5I6x3NEfi6tNml5n3VF5UZ6U8PH43nAyH2c+qWVHSrMn0K6eAAwNd6rsk4s3d44QQxE
+         dHkw==
+X-Forwarded-Encrypted: i=1; AL+hErHgf/ilerRdBKqdzCXGTcouYKDHZhjEIFLlao4Xjf8BcLzH08oQy4wjE37LpajL043YO20DcP2ReUc=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8qhza4qHSXgFjm/gxGq7+cMtnF5OxR/rq7DTeF4jA4aiLMgiz+
+	3U+PytB/sYORfBfwWpPbbRVZEEhdwlxzq0aFLRxOsBUG4glM0fCUdnay
+X-Gm-Gg: AZFdTZe1bRLX+aMmk5mvglVCgim+UoFpOgU5GmeZresFy67yHMleU4ptr2rNpcFPAci
+	ZZy45kcwd4/kynPwSZo2Z1zRdqlkMMWwiWTY9G5Ck2PczWWvWjWqnmturAwSgBrZZ26wPo9SH5Q
+	VYZyGJyFRgoQM9llcRELbRxf60AMCqoeBNIuwOiYak3UwpvQotNQ5YaAYZZkrtw3NGSRmlTEhos
+	aYrXRfMdybzK2L3jwnBGuF6j95jLriVJBf5DYd9Py1Kcq6v7jFt+7LaZrN/9iVmMzWU9M1Hpr21
+	GNrYmnA/k+8D0vgekhre5jpd7huSKlNQP0RvWsMyNMKmxisHI5jxfBgpPIM30sVS2dOhM4WHnuA
+	h/hEtrlqfp6UW//tZFuYES3v6apZeJ432YSVoI5lLmH592NzLr1RjN5r+sv9MkQnVWdx0hZHkCi
+	yeQMp/ck9ARo9k17agjQM/AkmQSOW06Tr/Db0j5aAZcvS899UJ4lpfgQEzwyIHpcCaXyWqU3W/D
+	u2CU16mS4TBcRx6RLA57wtbseDfAbMSEmncyZxnJPsNvLZxF52Dlw8nmu5UGKwkZq4gM/iYeNR1
+	uaRz54KAvtdRa5kmqtb24xjIZjihTYwo5V8yA7LLSsqV3tZB
+X-Received: by 2002:a05:6a00:4107:b0:89f:ed19:f0ba with SMTP id d2e1a72fcca58-8c7dd9d67bbmr11654419b3a.23.1795581452525;
+        Tue, 24 Nov 2026 20:37:32 -0800 (PST)
 Received: from localhost ([2001:19f0:8000:4ce8:5400:7ff:fe0e:e6b2])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b4b0f482bdsm9985129a91.14.2026.11.24.20.37.28
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8c873c1e2f3sm7882825b3a.54.2026.11.24.20.37.31
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Nov 2026 20:37:28 -0800 (PST)
+        Tue, 24 Nov 2026 20:37:32 -0800 (PST)
 From: Inochi Amaoto <inochiama@gmail.com>
 To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
 	Jonathan Corbet <corbet@lwn.net>,
@@ -124,17 +124,17 @@ Cc: linux-doc@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Yixun Lan <dlan@gentoo.org>,
 	Longbin Li <looong.bin@gmail.com>
-Subject: [PATCH v5 4/8] phy: core: Add phy bulk data helper functions
-Date: Wed, 25 Nov 2026 12:36:35 +0800
-Message-ID: <20261125043639.249525-5-inochiama@gmail.com>
+Subject: [PATCH v5 5/8] phy: core: Add managed phy bulk data helper functions
+Date: Wed, 25 Nov 2026 12:36:36 +0800
+Message-ID: <20261125043639.249525-6-inochiama@gmail.com>
 X-Mailer: git-send-email 2.56.1
 In-Reply-To: <20261125043639.249525-1-inochiama@gmail.com>
 References: <20261125043639.249525-1-inochiama@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261125_043732_278922_C10EAFE0 
-X-CRM114-Status: GOOD (  24.67  )
+X-CRM114-CacheID: sfid-20261125_043735_359696_D3075D16 
+X-CRM114-Status: GOOD (  18.55  )
 X-Spam-Score: -0.2 (/)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -156,394 +156,214 @@ X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add several helper functions that allow drivers to get several phy
-consumers in one operation. If any of the phy cannot be acquired then
-any phys that were got will be put before returning to the caller.
-
-This can relieve the driver owners' life who needs to handle many phys,
-as well as each phy error reporting.
+Add device managed variants of the phy bulk helper functions. So
+the driver can benefit from automatically managed phy handles.
 
 Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
 ---
- drivers/phy/phy-core.c  | 301 ++++++++++++++++++++++++++++++++++++++++
- include/linux/phy/phy.h |  38 +++++
- 2 files changed, 339 insertions(+)
+ drivers/phy/phy-core.c  | 139 ++++++++++++++++++++++++++++++++++++++++
+ include/linux/phy/phy.h |  31 +++++++++
+ 2 files changed, 170 insertions(+)
 
 diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 5004d28b167a..87a317a144b4 100644
+index 87a317a144b4..eeba1b899c20 100644
 --- a/drivers/phy/phy-core.c
 +++ b/drivers/phy/phy-core.c
-@@ -1100,6 +1100,307 @@ struct phy *devm_phy_get_by_of_node(struct device *dev, struct device_node *np)
+@@ -1281,6 +1281,145 @@ static void phy_bulk_put_all(struct device *dev, int num_phys,
+ 	kfree(phys);
  }
- EXPORT_SYMBOL_GPL(devm_phy_get_by_of_node);
  
-+/**
-+ * of_phy_get_count() - Get the number of phys of a device node
-+ * @np: device_node for which to get the phy
-+ *
-+ * Return: the phy count if successful, %0 if no phy handle is found,
-+ * negative error value if error occurs.
-+ */
-+static int of_phy_get_count(const struct device_node *np)
++struct phy_bulk_devres {
++	struct phy_bulk_data *phys;
++	int num_phys;
++};
++
++static void devm_phy_bulk_release(struct device *dev, void *res)
 +{
-+	int count;
++	struct phy_bulk_devres *devres = res;
 +
-+	count = of_count_phandle_with_args(np, "phys", "#phy-cells");
-+
-+	if (count == -ENOENT)
-+		return 0;
-+
-+	return count;
++	phy_bulk_put(dev, devres->num_phys, devres->phys);
 +}
 +
 +/**
-+ * phy_bulk_put() - release a set of PHYs
-+ * @dev: device that acquired the PHYs
-+ * @num_phys: number of entries in the phys array
-+ * @phys: array of struct phy_bulk_data with PHYs set
-+ *
-+ * Releases the PHY references in reverse order and clears the PHY pointer in
-+ * each entry. The caller owns the phys array and is responsible for freeing it
-+ * if necessary.
-+ */
-+static void phy_bulk_put(struct device *dev, int num_phys,
-+			 struct phy_bulk_data *phys)
-+{
-+	while (num_phys--) {
-+		phy_put(dev, phys[num_phys].phy);
-+		phys[num_phys].phy = NULL;
-+	}
-+}
-+
-+/**
-+ * of_phy_bulk_put() - release a set of PHYs
-+ * @num_phys: number of entries in the phys array
-+ * @phys: array of struct phy_bulk_data with PHYs set
-+ *
-+ * Releases the PHY references in reverse order and clears the PHY pointer in
-+ * each entry. The caller owns the phys array and is responsible for freeing it
-+ * if necessary.
-+ */
-+static void of_phy_bulk_put(int num_phys, struct phy_bulk_data *phys)
-+{
-+	while (num_phys--) {
-+		of_phy_put(phys[num_phys].phy);
-+		phys[num_phys].phy = NULL;
-+	}
-+}
-+
-+static int of_phy_bulk_get_by_index(struct device_node *np, int num_phys,
-+				    struct phy_bulk_data *phys)
-+{
-+	int ret = 0;
-+	int i;
-+
-+	for (i = 0; i < num_phys; i++) {
-+		phys[i].id = NULL;
-+		phys[i].phy = NULL;
-+	}
-+
-+	mutex_lock(&phy_provider_mutex);
-+
-+	for (i = 0; i < num_phys; i++) {
-+		of_property_read_string_index(np, "phy-names", i, &phys[i].id);
-+
-+		phys[i].phy = _of_phy_get_by_index(np, i);
-+
-+		if (IS_ERR(phys[i].phy)) {
-+			ret = PTR_ERR(phys[i].phy);
-+			break;
-+		}
-+	}
-+
-+	mutex_unlock(&phy_provider_mutex);
-+
-+	if (ret)
-+		of_phy_bulk_put(i, phys);
-+
-+	return ret;
-+}
-+
-+/**
-+ * phy_bulk_get() - lookup and obtain references to multiple PHYs
++ * devm_phy_bulk_get() - managed lookup of multiple PHYs
 + * @dev: device that requests the PHYs
 + * @num_phys: number of entries in the phys array
 + * @phys: array of struct phy_bulk_data with PHY names set
 + *
-+ * Gets each PHY using phy_get(). This supports both device tree lookups and
-+ * non-device-tree lookups registered with phy_create_lookup(). The caller must
-+ * call phy_bulk_put() to release the PHY references.
++ * Gets the PHYs using phy_bulk_get() and associates the references with
++ * @dev. The references are automatically released on driver detach.
 + *
 + * Return: %0 if successful, a negative error code otherwise
 + */
-+static int phy_bulk_get(struct device *dev, int num_phys,
-+			struct phy_bulk_data *phys)
++int devm_phy_bulk_get(struct device *dev, int num_phys,
++		      struct phy_bulk_data *phys)
 +{
-+	int ret, i;
++	struct phy_bulk_devres *devres;
++	int ret;
 +
-+	for (i = 0; i < num_phys; i++)
-+		phys[i].phy = NULL;
++	devres = devres_alloc(devm_phy_bulk_release, sizeof(*devres),
++			      GFP_KERNEL);
++	if (!devres)
++		return -ENOMEM;
 +
-+	for (i = 0; i < num_phys; i++) {
-+		phys[i].phy = phy_get(dev, phys[i].id);
-+
-+		ret = PTR_ERR_OR_ZERO(phys[i].phy);
-+		if (ret) {
-+			phys[i].phy = NULL;
-+
-+			dev_err_probe(dev, ret, "Failed to get phy: (%s)\n",
-+				      phys[i].id);
-+			goto err;
-+		}
++	ret = phy_bulk_get(dev, num_phys, phys);
++	if (ret) {
++		devres_free(devres);
++		return ret;
 +	}
 +
++	devres->phys = phys;
++	devres->num_phys = num_phys;
++	devres_add(dev, devres);
++
 +	return 0;
++}
++EXPORT_SYMBOL_GPL(devm_phy_bulk_get);
 +
-+err:
-+	phy_bulk_put(dev, i, phys);
++static int devm_phy_bulk_match(struct device *dev, void *res, void *match_data)
++{
++	struct phy_bulk_devres *devres = res;
 +
-+	return ret;
++	return devres->phys == match_data;
++}
++
++static void devm_phy_bulk_release_all(struct device *dev, void *res)
++{
++	struct phy_bulk_devres *devres = res;
++
++	phy_bulk_put_all(dev, devres->num_phys, devres->phys);
 +}
 +
 +/**
-+ * of_phy_bulk_get_all() - obtain all PHYs from a device node
-+ * @np: device node containing the PHY references
++ * devm_phy_bulk_get_all() - managed lookup of all PHYs requested by a device
++ * @dev: device that requests the PHYs
 + * @phys: pointer to store the allocated array of struct phy_bulk_data
 + *
-+ * Gets every PHY referenced by the phys property in index order. PHY names are
-+ * read from phy-names when present.
++ * The function calls devm_of_phy_bulk_get_all() directly, but sets the
++ * @np parameter to dev_of_node(dev).
 + *
 + * Return: the number of PHYs on success, %0 if no PHYs are found, or a
 + * negative error code otherwise
 + */
-+static int of_phy_bulk_get_all(struct device_node *np,
-+			       struct phy_bulk_data **phys)
++int devm_phy_bulk_get_all(struct device *dev, struct phy_bulk_data **phys)
 +{
-+	struct phy_bulk_data *phy_bulk;
-+	int num_phys;
++	return devm_of_phy_bulk_get_all(dev, dev_of_node(dev), phys);
++}
++EXPORT_SYMBOL_GPL(devm_phy_bulk_get_all);
++
++/**
++ * devm_of_phy_bulk_get_all() - managed lookup of all PHYs from a device node
++ * @dev: device that requests the PHYs
++ * @np: device node containing the PHY references
++ * @phys: pointer to store the allocated array of struct phy_bulk_data
++ *
++ * Gets all PHYs from the specified device node, associates the allocated array
++ * and PHY references with @dev, and creates a device link for each PHY. They
++ * are automatically released on driver detach.
++ *
++ * Return: the number of PHYs on success, %0 if no PHYs are found, or a
++ * negative error code otherwise
++ */
++int devm_of_phy_bulk_get_all(struct device *dev, struct device_node *np,
++			     struct phy_bulk_data **phys)
++{
++	struct phy_bulk_devres *devres;
 +	int ret;
 +
-+	num_phys = of_phy_get_count(np);
-+	if (num_phys <= 0)
-+		return num_phys;
-+
-+	phy_bulk = kmalloc_objs(*phy_bulk, num_phys);
-+	if (!phy_bulk)
++	devres = devres_alloc(devm_phy_bulk_release_all, sizeof(*devres),
++			      GFP_KERNEL);
++	if (!devres)
 +		return -ENOMEM;
 +
-+	ret = of_phy_bulk_get_by_index(np, num_phys, phy_bulk);
-+	if (ret) {
-+		kfree(phy_bulk);
-+		return ret;
++	ret = of_phy_bulk_get_all(np, &devres->phys);
++	if (ret > 0) {
++		for (int i = 0; i < ret; i++)
++			phy_add_device_link(dev, devres->phys[i].phy);
++		*phys = devres->phys;
++		devres->num_phys = ret;
++		devres_add(dev, devres);
++	} else {
++		devres_free(devres);
 +	}
 +
-+	*phys = phy_bulk;
-+
-+	return num_phys;
++	return ret;
 +}
++EXPORT_SYMBOL_GPL(devm_of_phy_bulk_get_all);
 +
 +/**
-+ * phy_bulk_put_all() - release and free PHYs
-+ * @dev: device that acquired the PHYs
-+ * @num_phys: number of entries in the phys array
-+ * @phys: array of struct phy_bulk_data to release and free
++ * devm_phy_bulk_put_all() - release the multiple PHY
++ * @dev: device that wants to release this phy
++ * @phy: the phy bulk data returned by devm_phy_bulk_get_all()
++ *
++ * destroys the devres associated with this phy bulk data and invokes
++ * phy_bulk_put to release the phy.
 + */
-+static void phy_bulk_put_all(struct device *dev, int num_phys,
-+			     struct phy_bulk_data *phys)
++void devm_phy_bulk_put_all(struct device *dev, struct phy_bulk_data *phy)
 +{
-+	if (IS_ERR_OR_NULL(phys))
++	int r;
++
++	if (!phy)
 +		return;
 +
-+	phy_bulk_put(dev, num_phys, phys);
-+	kfree(phys);
++	r = devres_release(dev, devm_phy_bulk_release_all,
++			   devm_phy_bulk_match, phy);
++	dev_WARN_ONCE(dev, r, "couldn't find PHY resource\n");
 +}
-+
-+/**
-+ * phy_bulk_init() - initialize multiple PHYs
-+ * @num_phys: number of entries in the phys array
-+ * @phys: array of struct phy_bulk_data to initialize
-+ *
-+ * Initializes the PHYs in array order. If an initialization fails, all PHYs
-+ * initialized by this call are exited in reverse order.
-+ *
-+ * Return: %0 if successful, a negative error code otherwise
-+ */
-+int phy_bulk_init(int num_phys, struct phy_bulk_data *phys)
-+{
-+	int ret, i;
-+
-+	for (i = 0; i < num_phys; i++) {
-+		ret = phy_init(phys[i].phy);
-+		if (ret)
-+			goto err;
-+	}
-+
-+	return 0;
-+
-+err:
-+	while (i--)
-+		phy_exit(phys[i].phy);
-+
-+	return ret;
-+}
-+EXPORT_SYMBOL_GPL(phy_bulk_init);
-+
-+/**
-+ * phy_bulk_exit() - exit multiple PHYs
-+ * @num_phys: number of entries in the phys array
-+ * @phys: array of struct phy_bulk_data to exit
-+ *
-+ * Exits the PHYs in reverse array order. If error occurs, all exited
-+ * phys are inited again.
-+ *
-+ * Return: %0 if successful, or negative error code if one fails.
-+ */
-+int phy_bulk_exit(int num_phys, struct phy_bulk_data *phys)
-+{
-+	int ret, i;
-+
-+	for (i = num_phys - 1; i >= 0; i--) {
-+		ret = phy_exit(phys[i].phy);
-+		if (ret)
-+			goto err;
-+	}
-+
-+	return 0;
-+
-+err:
-+	while (++i < num_phys)
-+		phy_init(phys[i].phy);
-+
-+	return ret;
-+}
-+EXPORT_SYMBOL_GPL(phy_bulk_exit);
-+
-+/**
-+ * phy_bulk_power_on() - power on multiple PHYs
-+ * @num_phys: number of entries in the phys array
-+ * @phys: array of struct phy_bulk_data to power on
-+ *
-+ * Powers on the PHYs in array order. If a power-on operation fails, all PHYs
-+ * powered on by this call are powered off in reverse order.
-+ *
-+ * Return: %0 if successful, or negative error code if one fails.
-+ */
-+int phy_bulk_power_on(int num_phys, struct phy_bulk_data *phys)
-+{
-+	int ret, i;
-+
-+	for (i = 0; i < num_phys; i++) {
-+		ret = phy_power_on(phys[i].phy);
-+		if (ret)
-+			goto err;
-+	}
-+
-+	return 0;
-+
-+err:
-+	while (i--)
-+		phy_power_off(phys[i].phy);
-+
-+	return ret;
-+}
-+EXPORT_SYMBOL_GPL(phy_bulk_power_on);
-+
-+/**
-+ * phy_bulk_power_off() - power off multiple PHYs
-+ * @num_phys: number of entries in the phys array
-+ * @phys: array of struct phy_bulk_data to power off
-+ *
-+ * Power off the PHYs in reverse order. If a powers off fails, already
-+ * power-off phys are powered on again.
-+ *
-+ * Return: %0 if successful, the first negative error code otherwise
-+ */
-+int phy_bulk_power_off(int num_phys, struct phy_bulk_data *phys)
-+{
-+	int ret, i;
-+
-+	for (i = num_phys - 1; i >= 0; i--) {
-+		ret = phy_power_off(phys[i].phy);
-+		if (ret)
-+			goto err;
-+	}
-+
-+	return 0;
-+
-+err:
-+	while (++i < num_phys)
-+		phy_power_on(phys[i].phy);
-+
-+	return ret;
-+}
-+EXPORT_SYMBOL_GPL(phy_bulk_power_off);
++EXPORT_SYMBOL_GPL(devm_phy_bulk_put_all);
 +
  /**
-  * phy_create() - create a new phy
-  * @dev: device that is creating the new phy
+  * phy_bulk_init() - initialize multiple PHYs
+  * @num_phys: number of entries in the phys array
 diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-index c480d6cb42c5..c170d9aeeeb4 100644
+index c170d9aeeeb4..a51b3c283efd 100644
 --- a/include/linux/phy/phy.h
 +++ b/include/linux/phy/phy.h
-@@ -83,6 +83,18 @@ union phy_configure_opts {
- 	struct phy_configure_opts_hdmi		hdmi;
- };
- 
-+/**
-+ * struct phy_bulk_data - Data used for bulk phy operations.
-+ *
-+ * @id: phy consumer ID
-+ */
-+struct phy_bulk_data {
-+	const char	*id;
-+
-+	/* private: Internal use */
-+	struct phy	*phy;
-+};
-+
- /**
-  * struct phy_ops - set of function pointers for performing phy operations
-  * @init: operation to be performed for initializing phy
-@@ -313,6 +325,12 @@ void devm_of_phy_provider_unregister(struct device *dev,
- 	struct phy_provider *phy_provider);
+@@ -326,6 +326,13 @@ void devm_of_phy_provider_unregister(struct device *dev,
  int phy_create_lookup(struct phy *phy, const char *con_id, const char *dev_id);
  void phy_remove_lookup(struct phy *phy, const char *con_id, const char *dev_id);
+ 
++int devm_phy_bulk_get(struct device *dev, int num_phys,
++		      struct phy_bulk_data *phys);
++int devm_phy_bulk_get_all(struct device *dev, struct phy_bulk_data **phys);
++int devm_of_phy_bulk_get_all(struct device *dev, struct device_node *np,
++			     struct phy_bulk_data **phys);
++void devm_phy_bulk_put_all(struct device *dev, struct phy_bulk_data *phy);
 +
-+int phy_bulk_init(int num_phys, struct phy_bulk_data *phys);
-+int phy_bulk_exit(int num_phys, struct phy_bulk_data *phys);
-+int phy_bulk_power_on(int num_phys, struct phy_bulk_data *phys);
-+int phy_bulk_power_off(int num_phys, struct phy_bulk_data *phys);
-+
- #else
- static inline int phy_pm_runtime_get(struct phy *phy)
- {
-@@ -584,6 +602,26 @@ phy_create_lookup(struct phy *phy, const char *con_id, const char *dev_id)
- }
+ int phy_bulk_init(int num_phys, struct phy_bulk_data *phys);
+ int phy_bulk_exit(int num_phys, struct phy_bulk_data *phys);
+ int phy_bulk_power_on(int num_phys, struct phy_bulk_data *phys);
+@@ -603,6 +610,30 @@ phy_create_lookup(struct phy *phy, const char *con_id, const char *dev_id)
  static inline void phy_remove_lookup(struct phy *phy, const char *con_id,
  				     const char *dev_id) { }
-+
-+static inline int phy_bulk_init(int num_phys, struct phy_bulk_data *phys)
-+{
-+	return 0;
-+}
-+
-+static inline int phy_bulk_exit(int num_phys, struct phy_bulk_data *phys)
-+{
-+	return 0;
-+}
-+
-+static inline int phy_bulk_power_on(int num_phys, struct phy_bulk_data *phys)
-+{
-+	return 0;
-+}
-+
-+static inline int phy_bulk_power_off(int num_phys, struct phy_bulk_data *phys)
-+{
-+	return 0;
-+}
- #endif
  
- #endif /* __DRIVERS_PHY_H */
++static inline int devm_phy_bulk_get(struct device *dev, int num_phys,
++				    struct phy_bulk_data *phys)
++{
++	return -EOPNOTSUPP;
++}
++
++static inline int devm_of_phy_bulk_get_all(struct device *dev,
++					   struct device_node *np,
++					   struct phy_bulk_data **phys)
++{
++	return 0;
++}
++
++static inline int devm_phy_bulk_get_all(struct device *dev,
++					struct phy_bulk_data **phys)
++{
++	return 0;
++}
++
++static inline void devm_phy_bulk_put_all(struct device *dev,
++					 struct phy_bulk_data *phy)
++{
++}
++
+ static inline int phy_bulk_init(int num_phys, struct phy_bulk_data *phys)
+ {
+ 	return 0;
 -- 
 2.56.1
 
