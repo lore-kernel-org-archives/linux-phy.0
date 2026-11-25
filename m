@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5DC36606A6B0
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 13:25:21 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8433C606A31E
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 13:28:45 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=KQllUYzq;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=GkAYz44s
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Q/kFJGHI;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=UZ1EWn0X
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
@@ -14,96 +14,92 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=LJuTGPowEuV072Q8QKLUJ8ft0GN5P2+tVIJFbYJ1YZo=; b=KQllUYzqeRaaRCkemtz7XWN8RD
-	TQ6B5L6x4XFzM1aFHQaJLcMj8NHSHIHAJzfa7I2QraMsaJQSXjuErKltdvl1lfllfpJWpZLnvOVeI
-	26p0b6BQvKt1fIhvBgzZxHO7H3t3E/0NGO7G532qkuCD7rPvxDebMFfD99IOgBqY/6HvrmMZ0K0ng
-	gbanSLEmQ1u7I3IsHXrbe+1lQ2+XihCFVWEoOFRbbyTS9a1mmiRnVjYUq1/3zGZ80msEAib1O//gV
-	3DijmElNB+s435qHVjCg4an1wH8Ln5AYn0ks2bP5Vg3j+HG+nZlNf/Hn8UjOsd2sYiqZdDFpGsCHM
-	BrvCtFhQ==;
+	bh=pHTOSP7Y5teLl4iJTgd2Uy8xQPeH6cruFg4Fr3SiC1k=; b=Q/kFJGHI8m5cVndEEFgWvmTq6x
+	tniwL/cvR6l+JRQhcZoeXE+84L2NsyeUAuJz4StzjICfY2piD+Wd5xxmpgCWtL8j86fZEc4Or2xIk
+	LcK7KtVQn5B4j00NdloLlFOntdc8FXuevKmOcyGQ/MrNPiBtJ2YpT2k9Gr5FwzmmyJfesjRJaqVd8
+	N+FI5yUHIyaCHrbcMD5UwKYzQ0EoRDta5m1xp5E8+DY6AGXuWARNA0cXFzxKUufgRIzjIpEbik5gR
+	gkC5IAEnX/lZgAefdBxYu7bwXtbQ6yRJd/e5Hk9SBa2FV4xdnRTfEJFRl6Vp0g9ji4stlGNMw94Er
+	u/HdgLNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWCzw-00000009yow-3gXQ;
-	Wed, 25 Nov 2026 13:25:21 +0000
-Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
+	id 1xWD3E-00000009zHy-3UET;
+	Wed, 25 Nov 2026 13:28:45 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWCzu-00000009yoG-2Pyx
+	id 1xWD3B-00000009zHF-1QKD
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Nov 2026 13:25:20 +0000
-Received: by mail-lj1-x235.google.com with SMTP id 38308e7fff4ca-3ab3cb83f54so4200601fa.0
-        for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 05:25:18 -0800 (PST)
+	Wed, 25 Nov 2026 13:28:43 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-5c14c0503dfso516729e87.3
+        for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 05:28:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1795613116; x=1796217916; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1795613319; x=1796218119; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:from:references
          :cc:to:subject:user-agent:mime-version:date:message-id:from:to:cc
          :subject:date:message-id:reply-to:content-type;
-        bh=NQLOwLKmQWGXVjYzEC+v5DF5B/Ubjo80CMy8M7QDT2k=;
-        b=GkAYz44sT87n+XmA2wcug59PTd01AM+vFvdB1kv5Je4tCpewLWe/mjMGYQc2G9++B/
-         uVG9bD+N099LBRFWABPkU0YXTMypdI9eGmepKK9Fabev1wm6r+nyoJtsXWk/ejjwekVG
-         6AHTv2jQYDafz66SvM1oXvDxXhpokdB90TQJhffUfi+qqq2Fh+OSNe1an8dj1weGdPJt
-         sE69RXtWhl477rqQzeQQAuYlMHKGjRIjGSFokjD4JUJPnA9nSpZWrzuZWoVCAr/r7vW0
-         Q8F4QAjVfQnfDVsZFoKAysLUAbg7tg0YGDx58FYo2BhJI7CrIfX0lqTAQSdTe587ks8u
-         TCww==
+        bh=AdBqif1XdprtG6YwyZi9UA3LL5Dre8swdPb1+TR3fvE=;
+        b=UZ1EWn0XYlmSvu9f6cUr8oxaR5+4QjMQ3OvK2Sszg7GJ/+2nUGwdR5AuogKOcPiCpn
+         oTv8YeOzopwJsl5CRkWfoFW0/0ZLYunky6jJv9J5wX8s8kg8ryHJjhcoDkOsDgDFX427
+         gjZ6+OnQb2y+/Tt8SlfWEHOsRD+V07DxfmXUe07b3Kh7TaOXPNSBNW4m3mSBTR928mn9
+         VuSV+HqjVHQesIUnfhSQZo9sCq+z9N1vmVKxhdcA4w53h3vePnXRDsV24G2fvAgINZm7
+         EZERi3SS2h8gi3YU7/XFpyoVJNDw26cjv+OhTQ+u5meEFJGpQK4X3EWHZQi+5m9KjQXl
+         mf9g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795613116; x=1796217916;
+        d=1e100.net; s=20260707; t=1795613319; x=1796218119;
         h=content-transfer-encoding:content-type:in-reply-to:from:references
          :cc:to:subject:user-agent:mime-version:date:message-id:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=NQLOwLKmQWGXVjYzEC+v5DF5B/Ubjo80CMy8M7QDT2k=;
-        b=eTJcvkMx6jMwG0jjph+fa1qyXwmoL9aTwOytGJhzx4JgmVeRmZiQbe+txgkf64+vQH
-         leN4c+Bz23kh5EDA0OqG/ia4jfdzIokjOnciIklRzzHnj2lJQMbVr/FhnS1mSj6kUOp0
-         dBA2V7JwEmOG9jlOxk4w9rXIywXyhHZJTR3k6ESswWAu3tuxZxF3d864fM+A1ntYbVH3
-         JqeN1mFzE1R3W8kcIRxsVZpVeldSbc7Zwusjzd96PQpPTWzO0UF2epPnIVuLy9FAUCTq
-         kvZXNsXNwQ/Z1Rbqvm5dwO82K2HhL1xu22/aMKrL97nkjQQMpnLPwB++8zIvRDVoMMrq
-         kBLg==
-X-Gm-Message-State: APuU4Z+cYAdIBBHkwXHWWmPNxEOpektzjSnEJcb5ycRJ/DOkSv7jcsdO
-	sA6MPZDQjERWrr0/zTDLH7JcPf56NaVpmnUOTrFk5cnne7i31xjjyqEQmfrye2Bipdk=
-X-Gm-Gg: AZFdTZfJMlEPV5d2Zp9NgsxlIPlGrM1AuAhSS++y43HG3R4/nbecsJjMbpfmRnP1HZf
-	2N8wA5MBj1pPuRvr/mdu7Na3Jw+3jJ5eagHl0NyZRMpnc4Enr7py2X+zDQtrsdM8oKb/dUo0VuA
-	fnHd9OSRVouy8DbIiU5e32qb1fB1+wb2UF0JWq66T3M2gLGN2Wr2iPBzNiOlyLu/qepdaGXiv6E
-	sRQZSgZA8a8kCyg9KoES46vrQhvq0xyUDqXLwUALy9yDz8f5+RV+A1gEAWRg7aakiDWT18qq3zm
-	SMVXS+pLVi1ybPuOnzdqTEaoRTuUMvksppoTFr8IMbwvIj/lDsAX0cL2O/WAjaNiYeRn3BoqseV
-	RCoQ92xXJ8bUdUUIyRpVMG+4cvQtRs+Gblz+turm5SZ1MnvrJTK5lbd5DVwr3naaPXCWWHZk5eG
-	pjRvPvQi5ohevwmJ+pg7ZoBVd0seLu3MquSyMP5P97pvIcfH1BgoUA9p4eAbE3fwhS3Q133fwBA
-	u5xo8WcfVBzaBgneih9W8xkQceTZEv52LHbAe5K0sO30q4bURgaJAMNauf5db4CffHZzXHAPO51
-	Qv9aqMiwgNGohjfYNspM/76Dn0xsZTWH2rJSVDhol7vZoEvAqi6Y2xBdvWyrSSSCYeUq8ZwMx2t
-	XOujfWwg=
-X-Received: by 2002:a05:651c:a110:20b0:3ac:e540:987a with SMTP id 38308e7fff4ca-3ae7f7ccbccmr42034731fa.0.1795613116510;
-        Wed, 25 Nov 2026 05:25:16 -0800 (PST)
+        bh=AdBqif1XdprtG6YwyZi9UA3LL5Dre8swdPb1+TR3fvE=;
+        b=abdYhsriqIdeaZs2+mx0rBC7dlj2rE9QrZ27/uYiz+KAKi3pdX5+CIV+y8booU8REo
+         j9Q1I8+vwhGMuQ00TMcXZ6B7tTWEKEE+kyURnpnkB1/rrzr+56vQ5NJxnD3+kW3lBzWN
+         Mm8+bAaVOKmGJHCrv5OyUdLarHMTds7LNvsCJl+2rY6Dxthq01uxn4MfelncdgRD9iRd
+         zIa5GAo5j6u/uSrttgC4ukrja9q7nxyMvHSPUXIzbsxqkubwovuPKbDH9GoR4Ii8J2zm
+         hzQoBtI865lYqQuX3ccV2bMBgKc3fk/6mh8xKMGZ60swcqSbqbT8ZVpFVxXR+9bttFmt
+         JkFA==
+X-Forwarded-Encrypted: i=1; AL+hErGPGW/+DetSePtsvfWMZ9PFHm/RlXdiaz3uQrvomlyyKcsP3Lc6s+p5EuzF7lK8lJFnPLHqu1ipI/w=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/YHH8ovrG9uB3fgfy0G2BRgx9t24YyFd4GBkhA9iJdoInR2Wl0
+	ji8/860/y5wKFYItLiRFnFMDftXCqKmQu4XoBiIURdi9vZ9G5KEv6PMDsDdDyc6mGE0=
+X-Gm-Gg: AZFdTZd4O5vW7pwWsx2SkVpRLhXdaty1f7XxwJMuHHG95g8v+U+mGSmIW9BLxYqXPlX
+	vyl2SFVJ7N5/fKtZaaZJnAdgCn3Q7nDbw8s5llv7J4UfV1cpKJBGu4Dd3qQ6UIpMSuZmHGot9NP
+	k2cCNDGLaamgC9BPr4O1lPnuC/W5Tv/F8Bts5BJvuUH8Cle2bUmrREyGOn4xDApbe77UtvP2y27
+	cnTbdUeLu4HNzYWzdSg805zhNtmRF6/oXugIeNgUXSLapRXYTc8xG6q5W9TmZzow1wV56sczGRY
+	p2tSKeW8yy2wS/X/afpcHnKaB62yIO/DZH2Aadqr4GNKIrZlu6dgiImciLiR655xduy+BycUGB1
+	5tMcqa/9MsPydNGZQixO4W4dYA2Lr6NTZgnB5qI83DadXUjcJ7lCgKYozjDBdQCQ8RS7NxaS5Vt
+	Q7leTNroPy9UFj4AmrFP4U7S3Ba1LOkwFkhd0tWFpy834pgMaUyca2ymzQK4w6Kme7QLmVN8WKZ
+	njqAgA7OhQQRFi2F8C6DjSQPhg29pMrf0ltN58BmDR2GwcCLrsVssa/rnC5ZuPOpEqzTPk24VbM
+	ZYS/VpiBkGGZO3jIAQVEuVayWIO1X/U6o6ePDM6M2qClA3Cd+jpptFOOeqg9uIIO8Jg4de6Pny7
+	Gn13frS0=
+X-Received: by 2002:a05:6512:2514:b0:5bf:a66f:e5e with SMTP id 2adb3069b0e04-5c1bc57989bmr6590468e87.0.1795613319090;
+        Wed, 25 Nov 2026 05:28:39 -0800 (PST)
 Received: from [192.168.1.101] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-3ae8044e3c4sm47116791fa.4.2026.11.25.05.25.15
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5c1bcf333bcsm4683145e87.2.2026.11.25.05.28.37
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 25 Nov 2026 05:25:16 -0800 (PST)
-Message-ID: <38bdcad3-2c2f-4e55-9a3e-17047b9f486f@linaro.org>
-Date: Wed, 25 Nov 2026 15:25:15 +0200
+        Wed, 25 Nov 2026 05:28:38 -0800 (PST)
+Message-ID: <a2010032-8750-4289-b443-3afb57d656e6@linaro.org>
+Date: Wed, 25 Nov 2026 15:28:37 +0200
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 23/23] arm64: dts: qcom: eliza-evk-imx577-camera: Add
- DT overlay
-To: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>,
- Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>,
+Subject: Re: [PATCH v4 3/3] media: qcom: camss: Add Glymur compatible
+To: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>,
+ Bryan O'Donoghue <bod@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Loic Poulain <loic.poulain@oss.qualcomm.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Hangxiang Ma <hangxiang.ma@oss.qualcomm.com>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Robert Foss
- <rfoss@kernel.org>, Andi Shyti <andi.shyti@kernel.org>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>,
- Frank Li <Frank.Li@nxp.com>
-Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org
-References: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
- <20261114-add-support-for-camss-on-sm8750-v7-23-8ff2a11835f6@oss.qualcomm.com>
+ <conor+dt@kernel.org>, Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ Loic Poulain <loic.poulain@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Suresh Vankadara <svankada@qti.qualcomm.com>,
+ Vikram Sharma <vikram.sharma@oss.qualcomm.com>
+References: <20260925-glymur_camss-v4-0-d7c2983d6d7b@oss.qualcomm.com>
+ <20260925-glymur_camss-v4-3-d7c2983d6d7b@oss.qualcomm.com>
 From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-23-8ff2a11835f6@oss.qualcomm.com>
+In-Reply-To: <20260925-glymur_camss-v4-3-d7c2983d6d7b@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261125_052518_709671_21A15B2D 
-X-CRM114-Status: GOOD (  14.93  )
+X-CRM114-CacheID: sfid-20261125_052842_545621_143EA1C1 
+X-CRM114-Status: GOOD (  16.92  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -125,131 +121,41 @@ X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 11/14/26 13:29, Wenmeng Liu wrote:
-> Add an overlay for optional IMX577 integration on the Eliza CQS EVK,
-> shared by the eMMC and UFS variants. The sensor is on CCI0 I2C bus 0,
-> uses MCLK0 with its reset on GPIO8 and connects to CSIPHY0 over CSI-2.
-> The overlay enables CAMSS, CSIPHY0 and CCI0.
+Hi Nihal.
+
+On 9/25/26 08:48, Nihal Kumar Gupta wrote:
+> Glymur's camera subsystem hardware is a functional subset of X1E80100.
+> TPG, CSID, VFE, CSID wrapper and ICC resources are shared; Glymur has
+> three CSIPHY instances versus X1E80100's four.
 > 
-> Signed-off-by: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
+> qcom,x1e80100-camss is not used as a fallback compatible since it is
+> already claimed by its own binding schema, causing a duplicate
+> compatible warning in the DT schema checker.
+
+This sounds like the DT binding documentation shall be fixed instead.
+
+It makes no sense to add a large number of new compatibles to the driver
+code.
+
+> 
+> Signed-off-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
 > ---
->   arch/arm64/boot/dts/qcom/Makefile                  |  4 +
->   .../boot/dts/qcom/eliza-evk-imx577-camera.dtso     | 85 ++++++++++++++++++++++
->   2 files changed, 89 insertions(+)
+>   drivers/media/platform/qcom/camss/camss.c | 1 +
+>   1 file changed, 1 insertion(+)
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
-> index 64d2cfdb89c89f1c6eb0085e2bf5877ff980dbc4..a9374c54dd514f53b7aa97f5581c99cb6e75697d 100644
-> --- a/arch/arm64/boot/dts/qcom/Makefile
-> +++ b/arch/arm64/boot/dts/qcom/Makefile
-> @@ -16,6 +16,10 @@ dtb-$(CONFIG_ARCH_QCOM)	+= apq8096sg-db820c.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= apq8096-ifc6640.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= eliza-cqs-evk-emmc.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= eliza-cqs-evk-ufs.dtb
-> +eliza-cqs-evk-emmc-imx577-camera-dtbs := eliza-cqs-evk-emmc.dtb eliza-evk-imx577-camera.dtbo
-> +eliza-cqs-evk-ufs-imx577-camera-dtbs := eliza-cqs-evk-ufs.dtb eliza-evk-imx577-camera.dtbo
-> +dtb-$(CONFIG_ARCH_QCOM)	+= eliza-cqs-evk-emmc-imx577-camera.dtb
-> +dtb-$(CONFIG_ARCH_QCOM)	+= eliza-cqs-evk-ufs-imx577-camera.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= eliza-mtp.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= glymur-asus-zenbook-a14-ux3407na.dtb
->   dtb-$(CONFIG_ARCH_QCOM)	+= glymur-asus-zenbook-a16-ux3607oa.dtb
-> diff --git a/arch/arm64/boot/dts/qcom/eliza-evk-imx577-camera.dtso b/arch/arm64/boot/dts/qcom/eliza-evk-imx577-camera.dtso
-> new file mode 100644
-> index 0000000000000000000000000000000000000000..08f2e3c62dbdaf23a2f6ca69a5c392054cb1c225
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/qcom/eliza-evk-imx577-camera.dtso
-> @@ -0,0 +1,85 @@
-> +// SPDX-License-Identifier: BSD-3-Clause
-> +/*
-> + * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
-> + */
-> +
-> +/dts-v1/;
-> +/plugin/;
-> +
-> +#include <dt-bindings/clock/qcom,eliza-cambistmclkcc.h>
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/media/video-interfaces.h>
-> +
-> +&camss {
-> +	status = "okay";
-> +};
-> +
-> +&camss_csiphy0_in_port {
-> +	camss_csiphy0_inep: endpoint {
-> +		data-lanes = <1 2 3 4>;
-> +		remote-endpoint = <&csiphy0_out_ep>;
-> +	};
-> +};
-> +
-> +&cci0 {
-> +	status = "okay";
-> +};
-> +
-> +&cci0_i2c0 {
-> +	#address-cells = <1>;
-> +	#size-cells = <0>;
-> +
-> +	camera@1a {
-> +		compatible = "sony,imx577";
-> +		reg = <0x1a>;
-> +
-> +		reset-gpios = <&tlmm 8 GPIO_ACTIVE_LOW>;
-> +		pinctrl-0 = <&cam_mclk0_default &cam0_reset_default>;
-> +		pinctrl-names = "default";
-> +
-> +		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK0_CLK>;
-> +		assigned-clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK0_CLK>;
-> +		assigned-clock-rates = <24000000>;
-> +
-> +		dovdd-supply = <&vreg_l7b>;
-> +
-> +		port {
-> +			imx577_out_ep: endpoint {
-> +				data-lanes = <1 2 3 4>;
-> +				link-frequencies = /bits/ 64 <600000000>;
-> +				remote-endpoint = <&csiphy0_in_ep>;
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&csiphy0 {
-> +	vdda-0p9-supply = <&vreg_l2b>;
-> +	vdda-1p2-supply = <&vreg_l4b>;
-> +
-> +	status = "okay";
-> +};
-> +
-> +&csiphy0_in_port {
-> +	csiphy0_in_ep: endpoint {
-> +		bus-type = <MEDIA_BUS_TYPE_CSI2_DPHY>;
-> +		clock-lanes = <0>;
-
-Here 'clock-lanes' should be dropped, it shall be implied, and I belive
-it is.
-
-> +		data-lanes = <1 2 3 4>;
-> +		remote-endpoint = <&imx577_out_ep>;
-> +	};
-> +};
-> +
-> +&csiphy0_out_port {
-> +	csiphy0_out_ep: endpoint {
-> +		remote-endpoint = <&camss_csiphy0_inep>;
-> +	};
-> +};
-> +
-> +&tlmm {
-> +	cam0_reset_default: cam0-reset-default-state {
-> +		pins = "gpio8";
-> +		function = "gpio";
-> +		drive-strength = <2>;
-> +		bias-disable;
-> +	};
-> +};
+> diff --git a/drivers/media/platform/qcom/camss/camss.c b/drivers/media/platform/qcom/camss/camss.c
+> index 23f3cc30a15a5e098162bea98ba69fa636abdefb..9954a99981004590d34c722337bb6510fe759699 100644
+> --- a/drivers/media/platform/qcom/camss/camss.c
+> +++ b/drivers/media/platform/qcom/camss/camss.c
+> @@ -5751,6 +5751,7 @@ static const struct of_device_id camss_dt_match[] = {
+>   	{ .compatible = "qcom,sm8550-camss", .data = &sm8550_resources },
+>   	{ .compatible = "qcom,sm8650-camss", .data = &sm8650_resources },
+>   	{ .compatible = "qcom,x1e80100-camss", .data = &x1e80100_resources },
+> +	{ .compatible = "qcom,glymur-camss", .data = &x1e80100_resources },
+>   	{ }
+>   };
+>   
 > 
-
-Reviewed-by: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
 
 -- 
 Best wishes,
