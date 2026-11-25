@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 161F1606A31E
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 15:20:48 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 0ED25606A321
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 15:24:08 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=J6due3bF;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=D6l0tCJ3
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=IaGe4g2G;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=kdoRAZrK
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,67 +14,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=QyYfBQ9XnFwBH0dc5DLZROJYFFuKiAhNNam4nujDmeQ=; b=J6due3bFHRrwkGOEolX943Mc9t
-	/n+xL6wIYokJYkVg27la78UqNdBo3IxORf2wFs0B0eQxjQq4aGZzfQ2vF20EfVZhBdMXKGo1CKEAP
-	1LOzi0NHzY4swJMVitHHXyYVnQRLQGEfHEe6BWLqkIeFf4ngSUu43XZtDkr/wz/2vkDPA0cyvRG6B
-	xED7oZCwe8dgZ6tJu9HiYu4Nxw5lSYUnc9rN/+QbljQpz99Pib+JwcHfrM+HrkLV9qTeXEyCxgbFa
-	mcb5yF/J4/+Dw0plkVAG+8p4AzJbQb0uUTGsTRvNXqQzA8K5Bk55CgFFHdDwUM3+3cehT25CT/ep4
-	D/QkPA0A==;
+	bh=zPjKgi4IEtqlhKgwY8iang1Fil9QEJqN8Fkr3ealp+4=; b=IaGe4g2GsPOjY6sDr1MQo70+Kn
+	n+/Gqnfmos60Zi3fAnmmWQZyeO709s5ufW5d8N8cF6y8I2V7fytZ89aLqWxlhK4ZBb3KZEbfGAk6v
+	EwvLWMAUBUO+kHNWFup7uQWfDJ1VJUmBbTc4ObyULV7gpqg/p7KyZk236eSQpXsswVAXqEcYie3fi
+	Sse+hDY0Tvo7UbG/kLWjYmzedGE17+EjqMtbV41Z2g70MbUxr/V3635m+kijFsFlDGwGsjXkXQQ/P
+	tAD+lfM7BeyrPFaG+TJC1lAxlE58yE1Q0P802PbAKGd4cW//amwjOi4jnx0gp4tTonBGW0FV543HS
+	83mBgcjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWEnf-0000000AK70-2e2O;
-	Wed, 25 Nov 2026 15:20:47 +0000
-Received: from mail-ed1-x52a.google.com ([2a00:1450:4864:20::52a])
+	id 1xWEqt-0000000AKpW-3F8D;
+	Wed, 25 Nov 2026 15:24:07 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWEnb-0000000AK53-1jUo
+	id 1xWEqi-0000000AKl9-0hMd
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Nov 2026 15:20:45 +0000
-Received: by mail-ed1-x52a.google.com with SMTP id 4fb4d7f45d1cf-6ba863fc3e7so390502a12.0
-        for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 07:20:42 -0800 (PST)
+	Wed, 25 Nov 2026 15:24:00 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-4bb995ade6cso3771455e9.2
+        for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 07:23:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795620041; x=1796224841; darn=lists.infradead.org;
+        d=gmail.com; s=20260707; t=1795620234; x=1796225034; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:from:to:cc:subject
          :date:message-id:reply-to:content-type;
-        bh=U7BBvICMuzzfnr5B7tFxaU0ZRbyofyJaoqar4LTl4jM=;
-        b=D6l0tCJ3PxHNKU6NMYbaFWiLeFGXzNIWPD/unV0wEeZEv9/xTXWBiTpfh+600RWm0m
-         WTomGTmxmudMP0gN0JPQ0ue1TRH5U8ivZBMUXp3uul0qOoxCM/+DS+xt4Yn9ZjKFbz5w
-         C8jWbtIMR68PLbZiTcYUACmXWfLtB509N4o6FdKB8+l8KS8IYInicHFlpqPhqL+spUXt
-         qK4ih1tbul0jF6m5vSX9rNh0HE15m0Zd7j4J0AgCX9Ip63Y4l2aS28rz/VSuktZhf5Fz
-         rSntoUoBF+hDNnNhaRye/E//R8mNqEl47GiqyWq0A/oGKjStCQZf8cbA5yRdsW/05cXk
-         SBGA==
+        bh=6EawhG+KLo0QFi1RDOt/xFrv1BkUvSlbwXPxTKgA5RU=;
+        b=kdoRAZrK27M7JaFzccmu3sUdGGzXOf6/mq9MnzqPbWcciKX1BOPunsqN0FCvy1YyR4
+         SoUN0Xy1j6Um9Ik6XpB9CY2MT6FGZtFaqIWym81sUVCDFCX6Lalzo1rsAGAGTOOq8eGE
+         srMOBhy7F2Rpxxho7Ek7h9s3ogF7WXBoPj4wS3PB9tTiNlsuSguDf5tCqEMMX0AKamoE
+         qvzKDXLT0O93jKU+CdLt3YDO2sTL9fYT7V57MXPvCeKnmqLlOAy9mlo41rn4jWmifPIP
+         RdmfMkLgwrpGJFEqtoUAYxsN029+TlmquggdzxATNZRFYn8jaSXdkQftWQql6VpSpmxl
+         ap1g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795620041; x=1796224841;
+        d=1e100.net; s=20260707; t=1795620234; x=1796225034;
         h=in-reply-to:content-disposition:content-type:mime-version
          :references:message-id:subject:cc:to:from:date:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=U7BBvICMuzzfnr5B7tFxaU0ZRbyofyJaoqar4LTl4jM=;
-        b=cwEvcdBHhK1xlg9J3fW9cRQp+rI8QosSMtVqUnqNG91tOhqXOYEgnKVb/x3o2DnQW/
-         MIkaxQDQlj/4yh5RKhcs6ELIlHCDkWgo9fFfbK3pOwqj4q6s7xBSar9RSiZLyXRcYJhI
-         T0ZyiDrFiTMHrd6I6P3saIFptm7bUHImliDK96ONIcMG3vg2QanvSCHtR5pBno97iIoh
-         kCmVQbiAXiHHdiXuklNHFz6Ira8Z/CPdKnVeZf28eKGXjU1goRy76PEAI4Yh4QpOe3rr
-         j2p/WXFJm2bhk/axHolcs9fg3Ow6j/G3bm2yZMNl5SOh5ePSWpnsyhFNRBNPIz9wPHH4
-         OTQQ==
-X-Forwarded-Encrypted: i=1; AL+hErF0CPbNeZV5tRj/YCp+Rchh0a+H61hJBy1WDU7V4L9YMlLtQFpvviAUmZ8K2ev8NKdCUulTXIu5YIQ=@lists.infradead.org
-X-Gm-Message-State: APuU4Z+5/qF+PlIyfDU/88UL/N9EguAGKWggP12TY3735RNHFNnc2/Ng
-	zI9qzojtNsai35CkvuhULnVtcelh7e7xQXDR+C7DCit/PxqKz9D8wInz
-X-Gm-Gg: AZFdTZeP+VpQFWgipQygjNxyRvEIr6muLLUIjJWmmLhaoQOdFglCZRV0zrw7IsBJtTQ
-	tIZUBtxOx6ulO2nWSh+6qMP4kF2Dev7LyrNzAb/TBRewzKQFKaDQfCttqcZCxsIAsSXAGtgsm+z
-	cAVqXsBRBzju/h6I7Thjm4jdHEnUeLdfJqT9iGNdR0lk/69QKe0yz0vzSIw7Og/VvO54/sd5/MZ
-	t4+aglpijSdDHgB4xVmA9Ml6Gfv6ceon00nuSgkZERG4djOavY4rqRY21gk3OBEg8ZQF8Isx5Jv
-	Ez7UYbNVPtR2udY4j4fX0qQEYG1xex7gEod7eP1GpYOplXUE01nKWOJRntUla8WhTDkHrJ2Cajx
-	he5XhJ7aNSdoRyJSW3NkcfdGfXpaHddj41T6T9FQdEwsQaRYbiNgX8DLitx2zRm8ldu2OUzruhN
-	03uQXbPj4ljDdwNk4nYzzNZARjxmyyHQZp0wtzIboTdO+u9pXjgzC09uxV5sBHXB87r3QbbjTaW
-	UIHMOz3sdoZd+bfuB2sIHEYjeV6jq+Yn0WcvJ8vwZu9+ZjpzLTvcNSY1RlsdWn7HsaXtCE/Kmpk
-	Ostj7QTTMVqFk4X1jyAE
-X-Received: by 2002:a05:6402:90d:b0:6b7:dace:635d with SMTP id 4fb4d7f45d1cf-6ba37ac9214mr15694051a12.0.1795620041130;
-        Wed, 25 Nov 2026 07:20:41 -0800 (PST)
+        bh=6EawhG+KLo0QFi1RDOt/xFrv1BkUvSlbwXPxTKgA5RU=;
+        b=PUtwdFP3wotu3+ZVBwSJZl4TdT6sk3B7i3/0F0KVTz+UNXS7+B7ZG82WbMtzcsl2mL
+         1TlGPY0jAr65ZhgROCWfYKGPIrURuMSSL/wiDd6GhMZzc0ScATBmWQspKLaRHolCEQXd
+         GpqGWoscnMHEHuIn3pZcpgUadnhs4Yr3L9eo573iRGL1+U3xnZjG9EZe9Z7Bh7Q/9P5c
+         C8+iFUuGBix2H1/3Ml1S+YMvgmx8UcPAWyF+qip67d8vnzEp6bMI9IvUYrlJVWm8ZxX1
+         hwkYhUK3DZz0Hv1WQT50NNVbOEYE9+6wUl3UbsVE/6p5OWXbJl541fFW2lCjQ4CkdNbq
+         rz6g==
+X-Forwarded-Encrypted: i=1; AL+hErGq4tE98YicbWcot4tQ/WZ2SUcXw9AnqE/NamTHJHKnxjyZOIH9BGaMO1oKoz5id9WAvl5ju1DzJPg=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/aQlj9PAmXArfy0ISRpRiPFVx6enHXQfKWSGwhs/HDqC9Cjnnr
+	Szn9JDNkXRSy55o58opS0g2ssKZbzhVxXKlgmvO7AlVJlzkFbw8h3Ng3
+X-Gm-Gg: AZFdTZdEkxaKXszftG8525iIddHHF30bD1zL71nKFOMrCYQyZBMoBhQPht9w83y38T6
+	5FlZNMVFUyNp9TGcOQ9jDoNAi+kYU3Qe/952TnVsdymv+tYnSMgKI6dV8vm4GQSLptGu0QKp7II
+	j8CfLlmqabqy5dPvoQhW5S37/Ofja5SkwzuPkO8PWL7Dly0eJO+MnUhBQqpt+H6vIC3uPpK0VjV
+	yfhaSzb99BFppILGYyDjLwLs6OY+6jXoCnktu9HQ/A0jgX8xHDckH2yPePnnQygJ+Wvi7bcZpRW
+	hAdrVF4AyCbT8KRPtkuhjCZFVdkZs1lZSSrIh0PLaqAcAFh7Rgmq9H99wQPGtLiCPZt6zqAL1wp
+	A9HGLmW0TanbyzzMLRJ6TXda0XbIZbvMZDvlhh5jSm+NBhey4IjRAN4yS0SAbDaBclnzbKxG7vr
+	beypfYnFvOHE+Sx9pOOCtcu4TFj/n8GN54GTtEiPW9cMw9R4QiUUver+1jXDlvdPC/GKf9oUokF
+	NqJudwss3feyWXYZQdGfUq/i2rka+5H7uE0jZYeyvW//KCESpftNJ1DQNK30GNEGHaEduLWbThU
+	B0VR9zAMu7FKzuxicgHF
+X-Received: by 2002:a05:600c:8210:b0:4bb:7ad8:99f2 with SMTP id 5b1f17b1804b1-4bb88785da4mr344398855e9.0.1795620233772;
+        Wed, 25 Nov 2026 07:23:53 -0800 (PST)
 Received: from skbuf ([2a02:2f04:d401:2601:d3cc:6bc:a861:f9da])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6ba370e78a7sm8131962a12.16.2026.11.25.07.20.37
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb906635c7sm316515815e9.2.2026.11.25.07.23.51
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 Nov 2026 07:20:39 -0800 (PST)
-Date: Wed, 25 Nov 2026 17:20:36 +0200
+        Wed, 25 Nov 2026 07:23:53 -0800 (PST)
+Date: Wed, 25 Nov 2026 17:23:50 +0200
 From: Vladimir Oltean <olteanv@gmail.com>
 To: Inochi Amaoto <inochiama@gmail.com>
 Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>, 
@@ -92,20 +92,22 @@ Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
 	linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org, linux-ide@vger.kernel.org, 
 	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org, 
 	linux-phy@lists.infradead.org, Yixun Lan <dlan@gentoo.org>, Longbin Li <looong.bin@gmail.com>
-Subject: Re: [PATCH v5 4/8] phy: core: Add phy bulk data helper functions
-Message-ID: <awb8ZycWk2PJzTUD@skbuf>
+Subject: Re: [PATCH v5 7/8] PCI: cadence: Use phy bulk data api to simplifiy
+ the logic
+Message-ID: <awb9XRze_e8xt9tA@skbuf>
 References: <20261125043639.249525-1-inochiama@gmail.com>
  <20261125043639.249525-1-inochiama@gmail.com>
- <20261125043639.249525-5-inochiama@gmail.com>
- <20261125043639.249525-5-inochiama@gmail.com>
+ <20261125043639.249525-8-inochiama@gmail.com>
+ <20261125043639.249525-8-inochiama@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20261125043639.249525-5-inochiama@gmail.com>
- <20261125043639.249525-5-inochiama@gmail.com>
+In-Reply-To: <20261125043639.249525-8-inochiama@gmail.com>
+ <20261125043639.249525-8-inochiama@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261125_072043_533816_BBE5A2B2 
-X-CRM114-Status: GOOD (  10.32  )
+X-CRM114-CacheID: sfid-20261125_072356_303783_5CFEACE3 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -127,30 +129,17 @@ X-Spam-Status: No, score=-5.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Wed, Nov 25, 2026 at 12:36:35PM +0800, Inochi Amaoto wrote:
-> Add several helper functions that allow drivers to get several phy
-> consumers in one operation. If any of the phy cannot be acquired then
-> any phys that were got will be put before returning to the caller.
-> 
-> This can relieve the driver owners' life who needs to handle many phys,
-> as well as each phy error reporting.
+On Wed, Nov 25, 2026 at 12:36:38PM +0800, Inochi Amaoto wrote:
+> According the document of cadence PCI controller, it use multiple
+> phys for multi-lane setup, so replace the loop of phy operation
+> with phy bulk apis.
 > 
 > Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
 > ---
 
-Transient build warning due to improper patch splitting, please fix.
+Minor nitpick in commit title: s/simplifiy/simplify/
 
-Documentation/.renames.txt: warning: ignored by one of the .gitignore files
-../drivers/phy/phy-core.c:1202:12: warning: unused function 'phy_bulk_get' [-Wunused-function]
- 1202 | static int phy_bulk_get(struct device *dev, int num_phys,
-      |            ^~~~~~~~~~~~
-../drivers/phy/phy-core.c:1242:12: warning: unused function 'of_phy_bulk_get_all' [-Wunused-function]
- 1242 | static int of_phy_bulk_get_all(struct device_node *np,
-      |            ^~~~~~~~~~~~~~~~~~~
-../drivers/phy/phy-core.c:1274:13: warning: unused function 'phy_bulk_put_all' [-Wunused-function]
- 1274 | static void phy_bulk_put_all(struct device *dev, int num_phys,
-      |             ^~~~~~~~~~~~~~~~
-3 warnings generated.
+Reviewed-by: Vladimir Oltean <olteanv@gmail.com>
 
 -- 
 linux-phy mailing list
