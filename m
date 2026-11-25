@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 93C90606A329
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 13:19:57 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 771A1606A330
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 13:22:03 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=1HUWKyyB;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=TkY585uk
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=RZJnLd7j;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=DlxF9Z78
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
@@ -14,73 +14,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=7JKLHiE0l2qkHqBm0UXNT6pR8xVBP2y7ggDsEFYWUfk=; b=1HUWKyyB+ZBrrGnL+GIhcpxiMQ
-	GLoH3S+96djeWfjraSdYYQksUA0863zGyDb4HyhZQS2X08dkXREIjf176u8rjOfnfYCZY8fGqWqi9
-	gRavGXmdhtxTyMtzdFsLjBgsaYNgcGCbIdAT7eytGiKpxobFayjyxXpfMz5zB9i5vfOaRvWm2hjsL
-	q5gIh3qZjXvTJPnwBUIge4F4v8q1EnTqHNOtkrRuZQL75MI02gxdDOiX8OkPn0Y7+ObjZIPNEg95B
-	KCrFKpAV2Ue/KZ4gaVmdMTufbG2e2JjcjrqDeDocZSs7Ow1HuWN1Y4/4swN0oIQm6SA0NFtnoTp2c
-	DUgbhMyA==;
+	bh=Ha1b8LWjMhnOOw2YleUKdZx/0kcFICRbeMr+DnRpKtw=; b=RZJnLd7jXhWeO4kjseNWloXLL0
+	4vrYFXtFFtjwFpxeAyqyiWymoU1vdQokBixuL7AtiJ7JJc5AbX0W9sxj16QuQ0hRJ7WVyIH+r4c6Y
+	tszOeLZs5RF4FeqM17Yr1ZIN8dFwNjJ8m5KR0kuwFuAwQ1Akoxj9LADOPTUlm9IVrBceZ+b20cz5g
+	LLfdQBodY8GAAKD1TJCRwgC6IxFlnGCCqHZxhZZjPEVkX86dN7+oOzlyC0+6SexxFwP0v/I38oTcK
+	GM1q4FDX8xr55ouId+pENyQcVFMSTnEx9N6KgvuSzPNT3YcUuQpmwE8Ivrh5S9YyDLWGkNapJr+1p
+	sYan2Vaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWCuj-00000009y5H-0jCw;
-	Wed, 25 Nov 2026 13:19:57 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1xWCwl-00000009yLM-0uDt;
+	Wed, 25 Nov 2026 13:22:03 +0000
+Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWCug-00000009y4k-0sNv
+	id 1xWCwF-00000009yGw-2jVh
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Nov 2026 13:19:55 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id 2adb3069b0e04-5c0ea47f5b8so591077e87.3
-        for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 05:19:53 -0800 (PST)
+	Wed, 25 Nov 2026 13:21:50 +0000
+Received: by mail-lj1-x22e.google.com with SMTP id 38308e7fff4ca-3adf04a55f5so4057351fa.0
+        for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 05:21:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1795612792; x=1796217592; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1795612889; x=1796217689; darn=lists.infradead.org;
         h=content-transfer-encoding:content-type:in-reply-to:from:references
          :cc:to:subject:user-agent:mime-version:date:message-id:from:to:cc
          :subject:date:message-id:reply-to:content-type;
-        bh=Fl956CFnusiWXQc3uAwBS9T3Hg6fgxOgNH0XW3/nmQA=;
-        b=TkY585ukSPFHR09tyXaHe/SF1Gwopz+6VVi62x6rifpQvTJ1q2rk+T5x86Ey74cSyi
-         sRCnwzjSkIYJBjMJhi0/hUzGxwgvBFEu2ZTFkEir5fr/DokDgQiAW/A31iXA8YIsOOKV
-         4KOKTAvT2DPLVIA8OjOTxSB5+HxQN6sQspcKlm43fbgqmm6zq5XNu3+O3gDkaogNvqxm
-         yd9RFFHgIrgld25Hd8fSHxQdBpqk/Jv0TZ/BSbBUhj2aP44VHS0YCATJNjp8x7nb/S9k
-         x3Lv0+Ej1M728uHbcQYWRV6WOv2hDULXBW7njSqkYgT22JjxlZl2Cz5rWn8OajblLJpT
-         NP2w==
+        bh=bZO8S47yAZzPRZIjGfd7EOC+0a47KkXc3My8VRvZEho=;
+        b=DlxF9Z78k1rtqqeHPY6qfpbXYRseLLpBTHj6DHi+mInESWVXI9El4Em+a/3f0jSOld
+         kIODhf4GZQSf3StytMzFvrjdEDkdTqbQbanSTg5zRytFCSuGvfmsoNjsr715o3g5LfHF
+         Apl+W4STOvuro8MEbe3ycrkBiV/T3Se5824EPmCgwUB6eTwBdJbrCcjX91GXMLBrMejr
+         Sey+6GKhc9ieZW8600tv42Y0HQC0sD2HLmfH9cAcxxNQui7u2YFRqazKj0IVSkpA6OA6
+         ONnrUF3uA2OywvXuWQpxgwX+IVAkVcgzj+iNP2bqbqB/RYDACb9t2vIOBOUy6Wp3Qf4V
+         oysA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795612792; x=1796217592;
+        d=1e100.net; s=20260707; t=1795612889; x=1796217689;
         h=content-transfer-encoding:content-type:in-reply-to:from:references
          :cc:to:subject:user-agent:mime-version:date:message-id:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=Fl956CFnusiWXQc3uAwBS9T3Hg6fgxOgNH0XW3/nmQA=;
-        b=kB3Cdym0tozf6lzdnLYD8BWMOCVH1/g3VnQE7myEQ93XE//LyaWBblOJ4ZbOx1tqhJ
-         gjPEIa0j46Fm1Zo3+gCRWSXulCs01f23FTJzByR6NWR4WcUhWckWwR8/5dsczB41fIEE
-         OAI9EOjWz3Ww6xN0RRzfj/tly5Pja/N0lzTLpwaKn40Dx6zUKVF60zTqYuZd/LzbZbpa
-         +CUf8A+DekN5UnOLUmiYAM0zbPB0uHpM3ABRtociv98bwEzFJNmszGcNxtbUXjNdB4A6
-         z2LRbm18jppSJJghJPVcTFAlC4L+C9eAHFUhj3rynEafjQZNyfPIV0M7vQ1Vadb1D7lT
-         tJew==
-X-Gm-Message-State: APuU4Z9YvCVYhxd7x2hwcKvneGHV6fp6M/4XMrMb6jR7YdLTbExcl/jj
-	wP62wYcz9eFxi/DvDD0bfrPSfPzNWAbTOxzAWaVUrVA98g1UloNIHgz60p6SAQ2eEEs=
-X-Gm-Gg: AZFdTZd/WokMVAGyx4WcnxaKR8XkuDDrdh+TqRzHX6vy2ylRDPNPmnltDFKWk9Q5Lwg
-	jeROPlzl1DwvHs94wfjSDUFKUF3aaNPTXL89wikAC49pgiPYrq+uVUtXGDkbmzLuuKDLxSoiWPg
-	lYY6aC1aAkZTQyu4xlUCwR388te8rYTImWfZVntCYnfCTCkpv9fFjUqJeNaetwIcqmB+476nsjh
-	XPGCXSDn78t7qNKJZOPxPLhHWh8d9za8f2ismv5/zkdDqlb1D0v6rwPsIHct7g2e1VZD6d3Zm+0
-	zAJQF9amzPs6R59WOncBrC2CkT6DcE8qni108vOjcXIh89EWprWLsFJcgCK6MTzon8cZAIF7VM3
-	vk/UDu9zBzx3Z4M63dRacxOhynwaQLUwjly4Sfh1uQJMBBSav80X1mPEz+PWRIbU+rnMnzK91gw
-	pdx0whZtf779B59Z1aR9SrzAVuqtq6CooAvubm3EQ15PX4cCRLsorqhRJjmCd90nlK9Dd+foQTV
-	0sB0Kng7WOxnl5bbwzmlSA3VLdl4HT0/5DsaguXpyqvltVXp0+M0BllCQy/w5xFG5kwJRFtAuwc
-	oPjVD+rt9mWHuTDS7UDGGy0JjntbbNEJiaHBsU6iIaC6Lznx11uEgMKuxw5oczU4/XtGZWHnSoW
-	Os0+bDYIlfEgFQYXu957vj7Xf/qj4
-X-Received: by 2002:a05:6512:31c3:b0:5bf:e6a1:3115 with SMTP id 2adb3069b0e04-5c1bc76a33fmr7069607e87.2.1795612791602;
-        Wed, 25 Nov 2026 05:19:51 -0800 (PST)
+        bh=bZO8S47yAZzPRZIjGfd7EOC+0a47KkXc3My8VRvZEho=;
+        b=wUsNHngeGG8yUirA929lbxibKGT1sZ4oPcAwwQwA2qhnc+oPw81DYNhqPuUgsiFpJN
+         z5SanNa0neYNh04DKP9kXudTfgwfk3W5nWoibq2Vs4+umJx4QRz6/KuReY984VdWA2sP
+         YP4PR2lzWqKDg/74Eo0NKBNCTTm1TpOTNbpYYxU2Z2YsZvsEhBpTQsUK4Hk0woplcaZC
+         CHxrN40ZzlRUdlCe5qUHaBRfuOUdT2wvJzcKpsuU+nF/fHBCp5UlMUadTU5FG5Fw5QFL
+         Ybs7uNKaJIeN+tg/tJAK60nOgNZ5ZAl0lA8QpM7rrhmVv04DvyOYkA8L1qkOjb1aqsB3
+         WeTA==
+X-Gm-Message-State: APuU4Z8+vIlsg9PWUvHcvzXy6h1xSvT3oGeV4bPJHcG0x25Afo7oupO/
+	ff55Hn6rhQHaKYPKhi7W3F2zA+5h0YBfQ2bmk6Talt0twnEUbcg+NBqUb2+sdxQp7s0=
+X-Gm-Gg: AZFdTZdzGm6W/dL3Ex3dnD6/MrFCuwejmD8FfB5L0mtZBgVeIAGryHzsYFU4YzdJTtN
+	LEDK1tfNxU6SU0/ZBA6Pe1SuIBICDPoKWTYBvOz6f2wvyU94x1ZWuf0e0gPJzsUl14+lZfSP0CL
+	CjPEz03JSHe7CcOK/vdluGAdBYM7WIUuoC8aWkUOSwUz6B7gVv+OfiivHbYQkWx0OIiu7SmiKtK
+	vo3tCqqKLWyNW3as1F2srYCOpx95HGh1v+LolyROsllDfXxcItzJnM6w/BH+l9z8UzDqj3QV0k7
+	T6zBo051XPN2NYuA6RgNxyQ4kOmgNMelVa5JW8paNPhTNn0ceYTSzwGt7VibT6M3BsNHeZwNWlO
+	x7YD+JoyrLOhur3rN2F0Oi2JX2g8o2N0mSsAFEYF4tVC4z80ciU4Y0ZM6b/t3AdMwKVZzG9gB17
+	UyDGVLkggSn1v0dfh6X/uLJHDiRylQjAusvTH84uKoEEpfKXH5FiCxX5OuyQR2Q+Hqk6QQLyOx1
+	O0D+fD/l844t4Y3DcHk4m1kN2XRnJwbu35Lom2tIA25aao+PSqiDlemgCkBVS+mUp60rLuKPeTD
+	lXqkSjdc4RkRvFjtVpPn128rO1R1yiPJwb07kEsaEM3sVS3smcqoCmZ2iUhAsBbeIuLTmzewutB
+	cb39+cmY=
+X-Received: by 2002:a05:6512:4481:b0:5c0:ca1:46d3 with SMTP id 2adb3069b0e04-5c1bc7c5ee5mr4971577e87.5.1795612889486;
+        Wed, 25 Nov 2026 05:21:29 -0800 (PST)
 Received: from [192.168.1.101] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5c1bd0177f7sm4448777e87.33.2026.11.25.05.19.50
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5c1bcff8bd3sm4567229e87.27.2026.11.25.05.21.28
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 25 Nov 2026 05:19:51 -0800 (PST)
-Message-ID: <c4c72389-2a8e-4278-8667-cdd4d8f72225@linaro.org>
-Date: Wed, 25 Nov 2026 15:19:50 +0200
+        Wed, 25 Nov 2026 05:21:29 -0800 (PST)
+Message-ID: <8dc492bc-2727-4448-855f-caf13d4b2bd6@linaro.org>
+Date: Wed, 25 Nov 2026 15:21:28 +0200
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 17/23] arm64: dts: qcom: sm8750-qrd: Enable S5KJN1
- camera sensor
+Subject: Re: [PATCH v7 22/23] arm64: dts: qcom: eliza-mtp: Enable rear camera
 To: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>,
  Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
  Neil Armstrong <neil.armstrong@linaro.org>,
@@ -98,12 +97,12 @@ Cc: linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
  linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org
 References: <20261114-add-support-for-camss-on-sm8750-v7-0-8ff2a11835f6@oss.qualcomm.com>
- <20261114-add-support-for-camss-on-sm8750-v7-17-8ff2a11835f6@oss.qualcomm.com>
+ <20261114-add-support-for-camss-on-sm8750-v7-22-8ff2a11835f6@oss.qualcomm.com>
 From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-17-8ff2a11835f6@oss.qualcomm.com>
+In-Reply-To: <20261114-add-support-for-camss-on-sm8750-v7-22-8ff2a11835f6@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261125_051954_292090_97F308D8 
-X-CRM114-Status: GOOD (  14.51  )
+X-CRM114-CacheID: sfid-20261125_052132_682040_EC5AE275 
+X-CRM114-Status: GOOD (  15.84  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -125,31 +124,32 @@ X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Hi Wenmeng.
-
 On 11/14/26 13:29, Wenmeng Liu wrote:
-> Enable CAMSS, CCI1 and CSIPHY3 on the SM8750 QRD board. The S5KJN1
-> camera sensor is connected to CCI1 I2C bus 0, uses MCLK3 at 24 MHz and
-> connects to CSIPHY3 over a 4-lane D-PHY link.
+> Enable the rear camera on the Eliza MTP: a Samsung S5KJN1 on CCI1 I2C
+> bus 0, connected to CSIPHY2 over four data lanes. The sensor takes MCLK2
+> at 24 MHz, is powered from the PM8010 regulators added in the previous
+> patch and is reset through GPIO125.
+> 
+> Also enable CAMSS, CSIPHY2 and CCI1.
 > 
 > Signed-off-by: Wenmeng Liu <wenmeng.liu@oss.qualcomm.com>
 > ---
->   arch/arm64/boot/dts/qcom/sm8750-qrd.dts | 72 +++++++++++++++++++++++++++++++++
+>   arch/arm64/boot/dts/qcom/eliza-mtp.dts | 72 ++++++++++++++++++++++++++++++++++
 >   1 file changed, 72 insertions(+)
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/sm8750-qrd.dts b/arch/arm64/boot/dts/qcom/sm8750-qrd.dts
-> index 75927e1f7b9ab0316781c64dbcc82d3394c414f6..c92a1f3c47bd5cbae26854614682c3bc7daa0398 100644
-> --- a/arch/arm64/boot/dts/qcom/sm8750-qrd.dts
-> +++ b/arch/arm64/boot/dts/qcom/sm8750-qrd.dts
-> @@ -7,6 +7,7 @@
+> diff --git a/arch/arm64/boot/dts/qcom/eliza-mtp.dts b/arch/arm64/boot/dts/qcom/eliza-mtp.dts
+> index af7450fa2020d29a4ce98eb958dabd0cd8c61860..cd14b44cf0aef33a7939075949916d054cd77659 100644
+> --- a/arch/arm64/boot/dts/qcom/eliza-mtp.dts
+> +++ b/arch/arm64/boot/dts/qcom/eliza-mtp.dts
+> @@ -6,6 +6,7 @@
+>   /dts-v1/;
 >   
 >   #include <dt-bindings/gpio/gpio.h>
->   #include <dt-bindings/leds/common.h>
 > +#include <dt-bindings/media/video-interfaces.h>
+>   #include <dt-bindings/pinctrl/qcom,pmic-gpio.h>
 >   #include <dt-bindings/regulator/qcom,rpmh-regulator.h>
->   #include "sm8750.dtsi"
->   #include "pm8010.dtsi"
-> @@ -858,6 +859,70 @@ vreg_l7n_3p3: ldo7 {
+>   #include "eliza.dtsi"
+> @@ -538,6 +539,70 @@ vreg_l7n: ldo7 {
 >   	};
 >   };
 >   
@@ -157,10 +157,10 @@ On 11/14/26 13:29, Wenmeng Liu wrote:
 > +	status = "okay";
 > +};
 > +
-> +&camss_csiphy3_in_port {
-> +	camss_csiphy3_inep: endpoint {
+> +&camss_csiphy2_in_port {
+> +	camss_csiphy2_inep: endpoint {
 > +		data-lanes = <1 2 3 4>;
-> +		remote-endpoint = <&csiphy3_out_ep>;
+> +		remote-endpoint = <&csiphy2_out_ep>;
 > +	};
 > +};
 > +
@@ -173,40 +173,40 @@ On 11/14/26 13:29, Wenmeng Liu wrote:
 > +		compatible = "samsung,s5kjn1";
 > +		reg = <0x56>;
 > +
-> +		reset-gpios = <&tlmm 109 GPIO_ACTIVE_LOW>;
-> +		pinctrl-0 = <&cam_mclk3_default &cam3_reset_default>;
+> +		reset-gpios = <&tlmm 125 GPIO_ACTIVE_LOW>;
+> +		pinctrl-0 = <&cam_mclk2_default &cam2_reset_default>;
 > +		pinctrl-names = "default";
 > +
-> +		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK3_CLK>;
-> +		assigned-clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK3_CLK>;
+> +		clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
+> +		assigned-clocks = <&cambistmclkcc CAM_BIST_MCLK_CC_MCLK2_CLK>;
 > +		assigned-clock-rates = <24000000>;
 > +
-> +		vdda-supply = <&vreg_l4m_2p8>;
-> +		vddd-supply = <&vreg_l2m_1p056>;
-> +		vddio-supply = <&vreg_l5m_1p8>;
+> +		vdda-supply = <&vreg_l4m>;
+> +		vddd-supply = <&vreg_l2m>;
+> +		vddio-supply = <&vreg_l5n>;
 > +
 > +		port {
 > +			s5kjn1_out_ep: endpoint {
 > +				data-lanes = <1 2 3 4>;
 
-'data-lanes' property can be removed from here.
+'data-lanes' property can be dropped from here.
 
 > +				link-frequencies = /bits/ 64 <700000000>;
-> +				remote-endpoint = <&csiphy3_in_ep>;
+> +				remote-endpoint = <&csiphy2_in_ep>;
 > +			};
 > +		};
 > +	};
 > +};
 > +
-> +&csiphy3 {
-> +	vdda-0p9-supply = <&vreg_l1f_0p88>;
-> +	vdda-1p2-supply = <&vreg_l3g_1p2>;
+> +&csiphy2 {
+> +	vdda-0p9-supply = <&vreg_l2b>;
+> +	vdda-1p2-supply = <&vreg_l4b>;
 > +
 > +	status = "okay";
 > +};
 > +
-> +&csiphy3_in_port {
-> +	csiphy3_in_ep: endpoint {
+> +&csiphy2_in_port {
+> +	csiphy2_in_ep: endpoint {
 > +		bus-type = <MEDIA_BUS_TYPE_CSI2_DPHY>;
 > +		clock-lanes = <0>;
 > +		data-lanes = <1 2 3 4>;
@@ -214,28 +214,28 @@ On 11/14/26 13:29, Wenmeng Liu wrote:
 > +	};
 > +};
 > +
-> +&csiphy3_out_port {
-> +	csiphy3_out_ep: endpoint {
-> +		remote-endpoint = <&camss_csiphy3_inep>;
+> +&csiphy2_out_port {
+> +	csiphy2_out_ep: endpoint {
+> +		remote-endpoint = <&camss_csiphy2_inep>;
 > +	};
 > +};
 > +
 >   &gpu {
 >   	status = "okay";
 >   };
-> @@ -1081,6 +1146,13 @@ &tlmm {
->   	/* reserved for secure world */
->   	gpio-reserved-ranges = <36 4>, <74 1>;
+> @@ -657,6 +722,13 @@ &tlmm {
+>   			       <111 2>,  /* WCN UART1 */
+>   			       <118 1>;  /* NFC Secure I/O */
 >   
-> +	cam3_reset_default: cam3-reset-default-state {
-> +		pins = "gpio109";
+> +	cam2_reset_default: cam2-reset-default-state {
+> +		pins = "gpio125";
 > +		function = "gpio";
 > +		drive-strength = <2>;
 > +		bias-disable;
 > +	};
 > +
->   	sdc2_card_det_n: sd-card-det-n-state {
->   		pins = "gpio55";
+>   	disp0_reset_n_active: disp0-reset-n-active-state {
+>   		pins = "gpio12";
 >   		function = "gpio";
 > 
 
