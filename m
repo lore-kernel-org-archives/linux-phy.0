@@ -2,12 +2,12 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A8969606A32A
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 04:37:42 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E560F606A321
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 04:37:50 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=pK5YVHRN;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=JS4RKgsg;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=lvVr13+a
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=WAVHxmKe;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=LV4UTJ6b;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Y/sEtHC5
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,80 +15,80 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Hvnr/OvQWUEAXOeTlXSF7HojIoO7urGlQ781L4W1dqE=; b=pK5YVHRNgNvYCov7j1mQFksLWJ
-	4jMUoDgYtc5dSmDO4ZRMCO7IToNQpVGrIkoqpD9e6M6IurjbWbTb1yNAVz6cxSt4HlP/GLoC6kryu
-	oqbj575N8yLXqy+YAbiwV/pQSSm8SUSfrJp8UeDTIsA1wz3yH9Y6YgnhGzXr7723VvOZn/HuKRra5
-	YzSDuDgCUzuuU7+DCbvJh+hS6zyJOIykokKHUES4BJFhjsaiIL2cZaL2/0jHk7fJBjf0Eosb2k+aW
-	9HVUKy14xtgrNTzeMQ8upjLnmpXi9KVHeloRWSlXPNl3KMl9OBJ+rOj/wUzLilk3Ir33CzR4aDlAH
-	0NerXFkg==;
+	bh=hl0bfeslV+pc6seTde96A6R7PfJeJhBNK+PT1Het+R8=; b=WAVHxmKez5kAVdrB5ILw8ZgSn7
+	arZMXC0FruPryz3AY047LRBTQgd/sbuis4SplxneJUqvww0TWZTakc50P4iZe4wTO0GMnMe+QB2uK
+	DSKOloBCYeeTg+Wwl9w02Top5mjkLJNWfjqhLCd1vl7uyhSrDo+HBV7DNyoVpkhtTCkIAFoor1VID
+	0ihm3tGeGUeEFUyBPtgmi+f7PuCvc+BecnpmtE2anOB2JEsszEgS9vRYYYN6vpRKAVKBh+cbTpzKb
+	WJrq+TfWAIkKzZJa+DIaSINUNT5a2bV0sPtOv+m3Rkp+Hwar6IL0VyPxtpWteJ/gRxLpt4d/I4Eo1
+	+bnOZgrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xW4lJ-00000008Os0-0Iwg;
-	Wed, 25 Nov 2026 04:37:42 +0000
+	id 1xW4lS-00000008OxI-2nPJ;
+	Wed, 25 Nov 2026 04:37:50 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xW4l6-00000008Ol7-2Zk1
+	id 1xW4l9-00000008Omm-3WZm
 	for linux-phy@bombadil.infradead.org;
-	Wed, 25 Nov 2026 04:37:28 +0000
+	Wed, 25 Nov 2026 04:37:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=qTrL4/9jM8t7yAmF2IG8ye/8M/WX8AYVFJWYbaSsj7w=; b=JS4RKgsgXyGjADx+u/TFdUGsAw
-	W8Rt5hIpRUMOccA3BrRASNqkZd5FlNx52SfFRyNJal4cwRfcdDLYMs9fwN57TOXPvV0HOu3gjtjDE
-	27mmI2OFs8On2GWUVMvijG/Te8DzZO7kS495P4YTQ18K2+wyMxaecsZO/Mp2e2OG5AUOe997ed5/E
-	4TMJqioQUqbsrk8j18qak7obXL9YH3D6Dnd9mrEtCZ3VRHlf9BFBXZ0zrPp8J7vVppW5rYzmK6yDw
-	q/3eOsqHZO2TdXJjm+cZs8DwK2rE0vezMGg4Kp5DVDP0t+nRYoGmATlgL6wGluzK274dJjlQkmevk
-	otH5QH/Q==;
-Received: from mail-pj1-x1034.google.com ([2607:f8b0:4864:20::1034])
+	bh=37Yw/Yh5Rz5Fzq741ubEI/Rr+lL1nn4+JbSz5DFAcwM=; b=LV4UTJ6bEPjSdsoqemOsFTQ095
+	pfuWzb5yEZQm5fth7vKbHweZx/pa5txuRkuWK6zSqBfRXM2cdXqjzsi92KQy39qzhfzMIgdzRYK2N
+	IyBfgCMhBSS/SgXwdaChcGnkhwopZrkEW60CnaqIJqrrhaxZf4IJtr/xWKU0CgyUz27zx9rAXe2gu
+	J7WfifqtTJpYQky4YP8QNtXe1Y25InQed8ckGOkuKWPZAq5NxETKCA6Kx42iKiPk34bu5qmrVqJbG
+	vAnGn+B22BflnzrmC/ah2T4XdnSyjz1g4Hch85mEnsAYeDJLuzu/xaCBmDvmuiM0cSL9PYsNYE/we
+	gnlC9YJg==;
+Received: from mail-pg1-x535.google.com ([2607:f8b0:4864:20::535])
 	by desiato.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xW4l3-00000004pqi-2YmB
+	id 1xW4l6-00000004psO-3tRD
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Nov 2026 04:37:27 +0000
-Received: by mail-pj1-x1034.google.com with SMTP id 98e67ed59e1d1-3b43d30822fso2733433a91.3
-        for <linux-phy@lists.infradead.org>; Tue, 24 Nov 2026 20:37:24 -0800 (PST)
+	Wed, 25 Nov 2026 04:37:30 +0000
+Received: by mail-pg1-x535.google.com with SMTP id 41be03b00d2f7-cde0daf3a2aso2246233a12.3
+        for <linux-phy@lists.infradead.org>; Tue, 24 Nov 2026 20:37:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795581443; x=1796186243; darn=lists.infradead.org;
+        d=gmail.com; s=20260707; t=1795581446; x=1796186246; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=qTrL4/9jM8t7yAmF2IG8ye/8M/WX8AYVFJWYbaSsj7w=;
-        b=lvVr13+apaPNo+5yoeLxqA+o+DFTxloZxn/4O/A1E00KA9EHs+dwICGcfYthDwkb6K
-         XmDFkUwhP41B3MuGp5Alm+bOyHeR4mWa7V55TKBP7RQZv0CX86X7Z9KodLASlRmO/uFD
-         TmlBDrpoP0Tf4624pePj+u4mFK8HiK//dfFxKEa6mq5kY/emoZzyAsTSkK+Oa0i+CBzS
-         n/T4hdW7ePsmkdNcuS1I6j9VzOxfxdyHmHrV/f8YJivPc19Iu29527ais5vJ7bJ6Mt44
-         wpA26J6wGP6KnXhYeVtQsi/fKzCmpjvC7n26my4B/eR5tWSHlXuBUlg4zK81dKX6rSl4
-         HFcw==
+        bh=37Yw/Yh5Rz5Fzq741ubEI/Rr+lL1nn4+JbSz5DFAcwM=;
+        b=Y/sEtHC56fzYBmlKANn7RnpkL/AuYiBAQH0l7kCidHUmjt331+RoBTsHorfBzPBrrz
+         amGaEy7bwAcfAcZa3GOuUw6lh+G3gK3YW+stIzpHuJF+uBYrbutrsaMy6iG8IxqGR/Z8
+         9NtS1mO/Nft0+DUi+kvWMy1dShYmINyByYWWHgdU2Bw+oBnlVe0cb9ZmfqbiqstLdQAy
+         ED/K7xA/AX2DLGItSDINDEJelENmeMy2C8/UJwHNoaxMuYNIwd2frcDMYTrymx6nynrj
+         EF3ZbFODJ9GcLGu0W3v+c0XpoJEEi9KdI6rJa/kNl9vQpXK4x9IYtYOtwd668mPcVhK3
+         VXOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795581443; x=1796186243;
+        d=1e100.net; s=20260707; t=1795581446; x=1796186246;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=qTrL4/9jM8t7yAmF2IG8ye/8M/WX8AYVFJWYbaSsj7w=;
-        b=AvRx+cxqJETy7HmFVUUcRYQBkN3gjwx0Mkr3uXXEqMcmM4C35FRbRIpu43pvrO1ewu
-         8M9MynSZcPHMoxhXXKHW7rWmGV2covm40fXTXR+1P/QjT/FSxbLRNR+cKf1asvUK8j+N
-         /umL3U3LaathDQJnhOBqGBhDzsBek12eHbOtFjyc+3ITRUS1UZe0mQ+Xtx3hJYlvMFQa
-         5miiPsm45ixig4RomjDCrTSeJpvNMxstQi52sAquAUXhPyn15QxXjbYeiGARlpNjlBBw
-         UdPyxC374j+RAJn5D7CbdUXP4N78IhLpujYoIUxprNDsDnyTGFcl+eH1PI9bsZ/WclDa
-         5+NQ==
-X-Forwarded-Encrypted: i=1; AL+hErEIag7+BRNLCUZ56w1vOQp/Yfvr0RlWBEiKC4ah4Ce8H4rfD+RHoQPQJe/lPSz1auRB+l0ekHAyX7E=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/VdQ653pbohONoS7Zfk9x+leskYOnvR9UW885kGFoMx+/9scYe
-	pLswu+M15iVMrVC08nXTGJh7xq60KsWFVwK51lxsPX2ssndRO74QzaIc
-X-Gm-Gg: AZFdTZegk4utaPDyecOIyUA0nA4uDG/RzaB8JrKkIzOaaUyHnD6PlOiHtj93A5TkUeh
-	YCR7ghOGSiE7XE09ZHAWKI34jSTYCf04g4Z9MMYPNUQ6UV9oPo0zex6bV+yhe+3uD/Ph3KMyqZ0
-	gJmxZXqp7STN6+yicUQmCYIqjKXhwaGX1FbA+u9ZShc9NkoUSdyniY/XZpS1LZrDeGJv9UYmQk+
-	euVF8Ltn/FE8oNKfF/4+d4ng2RDaRR6xkNOhqq8t2dIsVfixCuZcyk3KnZWAHDG88JTm/PeqXUn
-	blbV0YOH9plXXRhOHElze4sof9BnYfFdPb4HmWmh7JTwtB+KT52DHgKJLNUA7VTJkH3zf/L8FiM
-	Gk2W/GZFkOB9LXw1SicWr33ueOD/bYRKzktLimPUr/WSDLyJWHkeHLh5JLhU7wOKeOpuiuEDoZZ
-	tpYybYC6IFdG2e7e3E3gL4Nc6VoL9Do0pgXfGkiH3LcwjEOak4crLEOunEZMqjkB7rIZpFWp1o3
-	L9Dc1Zs7ixs3nmdolVK2VH2HMJjyD9+v6RAs9sgPiPO9qSGaPlzMMvhDMAwFYbcZYVJkfFuhirM
-	x/wQKVobPX/D12l9yClH3xptzxMwtp9zyDKjfK8tjHM3+O8h
-X-Received: by 2002:a17:90b:4c0b:b0:3b4:12a9:2e1 with SMTP id 98e67ed59e1d1-3b41c931d36mr16931812a91.33.1795581443120;
-        Tue, 24 Nov 2026 20:37:23 -0800 (PST)
+        bh=37Yw/Yh5Rz5Fzq741ubEI/Rr+lL1nn4+JbSz5DFAcwM=;
+        b=on33PgJvF6k9kv5ilIifr4uxyXzFDRYgRevONKhJdJW6iCMsPgqZKM8wujpgmx11RD
+         ENZXYzj4k35ecpmDn+UtWv/2/Ne+jQcu+g5/yzPNhmqq7ObqKbhtowP7sUE0eoFbRA/Z
+         U118/d04sRu+jFFqNd3StYZaBOGBPo9syF420avMnI2HhL9oOiW7C2YqxWqQVTO6wA9R
+         YWzSjm+E10KqUeiZA/wJOB2wfdtgAFsuny/k/CTHtjmHg2tv1bnT4yWg24PR6HF/jBtG
+         C/ZuCEc+5IuuAZW+PSspOMCP63ILJCJAeOJVzsAwUtQCXJGQjicIEnM+zvo3bNsw/YQn
+         qweA==
+X-Forwarded-Encrypted: i=1; AL+hErGBGbfYD9jM2FqTNePn4tzEi8ep4X+z+424vSVCJaOe5eJUi6k1dZiXi/gBoUTnMEiwIgTe4vex/Ck=@lists.infradead.org
+X-Gm-Message-State: APuU4Z9ASeA/sqc5/IKKTJZVdb4NaTXJCQrFag9oLqXtlsE9ZgcX/iGT
+	mFquweGDutekqUTOmCUgYTWjRbw4vffQpWmiBuMHG1TvRGZFA7J8kumj
+X-Gm-Gg: AZFdTZcsCfHFX0ch0wGc73F08UQvGEDKv+0PyPQLZ7NtqDoYBwHOMDmXVWBZCBuKUWd
+	T2/9VgCy4gKi/iRWV/tBd05NWJ9s2AHF2N6RNWRDc7J9PaMLV+E9Pimz7IGLa1PbStvltQvli0o
+	n7iKV9rQsvkZ6b9m00hHssTEGI91Hb6qAhqIRUhYcgmktF1kEvUudSac6ylRyyjmDM7TlFrxqEx
+	k3nYvbZP0If6iRkJ9ehiXdIMC2YYajQnEehcP4QsERuhfeZFNrXODJIZvePL4D/imqM/m/1Ym16
+	CWcGkS4i2gP+elJ5ilIfS10OOQYip/j8pUIjVSkBE4RZueWk4GwAz2Crn3kkcn3675ecP1GCQux
+	CeHh2aCB+sF+WM3lgzw2KJaN3QupcJhpAFH9YvIpB1Sb2EEwQ96cmxgk27c+O3zbgnTvRxvk8IC
+	6UZqZn8viiU98qMAy1GRpeWpe6lyO7Nr2f1EFOAaFMGSzsYxmx3YIYPpcaiccvmZHRTzKLGJ51P
+	QagI8ew293T3gADS/+hc7h/vAUDGL9uioSoMpoaQdk2Md/qP+VIeTDQdfVsh33X0is48JWwfgY/
+	oDCYtAe/Zm9qCGcNUBnuXE1ogwc=
+X-Received: by 2002:a17:90b:4a48:b0:3b1:4018:bfdd with SMTP id 98e67ed59e1d1-3b41c7d5cc7mr13865555a91.7.1795581446160;
+        Tue, 24 Nov 2026 20:37:26 -0800 (PST)
 Received: from localhost ([2001:19f0:8000:4ce8:5400:7ff:fe0e:e6b2])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b41abb1b66sm26615594a91.1.2026.11.24.20.37.21
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b405d63728sm30506154a91.8.2026.11.24.20.37.25
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Nov 2026 20:37:22 -0800 (PST)
+        Tue, 24 Nov 2026 20:37:25 -0800 (PST)
 From: Inochi Amaoto <inochiama@gmail.com>
 To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
 	Jonathan Corbet <corbet@lwn.net>,
@@ -124,17 +124,17 @@ Cc: linux-doc@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Yixun Lan <dlan@gentoo.org>,
 	Longbin Li <looong.bin@gmail.com>
-Subject: [PATCH v5 2/8] phy: core: Add common helper for get phy phandle by index
-Date: Wed, 25 Nov 2026 12:36:33 +0800
-Message-ID: <20261125043639.249525-3-inochiama@gmail.com>
+Subject: [PATCH v5 3/8] phy: core: Make phy_put() ignore NULL and error pointers
+Date: Wed, 25 Nov 2026 12:36:34 +0800
+Message-ID: <20261125043639.249525-4-inochiama@gmail.com>
 X-Mailer: git-send-email 2.56.1
 In-Reply-To: <20261125043639.249525-1-inochiama@gmail.com>
 References: <20261125043639.249525-1-inochiama@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261125_043725_893134_B194C999 
-X-CRM114-Status: GOOD (  17.29  )
+X-CRM114-CacheID: sfid-20261125_043728_986635_4EC4ACAB 
+X-CRM114-Status: GOOD (  10.54  )
 X-Spam-Score: -0.2 (/)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -156,112 +156,29 @@ X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Two phy helpers use index to get phy phandle of a device node,
-add a common function for the future reuse.
+Add NULL and error pointer check to the phy_put(), so it can ignore
+any bad and empty pointer, this will simplify the release handler
+of the bulk data API.
 
 Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
-Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 ---
- drivers/phy/phy-core.c | 57 ++++++++++++++++++++++++------------------
- 1 file changed, 33 insertions(+), 24 deletions(-)
+ drivers/phy/phy-core.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index b7550ca37e66..efbd7e139dce 100644
+index efbd7e139dce..5004d28b167a 100644
 --- a/drivers/phy/phy-core.c
 +++ b/drivers/phy/phy-core.c
-@@ -697,38 +697,55 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
- 	return phy;
- }
- 
-+/**
-+ * _of_phy_get_by_index() - lookup and obtain a reference to a phy using a
-+ * device_node by index.
-+ * @np: device_node for which to get the phy
-+ * @index: index of the phy from device's point of view
-+ *
-+ * Returns: the phy device, after getting a refcount to it; or
-+ * -ENODEV if there is no such phy. The caller is responsible for
-+ * calling of_phy_put() to release that count.
-+ */
-+static struct phy *_of_phy_get_by_index(struct device_node *np, int index)
-+{
-+	struct phy *phy;
-+
-+	phy = _of_phy_get(np, index);
-+	if (IS_ERR(phy))
-+		return phy;
-+
-+	if (!try_module_get(phy->ops->owner)) {
-+		phy = ERR_PTR(-EPROBE_DEFER);
-+		return phy;
-+	}
-+
-+	get_device(&phy->dev);
-+
-+	return phy;
-+}
-+
- /**
-  * of_phy_get() - lookup and obtain a reference to a phy using a device_node.
-  * @np: device_node for which to get the phy
-  * @con_id: name of the phy from device's point of view
-  *
-- * Returns: the phy driver, after getting a refcount to it; or
-+ * Returns: the phy device, after getting a refcount to it; or
-  * -ENODEV if there is no such phy. The caller is responsible for
-  * calling of_phy_put() to release that count.
+@@ -780,6 +780,9 @@ EXPORT_SYMBOL_GPL(of_phy_put);
   */
- struct phy *of_phy_get(struct device_node *np, const char *con_id)
+ void phy_put(struct device *dev, struct phy *phy)
  {
--	struct phy *phy = NULL;
-+	struct phy *phy;
- 	int index = 0;
- 
- 	if (con_id)
- 		index = of_property_match_string(np, "phy-names", con_id);
- 
- 	mutex_lock(&phy_provider_mutex);
--
--	phy = _of_phy_get(np, index);
--	if (IS_ERR(phy))
--		goto out_unlock;
--
--	if (!try_module_get(phy->ops->owner)) {
--		phy = ERR_PTR(-EPROBE_DEFER);
--		goto out_unlock;
--	}
--
--	get_device(&phy->dev);
--
--out_unlock:
-+	phy = _of_phy_get_by_index(np, index);
- 	mutex_unlock(&phy_provider_mutex);
++	if (IS_ERR_OR_NULL(phy))
++		return;
 +
- 	return phy;
+ 	device_link_remove(dev, &phy->dev);
+ 	of_phy_put(phy);
  }
- EXPORT_SYMBOL_GPL(of_phy_get);
-@@ -1001,20 +1018,12 @@ struct phy *devm_of_phy_get_by_index(struct device *dev, struct device_node *np,
- 		return ERR_PTR(-ENOMEM);
- 
- 	mutex_lock(&phy_provider_mutex);
--	phy = _of_phy_get(np, index);
-+	phy = _of_phy_get_by_index(np, index);
- 	if (IS_ERR(phy)) {
- 		devres_free(ptr);
- 		goto out_unlock;
- 	}
- 
--	if (!try_module_get(phy->ops->owner)) {
--		devres_free(ptr);
--		phy = ERR_PTR(-EPROBE_DEFER);
--		goto out_unlock;
--	}
--
--	get_device(&phy->dev);
--
- 	*ptr = phy;
- 	devres_add(dev, ptr);
- 
 -- 
 2.56.1
 
