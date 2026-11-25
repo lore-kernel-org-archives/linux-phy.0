@@ -2,57 +2,109 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3665C606A32C
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 21:39:42 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7A8E3606A6A3
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 22:48:52 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=eaJ6aXzi;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=AALQ47Kv
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=KaYf6Ypy;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=vNqhx78c
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:References:
-	In-Reply-To:Cc:To:Subject:From:Message-ID:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Mz6cs9juwafbLTAkv2YOip1ujiEhcHsD8LkoJ1FgseI=; b=eaJ6aXzix6Vt4u/bKnIYsgLlbh
-	V3BD2VTUySVvy9pzA/VWFcOK2aK56bZhd2a7KvcnPyZtjoGPQCkbJVJXgX8EImwrC/4JzU2k0Jq9y
-	nV3q1Z5HVuuQCKAtiekofEqJxjtObVkxuoQ3H5hmoVFWC+Jc7zM8FB3mc8g7/vUEKQOmlBnzsIPdw
-	GmT66EG67v58BJ/5IZfReockBPbzhONwP5YptN2O4/3Tu+/glDFL734CYb5HgZAG62jhnhXgcnfWs
-	SJpLQS+O25tokLTZYDg+RaNZT6EhDJGRRH/kG5G1ZmcR+31q6VshaAP5quIdVqamh4hQpe1PZmBlp
-	HNjdQTSg==;
+	bh=cXYPsDrryi5iDD3LdQ73nb0O82dc+yKwM8kITiJThcQ=; b=KaYf6Ypy3RawbWCuSxaEJvSsVU
+	IyxaIMF2vXQZF78nDHEDanUAWWCznYWz2LnmV8xpHX4BsL/9YwlfoiugdHg3PfyhZxOnw5yvtfkdP
+	1ZdI15SIlcP3quQOocXFco2nuGphOfAcPRJJefvEgXk3QLkAAUnA7bq0QWjvvePlOnhXo4yHGP8ZS
+	+CjPA+SdCa3+xq478As9bEvLy46iX6gMJRPY/FPKm5CVImDc4J2ahmYR2lF31exITMJKKgjE8PZFK
+	PASXezmi8fVbUcE6/xAbjOrPM8TY1yLxuhrvUIFukXPVk/lV+JU7y2VCW3fKzzxQ3L+x9FGIPCH7Z
+	F1MIOvSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWKiL-0000000BNoB-44K6;
-	Wed, 25 Nov 2026 21:39:41 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xWLnG-0000000BVws-0Kc9;
+	Wed, 25 Nov 2026 22:48:51 +0000
+Received: from mail-pj1-x1032.google.com ([2607:f8b0:4864:20::1032])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWKiK-0000000BNo2-25dB
+	id 1xWLnD-0000000BVvo-1syF
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Nov 2026 21:39:40 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id EF2DC63136;
-	Wed, 25 Nov 2026 21:39:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3106C1F000C0;
-	Wed, 25 Nov 2026 21:39:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795642779;
-	bh=k5O1FmX2sWRXr7+/EJd3ks/Dw+JHXX+Dzw+lFSnik5E=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=AALQ47KvAIGBrRNdKHJPiClCDaCiA0msn/lBi3NwJUnDZLWBLctcviVZG1mftF06o
-	 k46woKWtkgZD6PU2+fAgsqqYu0onTcPGdHWcJnhYcFqIKDkbxWscWwhpzkVqLYdRS6
-	 amgr0lQW+9gUMeWOAGUocIQHTeJhxaQ3WPaLU3mFsaBy/n6eSlefWz6NtYHw86ifRE
-	 AJ+Oxcv+B5x6SKjdPWdO3m3lWYM+45Ec/DiuArlE4Qo2ll9pw6uDlk1zppsRv69pA0
-	 1vD9E5c8HR0nGYQbl+9ljbqHmFAl6pca5cp5aSICo+zUbLsDa7x5QQG7UdYfNT956k
-	 aUg9ogwuRMjcQ==
-Message-ID: <sashiko-outbox-234193@kernel.org>
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3 4/5] phy: apple: atc: Add T8122 DisplayPort support
-To: "Sasha Finkelstein" <k@chaosmail.tech>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com
-In-Reply-To: <20261125-t8122-phy-v3-4-196e20b3537e@chaosmail.tech>
-References: <20261125-t8122-phy-v3-0-196e20b3537e@chaosmail.tech>
- <20261125-t8122-phy-v3-4-196e20b3537e@chaosmail.tech>
-Date: Wed, 25 Nov 2026 21:39:38 +0000
+	Wed, 25 Nov 2026 22:48:48 +0000
+Received: by mail-pj1-x1032.google.com with SMTP id 98e67ed59e1d1-3b3a914e4c8so3505264a91.0
+        for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 14:48:46 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795646926; x=1796251726; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=YDsDCXLkXL3cNo22jNaL7+utbyOJuM3+sdQzz79cB1A=;
+        b=vNqhx78clFbIQEkfxFArm3Po1vm7EOucH7hMJioWZoTl5Yd3oi/j7cYhYrrjld6VgZ
+         553iFu+fmWIlHpZA319nUe12YTzKQ2gfp4oqFo+JhyRDCZ4myVYqAAtSrNvBT37b41+8
+         0igjaRNZAtONgp7V9ZbT8Y/Ej9nvxhfuI8jOVIaMaJIhpJ1BbQV7JEP8lboTmCuqOBf/
+         CuA+pGqJo5LLdES3hmYNEut+mkK49/vU4WRJ4CZVs2lyOs+R1KJgCK8BKMqb8vTo/5m/
+         Lfi0VeKIkshooOoesCFTB/Bw0ln7B13KAHtHHJGh/QuU8j9RDKX/0C8C63RGnn7lj2oo
+         lH3w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795646926; x=1796251726;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=YDsDCXLkXL3cNo22jNaL7+utbyOJuM3+sdQzz79cB1A=;
+        b=epKXjeHbXCtDhc1S1ycBqcpSUy398HhdcNMdrt9FZT9EtFOMLxIC/phLmpBaPH4nNQ
+         EuvuFph7/eBtGQngtN8674zpsGER9pCdUTA2Prds+A0Nt5apt0rpuRQMqv7P5sWHO6FB
+         7BY1ALhUD5mRb54t3hidmfLQK9jrm5s83ZNAe2jUiGJ+aqVLFzeF4WC47ilwgtaLC/cU
+         1c8XkYqvzqybiaEzuPijEmgzY6u0AU8PWLzHgv3qOwFxHLMCX6cutqK8/Ugqkz8mWGVA
+         eeBw7XyJqic3x2GVvXjB3gmDL/9xgJSv2zNUKpkrn1bx/vHhC/r5pKhcRNAGt5r1J4o5
+         rmgg==
+X-Forwarded-Encrypted: i=1; AL+hErEIoepk1aFVx7bTV/ypwkipEHlD6qVRmjw8np/Qjz/lixOTiwP9rwF1ToieqbM+U83APBOc0JSsFb0=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8ZoroTtV2fIVB8s4qYt6MaJSyACx/Glz0EiWMcEouJnbGZ+iZQ
+	ISGD7PKe///+gXpbz0Io/ChWZr4lOzUSXnDbYIHIKAB34zKsQr7yzXPD
+X-Gm-Gg: AZFdTZcFdNPXLfjzoldDxFhh0NroSY7zxNb6R2mvNcTRuFY5iqEIQVEeEOf2ef7X7Lp
+	Q84L5WDVmH+TkAxWr/KRsMZkJ/DLLG6AdslKFhW1pm/VH6VUW+33zgbm9CHnWKbYleF9WMIU4qU
+	EcnnXO8R1lGoBq5McBMOAXXeLwri21fZmSgkdT+ymFOevLfNjiodisOhRep7lrSD5Jt0uhTjBWw
+	PbuQdwIpupfJSNi7Z3xVphODWhEgbBK8pHbMT8eYB1o0M6YECwI8CycBrXvijOoSzxh8nAOjbjO
+	0RpvuydYqL2mHu3N7p/n6Ps9uumiPwx93xu8MmwbeOg/IhwcnO/r7eUooUFr/qRZfcRamK+fxwg
+	6Njmqz2s9nSTGp09mo0uSbj+G2j81IVvkXpz7p7sOqFJQg8hIwdrMbKaJgOJxq2v08zBijLskfv
+	HrasfGH08UhWPHKNMuMypvO1KN05xev/1t7SJKW6Vg4NBb6z443RQvfQ0aiauWvneOG9KmAQvWY
+	cgtmT16LvGHP7R0Y4Z9FWakB4PrqDQcZ8Rd5ptpxO8EtXjGVrrIAWFu5yUt4GymXX+DzDCahW64
+	XiWM+p4HXwRJlhvLC0a5Ykk1x+8=
+X-Received: by 2002:a17:90b:134e:b0:3ac:9a5e:9ce7 with SMTP id 98e67ed59e1d1-3b41c96764dmr18868042a91.49.1795646925992;
+        Wed, 25 Nov 2026 14:48:45 -0800 (PST)
+Received: from localhost ([2001:19f0:8000:4ce8:5400:7ff:fe0e:e6b2])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3b4afeaaa84sm13819382a91.10.2026.11.25.14.48.44
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 25 Nov 2026 14:48:45 -0800 (PST)
+Date: Thu, 26 Nov 2026 06:48:37 +0800
+From: Inochi Amaoto <inochiama@gmail.com>
+To: Niklas Cassel <cassel@kernel.org>, Inochi Amaoto <inochiama@gmail.com>
+Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>, 
+	Jonathan Corbet <corbet@lwn.net>, Shuah Khan <skhan@linuxfoundation.org>, 
+	Randy Dunlap <rdunlap@infradead.org>, Damien Le Moal <dlemoal@kernel.org>, Frank Li <Frank.Li@nxp.com>, 
+	Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
+	Fabio Estevam <festevam@gmail.com>, Aksh Garg <a-garg7@ti.com>, 
+	Lorenzo Pieralisi <lpieralisi@kernel.org>, Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+	Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rhys Tumelty <rhys@tumelty.co.uk>, 
+	Manikandan K Pillai <mpillai@cadence.com>, "vladimir.oltean@nxp.com" <vladimir.oltean@nxp.com>, 
+	Qiang Yu <qiang.yu@oss.qualcomm.com>, Hans Zhang <18255117159@163.com>, Yao Zi <me@ziyao.cc>, 
+	linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org, linux-ide@vger.kernel.org, 
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org, 
+	linux-phy@lists.infradead.org, Yixun Lan <dlan@gentoo.org>, Longbin Li <looong.bin@gmail.com>
+Subject: Re: [PATCH v5 8/8] ata: ahci_imx: Use bulk PHY APIs for calibration
+ PHYs
+Message-ID: <awdjOLoxBpS6t1KN@inochi.infowork>
+References: <20261125043639.249525-1-inochiama@gmail.com>
+ <20261125043639.249525-9-inochiama@gmail.com>
+ <awcFIJlCOxB7nXNz@ryzen>
+X-Archived-By: <archiver.kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <awcFIJlCOxB7nXNz@ryzen>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261125_144847_500600_F4A314C5 
+X-CRM114-Status: GOOD (  36.34  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,86 +114,210 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-X-Archived-By: <archiver.kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=ham
-	autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-10.8 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,
+	FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwKaXNzdWVzIHRvIGNvbnNpZGVyOgotIFtNZWRpdW1dIHBoeTogYXBwbGU6IGF0
-YzogaW5jb21wbGV0ZSBsYW5lIHJlY29uZmlndXJhdGlvbiBpbgogIGF0Y3BoeV9zd19zZXQoKQot
-IFtNZWRpdW1dIHBoeTogYXBwbGU6IGF0YzogbWlzc2luZyBEUCBtb2RlIGNoZWNrIGluCiAgYXRj
-cGh5X3dhaXRfcmNhbDFfZG9uZV90ODEyMigpCi0tCgpjb21taXQgYzRlODYyMmMwMWM1MDc3YmRm
-OGUxYzYzYjk4OTg3YjA0ZWJjNTRiZgpBdXRob3I6IFJhbXppIEFiZGljaGUgPGFiZGljaGVyYW16
-aUBnbWFpbC5jb20+CgpwaHk6IGFwcGxlOiBhdGM6IEFkZCBUODEyMiBEaXNwbGF5UG9ydCBzdXBw
-b3J0CgpUaGlzIGNvbW1pdCBhZGRzIERpc3BsYXlQb3J0IEFVWCBhbmQgbGFuZSBzZXR1cCBzdXBw
-b3J0IGZvciBUODEyMi1mYW1pbHkKQXBwbGUgVHlwZS1DIFBIWXMsIGluY2x1ZGluZyBsaW5rLXJh
-dGUgUExML2xhbmUgY29uZmlndXJhdGlvbiBhbmQgc3RvcHBpbmcKYWN0aXZlIGxhbmVzIGJlZm9y
-ZSBtb2RlIG9yIG9yaWVudGF0aW9uIGNoYW5nZXMuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3Bo
-eS9hcHBsZS9hdGMuYyBiL2RyaXZlcnMvcGh5L2FwcGxlL2F0Yy5jCj4gaW5kZXggNjhmYzkzYTg4
-ZjQxYS4uNWMwNjg4MzM5MzUzOSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9hcHBsZS9hdGMu
-Ywo+ICsrKyBiL2RyaXZlcnMvcGh5L2FwcGxlL2F0Yy5jClsgLi4uIF0KPiBAQCAtMTk1MSw2ICsy
-NDk3LDEzIEBAIHN0YXRpYyB2b2lkIGF0Y3BoeV9jb25maWd1cmVfcG9zdF90dW5hYmxlX3Q4MTIy
-KHN0cnVjdCBhcHBsZV9hdGNwaHkgKmF0Y3BoeSwgZW51Cj4gIAl1ZGVsYXkoMTApOwo+ICB9Cj4g
-IAo+ICtzdGF0aWMgdm9pZCBhdGNwaHlfY29uZmlndXJlX3Bvc3RfdHVuYWJsZV90ODEyMihzdHJ1
-Y3QgYXBwbGVfYXRjcGh5ICphdGNwaHksIGVudW0gYXRjcGh5X21vZGUgbW9kZSkKPiArewo+ICsJ
-aWYgKGF0Y3BoeV9tb2Rlc1ttb2RlXS5waXBlaGFuZGxlcl9zdGF0ZSA9PSBBVENQSFlfUElQRUhB
-TkRMRVJfU1RBVEVfVVNCMyB8fAo+ICsJICAgIChhdGNwaHktPmh3LT5kcF9lbmFibGVfYXV4ICYm
-IGF0Y3BoeV9tb2Rlc1ttb2RlXS5lbmFibGVfZHBfYXV4KSkKPiArCQlhdGNwaHlfcG93ZXJfb25f
-Y29tbW9uX3Q4MTIyKGF0Y3BoeSk7Cj4gK30KCltTZXZlcml0eTogTWVkaXVtXQpTaG91bGQgYXRj
-cGh5X3dhaXRfcmNhbDFfZG9uZV90ODEyMigpIGFsc28gY2hlY2sKKGF0Y3BoeS0+aHctPmRwX2Vu
-YWJsZV9hdXggJiYgYXRjcGh5X21vZGVzW21vZGVdLmVuYWJsZV9kcF9hdXgpPwoKSW4gNC1sYW5l
-IERpc3BsYXlQb3J0IG1vZGUgKEFQUExFX0FUQ1BIWV9NT0RFX0RQKSwgcGlwZWhhbmRsZXJfc3Rh
-dGUgaXMKQVRDUEhZX1BJUEVIQU5ETEVSX1NUQVRFX0RVTU1ZIHdoaWxlIGVuYWJsZV9kcF9hdXgg
-aXMgdHJ1ZS4KYXRjcGh5X2NvbmZpZ3VyZV9wb3N0X3R1bmFibGVfdDgxMjIoKSBub3cgcG93ZXJz
-IG9uIHRoZSBBVVMgY29tbW9uIGJsb2NrCmZvciBBUFBMRV9BVENQSFlfTU9ERV9EUCwgYnV0IGF0
-Y3BoeV93YWl0X3JjYWwxX2RvbmVfdDgxMjIoKSBzdGlsbCBvbmx5CmNoZWNrcyBmb3IgQVRDUEhZ
-X1BJUEVIQU5ETEVSX1NUQVRFX1VTQjM6Cgpkcml2ZXJzL3BoeS9hcHBsZS9hdGMuYzphdGNwaHlf
-d2FpdF9yY2FsMV9kb25lX3Q4MTIyKCkgewoJaWYgKGF0Y3BoeV9tb2Rlc1ttb2RlXS5waXBlaGFu
-ZGxlcl9zdGF0ZSA9PSBBVENQSFlfUElQRUhBTkRMRVJfU1RBVEVfVVNCMykgewoJCXJldCA9IHJl
-YWRsX3BvbGxfdGltZW91dChhdGNwaHktPnJlZ3MuY29yZSArIEFVU19DT01NT05fRElHX1JDQUwx
-LCByZWcsCgkJCQkJIChyZWcgJiBBVVNfQ09NTU9OX0RJR19SQ0FMMV9BTExfQ09ERVNfRE9ORSks
-IDEwLCAxMDAwMDApOwogICAgLi4uCn0KCkFzIGEgcmVzdWx0LCBBUFBMRV9BVENQSFlfTU9ERV9E
-UCBza2lwcyB3YWl0aW5nIGZvciBBVVNfQ09NTU9OX0RJR19SQ0FMMQpjYWxpYnJhdGlvbiB0byBj
-b21wbGV0ZSBhZnRlciByZWxlYXNpbmcgUEhZIHJlc2V0LgoKWyAuLi4gXQoKPiBAQCAtMjI4Mywx
-OSArMjg1MSwzMSBAQCBzdGF0aWMgaW50IGF0Y3BoeV9wcm9iZV9yY2RldihzdHJ1Y3QgYXBwbGVf
-YXRjcGh5ICphdGNwaHkpCj4gIHN0YXRpYyBpbnQgYXRjcGh5X3N3X3NldChzdHJ1Y3QgdHlwZWNf
-c3dpdGNoX2RldiAqc3csIGVudW0gdHlwZWNfb3JpZW50YXRpb24gb3JpZW50YXRpb24pCj4gIHsK
-PiAgCXN0cnVjdCBhcHBsZV9hdGNwaHkgKmF0Y3BoeSA9IHR5cGVjX3N3aXRjaF9nZXRfZHJ2ZGF0
-YShzdyk7Cj4gKwlib29sIHN3YXBfbGFuZXM7Cj4gKwlpbnQgcmV0Owo+ICAKPiAgCWd1YXJkKG11
-dGV4KSgmYXRjcGh5LT5sb2NrKTsKPiAgCj4gIAlzd2l0Y2ggKG9yaWVudGF0aW9uKSB7Cj4gIAlj
-YXNlIFRZUEVDX09SSUVOVEFUSU9OX05PTkU6Cj4gLQkJYnJlYWs7Cj4gKwkJcmV0dXJuIDA7Cj4g
-IAljYXNlIFRZUEVDX09SSUVOVEFUSU9OX05PUk1BTDoKPiAtCQlhdGNwaHktPnN3YXBfbGFuZXMg
-PSBmYWxzZTsKPiArCQlzd2FwX2xhbmVzID0gZmFsc2U7Cj4gIAkJYnJlYWs7Cj4gIAljYXNlIFRZ
-UEVDX09SSUVOVEFUSU9OX1JFVkVSU0U6Cj4gLQkJYXRjcGh5LT5zd2FwX2xhbmVzID0gdHJ1ZTsK
-PiArCQlzd2FwX2xhbmVzID0gdHJ1ZTsKPiAgCQlicmVhazsKPiArCWRlZmF1bHQ6Cj4gKwkJcmV0
-dXJuIC1FSU5WQUw7Cj4gKwl9Cj4gKwo+ICsJLyogQ2xlYW51cCBuZWVkcyB0aGUgb2xkIGxhbmUg
-Y29uZmlndXJhdGlvbiB1bnRpbCBzaHV0ZG93biBzdWNjZWVkcy4gKi8KPiArCWlmIChzd2FwX2xh
-bmVzICE9IGF0Y3BoeS0+c3dhcF9sYW5lcyAmJiBhdGNwaHktPmh3LT5kcF9zdG9wKSB7Cj4gKwkJ
-cmV0ID0gYXRjcGh5LT5ody0+ZHBfc3RvcChhdGNwaHkpOwo+ICsJCWlmIChyZXQpCj4gKwkJCXJl
-dHVybiByZXQ7Cj4gKwl9Cj4gKwlhdGNwaHktPnN3YXBfbGFuZXMgPSBzd2FwX2xhbmVzOwo+ICAK
-PiAgCXJldHVybiAwOwo+ICB9CgpbU2V2ZXJpdHk6IE1lZGl1bV0KSWYgb3JpZW50YXRpb24gY2hh
-bmdlcyB3aGlsZSBhdGNwaHktPm1vZGUgIT0gQVBQTEVfQVRDUEhZX01PREVfT0ZGLCBkb2VzCnN0
-b3BwaW5nIERpc3BsYXlQb3J0IHdpdGhvdXQgcmVjb25maWd1cmluZyB0aGUgUEhZIGxlYXZlIHRo
-ZSBjcm9zc2JhciBhbmQKbGFuZSByb3V0aW5nIG91dCBvZiBzeW5jIHdpdGggYXRjcGh5LT5zd2Fw
-X2xhbmVzPwoKYXRjcGh5X3N3X3NldCgpIHN0b3BzIHRoZSBEaXNwbGF5UG9ydCBsaW5rIGFuZCB1
-cGRhdGVzIGF0Y3BoeS0+c3dhcF9sYW5lcywKYnV0IGxlYXZlcyB0aGUgaGFyZHdhcmUgY3Jvc3Ni
-YXIsIGxhbmUgbW9kZSwgQVRDUEhZX01JU0NfTEFORV9TV0FQIGFuZApsYW5lIHR1bmFibGVzIHBy
-b2dyYW1tZWQgZm9yIHRoZSBwcmV2aW91cyBvcmllbnRhdGlvbi4gIElmCmF0Y3BoeV9tdXhfc2V0
-KCkgaXMgdGhlbiBjYWxsZWQgd2l0aCB0aGUgc2FtZSB0YXJnZXRfbW9kZSwgaXQgcmV0dXJucwpl
-YXJseSBiZWNhdXNlIGF0Y3BoeS0+bW9kZSA9PSB0YXJnZXRfbW9kZSwgYW5kIGEgc3Vic2VxdWVu
-dAphdGNwaHlfZHBfc2V0X3JhdGVfdDgxMjIoKSBjb25maWd1cmVzIHRoZSBEaXNwbGF5UG9ydCBQ
-TUEgbGFuZXMgZm9yIHRoZQpuZXcgb3JpZW50YXRpb24gd2hpbGUgdGhlIGNyb3NzYmFyIHJlbWFp
-bnMgcm91dGVkIGZvciB0aGUgb2xkIG9uZS4KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRw
-czovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjExMjUtdDgxMjItcGh5LXYzLTAtMTk2ZTIw
-YjM1MzdlQGNoYW9zbWFpbC50ZWNoP3BhcnQ9NAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
-bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Wed, Nov 25, 2026 at 04:56:16PM +0100, Niklas Cassel wrote:
+> Hello Inochi,
+> 
+> On Wed, Nov 25, 2026 at 12:36:39PM +0800, Inochi Amaoto wrote:
+> > The i.MX8QM SATA PHY relies on the first two HSIO lanes for shared
+> > impedance calibration. Store these calibration PHYs in a bulk array
+> > and acquire them by name with devm_phy_bulk_get().
+> > 
+> > Initialize both calibration PHYs before powering them on in lane order,
+> > then keep the SATA PHY initialization, mode selection and power-on
+> > separate. Use the bulk helpers to release the calibration PHYs after
+> > SATA startup and to unwind failures without repeating power-off after
+> > a failed bulk power-on.
+> > 
+> > Signed-off-by: Inochi Amaoto <inochiama@gmail.com>
+> > ---
+> >  drivers/ata/ahci_imx.c | 57 ++++++++++++++++--------------------------
+> >  1 file changed, 21 insertions(+), 36 deletions(-)
+> > 
+> > diff --git a/drivers/ata/ahci_imx.c b/drivers/ata/ahci_imx.c
+> > index 6aaa18e29abc..18faa033e44f 100644
+> > --- a/drivers/ata/ahci_imx.c
+> > +++ b/drivers/ata/ahci_imx.c
+> > @@ -25,6 +25,8 @@
+> >  
+> >  #define DRV_NAME "ahci-imx"
+> >  
+> > +#define NUM_CALIPHY		2
+> > +
+> >  enum {
+> >  	/* Timer 1-ms Register */
+> >  	IMX_TIMER1MS				= 0x00e0,
+> > @@ -66,8 +68,7 @@ struct imx_ahci_priv {
+> >  	struct clk *ahb_clk;
+> >  	struct regmap *gpr;
+> >  	struct phy *sata_phy;
+> > -	struct phy *cali_phy0;
+> > -	struct phy *cali_phy1;
+> > +	struct phy_bulk_data cali_phys[NUM_CALIPHY];
+> >  	bool no_device;
+> >  	bool first_time;
+> >  	u32 phy_params;
+> > @@ -428,30 +429,20 @@ static int imx8_sata_enable(struct ahci_host_priv *hpriv)
+> >  	 * Initialize the first two lane PHYs here, although only the
+> >  	 * third lane PHY is used by SATA.
+> >  	 */
+> > -	ret = phy_init(imxpriv->cali_phy0);
+> > +	ret = phy_bulk_init(NUM_CALIPHY, imxpriv->cali_phys);
+> >  	if (ret) {
+> >  		dev_err(dev, "cali PHY init failed\n");
+> >  		return ret;
+> >  	}
+> > -	ret = phy_power_on(imxpriv->cali_phy0);
+> > +	ret = phy_bulk_power_on(NUM_CALIPHY, imxpriv->cali_phys);
+> >  	if (ret) {
+> >  		dev_err(dev, "cali PHY power on failed\n");
+> > -		goto err_cali_phy0_exit;
+> > -	}
+> > -	ret = phy_init(imxpriv->cali_phy1);
+> > -	if (ret) {
+> > -		dev_err(dev, "cali PHY1 init failed\n");
+> > -		goto err_cali_phy0_off;
+> > -	}
+> > -	ret = phy_power_on(imxpriv->cali_phy1);
+> > -	if (ret) {
+> > -		dev_err(dev, "cali PHY1 power on failed\n");
+> > -		goto err_cali_phy1_exit;
+> > +		goto err_cali_phy_exit;
+> 
+> This changes the order the calibration PHYs are brought up in.
+> 
+> The commit message describes the new order:
+> 
+>   "Initialize both calibration PHYs before powering them on in lane
+>   order"
+> 
+> but doesn't say that it differs from the current sequence. Could the
+> commit message mention the change, and why it is safe for the shared
+> calibration?
+> 
+
+According to the document, there is no initialization order requirement
+mentioned, so I thought it will be safe to change that since the
+document shows that the calibration is independent in section 19.3.3.5.
+
+> The cover letter mentions that the PHY timing requirements were checked
+> against the documentation. Has the new sequence also been tested on
+> i.MX8QM hardware?
+> 
+
+I does not check it on real hardware, the only thing I find is the
+document.
+
+> 
+> >  	}
+> >  	ret = phy_init(imxpriv->sata_phy);
+> >  	if (ret) {
+> >  		dev_err(dev, "sata PHY init failed\n");
+> > -		goto err_cali_phy1_off;
+> > +		goto err_cali_phy_off;
+> >  	}
+> >  	ret = phy_set_mode(imxpriv->sata_phy, PHY_MODE_SATA);
+> >  	if (ret) {
+> > @@ -465,10 +456,8 @@ static int imx8_sata_enable(struct ahci_host_priv *hpriv)
+> >  	}
+> >  
+> >  	/* The cali_phy# can be turned off after SATA PHY is initialized. */
+> > -	phy_power_off(imxpriv->cali_phy1);
+> > -	phy_exit(imxpriv->cali_phy1);
+> > -	phy_power_off(imxpriv->cali_phy0);
+> > -	phy_exit(imxpriv->cali_phy0);
+> > +	phy_bulk_power_off(NUM_CALIPHY, imxpriv->cali_phys);
+> > +	phy_bulk_exit(NUM_CALIPHY, imxpriv->cali_phys);
+> >  
+> >  	/* RxWaterMark setting */
+> >  	val = readl(hpriv->mmio + IMX8QM_SATA_AHCI_PTC);
+> > @@ -480,14 +469,10 @@ static int imx8_sata_enable(struct ahci_host_priv *hpriv)
+> >  
+> >  err_sata_phy_exit:
+> >  	phy_exit(imxpriv->sata_phy);
+> > -err_cali_phy1_off:
+> > -	phy_power_off(imxpriv->cali_phy1);
+> > -err_cali_phy1_exit:
+> > -	phy_exit(imxpriv->cali_phy1);
+> > -err_cali_phy0_off:
+> > -	phy_power_off(imxpriv->cali_phy0);
+> > -err_cali_phy0_exit:
+> > -	phy_exit(imxpriv->cali_phy0);
+> > +err_cali_phy_off:
+> > +	phy_bulk_power_off(NUM_CALIPHY, imxpriv->cali_phys);
+> > +err_cali_phy_exit:
+> > +	phy_bulk_exit(NUM_CALIPHY, imxpriv->cali_phys);
+> >  
+> >  	return ret;
+> >  }
+> > @@ -839,19 +824,19 @@ static const struct scsi_host_template ahci_platform_sht = {
+> >  
+> >  static int imx8_sata_probe(struct device *dev, struct imx_ahci_priv *imxpriv)
+> >  {
+> > +	int ret;
+> > +
+> >  	imxpriv->sata_phy = devm_phy_get(dev, "sata-phy");
+> >  	if (IS_ERR(imxpriv->sata_phy))
+> >  		return dev_err_probe(dev, PTR_ERR(imxpriv->sata_phy),
+> >  				     "Failed to get sata_phy\n");
+> >  
+> > -	imxpriv->cali_phy0 = devm_phy_get(dev, "cali-phy0");
+> > -	if (IS_ERR(imxpriv->cali_phy0))
+> > -		return dev_err_probe(dev, PTR_ERR(imxpriv->cali_phy0),
+> > -				     "Failed to get cali_phy0\n");
+> > -	imxpriv->cali_phy1 = devm_phy_get(dev, "cali-phy1");
+> > -	if (IS_ERR(imxpriv->cali_phy1))
+> > -		return dev_err_probe(dev, PTR_ERR(imxpriv->cali_phy1),
+> > -				     "Failed to get cali_phy1\n");
+> > +	imxpriv->cali_phys[0].id = "cali-phy0";
+> > +	imxpriv->cali_phys[1].id = "cali-phy1";
+> > +
+> > +	ret = devm_phy_bulk_get(dev, NUM_CALIPHY, imxpriv->cali_phys);
+> > +	if (ret)
+> > +		return dev_err_probe(dev, ret, "Failed to get cali_phy\n");
+> 
+> phy_bulk_get() already reports which PHY failed:
+> 
+> drivers/phy/phy-core.c:phy_bulk_get() {
+>     ...
+>         for (i = 0; i < num_phys; i++) {
+>                 phys[i].phy = phy_get(dev, phys[i].id);
+> 
+>                 ret = PTR_ERR_OR_ZERO(phys[i].phy);
+>                 if (ret) {
+>                         phys[i].phy = NULL;
+> 
+>                         dev_err_probe(dev, ret, "Failed to get phy: (%s)\n",
+>                                       phys[i].id);
+>                         goto err;
+>                 }
+>         }
+>     ...
+> }
+> 
+> so a missing cali-phy1 entry in phy-names now prints two errors, and the
+> second one doesn't name the PHY.
+> 
+> A plain "return ret;" should be enough here.
+> 
+> 
+
+Thanks, I will fix it.
+
+Regards,
+Inochi
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
