@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id BBA22606A684
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 09:36:15 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id D093C606A323
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 09:36:30 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=zCFMLm8d;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Ji2B1/+b
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=RdbHsL37;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jDVsTFrv
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
@@ -14,70 +14,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=JvQNj1PlUqpS/k4Ut9hPsbQ75stNrdX4p/7FJbGTk6Y=; b=zCFMLm8dqL9shosqbF8xMRmviE
-	PWZdRjDVTpegTBfrLewY3VzY7X46ZSHLNDJkchYL23050WeZnSLOqE2IO9SXce8IA/5l6tz6JJkN7
-	ADchrt7rdMma13KrK8bHfln24JT2SgMbWPtGMaVm1f7g5RY6vY6qotil0iWALdhTM1EBpa9Kvbgw5
-	VU4b9Q26GOREDcVQBa1RMIxqUoVGBpUILWHCEyNqU6DNgqbqBkGiEUJolwKZaUhAvyZDZ+Y/6bAV6
-	mpW/Lt2nos0J6i92KqoyQ7heWPpXf8/zIrjnbjnWAVpC1uB+0g13vH0R+4aJmw9koMY3T/F6lvp0f
-	py8Y60zg==;
+	bh=8RQqxfSsATzrIHLlxvg2LEjF5m7eXil3NEi4gAef/5E=; b=RdbHsL37TR2nvjoBNSpArNjz0D
+	TvZwz1PQ8JNaga0JwQDqaKE7enw4m8M/v77fQrlS0dA3BI5rnqwWenPpOTb3oTeuw02rNcjaQiMYS
+	vKpiZIEpnEDPV5BqwDMoGCOAUjVr+8iBYKX0I26KIet9ziGYwkumQEe2jYt3ySOSdUq5x8yuAZ3Ln
+	5F1hleXRU1eFbgmDHYEANoXzKHP7Lqx66kxWU9VwZEIWY+6wgUziuX9JOOfI9dMkkNF+Tuph/WiNk
+	jGPcEnOER0udMHba0HAvGYlfSjvniq9Hs39zo0VaO+FeYoO/s6tG7fjJlPsWI/h/cYWQy0H7tPH7A
+	tTlVsDYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xW9QF-00000009JpA-25Zk;
-	Wed, 25 Nov 2026 09:36:15 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xW9QU-00000009Jwp-2P8Q;
+	Wed, 25 Nov 2026 09:36:30 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xW9P4-00000009ItN-3p6t;
-	Wed, 25 Nov 2026 09:35:03 +0000
+	id 1xW9P6-00000009IuS-0LM3;
+	Wed, 25 Nov 2026 09:35:04 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 26CCE62722;
-	Wed, 25 Nov 2026 09:35:02 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 84B9A6255F;
+	Wed, 25 Nov 2026 09:35:03 +0000 (UTC)
 Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
 ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795599301;
-	b=qHz1uJPsPJNgqNv6qbbDHW/yGE2ziDY6b1/q8t4BqMxvqUZ2/sZ8ys2RGEE2Me4XG0+4
-	 WQjUdPvFomfH2EphLi3Rz9dXQ6dFSHI1e1Ff4z0hWtYsW312tynVuWROj0mfB7LZqlzX0
-	 +/sJ1RiP4+EGq9+MmVTv/Ork+9xGvHFYJVnsLMCksHjE0FWXKFMcQizsadm1Rnleyv30E
-	 E3wh5Q6fypbS7u7MzqwpbHj9tCZFYnl/n3Zo4HP1yaxTE1WpMqMtUcdNeYSdowHVOzVer
-	 ufdA3oVkwEAo9Bg8ngEXIblHo4NA21LJ3lLf0t5RH/c0rHYNUGAIL/Qhtv+ogxV9J2Q==
+	t=1795599303;
+	b=aDoJSC1WrCk30FvXCCZm23DtJpGGfKZ4E+pMT2Bn5wPKZr+STFkFWmai2u4HmUMgkr5v
+	 1kXsdNO5VOMNCR4glnCLLtKuD7okPf8+4v0/g6ZL4jONCGoIY7no88FXPbOkDAGLKrsL0
+	 sHB16Ealtql5pN6eVoRI50/0i6IIEwOGBhdES+VjWgnfHE3KU6Qc0IdxNAb+T7z1P2BPe
+	 z6FrWUf+Eq8SeAYZ5Gec7bnHj2Sxf/JAeA+GuY42ypcTL4nJ/6Yfxgyo6d/Ko6r5uklyt
+	 anBEDTqVxj630TNljkjTFaHTCpcLp0BRATqST9fCiIddeMilViPXPg8O3ka3qoehFxg==
 ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795599301;
+	c=relaxed/relaxed; t=1795599303;
 	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=cp8fgjBJ2pwWxXwzjEDi7ocFTNs15D7U0EiJLwvhNjI=;
-	b=gaX4mRVf/wFOqCcrVt/wYIT6jSaf5VnBFRueweF73wcFlxjR2v4SECM/03VzpJg1yLI9
-	 g+8ODt/fS6PXkskujOoEuePcqJ2uyPoHtBCXaP3ewQ0rvrDX769uF4jg/8lrgn5tEWpVq
-	 BAg+zBv+UgbuPnYAaXDGr854i5YJK8YsiCB9Blh6wdFOucsaUcvXpPG1+EVGgLF7rl0y2
-	 JI3VnJZ0dONzzRikzfpCzV+kqFNpN6qVRqMGYR+ZUyWJp/alVZC1UEVk6sMOi7bsKN7dG
-	 qbp3W1DLxcUzMXiycILJ1nsfDfNpzSpi8iSxwASXSXpIwIHa5sEgAx0wKp8hfS95OCA==
+	 Content-Transfer-Encoding:Message-Id:References:In-Reply-To:To:Cc:
+	 X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=GE0X2Af1f0g88wp6AaRBRdIJWXxatq8TXaVKu/Afmt0=;
+	b=OQEnMTfso6mprUkagjmmyP1Nek8+Ypq+uPwKL4gJwWkAgYAPbyTrd2dHqYqToELkcoZo
+	 vsoaFaHqk1cos3VW1xv0uSu1sGsL4rRraF51PKrGqyGfMFRViytesmsPLbLnwbpQBK6xb
+	 VN9SU0VnO9rY5QOL6Yb6zKtIHqOFBBMc7jYJGDN+KqydoDPvTfxV6oPx4SXqlDtWfvJ4A
+	 AmKItDzdOFwM3PBvMeAGlm2iJO3d018NR5G1nBQ0fWBOpiX2YkFZQuRRRxR6w9Y1Y4ZC+
+	 we7hSIY+pppIeeWEAqG6tLnVsQQTz7fBy+6yZI4Rl5tlgNU5sy2ftXeOxXV8x/F67TA==
 ARC-Authentication-Results: i=1; smtp.kernel.org; 
 	arc=none smtp.remote-ip=100.80.115.77
 Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 284871F000D1;
-	Wed, 25 Nov 2026 09:34:53 +0000 (UTC)
+	by smtp.kernel.org (Postfix) with ESMTPS id BE2641F000EB;
+	Wed, 25 Nov 2026 09:34:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795599301;
-	bh=cp8fgjBJ2pwWxXwzjEDi7ocFTNs15D7U0EiJLwvhNjI=;
+	s=k20260515; t=1795599303;
+	bh=GE0X2Af1f0g88wp6AaRBRdIJWXxatq8TXaVKu/Afmt0=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=Ji2B1/+bqj24cZYCRq+WwjAVKTpzxlAoJO/n/ruRuTGUQ58QQyFPmyRipVU/+x/Nz
-	 dd5/mVQG0GT+fFCrnx0BTq0K9G0qovWc2DhrR8Dsla3xQWzVJlging9qlOcjfKfIx4
-	 UyKxlXXKemDf8JR75DjU5/p2rTaIL3bfTXXRrbv5yRFCgdJZqR7xJMmRkHhw+vBBic
-	 5Sjc+vnxPzG+6g6Hx6wX4K/ugpz6wkw0uz6paI2tRNPrAQvJKLOfuVW8mvP6lfg/On
-	 fg1TQceBSmtqKIshm/AWKR/+jQnbsZR7F2nN8x3d/Tf7XtA45Esxo4qerQN6nGZNCw
-	 e7WjJZpDnVgGQ==
+	b=jDVsTFrvYlqAq+dA94tWpUMzQQ6OKIyhWJ+44xfFQynlxGiJwE1tvwFL6EC0GGpx0
+	 WIn/4HACg6ZCAllPZlI+X4a7tUn1S1DuxxSMKafU8EDO4SiLZtxBcyWX1dfwqufe2j
+	 YxCHw1ZkH+5HMDThEPsgbmhm6exJFLcUAIi6zMjxNycMAqHzhXjrkcAT8LfF0QQvqi
+	 dImf8kj+69AMC3LvEpP9P77Lu7+CXSDiT2gOs1xGfTk05Ar2HMFG44mxUiWgfodRbv
+	 3JheS6fAh7ag3g13/bhixOEkJnR0rLdPv4h1q45f/XJGVoVRJSUIr7qHolsoXthc/W
+	 XEgLk+BWrKdag==
 Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id E444D4CE22;
+	by lkml.kernel.org (Postfix) with ESMTP id A3EFA4CE1A;
 	Wed, 25 Nov 2026 09:34:37 +0000 (UTC)
 From: Jan Petrous via B4 Relay <devnull+jan.petrous.oss.nxp.com@kernel.org>
-Date: Wed, 25 Nov 2026 10:33:55 +0100
-Subject: [PATCH RFC v4 13/15] arm64: dts: s32g: Add SerDes controller nodes
+Date: Wed, 25 Nov 2026 10:33:53 +0100
+Subject: [PATCH RFC v4 11/15] MAINTAINERS: Add NXP S32G SerDes entry
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261125-s32g_serdes-v4-13-3bfe0589be8d@oss.nxp.com>
+Message-Id: <20261125-s32g_serdes-v4-11-3bfe0589be8d@oss.nxp.com>
 References: <20261125-s32g_serdes-v4-0-3bfe0589be8d@oss.nxp.com>
 In-Reply-To: <20261125-s32g_serdes-v4-0-3bfe0589be8d@oss.nxp.com>
 To: Vincent Guittot <vincent.guittot@linaro.org>, 
@@ -112,11 +112,11 @@ Cc: linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
  linux-pci@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com, 
  "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
 X-Mailer: b4 0.14.1
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795599274; l=3600;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795599274; l=1513;
  i=jan.petrous@oss.nxp.com; s=20240922; h=from:subject:message-id;
- bh=dcO9jRk3SJhIq8VC26nfvLMtB2oUb3ElUxxnM7do7KQ=;
- b=F3dQzM1oXkyzvZBR6BCAlyYbN2dFCk0QO32eA+NJbp+we14/iP+uGQPU4zMZbqI8xBe43EhO5
- UqrV4pyUu7MC7dmtH6DRcsO3B8vZNV5WykYfB4lBgz6hP7ORx8Kfxsv
+ bh=86svSsXyW7XbXvUHtBhNIUJ9Mfx/TitxfATul2iPoAs=;
+ b=Gn3XzjwMZOtGZ1tpGqksVlxXFvvg/WVPIMYMlFPNjKYIjT+/z53UTUVfoAcEhSfLFZO4pJrFP
+ rnLdd3g1YLCBeMxaKmPQkCpeiJ+E+6Aemr9FWq/nclrrZL9SVwY4VL1
 X-Developer-Key: i=jan.petrous@oss.nxp.com; a=ed25519;
  pk=Ke3wwK7rb2Me9UQRf6vR8AsfJZfhTyoDaxkUCqmSWYY=
 X-Endpoint-Received: by B4 Relay for jan.petrous@oss.nxp.com/20240922 with
@@ -142,108 +142,46 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
+From: Vincent Guittot <vincent.guittot@linaro.org>
 
-Add the two SerDes subsystem nodes of S32G2 and S32G3, disabled. Each
-is a four-cell PHY provider; a board device tree enables an instance
-and describes the routing through the phys references of the PCIe
-root ports and Ethernet controllers.
+Add an entry for the S32G SerDes PHY driver, the S32G XPCS glue, the
+S32G part of pcs-xpcs, their headers and the SerDes binding. netdev is
+listed because the PCS code lives in drivers/net/pcs/.
 
+Signed-off-by: Vincent Guittot <vincent.guittot@linaro.org>
+[jan.petrous: dropped the shared core entry along with the core]
 Signed-off-by: Jan Petrous (OSS) <jan.petrous@oss.nxp.com>
 ---
- arch/arm64/boot/dts/freescale/s32g2.dtsi | 30 ++++++++++++++++++++++++++++++
- arch/arm64/boot/dts/freescale/s32g3.dtsi | 30 ++++++++++++++++++++++++++++++
- 2 files changed, 60 insertions(+)
+ MAINTAINERS | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/s32g2.dtsi b/arch/arm64/boot/dts/freescale/s32g2.dtsi
-index ff5d2a061d50..0b070f7b5f22 100644
---- a/arch/arm64/boot/dts/freescale/s32g2.dtsi
-+++ b/arch/arm64/boot/dts/freescale/s32g2.dtsi
-@@ -877,6 +877,36 @@ gmac0mdio: mdio {
- 			};
- 		};
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 742c4e6b291f..cb465ba42d73 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -3449,6 +3449,22 @@ S:	Maintained
+ F:	Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
+ F:	drivers/pci/controller/dwc/pcie-nxp-s32g*
  
-+		serdes0: serdes@40480000 {
-+			compatible = "nxp,s32g2-serdes0", "nxp,s32g2-serdes";
-+			reg = <0x40480000 0x108>,
-+			      <0x40483008 0x10>,
-+			      <0x40482000 0x800>,
-+			      <0x40482800 0x800>;
-+			reg-names = "ss-pcie", "pcie-phy", "xpcs0", "xpcs1";
-+			clocks = <&clks 1>, <&clks 2>, <&clks 3>, <&clks 4>;
-+			clock-names = "axi", "aux", "apb", "ref";
-+			resets = <&scmi_reset 9>, <&scmi_reset 8>;
-+			reset-names = "serdes", "pcie";
-+			#phy-cells = <4>;
-+			status = "disabled";
-+		};
++ARM/NXP S32G SERDES DRIVER
++M:	Ghennadi Procopciuc <ghennadi.procopciuc@oss.nxp.com>
++M:	Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>
++M:	Jan Petrous <jan.petrous@oss.nxp.com>
++R:	NXP S32 Linux Team <s32@nxp.com>
++L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
++L:	linux-phy@lists.infradead.org
++L:	netdev@vger.kernel.org
++S:	Maintained
++F:	Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml
++F:	drivers/net/pcs/pcs-nxp-s32g-xpcs.c
++F:	drivers/net/pcs/pcs-xpcs-s32g.c
++F:	drivers/phy/freescale/phy-nxp-s32g-serdes.c
++F:	include/linux/pcs/pcs-nxp-s32g-xpcs.h
++F:	include/linux/phy/nxp-s32g-serdes.h
 +
-+		serdes1: serdes@44180000 {
-+			compatible = "nxp,s32g2-serdes1", "nxp,s32g2-serdes";
-+			reg = <0x44180000 0x108>,
-+			      <0x44183008 0x10>,
-+			      <0x44182000 0x800>,
-+			      <0x44182800 0x800>;
-+			reg-names = "ss-pcie", "pcie-phy", "xpcs0", "xpcs1";
-+			clocks = <&clks 1>, <&clks 2>, <&clks 3>, <&clks 4>;
-+			clock-names = "axi", "aux", "apb", "ref";
-+			resets = <&scmi_reset 11>, <&scmi_reset 10>;
-+			reset-names = "serdes", "pcie";
-+			#phy-cells = <4>;
-+			status = "disabled";
-+		};
-+
- 		gic: interrupt-controller@50800000 {
- 			compatible = "arm,gic-v3";
- 			reg = <0x50800000 0x10000>,
-diff --git a/arch/arm64/boot/dts/freescale/s32g3.dtsi b/arch/arm64/boot/dts/freescale/s32g3.dtsi
-index fbe87475bcf6..0d03daa881bf 100644
---- a/arch/arm64/boot/dts/freescale/s32g3.dtsi
-+++ b/arch/arm64/boot/dts/freescale/s32g3.dtsi
-@@ -956,6 +956,21 @@ gmac0mdio: mdio {
- 			};
- 		};
- 
-+		serdes0: serdes@40480000 {
-+			compatible = "nxp,s32g3-serdes0", "nxp,s32g3-serdes";
-+			reg = <0x40480000 0x108>,
-+			      <0x40483008 0x10>,
-+			      <0x40482000 0x800>,
-+			      <0x40482800 0x800>;
-+			reg-names = "ss-pcie", "pcie-phy", "xpcs0", "xpcs1";
-+			clocks = <&clks 1>, <&clks 2>, <&clks 3>, <&clks 4>;
-+			clock-names = "axi", "aux", "apb", "ref";
-+			resets = <&scmi_reset 9>, <&scmi_reset 8>;
-+			reset-names = "serdes", "pcie";
-+			#phy-cells = <4>;
-+			status = "disabled";
-+		};
-+
- 		swt8: watchdog@40500000 {
- 			compatible = "nxp,s32g3-swt", "nxp,s32g2-swt";
- 			reg = <0x40500000 0x1000>;
-@@ -1024,6 +1039,21 @@ stm11: timer@4052c000 {
- 			status = "disabled";
- 		};
- 
-+		serdes1: serdes@44180000 {
-+			compatible = "nxp,s32g3-serdes1", "nxp,s32g3-serdes";
-+			reg = <0x44180000 0x108>,
-+			      <0x44183008 0x10>,
-+			      <0x44182000 0x800>,
-+			      <0x44182800 0x800>;
-+			reg-names = "ss-pcie", "pcie-phy", "xpcs0", "xpcs1";
-+			clocks = <&clks 1>, <&clks 2>, <&clks 3>, <&clks 4>;
-+			clock-names = "axi", "aux", "apb", "ref";
-+			resets = <&scmi_reset 11>, <&scmi_reset 10>;
-+			reset-names = "serdes", "pcie";
-+			#phy-cells = <4>;
-+			status = "disabled";
-+		};
-+
- 		gic: interrupt-controller@50800000 {
- 			compatible = "arm,gic-v3";
- 			#interrupt-cells = <3>;
+ ARM/NXP S32G/S32R DWMAC ETHERNET DRIVER
+ M:	Jan Petrous <jan.petrous@oss.nxp.com>
+ R:	s32@nxp.com
 
 -- 
 2.55.0
