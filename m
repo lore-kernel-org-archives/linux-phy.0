@@ -2,161 +2,77 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DCDCA606A685
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 16:20:40 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 73669606A333
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 18:12:53 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=KEhVe6WO;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=NXP1.onmicrosoft.com header.i=@NXP1.onmicrosoft.com header.a=rsa-sha256 header.s=selector1-NXP1-onmicrosoft-com header.b=nIH9XPRi
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=sOXTkTqw;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=E1vZt4bz
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=iIVxtFc8/+7QxCir+lcA9aqPFJB7FCIHCmD+hRs5US0=; b=KEhVe6WOSriPqVyr9RhN/IQiMd
-	6/kzmekY87AxIP0aXVJdjh9UACMA1hwFQJ7xMFhXZmMgNYAObjTViQAsvMSlbM5tEcLcnVzPcWHzE
-	YUqnEi178KfEW3NC0897Kd92pVmm9pcLf6+B2sNm3yKDxL5apB0Tf4b1VM/JLVfpHRZYVqyuDX/lO
-	liOowgeLqRPISwLoNBBY1XpBMale8QNbfzYfy3JJJKkqeiDrF0ucDzDm0c+16cqIWrpVemxrTgn/1
-	HXdSYMJPhjA8XukJXVMeukdF8givkp59vTp1gWmVGkEE5+5g2AaL0zrTnsMQiHRxSzMOGBQ3vhNi1
-	F/dfpg6w==;
+	bh=SXlLYIs/odhKZ/izQd4s7V1cmJNc9Cio2AYg0jjGj0w=; b=sOXTkTqwbLlszicztitOI93+m2
+	XU5IBx7RcWLaC5xXmeqo+j82jl7Zak6zeTJlS7ZwBrBes6X0LMiuQka3LuP3WBdBGH2vq0O7Rg6wc
+	c/Kh/Yzr6PfNIxranISl1a8W4Tc+XPQq6U79X5Ssf8/zt0sv7vygOaWL3yzZaibWbjRjgemxyH0l7
+	bvWIwWSAMHr9AmbJ3R22lQzvrwuy0hauuoKJP5/YEGSMhp7q2pNtrCXJNmQLD88oATZVZicfrlltP
+	6XIt3FSyQxZSlNBguRRK38DqjZxF7SkHUxy++nQ5IxfrtFPygyBwcJFzI6Y79drZ72tjIjiyqH3eo
+	+gZnt9Zg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWFjc-0000000AX2e-2cie;
-	Wed, 25 Nov 2026 16:20:40 +0000
-Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1xWHUD-0000000Ay2I-0vHD;
+	Wed, 25 Nov 2026 18:12:53 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWFjZ-0000000AX0c-02kk;
-	Wed, 25 Nov 2026 16:20:38 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=ar97E/Z7nth9VMENNzmIJfZzyUDRxBE18LlpiwpRWi3ql7y+X79HKpZz7pUmgdso8Q242UNV5YVtN++wNMk2CdweJvWz1yhef6YB0lSfrLeLeVnCTQm3AYPhc1FUH3fFdDUKV5uLgvaJZZvywajy0q3EZd4EA7jYqX+2RSh3vbOlFmFT34AxODY58KtoQPXrbIgocNyXWNXSfEHr5JCSTcBGv5Tk99X3FpxOLrVxTGjszA34ImuD/Qjn7ReQhUVaPBHh3KAfpWAri13PGqmTINGAmDA23QGKUzi1JgnsDQvvwxKzzCS0wrs+k41eRlqUGlsYbByPjBrZluW5csB7Uw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=HoGHuuCJqVBarNUeKNtLkdgRV7zB7adrLppZX0CgIkQ=;
- b=kAFh21huCMb8PGTLFgJbsddLIRJXGnB5cFmQGvtSTVXFTns0HkvE673L9ldfxi2FcLTP0ujUN7POQu6j1OZP+ek0rR0Lc75guhkcJs1FPYGd5vBbdNqrcmQMfHXjv9hxdloX1vvxDvjz09qaVA9oYjAWyK7MTsJ7yCQFdjEzpnVG4ETOiI/J1xzaRqZaJ6oJU9OoEWC/riW/9jele7IZpiA14kBjYOeOvW/40vB0+djj+lFmx8E4B8fwhqsj7SSvIro9yy3LHm1PEykISuHqjr9H1RtGYe4GPYJV+SakoGMD2oJukWcHfNuU3NpdklVVHCzAqmOO45yzgzhY9uGXpg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HoGHuuCJqVBarNUeKNtLkdgRV7zB7adrLppZX0CgIkQ=;
- b=nIH9XPRi9cAJRH2B+kDew3xXazsi8Mr9olo1aY+I7n6twoXmr1+SiAJGmNwklh3K2YwnpMDXp6SYTusas62+JHWvEvDyIPrkVZXp4Alx0zQ3l9e8GqEl1aX4DkQwzrQ0k0bQf22nybWzV6mvdkaw23FNM64lVZ540/tR8AElBu+FhSpBYL7hVqHzREX7Dpm8otipBiD702MDdUl2g93ik+1iY2waB93AYT7wM/9ldulCP6fi6G9Li+N48YiWQcOY7RfrGUzal3CY8eEcCnuge2de9CZ3zHikCJ3r1a19iGwpQcO2/RxiMwNJlywOdHoJ7LYItpavhNrNJzYHqMIgyg==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from MI3PR04MB12438.eurprd04.prod.outlook.com (2603:10a6:290:76::14)
- by GV1PR04MB11061.eurprd04.prod.outlook.com (2603:10a6:150:20d::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.639.14; Wed, 25 Nov
- 2026 16:20:20 +0000
-Received: from MI3PR04MB12438.eurprd04.prod.outlook.com
- ([fe80::c715:c32:8bb1:b70b]) by MI3PR04MB12438.eurprd04.prod.outlook.com
- ([fe80::c715:c32:8bb1:b70b%4]) with mapi id 15.21.0662.004; Wed, 25 Nov 2026
- 16:20:20 +0000
-Date: Wed, 25 Nov 2026 10:20:02 -0600
-From: Frank Li <Frank.li@oss.nxp.com>
-To: jan.petrous@oss.nxp.com
-Cc: Vincent Guittot <vincent.guittot@linaro.org>,
-	Ghennadi Procopciuc <ghennadi.procopciuc@oss.nxp.com>,
-	Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>,
-	NXP S32 Linux Team <s32@nxp.com>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@kernel.org>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Bogdan Hamciuc <bogdan.hamciuc@nxp.com>,
-	Ionut Vicovan <ionut.vicovan@nxp.com>, Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Chester Lin <chester62515@gmail.com>,
-	Matthias Brugger <mbrugger@suse.com>, Frank Li <Frank.Li@nxp.com>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	Richard Cochran <richardcochran@gmail.com>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	netdev@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
-	linux-pci@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com
-Subject: Re: [PATCH RFC v4 03/15] dt-bindings: PCI: nxp,s32g-pcie: One PHY
- per lane
-Message-ID: <awcKsk6KvpnNTbaj@SMW015318>
-References: <20261125-s32g_serdes-v4-0-3bfe0589be8d@oss.nxp.com>
- <20261125-s32g_serdes-v4-3-3bfe0589be8d@oss.nxp.com>
-Content-Disposition: inline
-In-Reply-To: <20261125-s32g_serdes-v4-3-3bfe0589be8d@oss.nxp.com>
-X-ClientProxiedBy: PH8P220CA0028.NAMP220.PROD.OUTLOOK.COM
- (2603:10b6:510:348::6) To MI3PR04MB12438.eurprd04.prod.outlook.com
- (2603:10a6:290:76::14)
+	id 1xWHUA-0000000Ay1v-3Sqz
+	for linux-phy@lists.infradead.org;
+	Wed, 25 Nov 2026 18:12:51 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 13B1062169
+	for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 18:12:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BD7681F000D3
+	for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 18:12:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795630369;
+	bh=4jTbRTZRitaWiCSV09T/AEZ1U865c63Eb8AZUxy/ufw=;
+	h=References:In-Reply-To:From:Date:Subject:To:Cc;
+	b=E1vZt4bz0JhSxEtEeTI7AoUtNANPm+CYHwBUNqhHgFr/iJU34ypA4gyvEobRGVVWG
+	 9sNy2Kp4eRirU984KbHPbBQwRxAMBw0cF1sENozuKbbGNZb/O50pacgvRU6EFJnoFB
+	 e0663LxDQsaZnwh8If5SheyJM/1JF5a1ioNQQWnt8O1SqtINZLxt7JmM8TIBcYnl70
+	 fj0eds0EpB+nRqjdBY8K3MX2wK2PshqxZbTAerzI0E9u/sPsDPNFFX/ITT7JCW9mrz
+	 FhC37POqO+y8cdgD/Fld0E0zttEIf8yVuZhvk+yS4l1Nym+PDNrT+ZV1zf/lgrACLN
+	 IfMhEfOT1UEmA==
+Received: by mail-lf1-f46.google.com with SMTP id 2adb3069b0e04-5be3ed646a5so8092993e87.1
+        for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 10:12:49 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AL+hErH2haBwEP+N4ygvm4HfzcAs5CcxrVFbMjcUMlISPVfCpYN6pJDGzGcep3XujHFYfKAwG+3l7jNL5AI=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8TnTG+0dYnH8XgjKozEByg6rYHMPvEkgwj+wOPXnJ6GEZ9HWI3
+	VksfmGIgoUp+fcaA6tfuFKr4vMZI/FK8kqEqhk1a+aTXRQkB5pUQQsUUVQaKYW9y3l+E9jDOaje
+	dN0tvtB5CSaVFqHCcbkPLx20tCS5lItE=
+X-Received: by 2002:a05:6512:b86:b0:5bf:ce24:2d20 with SMTP id
+ 2adb3069b0e04-5c1bc7bc30bmr5709392e87.22.1795630368568; Wed, 25 Nov 2026
+ 10:12:48 -0800 (PST)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MI3PR04MB12438:EE_|GV1PR04MB11061:EE_
-X-MS-Office365-Filtering-Correlation-Id: add0bb39-de93-4fbd-ef2c-08df4b0ffff5
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|1800799024|23010399003|19092799006|366016|10067099003|56012099006|4143699003|11063799006|261021123027099003|261026121527099003|261021121427099003|261102123227099003|261009223027099003|6133799003|22082099003|18002099003;
-X-Microsoft-Antispam-Message-Info: 9yYs3zwfwpbFm/IfqlIpiJReL6OQbs2UcSvE8exAceO0EOu58wZdJrF//NJiJxMpDyhYMHThDZ/xXTiRmn9Y3Ar4ryxxteMwoAFOjTbDCHlM0pE8V5/27RxLbASE7rFjzkXYUbWJYeAthTOdnhe38ink8dOn54uVmoiJL41LpD7eit5m9oLxAtKriyME19vVYMOzsXtECV35P5eVC4GGJfNYCiPfOIwODWUYj9OwTGa4zHzqSeISpysz+3kBwf2xCICPaE/aJDzPmugoefNtxKRbH8+0cBUzhlUpfMj6zplX+YxecIvN/IyZZQqEwdK5hJJrPmJWhx+A7Vn9RX1Ln+Fx6BngqNlLdOkfb/rx+1BW5jCFZAXEG4jPFWt1DTlBC62CKiFXK2xCA7ySm4TWCm5iWrSvfxMVjuHibOu/jY21Ef3GMwh6ZutPnYCLwsjDPdQG/Wn4I+JYwmRYn8i/+3gLc3clzAdVbsooyJJIEfoJdUevhP5K42XYNGmYX1t45KVr0+2YVtjyx1P3+mtSrDQxBt19BWyXgHT6ECgJATV9eUfAswiBspUx3Fr7BmvkRJKxRmWc3W+b02nMYqDnFoXov8ko37A8tsjg0/+jUVJjO+KK/XZ2npngTxS9yJ6MOeTlBLk/ri5e0Ai824/CQlAq7l99MYhHUEnyytG2JIk=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MI3PR04MB12438.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(1800799024)(23010399003)(19092799006)(366016)(10067099003)(56012099006)(4143699003)(11063799006)(261021123027099003)(261026121527099003)(261021121427099003)(261102123227099003)(261009223027099003)(6133799003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?kfi6JjDoFk4/krbth9kXdAxhCkcTMDiKDecSacFRBoSiWj8jrBdN/A5vaJPb?=
- =?us-ascii?Q?Du5HfeCf4Ah3zI8WLzaYMUcj5Zc38W3Owv1L93DIC5ErqsE064b3Cguoph3+?=
- =?us-ascii?Q?tOST5Xo8BGGPiGVheNYJjlEXYBRSb6UULalmV9PEuNTofjR8lZOBztCukgV2?=
- =?us-ascii?Q?CXwqeHYxzu3v0jA/gq6iBfvNxtjJSKaLazteKweOoKRpwYEQS4nFtn3q6CmQ?=
- =?us-ascii?Q?M9WU6PAzFyTrdldOWghCgB6yHROnvRzzHZpXuZb3vvSU0FDeet3q1+jBLdLk?=
- =?us-ascii?Q?8Dqh0Jz8Gfi8s+8qJ+Q8D4e+xOqWtkNhghsS1uGV6DEUMj1T1rchVtt7kETa?=
- =?us-ascii?Q?xhlP+VmZQU82vrdHJ+Sw9aDmik6nJoxAfiAvWEKsR2jh1JxAXTqi6v2wIzKz?=
- =?us-ascii?Q?zGtVFHa/HOOZz31uiv8zlF5M5pSwQqju0TR9QADDcHdSD3rh8pfoHRWDZ3Tc?=
- =?us-ascii?Q?X2+OHmwezw5JXGs1KZsBiDsqv2+23KCF1VJuZgWKOZe0Fpjbp4DRTtz91U9M?=
- =?us-ascii?Q?OgZF/rWTuAtPiHMs2lOeEi7axd1pO++zStYaw0hVXCLkSnzdFOO4aq2J+R2W?=
- =?us-ascii?Q?I5JMNvpdgyGy1xzEyt6FQ7Swc9SbAtoaIahTUPaoSgVR1FDK9a3fpd3Eg8Q6?=
- =?us-ascii?Q?ptcukv/bSQbNQTQHK9vavGVy1YSzAOVXzlW4Cf9yZKkVxYeunRu6EqTTgELG?=
- =?us-ascii?Q?tV77VL7aDh1IuYk1u/BJmMTCAK+Q4LT08p+FD/Rm61/Zb3uYpjTWZ3yv6Iyf?=
- =?us-ascii?Q?WxxHVSf/38WRQHdfkoVNL0m+WKBGQu334IB9UX8dxUtwrp4fbQQqujoosMh7?=
- =?us-ascii?Q?aG/Nxfh7ZkRfHiCajnVkwCM///6WJAgGQy2C4nduRPe3fYsQ5Ns7oQ7xmtAF?=
- =?us-ascii?Q?AhXq7A22NaHS8DJV9ekZrX5342BnF2JBjkcPvKek19mJHwarMUJghLnBzZUg?=
- =?us-ascii?Q?GZxC89ZpD+RaMT5wnnwjAbzoqJ0XXibo5zFjo0G3lyzIYO/Seje4UCXrtoP0?=
- =?us-ascii?Q?Ic4M94cM4uD+0BnBXCuItIJ+o8X9ZZwBbQ5NUZZomqIPpDXaaFPL6VsKCBBH?=
- =?us-ascii?Q?w7tISCeUhvP2dJCR+dn94FUX10IbUtka3cUJHlhfsO6JIFVY1DXh2DnX03Cl?=
- =?us-ascii?Q?azJrckOJx30QL8KCeT+cqtjxsnQtZZdx3nedM6v5JgV+ImkxjJUYAcEwr5HF?=
- =?us-ascii?Q?x4RYnOgUjKsWCqtEdZ98CPFktX9tJ5UKBamscG6oS5Pd9UwZdEqKfWwSaObv?=
- =?us-ascii?Q?SrGVkPyKqOQ7bVvcVp2fNfqJJTvbNeTxFr72wtPxTFzG9FbhsaRLSEhS1owd?=
- =?us-ascii?Q?p/beOW5I8CwCrA6K3R/7GgKbH3krEOF68QsIlKhBLqREi/NPGHkT+ZqzHdSD?=
- =?us-ascii?Q?WWe+0zH1BSDIiSMbdxPTeW2judn27IBzkqN+GKIM58nfeIMsFDZGSKj2Ms2E?=
- =?us-ascii?Q?U9BtzFWXMcQ8rhdxAyGGLD+/EFJU2F5OzCuR+Wblz7AAl0/8ZpTXTFpqbxhO?=
- =?us-ascii?Q?M+XdkznVmwXtP/WfYDumbNaCWBCnTcIBLUe6JCkktW7n7bkf+O0hsSsgkYc/?=
- =?us-ascii?Q?fo1MlYNP0o3We4AHrMi//BqfORcBKkv3fhWO8EbJsoRv5ZTjopNzT/mxgR0+?=
- =?us-ascii?Q?EROLXC5LObTxHcNk/wyNbhEIU5/aPTYBKMIBEsldX1O94O9FfXeN2uNbuqtY?=
- =?us-ascii?Q?mrlTpZh0IQqbXn1d70OaOvFqkLvngE+/KWam/AbeewnIvG4fi5R0ZU8jzc/8?=
- =?us-ascii?Q?g6s2+aCXpiL8KrFiPXnn7DhyhnMUnVtvYzY7n2FsBZeWxl6dUK8K?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: add0bb39-de93-4fbd-ef2c-08df4b0ffff5
-X-MS-Exchange-CrossTenant-AuthSource: MI3PR04MB12438.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Nov 2026 16:20:20.3176
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: NdEqgVubr9Bbaz9wU5WZmWVNeYUkvFltk4KRungNXf0rcS6Gwi8FvxRghx4LumZOUyi0cE9THtjtBbS0CqmrEP/ugUO4mDu3vlJ2+o2FFOy5eAjkhZYQy7oIULy+hCZ8
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB11061
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261125_082037_059659_FBECBDDF 
-X-CRM114-Status: GOOD (  15.97  )
-X-Spam-Score: 0.0 (/)
+References: <20261106230746.21954-1-wahrenst@gmx.net> <20261106230746.21954-4-wahrenst@gmx.net>
+In-Reply-To: <20261106230746.21954-4-wahrenst@gmx.net>
+From: Linus Walleij <linusw@kernel.org>
+Date: Wed, 25 Nov 2026 19:12:35 +0100
+X-Gmail-Original-Message-ID: <CAD++jLn3Se-NzQDMatXN__8+xFQUjVr2DJbigjFfy=PE20266w@mail.gmail.com>
+X-Gm-Features: Aa3M54rzEawPDtXAOeD0tX6yiM-y94vFsxRv9P0IIXZxjhuCad4qET9fZgXDR1Y
+Message-ID: <CAD++jLn3Se-NzQDMatXN__8+xFQUjVr2DJbigjFfy=PE20266w@mail.gmail.com>
+Subject: Re: [PATCH 3/5] dt-bindings: gpio: mxs: Allow gpio-line-names to be set
+To: Stefan Wahren <wahrenst@gmx.net>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, Frank Li <Frank.Li@nxp.com>, 
+	Vinod Koul <vkoul@kernel.org>, Marc Kleine-Budde <mkl@pengutronix.de>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Vincent Mailhol <mailhol@kernel.org>, 
+	Sascha Hauer <s.hauer@pengutronix.de>, kernel@pengutronix.de, 
+	Fabio Estevam <festevam@gmail.com>, Manivannan Sadhasivam <mani@kernel.org>, devicetree@vger.kernel.org, 
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	linux-gpio@vger.kernel.org, linux-can@vger.kernel.org, 
+	linux-phy@lists.infradead.org
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -166,64 +82,21 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Wed, Nov 25, 2026 at 10:33:45AM +0100, Jan Petrous via B4 Relay wrote:
-> From: "Jan Petrous (OSS)" <jan.petrous@oss.nxp.com>
->
-> The SerDes binding describes a link with one phys entry per lane,
-> <lane PHY_TYPE_PCIE 0 0>. Allow up to two entries on the root port, and
-> make the example reference lane 0 that way.
->
-> Signed-off-by: Jan Petrous (OSS) <jan.petrous@oss.nxp.com>
-> ---
->  Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml | 6 ++++--
->  1 file changed, 4 insertions(+), 2 deletions(-)
->
-> diff --git a/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml b/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
-> index 66a050028278..b90d169f57ed 100644
-> --- a/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
-> +++ b/Documentation/devicetree/bindings/pci/nxp,s32g-pcie.yaml
-> @@ -57,7 +57,9 @@ properties:
->          maxItems: 1
->
->        phys:
-> -        maxItems: 1
-> +        minItems: 1
-> +        maxItems: 2
-> +        description: One entry per SerDes lane of the link.
-
-Needn't such description, that's native means for phys.
-
-Frank
->
->      required:
->        - reg
-> @@ -124,7 +126,7 @@ examples:
->                  ranges;
->
->                  device_type = "pci";
-> -                phys = <&serdes0 PHY_TYPE_PCIE 0 0>;
-> +                phys = <&serdes0 0 PHY_TYPE_PCIE 0 0>;
->              };
->          };
->      };
->
-> --
-> 2.55.0
->
->
->
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gU2F0LCBOb3YgNywgMjAyNiBhdCAxMjowOOKAr0FNIFN0ZWZhbiBXYWhyZW4gPHdhaHJlbnN0
+QGdteC5uZXQ+IHdyb3RlOgoKPiBEZXNjcmliZSBjb21tb24gImdwaW8tbGluZS1uYW1lcyIgcHJv
+cGVydHkgdG8gYWxsb3cgRFRzIHRvCj4gc3BlY2lmeSBuYW1lcyBmb3IgR1BJTyBsaW5lcy4KPgo+
+IFNpZ25lZC1vZmYtYnk6IFN0ZWZhbiBXYWhyZW4gPHdhaHJlbnN0QGdteC5uZXQ+CgpSZXZpZXdl
+ZC1ieTogTGludXMgV2FsbGVpaiA8bGludXN3QGtlcm5lbC5vcmc+CgpZb3VycywKTGludXMgV2Fs
+bGVpagoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+cGh5Cg==
