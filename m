@@ -2,90 +2,134 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id CBCF1606A326
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 06:30:39 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 4A462606A32E
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 08:15:39 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=1MSuRZ8W;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=pXDTTIPR
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=azVwhmuQ;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=amRkfW6m
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=AscL086tIL7JwW9iQmXFQ4maXtnBp/JFC7xsJL1ym6s=; b=1MSuRZ8WKGcTKB1TzYfoDMRlPM
-	cMP6pZ1+RQcoDexB1G9K7ENfHVkJ8JJeQos7tyMAVUzHUk5HUO0UOlFx6ZAbTuZ606p/snabSwDX8
-	rONKrv4PT7sBk5YEUwpWgpxZ8osOld1WW8aw3jjmeaTg5Zk/6untRON0htZRZ9NjkjE5fUFDR9X9f
-	7hCj05yuwq2n4BUiZNWlYW2Gv5GhbkcvnDP16lLxY9ZJ7RbAb3g5Vy8/5SbJnGg+OI8hqRGUqI5wi
-	R75HTpBEncOFEr3yuZMMB6+wsRSkEr4XnUB3eOL5X1cMWwWAVHU1ujkn7E1lO8aNZPVGQgRwR+i1f
-	aZHnCFdA==;
+	bh=IgY3uKVkj2hg7iZrnMYG74WIBJ3+rwG7BINHss4Vw4k=; b=azVwhmuQmvp9gh0P0N/yxC9JA1
+	4woVxOknEh+rJJRtx22UHiuGyP8QXcthFmjh2Z9yAOusJNf197/X9BxdCDtoAB8tsjrYp6hs2gbhl
+	9qBEqKEkAVXYEU2LjbcVxgYFoBqgm/BH7BfGIGAqXD+mOFsebgiv0/unmSkXxy6NyTUCBE7MkiiA/
+	fP7FANvEyhhmMkHM+d/F1rK8qHFfku+aaLYf2YOwdYkaQZ1HP08Bhf1XYSjR1+Q2yHOVUsqqAyc4L
+	1+CFO5Vw/b2ZnzDKKJkle6TqVNhjd5FIoCbJqvvoXvCdXmVlMATBq7dkI0iwOkICxm0EOvgJarXCJ
+	/s/fDIJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xW6Wd-00000008ghL-29Vg;
-	Wed, 25 Nov 2026 06:30:39 +0000
-Received: from watt.d-silva.org ([119.15.109.137] helo=www.nmnhosting.com)
+	id 1xW8AB-000000091Jm-15LK;
+	Wed, 25 Nov 2026 08:15:36 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xW6WX-00000008gck-3eQY;
-	Wed, 25 Nov 2026 06:30:35 +0000
-Received: from Hawking.lan (hawking.lan [10.0.1.4])
-	by www.nmnhosting.com (Postfix) with ESMTP id AAE8A4C951;
-	Wed, 25 Nov 2026 17:30:24 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=d-silva.org; s=2025a;
-	t=1795588224;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=+Jd9GpNnKuAEXDZRlaw/A4HJ7oebPS5UXTKzQT7tnSw=;
-	b=pXDTTIPReYFx9AL9Bd7ktHuVmFgDB3d218cZmrxtQG6VGpcK9QT741Mqbktcua3l8/FXPv
-	UZOpcjQjKzYChKkqXPLE204ZSlNadlz9ZetzY/VaPNGsJUexhOoaB2++r9ZQFkWQVB5eDC
-	BPfWGUgd1fprwXpO61xpyvOKLW7CstcW0iaTv75ipaCX27XnTSYyyG57W7POHz4/eUvTDA
-	tnrFby/SjutnTmbYjYKOiBe7n82EH+OjD3rTNTBTIwWuVOgj1jnjQuMhEp53tWdo3e8Wbs
-	r5f1peoT28tzk3Il0jw49/Cj0893XFSdlyYU+H/aAlzYkY9kE6BOPqczzmjYOQ==
-X-GPT-Reason: This is a legitimate technical communication (patch
-	submission) regarding Linux kernel or hardware driver development.
-	The content is highly specific to technical engineering (PCIe,
-	PHY nodes, DMA ranges) and aligns perfectly with the sender identity
-	(alastair@d-silva.org) and the recipient's known personal domain
-	(alastair@d-silva.org). No marketing, phishing, or scam indicators
-	are present, and the technical nature of the body matches the expected
-	activity for these specific users.
-From: Alastair D'Silva <alastair@d-silva.org>
-To: Lee Jones <lee@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof Wilczynski <kwilczynski@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Chen-Yu Tsai <wens@kernel.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>
-Cc: mfd@lists.linux.dev,
-	devicetree@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-sunxi@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Enzo Adriano <enzo.adriano.code@gmail.com>,
-	Junhui Liu <junhui.liu@pigmoral.tech>
-Subject: [PATCH 5/5] arm64: dts: allwinner: sun60i-a733: Add PCIe and Combo PHY nodes
-Date: Wed, 25 Nov 2026 17:29:48 +1100
-Message-ID: <20261125062948.1234677-6-alastair@d-silva.org>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20261125062948.1234677-1-alastair@d-silva.org>
-References: <20261125062948.1234677-1-alastair@d-silva.org>
+	id 1xW89Y-0000000913Z-3U6J
+	for linux-phy@lists.infradead.org;
+	Wed, 25 Nov 2026 08:14:59 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-4bb69f5b161so35337175e9.0
+        for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 00:14:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1795594495; x=1796199295; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:organization
+         :autocrypt:content-language:references:cc:to:subject:reply-to:from
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=Rc4aqCyzYBjWOigmv1O5fiE2Ptnz+1fYVaVELpdQ2fQ=;
+        b=amRkfW6mBhHowcM1XSnCqpAiOuudZRpQEOtJQ/e13mrKu8Ijl1dp7fqAL+5OyJ0fm0
+         +Cp554gxiryPNUX33Ac202vcuit8OSifP7VxdJGipAjnfam6H7pyggtaZ2tW05pk54XZ
+         5XesgzkIBNmC2V1PhqYXaPVZb2Xah1f42avHZRZLGaYLp47WuR61IwzrCt4bABlinCa4
+         lRfnqc/sDtvS9PQ7RhRF1NeiyDVnyiSi1SEdtqMpnr/sC6m2e85N2z33TKAtj2vV2SV/
+         aHs5azNfS7OhQ6burN6SOC9VN6Fsg65Fj/2OE3dfGEt3oTmr/FrFIkDAEFeoqh574Zqs
+         LVNw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795594495; x=1796199295;
+        h=content-transfer-encoding:content-type:in-reply-to:organization
+         :autocrypt:content-language:references:cc:to:subject:reply-to:from
+         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=Rc4aqCyzYBjWOigmv1O5fiE2Ptnz+1fYVaVELpdQ2fQ=;
+        b=dAwUG+JKTqfCpgyDsGfwvyWR2K4f5DxVIwyhZwSFLHad56wTC1CvntGAecXrLNyNGR
+         +ozw6GRXfEORwyazH0PYXbGEigsFGu4XPaRwSm0kmlkUst/9+jNY7GAy6RBuXdBLIgHz
+         EwfdR0WfZRuqJyVgc1NSdvNxicyhRZvkJls2XeZslNz/HJ2JuqL42GogZRNutSTLivQh
+         uKb0stMOBqf5JSm+Z8eUIqJNrsju+Hb95biuXzlS00EG3KSiaR0A0QkUIR1EWiprjaIY
+         oj5PjcWkRdQd/dxGOM/dwgN1v2ioQ9BJKnFapGrcLzYnHw/bwvzujcDgX/6sT95prA0A
+         3YSg==
+X-Forwarded-Encrypted: i=1; AL+hErGtWAmBUedNmHK2bjBShbW9ubq4LTu+IT2e1c9DnJGE1hBmNbN28szTTaZf/h+xji/Q2oyUDb40qE4=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/+RvkmI3vkXzw9jx8mdUSUe2z2h5X1eSoiEsW48lOJS9l0KCCS
+	xEtVOzI1T6jIiVcw3bddznU27iB4jn3NuTYPFWcq1cdlpV0o1aynW2QlX2A5yk7VeHiLxL+28xr
+	zoiUbtiU1hA==
+X-Gm-Gg: AZFdTZcxZCeX8XaIDijlII4OSWIjyj4AGwPHv9/kIVtefHWyi7N1rBAG6N5eVUqhkm1
+	gC693GeG9yo9HunsDWLXHQ2HH2f4H+ERp7LmqsgZt7p7RhR/NDq/sCiYxdJox28h8QyWFxuYN1h
+	L6NsZNzjNeJ4MsoRfKymZMRN2Mu4K2wsTlJgOETfcDJC9szr7ZGdsWUF6uzTmVnI0dGUdCVDogZ
+	td9JGWyQrMEmYevgYdhN/TwRrb41sQyc/4tZB7II7IowROz/ytvgYbfbOs6zRRXzVR0eAutG5GK
+	JppLvEWWGPmaKIMwvpRKHy9WfvLL7jf8tEx8qbFHof0ClVjdgYvGYsWgC6xsL5TDFW15mrrMJvj
+	cIx9qRKr9VJ+gSqHiWbJN7SUcxF7FGQTFaYx4/6KYEdyGs0uYidXAPcUMSg/0D7f0Fsr3R1vS6H
+	nvwK7mCxHUA3Or41eO9pTz4K5Eh14UjAoAmfIiV/YCwe1LmWdhAW7/0ZeISoUsCTLKer3Nf+i6y
+	h+Z6cDmT+yKMOeUDodO9lAzFGhi3ijPsluOv1LO0v35tcYrXjrfxNL4/WQpJRgKSjcKj+ECAaIh
+	6RTjs1IsYdIIPnNTqPLQ//EYIXeW2A1juCzDJB/zQT0395rpSEFvfa622E/fE9GoJlcKRSIzcOl
+	8Pb8V6E/C
+X-Received: by 2002:a05:600c:1548:b0:4a1:e00b:a10b with SMTP id 5b1f17b1804b1-4bb88800020mr372318965e9.7.1795594494562;
+        Wed, 25 Nov 2026 00:14:54 -0800 (PST)
+Received: from ?IPV6:2a01:e0a:106d:1080:f368:ae2e:e717:e970? ([2a01:e0a:106d:1080:f368:ae2e:e717:e970])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bba3d3679bsm26993885e9.2.2026.11.25.00.14.53
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 25 Nov 2026 00:14:54 -0800 (PST)
+Message-ID: <6e408f48-17ca-4927-ae09-c4153e294371@linaro.org>
+Date: Wed, 25 Nov 2026 09:14:53 +0100
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v4 00/11] phy/drm: amlogic: Extract Meson HDMI TX PHY into
+ a dedicated driver
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel-dev@aliel.fr
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
+ Jerome Brunet <jbrunet@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Ulf Hansson <ulfh@kernel.org>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-pm@vger.kernel.org
+References: <20261123-meson-drm-create-hdmitx-phy-v4-0-3fb94f5534ca@aliel.fr>
+ <CAFBinCD822UPQrrd_8ZbVRUVCVJ-3pGN69vbZBxUE+0yeMcysg@mail.gmail.com>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <CAFBinCD822UPQrrd_8ZbVRUVCVJ-3pGN69vbZBxUE+0yeMcysg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261124_223034_252586_D0FE8E86 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20261125_001456_925183_AAAC80C9 
+X-CRM114-Status: GOOD (  18.55  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,134 +140,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add SerDes syscon, Cadence Combo PHY, and DesignWare PCIe Root Complex
-nodes to sun60i-a733.dtsi.
-
-Place pcie@6000000 at the root node because soc@0 uses 1-cell addresses
-and a 1 GB ranges window, whereas pcie@6000000 requires 64-bit
-dma-ranges. Use the DWC integrated MSI receiver (msi IRQ) while GICv3
-ITS remains disabled.
-
-Assisted-by: LLM
-Signed-off-by: Alastair D'Silva <alastair@d-silva.org>
----
- .../arm64/boot/dts/allwinner/sun60i-a733.dtsi | 76 +++++++++++++++++++
- 1 file changed, 76 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/allwinner/sun60i-a733.dtsi b/arch/arm64/boot/dts/allwinner/sun60i-a733.dtsi
-index b0f642f37803a..64bab9e90b72b 100644
---- a/arch/arm64/boot/dts/allwinner/sun60i-a733.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun60i-a733.dtsi
-@@ -4,6 +4,8 @@
- #include <dt-bindings/clock/allwinner,sun60i-a733-ccu.h>
- #include <dt-bindings/clock/allwinner,sun60i-a733-r-ccu.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
-+#include <dt-bindings/phy/phy.h>
-+#include <dt-bindings/power/allwinner,sun60i-a733-pck-600.h>
- #include <dt-bindings/reset/allwinner,sun60i-a733-ccu.h>
- #include <dt-bindings/reset/allwinner,sun60i-a733-r-ccu.h>
- 
-@@ -539,6 +541,30 @@ mmc2: mmc@4022000 {
- 			status = "disabled";
- 		};
- 
-+		serdes: syscon@6c00000 {
-+			compatible = "allwinner,sun60i-a733-serdes-syscon",
-+				     "syscon";
-+			reg = <0x06c00000 0x8000>;
-+		};
-+
-+		combophy1: phy@6ca0000 {
-+			compatible = "allwinner,sun60i-a733-combophy1";
-+			reg = <0x06ca0000 0x20000>;
-+			clocks = <&ccu CLK_SERDES_PHY>,
-+				 <&ccu CLK_AHB_SERDES>,
-+				 <&ccu CLK_MBUS_SERDES>,
-+				 <&rtc CLK_HOSC_SERDES1>;
-+			clock-names = "serdes", "ahb", "mbus", "ref";
-+			assigned-clocks = <&ccu CLK_SERDES_PHY>;
-+			assigned-clock-parents = <&ccu CLK_PLL_PERIPH0_600M>;
-+			assigned-clock-rates = <100000000>;
-+			resets = <&ccu RST_BUS_SERDES>;
-+			power-domains = <&pck600 PD_PCIE>;
-+			#phy-cells = <1>;
-+			allwinner,serdes-syscon = <&serdes>;
-+			status = "disabled";
-+		};
-+
- 		r_ccu: clock-controller@7010000 {
- 			compatible = "allwinner,sun60i-a733-r-ccu";
- 			reg = <0x07010000 0x250>;
-@@ -654,4 +680,54 @@ rtc: rtc@7090000 {
- 			#clock-cells = <1>;
- 		};
- 	};
-+
-+	pcie: pcie@6000000 {
-+		compatible = "allwinner,sun60i-a733-pcie";
-+		reg = <0x0 0x06000000 0x0 0x00010000>,
-+		      <0x0 0x06300000 0x0 0x00100000>,
-+		      <0x0 0x06400000 0x0 0x00080000>,
-+		      <0x0 0x20000000 0x0 0x01000000>;
-+		reg-names = "dbi", "atu", "app", "config";
-+		#address-cells = <3>;
-+		#size-cells = <2>;
-+		bus-range = <0x00 0xff>;
-+		device_type = "pci";
-+		ranges = <0x81000000 0x0 0x21000000 0x0 0x21000000 0x0 0x00010000>,
-+			 <0x82000000 0x0 0x22000000 0x0 0x22000000 0x0 0x06000000>;
-+		dma-ranges = <0x03000000 0x0 0x40000000 0x0 0x40000000 0x3 0xc0000000>;
-+		clocks = <&ccu CLK_PCIE_AUX>,
-+			 <&ccu CLK_PCIE_AXI_SLV>,
-+			 <&ccu CLK_BUS_ITS_PCIE0_ACLK>;
-+		clock-names = "aux", "slv", "mstr";
-+		assigned-clocks = <&ccu CLK_PCIE_AXI_SLV>;
-+		assigned-clock-parents = <&ccu CLK_PLL_PERIPH0_400M>;
-+		assigned-clock-rates = <400000000>;
-+		resets = <&ccu RST_BUS_PCIE>,
-+			 <&ccu RST_BUS_PCIE_PWRUP>,
-+			 <&ccu RST_BUS_ITS_PCIE0>;
-+		reset-names = "core", "pwr", "mstr";
-+		interrupts = <GIC_SPI 152 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 153 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "app", "msi";
-+		#interrupt-cells = <1>;
-+		interrupt-map-mask = <0 0 0 7>;
-+		interrupt-map = <0 0 0 1 &pcie_intc 0>,
-+				<0 0 0 2 &pcie_intc 1>,
-+				<0 0 0 3 &pcie_intc 2>,
-+				<0 0 0 4 &pcie_intc 3>;
-+		max-link-speed = <3>;
-+		num-lanes = <1>;
-+		linux,pci-domain = <0>;
-+		phys = <&combophy1 PHY_TYPE_PCIE>;
-+		phy-names = "pcie0";
-+		power-domains = <&pck600 PD_PCIE>;
-+		allwinner,serdes-syscon = <&serdes>;
-+		status = "disabled";
-+
-+		pcie_intc: legacy-interrupt-controller {
-+			interrupt-controller;
-+			#address-cells = <0>;
-+			#interrupt-cells = <1>;
-+		};
-+	};
- };
--- 
-2.53.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTEvMjQvMjYgMjM6MDUsIE1hcnRpbiBCbHVtZW5zdGluZ2wgd3JvdGU6Cj4gSGkgUm9uYWxk
+LCBIaSBOZWlsLAo+IAo+IGZpcnN0IG9mIGFsbDogdGhhbmtzIFJvbmFsZCBmb3IgcGlja2luZyB0
+aGlzIHVwIQo+IEkgbGlrZSB0aGUgb3ZlcmFsbCBhcHByb2FjaC4gQmVmb3JlIEkgZGl2ZSBkZWVw
+IGludG8gdGhpcyBzZXJpZXMgSQo+IHdpbGwgZmluaXNoIHRoZSBjb2RlLXJldmlldyBvZiBWYWxl
+cmlvJ3MgQVVESU4gc2VyaWVzLgo+IAo+IFR3byBxdWljayBub3RlcyBiZWxvdy4KPiAKPiBPbiBN
+b24sIE5vdiAyMywgMjAyNiBhdCA4OjM44oCvUE0gUm9uYWxkIENsYXZlYXUgdmlhIEI0IFJlbGF5
+Cj4gPGRldm51bGwrbGludXgta2VybmVsLWRldi5hbGllbC5mckBrZXJuZWwub3JnPiB3cm90ZToK
+PiBbLi4uXQo+PiBPdmVydmlldyBvZiB0aGUgc2VyaWVzOgo+PiAtIFBhdGNoZXMgMS0zOiBGaXgg
+Y29tcGF0aWJsZSBtYXRjaGluZyBpbiBtZXNvbi1neC1oaGktc3lzY3RybCBiaW5kaW5ncywKPj4g
+ICAgYWRkIHRoZSBuZXcgYW1sb2dpYyxtZXNvbi1oZG1pLXR4LXBoeSBEVCBzY2hlbWEsIGFuZCBh
+bGxvdyB0aGUKPj4gICAgImhkbWktcGh5IiBjaGlsZCBub2RlIHVuZGVyIHRoZSBISEkgc3lzY29u
+Lgo+IEl0J3MgYmVlbiBhIGxvbmcgdGltZSwgYnV0IEkgdGhpbmsgd2UndmUgYmVlbiBhc2tlZCBi
+eSB0aGUgZGV2aWNldHJlZQo+IG1haW50YWluZXJzIHRvIGhhdmUgcmVnIHByb3BlcnRpZXMgZm9y
+IHRoZSBub2RlcyB3aXRoaW4gJmhoaQo+IEJ1dCBJIGNhbid0IGZpbmQgdGhlIG1lc3NhZ2UgYXQg
+dGhlIG1vbWVudC4KClRoZSBoaGkgc3lzY29uIG5vZGVzIGRvZXNuJ3QgaGF2ZSAjW2FkZHJlc3N8
+c2l6ZV0tY2VsbHMgYW5kIHNvIGZhciBpdAp3YXNuJ3QgcmVxdWlyZWQsIGxldCdzIHdhaXQgZm9y
+IGEgcmV2aWV3IGZyb20gRFQgbWFpbnRhaW5lcnMsIEknbSBmaW5lCndpdGggdGhlIGN1cnJlbnQg
+ZGVzaWduCgo+IAo+PiAtIFBhdGNoIDQ6IEFkZCB0aGUgbmV3IE1lc29uIEhETUkgVFggUEhZIGRy
+aXZlciBpbXBsZW1lbnRpbmcgdGhlIEhETUkKPj4gICAgUEhZIGNvbmZpZ3VyYXRpb24gb3BzLCBh
+bG9uZyB3aXRoIHRoZSB0ZW1wb3JhcnkgbGVnYWN5IGNyZWF0aW9uCj4+ICAgIGhlbHBlci4KPiBB
+dCBxdWljayBnbGFuY2UgeW91ciBQSFkgYXBwcm9hY2ggd291bGQgYWxzbyBmaXQgcGh5LW1lc29u
+OC1oZG1pLXR4LmMKPiBUaGVyZSBzZWVtIHRvIGJlIG1pbm9yIGRpZmZlcmVuY2VzOgo+IC0gdHdv
+IGFkZGl0aW9uYWwgZW5hYmxlIGJpdHMgaW4gSEhJX0hETUlfUEhZX0NOVEwxIG9uIEdYQkIgYW5k
+IG5ld2VyOgo+IEhETUlfRklGT19FTkFCTEU9QklUKDIpIGFuZCAgSERNSV9GSUZPX1dSX0VOQUxC
+RT1CSVQoMykKPiAtIG5ld2VyIFNvQ3Mgc2VlbSB0byBoYXZlIEhISV9IRE1JX1BIWV9DTlRMMy4u
+NQo+IAo+IE1lc29uOC84Yi84bTIgSERNSSBzdXBwb3J0IGlzIG5vdCB1cHN0cmVhbSB5ZXQuIFRo
+YXQncyB3aHkgdGhvc2UgU29DJ3MKPiB3b24ndCBuZWVkIHRoZSBiYWNrd2FyZHMgY29tcGF0aWJp
+bGl0eSBjb2RlLiBTbyBpZiB5b3UgbmVlZCB0byB0d2Vhawo+IHRoZSBkcml2ZXI6IGZlZWwgZnJl
+ZSwgdGhlcmUncyBub3QgbXVjaCB5b3UgY2FuIGJyZWFrIQo+IAo+IAo+IEJlc3QgcmVnYXJkcywK
+PiBNYXJ0aW4KClRoYW5rcywKTmVpbAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
+cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
