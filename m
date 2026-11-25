@@ -2,109 +2,106 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 36813606A68C
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 14:11:02 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 66935606A31E
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 14:17:35 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=C70MVdZL;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=QH0myo3b
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=E4Jon6UH;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.a=rsa-sha256 header.s=google header.b=zNPlWWZO
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=WMAMIi/ESKK2jRpAUBEf7zh+3h54Le8ibdRZ38qpLg4=; b=C70MVdZL9xiwUJ6QRuUZs7YVdV
-	e7gEygmO5L/h5PfsOZSdep4yLnyzbvKNTD4YcL41deOYPtTg94v/C1Ai6ZD+nZqIxyGgv7dDUWeCR
-	EHpcien+F6k08v1LU+VIjDeNGe7kMmSnBLeKSx/dT9ZIkDKoyDN38Hz7X99/VrXpsSI3fs1Aiw6Xh
-	hXfy0c/Bn+UIcR5a65IrWjJuaRaW0U/rMzOIka8d+mS+/khvum8Zy77UXL2zISfSEqlmsQiLaqJQe
-	enUZLw8f486y/bXlYGDX/iZ7fG2NROOtgitNAU5VN9KbBPKAQCw/ItQPyb1EfY5FSyW3REFLvnDjP
-	KDJS/YnA==;
+	bh=+WeqH7l62WvdvBU4AiTTH5+93q1svWqiMbRCteRfWVI=; b=E4Jon6UHfsg985jonjRvUoiff4
+	TS1r0ZJ6R+0qgSGsT/pAiHXq8vfXGt4nk5UGrFiz12n6fElNLNcVoqgZj675sF8OV44uOHxsc6cR0
+	DM/4o6+GNqFueG2fqD9aAgD7hvXX7bkWIXnR7gXq1n6C1tOXds0Q+8ONTEEKrYvx1MoMCI7PVtxoA
+	+8S+66DEY7zvrtcrlRLl9Qe1qmTbxh3PcPgqxEUCfxQlQCuJsTXY4Q5JNxstTn9gahcrD8tntwFi6
+	TA8wMSDt1QZq1uChTe4FwB5u6LMaW/cHcYRfO4M9vn8K8PDaYZzVtafeaBXYJUS3a5jQljynJozRK
+	zBgDnn4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWDi9-0000000A6sA-3xiQ;
-	Wed, 25 Nov 2026 14:11:01 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1xWDoV-0000000A7mY-07DP;
+	Wed, 25 Nov 2026 14:17:35 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWDi0-0000000A6p0-1VLH;
-	Wed, 25 Nov 2026 14:10:52 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 20B4442277;
-	Wed, 25 Nov 2026 14:10:52 +0000 (UTC)
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795615851;
-	b=yHeFakI4lNrUJRN8REC3u7PJy26KtHvSBgVFYCj+iTeSJi226sZgXJNUDi8+A0RAScOK
-	 cBI216Ot8WjXfA1st/bMT1vLL/v/KCTMuxVKrmnpUiaMv0UPc15Q2iZer3d3pyQ1oHSMp
-	 N/B4OwW3PSTqZosggOJDulkKxCOY01kMyo9KwXY7bhyBv6QVzZKqriyjKNCG50AK9W025
-	 H6+2BqeUv9WenCFXCq8NOKeG3VRbWbZcefW/IDHJ8JAYUainLMCcHORPt6kpfl8CVeSJn
-	 QN++PGqahd+tiBCAT7Jk70/Kc0LmdVTzxHloSRiz1PVuDRt8OIbWTaO8kRTPhFsPXOQ==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795615851;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=HrCSAafO6dus44BBGnZLXcb5WHS+G7vh5ACplTtTnV8=;
-	b=eB2Pn3DPDzrdwL7w021rgpaKgT95BrF0W02JphUhmsl7PTYAPpYRD7mWgFAXMQCN+GpZ
-	 h0h/odynrs0G6SFMnp8zbnmKYq8VySs6H+zFc2kJPSm5kFGPAaaI3HXZvT3FsRvdKskPm
-	 0pZt9PT5+Ze8jZYEJCrno5wavtPo6vVtrQ2J+BBZsw2+HYfOAFI0YVHe8lbyeQn+SLwiL
-	 h6aO+cNw0EMKLyADsM/G1RrNDFglYyytwrQ5upBUYpQIJvI5askyWGhrZzMOKWGfVNtW9
-	 hQS6ENW6L4zLcj6o1CSpK1p2CMpVz+2N31cGOzCstd22X+LlGfcvHJd0oivV3PYsSKA==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id 662D11F000C0;
-	Wed, 25 Nov 2026 14:10:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795615851;
-	bh=HrCSAafO6dus44BBGnZLXcb5WHS+G7vh5ACplTtTnV8=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
-	b=QH0myo3bZSSQj1cXqvUZ8J8ylhPDMIVKCUJtetKvjAWVqbvuPywxv473vLZ8XSqvX
-	 kz7+ZxG2aA2yaqhuiNqpQz8ZpBiLRkS+Doi/7lgx9WNSpT32os8dbE4bn6KdJ92TSM
-	 oafdnE0SHgMS3Ze0vrIEsFxu6b/Bit/biQwDFpOIVaHxnWOJcaYGQbP6bNCnY3UPv3
-	 /AU5H/0UGlRHI3dhmNS7Q7cZ9MWZ2rN4j4vluRMxEkhJ4yUDEbiBMuazpl8wslBtNh
-	 JwyEqU6NI5iIp+jpAaflP6B8oUH+T468pptJI2s8RLDX2Ds1Tp2+SQxDIQtZeh1PbN
-	 I1BwyBVdZNwkA==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id DEB554CEE5;
-	Wed, 25 Nov 2026 14:10:38 +0000 (UTC)
-From: Bobek Brzeczyszczykiewicz via B4 Relay <devnull+admin.roadbobek.com@kernel.org>
-Date: Wed, 25 Nov 2026 14:11:16 +0000
-Subject: [PATCH v3 1/3] usb: musb: sunxi: Assert reset before deasserting
- on init
+	id 1xWDoR-0000000A7lH-2Gg4
+	for linux-phy@lists.infradead.org;
+	Wed, 25 Nov 2026 14:17:33 +0000
+Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-5be4b29df8cso444286e87.2
+        for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 06:17:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1795616249; x=1796221049; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:references:cc:to
+         :from:subject:user-agent:mime-version:date:message-id:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=aAjT/juoIc9zz5suBwAKIoZ37zYZ6TKZoBm98/nn904=;
+        b=zNPlWWZOrIO53AkPsnRz60M/ESqXOBSU3VqCuqFqKRDwR3YBcooEMUnRyrvWFQ05C5
+         bEtnSCZwn7EHMM8oxHfHgtF8DM9i9ahvB96ihLB8r0CEQF+BaPoe9mACBXJoyS5jUIoY
+         JYKLSRKSkxYFTkAx+QRZsu4Pz2Rg3opgOP8/uPAIiAARk4IIVZQjesUK4SWQ/Jlvv8C0
+         JuLPEO/LlS7diLO9XPT6PE+POfy1gYKSXHegYsxR6dbBG8Oj+GYP7kjLnX8nhaK/L9AL
+         FsmIHVLGKqNNbrbIwp4flfUuZ6PXMySXn4IUfvMGa0peWBUQ5IaAriGhjGDa2oqt/SW1
+         CJRw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795616249; x=1796221049;
+        h=content-transfer-encoding:content-type:in-reply-to:references:cc:to
+         :from:subject:user-agent:mime-version:date:message-id:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=aAjT/juoIc9zz5suBwAKIoZ37zYZ6TKZoBm98/nn904=;
+        b=dc9l+LBcq0jVGqpyHatTFHOwa9EKKYVuvJJjeVtw87bThRtVw9sHq4UXdOr6zYHAFG
+         zewpeqfInhAhURYUdTgZClxtrZuiiNWPOu8SRqy4X5IExrWXNHVBGe3RNGH0If+1CRn2
+         Y/ql34TP8efMDqvhoC1hYd8y62xZxOVqXIMPAao8RCm0iuImnPlqKGANekjAdrlenMXn
+         31+FqBzAIfFwyKDzEIaOkO/fa0QY7lrafqev2RkQ+n2sGU7ZykNVleOnrNxkPb8RfAT6
+         UivAp7HTiezMNcL/pAJLF6i6soi8yWaUe48X0tYH3xga8OCa89Ccqrf44DnusuH3YPpC
+         20jQ==
+X-Forwarded-Encrypted: i=1; AL+hErG5P3Zo8DG400KwkGzLv06sKF1a0NruuCdlTE6PRe1CEwaSTg1KTX56Sq8mMzgTJmIb0WMZZuW55XU=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+JmJMDVBzeFKin6IlnYhFXa+G3ckStlXWg78WBcEGHWMQ1UOIh
+	TIPSiY5TvE3XX4r46ALZfLMSoFRrTsOaSvHNNYX80rjPfUZautX49v+bWAcru02PCIA=
+X-Gm-Gg: AZFdTZc3XnktYytMcT2YH2O+od4IHBral/Q0BiXhWQHGAw8xtebR4oB/z4A/ZrJ9ALb
+	zfQW0iqpMrpFdWaXM9mOGIUiXmrr2f96zXEpPiaPxP4u8KAAkbYtKEcqYLkGbx41rJALtydHQWN
+	r8wcP0PGJnqxgfCksO97ILV3CPHtQ6mIV4+mS6XXrDotvxzk7rLaJJDnMbf5G6SQAq2kIJGZ6lf
+	mBMRyi+cIBjBXCObCOaM8J2iWVz86sWV/0l9bYOqNyMZyzfunaG3HSEpGTDATKzIPTCZCRtnUP5
+	jgPE62BF5NYwu/5uI6VT7YTu/i8lFn73+Ic0Y/UaqAjapdarAxIIoxXbes2J2qbMFybDksYkSrU
+	bMXUmM0DpHwwodebiLCxTdEwT7ND+tisyzadSOg3U5agE/IXmZCUNxydneigEseuEbULTHJXm47
+	yu1u+BtKJubVjx0yC3HKNXfUjTjVEHpZWJVlLd/PBNzdmv0eojy0/EKObmvsstH8Xg+pmxzbUBa
+	KfZkrz1ayYzYk9ICBu78bsQwVPmKnSCaJu9ubK4+clCVrbJF397lnrjY8iFuh3wpM6dgI7IlVZJ
+	WBHuQVwEj8QJ08v2DjaGT+PHS0OK164NiRTYRFpLdp64J7oHpygOQ6OTCR0jmp20eHABcx4pNNc
+	jDBAIsdA=
+X-Received: by 2002:a05:6512:6c3:b0:5c1:4a47:b86b with SMTP id 2adb3069b0e04-5c1bc785b7amr6120129e87.3.1795616249240;
+        Wed, 25 Nov 2026 06:17:29 -0800 (PST)
+Received: from [192.168.1.101] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5c1bcff993csm4633339e87.23.2026.11.25.06.17.27
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 25 Nov 2026 06:17:28 -0800 (PST)
+Message-ID: <a1b367f1-a65b-437c-a9b7-92b29750597b@linaro.org>
+Date: Wed, 25 Nov 2026 16:17:27 +0200
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261125-usb-sunxi-reset-fix-v3-1-855c43694f78@roadbobek.com>
-References: <20261125-usb-sunxi-reset-fix-v3-0-855c43694f78@roadbobek.com>
-In-Reply-To: <20261125-usb-sunxi-reset-fix-v3-0-855c43694f78@roadbobek.com>
-To: Bin Liu <b-liu@ti.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Chen-Yu Tsai <wens@kernel.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
- Samuel Holland <samuel@sholland.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, Felipe Balbi <balbi@ti.com>, 
- Hans de Goede <hansg@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Maxime Ripard <mripard@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Andre Przywara <andre.przywara@arm.com>
-Cc: linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
- linux-phy@lists.infradead.org, 
- Bobek Brzeczyszczykiewicz <admin@roadbobek.com>
-X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795615875; l=2056;
- i=admin@roadbobek.com; s=20261117; h=from:subject:message-id;
- bh=BfwiIA8DPFLjrKHd+uc0+ny4D9EEZZGuYRY4n5xJgys=;
- b=23OZSHKC/W9VS4tNc4oVQXriibYqOwlrtmBlzKCQHLQ/x2sQ6/ARLPId4WgXLFn4PWU0NiqXa
- 5AUkEvvqT2QCSgpIPYT27psuM5pCH2Y2sIDDMELQopLyf0TSXjDJ+8T
-X-Developer-Key: i=admin@roadbobek.com; a=ed25519;
- pk=TcWSTwITMylwCZLYbw80sv2LQx1zButqiT90TFVvhas=
-X-Endpoint-Received: by B4 Relay for admin@roadbobek.com/20261117 with
- auth_id=1548
-X-Original-From: Bobek Brzeczyszczykiewicz <admin@roadbobek.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 3/3] media: qcom: camss: Add Glymur compatible
+From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+To: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>,
+ Bryan O'Donoghue <bod@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ Loic Poulain <loic.poulain@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Suresh Vankadara <svankada@qti.qualcomm.com>,
+ Vikram Sharma <vikram.sharma@oss.qualcomm.com>
+References: <20260925-glymur_camss-v4-0-d7c2983d6d7b@oss.qualcomm.com>
+ <20260925-glymur_camss-v4-3-d7c2983d6d7b@oss.qualcomm.com>
+ <a2010032-8750-4289-b443-3afb57d656e6@linaro.org>
+In-Reply-To: <a2010032-8750-4289-b443-3afb57d656e6@linaro.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261125_061731_703480_41B177FC 
+X-CRM114-Status: GOOD (  18.33  )
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,78 +111,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: admin@roadbobek.com
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
 	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Bobek Brzeczyszczykiewicz <admin@roadbobek.com>
+Hi Nihal.
 
-When a bootloader such as U-Boot (for example with
-CONFIG_USB_MUSB_HOST=y) initializes MUSB and boots Linux without
-stopping USB first, the controller reset line is already deasserted at
-probe time.
+On 11/25/26 15:28, Vladimir Zapolskiy wrote:
+> Hi Nihal.
+> 
+> On 9/25/26 08:48, Nihal Kumar Gupta wrote:
+>> Glymur's camera subsystem hardware is a functional subset of X1E80100.
+>> TPG, CSID, VFE, CSID wrapper and ICC resources are shared; Glymur has
+>> three CSIPHY instances versus X1E80100's four.
+>>
+>> qcom,x1e80100-camss is not used as a fallback compatible since it is
+>> already claimed by its own binding schema, causing a duplicate
+>> compatible warning in the DT schema checker.
+> 
+> This sounds like the DT binding documentation shall be fixed instead.
+> 
+> It makes no sense to add a large number of new compatibles to the driver
+> code.
+> 
 
-In that case reset_control_deassert() in sunxi_musb_init() is a no-op
-and stale MUSB register state persists across boot. On Allwinner A33,
-MUSB stays wedged in a_wait_bcon with DevCtl=0x99, Power=0xf0, and a
-frozen Frame counter even across hot-unplug and replug.
+Please ignore this my comment, I believe it will be simpler to move
+forward with the current code. Sorry for the noise.
 
-Request exclusive reset control via devm_reset_control_get_exclusive()
-and assert glue->rst briefly before deasserting it when
-SUNXI_MUSB_FL_HAS_RESET is set so MUSB starts cleanly.
-
-Tested on an Allwinner A33 Q8 tablet (Laser MID-786).
-
-Fixes: 132e23775779 ("usb: musb: sunxi: Add support for musb controller in A31 SoC")
-Signed-off-by: Bobek Brzeczyszczykiewicz <admin@roadbobek.com>
----
- drivers/usb/musb/sunxi.c | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/usb/musb/sunxi.c b/drivers/usb/musb/sunxi.c
-index a17b1c150626..8201b3ac1748 100644
---- a/drivers/usb/musb/sunxi.c
-+++ b/drivers/usb/musb/sunxi.c
-@@ -9,6 +9,7 @@
-  */
- 
- #include <linux/clk.h>
-+#include <linux/delay.h>
- #include <linux/err.h>
- #include <linux/extcon.h>
- #include <linux/io.h>
-@@ -239,6 +240,10 @@ static int sunxi_musb_init(struct musb *musb)
- 		goto error_sram_release;
- 
- 	if (test_bit(SUNXI_MUSB_FL_HAS_RESET, &glue->flags)) {
-+		ret = reset_control_assert(glue->rst);
-+		if (ret)
-+			goto error_clk_disable;
-+		usleep_range(10, 20);
- 		ret = reset_control_deassert(glue->rst);
- 		if (ret)
- 			goto error_clk_disable;
-@@ -745,7 +750,7 @@ static int sunxi_musb_probe(struct platform_device *pdev)
- 	}
- 
- 	if (test_bit(SUNXI_MUSB_FL_HAS_RESET, &glue->flags)) {
--		glue->rst = devm_reset_control_get(&pdev->dev, NULL);
-+		glue->rst = devm_reset_control_get_exclusive(&pdev->dev, NULL);
- 		if (IS_ERR(glue->rst))
- 			return dev_err_probe(&pdev->dev, PTR_ERR(glue->rst),
- 					     "Error getting reset\n");
+>>
+>> Signed-off-by: Nihal Kumar Gupta <nihal.gupta@oss.qualcomm.com>
+>> ---
+>>    drivers/media/platform/qcom/camss/camss.c | 1 +
+>>    1 file changed, 1 insertion(+)
+>>
+>> diff --git a/drivers/media/platform/qcom/camss/camss.c b/drivers/media/platform/qcom/camss/camss.c
+>> index 23f3cc30a15a5e098162bea98ba69fa636abdefb..9954a99981004590d34c722337bb6510fe759699 100644
+>> --- a/drivers/media/platform/qcom/camss/camss.c
+>> +++ b/drivers/media/platform/qcom/camss/camss.c
+>> @@ -5751,6 +5751,7 @@ static const struct of_device_id camss_dt_match[] = {
+>>    	{ .compatible = "qcom,sm8550-camss", .data = &sm8550_resources },
+>>    	{ .compatible = "qcom,sm8650-camss", .data = &sm8650_resources },
+>>    	{ .compatible = "qcom,x1e80100-camss", .data = &x1e80100_resources },
+>> +	{ .compatible = "qcom,glymur-camss", .data = &x1e80100_resources },
+>>    	{ }
+>>    };
+>>    
+>>
+> 
 
 -- 
-2.53.0
-
-
+Best wishes,
+Vladimir
 
 -- 
 linux-phy mailing list
