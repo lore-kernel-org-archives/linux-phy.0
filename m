@@ -2,124 +2,77 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 192E0606A321
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 03:45:16 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 49EC7606A31E
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Nov 2026 03:53:17 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=FsSG1mxm;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=jPlBqbjt
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=PVMAviJy;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=namei.org header.i=@namei.org header.a=rsa-sha256 header.s=2 header.b=a3AeraWl
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=bCLgdVIyiscvrJFFdLx6ZhDTxB3m64JlZLRhx4yWb6w=; b=FsSG1mxm23M5E6UcqPl/R25RMb
-	K9wzCb7QDDm4oyqPTDrF6Do5SUieKvwEESY9NKeO8kJkK0KcOWH2bCD5v/6WRXfShESJ5360flukO
-	yD6m0T+TMmKf+GcFKBrAOKZ/mz3woGwk1D30rn1LMLRjiX0QToW5lRlWL3WDtC6cVz1PXSL8dB5CF
-	xDzU90afM6HGNUitSowZmqJ48Dma/+i3+AXfrUxPlkVon2wH3kisJ6naTxQhywHevb7fLFEk/As/N
-	TuUdqBLQwXVw8yjW47ztkbFLkK9doBAXfxjO3NLjFHVT0sqDGmY9qROLFOKWWCcDmvc3XuXZT/v+q
-	dAn1+ypA==;
+	bh=3JnS+ktkN3FNdq33q1kPqWAqan0vzG+mXRmyIfZqBoE=; b=PVMAviJyl3PqR0MjTEOxnIXeb5
+	o9cRyg+gxubHUcn0jEOmxgzo1DmNQl/XajKJj223u4g0wogwOzLpxf/XswbJWLTy94Sz4lDBqUqQw
+	meeEDwiEPFelIH29EziOvPeyri41AYFcQ6S7S0+KIxZMBUxEVt1WIeuYTyOwkWFc4Y/qfl0YZ9vsx
+	/p2xoFntBn1lygg/m96a1uZqmDDsTEi9ZiUoeTb/ZIRsCwd6X0+E3adcV1UkcF2nfZRdRLPflDpXs
+	OYGRmAnlCNGqOM5wEU+/e59n9owxt6nADnIRvNI/9u3bHzc3sohj644drfsXuB5uiXZJx9k0uX4PC
+	x4u8rJvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xW3wZ-00000008KrN-3OsG;
-	Wed, 25 Nov 2026 03:45:15 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1xW44L-00000008M84-02LT;
+	Wed, 25 Nov 2026 03:53:17 +0000
+Received: from namei.org ([65.99.196.166] helo=mail.namei.org)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xW3w9-00000008KTK-2Eu0
-	for linux-phy@lists.infradead.org;
-	Wed, 25 Nov 2026 03:44:55 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-4bba5e17728so1697745e9.2
-        for <linux-phy@lists.infradead.org>; Tue, 24 Nov 2026 19:44:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795578288; x=1796183088; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=3nxeX5fqNfCLdw/UUkrahupQU703GTtxV5TKMFh27NI=;
-        b=jPlBqbjt0EF3luAaSEpCcAA+Y96N0iWFlUwhLuud1AkKd4zim0CMzZ3esOTiSVgrqA
-         2iOL0vI7xnhE1s7KFktE+uWSAybBVhvSWD2CAnLkp67GGp+13a/KzmKSc8sGN72hodDe
-         ZA95KjsgFxIMTvT2ciQJJwNfV4ZjImYrojQ3BdaS+3Lfga0HczQAxf/rLSYqlncovvKS
-         dlioW99IGgo5zDQTuzzf8DhQMWHFJpLe2mxh38ipFGUyXN3oT3NDR4xmOk/aw2Oz0/4L
-         NIdvELKolvT+hM2rUQrF+Thpm9JRA+UkaCgA0l593jRQ+BZVMXnKeQ8Fx281vktIB0NB
-         PmyQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795578288; x=1796183088;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :content-type:mime-version:subject:date:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=3nxeX5fqNfCLdw/UUkrahupQU703GTtxV5TKMFh27NI=;
-        b=as7K8SwQAjoWUooejBcIFmM8fvw6vf1da0NOAMSU0BXUKTFPe9ppBk6NQ22uYIq/3C
-         AXwFtxYYwOhC4g9LbxA2zvIsmugcazz9gu2p3hfXhTsk0teBVqzosDZJT5PiEFZi6+Qk
-         hFXum2iMzN0BKuRy4hwcbzP/9nNqIc1D2aqMZJDIhxvP3E+sSC33N+iWGrDoinlcPJhk
-         yE5WXddRm1c4spJDKA92to3/F7Hci3aBWwBKueKsea702BDi9tC5R+bGf5qh76GLoS07
-         0/zyXoA2mSvIn0yyq7E/+oQrjw4rRb9KJM1YyrHQqnGikRi3AEzHsFPGT+MxTZZVDIBF
-         sj6Q==
-X-Forwarded-Encrypted: i=1; AL+hErFyGNuHzq6e+HtOpZ/TOy1ZN40aWt4xM0rWPqBZnfMs34+qtrk42h3ZfKbE5I+JzMSo2yuEAzFryXg=@lists.infradead.org
-X-Gm-Message-State: APuU4Z9tF4g4lcl3OvBd8NyVpkA2LOzOKUWwP28wJ1OUO1rC0SYQgOwq
-	E3aEF6n63M4XlfsLHhQsVPofHrHLJHI3LiiW4rbjj0ZFtZRqK5W4xkBh
-X-Gm-Gg: AZFdTZfHGJkxyDN1xJ4SD1NZWLn5DfiAhyDv2dOzztwpHF+AKf/7qnWlkXYX9Q4sAwj
-	ECPtNcUf2+AGdf9QKJHz2JipWhcfa6aX8CCZ79NTA5qwEDwxPf0vfmOu61x8iraApAPDevRKqUI
-	3rzvHM6fcGTsytn+YmVwA+NI/uydDY0LfkolZaqzKURx7v+Q3fQIe4dSISH38wnda8iDTrTLWZi
-	MLpCCcV1lKsa3PsTj/cSpkWq4NvBS871NRQq0QtGyn2eY+733ibZ6pHE+xo2Yz+CLtThtcruDv6
-	fl9T4IEQQNQqGDgRlEqMWV26xnieg5SMEVF8Q1qAfx64JlKs+3QHoaIlnCVMZNxTZmxd3sAoBuM
-	A+XqINso+v0XA2zwAq3R/tXgI+j0cPURN16z+Au6Lzz7xuHVymr5icFJysBi1MGjaf7kDQdCwPq
-	WeatDjiqFRmLHVk1YjGNkwjduBaqAXy68MwpKSfqRODTXbLr/8KnyqxIdXGrcW+MWfnmy48/OMg
-	5Qn05F+//cEPyQiizmcYgrSy9aLCWKti0CN53qOosglYUSHwpfBrMB+nZT4/VH4w8BxVF7X5NUj
-	BxqwaSslvh+99jkoQAw2M/XnIDndeokTvxSPfQ==
-X-Received: by 2002:a05:600c:828e:b0:4a1:cd83:b23e with SMTP id 5b1f17b1804b1-4bb88786ddemr305977335e9.0.1795578287800;
-        Tue, 24 Nov 2026 19:44:47 -0800 (PST)
-Received: from [10.32.31.239] ([212.58.121.92])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4bb88402ce9sm391107925e9.0.2026.11.24.19.44.42
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Nov 2026 19:44:47 -0800 (PST)
-From: Stanislav Aleksandrov <lightofmysoul@gmail.com>
-Date: Wed, 25 Nov 2026 03:43:10 +0000
-Subject: [PATCH v3 14/14] arm64: dts: qcom: Add Samsung Galaxy XR
+	id 1xW44I-00000008M7c-30Ui;
+	Wed, 25 Nov 2026 03:53:16 +0000
+Received: from localhost (localhost [127.0.0.1])
+	by mail.namei.org (Postfix) with ESMTPS id 73F592FA;
+	Wed, 25 Nov 2026 03:53:11 +0000 (UTC)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail.namei.org 73F592FA
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=namei.org; s=2;
+	t=1795578791; bh=gpn0UCdoZZeC5B0l3wY/XpSaKvgOSjTK0REYdcoxBF4=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=a3AeraWlEkmuoZtzUbJF8G20eVOhm2DteJPZL3L1bOGQ9DO5TMITBMCuGtxv1Lydh
+	 7M8wg668sKPjnLtzsS9sDVgKfJPY7vUblJ39jCbNs5NCg5opFEvJbLxot19LSeCYqd
+	 nca+i+o6iWgLl0x5++pzMMPda2h407h2YJEW+gYE=
+Date: Tue, 24 Nov 2026 19:53:11 -0800 (PST)
+From: James Morris <jmorris@namei.org>
+To: codykang.hk@gmail.com
+cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+    Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+    Maxime Ripard <mripard@kernel.org>, 
+    Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>, 
+    Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+    Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>, 
+    Troy Mitchell <troy.mitchell@linux.spacemit.com>, 
+    Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+    Manivannan Sadhasivam <mani@kernel.org>, Haylen Chu <heylenay@4d2.org>, 
+    Michael Turquette <mturquette@baylibre.com>, 
+    Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney+clk@redhat.com>, 
+    Philipp Zabel <p.zabel@pengutronix.de>, Paul Walmsley <pjw@kernel.org>, 
+    Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
+    Alexandre Ghiti <alex@ghiti.fr>, Yao Zi <me@ziyao.cc>, 
+    =?ISO-8859-15?Q?Uwe_Kleine-K=F6nig?= <u.kleine-koenig@baylibre.com>, 
+    Guodong Xu <docular.xu@gmail.com>, Icenowy Zheng <uwu@icenowy.me>, 
+    Jerome Brunet <jbrunet+clk@baylibre.com>, 
+    Sarah Emery <sarah.emery@canonical.com>, 
+    Ze Huang <ze.huang@oss.qualcomm.com>, Dmitry Baryshkov <lumag@kernel.org>, 
+    Cody Kang <codykang@vsit.ai>, dri-devel@lists.freedesktop.org, 
+    linux-riscv@lists.infradead.org, devicetree@vger.kernel.org, 
+    spacemit@lists.linux.dev, linux-kernel@vger.kernel.org, 
+    linux-phy@lists.infradead.org, linux-clk@vger.kernel.org
+Subject: Re: [PATCH v3 00/17] drm/spacemit: add SpacemiT K3 display support
+In-Reply-To: <20261121-k3-display-v3-0-ec419e8e96b8@gmail.com>
+Message-ID: <87eaeb2-b6e9-9198-b9cf-7e9f96bdcbc@namei.org>
+References: <20261121-k3-display-v3-0-ec419e8e96b8@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261125-halliday-dts-v3-14-5c8311c0b70b@gmail.com>
-References: <20261125-halliday-dts-v3-0-5c8311c0b70b@gmail.com>
-In-Reply-To: <20261125-halliday-dts-v3-0-5c8311c0b70b@gmail.com>
-To: Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Robert Marko <robimarko@gmail.com>, 
- Guru Das Srinagesh <linux@gurudas.dev>, Thomas Gleixner <tglx@kernel.org>, 
- Radu Rendec <radu@rendec.net>, Will Deacon <will@kernel.org>, 
- Robin Murphy <robin.murphy@arm.com>, "Joerg Roedel (AMD)" <joro@8bytes.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Wesley Cheng <wesley.cheng@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Alim Akhtar <alim.akhtar@samsung.com>, Bart Van Assche <bvanassche@acm.org>, 
- Bean Huo <beanhuo@micron.com>, Stanley Jhu <stanleyjhu@google.com>, 
- Herbert Xu <herbert@gondor.apana.org.au>, 
- "David S. Miller" <davem@davemloft.net>, 
- "Rafael J. Wysocki" <rafael@kernel.org>, 
- Viresh Kumar <viresh.kumar@linaro.org>, Amit Kucheria <amitk@kernel.org>, 
- Thara Gopinath <thara.gopinath@gmail.com>, 
- Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>, 
- Lukasz Luba <lukasz.luba@arm.com>, Georgi Djakov <djakov@kernel.org>, 
- Sibi Sankar <sibi.sankar@oss.qualcomm.com>, Ulf Hansson <ulfh@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- iommu@lists.linux.dev, linux-usb@vger.kernel.org, 
- linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org, 
- linux-crypto@vger.kernel.org, linux-pm@vger.kernel.org, 
- Stanislav Aleksandrov <lightofmysoul@gmail.com>
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795578204; l=6344;
- i=lightofmysoul@gmail.com; s=20261108; h=from:subject:message-id;
- bh=J16F+LOV4xOLJKpXNlxuuVfLT5wyADCOLJyk9obMJT0=;
- b=PEXF6q1I8sRIJCohqx06WvHQuPTLzuLyBeD6cY5N7N6skOFIiPri6EvLlDF37bvdfxBVIUgp4
- G7fgrNDXJRdDhQgHPVISSjEOOM2shUDSUWAelq0kjpvjUbN5W3WEyrc
-X-Developer-Key: i=lightofmysoul@gmail.com; a=ed25519;
- pk=jeRUlfmkhE53CJPoeIIXgu7rTE0ybDRH0HQrEwbydzg=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261124_194449_662683_289260D2 
-X-CRM114-Status: GOOD (  15.12  )
+X-CRM114-CacheID: sfid-20261124_195314_875731_9EEAD48F 
+X-CRM114-Status: GOOD (  10.99  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -133,265 +86,70 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,
-	FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-8.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
+	autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add the device tree for the Samsung Galaxy XR headset, which is based on
-the Qualcomm Halliday SoC (SXR2250P).
+On Sat, 21 Nov 2026, Cody Kang via B4 Relay wrote:
 
-Supported so far: the PMICs and their regulators, the power and volume
-down keys, USB in high-speed peripheral mode and UFS storage.
+> This series adds display support for the SpacemiT K3 [2], a RISC-V SoC:
+> a new DRM driver, a new PHY driver and three new bindings.
 
-Signed-off-by: Stanislav Aleksandrov <lightofmysoul@gmail.com>
----
- arch/arm64/boot/dts/qcom/Makefile                  |   1 +
- .../boot/dts/qcom/halliday-samsung-xrvst2.dts      | 218 +++++++++++++++++++++
- 2 files changed, 219 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
-index 19310879349d..3e4682e42cf9 100644
---- a/arch/arm64/boot/dts/qcom/Makefile
-+++ b/arch/arm64/boot/dts/qcom/Makefile
-@@ -26,6 +26,7 @@ dtb-$(CONFIG_ARCH_QCOM)	+= glymur-hp-elitebook-x-g2q.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= glymur-lenovo-yoga-slim7x.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= glymur-qcb.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= glymur-sip-crd.dtb
-+dtb-$(CONFIG_ARCH_QCOM)	+= halliday-samsung-xrvst2.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= hamoa-advantech-som-db5830.dtb
- 
- hamoa-advantech-som-db5830-el2-dtbs	:= hamoa-advantech-som-db5830.dtb x1-el2.dtbo
-diff --git a/arch/arm64/boot/dts/qcom/halliday-samsung-xrvst2.dts b/arch/arm64/boot/dts/qcom/halliday-samsung-xrvst2.dts
-new file mode 100644
-index 000000000000..6fcc1aaafd59
---- /dev/null
-+++ b/arch/arm64/boot/dts/qcom/halliday-samsung-xrvst2.dts
-@@ -0,0 +1,218 @@
-+// SPDX-License-Identifier: BSD-3-Clause
-+/*
-+ * Copyright (c) 2026, Stanislav Aleksandrov <lightofmysoul@gmail.com>
-+ */
-+
-+/dts-v1/;
-+
-+#define PMK8550VE_SID 5
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+#include <dt-bindings/regulator/qcom,rpmh-regulator.h>
-+
-+#include "halliday.dtsi"
-+#include "pm7550.dtsi"
-+#include "pm8550ve.dtsi"
-+#include "pm8550vs.dtsi"
-+#include "pmk8550.dtsi"
-+
-+/delete-node/ &adsp_mem;
-+/delete-node/ &cdsp_mem;
-+/delete-node/ &video_mem;
-+
-+/ {
-+	model = "Samsung Galaxy XR";
-+	compatible = "samsung,xrvst2", "qcom,halliday";
-+	chassis-type = "headset";
-+
-+	reserved-memory {
-+		video_mem: video-region@87c00000 {
-+			reg = <0x0 0x87c00000 0x0 0x700000>;
-+			no-map;
-+		};
-+
-+		adsp_mem: adsp-region@88300000 {
-+			reg = <0x0 0x88300000 0x0 0x3400000>;
-+			no-map;
-+		};
-+
-+		cdsp_mem: cdsp-region@8b700000 {
-+			reg = <0x0 0x8b700000 0x0 0xf00000>;
-+			no-map;
-+		};
-+
-+		sec_xbl_ramdump_mem: sec-xbl-ramdump-region@a7d00000 {
-+			reg = <0x0 0xa7d00000 0x0 0x300000>;
-+			no-map;
-+		};
-+
-+		uh_heap_mem: uh-heap-region@b0200000 {
-+			reg = <0x0 0xb0200000 0x0 0x40000>;
-+			no-map;
-+		};
-+
-+		uh_guest_mem: uh-guest-region@b1000000 {
-+			reg = <0x0 0xb1000000 0x0 0x1e00000>;
-+			no-map;
-+		};
-+
-+		splash_mem: splash-region@bfc00000 {
-+			reg = <0x0 0xbfc00000 0x0 0x7e90000>;
-+			no-map;
-+		};
-+
-+		sec_debug_pool_mem: sec-debug-pool-region@800100000 {
-+			reg = <0x8 0x00100000 0x0 0xff000>;
-+			no-map;
-+		};
-+
-+		sec_debug_log_mem: sec-debug-log-region@8001ff000 {
-+			reg = <0x8 0x001ff000 0x0 0x901000>;
-+			no-map;
-+		};
-+	};
-+};
-+
-+&apps_rsc {
-+	regulators-0 {
-+		compatible = "qcom,pm7550-rpmh-regulators";
-+		qcom,pmic-id = "b";
-+
-+		vreg_l1b_0p912: ldo1 {
-+			regulator-name = "vreg_l1b_0p912";
-+			regulator-min-microvolt = <912000>;
-+			regulator-max-microvolt = <912000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l3b_1p2: ldo3 {
-+			regulator-name = "vreg_l3b_1p2";
-+			regulator-min-microvolt = <1200000>;
-+			regulator-max-microvolt = <1200000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l10b_1p8: ldo10 {
-+			regulator-name = "vreg_l10b_1p8";
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l13b_2p504: ldo13 {
-+			regulator-name = "vreg_l13b_2p504";
-+			regulator-min-microvolt = <2504000>;
-+			regulator-max-microvolt = <2504000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l15b_3p072: ldo15 {
-+			regulator-name = "vreg_l15b_3p072";
-+			regulator-min-microvolt = <3072000>;
-+			regulator-max-microvolt = <3072000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+	};
-+
-+	regulators-1 {
-+		compatible = "qcom,pm8550vs-rpmh-regulators";
-+		qcom,pmic-id = "c";
-+
-+		vreg_l2c_1p2: ldo2 {
-+			regulator-name = "vreg_l2c_1p2";
-+			regulator-min-microvolt = <1200000>;
-+			regulator-max-microvolt = <1200000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+	};
-+
-+	regulators-2 {
-+		compatible = "qcom,pm8550vs-rpmh-regulators";
-+		qcom,pmic-id = "d";
-+
-+		vreg_l1d_0p88: ldo1 {
-+			regulator-name = "vreg_l1d_0p88";
-+			regulator-min-microvolt = <880000>;
-+			regulator-max-microvolt = <880000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+	};
-+
-+	regulators-3 {
-+		compatible = "qcom,pm8550ve-rpmh-regulators";
-+		qcom,pmic-id = "f";
-+
-+		vreg_l2f_0p88: ldo2 {
-+			regulator-name = "vreg_l2f_0p88";
-+			regulator-min-microvolt = <880000>;
-+			regulator-max-microvolt = <880000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+	};
-+};
-+
-+&gcc {
-+	vdda-refgen-0p9-supply = <&vreg_l2f_0p88>;
-+	vdda-refgen-1p2-supply = <&vreg_l2c_1p2>;
-+};
-+
-+&pm8550vs_c {
-+	status = "okay";
-+};
-+
-+&pm8550vs_d {
-+	status = "okay";
-+};
-+
-+&pon_pwrkey {
-+	status = "okay";
-+};
-+
-+&pon_resin {
-+	linux,code = <KEY_VOLUMEDOWN>;
-+
-+	status = "okay";
-+};
-+
-+&sleep_clk {
-+	clock-frequency = <32764>;
-+};
-+
-+&ufs_mem_hc {
-+	reset-gpios = <&tlmm 224 GPIO_ACTIVE_LOW>;
-+
-+	vcc-supply = <&vreg_l13b_2p504>;
-+	vcc-max-microamp = <1300000>;
-+	vccq-supply = <&vreg_l3b_1p2>;
-+	vccq-max-microamp = <1200000>;
-+
-+	status = "okay";
-+};
-+
-+&ufs_mem_phy {
-+	vdda-phy-supply = <&vreg_l2f_0p88>;
-+	vdda-pll-supply = <&vreg_l2c_1p2>;
-+
-+	status = "okay";
-+};
-+
-+&usb_1 {
-+	dr_mode = "peripheral";
-+	maximum-speed = "high-speed";
-+	qcom,select-utmi-as-pipe-clk;
-+
-+	status = "okay";
-+};
-+
-+&usb_1_hsphy {
-+	vdda-pll-supply = <&vreg_l1d_0p88>;
-+	vdda18-supply = <&vreg_l10b_1p8>;
-+	vdda33-supply = <&vreg_l15b_3p072>;
-+
-+	status = "okay";
-+};
-+
-+&xo_board {
-+	clock-frequency = <76800000>;
-+};
+Tested-by: James Morris <jmorris@namei.org> # CoM260-IFX, DisplayPort
+
+Assisted by an LLM.
+
+v3 on v7.4-rc1 works on a SpacemiT K3 CoM260 IFX with an Acer EDB323QU
+(2560x1440, 144 Hz) on the DisplayPort connector. The DRM, DP and PHY
+drivers were built in, and Linux ran from an initramfs with
+clk_ignore_unused.
+
+The board has the vendor U-Boot 2022.10 built on May 21 2026, not the
+uboot-for-k3-display-verify branch. That link in the cover letter
+returns 404 for me.
+
+What ran, over two boots:
+
+- Probe: the DPU and the DP bridge bound and the fbdev console came up.
+  The kernel log has no warning or error.
+- Modes, with modetest: 2560x1440 at 60, 120 and 144 Hz, 1920x1080 at
+  60 and 120 Hz, 1280x1024, 1280x720, 1024x768 and 640x480. The picture
+  was clean in every mode I watched, including 2560x1440 at 60 and
+  144 Hz.
+- Link training: all 22 logged attempts passed at the first
+  configuration tried: 1.62 Gbps x2, 2.7 Gbps x1, x2 and x4, and
+  5.4 Gbps x4.
+- Page flips, with modetest -v: 60.00 Hz at 1920x1080, and 144.00 Hz
+  and 59.95 Hz at 2560x1440. An atomic plane flip held 59.95 Hz for
+  80 s.
+- DPMS: the fbdev console blanked and returned in eight cycles. I
+  watched three; the link retrained and the picture came back each
+  time.
+- Hot-plug: I unplugged and replugged the cable with 2560x1440 active.
+  The connector status followed and the picture came back.
+
+Two observations:
+
+1. The HPD interrupt never fired. /proc/interrupts stayed at 0 for
+   cac88000.dp in both boots, also across the unplug and replug, when
+   the stream was running. The connector poll caught both.
+
+2. With the monitor asleep, nothing was displayed. It kept HPD high and
+   returned a generic 1920x1080 EDID. Link training passed at
+   2.7 Gbps x2, but the monitor stayed dark until I woke it by hand
+   and a later modeset retrained the link. The kernel got no event
+   when the monitor woke. I found no DP_SET_POWER write in the driver;
+   could the sink be left in D3?
+
+
 
 -- 
-2.55.0
+James Morris
+<jmorris@namei.org>
 
 
 -- 
