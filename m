@@ -2,69 +2,69 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 54CD5606A331
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Nov 2026 16:40:58 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5AAAE606A31C
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Nov 2026 17:18:22 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VL1q+RLW;
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=aliel.fr header.i=@aliel.fr header.a=rsa-sha256 header.s=courrier-s1 header.b=nJj+NIgZ
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=2Y+0T7vI;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=XzO1tZYj
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=TAa4uE4DVWAPsxf7BwZM5i1qLGpTcxQ7J1B0W/VhoW4=; b=VL1q+RLWC/0vmvyvHTM8Z4x3kM
-	BnaZbKKdFY5HkfWh4RIgEDQAl1tYx5VU2+UF/syS++/cEUVp2HA2Ep5JPfWlR33lBpwxyrT78k0GD
-	qVJUxB7l+MN5QNSnMRBLuAOEVmVAGmrr2c8ACaDDdLYZRzjuwlk80mvE0lCrSEcM7CI02ntUWRQzG
-	fGm8sYlmEel9itfxI686i/66ACCm4imBQOjLTbpS+S78G7ZD40u5kAPLHacQGupIqA68/26+vqGqG
-	6rUAJa7+CI0K9tCWQcIVJVt+190WCEnyjjbk7GCW4/IKxyrQvMwMQGh1+0Cm8QzA3VuzHUromU0WW
-	Rd/+8BBA==;
+	bh=hiigBLtqrRHh0TsaK7i0LOtiKUiGOjFYB42LCRgscu8=; b=2Y+0T7vI2HUPTgJObZoD8a3GEg
+	BcQYNuno2m+kfHLp9oywY2fK2yzZv8CQoHBb7XlAqTmfOmgQbSG3k2jbZIoW1o1hlXx65sSLwg3rd
+	yCh0ioDngmEoDY2s6wk5+lwBU7Oi7KYMMcScafN7vckFWWHIE7lhYDQnbiQHS365FlX/JLCbXvfbu
+	u3lAjefurqMs1Jk2pPp0eyjB0sx25oGEejIczqA2mRD26p7vKIg+benvPHvwHIje4iapbfIXds155
+	A5vmBEo2vyZ+wQFosaNx+8hyN/nJrUm+r8GXZmy4I2HK6yua709/v5qB/RR7CSuoRvxf5pQAjcTx1
+	t0rsY8VA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWcWn-0000000DwZS-3wQl;
-	Thu, 26 Nov 2026 16:40:57 +0000
-Received: from courrier.aliel.fr ([2a01:4f9:c011:1c83::1])
+	id 1xWd6z-0000000E233-433m;
+	Thu, 26 Nov 2026 17:18:21 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWcWj-0000000DwY9-1kMW;
-	Thu, 26 Nov 2026 16:40:56 +0000
-Message-ID: <c31cbdf7-87ca-46bf-ad89-cb4c8b5dfe55@aliel.fr>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=aliel.fr;
-	s=courrier-s1; t=1795711248;
-	bh=wA6+NWNs2Pzeunxgi7qRF97OZsO9dKoJhUUzdBBn10s=;
-	h=Date:From:Subject:To:Cc:References:In-Reply-To;
-	b=nJj+NIgZX8FjurIbJnvn704fI1Ag9bw1pNgQEwogjT4rkDWjON5w6WPe4X3747V9Y
-	 xfU3ptTlMU1VSCBsHjmzmaSodmVyQHiMbDD7K923DneifPJ61ATyZX7sw+FSTMip4G
-	 zMz6cilJzCvbtD34XhkhAyP6Vnk1CnQT8P0Co1k4=
-Date: Thu, 26 Nov 2026 17:40:46 +0100
+	id 1xWd6t-0000000E21X-3yrB
+	for linux-phy@lists.infradead.org;
+	Thu, 26 Nov 2026 17:18:17 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 5FE0B453A7;
+	Thu, 26 Nov 2026 17:18:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 82EBF1F000C4;
+	Thu, 26 Nov 2026 17:18:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795713495;
+	bh=w120dgf1qMRFAFrYxURhT9tSBYAzmjIDKW2aCCxepAc=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=XzO1tZYjiMPl4BGrk8KrL+KedwziwSVuMmV+ZcK6UWWD/SFo34rD0ym72unn4a34F
+	 GhIDKC2wJIW4lV2uUOEjWk5u8vTOy7QnwkB3y3FUnX3ZLdSGd8ynAzfHaOTDhpW+27
+	 0wV5/cngIYB6ORRltU7V8PgKotB/+vbOb2vrCvfEsdlN+sCx8d5QeKNRqsn0syBphR
+	 MfOYuqEUEwULC2DpVJuAzXATLbFq6sA8H8cKz5/0VuX4XLDNB+RcEGlOj17xmL52Hy
+	 QETWCIsQqgKg2XoGo4H9xLHIBEaxv7XXJ/TER1JsXUuRWJ5vqyLsXQyZq4em7NwP8k
+	 OTDl35OH6mmdA==
+Message-ID: <54eeb70e-e7d4-4f3b-af80-8b9da48ec7b0@kernel.org>
+Date: Thu, 26 Nov 2026 19:18:08 +0200
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-From: linux-kernel-dev@aliel.fr
-Subject: Re: [PATCH v4 00/11] phy/drm: amlogic: Extract Meson HDMI TX PHY into
- a dedicated driver
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
- Jerome Brunet <jbrunet@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
- Manivannan Sadhasivam <mani@kernel.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Ulf Hansson <ulfh@kernel.org>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- dri-devel@lists.freedesktop.org, linux-pm@vger.kernel.org
-References: <20261123-meson-drm-create-hdmitx-phy-v4-0-3fb94f5534ca@aliel.fr>
- <CAFBinCD822UPQrrd_8ZbVRUVCVJ-3pGN69vbZBxUE+0yeMcysg@mail.gmail.com>
- <6e408f48-17ca-4927-ae09-c4153e294371@linaro.org>
-Content-Language: en-US
-In-Reply-To: <6e408f48-17ca-4927-ae09-c4153e294371@linaro.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261126_084053_911395_9BC6C36D 
-X-CRM114-Status: GOOD (  15.89  )
-X-Spam-Score: -1.1 (-)
+Subject: Re: [PATCH v2 4/7] media: qcom: camss: Add SM8450 CAMSS support
+To: Frank Li <Frank.li@oss.nxp.com>
+Cc: Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>,
+ Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ linux-arm-msm@vger.kernel.org, Loic Poulain <loic.poulain@oss.qualcomm.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, linux-media@vger.kernel.org,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, linux-phy@lists.infradead.org,
+ Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org
+References: <20261026224957.1115370-1-vz@kernel.org>
+ <20261026224957.1115370-5-vz@kernel.org>
+ <auIVQNdHp91xwzqO@lizhi-Precision-Tower-5810>
+From: Vladimir Zapolskiy <vz@kernel.org>
+In-Reply-To: <auIVQNdHp91xwzqO@lizhi-Precision-Tower-5810>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,52 +74,194 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-5.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
-	autolearn=no autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-T24gMTEvMjUvMjYgMDk6MTQsIE5laWwgQXJtc3Ryb25nIHdyb3RlOgo+IE9uIDExLzI0LzI2IDIz
-OjA1LCBNYXJ0aW4gQmx1bWVuc3RpbmdsIHdyb3RlOgo+PiBIaSBSb25hbGQsIEhpIE5laWwsCj4+
-Cj4+IGZpcnN0IG9mIGFsbDogdGhhbmtzIFJvbmFsZCBmb3IgcGlja2luZyB0aGlzIHVwIQo+PiBJ
-IGxpa2UgdGhlIG92ZXJhbGwgYXBwcm9hY2guIEJlZm9yZSBJIGRpdmUgZGVlcCBpbnRvIHRoaXMg
-c2VyaWVzIEkKPj4gd2lsbCBmaW5pc2ggdGhlIGNvZGUtcmV2aWV3IG9mIFZhbGVyaW8ncyBBVURJ
-TiBzZXJpZXMuCj4+Cj4+IFR3byBxdWljayBub3RlcyBiZWxvdy4KPj4KPj4gT24gTW9uLCBOb3Yg
-MjMsIDIwMjYgYXQgODozOOKAr1BNIFJvbmFsZCBDbGF2ZWF1IHZpYSBCNCBSZWxheQo+PiA8ZGV2
-bnVsbCtsaW51eC1rZXJuZWwtZGV2LmFsaWVsLmZyQGtlcm5lbC5vcmc+IHdyb3RlOgo+PiBbLi4u
-XQo+Pj4gT3ZlcnZpZXcgb2YgdGhlIHNlcmllczoKPj4+IC0gUGF0Y2hlcyAxLTM6IEZpeCBjb21w
-YXRpYmxlIG1hdGNoaW5nIGluIG1lc29uLWd4LWhoaS1zeXNjdHJsIGJpbmRpbmdzLAo+Pj4gwqDC
-oCBhZGQgdGhlIG5ldyBhbWxvZ2ljLG1lc29uLWhkbWktdHgtcGh5IERUIHNjaGVtYSwgYW5kIGFs
-bG93IHRoZQo+Pj4gwqDCoCAiaGRtaS1waHkiIGNoaWxkIG5vZGUgdW5kZXIgdGhlIEhISSBzeXNj
-b24uCj4+IEl0J3MgYmVlbiBhIGxvbmcgdGltZSwgYnV0IEkgdGhpbmsgd2UndmUgYmVlbiBhc2tl
-ZCBieSB0aGUgZGV2aWNldHJlZQo+PiBtYWludGFpbmVycyB0byBoYXZlIHJlZyBwcm9wZXJ0aWVz
-IGZvciB0aGUgbm9kZXMgd2l0aGluICZoaGkKPj4gQnV0IEkgY2FuJ3QgZmluZCB0aGUgbWVzc2Fn
-ZSBhdCB0aGUgbW9tZW50Lgo+IAo+IFRoZSBoaGkgc3lzY29uIG5vZGVzIGRvZXNuJ3QgaGF2ZSAj
-W2FkZHJlc3N8c2l6ZV0tY2VsbHMgYW5kIHNvIGZhciBpdAo+IHdhc24ndCByZXF1aXJlZCwgbGV0
-J3Mgd2FpdCBmb3IgYSByZXZpZXcgZnJvbSBEVCBtYWludGFpbmVycywgSSdtIGZpbmUKPiB3aXRo
-IHRoZSBjdXJyZW50IGRlc2lnbgo+IAoKSSBmb3VuZCBhbiBvbGQgZGlzY3Vzc2lvbiB0byBkcm9w
-IGEgcmVnIFswXS4KTXkgdW5kZXJzdGFuZGluZyBpcyB3ZSBkb24ndCBuZWVkIGEgcmVnIGhlcmUu
-CgpbMF0gaHR0cHM6Ly9sa21sLml1LmVkdS8yMzExLjEvMDU2MTIuaHRtbAoKPj4KPj4+IC0gUGF0
-Y2ggNDogQWRkIHRoZSBuZXcgTWVzb24gSERNSSBUWCBQSFkgZHJpdmVyIGltcGxlbWVudGluZyB0
-aGUgSERNSQo+Pj4gwqDCoCBQSFkgY29uZmlndXJhdGlvbiBvcHMsIGFsb25nIHdpdGggdGhlIHRl
-bXBvcmFyeSBsZWdhY3kgY3JlYXRpb24KPj4+IMKgwqAgaGVscGVyLgo+PiBBdCBxdWljayBnbGFu
-Y2UgeW91ciBQSFkgYXBwcm9hY2ggd291bGQgYWxzbyBmaXQgcGh5LW1lc29uOC1oZG1pLXR4LmMK
-Pj4gVGhlcmUgc2VlbSB0byBiZSBtaW5vciBkaWZmZXJlbmNlczoKPj4gLSB0d28gYWRkaXRpb25h
-bCBlbmFibGUgYml0cyBpbiBISElfSERNSV9QSFlfQ05UTDEgb24gR1hCQiBhbmQgbmV3ZXI6Cj4+
-IEhETUlfRklGT19FTkFCTEU9QklUKDIpIGFuZMKgIEhETUlfRklGT19XUl9FTkFMQkU9QklUKDMp
-Cj4+IC0gbmV3ZXIgU29DcyBzZWVtIHRvIGhhdmUgSEhJX0hETUlfUEhZX0NOVEwzLi41Cj4+Cj4+
-IE1lc29uOC84Yi84bTIgSERNSSBzdXBwb3J0IGlzIG5vdCB1cHN0cmVhbSB5ZXQuIFRoYXQncyB3
-aHkgdGhvc2UgU29DJ3MKPj4gd29uJ3QgbmVlZCB0aGUgYmFja3dhcmRzIGNvbXBhdGliaWxpdHkg
-Y29kZS4gU28gaWYgeW91IG5lZWQgdG8gdHdlYWsKPj4gdGhlIGRyaXZlcjogZmVlbCBmcmVlLCB0
-aGVyZSdzIG5vdCBtdWNoIHlvdSBjYW4gYnJlYWshCj4+CgpZZXMgSSBkaWQgbm90IHdhbnQgdG8g
-YnJlYWsgdGhlIE1lc29uOCBkcml2ZXIuIEkgd2lsbCBzZW5kIGEgcHJvcG9zYWwgdG8KaW50ZWdy
-YXRlIHRoZSBvdGhlciBTT0NzIGludG8gaXQsIGFuZCBtYWtlIGl0IGdlbmVyaWMuCgo+Pgo+PiBC
-ZXN0IHJlZ2FyZHMsCj4+IE1hcnRpbgo+IAo+IFRoYW5rcywKPiBOZWlsCgoKLS0gCkJlc3QgcmVn
-YXJkcywKUm9uYWxkCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+Hi Frank.
+
+On 10/28/26 17:31, Frank Li wrote:
+> On Tue, Oct 27, 2026 at 12:49:54AM +0200, Vladimir Zapolskiy wrote:
+>> Add support of the camera subsystem (CAMSS) found on Qualcomm SM8450 SoC.
+>>
+>> The CAMSS IP on SM8450 contains:
+>> * three CSID and two CSID lite, which are supported by CSID 680,
+>> * three VFE and two VFE lite blocks, which are supported by VFE 680,
+>> * three CSI test pattern generators, which are supported by TPG Gen1.
+>>
+>> Qualcomm SM8450 CSIPHYs are supported by the CSI2 PHY driver only.
+>>
+>> Signed-off-by: Vladimir Zapolskiy <vz@kernel.org>
+>> ---
+>>   drivers/media/platform/qcom/camss/camss-vfe.c |   2 +
+>>   drivers/media/platform/qcom/camss/camss.c     | 236 ++++++++++++++++++
+>>   drivers/media/platform/qcom/camss/camss.h     |   1 +
+>>   3 files changed, 239 insertions(+)
+>>
+>> diff --git a/drivers/media/platform/qcom/camss/camss-vfe.c b/drivers/media/platform/qcom/camss/camss-vfe.c
+>> index 2680a9914765..8ebd67bd9b2e 100644
+>> --- a/drivers/media/platform/qcom/camss/camss-vfe.c
+>> +++ b/drivers/media/platform/qcom/camss/camss-vfe.c
+>> @@ -350,6 +350,7 @@ static u32 vfe_src_pad_code(struct vfe_line *line, u32 sink_code,
+>>   	case CAMSS_8280XP:
+>>   	case CAMSS_8300:
+>>   	case CAMSS_845:
+>> +	case CAMSS_8450:
+>>   	case CAMSS_8550:
+>>   	case CAMSS_8650:
+>>   	case CAMSS_8775P:
+>> @@ -2010,6 +2011,7 @@ static int vfe_bpl_align_rdi(struct vfe_device *vfe)
+>>   	case CAMSS_8280XP:
+>>   	case CAMSS_8300:
+>>   	case CAMSS_845:
+>> +	case CAMSS_8450:
+>>   	case CAMSS_8550:
+>>   	case CAMSS_8650:
+>>   	case CAMSS_8775P:
+>> diff --git a/drivers/media/platform/qcom/camss/camss.c b/drivers/media/platform/qcom/camss/camss.c
+>> index b0d60e70e4bb..1db66976e51b 100644
+>> --- a/drivers/media/platform/qcom/camss/camss.c
+>> +++ b/drivers/media/platform/qcom/camss/camss.c
+>> @@ -2967,6 +2967,226 @@ static const struct resources_icc icc_res_sc8280xp[] = {
+>>   	},
+>>   };
+>>
+>> +static const struct camss_subdev_resources csid_res_sm8450[] = {
+>> +	/* CSID0 */
+>> +	{
+>> +		.regulators = {},
+>> +		.clock = { "cpas_ahb", "csid", "csiphy_rx" },
+>> +		.clock_rate = { { 0 },
+>> +				{ 480000000 },
+>> +				{ 400000000 }, },
+>> +		.reg = { "csid0" },
+>> +		.interrupt = { "csid0" },
+>> +		.csid = {
+>> +			.hw_ops = &csid_ops_680,
+>> +			.parent_dev_ops = &vfe_parent_dev_ops,
+>> +			.formats = &csid_formats_gen2,
+>> +		},
+>> +	},
+>> +	/* CSID1 */
+>> +	{
+>> +		.regulators = {},
+>> +		.clock = { "cpas_ahb", "csid", "csiphy_rx" },
+>> +		.clock_rate = { { 0 },
+>> +				{ 480000000 },
+>> +				{ 400000000 }, },
+>> +		.reg = { "csid1" },
+>> +		.interrupt = { "csid1" },
+>> +		.csid = {
+>> +			.hw_ops = &csid_ops_680,
+>> +			.parent_dev_ops = &vfe_parent_dev_ops,
+>> +			.formats = &csid_formats_gen2,
+>> +		},
+>> +	},
+>> +	/* CSID2 */
+>> +	{
+>> +		.regulators = {},
+>> +		.clock = { "cpas_ahb", "csid", "csiphy_rx" },
+>> +		.clock_rate = { { 0 },
+>> +				{ 480000000 },
+>> +				{ 400000000 }, },
+>> +		.reg = { "csid2" },
+>> +		.interrupt = { "csid2" },
+>> +		.csid = {
+>> +			.hw_ops = &csid_ops_680,
+>> +			.parent_dev_ops = &vfe_parent_dev_ops,
+>> +			.formats = &csid_formats_gen2,
+>> +		},
+>> +	},
+>> +	/* CSID_LITE0 */
+>> +	{
+>> +		.regulators = {},
+>> +		.clock = { "cpas_ahb", "vfe_lite_csid", "vfe_lite_cphy_rx",
+>> +			   "csiphy_rx" },
+>> +		.clock_rate = { { 0 },
+>> +				{ 480000000 },
+>> +				{ 400000000 },
+>> +				{ 400000000 }, },
+>> +		.reg = { "csid_lite0" },
+>> +		.interrupt = { "csid_lite0" },
+>> +		.csid = {
+>> +			.is_lite = true,
+>> +			.hw_ops = &csid_ops_680,
+>> +			.parent_dev_ops = &vfe_parent_dev_ops,
+>> +			.formats = &csid_formats_gen2,
+>> +		},
+>> +	},
+>> +	/* CSID_LITE1 */
+>> +	{
+>> +		.regulators = {},
+>> +		.clock = { "cpas_ahb", "vfe_lite_csid", "vfe_lite_cphy_rx",
+>> +			   "csiphy_rx" },
+>> +		.clock_rate = { { 0 },
+>> +				{ 480000000 },
+>> +				{ 400000000 },
+>> +				{ 400000000 }, },
+>> +		.reg = { "csid_lite1" },
+>> +		.interrupt = { "csid_lite1" },
+>> +		.csid = {
+>> +			.is_lite = true,
+>> +			.hw_ops = &csid_ops_680,
+>> +			.parent_dev_ops = &vfe_parent_dev_ops,
+>> +			.formats = &csid_formats_gen2,
+>> +		},
+>> +	},
+>> +};
+>> +
+>> +static const struct camss_subdev_resources vfe_res_sm8450[] = {
+>> +	/* IFE0 */
+>> +	{
+>> +		.regulators = {},
+>> +		.clock = { "gcc_hf_axi", "camnoc_axi", "cpas_ahb",
+>> +			   "core_ahb", "cpas_fast_ahb", "cpas_vfe0",
+>> +			   "vfe0_fast_ahb", "vfe0" },
+>> +		.clock_rate = { { 0 },
+>> +				{ 300000000, 400000000 },
+>> +				{ 0 },
+>> +				{ 0 },
+>> +				{ 0 },
+>> +				{ 0 },
+>> +				{ 0 },
+>> +				{ 432000000, 594000000, 675000000, 727000000 }, },
+> 
+> Nit:
+> 	Can you align clock and clock_rate wrap method,
+> 
+> 	"gcc_hf_axi", "camnoc_axi", "cpas_ahb",
+> 
+> 	{0}, { 300000000, 400000000 }, {0},
+> 
+> 1st line have 3 clock at .clock,
+> clock rate also 3 clock_rate.
+> 
+> So reader can know corresponding rate quickly,
+> 
+> 	for example, If I know rate of cpas_fast_ahb, reader can simple
+> locate by second row and second col.
+
+I'm reluctant to do such a change for v3, because it does not match
+any of the current clock resource lists in the driver, which breaks
+the established tradition.
+
+If needed, this should be done for all clock resources in the driver
+at once, but this is out of the scope of this changeset, so I do not
+consider to update the change accordingly in a probable next version
+of the changeset, which adds SM8450 CAMSS support.
+
+-- 
+Best wishes,
+Vladimir
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
