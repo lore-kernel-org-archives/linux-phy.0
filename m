@@ -2,123 +2,113 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 44695606A33D
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Nov 2026 01:12:56 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A8EF9606A32A
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Nov 2026 01:17:26 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=cEzVefy6;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=jannau.net header.i=@jannau.net header.a=rsa-sha256 header.s=fm2 header.b=csebFMpp;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=0uU1xHkU
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=YKMqwLam;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=BnDVZwJL
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:Cc:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=6MmoGVoSgeDL+F3lGMg2XyEShRno1uFOA+8FBs4c2qg=; b=cEzVefy64CzMDqU3q/UWlS2c0q
-	EH5A3Aak4jzE/mcc44sdziCuQRKbUSH01qLydsdsxvaRibUVu7RwBDO7+tuUm0WqvbH0VOxT7INc6
-	6c80FY95fH5BfvdNOs+8e2h00IfuJn1P1iPZVbc6BL07AVMxOfi1BtiWxX/3ZzpKU75v3sbz8rwxt
-	the4igMnXuzgHBej7z0YtJaNVI1mLO6tm8PMEIbSjG/rLLtbyfkAw126vAkn1svBgYrpy48x8zRe8
-	8ewu2s4MFg3FhkxX7CEroXg953nIgtu5IBt0E5Eu4oPHzPK14U/His1zobCD0tiM7HA6PASuI8U7H
-	8nM+zTWw==;
+	bh=UwL1/Y9Np2SEQ7vCzxuMdiAAXc1m9PVT8OTGvtll3bM=; b=YKMqwLamktiYWYcs7hLFrRTr6J
+	T6D3xnFIutPsR6ngKcrZWcJdsM8S96unI0PpDyr5k32pQPuc8E8hT/lcZAt006E2GgJ3qSUX3H4jb
+	Ij5Kh6MMITkCP+9dNpk/yFI0LQBSZ3NNTeod95QuEwYg8quAvOEx3UNA3VjEWrkFmIj7UstjM/KzY
+	fDFkX8yAYkf28WrB0IXX8wqn4AbRMhmSeSpcRqo7pKjhN/WXXgvZIL/P1j2zPml3in/LS7Ut+wDUD
+	7Ta1mB59Hi/OEZErvbs7QajWOKm0eMRwIc7ylgK20yS+FM0BjqJtGiZnR2boLvdlhoRcby+bT1UkQ
+	VNlUK+kw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWO2h-0000000BlVJ-4Aef;
-	Thu, 26 Nov 2026 01:12:55 +0000
-Received: from fout-b7-smtp.messagingengine.com ([202.12.124.150])
+	id 1xWO74-0000000BmwK-1aDD;
+	Thu, 26 Nov 2026 01:17:26 +0000
+Received: from mail-yw1-x1132.google.com ([2607:f8b0:4864:20::1132])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWO2g-0000000BlUW-0trJ
+	id 1xWO6D-0000000BmUd-1YsN
 	for linux-phy@lists.infradead.org;
-	Thu, 26 Nov 2026 01:12:55 +0000
-Received: from phl-compute-02.internal (phl-compute-02.internal [10.202.2.42])
-	by mailfout.stl.internal (Postfix) with ESMTP id 5050B1D00578
-	for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 20:12:53 -0500 (EST)
-Received: from phl-frontend-03 ([10.202.2.162])
-  by phl-compute-02.internal (MEProxy); Wed, 25 Nov 2026 20:12:53 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jannau.net; h=cc
-	:cc:content-type:content-type:date:date:from:from:in-reply-to
-	:in-reply-to:message-id:mime-version:references:reply-to:subject
-	:subject:to:to; s=fm2; t=1795655571; x=1795741971; bh=QFPp+98olB
-	7H96ELndfVAn1aKwnYlE7wJR1s/MOg1H0=; b=csebFMppgOhUiBbEkbTSRv9iZs
-	f0Mv7OqLVjAjyDyr0Lz75ojOLtUOsZ3Sw/N8FIGK/Oj7Jv7uAqygHc0sifPczpeS
-	WkKL+zLYZ/nHVWjEB+1/U3XkcDBKGPYljVCk4+fzhkJPGWii3IaA5byD0bIJ2xJd
-	aIM7I7mj50iElY8ymTYk4A1CZ7R/IZ17wAMUIvzRBIeO40YEqHpDlABIiUe+aPuM
-	b8Fv1wv3JYlQx0rCGhe2rEHlHF3D0RVg0wnIAwCySVXniXoRLXpW3+csrepj1YGM
-	O3PyHmOuFVg226bNNFzKcSjYR03m/jy+t8ogTolg83mP07zW+RwLE1x3Gm+A==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:content-type:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:subject:subject:to
-	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=
-	1795655571; x=1795741971; bh=QFPp+98olB7H96ELndfVAn1aKwnYlE7wJR1
-	s/MOg1H0=; b=0uU1xHkUn32vcdm8XjisZD7aSDs9UE6fsR0vrXBZKC3XJLAvOrP
-	F1JpLpdUB1IsKyzIl/ReCUjVBeGzeUDtl+8n6Cpbz0F5asf2yL0LAFLxRVCidm9E
-	zNKISMDoXy4fUw1ZuuuHmUtAR1bCdDHNOCpgRT+/moEvtkUQ/lMeTcvz3JD48Qzv
-	9y7zTbwE3zaYqbm3JDMTHhcrrHZQ+WHfpmR1hqPVj2f2tvx9ZiGh49D7UIgg8fF7
-	gtz8UdxNh9HEiADicztA74Z5cwrrFPYBfuuKiLDFMUihns78SxFlVR2w94jRLLNL
-	ZIAHMBRWQVRTaz5dBdLCbyc/UgCDblK9mVA==
-X-DKIM2-Info: draft=ietf-dkim-dkim2-spec-09;
-	repo=github.com/dkim2wg/interop; date=2026-11-03; sw=lmtpprox;
-	action=sign d=jannau.net a=rsa-sha256;
-DKIM2-Signature: i=1; m=1; t=1795655571; d=jannau.net;
-	mf=PGpAamFubmF1Lm5ldD4=;
-	rt=PGxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnPg==;
-	s=fm2:rsa-sha256:baLYVi3j50nqIhtgmV2XuIyjqtYI7Y2X2nxH9u+5fHCgFdo
-	5+ymvkf8eMvFpeso/7qMjAlrGesPRCnKsbL0+MDonlPDHgb+ce1FRqFNkPc0502h
-	Bw1Uj/abNfcHHpPS4FdXXW8gwnQn7Ksxu5bro0EbQoDKWu2v6gNHIIimcbad6OPf
-	MfT/LwrTCMNFqbkt3ouBK7CfXalbKPDm7wqetWpX3NqTySmc3GdbbN5JYpY3VIqh
-	urxv12fMISglFPyTvc0IULQyx8Fq1qKtzZ7pdVHS2Jq1pQQ43gkTY/pQ3fA1BThJ
-	rxqcEoAvjSDVo99Y8myfr8lOgy3S0pap7KdrJiA==;
-X-DKIM2-Info: draft=ietf-dkim-dkim2-spec-09;
-	repo=github.com/dkim2wg/interop; date=2026-11-03; sw=lmtpprox;
-	action=mi-m=1; hc=12;
-	hn=cc,content-disposition,content-type,date,feedback-id,from,
-	in-reply-to,message-id,mime-version,references,subject,to;
-Message-Instance: m=1; h=sha256:Q0i1sTTQbcjmcXXT+M78PquS39tDib4K1VaPggSsh+0=:rq6xRGOu8WZ0gInXjlwLQNeu4yVsubQwpS0nHDS7kME=;
-X-ME-Sender: <xms:k4cHa0GdHKbMWjJhotoLJn_zcVf207pWafl0MQHx794PRpGZKFVcoQ>
-    <xme:k4cHayii4_XqdCUy5bfnX0Y_KfqidZnP271fQ488M8rTg0nkROttU27P5h9zpc0JX
-    lFnVX7uW4y6p1l5SOk4HNnq94hJnQuwMN4KsacSRK6rnk8ompjFrohE>
-X-ME-Received: <xmr:k4cHaxiD5oGhwklRRZMPphhiN4ortZMUD9XVTWU8rMiIKzmoICRtVyd-VtqYyr8-E7UJjZQhdJ2euhvHmoC5OAAhptmnEguzUlc>
-X-ME-Proxy-Cause: dmFkZTG0rxQYipiteh89VTxNujjcq7oJ6AI8/b9/lv+JwM2PNH0ky658Zp0jDPofAzJsG/
-    ZQu5GcTSXHhrU3CcJoy6C1K1bQ6vro+A6eC7QdoOX8XIi7t0s6yXZPqNDY+OjlxKoE9ktT
-    NM7IrzlPvdpl06IqqwaOwQBopeNlKj0mag1R3fCYnHSHjpACcMAQRo/PrXW4G10Wx1WCUK
-    kGKUeJF5Lw/g9x7ya2UlZTED5wT+xb9btslIHSuUF8BB8VfOS57evdqjRcOZN7OmEMv30c
-    2yogudxI0ANUXjhDo6q/kjYUcoj7pVP9Z/oEWvePj73xUyqhiBEhGmHlt3pAHAO2l4kKGR
-    Y4CBIQcVrQb6DY+gmtOQWinKB0jkTHvOlEVC9o1w974iuoERGgLMPyb5cGP3LpD2n1WImE
-    Qqbnd27BfuiqTfhLl97qvXq/8+zFU7cNG/8z0LD5cDzV/iyI3Lljw9Vsh+bt8LNtSZlt2n
-    dQX2+Czn2HFAu3i+bRVajncraUfveSIIBnymn1t9WteKrXWp9CIdeEf3mjgYM8z4b60+mZ
-    HzTRNBHQeINorJluCDAtjpdKz3GaHN3tz4ieliS3tYZJ93TVGpAaDBi9/xvGP7EIzZuK+Q
-    WtLqdO7SRx5uv5braDVAcRqtssFXojTA5Q6I691mMS1NSYjPLjkIOLiOYwcg
-X-ME-Proxy: <xmx:k4cHa1mgK7EpLcXSceXoVGApuqd988gMOwDkBAdTklHoWjdj7k1rAQ>
-    <xmx:k4cHa1bPKoQOvqZNC5DdBsV1PMBm1J6pexnGoRgZkHKR2HSYbHUP7g>
-    <xmx:k4cHa4wLqrTcg5W3-Ou0zLXHfZ_4zw0CcMlaPu6yjNyEb8kNJoBInQ>
-    <xmx:k4cHa8ZDkgJ7NQIM8n0CPol8tUetjjp2RBg-UmLgvtF7HASvpJQRNA>
-    <xmx:k4cHa-kR7uPkcLcsUX9P6JEFTYrzqBkwfNjS64e6s98Ptm-2p8N9D0K3>
-Feedback-ID: i47b949f6:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
- 25 Nov 2026 20:12:50 -0500 (EST)
-Date: Thu, 26 Nov 2026 02:12:49 +0100
-From: Janne Grunau <j@jannau.net>
-To: Sasha Finkelstein <k@chaosmail.tech>
-Cc: Sven Peter <sven@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, asahi@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 5/5] phy: apple: atc: Split generation-specific code
-Message-ID: <20261126011249.GF372978@robin.jannau.net>
-References: <20261125-t8122-phy-v3-0-196e20b3537e@chaosmail.tech>
- <20261125-t8122-phy-v3-5-196e20b3537e@chaosmail.tech>
+	Thu, 26 Nov 2026 01:16:45 +0000
+Received: by mail-yw1-x1132.google.com with SMTP id 00721157ae682-8b4e18369c8so39072287b3.2
+        for <linux-phy@lists.infradead.org>; Wed, 25 Nov 2026 17:16:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795655791; x=1796260591; darn=lists.infradead.org;
+        h=mime-version:content-transfer-encoding:content-type:references
+         :in-reply-to:subject:cc:to:from:message-id:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=QlSPO9+8YS67Tn4rbTFkn+Zhwur7gCmRYFgUkoNRUs4=;
+        b=BnDVZwJLbIDgYnD2Vqu7pgmruQpoY0ER0xLYdiPG8CalFGgOrceE3Q8l444DhLTOSk
+         HgbMfcnWUwqOzhtYrNM99mvauHQ8UbCt+3GVKntQQcCp9NTnL3G+cVfmMQBMg852N+pP
+         hxAlJUHiSW8MNt3CIXcbOCuPIv1gj25TDEcbr7xcoK1HpLSl2fraqUD0gujeyzGwlRj9
+         zTPkc2eiS60fzsXBvnjf7bXsxgQ/Dx2vx7oC3++p/XFaI2hgymXXJ7yS/hjpCrDao1UE
+         f2irHm1md9XiFKaKZpjyFiohalvgHdJqzz1IK3uxIRNrw9t6b0YYpJj1NfTRvoEpGFs9
+         QVsA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795655791; x=1796260591;
+        h=mime-version:content-transfer-encoding:content-type:references
+         :in-reply-to:subject:cc:to:from:message-id:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=QlSPO9+8YS67Tn4rbTFkn+Zhwur7gCmRYFgUkoNRUs4=;
+        b=uRMgiQ06M+QS2eGcEO+fkHNAP8pASxF1SrVRsuKvv9ne9nKpM9hDJ4GG3WmU/OnJ4V
+         m2IQHI2c6xAPHdeJbg+E9kjik4Zikh6Frzg4GlA1ngmEFutCqidqWRGL/Pcverq5KxzX
+         0uAsUv3RsMrfs5ltjRBZmNSXEJYVz6ti6e4z9z364ktlRPtUo+lI+Me3cL3BvaAQQpuw
+         zyto42kXdwQlAmKY8RCrFK5R39ncsAbg+3V8bGbXQ1eb+RmmgCQcY8e6A7jsUS83GKf8
+         HPXu6u6kTd1fX7oLPwL4MQv1QvmzkzJcGnMgcocNw6dWbGZIIDBVOcUG2T2ByMC0Ue4F
+         MVgQ==
+X-Forwarded-Encrypted: i=1; AL+hErEl5H/UjxisrjP9el6uWkBU6zjUk8RvY+jsFQB1QkI5LVVDWD3lCf0J+34mHdRlwCpwYvfjx3q8PT0=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+n/q40WZc6PHwdf9DSaNan3QDlbeYTRT1FA8qQG0jAHUs+BNaq
+	+V97jIf3sqhtYqily8t3Bt/ByN7fI99M8pL0U6J/HNWvN629utee7OQw
+X-Gm-Gg: AZFdTZcKvB1n0DssIRFXbcfdazrUi++dB/mvLRbHSOClQZ5+hOkOWrU3vy3pKFuIhHs
+	1kjkGydco8UeqQ5SNS9e1zclG+5mFfyNGv5+Gl5xaRDZF+viGdPElCgydhvMhlkeyMVxZTHt8xV
+	eUzg8MXyToYFL9+Y3J6RwEh5t/avbkTm3GxjmKv+J10vFWwQl4QLD5rHIGOy/86v1bTTfG+sej8
+	v2FZBMONYEs2UsVodsKB6oHmfEju0tGaIbeC4SPOolg0tayQqygnSK68WVf6XvG7y9Qy8GJage0
+	XY7HxNF6sbjxCYQwAWkYvo0xzngzlvGiUJp55XqdPD009hoH0Tb6zM+ZAs4Ajl7ClOvnEFOdSax
+	eCYw1P8w9N+nTKoRpc8lMbNlXGigKrfZW0zAkrYSh9xv24wmI2mQ0Q801qrTborLV8UA9kSKgXC
+	hVx0pT1ZFsm80cg+/qFxLprzWu4Mwe6RYCakV+0HCsdhrnooc6nLKyLV5jgKS7guj79YMrw5x25
+	rcuPiNP6zYGSG7hPeXW0LrUMOccqVJvz/GOLEzGKtZY/MnFfYf08K7207a7Vx1lEOD3CA8kXP0N
+	sgdrOvH6cKU7n1XgsOWhn98S
+X-Received: by 2002:a05:690c:6a06:b0:8b4:d0ea:ca9d with SMTP id 00721157ae682-8b52045f6c5mr70876907b3.25.1795655791098;
+        Wed, 25 Nov 2026 17:16:31 -0800 (PST)
+Received: from localhost ([120.244.9.31])
+        by smtp.gmail.com with ESMTPSA id 00721157ae682-8b575ff89c0sm12140497b3.0.2026.11.25.17.16.29
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 25 Nov 2026 17:16:30 -0800 (PST)
+Date: Wed, 25 Nov 2026 20:16:25 -0500
+Message-ID: <9ec2f818084f2e723e8b82218a302258.docular.xu@gmail.com>
+From: Guodong Xu <docular.xu@gmail.com>
+To: Cody Kang <codykang.hk@gmail.com>
+Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>,
+ Troy Mitchell <troy.mitchell@linux.spacemit.com>,
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Haylen Chu <heylenay@4d2.org>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
+ Brian Masney <bmasney+clk@redhat.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
+ Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
+ Yao Zi <me@ziyao.cc>,
+ Uwe =?utf-8?q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>,
+ Icenowy Zheng <uwu@icenowy.me>, Jerome Brunet <jbrunet+clk@baylibre.com>,
+ Sarah Emery <sarah.emery@canonical.com>, Ze Huang <ze.huang@oss.qualcomm.com>,
+ Dmitry Baryshkov <lumag@kernel.org>, Cody Kang <codykang@vsit.ai>,
+ dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org,
+ devicetree@vger.kernel.org, spacemit@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-clk@vger.kernel.org, Luca Ceresoli <luca.ceresoli@bootlin.com>
+Subject: Re: [PATCH v3 12/17] drm/spacemit: add Innosilicon DP/eDP controller
+ bridge driver
+In-Reply-To: <20261121-k3-display-v3-12-ec419e8e96b8@gmail.com>
+References: <20261121-k3-display-v3-0-ec419e8e96b8@gmail.com>
+ <20261121-k3-display-v3-12-ec419e8e96b8@gmail.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20261125-t8122-phy-v3-5-196e20b3537e@chaosmail.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261125_171254_317752_164A77B3 
-X-CRM114-Status: GOOD (  10.66  )
+X-CRM114-CacheID: sfid-20261125_171633_455684_928362BE 
+X-CRM114-Status: GOOD (  15.17  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -132,32 +122,77 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-5.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
+	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Wed, Nov 25, 2026 at 02:11:49PM +0100, Sasha Finkelstein wrote:
-> atc.c is getting pretty big, split out the hardware generation-specific
-> code into separate files.
-> 
-> Reviewed-by: Sven Peter <sven@kernel.org>
-> Signed-off-by: Sasha Finkelstein <k@chaosmail.tech>
-> ---
->  drivers/phy/apple/Makefile    |    2 +-
->  drivers/phy/apple/atc-t8103.c |  273 +++++++++
->  drivers/phy/apple/atc-t8122.c |  713 +++++++++++++++++++++++
->  drivers/phy/apple/atc.c       | 1286 +----------------------------------------
->  drivers/phy/apple/atc.h       |  340 +++++++++++
->  5 files changed, 1333 insertions(+), 1281 deletions(-)
+Hi Cody,
 
-from a code history and code churn point of view it would have been nice
-if the split happened before or while adding t8122 support. Not sure if
-it is worth the effort now that t8122 support already exists.
+On Sat, 21 Nov 2026 15:40:51 +0800, Cody Kang via B4 Relay wrote:
+[...]
+> diff --git a/drivers/gpu/drm/spacemit/Kconfig b/drivers/gpu/drm/spacemit/Kconfig
+> index 8326a7b98151a..4667cb624401a 100644
+> --- a/drivers/gpu/drm/spacemit/Kconfig
+> +++ b/drivers/gpu/drm/spacemit/Kconfig
+> @@ -16,3 +16,22 @@ config DRM_SPACEMIT
+[...]
+> +config SPACEMIT_INNO_DP
+> +	tristate "SpacemiT Innosilicon DP/eDP controller support"
+[...]
+> diff --git a/drivers/gpu/drm/spacemit/Makefile b/drivers/gpu/drm/spacemit/Makefile
+> index b3b148000cf7b..260d316a271b5 100644
+> --- a/drivers/gpu/drm/spacemit/Makefile
+> +++ b/drivers/gpu/drm/spacemit/Makefile
+> @@ -9,4 +9,7 @@ spacemit-drm-y := spacemit_drm.o \
+>  		  dpu/dpu_saturn_hee.o \
+>  		  dpu/saturn_fbcmem.o
+>
+> +spacemit-inno-dp-y := spacemit_inno_dp.o
+> +
+>  obj-$(CONFIG_DRM_SPACEMIT) += spacemit-drm.o
+> +obj-$(CONFIG_SPACEMIT_INNO_DP) += spacemit-inno-dp.o
 
-Janne
+I noticed a corner case when testing module unload on v3.
+spacemit_inno_dp can be removed while a process still has cardN open
+(say Xorg or kmscube is running and somebody does rmmod
+spacemit_inno_dp), and the DRM device then still holds references on
+the bridge. When that process closes cardN later, the kernel oopses. On
+a CoM260-IFX:
+
+	sleep 20 < /dev/dri/card0 &
+	rmmod spacemit_inno_dp
+
+  Unable to handle kernel paging request at virtual address ffffffff01ac5188
+  Modules linked in: spacemit_drm [...] [last unloaded: spacemit_inno_dp]
+  epc : drm_bridge_put.part.0+0x72/0xb6 [drm]
+  [...]
+  [<ffffffff01b0b142>] drm_bridge_put.part.0+0x72/0xb6 [drm]
+  [<ffffffff01b0b19e>] drm_bridge_put+0x18/0x22 [drm]
+  [<ffffffff01c41318>] drm_bridge_connector_put_bridges+0x34/0x7a [drm_display_helper]
+  [<ffffffff01b23400>] drm_managed_release+0x86/0x116 [drm]
+  [<ffffffff01b13cce>] drm_minor_release+0x68/0x80 [drm]
+  [<ffffffff01b1ce2a>] drm_release+0xd2/0x102 [drm]
+  [<ffffffff802b325c>] __fput+0xa8/0x248
+
+An open cardN pins spacemit-drm only. The last drm_bridge_put() comes
+at the final close and reads bridge->funcs, which was in the module
+of spacemit_inno_dp that is already gone.
+
+Other DRM drivers with the same structure, rockchipdrm for example,
+put the bridge driver and the DRM driver into one module. I think doing
+the same here (add spacemit_inno_dp.o to spacemit-drm) is the better
+solution.
+
+Luca (added to Cc), is module unload something your bridge hotplug
+series [1] is meant to cover?
+
+[1] https://lore.kernel.org/r/20261118-drm-bridge-hotplug-v3-0-44bb3b4a828f@bootlin.com
+
+Guodong
 
 -- 
 linux-phy mailing list
