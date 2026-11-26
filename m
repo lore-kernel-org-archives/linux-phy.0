@@ -2,12 +2,12 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 70ECB606A31C
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Nov 2026 18:59:58 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 8777C606A68E
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Nov 2026 19:00:05 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=kB+ET7H8;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=EuCqEniA;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=ZQ6KSzyC
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=An9/1UqZ;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=PTCW4Tav;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=WNDcBXn8
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,92 +15,92 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=wFPH3MJLdwjso3RPT5AmgQbi8xUSu0957VTfsGbtu/w=; b=kB+ET7H8r2JUPWH0LpyyKExnpC
-	kRKzQObL0AH7adW7X1ZOEsmSSTu/HcMLYyEttPjzX2JOXb+U/P7lKT/8lQDAMkrNPx6lpH3220YY2
-	Mh1YW1V7r0ncuGS2V4CjAYOhzpIutyfdlpp8pyRMXq2tdy7q+K0Zn6CpWkVlwCVL/i5UIVThTL9y6
-	dRlVaYPEGMl+PLlCV/PfX/Ehjzx7uw97sD10ZucZW8P4NN4fRHUTAtiKVvr1Aq5GZz28kDy1FwPGY
-	5g9OOo8/uS1W9ArGpYJMutImlHH2eahhL7gdiOV1rwwcSeRVmWcE955CwUufkIYaQl2Mc3vUEUt8L
-	veuRFPhg==;
+	bh=bu6ORnsFds0Xl7jX72g9cKoBesVROe5aZ92MUXKDmOg=; b=An9/1UqZ9WyJsO7/Le5xHb7pvJ
+	SN1XEWRKaI5CJ2Qb/PiOOZouPG3wHgupR1Q0BqSn8iQXimRh/fGR4Z8bGdDCYOSg6NY6LjrZG/sFV
+	zfaxgiqJDC1BX2B7HtaA0wkDYD5fLuR5Y9k1DM5CvmGoxPZRZ/mb4B/B/yQlqsPzstFH45HJjOLTg
+	sBgb12gA0eZAWjA7PHVqgPKxitajNn6XALub9ypWPELuEYF/D7gXYdUeB4PxXZPuR67sEi9HqNXqr
+	27rPUQHi0F61rXJ49pibfhqn8WIFxwV7RB/jooABh2e7/OjcIu5ltGr8BdbtODSAMW74YOvh0Edbw
+	1wmHGayQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWehK-0000000EDAS-0q2d;
-	Thu, 26 Nov 2026 18:59:58 +0000
+	id 1xWehR-0000000EDCf-1EBw;
+	Thu, 26 Nov 2026 19:00:05 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWehI-0000000ED9h-2aTe
+	id 1xWehP-0000000EDC7-1ccs
 	for linux-phy@lists.infradead.org;
-	Thu, 26 Nov 2026 18:59:57 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AQFuKaN1848278
-	for <linux-phy@lists.infradead.org>; Thu, 26 Nov 2026 18:59:55 GMT
+	Thu, 26 Nov 2026 19:00:04 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AQFu7MG3850556
+	for <linux-phy@lists.infradead.org>; Thu, 26 Nov 2026 19:00:02 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	/00NqReDgsN7DpEOL6VOh9ns6kcq/8uBglgUysJara0=; b=EuCqEniAuaycpS+j
-	QAyhLkuo95LaWZ1vhIxVcP96OjX57gFDo+foNWMeoJQlj5vjDv/WKuOlh7xvDlVD
-	3Iy2f4BnNeIOnXjudnz1p+CmNnTuT2tKhQQN/H7ORm6kgASgScdB2f/eHJTmTDaT
-	5tGBhEqmfaow4nB9bd7Mi1GkGOeEj11gv4+Ga8v1u7qSwku337TrNk/m/YMXaZtE
-	OY1xY8Thz67zyEtZsF6jj9B1GKlrT0kn+m8tLhvgTSSZzsiFhMS2/11XgexFWiVw
-	mTAJJ0rHOFQeSqQHM54PkN1bKCqMcPDIKxD1S/eB2NfTX16C0RylWND3gdSbPJ/K
-	UxMdMQ==
-Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j6fw7tgm0-1
+	NII0+L88Wv3q4wyUgO6D17Ai3ObjNTZatzOLfgRo1vg=; b=PTCW4Tavs8sEGIGD
+	sz8/fOge8yOQMouJw4pYBniAonjpd3qi1v40dZYuOZsWJDzyNco7HZjpzaTemJGB
+	lfyX9S15RhwnPg0fUXshot5FEWJ3byCuw1fItJyIVgWbqjeC0gSevY6mTBrg+Xb7
+	shXxmBvYar5xERAy+pUrE1hjJ6zJOl9JvvjTf9leLKLRDm+TKW4iFCcbdFy9tZDz
+	4FshGmPhoCGlot+2Ps5Cq3gJ6lID+4jnHm1DFq3LwROaYunKW0hqRYfPMhznD0PF
+	Z7ASnAYCXpmzd+MxqnEWJbJduT0y7YbG9fSFeEi/XXgR3foa3FPt3ddcUr92mFOW
+	IxA9hw==
+Received: from mail-dl1-f70.google.com (mail-dl1-f70.google.com [74.125.82.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j6h7ga619-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 26 Nov 2026 18:59:55 +0000 (GMT)
-Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-386b8624cf7so5052170eec.1
-        for <linux-phy@lists.infradead.org>; Thu, 26 Nov 2026 10:59:55 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Thu, 26 Nov 2026 19:00:02 +0000 (GMT)
+Received: by mail-dl1-f70.google.com with SMTP id a92af1059eb24-139b62317d0so3063068c88.0
+        for <linux-phy@lists.infradead.org>; Thu, 26 Nov 2026 11:00:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795719594; x=1796324394; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1795719601; x=1796324401; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=/00NqReDgsN7DpEOL6VOh9ns6kcq/8uBglgUysJara0=;
-        b=ZQ6KSzyCMjzJcqtREmio+xFka1pNLFks/sX0U06uecYKm7tlCyrE/oLGaGyUXLc1RN
-         LM6owxTmfYgr02zPZxQLL72ZD0bwxzQPcQEcsCPw6K66ZMyVaKuKQiVB2o9UqP6nCPEN
-         tPqyh/hWwnf/MbZomFHMCWo2adiYY45Jge5kUw+O7MFjcd20w9dt5TPWLTpHpV2uRyoI
-         T4PSXFiewQzloV8PRaK+0nUfOCZrprFWCJupT2BYcIV9UIEDDSGr8FPp3Cw5TOW9Mq8O
-         f0WZGRaHWVWJnV4AvPCoyEBobh5XsXjiTwKxiRLjxQTvWNGAm7qf1GRaNK7UW2IuNNOZ
-         Ggyg==
+        bh=NII0+L88Wv3q4wyUgO6D17Ai3ObjNTZatzOLfgRo1vg=;
+        b=WNDcBXn8AgN/4qrMIBZ5VQLRHiAsGOoEd+sqka9NbNozXe20LZQdLJ6n1uDXQILnq0
+         MT18ll3Q9t9E4wuHBfzUVPLhUYy87VxWLVjNZHngo48DTWzQ60N2VKrTWSOr+LTTvbql
+         IF/kSewNrvfUYrrameOhRH9bpnBNLPHu0+AJnE3eCe5oR1joDfCgCuNzcy4uXNZ65+1y
+         36KdkxJD/uikrYUpjs9xdy/JKrjXZud79GqxQmJzOUZarUREdNVsYExZZWDspO7HSYks
+         ZyXvl77KGxE1AkF48gtoMjRynijSXU/OyGKf/a//mSlsrBDGLxLdNM3DZuGcLARR4B7p
+         ETVQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795719594; x=1796324394;
+        d=1e100.net; s=20260707; t=1795719601; x=1796324401;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=/00NqReDgsN7DpEOL6VOh9ns6kcq/8uBglgUysJara0=;
-        b=nQy7f8L3rkKvYYZDfr9QP8rSDuBzJlTPSJqs9VktnkzDxzuoHa5SjFDMu7S8K6LvLv
-         EUIemi6I3RCGojz+OO8LJvyXJtMrbkiQTY4LWcim3vejCArMJtm/PvxWRl4jHfFMk/ZZ
-         ouC5qlW3OZmIUCbqQqivh4a85hUfrcUlBN6t7EeQZxsnNjRJiKkRwsUEEUeL47NsB+3Q
-         9WgnCXUJlVVkY7EAhrHR/mFmtHOsSIftPRvJwSvjkyWn+eBnY39Al8NadlVT2ln5XVzI
-         3ngtu8Xj0y7FA0CPya89EEa+qrxSYXGf8p0v0mqlNte0/7LK10VVOuWvTMdfg1Q9U6I8
-         iO0Q==
-X-Forwarded-Encrypted: i=1; AL+hErErpibN1orbBbTp8oBPs0mR3B9QXtKim2oDfWr2RP7LOc3OIujYCcoQUgmTtvQomQowNbZUyQoblsM=@lists.infradead.org
-X-Gm-Message-State: APuU4Z88aKN3oxkmfS9sOTKY+qHfHaM7NphtTfgmy5uTjW/FeZKx3B2r
-	eIcuJremlkF0jYcl7vFWrCv4xQFcpKdBkjulzm1IVt7D31iTU7I9p2joFI8W1DD071KcqMrZVDz
-	3Jq5UIWddJpOKgfSJ48yVer1RSi6CHPqFbanbJYDMLY880OcfvJjEJnwlaje2JGbnyI98ry+1Ru
-	f5
-X-Gm-Gg: AZFdTZdzYWs3wk1Xj46o+uC5wAi9g57/a/xlH00t/22c0oTX5L9REBjWyNvFrqcZvJQ
-	srMm7pwWkkW4dnExKcT+yDTiXuVcwmaUj605OwtL1q5pwn9fykCN2lAz6sUjM+rjeDr9YtP942D
-	bUaieAPvzJ+imrjASbb84+Hd2Lry5Js2HoayqGQmg5D6VSVxcpk+qOSV+/nBUq5SM1nsV0XSzdW
-	9Cv8Gj6jh2KpTENQ4MVWtSwCEvlGF8MFOc9fOCXJlyX+KepyBGRgjWxWbOcuJwz+ZDEx4ausZdt
-	YISBXctqeL2BiEWyatGRo/b0zxONb3pNSlOG8ePrt6Z0B+9i7qdAQ93JI9m6vfokY2ZGCRgOKb7
-	14vHGPUTkYXCT1BzamYurmPNp2O1wj4sXhTaP2+DMcMlkCkZDYNcN0SWb3scuZjlyGRhbc/O1Sc
-	mLAC7M
-X-Received: by 2002:a05:7022:1583:b0:1b3:a9c6:b293 with SMTP id a92af1059eb24-1b5568c0198mr23679988c88.25.1795719594263;
-        Thu, 26 Nov 2026 10:59:54 -0800 (PST)
-X-Received: by 2002:a05:7022:1583:b0:1b3:a9c6:b293 with SMTP id a92af1059eb24-1b5568c0198mr23679971c88.25.1795719593789;
-        Thu, 26 Nov 2026 10:59:53 -0800 (PST)
+        bh=NII0+L88Wv3q4wyUgO6D17Ai3ObjNTZatzOLfgRo1vg=;
+        b=bMUvy23r8ivEAjMPJw5rmU3okdN24V4KpeH7RpHu77NtdQL9RlXg1ctXLGynZuTbZ8
+         oWcT9QBeCi/Lvb/khCVwehW8pgmpqqjuOtZIZucMz8WswCQwdD0UuPqRvXtOu5F2xDt+
+         ryya+ip03XlcsPeJXbqdijYYtzgsZgedFHZzvmdQ0BXulg0OxounsxsE5ryVXR7U37kH
+         WD9aahNhCCv1qGGJ8Lzt2SWuvXA1kqtoeHnantx9IyxK7Mu9rT1m6aK/Km6zfL6BIxIO
+         CigumUnX44WJufWYx+YoAOcw68s8pOIhW8nW6sD+y3uIstTq9gR1D1z3o8tmkZYzmgMD
+         xHYg==
+X-Forwarded-Encrypted: i=1; AL+hErFBYYOennzpZRG+2I+UfgFPtdZCQ8h9TbEgrjeFefJvoVjHTPEM9kkUx2rb5wKxZOX8IGmWxeMN/6I=@lists.infradead.org
+X-Gm-Message-State: APuU4Z8O2svZAuAxaUP7mwq8SbH4Eq+AkFQWb15Elo8KVKtwpPBLisHz
+	FVVPq1r5327DquQapD1/23F2JSGiNgHcXzmhsHe80REkxrz9Uv8viVeFycbXmBvGhKeB6pMRl+e
+	m80OfDmA1BWcVK+LcujhFwT7QwMvuDQdSJoVLOGuPLryUKyordBK8SQ4qJBdAFeH4DrBBVNwoX3
+	tJ
+X-Gm-Gg: AZFdTZfRTueKdR3D9eAu64ArRo3b46h88JG3RJtu+2h+uRb/x7kFn9y5qsd5lGlRoTT
+	ISobxCRPRYHoyHP0oJ51733i4mKARUgpJ2FwMrVS58RWd6VysJ9KVStKKb5W15YwVeTFMT3Qg71
+	eb4ikxLb/ag4kR+tPFFyxzKBIal0x7F74ar8hFQ+jAm8dQMHcTYCqCH9o8oSaT5iIWs2UoI3DcF
+	8bSIcwjuLhFB5yazxhZhffSWZa50IadQdYx36wUkjjSaxRt8ZaoZuhuJPdY0TWRgTyan14OE2w0
+	nNZF0NO5hu05DFyDH02WDYFhUaTFzfhBchg1kb0cXD5raasWyOzj8MKaDUJpEEqUhvxzp9qxQsX
+	qlgCHUu0QLX3ABKW7GYq/v/FczbfP+o1YGs3DgNnW0qmMWPOhQ/4/oBtjeWwbdVB5RHbZRq69ad
+	PnqcM/
+X-Received: by 2002:a05:7022:1701:b0:1a4:c892:b130 with SMTP id a92af1059eb24-1b55feaa6a4mr19781253c88.15.1795719601437;
+        Thu, 26 Nov 2026 11:00:01 -0800 (PST)
+X-Received: by 2002:a05:7022:1701:b0:1a4:c892:b130 with SMTP id a92af1059eb24-1b55feaa6a4mr19781239c88.15.1795719600868;
+        Thu, 26 Nov 2026 11:00:00 -0800 (PST)
 Received: from hu-jkona-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b5567ffa8csm60868190c88.7.2026.11.26.10.59.47
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1b5567ffa8csm60868190c88.7.2026.11.26.10.59.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Nov 2026 10:59:53 -0800 (PST)
+        Thu, 26 Nov 2026 11:00:00 -0800 (PST)
 From: Jagadeesh Kona <jagadeesh.kona@oss.qualcomm.com>
-Date: Fri, 27 Nov 2026 00:27:10 +0530
-Subject: [PATCH 2/8] clk: qcom: gcc-glymur: Register set_hwmode_dev
+Date: Fri, 27 Nov 2026 00:27:11 +0530
+Subject: [PATCH 3/8] clk: qcom: gcc-qcs615: Register set_hwmode_dev
  callback for USB, PCIe GDSCs
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261127-usb-pcie-gdsc-suspend-v1-2-485a08ffdc6f@oss.qualcomm.com>
+Message-Id: <20261127-usb-pcie-gdsc-suspend-v1-3-485a08ffdc6f@oss.qualcomm.com>
 References: <20261127-usb-pcie-gdsc-suspend-v1-0-485a08ffdc6f@oss.qualcomm.com>
 In-Reply-To: <20261127-usb-pcie-gdsc-suspend-v1-0-485a08ffdc6f@oss.qualcomm.com>
 To: Bjorn Andersson <andersson@kernel.org>, Abel Vesa <abelvesa@kernel.org>,
@@ -123,37 +123,36 @@ Cc: Ajit Pandey <ajit.pandey@oss.qualcomm.com>,
         linux-pci@vger.kernel.org,
         Jagadeesh Kona <jagadeesh.kona@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI2MDA3NCBTYWx0ZWRfX49bl+bAQDWp1
- 191zdPLyBKGXDz/3gvOQ9+5DOKf7lNGmMLlvtkbpGYYVNK4+OEY1uz2TgT/9PriOs2D08nLIig4
- QxmNhpNJvXm1QJPgtqjpMxSoZ/LKQoY=
-X-Proofpoint-GUID: I9Ag0tonG897o90CzGUEYP7aedHLOxu4
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI2MDA3NCBTYWx0ZWRfXyUYNDLsAWlhj
- zmV65oouC6I4kJh6yhxrokDPQXSP26jz2kLxaN0R65lF/1XKAI57XkJ00ptkZ45x0ejK4uppUnO
- SiWNIJSjU6C3oN/26AjfMN81AC7ysAbrB/v+rOHwb7Suv9MRflo9j1lRjs+LjRCx0PYiyksIlQz
- Q4Ri4c+xaJNnyRvrlKGUWrT8acVIhjzZgho4/lwuwh+kTPA9BJtPMa9+ZP94wL6M1dmpw0mtKEA
- 1LWHbw4VmkWvWd4upc0I15rRUPy10bpstp5ESU2a/CdFP3coOZA7XotMokjLClh1cH77GzEBVbc
- cwRORBbXcTJ0MfG4qzRVJP2mkt849/Dzu3Xd1hnRXhHhirhixHZGF+VqhcHGopfyP4hKXGYVir0
- syJB59EWoh4vhjGv8wegoperpe0DqqOz/q1XyreQFfKegplzCe4Wr0cwHRXbEaYLcFbc40RYYMD
- lDkpzxRRRogHN1K99Ig==
-X-Proofpoint-ORIG-GUID: I9Ag0tonG897o90CzGUEYP7aedHLOxu4
-X-Authority-Analysis: v=2.4 cv=ePeGH3p1 c=1 sm=1 tr=0 ts=6b0881ab cx=c_pps
- a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+X-Proofpoint-ORIG-GUID: 9fDqbfZusG92cIZUG39j3hk8mXlT2wrG
+X-Proofpoint-GUID: 9fDqbfZusG92cIZUG39j3hk8mXlT2wrG
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI2MDA3NCBTYWx0ZWRfX7AWfP3YCFJu+
+ LuLcTXeBoa1gwR82YjJO0RxzZy7lYf42or/cvme3Hm2GyyFWqFTpl3nczyoZdwbgue7UwL9QyW2
+ Mal1+11lQfMUOXEVZVUK9uLYVMWxbt/GhRVYBVUo29Mp5RTT1oOylVmdou1VWYw4Zll7Nci3MlX
+ gQzl3GM93jAEVj8HYygRP0jYOZUqcaImgP0MjhfEaSQ+nPX6yC50Sgj3qS6sEmn70K74nid1WpQ
+ Ag+PzEepqSQ7nMO02fKgRtiz78c5+Xl189R9MQaHgOVmk8bKgEZFEhD0bjd4dSe8ZFbS3e56rg+
+ qZS42B00P5aexeVlrzk1ejfDxn6S0geG4tN6Wx/b4F8OPPoOd7KhfDh7kNKKjupWySxNVFW6NWF
+ XHRqjW/oTcVOzmNzbzZZ1YjvrzLetCjMecN/fHHu2R3d+zDvpHdpl9ZTbBB/LSTYB+rTK/DdCVN
+ h/S6DfgEwoSnTcB7VNw==
+X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI2MDA3NCBTYWx0ZWRfXzNl3OnW0mX+p
+ xfFvQfeyOjeDfGq7jb0NCEogtHJknjTLJJ9ahNfk9wha1k21E++5sQiQc6HWfvsVjsPS1Rkw2ir
+ jbxMDRPqv/5mkoaVDGEaEIrYLwQO8fQ=
+X-Authority-Analysis: v=2.4 cv=L4GI0OT8 c=1 sm=1 tr=0 ts=6b0881b2 cx=c_pps
+ a=SvEPeNj+VMjHSW//kvnxuw==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
  a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
- a=EUspDBNiAAAA:8 a=DIGDBJpTELtvEum99LgA:9 a=QEXdDO2ut3YA:10
- a=6Ab_bkdmUrQuMsNx7PHu:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
+ a=EUspDBNiAAAA:8 a=zroWNzDgHOBiqxzc7EQA:9 a=QEXdDO2ut3YA:10
+ a=Kq8ClHjjuc5pcCNDwlU0:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
  definitions=2026-11-26_04,2026-11-26_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 suspectscore=0 clxscore=1011 adultscore=0
- lowpriorityscore=0 bulkscore=0 phishscore=0 malwarescore=0 spamscore=0
- impostorscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2611040001
- definitions=main-2611260074
+ adultscore=0 bulkscore=0 suspectscore=0 malwarescore=0 lowpriorityscore=0
+ clxscore=1011 spamscore=0 impostorscore=0 phishscore=0 priorityscore=1501
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611260074
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261126_105956_791077_C5C1609F 
-X-CRM114-Status: GOOD (  12.76  )
+X-CRM114-CacheID: sfid-20261126_110003_558375_219219A1 
+X-CRM114-Status: GOOD (  12.15  )
 X-Spam-Score: -2.8 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -176,256 +175,41 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 Register gdsc_set_hw_stay_on as set_hwmode_dev callback for USB & PCIe
 GDSCs to allow the USB & PCIe consumer drivers to keep the GDSC ON based on
-the requirement in USB host mode and PCIe non-D3 cold usecases. Also drop
-the PWRSTS_RET_ON flag for USB GDSC's.
+the requirement in USB host mode and PCIe non-D3 cold usecases.
 
 Signed-off-by: Jagadeesh Kona <jagadeesh.kona@oss.qualcomm.com>
 ---
- drivers/clk/qcom/gcc-glymur.c | 46 +++++++++++++++++++++++++++++++++----------
- 1 file changed, 36 insertions(+), 10 deletions(-)
+ drivers/clk/qcom/gcc-qcs615.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/clk/qcom/gcc-glymur.c b/drivers/clk/qcom/gcc-glymur.c
-index d8d33eff419eeb9885f8560c2c7c71d542371658..73013133fa27cf0b908a8e5552a6fe981ab197d4 100644
---- a/drivers/clk/qcom/gcc-glymur.c
-+++ b/drivers/clk/qcom/gcc-glymur.c
-@@ -7557,6 +7557,7 @@ static struct gdsc gcc_pcie_0_tunnel_gdsc = {
- 	.collapse_mask = BIT(2),
- 	.pd = {
- 		.name = "gcc_pcie_0_tunnel_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7571,6 +7572,7 @@ static struct gdsc gcc_pcie_1_tunnel_gdsc = {
- 	.collapse_mask = BIT(1),
- 	.pd = {
- 		.name = "gcc_pcie_1_tunnel_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7585,6 +7587,7 @@ static struct gdsc gcc_pcie_2_tunnel_gdsc = {
- 	.collapse_mask = BIT(3),
- 	.pd = {
- 		.name = "gcc_pcie_2_tunnel_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7599,6 +7602,7 @@ static struct gdsc gcc_pcie_3a_gdsc = {
- 	.collapse_mask = BIT(4),
- 	.pd = {
- 		.name = "gcc_pcie_3a_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7613,6 +7617,7 @@ static struct gdsc gcc_pcie_3a_phy_gdsc = {
- 	.collapse_mask = BIT(5),
- 	.pd = {
- 		.name = "gcc_pcie_3a_phy_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7627,6 +7632,7 @@ static struct gdsc gcc_pcie_3b_gdsc = {
- 	.collapse_mask = BIT(6),
- 	.pd = {
- 		.name = "gcc_pcie_3b_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7641,6 +7647,7 @@ static struct gdsc gcc_pcie_3b_phy_gdsc = {
- 	.collapse_mask = BIT(7),
- 	.pd = {
- 		.name = "gcc_pcie_3b_phy_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7655,6 +7662,7 @@ static struct gdsc gcc_pcie_4_gdsc = {
- 	.collapse_mask = BIT(10),
- 	.pd = {
- 		.name = "gcc_pcie_4_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7669,6 +7677,7 @@ static struct gdsc gcc_pcie_4_phy_gdsc = {
- 	.collapse_mask = BIT(11),
- 	.pd = {
- 		.name = "gcc_pcie_4_phy_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7683,6 +7692,7 @@ static struct gdsc gcc_pcie_5_gdsc = {
- 	.collapse_mask = BIT(8),
- 	.pd = {
- 		.name = "gcc_pcie_5_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7697,6 +7707,7 @@ static struct gdsc gcc_pcie_5_phy_gdsc = {
- 	.collapse_mask = BIT(9),
- 	.pd = {
- 		.name = "gcc_pcie_5_phy_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7711,6 +7722,7 @@ static struct gdsc gcc_pcie_6_gdsc = {
- 	.collapse_mask = BIT(12),
- 	.pd = {
- 		.name = "gcc_pcie_6_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7725,6 +7737,7 @@ static struct gdsc gcc_pcie_6_phy_gdsc = {
- 	.collapse_mask = BIT(13),
- 	.pd = {
- 		.name = "gcc_pcie_6_phy_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
- 	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE | VOTABLE,
-@@ -7749,8 +7762,9 @@ static struct gdsc gcc_usb20_prim_gdsc = {
- 	.clk_dis_wait_val = 0xf,
- 	.pd = {
- 		.name = "gcc_usb20_prim_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
--	.pwrsts = PWRSTS_RET_ON,
-+	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
- };
- 
-@@ -7761,8 +7775,9 @@ static struct gdsc gcc_usb30_mp_gdsc = {
- 	.clk_dis_wait_val = 0xf,
- 	.pd = {
- 		.name = "gcc_usb30_mp_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
--	.pwrsts = PWRSTS_RET_ON,
-+	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
- };
- 
-@@ -7773,8 +7788,9 @@ static struct gdsc gcc_usb30_prim_gdsc = {
- 	.clk_dis_wait_val = 0xf,
- 	.pd = {
- 		.name = "gcc_usb30_prim_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
--	.pwrsts = PWRSTS_RET_ON,
-+	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
- };
- 
-@@ -7785,8 +7801,9 @@ static struct gdsc gcc_usb30_sec_gdsc = {
- 	.clk_dis_wait_val = 0xf,
- 	.pd = {
- 		.name = "gcc_usb30_sec_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
--	.pwrsts = PWRSTS_RET_ON,
-+	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
- };
- 
-@@ -7797,8 +7814,9 @@ static struct gdsc gcc_usb30_tert_gdsc = {
- 	.clk_dis_wait_val = 0xf,
- 	.pd = {
- 		.name = "gcc_usb30_tert_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
--	.pwrsts = PWRSTS_RET_ON,
-+	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
- };
- 
-@@ -7809,8 +7827,9 @@ static struct gdsc gcc_usb3_mp_ss0_phy_gdsc = {
+diff --git a/drivers/clk/qcom/gcc-qcs615.c b/drivers/clk/qcom/gcc-qcs615.c
+index f205de3a936170413b21173c7af9668c14495369..76d835346632ed672e0cfd896723b84c185de270 100644
+--- a/drivers/clk/qcom/gcc-qcs615.c
++++ b/drivers/clk/qcom/gcc-qcs615.c
+@@ -2654,6 +2654,7 @@ static struct gdsc pcie_0_gdsc = {
  	.clk_dis_wait_val = 0x2,
  	.pd = {
- 		.name = "gcc_usb3_mp_ss0_phy_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
--	.pwrsts = PWRSTS_RET_ON,
-+	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
- };
- 
-@@ -7821,8 +7840,9 @@ static struct gdsc gcc_usb3_mp_ss1_phy_gdsc = {
- 	.clk_dis_wait_val = 0x2,
- 	.pd = {
- 		.name = "gcc_usb3_mp_ss1_phy_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
--	.pwrsts = PWRSTS_RET_ON,
-+	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
- };
- 
-@@ -7833,6 +7853,7 @@ static struct gdsc gcc_usb4_0_gdsc = {
- 	.clk_dis_wait_val = 0xf,
- 	.pd = {
- 		.name = "gcc_usb4_0_gdsc",
+ 		.name = "pcie_0_gdsc",
 +		.set_hwmode_dev = gdsc_set_hw_stay_on,
  	},
  	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
-@@ -7845,6 +7866,7 @@ static struct gdsc gcc_usb4_1_gdsc = {
- 	.clk_dis_wait_val = 0xf,
+ };
+@@ -2676,6 +2677,7 @@ static struct gdsc usb20_sec_gdsc = {
+ 	.clk_dis_wait_val = 0x2,
  	.pd = {
- 		.name = "gcc_usb4_1_gdsc",
+ 		.name = "usb20_sec_gdsc",
 +		.set_hwmode_dev = gdsc_set_hw_stay_on,
  	},
  	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
-@@ -7857,6 +7879,7 @@ static struct gdsc gcc_usb4_2_gdsc = {
- 	.clk_dis_wait_val = 0xf,
+ };
+@@ -2687,6 +2689,7 @@ static struct gdsc usb30_prim_gdsc = {
+ 	.clk_dis_wait_val = 0x2,
  	.pd = {
- 		.name = "gcc_usb4_2_gdsc",
+ 		.name = "usb30_prim_gdsc",
 +		.set_hwmode_dev = gdsc_set_hw_stay_on,
  	},
  	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
-@@ -7869,8 +7892,9 @@ static struct gdsc gcc_usb_0_phy_gdsc = {
- 	.clk_dis_wait_val = 0x2,
- 	.pd = {
- 		.name = "gcc_usb_0_phy_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
--	.pwrsts = PWRSTS_RET_ON,
-+	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
  };
- 
-@@ -7881,8 +7905,9 @@ static struct gdsc gcc_usb_1_phy_gdsc = {
- 	.clk_dis_wait_val = 0x2,
- 	.pd = {
- 		.name = "gcc_usb_1_phy_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
--	.pwrsts = PWRSTS_RET_ON,
-+	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
- };
- 
-@@ -7893,8 +7918,9 @@ static struct gdsc gcc_usb_2_phy_gdsc = {
- 	.clk_dis_wait_val = 0x2,
- 	.pd = {
- 		.name = "gcc_usb_2_phy_gdsc",
-+		.set_hwmode_dev = gdsc_set_hw_stay_on,
- 	},
--	.pwrsts = PWRSTS_RET_ON,
-+	.pwrsts = PWRSTS_OFF_ON,
- 	.flags = POLL_CFG_GDSCR | RETAIN_FF_ENABLE,
- };
- 
 
 -- 
 2.56.0
