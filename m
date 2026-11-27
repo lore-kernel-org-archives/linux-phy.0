@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3A743606A324
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 10:08:45 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 465C5606A31E
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 10:08:56 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=VYGVnmNo;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=R2lKm9Fv
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3EyUdzmL;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=a2sR3URN
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,41 +14,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=asAGNGf2jOLbwL3dbreHK+g5Gk5Kdmx4oNjMRvGKYYk=; b=VYGVnmNo5eUWgCGOsMkUouXkxu
-	Th7G0Y/IayBj3UsBiiOsvwnqNaZHF7GqWZI7eb1/OUZ+BweIsM0cxZJBAheg0clWkby4v1Xu2S8A+
-	r0BaKOvCzhwSm2VTXociTLEHbOJdtqkizRzMrrr6qh6LkxzNf7pMnT0Oa+NGStdt0GOjI8GBclCEz
-	wTY1Znea8NJ32RfshuE+scWohH8a0aJl/pu2OmAKydq8Iqr+HSW0HtYptsZAjMUNND5nKFCXRpcKa
-	jczwegqy2mFuIcnB8PNPY7yIDLw11VEb87Q/RLTxewYUWOLqVaXTdfOtNpyAA+4yAq2ZMmHM7BLz8
-	MYncuiDw==;
+	bh=bJ8waMU8QNToeYoPIB2XiC5fMc82d3IzGZul5Cz0osY=; b=3EyUdzmLNvapZYBJJdryU4BNbI
+	ncd1YMWFLVFJAOlkcsLkxWC+hW+pVTRwTe9mxJDgxilvgHLYMzq3eEtLWnbtxR5Hg/rDScq3Rqm1d
+	0+A466bo8cS2YxJert6jsgX4qz3Mhagire6vbmnCVyx2g4t616oN210lgJo+Sptp3OLWvI59Fx1e5
+	xyUr/847WLWG1HcSgawbMEKrUTa3H6K0JdGiH/afLhvN108RdZsBQFRFYZboaGyC7o9AYCGyqzRZD
+	/tvzVsBL0yhHdUn3G64Ce2w8zeqQjv60/WbFIYcr+23uGZTs5xJywyzyqJReV6mISfoGJTgIgNbDM
+	SIzCcvXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWssm-0000000FW6S-3sNC;
-	Fri, 27 Nov 2026 10:08:44 +0000
+	id 1xWssy-0000000FWCh-02cR;
+	Fri, 27 Nov 2026 10:08:56 +0000
 Received: from watt.d-silva.org ([119.15.109.137] helo=www.nmnhosting.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWssZ-0000000FVxd-429P;
-	Fri, 27 Nov 2026 10:08:37 +0000
+	id 1xWssg-0000000FW15-02Wq;
+	Fri, 27 Nov 2026 10:08:40 +0000
 Received: from Hawking.lan (hawking.lan [10.0.1.4])
-	by www.nmnhosting.com (Postfix) with ESMTP id 3BDAD4C97E;
-	Fri, 27 Nov 2026 21:08:21 +1100 (AEDT)
+	by www.nmnhosting.com (Postfix) with ESMTP id 2E3E04C989;
+	Fri, 27 Nov 2026 21:08:30 +1100 (AEDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=d-silva.org; s=2025a;
-	t=1795774101;
+	t=1795774110;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=IHS463L7ZJsnVGIh6FhisLGYwFc0FaaTOlQZxZ0FPkQ=;
-	b=R2lKm9Fv8PkvQg/ewGSztcOiQI4UZXZPmUC2YKQC6ywQMibApGivH/O45zacrC+KseXJsG
-	P1NeO1jojdgD7mBvcl1ehd2PXosZciZzG/A29LMG2E4panA+OXsK6ZJQc5+vvWldQ36D1i
-	gwPBBMtm3TRJRlETPaVY6RREKzgrT0La8VAsHnreLAGUik07+Tv8Kx2L4lSlXelrSRkgfo
-	+CeU+RzTmfwCyAxD0eNtLXflcKRJa/yFU4hJNPdRkBy5PltCKJKLGFsC13Yt2nIYv0wHyj
-	vQTDUnvuGPVWrRj3nPJkchLlVKYxVzuoPhu46KeyiasDvpK1KnWRGNKTRcSfbQ==
-X-GPT-Reason: legitimate; the message is a technical software patch
-	(Linux kernel style) that directly aligns with the personal/professional
-	mailbox of the sender (alastair@d-silva.org); the From domain matches
-	the recipient's domain, indicating a known entity; there are no
-	phishing indicators, no URLs, and the content is strictly technical
-	rather than marketing or scam-related.
+	bh=4IV3yRHhQQZGklGZH5PN/o6RqZMOoboQKYnTyajhFCc=;
+	b=a2sR3URNNvwmqriKJQLlHQsXDuT/MNX4DpVkNpGoiJp6Hr2aKNmtCz0hVJbcUkMSbwuhkv
+	r7k849qq2iVbWCiWjKT4+ai2IKp2P3Ltf1wu86KzsZ+1cJq9BUthaiqgErQzFdpw4aBxk0
+	MezMGMJYpOTbXbe96qpzdTTfHT1quXR6+SIjpqyvJefGLk8Is/UhJb5By36C2iVfkTbYw4
+	7X8wQtWrEoq1F49cBI6zwfcJNTKEYXB/zyPzpz6hdZiA71KYgp20qu0dYsaUm6wCgy3SNT
+	SJZAcZGswnTQTroGbFq9UCBKqF9NbTYaJp5dh8wniNpz2e7lIxJPeINr+qs73Q==
+X-GPT-Reason: legitimate_personal_technical_communication. The
+	content is a technical kernel patch description related to hardware
+	clock gating, which perfectly aligns with the sender's identity
+	(Alastair D'Silva) and the recipient's domain (d-silva.org). No
+	indicators of spam, phishing, or marketing were found, as the From/Return-Path
+	domains match, no URLs are present, and the subject line follows
+	standard open-source development practices.
 From: Alastair D'Silva <alastair@d-silva.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -74,17 +75,17 @@ Cc: Maxime Ripard <mripard@kernel.org>,
 	linux-clk@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Alastair D'Silva <alastair@d-silva.org>
-Subject: [PATCH 2/6] dt-bindings: usb: generic-{ehci,ohci}: Add Allwinner A733
-Date: Fri, 27 Nov 2026 21:08:04 +1100
-Message-ID: <20261127100808.2292229-3-alastair@d-silva.org>
+Subject: [PATCH 3/6] clk: sunxi-ng: a733: Mark mbus-msi-lite2 clock as critical
+Date: Fri, 27 Nov 2026 21:08:05 +1100
+Message-ID: <20261127100808.2292229-4-alastair@d-silva.org>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20261127100808.2292229-1-alastair@d-silva.org>
 References: <20261127100808.2292229-1-alastair@d-silva.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261127_020836_077810_F0959EE1 
-X-CRM114-Status: UNSURE (   7.48  )
+X-CRM114-CacheID: sfid-20261127_020838_208649_B68C3683 
+X-CRM114-Status: UNSURE (   8.49  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
@@ -106,38 +107,33 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-Add the Allwinner A733 (sun60i-a733) EHCI and OHCI compatible strings.
+The mbus-msi-lite2 clock gates the shared MSI-Lite2 DMA fabric used by the
+USB controllers. Without CLK_IS_CRITICAL, clk_disable_unused() gates it off
+and breaks USB 2.0 host DMA transfers.
 
+Mark mbus-msi-lite2 as CLK_IS_CRITICAL, matching mbus-store in this driver.
+
+Fixes: ed757071ac3d ("clk: sunxi-ng: a733: Add bus clock gates")
 Signed-off-by: Alastair D'Silva <alastair@d-silva.org>
 ---
- Documentation/devicetree/bindings/usb/generic-ehci.yaml | 1 +
- Documentation/devicetree/bindings/usb/generic-ohci.yaml | 1 +
- 2 files changed, 2 insertions(+)
+ drivers/clk/sunxi-ng/ccu-sun60i-a733.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/usb/generic-ehci.yaml b/Documentation/devicetree/bindings/usb/generic-ehci.yaml
-index 908b02d9175e..a63dc0eea80f 100644
---- a/Documentation/devicetree/bindings/usb/generic-ehci.yaml
-+++ b/Documentation/devicetree/bindings/usb/generic-ehci.yaml
-@@ -21,6 +21,7 @@ properties:
-               - allwinner,sun50i-h616-ehci
-               - allwinner,sun55i-a523-ehci
-               - allwinner,sun5i-a13-ehci
-+              - allwinner,sun60i-a733-ehci
-               - allwinner,sun6i-a31-ehci
-               - allwinner,sun7i-a20-ehci
-               - allwinner,sun8i-a23-ehci
-diff --git a/Documentation/devicetree/bindings/usb/generic-ohci.yaml b/Documentation/devicetree/bindings/usb/generic-ohci.yaml
-index 7a8c3c231815..565f41eb33f7 100644
---- a/Documentation/devicetree/bindings/usb/generic-ohci.yaml
-+++ b/Documentation/devicetree/bindings/usb/generic-ohci.yaml
-@@ -21,6 +21,7 @@ properties:
-               - allwinner,sun50i-h616-ohci
-               - allwinner,sun55i-a523-ohci
-               - allwinner,sun5i-a13-ohci
-+              - allwinner,sun60i-a733-ohci
-               - allwinner,sun6i-a31-ohci
-               - allwinner,sun7i-a20-ohci
-               - allwinner,sun8i-a23-ohci
+diff --git a/drivers/clk/sunxi-ng/ccu-sun60i-a733.c b/drivers/clk/sunxi-ng/ccu-sun60i-a733.c
+index 958a2a2bcf76..fb4ca4ef3992 100644
+--- a/drivers/clk/sunxi-ng/ccu-sun60i-a733.c
++++ b/drivers/clk/sunxi-ng/ccu-sun60i-a733.c
+@@ -605,8 +605,9 @@ static SUNXI_CCU_GATE_HWS(mbus_store_clk, "mbus-store", mbus_hws,
+ 			  0x5e0, BIT(30), CLK_IS_CRITICAL);
+ static const struct clk_hw *mbus_store_hws[] = { &mbus_store_clk.common.hw };
+ 
++/* Keep enabled for the MSI-Lite2 DMA fabric shared by USB controllers. */
+ static SUNXI_CCU_GATE_HWS(mbus_msi_lite2_clk, "mbus-msi-lite2", mbus_hws,
+-			  0x5e0, BIT(31), 0);
++			  0x5e0, BIT(31), CLK_IS_CRITICAL);
+ 
+ static SUNXI_CCU_GATE_HWS(mbus_dma0_clk, "mbus-dma0", mbus_hws,
+ 			  0x5e4, BIT(0), 0);
 -- 
 2.53.0
 
