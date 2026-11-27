@@ -2,107 +2,119 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 32FE1606A334
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 06:13:05 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DF839606A31C
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 06:24:24 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=mR96xLQ0;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=kcDKX9nc
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=TZrNFR8k;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=rhrFcT9/
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version
-	:Subject:Date:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=fmuQdR+2QwxUIYglYkv8KFJoSbrYUzIAzXD2CQAVc80=; b=mR96xLQ0fqkyUgap287Ga7QBBI
-	VLZsjQ5NXNS9K8jYQvWOFk1Y/J0ckeKKZCwbhx68Xfb1xq6EgylRPtQt5WlHpDBugoRIw49G3VU/+
-	98Pez+Nr1rsS81uxxiyy6fXpHRtB/tdkPV8+1Ym6DooT4tQCiS4K1sa7hHslzSKNOPWOJGbBmIf9y
-	XLMjG+xsoGcAXuejAvkYlOVGA2o45mJcwBKqDiJGifKWxKC7ZZw4/vOcBmcNjvIoGBSBtPFhubbgk
-	k3e79vrb7u7gAzx80qP0HEyoqbR7OP/FfOcvHUX8Jyoar0DfIALc5MwI2KINqFF6i7GiPOZdpnHl6
-	Wz6LfRDw==;
+	bh=bYyGrWNcKgMVx5hPrP5wA7+8eEsY9JgXHEKNQUndclQ=; b=TZrNFR8khEpwKQYjw5JRUc+kDk
+	SRScouVPPlq7oj7/inQTyf5uTHci2c7Kh5mvUdU7gMTi2HTQ99tXVKixA2FVNkdJNLd3TxYUqVI4F
+	/zGh1ayN3ipVfM5FDs3RwDxlDNgp3aDbZr7N7F03DMgjd/LTG25+046JD7Mt/8e6NvY6DW2fclYg5
+	zb4aL17QADAUics82eBdVvIsYimMGGZXn0CI8tE2voHSvzt0uaOXceNUI7ekMTHamM4FxFPLh3sw5
+	sM3qzhiNZwwj54fpIGQvF0PjcHEhLsEkqjc9kHUmfphcMOHspvMu4YhGvZZcP9N0CdOmbAingLqo/
+	OMlRLwow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWpCi-0000000F0e8-3q3I;
-	Fri, 27 Nov 2026 06:13:04 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xWpNg-0000000F1xb-2lXE;
+	Fri, 27 Nov 2026 06:24:24 +0000
+Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWpCh-0000000F0dj-1W1C;
-	Fri, 27 Nov 2026 06:13:03 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 886C7439A4;
-	Fri, 27 Nov 2026 06:13:02 +0000 (UTC)
-Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
-ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
-	t=1795759982;
-	b=McGBfs6affbwUrHjaxi58by3ZjdERqe91Aef2zdFm0MTI8/KQk3z0Noqk5xBubsZ4ceh
-	 14dOCZAvsXZPX64LbNtUYwGqNlokFJsg4XVCHxBuwVI7l2TWoKOpoSC3z4bi5XZJDMWVn
-	 JLu/azeDISBIXXLEc8cpNf3sY6QT9vhRycLjzNrwcmubcetSDa3qDFvxOtmtvbyLCRfis
-	 jTtpjO4sf+3RKN31xi3sjjqFBuCgRY9SZVplVpRo1wI8AXz2kgVQ4TBW4yAr21fQjup+q
-	 giZbT8nhBbiKHnAVArF0SdYG/Ao1ggV5xgWu2toVLJQBoQxe1GE9s/m2xdKCb60ZPNg==
-ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
-	c=relaxed/relaxed; t=1795759982;
-	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
-	 Message-Id:X-B4-Tracking:X-Change-ID:To:Cc:X-Mailer:
-	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
-	 X-Original-From:Reply-To:Content-Transfer-Encoding;
-	bh=+21aXSIhxglzzoXkMAiio1qQ/0kfiM8rQZc7UqiPAfs=;
-	b=wPUMBWzSqP0C7FXA+L51Zq0cDPARuujtlg6cfmyn+HFF1W/zzft34B+mx8+WyPj/VSr+
-	 pi2r/2T+0krC96QNzfCU8gzark2zyTH7qIdG+Wc22lcwn/NHiPz/PdckbdzXAgk0YX735
-	 vkXMZQR/z6e1eL9bM7blauWs6Sr09Rifq3hrZddTOo0sOn1VxNlDqCpFzOM5A4ANVrD2j
-	 BrTdZ8ube4fIo8RdPf5xEQA1Yt7RpE/W2kK8mt0RTt/nG4e0Wz4kYjPyyknps2DVIWS1r
-	 PfufjCA5axa4uFi2VdUn8FCWx/OrJoKmq6qZBnR2kASkN6XSAZHnw+meZhD9+QI646w==
-ARC-Authentication-Results: i=1; smtp.kernel.org; 
-	arc=none smtp.remote-ip=100.80.115.77
-Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by smtp.kernel.org (Postfix) with ESMTPS id C12981F00899;
-	Fri, 27 Nov 2026 06:12:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795759982;
-	bh=+21aXSIhxglzzoXkMAiio1qQ/0kfiM8rQZc7UqiPAfs=;
-	h=From:Date:Subject:To:Cc:Reply-To;
-	b=kcDKX9ncepVtuwjyJoi4sudyslTA9ITO5I9WiO/GtdXvqxIWfeLx7NT453qKplkVI
-	 ANxKPhvptBKrlXs8lgqwnVH2eD/GLo1VnRYbagL5ZSdjtVASMCzIUA8mZ5Alh15caP
-	 nT/Gblx50ECVoFMBR25a5D4U11CoX5G3lOv9wXd0vi7ywiNQVKsYvKxFLIzRLkLuH4
-	 dyLYt2Ofhq2/Dsn1a4txiru1yE+iBhBcc3mg/6zcAuwMLkiX1ah8prTzbfTS0IepIj
-	 mDlrSnCFhA97sfVxOkshdStV/K4xaHSO9lmJ0GfvnQewhaLvrvEnzenth+FxBP4xx6
-	 8tln9b5k3lGGQ==
-Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
-	by lkml.kernel.org (Postfix) with ESMTP id 3D5494B5A9;
-	Fri, 27 Nov 2026 06:12:57 +0000 (UTC)
-From: Hank Liou via B4 Relay <devnull+hank.liou.mediatek.com@kernel.org>
-Date: Fri, 27 Nov 2026 14:12:56 +0800
-Subject: [PATCH] phy: phy-mtk-dp: Suppress sysfs bind/unbind
+	id 1xWpNd-0000000F1vx-0SwU
+	for linux-phy@lists.infradead.org;
+	Fri, 27 Nov 2026 06:24:23 +0000
+Received: by mail-ed1-x52b.google.com with SMTP id 4fb4d7f45d1cf-6b89399d92cso1225077a12.3
+        for <linux-phy@lists.infradead.org>; Thu, 26 Nov 2026 22:24:20 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1795760659; cv=none;
+        d=google.com; s=arc-20260327;
+        b=etitVT2IiwmruoxqkmxqroU2LHEHp8D0vYdX/+bk/2tpQayPNJEiWb+Aar2njox6ew
+         EAiMlziS6f3FGM+XdGw95s3Huqb0BOBkdeRT1iszWzLJ+zZ2oKUggQgxhPqt1Ed2GFkw
+         hgfZCfaKWWl5gW3NAAV4QBlxux12SWZAQpkJNDH8KK1jZIoMvMmwk5AWIE4R9FRGl+Bj
+         hTvGJzg+aVgj8CO4fT8gH6ArSVlL6K0aJwgv0UlfdA77VnbXaQ6Q1Tw0rrECtOTI46vh
+         BEQKZeYZJnVQr/vHysxGWmS/zspbZdPIT5SAzln7F6OWYD1Rl9AhwTRA+V5RjZ0lFW1H
+         hOkQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=SBkZFZAfcEuvoK54tInJ2sdXwGuJlWuARWjKskeguWQ=;
+        fh=4hRXoEu7nlwfOBUv2gwysBBixcYgwqgla/E6sbZ+BRs=;
+        b=TEZEt+DZEvOPrix1Wi1SMqD5mqOI8MMZZ1/ABB0tIyGgwiNtK2j127pPsQV+d3qmET
+         TT8pL0dtSe9Ku+DlupoKvEOyRKFhdCg9pI+Ewa7X0zjSHIvmhX5Sjc/7ydA9ksKgXWRv
+         l1zOC5rDIkvB9+WahkAORuLEJSOgOZVBxkhOgxVVa+L8OQBh8P5GjA1HKfoOCAgMsist
+         tz9bHbtw06BftpUyMtEhEoUW9jQLnOWjWxbGcIbyfcCyLk8pjW7FSJtzF4SziipltkQA
+         hPUOEJqMhtPbyw651O9ihIEsYo2bfTgGtEhVbq4zIwGCFSO+N01IoxPsAjF0EmiKs6pU
+         Rl0w==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1795760659; x=1796365459; darn=lists.infradead.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=SBkZFZAfcEuvoK54tInJ2sdXwGuJlWuARWjKskeguWQ=;
+        b=rhrFcT9/2QldNSbThaYhFQ9jfhSwk/BoMzT1ERcWsEn26/26pkIkfO4+mRARlaTyg/
+         BUAPkkRs0/9H41a7K/w2AsbLwNQv9Cogyg/rbxkrsSvbYL7y++dOMl+e5ID29iU87BzM
+         gf5STsAaZqqoKQNolAPV4ILrLQSo6bgqOLneyIcWHlfL58z8pEISH9LkrBy2noxGj5BL
+         KH/2HMAfB28utpJAwjhaQJ+hwTaU2WW/rRFRxO3uH5D7NcoFlcAyNcAHnUPAmOQEgt6q
+         TRoCuHpN+5KqSgmNWkygpVpwSPlMDa0NtniAFf/SDzy7mVddKb6vAwOKViOafyb/oB0U
+         T61Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1795760659; x=1796365459;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=SBkZFZAfcEuvoK54tInJ2sdXwGuJlWuARWjKskeguWQ=;
+        b=jg+DrUTf+d5Y2EE3rwt+uQvYNLupL/qa8hAYKRf3wfI8ObMsCu/2eOalzZytFXCglc
+         89JzhYtcXzMDlsRdCtrevu7POkVvfXTX7zDm9oxX++BdGroP5rpWR0HtWqSyn1uuAmXT
+         VVspzZZxfN+hl14UK8sbSUv7Sui5JkDi/uXfLvh/by5gVXnwpwRbI9wEjUOLiHVtX8br
+         XzeVsbyCW3MsOOVeJH0vHzye+f8iaanmVnHyld1+EApMxqn2RtBs/aaqKLbWgbG5TkIC
+         YWKJ/pfUT8pPIqLw93aZDdIGI2jQebalWhFiaDfZeaGalOytDCz7GkfQS2DjFVg2kZR7
+         Zh9g==
+X-Forwarded-Encrypted: i=1; AL+hErEfvew3EA3eJ807jOprHqtD/U8NodKBvrfJD2QYuZreB84psn12RyxwZfJ8kg/DoYgHNN8NAYIipAE=@lists.infradead.org
+X-Gm-Message-State: APuU4Z+KL1oVUcHzZuMjIhCV3nMFFfL5Q15efd3nUeaNnGmoXMUxfKKI
+	QeoK5jy//YKjcmLb1W/m+1RZIAkYGvjCyfNH3+hRbz/9UTBiRw4xhI2A0mtwDHKo9Q2baxtsk53
+	CoLWkUXuT5qvVI67Q85MaN84cZAo7m2s=
+X-Gm-Gg: AZFdTZeGZZUM3NEKu1AVXn22KQ8OBCYk92xj4h1Uq5H2ErNFvbLQGset92rKz4yGN+p
+	cwbOj2xgj5mdEOM8ub7D/5Ap/bt6caxe0I4peyCNDJpFKMYpUxU5v/olT3/YYvH3BQKJG8+T5Dh
+	f/uuUPDzr1w+cU6Gq1S0/RKoju/c/JkL+ioeYHUuay03oCycfKjoVtytUGcfmNpY/f/Q6to8o7d
+	FpO/aIKxx+DZ1hhDJeR3jiJ0ISen3/Jgo7XL2brSPfIf/Ajmv/dqufEtP6C7MivG7mttbti9FH6
+	8hAml3/bTN5w1Nb5gw8QTnaineRqculwBMxMyDBtGgh3b4oAPgtwo+Vd5mVyB5pc7WPF3zIi4eQ
+	1dWOZ5MkY+JCLYx5FWErlmUxkvWaI2Nyh710gY1J99v0XXa7cEQmqgugizl19x2VgONjBGCU=
+X-Received: by 2002:a05:6402:c521:20b0:6bb:3e3f:2cdc with SMTP id
+ 4fb4d7f45d1cf-6bb3e3f2fecmr4072358a12.2.1795760658224; Thu, 26 Nov 2026
+ 22:24:18 -0800 (PST)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261127-phy-mtk-dp-suppress-bind-v1-1-eb64c6e39240@mediatek.com>
-X-B4-Tracking: v=1; b=H4sIAGcfCWsC/x2MQQqDMBAAvyJ7dqGJWsWvSA/GbOpSjCFrRQn5e
- 0OPwzCTQCgyCYxVgkgnC+++gKorWNbZvwnZFgb90E+ldI9hvXE7PmgDyjeESCJo2FvslqFzfdN
- aRwZKXpTj67+eXjn/APeP2aZqAAAA
-X-Change-ID: 20261127-phy-mtk-dp-suppress-bind-5c85f734dfeb
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Chunfeng Yun <chunfeng.yun@mediatek.com>, 
- Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Markus Schneider-Pargmann <msp@baylibre.com>, CK Hu <ck.hu@mediatek.com>, 
- linux-phy@lists.infradead.org, linux-mediatek@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- dri-devel@lists.freedesktop.org, Hank Liou <hank.liou@mediatek.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795759976; l=1859;
- i=hank.liou@mediatek.com; s=20261126; h=from:subject:message-id;
- bh=O3jXFQr6H1w8UsvUZJ9qBE1F3KBO3rzzg1q1UUmq4PE=;
- b=0Qq9O8JaNLT8C+2TcaCnF7eQXA+zB8jRSZrFJjKrHanyORj07ENpyhfdLhjuUmcbhxvvAtinQ
- qlksxz2dR4sDTTdl3HiVOxkzXmeqU+Q3aqgo1eD3lvZ57A98med4pIm
-X-Developer-Key: i=hank.liou@mediatek.com; a=ed25519;
- pk=oQN2zU+HMrJQgqX4bhL5CVRrBmac4amZ/53yK20L/6M=
-X-Endpoint-Received: by B4 Relay for hank.liou@mediatek.com/20261126 with
- auth_id=1646
-X-Original-From: Hank Liou <hank.liou@mediatek.com>
+References: <20261118-dcphy-rx-v1-v7-0-8de1adac3a74@gmail.com>
+In-Reply-To: <20261118-dcphy-rx-v1-v7-0-8de1adac3a74@gmail.com>
+From: =?UTF-8?B?5qWK5pm65oiQ?= <jason98166@gmail.com>
+Date: Fri, 27 Nov 2026 14:24:06 +0800
+X-Gm-Features: Aa3M54ovbh04_f0CIR-_hXe0njTveJM5wqr9aBZi2LAaLZkChYM5oN2Bhm_6rKk
+Message-ID: <CAPwA33K7f2EbtH8rqihnxB8RkB1PzJTmDyGJ39ojROuTYwK0Dw@mail.gmail.com>
+Subject: Re: [PATCH v7 0/9] phy: rockchip-samsung-dcphy: Add the MIPI D-PHY receiver
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Heiko Stuebner <heiko@sntech.de>, Guochun Huang <hero.huang@rock-chips.com>, 
+	Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Michael Riesch <michael.riesch@collabora.com>, 
+	Sebastian Reichel <sebastian.reichel@collabora.com>, 
+	"Bryan O'Donoghue" <bryan.odonoghue@linaro.org>, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
+	Quentin Schulz <quentin.schulz@cherry.de>, Sashiko <sashiko-bot@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261126_222421_194324_A6F016BC 
+X-CRM114-Status: UNSURE (   6.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.9 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,65 +124,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: hank.liou@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Hank Liou <hank.liou@mediatek.com>
+Hi all,
 
-mtk_dp_register_phy() registers the "mediatek-dp-phy" platform device
-as a child of mtk_dp and caches the struct phy returned by
-devm_phy_get() in mtk_dp->phy. The PHY driver still exposes the sysfs
-unbind attribute, so root can unbind the child while mediatek-drm-dp
-stays bound. devres then frees the struct phy, and the next
-phy_configure(), phy_reset() or phy_init() call from mtk_dp uses freed
-memory.
+Michael, I kept your Reviewed-by from v6 on 6/9, 8/9 and 9/9, as the
+v7 changes there follow your suggestions. Are you fine with keeping it?
 
-This was observed on a MT8188 Chromebook running a ChromeOS 6.1 kernel:
-after unbinding the PHY device from sysfs, plugging in a DP monitor
-panics in phy_reset() from the HPD IRQ thread.
+For v8 I only plan to drop the Tested-by tags from 1/9 and 2/9.
+Please let me know if anything else should change before I send it.
 
-The legacy PHY device is only created and destroyed by its parent, so
-set suppress_bind_attrs to drop the bind/unbind attributes and let the
-PHY go away only together with mtk_dp.
-
-Fixes: f70ac097a2cf ("drm/mediatek: Add MT8195 Embedded DisplayPort driver")
-Signed-off-by: Hank Liou <hank.liou@mediatek.com>
----
-Other PHY drivers disable sysfs bind/unbind for the same reason, e.g. commit 6aeec986f1bc ("phy: samsung: disable bind/unbind platform driver feature"): their consumers have no way to be told that the PHY went away.
----
- drivers/phy/mediatek/phy-mtk-dp.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
-index 0048e1a8c6..924f08ed4d 100644
---- a/drivers/phy/mediatek/phy-mtk-dp.c
-+++ b/drivers/phy/mediatek/phy-mtk-dp.c
-@@ -828,6 +828,7 @@ static struct platform_driver mtk_dp_phy_driver = {
- 	.driver = {
- 		.name = "mediatek-dp-phy",
- 		.of_match_table = mtk_dp_phy_of_match,
-+		.suppress_bind_attrs = true,
- 	},
- };
- module_platform_driver(mtk_dp_phy_driver);
-
----
-base-commit: ebb7a8dc1e74c705daffe11c2faf38ec2628f838
-change-id: 20261127-phy-mtk-dp-suppress-bind-5c85f734dfeb
-
-Best regards,
--- 
-Hank Liou <hank.liou@mediatek.com>
-
-
+Thanks,
+Jason
 
 -- 
 linux-phy mailing list
