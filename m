@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AD1CD606A323
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 13:54:50 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6616D606A324
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 13:58:18 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Tyf8W23Q;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=EBrzati9
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=dYC7VcFC;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Mwr1txn7
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,64 +14,59 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=CDpf/nejAExB23GShgbCpkRQWeKp/XZjzPyG89l2YQ8=; b=Tyf8W23QZ4IBpwti8SGMTz9g6N
-	6wqc3hQ22eovXjOrZYXpdfzlbrGHR5NseRw/d+1S6nnxV9kY422eqJIKJs/t9E32oSyKUtZG8z+kR
-	Di5UwG7nvok8YwjVLekqpDfK73dxbl1gr0l154S5szFsTH1r0Ski3D70W8l0wlar8BovrIO+1fa3X
-	iAFu4nYGEIag0+ac2ho/KUKQjJv5cHVbEgUsw/+OlYnzmYGb1XqgDOFu6C56AHXtBbzDjD/M4aN7E
-	bxFszqu+S9sT527dea4w5UxamDX6EjqAxIbdtCz5j+RIIvqKxOxGwPtSuQD0WXiK9WUFgROlY0pxD
-	NzE7GR+A==;
+	bh=YWHpcx5JDEjo5H/Cm3p+K7zTSV6UzcjIEGENAkTC9pU=; b=dYC7VcFCGSiJKmRDDplR5J6tbP
+	US6GNlVv5SCaxP0CKNuHRtZoCsNjTDXJuc+mEx35PLj8xTSwCC00Z8Qr7vKgSdYddVSQmTltNwxZp
+	FgqhdQ9MQ2AYCW9kZKvl+TDe8RGcuVNYTYtg0YpljFVVL89ekIpLKxGbltMiFutF5aluolUDgUHyl
+	C57dXG6eK65aIu1D1v/rNjZA6nWUPNVP/owxEPeKXlT71uus0yX9UUPYcy32YYwf6LfR9eO11F1QZ
+	CX26Z/xvnarR2SS7ds4pTEr+trFbxI+9Q0o4atxLDe8kKgwT6vvONcXaWYN45xdvN9RETnvaVlsw5
+	r9gyxzMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWwPa-0000000GJVH-1rLM;
-	Fri, 27 Nov 2026 13:54:50 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1xWwSw-0000000GJps-0g0D;
+	Fri, 27 Nov 2026 13:58:18 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWwPY-0000000GJUx-1X0R;
-	Fri, 27 Nov 2026 13:54:48 +0000
+	id 1xWwSv-0000000GJpa-1NZc;
+	Fri, 27 Nov 2026 13:58:17 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id E062960E64;
-	Fri, 27 Nov 2026 13:54:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1B21D1F00893;
-	Fri, 27 Nov 2026 13:54:41 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 7D70961DCD;
+	Fri, 27 Nov 2026 13:58:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4E9461F00897;
+	Fri, 27 Nov 2026 13:58:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795787686;
-	bh=ihaNk17hqENSXbY9COGf+8Q0e2XiJjXPQdUUyev7UHk=;
+	s=k20260515; t=1795787895;
+	bh=f1cpR8UC2K9Hh290rl3zoXoR37d6lYjg5P7GDWf+Pv4=;
 	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=EBrzati9JhcbB2R9MVAsDvs/3N6Vf1bh0Aooa1tg26NApbNA1dZUlgFy7q9FHDcxF
-	 pZTMotJWV+a6HtIPzZKNausCBV6Fg6CNo60U8ojPUYPIe62LoyXKaPshYUZKu1c0VN
-	 8bSRRe7DUvAJyO+wSnJRAA2S+Ph57kUimsl5vIy8YkkxJmepEq/UPFwqQzWbrYJmNl
-	 XuBFLMPPA26+L7aSjqmru2GCE0/rFUezd9LcOFx6xmlAW4AQDwLsAS+UCSXfvLrpF8
-	 CL3thFbuTn1DG17yeQ+wrRIpy6fPt+4dQ2P3d5vta4sqYiZB8q/EW8q6ZpQbcZP5MY
-	 NtTzH8tclBZbQ==
+	b=Mwr1txn7jxQbejBY5GLGQ0t+lgUPqvLYv6L9blRBfMR7VxoKA4rZm6Dmm7ILpH1gW
+	 o/Dm9uuaxFmgpPqYLRGdXbE2hghbvSsphBP3k6S6pYnyQYKvK/VC1O6W0wAjj2o8jK
+	 BFSOXBhJiocESx7bjUz8XyD8Xki1y7dymQIHMlb+vuMhNaRdSsuMc+vzs+Vy/7OMYC
+	 dQYhtmcIw8YGWicI2iUJx4ezMLQHA8B4/KsNKLH7a/6QjZJa896fOK/0ATMJR4uVt5
+	 AdnISnq9i30+Teum8o+Jeh9iDXUXGYqjlzsV016HNoS/+ceXxqDGpmfxzv23X+0FUh
+	 rAGob45wrO+Pg==
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH v3 3/3] phy: exynos5-usbdrd: fix HS phy init count
- imbalance on Exynos2200
+Subject: Re: [PATCH] phy: rockchip-usb: fix reset control leak
 From: Manivannan Sadhasivam <mani@kernel.org>
-To: Soheyb Boulaa <soheyb_boulaa@proton.me>
-Cc: Vinod Koul <vkoul@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Peter Griffin <peter.griffin@linaro.org>, 
- Alim Akhtar <alim.akhtar@samsung.com>, 
- Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
- linux-kernel@vger.kernel.org, stable@vger.kernel.org
-In-Reply-To: <20261114064400.45572-4-soheyb_boulaa@proton.me>
-References: <20261114064400.45572-1-soheyb_boulaa@proton.me>
- <20261114064400.45572-4-soheyb_boulaa@proton.me>
-Date: Fri, 27 Nov 2026 19:24:38 +0530
-Message-Id: <179578767823.13164.4595964054834995547.b4-reply@b4>
+To: Xia Yan <yanxia@cmss.chinamobile.com>
+Cc: vkoul@kernel.org, linux-phy@lists.infradead.org, 
+ neil.armstrong@linaro.org, mani@kernel.org, heiko@sntech.de, 
+ p.zabel@pengutronix.de, ayaka@soulik.info, kishon@kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org, yana06070@163.com
+In-Reply-To: <20261115042640.426517-1-yanxia@cmss.chinamobile.com>
+References: <20261115042640.426517-1-yanxia@cmss.chinamobile.com>
+Date: Fri, 27 Nov 2026 19:28:07 +0530
+Message-Id: <179578788741.13164.8538367481844332594.b4-reply@b4>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1130; i=mani@kernel.org;
- h=from:subject:message-id; bh=moU+LPCi/fmXx4hUo8rYp5XjV9/dvpjSZdoJhSaoZnI=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBrCYuhDHABi5d4RO5C0tclXwG3gZMS18Mt9rZYQ
- xgayjpt5FSJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCawmLoQAKCRBVnxHm/pHO
- 9UYYB/44Ifkb6x2lMRRwQqwm8z+PFDfp/Kd7Y7xK7P65lr4oG7LHKgHYysohIcfbkDRH7FGkR1f
- ecofjz7Fz18DVur6zlCgp9s19198l0YjtM5PpS8U3CWrfNCOWUg6dwH+VvO7lUifvZMlF2L9Tgw
- 2GtLfpsQ1q59Q4KuUbS6q9bVpWdUdYQX9aCn+osfepYzVxrfQbMyp5zObPdMOxYrv4Lhml4QfvP
- USFMxBhpc5RVplx0MurolHM9hgDG1V4l75Qr5tIR43aJUpnLEKIhMwj+4Ce/Hu59io8vCzaCs2c
- w7AVM5hiWTvDqdW+4My0Ii35ijvNrWu7CYG+DmUUpSq9Y6gp
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2030; i=mani@kernel.org;
+ h=from:subject:message-id; bh=2LC0gv6PbFQzQ2shw21mBeIjq7U/AJqmn3yIRLpECSI=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBrCYxy/tnNAqKySBaZmAGd4rkFqYGz3dced8FzB
+ MTfEoh13lWJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCawmMcgAKCRBVnxHm/pHO
+ 9VN+B/98sdGMuznYvCHZlcxI085NqcsaU/rEbhG5UbvhGEpYFkj6/u8oKd3mooQvZlX2tGjFKdV
+ PgcK55C6Fo0i/ducIa1zXTckPf1O7vvQvzY0EgqgyWHs2PKM8GAzMU5vZ+34tmkjZRdtNGHZz40
+ 9aWNyUo26t4Ww9pu+b9GUPYPWWZiU+Yl2/5s53mBHmYoJP2R0Y8KJxoqIt3WMBJKEIXUa8bYSuE
+ LC6txnqr4S9bB/hm0prdJI1G3U+1qWV+oTNJEgt7Yit7OlshzUtFgRgKPMi+3gmeRP8rhOueZf0
+ Ak4FJMjVf2PMxwknn5y1NRgYRiapdx6ymbozXFKFnU5DH/d1
 X-Developer-Key: i=mani@kernel.org; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-BeenThere: linux-phy@lists.infradead.org
@@ -86,35 +81,69 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 2026-11-14 06:44 +0000, Soheyb Boulaa wrote:
-> exynos2200_usbdrd_utmi_init() calls phy_init() on the high-speed phy,
-> but exynos2200_usbdrd_phy_exit() never calls phy_exit() on it. The init
-> count of the high-speed phy therefore never drops back to zero: after
-> the first init, every later phy_init() of it returns early, and its
-> clocks and supplies stay enabled across an exit of the UTMI phy.
+On 2026-11-15 12:26 +0800, Xia Yan wrote:
+> rockchip_usb_phy_init() acquires a reset control from each PHY child
+> node but never releases it on probe failure or driver detach.
 > 
-> When the high-speed phy loses power while the controller is suspended,
-> it is thus not set up again on resume, and the DWC3 core soft reset
-> times out:
+> The leaked exclusive control prevents a later probe from acquiring
+> the same reset. Since lookup errors are converted to NULL, subsequent
+> PHY reset calls silently skip the hardware reset.
 > 
->   dwc3 11210000.usb: DWC3 controller soft reset failed
+> Register a devres action after a successful lookup to release the
+> control on probe failure and detach. Keep the child-node lookup and
+> the existing handling of lookup errors.
 > 
-> Exit the high-speed phy when the UTMI phy exits, last, once the rest of
-> the exit has succeeded: the phy core counts a failed exit as no exit,
-> so the high-speed phy has to stay initialized along with the UTMI phy.
+> Found during review of reset-control lifetimes.
 > 
-> Fixes: cc52a697f87e ("phy: exynos5-usbdrd: support Exynos USBDRD 3.2 4nm controller")
+> Fixes: 0f74ab59ce87 ("phy: rockchip-usb: use rockchip_usb_phy_reset to reset phy during wakeup")
 > Cc: stable@vger.kernel.org
-> Signed-off-by: Soheyb Boulaa <soheyb_boulaa@proton.me>
 
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+Stop CCing stable list for these minor fixes, please.
+
+> Signed-off-by: Xia Yan <yanxia@cmss.chinamobile.com>
+> ---
+>  drivers/phy/rockchip/phy-rockchip-usb.c | 14 +++++++++++++-
+>  1 file changed, 13 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-usb.c b/drivers/phy/rockchip/phy-rockchip-usb.c
+> index c5a2853a63d3..79b3315b6590 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-usb.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-usb.c
+> @@ -183,6 +183,11 @@ static const struct phy_ops ops = {
+>  	.owner		= THIS_MODULE,
+>  };
+>  
+> +static void rockchip_usb_phy_reset_put(void *data)
+> +{
+> +	reset_control_put(data);
+> +}
+> +
+>  static void rockchip_usb_phy_action(void *data)
+>  {
+>  	struct rockchip_usb_phy *rk_phy = data;
+> @@ -219,8 +224,15 @@ static int rockchip_usb_phy_init(struct rockchip_usb_phy_base *base,
+>  	}
+>  
+>  	rk_phy->reset = of_reset_control_get(child, "phy-reset");
+> -	if (IS_ERR(rk_phy->reset))
+> +	if (IS_ERR(rk_phy->reset)) {
+>  		rk_phy->reset = NULL;
+> +	} else {
+> +		err = devm_add_action_or_reset(base->dev,
+> +					       rockchip_usb_phy_reset_put,
+> +					       rk_phy->reset);
+> +		if (err)
+> +			return err;
+> +	}
+
+Why not devm_reset_control_get()?
 
 - Mani
 
