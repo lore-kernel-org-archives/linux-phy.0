@@ -2,12 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 71B02606A32A
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 07:21:10 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A9FFF606A329
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 07:32:47 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=QBqfZJln;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=Uxgz6/6p;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=SGeA0gTG
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=sdXxhpsg;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=d-silva.org header.i=@d-silva.org header.a=rsa-sha256 header.s=2025a header.b=cKh8YSZI
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -15,128 +14,76 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=T6P17+FIKNq2q6K1ge9F+yBDvB5sNTBvYCIq0O+fzuE=; b=QBqfZJlnfguIgHpB6MyFosJxYu
-	EO77lD0zI/e+Yj3vPAlZKy/5K7jKWF3ZYgNRP8x7R5gAE8hj6ARMF1O4Ysx21QmuPeZKibR5Waicd
-	8QnGATSRGTxqgB/8zYdpBkHgqsNi4CX6zCe/CML1T3sNu0w8JVpbFW+kU2Ty+iII43UABY1JyK1Xl
-	zHjKNioBLEW5ca9OIzsTEH3Nnsa1w/PFX/n/BuVGZgcoAK4B+gukQ0nubuY+ICi8qKrm+yfp/KhDY
-	w8GXHFg/QNQkYhrANDZVa4rBjb1MA5JM9dC3+tJeHmZVeZTTd2MXBPBUZbMJrlWLcx+3OEdZjqrg2
-	644icgWg==;
+	bh=wJsg91zQGtudqKackp3XwzRINamPqfNNQkaQ/5pBOc8=; b=sdXxhpsgR1iLZklV98xxfqlCOB
+	e2oKwcLHNmNcTWpbNx4HexflPJLSz5e77eMvJU++IkCzPXuG8RLe/nsV1omNu04x0sTiBiV9Kk8wj
+	bxb1J+DdxsebNos0/zP8NJHfVKCGfuI9pRzNLkkQ80VOWf3/BshJfm1lwjgqlzkzefSlChbxH5P/Y
+	0kjQM54l3VHk1okhCWHyqECTTN/H5+s/3W8ICGPrJWQZFrbe4Zgar4WnMqib85UtIlLLuIy8LiW3V
+	ySadtBAsHxyKYHjXleYWpXrfPGPRd87bSSaLPK1xkj684E4gjUGTZXtqhdKxt9ZVuTVvZCoqqQsYF
+	OqPNiP7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWqGc-0000000F6Yg-0la6;
-	Fri, 27 Nov 2026 07:21:10 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1xWqRr-0000000F7O3-1D9s;
+	Fri, 27 Nov 2026 07:32:47 +0000
+Received: from watt.d-silva.org ([119.15.109.137] helo=www.nmnhosting.com)
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWqGZ-0000000F6YJ-1oaP
-	for linux-phy@lists.infradead.org;
-	Fri, 27 Nov 2026 07:21:08 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AR7GY5d1197409
-	for <linux-phy@lists.infradead.org>; Fri, 27 Nov 2026 07:21:06 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=N3VLZRTg7atUql7jaIGh5aZOxd3g/n+lT3J
-	7hkQbOcA=; b=Uxgz6/6pnNeKE67TDKi364JDz/B+3zojGUUYDXMGM2XQxJXf6IU
-	CMa/C3fHW4w5Qs6peXQMgZP/CbNKI85e1jnpBwx94OCnOGNigvfs/Cqs+2YRlSgH
-	e5KPlbXfI/Qaoohu8nygcMOftwiocECvRhc/Fj9DN1Qz0XBz/CvqPiNLliyRUzDd
-	wYKlBSj87DMD0M6Z8biq/f0oXISh/n+T+bTpaP91GyGxvJEv7lwKlwkWln8JNEjl
-	YDRJx+8SL1FEEdhotWQOcHMOc40TN3xknZlab0mmPGgU3rRIDRtk+bH+pIqyy0T0
-	M3ZDQmxrxaEs2rSqVEa54tkBQUDNzTq5ymw==
-Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com [209.85.210.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j756k81ky-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 27 Nov 2026 07:21:06 +0000 (GMT)
-Received: by mail-pf1-f197.google.com with SMTP id d2e1a72fcca58-8a0592d4539so8612951b3a.3
-        for <linux-phy@lists.infradead.org>; Thu, 26 Nov 2026 23:21:06 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795764065; x=1796368865; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=N3VLZRTg7atUql7jaIGh5aZOxd3g/n+lT3J7hkQbOcA=;
-        b=SGeA0gTG9iu+7Uto9bpKLDCIOr47tzywfJMg/Hm6ZO0t+qJv5TrSxgW5c1vFWHYxXh
-         yOtIZ4wE9JhVqOmqNugaeeQ72I3CVNiht1UtKYmZZhc7QTri8+4XpgbmMnnbk9xB2IiH
-         fFWBx4HkElI7pT1aoxy3DUuv2rM6BiQawFPrGrQlNYm8e1CqUOLVCLBhZF3MRFpu2UG7
-         UThBZTqLOnA6OxOjx5E3boDAw55EMABIkOLuRfuqshyKC9O1X77BR0cAciWicxIz/eHR
-         0+3jW0ZGIjjiVUBYXAz7omtr9GUh9v1I+0VK79NohlAKEOmPhy6WDGA0n/+ud9EYpenN
-         +xsg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795764065; x=1796368865;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=N3VLZRTg7atUql7jaIGh5aZOxd3g/n+lT3J7hkQbOcA=;
-        b=gwTU+HoMej2GwQUxJIBh1iSFfG+K+CXngdG+4mDuFZ0ITn1o2T7JLRo9OHC+zyH3si
-         JsbuyC2nq6GFOlJ3zZhflQn0EJhMrefC0S0yO3DWameOiP/kPHN6RUxHa0jCxwH50qx8
-         Za7AmVbuzBJqcTWPfFVFfZ2d5Wd1QnBBMi7hFZg6h44hy+7eb5FTDPbQdkPPgnV2sdQT
-         Bfs6mXOO8QMICwykWT4xKVF3+79Jx0o5JeYO6FLL8g3xDvAPWGHGn2XmJaLMAH+Hium7
-         HKndIBodLRPzCmSbLSiM8QPsA9WXLeXI2t0LfaAurCpZHN9b6RR1TlrRk6hNIBhAyRYS
-         c7JQ==
-X-Forwarded-Encrypted: i=1; AL+hErGPEWcbvEHcSGEuuDYtBFCDIUrE17HwhWVi2sUgDwNBOATYACqFQf3/Eph8YOF/IWP1LGgth8bG+wk=@lists.infradead.org
-X-Gm-Message-State: APuU4Z9oXJxENMuv0ocIp6RlgwDvOzFoRDjPC84diMyrHNfe8TDauloR
-	zByqtMioCBJaWl6QfOp++h5g6vMUt+rHTKL9AoFZ48p9ZCL8O/ylR5//1Y5jNqGYM+gzKeHsA5v
-	suP9LICF67Bw3YZGKQpf27yS8ftPAa1y5WCRsiG65FXEjLADhMHwc0+MO3ZTE2yN1MQ7nhOVGlI
-	SF
-X-Gm-Gg: AZFdTZeF59/1wcEguNG6iBkiLP1DZ8vA/PZCmjnJOOy2ivEZlmiNmc8fUHSrIgl51Ie
-	MfKtv0LSkZUxaqfaXojlHfuuA4e+7Uv2cBI5KONj1G6R+SEU91lWT87SQFPPlRTXCNOMwxeCQA3
-	9EldiUeAU0OKHFmPXsAAo+rfXpMnTjJ2hUrw9IC2BvSL/nZ1wxgUnFpWfYwfwOGsHiBqUFJBlR+
-	6uOymzm5Usn60y0+I+X9hYO0qC1sKEWLLdIwHTu5weDGucPW0U5TjzL4yPXvlXXK3yKEZcHIJds
-	CYsjrGBE6EdDn+7Q1v6PACfWHFTFIKfVcLQhG3R9Gp6r29o44li+576LY/minUkrSLx600ZdhFF
-	iVj3eWONkeEim7TFUHiNI9MZSa2/jI7R53rZBl9KywifYsCMiu5e5wHFMefNMdt/ivieLJFJ3ew
-	==
-X-Received: by 2002:a05:6a00:39a6:b0:89e:f8e9:205f with SMTP id d2e1a72fcca58-8c87c76a3d2mr22911778b3a.32.1795764065179;
-        Thu, 26 Nov 2026 23:21:05 -0800 (PST)
-X-Received: by 2002:a05:6a00:39a6:b0:89e:f8e9:205f with SMTP id d2e1a72fcca58-8c87c76a3d2mr22911748b3a.32.1795764064687;
-        Thu, 26 Nov 2026 23:21:04 -0800 (PST)
-Received: from hu-vnama-hyd.qualcomm.com ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8c87343f83dsm12028947b3a.39.2026.11.26.23.20.58
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Nov 2026 23:21:04 -0800 (PST)
-From: naidu nama <naidu.nama@oss.qualcomm.com>
-To: robin.clark@oss.qualcomm.com, lumag@kernel.org, abhinav.kumar@linux.dev,
-        jesszhan0024@gmail.com, sean@poorly.run, marijn.suijten@somainline.org,
-        airlied@gmail.com, simona@ffwll.ch
-Cc: naidu nama <naidu.nama@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-        dri-devel@lists.freedesktop.org, quic_riteshk@quicinc.com,
-        quic_vproddut@quicinc.com, quic_mkuntuma@quicinc.com,
-        mahadevan.p@oss.qualcomm.com, saurabh.anand@oss.qualcomm.com,
-        yongxing.mou@oss.qualcomm.com
-Subject: [PATCH] drm/msm/dp: Skip IRQ_HPD handling when PHY is off
-Date: Fri, 27 Nov 2026 12:50:52 +0530
-Message-ID: <20261127072055.2144407-1-naidu.nama@oss.qualcomm.com>
-X-Mailer: git-send-email 2.43.0
+	id 1xWqRo-0000000F7NI-0IvM;
+	Fri, 27 Nov 2026 07:32:45 +0000
+Received: from Hawking.lan (hawking.lan [10.0.1.4])
+	by www.nmnhosting.com (Postfix) with ESMTP id 070444C955;
+	Fri, 27 Nov 2026 18:32:32 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=d-silva.org; s=2025a;
+	t=1795764752;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=EdN5PePvwqnR5e4iJ9uZ9sjTrBZADoIpDliss9XMc9M=;
+	b=cKh8YSZIzLt5Uc639i/UDbw9GzdXJf0nxSgyy45sOkyvdTej2GTM3EfWixiXNRcKV9KAKi
+	4Ej55uhZxuZB1ff5tEWtp7+Xrbuzx33vjic77Rt8dC/hn/FBh8zweARZpZ5gqFky5v9+sx
+	CjYyPFIEMpWGbe/jw4aKI9Ladn3l/EVAMuMqmJTB40on86NBLxVq55sJP+t76mFLy3fpJm
+	arjtJuEKOat1b2jp/uC5w4/NJrmXRpH7CCAXFw98Bvvp72lSUvRkxHAih2A28plEH8qTQw
+	fpch6/fe07M/NW2rG48HAvVAZ8X8TtcREBh5Yume+urdqFEZ/6PVrYm3c/stCg==
+X-GPT-Reason: legitimate_transactional_technical_notification_content_matches_the_mailbox_purpose_and_sender_identity.
+	The message is a technical kernel patch submission from alastair@d-silva.org,
+	which aligns with the recipient's domain/identity context. The
+	content describes specific hardware support for the Allwinner
+	A733 SoC and provides detailed file changes and prerequisite links
+	to lore.kernel.org, a standard domain for Linux kernel development.
+	There are no signs of phishing, urgency, or marketing; the formatting
+	is consistent with professional software development communications.
+From: Alastair D'Silva <alastair@d-silva.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Chen-Yu Tsai <wens@kernel.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Brian Masney <bmasney+clk@redhat.com>,
+	Jerome Brunet <jbrunet+clk@baylibre.com>,
+	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+	Mathias Nyman <mathias.nyman@intel.com>
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev,
+	linux-usb@vger.kernel.org,
+	linux-clk@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Alastair D'Silva <alastair@d-silva.org>
+Subject: [PATCH 00/11] arm64: dts: allwinner: Add Allwinner A733 USB 3.0 support
+Date: Fri, 27 Nov 2026 18:32:20 +1100
+Message-ID: <20261127073231.1776847-1-alastair@d-silva.org>
+X-Mailer: git-send-email 2.53.0
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI3MDAyOSBTYWx0ZWRfX245SB41rpk+2
- v1hW+LYVl02K1Rcl2K/qWh8t/anFf8pZh40rc9V2E1DbQJ0tm8ll0VzB8QL0N9aEWgmzAmbTxm/
- ohgXrVs4ba+TiZRMWBRTPSJPKZs09okpVia+do4SLTzMjeKU+nXF/CpJoRK96Xl6EPO0euq/m0N
- t+MQAyuF7WYyCxakwVv9IXKlIp6Ft2xYe2+VntGSlhayaBj16YTlfslGz96O3KoNfGVvedI92b7
- ng0nycA+uxVnfJ6liXxf7zlMRDlqGUtiT5woqxH48AwMmZbxpVnopyB32WpMEi568f5odMtHCzL
- Ilrhr7PAOtgTJcjubWvyjysC+/GAX/KoBNpMS/YBcB/2LTXzHpln8jACCex6q6gcT7QQUgcZ00h
- wOoC3Ix5kYxDtNxGtF1u06ZzPWd+8zXwG4sGgb4sjD7hDJPd0wrGWDwsgpdmQKk5X3qsvH4IroW
- /bAf+kPr7wI+a7SCCBg==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI3MDAyOSBTYWx0ZWRfX6W3UWA2TZiu5
- GdwCuI12yG2BHrHXKkO5iuRcYw9vfyKLauVSDwyy2A6P8YxOUa/ph6y89x/x2OAabWxul8j7dOP
- yDbEXZCT5peTLg5YdDov0cH0iWUssX4=
-X-Authority-Analysis: v=2.4 cv=ebWo7LEH c=1 sm=1 tr=0 ts=6b092f62 cx=c_pps
- a=rEQLjTOiSrHUhVqRoksmgQ==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22 a=EUspDBNiAAAA:8
- a=oFY2QqT7UXJjKgy5amEA:9 a=2VI0MkxyNR6bbpdq8BZq:22
-X-Proofpoint-GUID: NA1n5rM8YYll8SLZlHzzCd--q3ZFd261
-X-Proofpoint-ORIG-GUID: NA1n5rM8YYll8SLZlHzzCd--q3ZFd261
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-27_01,2026-11-26_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 spamscore=0 priorityscore=1501 malwarescore=0 clxscore=1015
- lowpriorityscore=0 phishscore=0 adultscore=0 impostorscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611270029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261126_232107_593134_6AB86DA1 
-X-CRM114-Status: GOOD (  10.91  )
-X-Spam-Score: -2.8 (--)
+X-CRM114-CacheID: sfid-20261126_233244_260391_C4DEA195 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,42 +96,94 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-When DP is plugged, IRQ_HPD is delivered when PHY is in uninitialized
-state, In this case avoid runtime-resuming the controller and
-attempting AUX access for an already-plugged, while the
-PHY is uninitialized state.
+This series adds USB 3.0 host support for the Allwinner A733 SoC and
+enables it on the Xunlong OrangePi 4 Pro.
 
-Signed-off-by: naidu nama <naidu.nama@oss.qualcomm.com>
----
- drivers/gpu/drm/msm/dp/dp_display.c | 5 +++++
- 1 file changed, 5 insertions(+)
+It adds the USB 2.0 UTMI PHY driver, USB 3.0 mode for ComboPHY0, USB2
+CCU gates, DWC3 glue support, an xHCI W1C port change quirk, and DT
+nodes.
 
-diff --git a/drivers/gpu/drm/msm/dp/dp_display.c b/drivers/gpu/drm/msm/dp/dp_display.c
-index c0c150e2c575..79169c1f95a5 100644
---- a/drivers/gpu/drm/msm/dp/dp_display.c
-+++ b/drivers/gpu/drm/msm/dp/dp_display.c
-@@ -1607,6 +1607,11 @@ void msm_dp_bridge_hpd_notify(struct drm_bridge *bridge,
- 	struct msm_dp_display_private *dp = container_of(msm_dp_display, struct msm_dp_display_private, msm_dp_display);
- 	u32 hpd_link_status = 0;
- 
-+	if (dp->plugged && !dp->phy_initialized) {
-+		drm_dbg_dp(dp->drm_dev, "skipping IRQ_HPD in an inactive state\n");
-+		return;
-+	}
-+
- 	if (pm_runtime_resume_and_get(&msm_dp_display->pdev->dev)) {
- 		DRM_ERROR("failed to pm_runtime_resume\n");
- 		return;
+Verified on the Xunlong OrangePi 4 Pro with a SuperSpeed (5000M) USB
+3.0 flash drive.
+
+Prerequisite series:
+- arm64: dts: allwinner: Add Xunlong OrangePi 4 Pro support (v2):
+  https://lore.kernel.org/r/20261127065343.1449675-1-alastair@d-silva.org
+- Add Allwinner A733 (sun60i) PCIe and Combo PHY support:
+  https://lore.kernel.org/r/20261125062948.1234677-1-alastair@d-silva.org
+- Allwinner A733 PCK-600 power domain fix and DT node (included in
+  prerequisite-patch-id below).
+
+Alastair D'Silva (11):
+  dt-bindings: phy: allwinner,sun60i-a733-u2phy: Add Allwinner A733 USB 2.0 PHY
+  dt-bindings: phy: allwinner,sun60i-a733-combophy: Add combophy0 USB 3.0 support
+  dt-bindings: clock: sun60i-a733: Add USB2 bus and sys clock IDs
+  clk: sunxi-ng: sun60i-a733: Add USB2 bus and sys clocks
+  dt-bindings: usb: allwinner,sun60i-a733-dwc3: Add Allwinner A733 DWC3
+  phy: allwinner: Add Allwinner A733 USB 2.0 PHY driver
+  phy: allwinner: sun60i-combophy: Add USB 3.0 PHY mode support
+  usb: dwc3: Add Allwinner A733 DWC3 support
+  usb: host: xhci: Add W1C port change quirk for Allwinner A733
+  arm64: dts: allwinner: sun60i-a733: Add USB 3.0 controller and PHYs
+  arm64: dts: allwinner: sun60i-a733-orangepi-4-pro: Enable USB 3.0
+
+ .../phy/allwinner,sun60i-a733-combophy.yaml        |   5 +
+ .../bindings/phy/allwinner,sun60i-a733-u2phy.yaml  |  58 +++
+ .../bindings/usb/allwinner,sun60i-a733-dwc3.yaml   | 103 ++++
+ .../dts/allwinner/sun60i-a733-orangepi-4-pro.dts   |  31 ++
+ arch/arm64/boot/dts/allwinner/sun60i-a733.dtsi     |  61 +++
+ drivers/clk/sunxi-ng/ccu-sun60i-a733.c             |  10 +-
+ drivers/phy/allwinner/Kconfig                      |  17 +-
+ drivers/phy/allwinner/Makefile                     |   1 +
+ drivers/phy/allwinner/phy-sun60i-combophy.c        | 573 ++++++++++++++++++++-
+ drivers/phy/allwinner/phy-sun60i-u2phy.c           | 233 +++++++++
+ drivers/usb/dwc3/core.c                            |  18 +-
+ drivers/usb/dwc3/core.h                            |   8 +
+ drivers/usb/dwc3/dwc3-generic-plat.c               |  15 +-
+ drivers/usb/dwc3/glue.h                            |   6 +
+ drivers/usb/dwc3/host.c                            |  10 +
+ drivers/usb/host/xhci-hub.c                        |  53 +-
+ drivers/usb/host/xhci-plat.c                       |   3 +
+ drivers/usb/host/xhci.h                            |   2 +
+ .../dt-bindings/clock/allwinner,sun60i-a733-ccu.h  |   2 +
+ 19 files changed, 1177 insertions(+), 32 deletions(-)
+
+base-commit: 9437046953b2fb3bf55b36582450ea0267df82a7
+prerequisite-patch-id: 19691099774bd3dc41f56585c03ddefb7bdc6f9c
+prerequisite-patch-id: 85db03df3394cdcb2780a0da122a74b2c1fe220d
+prerequisite-patch-id: a3e883da50bf03e8f522444def66fec7f996ffbe
+prerequisite-patch-id: c6889699a6dc13c336ce4cf4659e21b551e9a9fc
+prerequisite-patch-id: ef2f0344452092edb2221b93c44a3e82cb896a2d
+prerequisite-patch-id: c598480f753e36b7f6230129b864c559b9f185d5
+prerequisite-patch-id: f86b468a896a40f132adfcba885700327dff1bc5
+prerequisite-patch-id: 079d60101e1b9e5425458060314bde3e9cc2fe4c
+prerequisite-patch-id: 090c5ff78d4e2150804aa8d294581cd338b1e971
+prerequisite-patch-id: af0aebcae7c38d58354925119c412178b5821b5e
+prerequisite-patch-id: beb8a098ba14724e316ff243bdf8e00e729243c1
+prerequisite-patch-id: 63342c5ec38e8eb9e55c8c74d3c5a81a630d5f69
+prerequisite-patch-id: 1dc8d70f80674c98b2b15d09556dd27f643b20da
+prerequisite-patch-id: 4555860586ef50f27bf787a23f6ba693e9c3b0d6
+prerequisite-patch-id: 0279f281cd59cf54bceee39b0fa4d0b6a7b87c48
+prerequisite-patch-id: 14424bd8324b6cae2b8c4d6840df0db626d1385f
+prerequisite-patch-id: 7b42728bc8271e5dfd57fffec47a7f5745eff357
+prerequisite-patch-id: 74f5c7d066477024a374a789b3180e841398fb07
+prerequisite-patch-id: 309a5a3ca5b216915907263dea7024263abf1d1c
+prerequisite-patch-id: 55e543b9854c7ae2fa86969233d05ccadd3792e9
+prerequisite-patch-id: cfcad85224e288ec2168e7f245b4a1c63e9a34a7
+prerequisite-patch-id: 18dadb9c1e41141d015422b658b7dd0d153b7d69
+prerequisite-patch-id: 47a863f533ee9ae1589e25618f27a7282a0f8d37
+prerequisite-patch-id: 54181ce00a78f9f69031d3964f14bf800dd98e0f
+prerequisite-patch-id: 5a6d6dac4f6b42edf911fbca2078508e977bdce9
+prerequisite-patch-id: e919d9591e97e3b69fa86625a868583ee74d16db
 -- 
-2.43.0
-
+2.47.3
 
 -- 
 linux-phy mailing list
