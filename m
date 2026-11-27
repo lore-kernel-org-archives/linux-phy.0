@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9FC7C606A31E
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 16:03:25 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 03176606A331
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 16:03:37 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=SESYDI4W;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=mail header.b=ZOLJyP2Z
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=TWPnH+ju;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=mail header.b=VhjdRJGG
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,44 +14,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=W+HK1haOvTlbDYs95MtmLBToIwnGIBg3b4lNCWCOrYo=; b=SESYDI4WcX4uMGq39RY3f2uohI
-	dc6z+enmYmr/1oCQhgWQvp5YFOi94wHtOUKX8B8h5ZYhB9SftQNH9LLNt+BtVopl1It6B9PlqKQ/s
-	s+AoCv1fOXGXwJf6DWVSXy7uO//Jq+iE25hXAE3+PhKr71qK9z7jlN+e/+4L4tdDMRYcbSI2iPgU+
-	HRt51pRng1T0nsMuRuhZGfg3XBapd+/QnmTsN7NwcnlPaF1xOJdyAzL4Smk9A5HwLM2h1ppoAskcH
-	bCO6W3XbvX33jKypnAYthETGDnRsY7GfGGCsL223syh1555w19ImcQKyy8nkWLg2q9P7jfYtRT5Kf
-	hrg1kWHw==;
+	bh=v7EE6uV+6LaQG8U8F6tQFHUlxjc0qe2sj+wL1vF1JLc=; b=TWPnH+juTYvcPzimBaqswTEjhY
+	oKfZwVKQcwkz/DDWLcD5Kl0Qky3c6Sof/JwntX+f/z03bINOipp2C3OmQuGU7zRzT933c8vBUd6eC
+	0UgSrQL9hjI+dUJXjRfcEzckyMyCZC+sI87mFADOV+IiGrUiVxAj4PB/+M3bmzl9rs/kxDGZ+MDjg
+	dtIdiBgsl6xOo2xE01E/Lw76MH70moepFE4pfXH34lOoHBBpbXYoboBOG9gvDJWo5rkrLFXV7xKm8
+	/skDPl2Iut8GfFczMZtxYVhdiIHQUvgxXsuVYJrr2gw9a+iT9eqi9YkwGVyap6UjAHtmvlLIziAyU
+	bPO2S0OQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWyQ1-0000000GytE-1FZI;
-	Fri, 27 Nov 2026 16:03:25 +0000
+	id 1xWyQC-0000000Gz0Q-2yVh;
+	Fri, 27 Nov 2026 16:03:36 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWyNS-0000000Gx7U-0E8L;
-	Fri, 27 Nov 2026 16:00:47 +0000
+	id 1xWyNT-0000000GxA2-2Fi8;
+	Fri, 27 Nov 2026 16:00:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1795795244;
-	bh=EZhDsGt1k5I5MgQx0B894Tks60yZ+dIg+vY9qxs2PaA=;
+	s=mail; t=1795795245;
+	bh=KJVceFNGs+LIjckYujBmFoIgb+VAC1qnY7oDszTjkpo=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=ZOLJyP2ZJEgdc5E5NM2H+4RmHluxUqsszEhdMrV3qtbdVypqRSZ6v13z7BJP5mtSm
-	 cn8IEM8hKO2R+YyhHw2CCinUQEbiLNdJ7bEV2vQIVQ73vj06ddrJTw/QeFS4Q2QXP0
-	 G9YTV1yz6MVdyvst8EYKylpOfhq/pUQBbsp9TD/1mnqFBc3PMg8lV58LJMg9I4HTtK
-	 +/otUC9Ojx0vBHXOO3IuOdxDI/CRTngogYDTG8L8sSo/u3kwzCIjzzxCftbL/DdtoH
-	 8bKEnPg60walK/G8+c3FuJtR3A1UEwGQrLGmAXtN9ffn+KOYu+SWe2LGAFEzZuNr9N
-	 kHtlgkU0kCyhw==
+	b=VhjdRJGGsNsTDJd0pWmQZD2bYRsvaS83oYz6XlVtkMlOAO7ewdRNNZpFcizdArt5Q
+	 dBDTRXhf6VcEU3B1QfxZBm76bhkQLjgzQskAfnk6xefOCLwoQHmTjwj2t8dUSX3Iej
+	 oG8i1BUcKo/u1qVmPCk1FNZZO6wNxm7owf4h3qnYm3N9Zda91XRCRvlCgzqMrXEKnC
+	 v1LixsCnaDB6qtdgAXW9o+v2+SegUymZW6OqaYCEQMLRg5cNZswcgAhWcPb6X/7KoM
+	 l1hPJlahQrTLdoZ5vDUlGLQg883VodKSi6E/MoYskAxyg4pziTFDOulVnJipDHd14b
+	 JMHWWhtlVO/4g==
 Received: from yukiji.home (unknown [100.64.0.131])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id CFC1217E07FF;
-	Fri, 27 Nov 2026 17:00:42 +0100 (CET)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 314CA17E0DF7;
+	Fri, 27 Nov 2026 17:00:44 +0100 (CET)
 From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Fri, 27 Nov 2026 17:00:18 +0100
-Subject: [PATCH v16 15/23] scsi: ufs: mediatek: Remove
- mediatek,ufs-broken-rtc property
+Date: Fri, 27 Nov 2026 17:00:19 +0100
+Subject: [PATCH v16 16/23] scsi: ufs: mediatek: Rework _ufs_mtk_clk_scale
+ error paths
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261127-mt8196-ufs-v16-15-6f2568f7c119@collabora.com>
+Message-Id: <20261127-mt8196-ufs-v16-16-6f2568f7c119@collabora.com>
 References: <20261127-mt8196-ufs-v16-0-6f2568f7c119@collabora.com>
 In-Reply-To: <20261127-mt8196-ufs-v16-0-6f2568f7c119@collabora.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
@@ -77,16 +77,16 @@ Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
  Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795795222; l=2134;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795795222; l=3676;
  i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=9CTlg8xAILY9iqdRThOl7TUwtadPYUSw9hy9H1UkyUY=;
- b=Tro7JCP9JrSZ0Wuou2rANW0vluL6Awbe7BVTipDTXyORFqplRRejZ9bwn9xyepIhs3NJfnr0D
- 8TSXSzHe+V/ANu+Gv9QZ3VuV5qdxxueMHqMizxYMsdMbQg/xB8E66Om
+ bh=VnRpJ32vDNuktqh8gwq5xlu94/+r0WaDJPvDfVWHrDU=;
+ b=s7lePaaN29M7Wy0Orgv1+B5OaQFrfTSW+P7WL9dwRviiGSRsBnEZOxD4JhYyBb4+x5QC9Vk5O
+ iw8BmJV4j+hC6fkwiVv1pnwCsldIIZpIqqrTZxqTQgKsRKNouAGGplp
 X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
  pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261127_080046_311202_D8F5A502 
-X-CRM114-Status: GOOD (  10.21  )
+X-CRM114-CacheID: sfid-20261127_080047_824696_FD8594EE 
+X-CRM114-Status: GOOD (  13.30  )
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -109,60 +109,115 @@ X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 
-This flag property was never described in the binding, and its
-capability wrapper seems pointless.
+Errors should be printed at the correct log level. Additionally, it
+looks like some "goto out"'s were omitted in the scale up case, which
+looks like a mistake, as the scale down branch of the code does use
+them.
 
-If one of the MediaTek SoCs needs the ufshcd quirk applied, then this
-can be done per-compatible, without needing to give the device tree
-author the option to forget to set it.
+Rework the error messages to make them nicer and at the correct
+verbosity, and add the missing gotos.
 
-Remove it and the associated capability flag wrapping code.
-
+Fixes: 5e5976f5242d ("scsi: ufs: host: mediatek: Support FDE (AES) clock scaling")
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Reviewed-by: Peter Wang <peter.wang@mediatek.com>
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 ---
- drivers/ufs/host/ufs-mediatek.c | 5 -----
- drivers/ufs/host/ufs-mediatek.h | 2 --
- 2 files changed, 7 deletions(-)
+ drivers/ufs/host/ufs-mediatek.c | 41 +++++++++++++++++++----------------------
+ 1 file changed, 19 insertions(+), 22 deletions(-)
 
 diff --git a/drivers/ufs/host/ufs-mediatek.c b/drivers/ufs/host/ufs-mediatek.c
-index 9d7e4bc96203..8fa0bd4442ac 100644
+index 8fa0bd4442ac..b20ecd9c698d 100644
 --- a/drivers/ufs/host/ufs-mediatek.c
 +++ b/drivers/ufs/host/ufs-mediatek.c
-@@ -712,9 +712,6 @@ static void ufs_mtk_init_host_caps(struct ufs_hba *hba)
- 	if (of_property_read_bool(np, "mediatek,ufs-rtff-mtcmos"))
- 		host->caps |= UFS_MTK_CAP_RTFF_MTCMOS;
+@@ -2056,16 +2056,16 @@ static void _ufs_mtk_clk_scale(struct ufs_hba *hba, bool scale_up)
  
--	if (of_property_read_bool(np, "mediatek,ufs-broken-rtc"))
--		host->caps |= UFS_MTK_CAP_MCQ_BROKEN_RTC;
--
- 	dev_info(hba->dev, "caps: 0x%x", host->caps);
- }
+ 	ret = clk_prepare_enable(clki->clk);
+ 	if (ret) {
+-		dev_info(hba->dev,
+-			 "clk_prepare_enable() fail, ret: %d\n", ret);
++		dev_err(hba->dev, "%s: Failed to enable clock: %pe\n", __func__, ERR_PTR(ret));
+ 		return;
+ 	}
  
-@@ -1255,8 +1252,6 @@ static int ufs_mtk_init(struct ufs_hba *hba)
- 	hba->quirks |= UFSHCI_QUIRK_SKIP_MANUAL_WB_FLUSH_CTRL;
+ 	if (clk_fde_scale) {
+ 		ret = clk_prepare_enable(fde_clki->clk);
+ 		if (ret) {
+-			dev_info(hba->dev,
+-				 "fde clk_prepare_enable() fail, ret: %d\n", ret);
++			dev_err(hba->dev, "%s: Failed to enable FDE clock: %pe\n",
++				__func__, ERR_PTR(ret));
++			clk_disable_unprepare(clki->clk);
+ 			return;
+ 		}
+ 	}
+@@ -2074,51 +2074,48 @@ static void _ufs_mtk_clk_scale(struct ufs_hba *hba, bool scale_up)
+ 		if (clk_bind_vcore) {
+ 			ret = regulator_set_voltage(reg, volt, INT_MAX);
+ 			if (ret) {
+-				dev_info(hba->dev,
+-					"Failed to set vcore to %d\n", volt);
++				dev_err(hba->dev, "Failed to set vcore to %d\n", volt);
+ 				goto out;
+ 			}
+ 		}
  
- 	hba->quirks |= UFSHCD_QUIRK_MCQ_BROKEN_INTR;
--	if (host->caps & UFS_MTK_CAP_MCQ_BROKEN_RTC)
--		hba->quirks |= UFSHCD_QUIRK_MCQ_BROKEN_RTC;
+ 		ret = clk_set_parent(clki->clk, mclk->ufs_sel_max_clki->clk);
+ 		if (ret) {
+-			dev_info(hba->dev, "Failed to set clk mux, ret = %d\n",
+-				ret);
++			dev_err(hba->dev, "%s: Failed to set clock mux: %pe\n",
++				__func__, ERR_PTR(ret));
++			goto out;
+ 		}
  
- 	hba->vps->wb_flush_threshold = UFS_WB_BUF_REMAIN_PERCENT(80);
+ 		if (clk_fde_scale) {
+-			ret = clk_set_parent(fde_clki->clk,
+-				mclk->ufs_fde_max_clki->clk);
++			ret = clk_set_parent(fde_clki->clk, mclk->ufs_fde_max_clki->clk);
+ 			if (ret) {
+-				dev_info(hba->dev,
+-					"Failed to set fde clk mux, ret = %d\n",
+-					ret);
++				dev_err(hba->dev, "%s: Failed to set fde clock mux: %pe\n",
++					__func__, ERR_PTR(ret));
++				goto out;
+ 			}
+ 		}
+ 	} else {
+ 		if (clk_fde_scale) {
+-			ret = clk_set_parent(fde_clki->clk,
+-				mclk->ufs_fde_min_clki->clk);
++			ret = clk_set_parent(fde_clki->clk, mclk->ufs_fde_min_clki->clk);
+ 			if (ret) {
+-				dev_info(hba->dev,
+-					"Failed to set fde clk mux, ret = %d\n",
+-					ret);
++				dev_err(hba->dev, "%s: Failed to set fde clock mux: %pe\n",
++					__func__, ERR_PTR(ret));
+ 				goto out;
+ 			}
+ 		}
  
-diff --git a/drivers/ufs/host/ufs-mediatek.h b/drivers/ufs/host/ufs-mediatek.h
-index bde2b53f5798..d97951ee1f4e 100644
---- a/drivers/ufs/host/ufs-mediatek.h
-+++ b/drivers/ufs/host/ufs-mediatek.h
-@@ -138,8 +138,6 @@ enum ufs_mtk_host_caps {
- 	UFS_MTK_CAP_DISABLE_MCQ                = 1 << 8,
- 	/* Control MTCMOS with RTFF */
- 	UFS_MTK_CAP_RTFF_MTCMOS                = 1 << 9,
--
--	UFS_MTK_CAP_MCQ_BROKEN_RTC             = 1 << 10,
- };
+ 		ret = clk_set_parent(clki->clk, mclk->ufs_sel_min_clki->clk);
+ 		if (ret) {
+-			dev_info(hba->dev, "Failed to set clk mux, ret = %d\n",
+-				ret);
++			dev_err(hba->dev, "%s: Failed to set clock mux: %pe\n",
++				__func__, ERR_PTR(ret));
+ 			goto out;
+ 		}
  
- struct ufs_mtk_crypt_cfg {
+ 		if (clk_bind_vcore) {
+ 			ret = regulator_set_voltage(reg, 0, INT_MAX);
+ 			if (ret) {
+-				dev_info(hba->dev,
+-					"failed to set vcore to MIN\n");
++				dev_err(hba->dev, "%s: Failed to set vcore to minimum: %pe\n",
++					__func__, ERR_PTR(ret));
+ 			}
+ 		}
+ 	}
 
 -- 
 2.56.1
