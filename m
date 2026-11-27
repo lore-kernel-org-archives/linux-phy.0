@@ -2,131 +2,107 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id F0425606A329
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Nov 2026 21:45:08 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9BC98606A324
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 04:35:26 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=em9KBXXd;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=infradead.org header.i=@infradead.org header.a=rsa-sha256 header.s=desiato.20200630 header.b=MZIH5mL4;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Krp1fcYb
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=fc82+iDr;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jiiqhIQj
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Subject:Cc:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=0uRTZvfUkKS/0XPP0iKL24ZH0G7ROgCZHo8nxMou7sA=; b=em9KBXXdnkWeGMpzx1ADdH3NhQ
-	ius6KLGgIQn9vZgVCpEa73t6Q3Jie+K32z67e+kkJI+fvOFIA6zebCQBvKc9sve7AbZHmSVjwj9RR
-	7HlmzfbIilu+YUbHA6r6wuMU7TlJpminQrJhxe4Ts2fMjjENCxX1egx6Uq4ktP1ucZIvJ4vJCY4YB
-	659tiQHatAcq/28mwwxzlWBUdDK0BO/HSE0agoo7+E8l5/MHIAavFzNALaUtdzzgy4qEv9s0MQ6PW
-	5lQHzkx/T2yOheAIfUl9PLn1eXkrGQ+gedT6eNYriwx0JtLOmhxbsYC9bRK4TrrcTSqhiTQhHOmeC
-	qI7u14hw==;
+	bh=+1qpXOv/UXv+ZCE3vHmJA7Kitkbcz1tBiDzeV+mZrQk=; b=fc82+iDrwZAiWaV1CgVWoJBpNK
+	rRffTJ/2mWVl7P0Et8kpbyGBVMJaVOjdGcxUuMR/DnO0625V+uxgbdSUpckjybveuHaGchYCJhWTz
+	3RMypVfac6p+wk2U9mhy8/oB9hOTGJPmM2X4W5lHDrL4lAIp+0OkXO+KubZ0dTWBrJx3eJFaHrPBv
+	Pv+iLWa+jUS/pmyFj3Qn8XkQN/AFt5LL/kup4oMfv7sALBHxc2SOcT5CfsOzwkyyuA+QQuRaGGx2G
+	YO58WYGk3aLoIeoPSyEPhtf4RYAHJFQGvX2T3GpTeqPQEq3EodHGKU1mzGClBl3HdXuWt3tQ/kHwz
+	u7L7pPPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWhHA-0000000Ea41-2DiO;
-	Thu, 26 Nov 2026 21:45:08 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1xWngE-0000000Eudx-0b2B;
+	Fri, 27 Nov 2026 04:35:26 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWhGw-0000000Ea06-2GWj
-	for linux-phy@bombadil.infradead.org;
-	Thu, 26 Nov 2026 21:44:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=MIME-Version:Content-Transfer-Encoding
-	:Content-Type:References:In-Reply-To:Subject:Cc:To:From:Message-ID:Date:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=UYJTRpYCZNTbQQiix5R88SQ1NUZI9ZYUAhpcRTfR3qA=; b=MZIH5mL4uzx3VPuMvKOFL8r+tD
-	0kcQeiPA7eMhAYSQ9Ty9uyEHJp5hTWaTf/BuD7Cg1TIhP6mmdYtLVLW5i7TzGST5sH+4B8ufAaI0z
-	g/D0d+61cjw4mrfS++XQJ8qLvDOR58Jw/jqR/h/xMrFSNFRNva1NedvUaLzUGnUBBY64z27ZMi2Zk
-	+keWbv2tzcX6RTM4Krlki1j1D58eDROdRikkpDNZZXmhN4YJANc10gtlPWkvFP4tEt0nGWdOAY3nt
-	LvqZYv4PpuVgboeMgHW88ESBgYwisjFwCjiD1i98BqMKrcSJmrWCL+NeWLYsuR426Jx6jSvQBr9Ay
-	8HqqC13g==;
-Received: from mail-dy2-x07.google.com ([2607:f8b0:4864:36::7])
-	by desiato.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWhGr-000000074dR-1g5h
-	for linux-phy@lists.infradead.org;
-	Thu, 26 Nov 2026 21:44:52 +0000
-Received: by mail-dy2-x07.google.com with SMTP id 5a478bee46e88-382afece6d8so1527368eec.1
-        for <linux-phy@lists.infradead.org>; Thu, 26 Nov 2026 13:44:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795729481; x=1796334281; darn=lists.infradead.org;
-        h=mime-version:content-transfer-encoding:content-type:references
-         :in-reply-to:subject:cc:to:from:message-id:date:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=UYJTRpYCZNTbQQiix5R88SQ1NUZI9ZYUAhpcRTfR3qA=;
-        b=Krp1fcYborP9rxScIwHasyS8Q+oOABp0NoDB8OpBH7ULy8nU5T3BNNydhu5mw3Tfwu
-         hltCYp85emmWpRHQeczGciOsEILOtyIglGdKdi0o2pPw+xqI8uLGg4SaCrAIMiW/wyZu
-         o03wSKNT96EzxJ263gAACYqpEqu1O1K3WjcrK1FesFKQM9uGTq/ZLbOVR7DHxZn/WUDI
-         EIN2ZsbKZ8+x+dwPddU9tft6MoDWm0XChC2rBQpkkp/W8A6K0/hsIVEPvJNvTVy0gRvL
-         jqQJ2a1Jbd7nw0GU2G4iyuP6Li8/nTefS952uKjDYYoVVsPCWN+/Uff5hOmAY1+03mnG
-         yONg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795729481; x=1796334281;
-        h=mime-version:content-transfer-encoding:content-type:references
-         :in-reply-to:subject:cc:to:from:message-id:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=UYJTRpYCZNTbQQiix5R88SQ1NUZI9ZYUAhpcRTfR3qA=;
-        b=cLozewQQ8Tq4H66UgzhOH1Rbs178uscmNvrTBnOjmyOZlQcOqqeUhd+/LGhp7ulZGU
-         7qpMDYBFTZVvZXgFRjO1AwLH44zcKq5G4NzGZ7wL1uMTOPSAEzCj2x9JGp2iH3ZNK0vE
-         1nzmpXmELm8H5zsI47WnUGeRoh37rHGvoctryK8Qu2EXYL8joFDnEP6+upP7cLorL38S
-         PqpQXKobyDaIjks8D5KIKc49fVG6XrEov3x80y/kbCuisGXx6e3Qs0lRjT5gyoqv3LFi
-         tRhcI3/GBMDrLjiD9P01cD1NC8kqi7alqLb5ua8bLKtsD9oU7G6Qq4X8YWzFrpCj4gJm
-         1t1w==
-X-Forwarded-Encrypted: i=1; AL+hErFj16tUQBoAJg6A3kREQjIJGwKnOlDlDhe7BmP9/vhOT/LCSG/L5HmNBm1qefq267pDGIgLQ+5rATM=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/DEyVNwPMzRUi5sMzzTywscF8ZkCx1i++3xVY5aONlbAdZVAjP
-	I3BXoTTLX5+O0GAv4rtobl45QRDyMuQQEP6d5Mmai0zpuKEecJ3HOt2b
-X-Gm-Gg: AZFdTZenA75FXKy8IJ2dr2/aXvmC2bVgTaN2n2IP+bZdmueWGRGktr4wP8IN+kzvw/O
-	LX5qQ4Xf5qs1nMbNLIexJ/wc5/+9to1t6yFCOxIvdKZ+53MVr42i5H4Fu7RHR/kRE3dIYWFWGUC
-	sAUqnzNGrr+6RFB0TW4zlEERabNedWLrldx/nVJbqCleCZVtvN8r0Dq7hREpk46sYFCyciLimfP
-	fIzxQmrRXfLdSLbdcGJ9lZmAeWs77P80uHo8hWUWtpLiO/IlK40Zrzh0NszuV6mb/be6JCWDbVW
-	kDj0857Fs54WXB/ZQUcrg3Gmuga18+VXh93FZA8p5cKxa261X02z1oYz4EhNlPKdgyJc6DctyVh
-	D3Hb8uZkJrfviA9U/XBhcMJaw2TOCRmn0auTSWPzuMEUESeziqPkOADip6A+TMXVaGY8Sq+sk1+
-	N+Dfr5psvWrXCjYfbNRWNyDQKSPwVRIYQ+FAWuUfnPrrvvjXcYxrLrIID25namzehVRq+pwhUpm
-	DL2P0Sntrt52add8F5GyE7ZH0Fp5lUECnQgHHP/cjIaAQXHdtVPQWms5jXJxTEl7AT4TAVabRMl
-	gwCq8JXjvQwfZPg/T82DlNTNXlC7X+pR5QKxYbo5chc/TJcD8MSJz2dg+DdEkVo=
-X-Received: by 2002:a05:7301:c089:b0:372:14fb:2573 with SMTP id 5a478bee46e88-3856fd5bf76mr21960944eec.20.1795729481384;
-        Thu, 26 Nov 2026 13:44:41 -0800 (PST)
-Received: from localhost ([2604:a840:3:1e0::1080])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385665f21aesm79578155eec.4.2026.11.26.13.44.40
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Nov 2026 13:44:40 -0800 (PST)
-Date: Fri, 27 Nov 2026 05:44:37 +0800
-Message-ID: <73f6ebde526f60ff64064ef602e0cae9.codykang.hk@gmail.com>
-From: Cody Kang <codykang.hk@gmail.com>
-To: Guodong Xu <docular.xu@gmail.com>
-Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@kernel.org>,
- Troy Mitchell <troy.mitchell@linux.spacemit.com>,
- Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
- Manivannan Sadhasivam <mani@kernel.org>, Haylen Chu <heylenay@4d2.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
- Brian Masney <bmasney+clk@redhat.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
- Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
- Yao Zi <me@ziyao.cc>,
- Uwe =?utf-8?q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>,
- Icenowy Zheng <uwu@icenowy.me>, Jerome Brunet <jbrunet+clk@baylibre.com>,
- Sarah Emery <sarah.emery@canonical.com>, Ze Huang <ze.huang@oss.qualcomm.com>,
- Dmitry Baryshkov <lumag@kernel.org>, Cody Kang <codykang@vsit.ai>,
- dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org,
- devicetree@vger.kernel.org, spacemit@lists.linux.dev,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-clk@vger.kernel.org, Luca Ceresoli <luca.ceresoli@bootlin.com>
-Subject: Re: [PATCH v3 12/17] drm/spacemit: add Innosilicon DP/eDP controller
- bridge driver
-In-Reply-To: <9ec2f818084f2e723e8b82218a302258.docular.xu@gmail.com>
-References: <20261121-k3-display-v3-0-ec419e8e96b8@gmail.com>
- <20261121-k3-display-v3-12-ec419e8e96b8@gmail.com>
- <9ec2f818084f2e723e8b82218a302258.docular.xu@gmail.com>
+	id 1xWngC-0000000Eude-3GvG;
+	Fri, 27 Nov 2026 04:35:24 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 3ED3561E12;
+	Fri, 27 Nov 2026 04:35:23 +0000 (UTC)
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1795754122;
+	b=J4SasB5eTiud8Gk42wc0+kLcWU12tU4NuUKZ5VR7AgSuR01VXADuDS2b8MpBrAWCT7Zi
+	 TEMrho1pM8yhkHmDZGNzh9Q7ppZpbZfaR80bJVKvsk0mj0v471Hbw37tsxDNToYkw8lOE
+	 liC+bz01vQyaaisb4HQBG7bmPCHIHX/HNdVyaR57muQ3EEB9paPheWpTzohQp+GvSaVNK
+	 3v8ciZt01kclxFZfiYaknB9/R422J+TuRAgSGXbKI5BV8yUq0LNcsrDqaC4CcgrQCO6rC
+	 yXHULNOK49HBXbGumzT7+6qSvvp4cwitMwQ3pK7R4OP9noxOkm5RNwvlYljrPeeztxQ==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1795754122;
+	h=DKIM-Signature:Received:From:Date:Subject:MIME-Version:Content-Type:
+	 Message-Id:References:In-Reply-To:To:Cc:X-Mailer:
+	 X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To:Content-Transfer-Encoding;
+	bh=9tyMkUr9+zYWv3mAdl+/oTYNIcjMUy1JAChBbK6vIio=;
+	b=TYDRwaNjHY/R87Tg5nvxkQXuROWySAY2aXJAlEzrZbah+kI5m5r4VeRRQrLLKgdiIKAt
+	 1x7mLRwpPNGJps0MPt3m6WJ4Efs8AkGlZMdib9WbTm669TcqpwfxRPnbKJ//XZxgtl+V6
+	 5VeNMJUbnm/WSSi3JKWS7vGg9i2XMK4TyprA6tgiV35tiKdOodNLCjcV38Ws3JMB6WzvT
+	 0pMbLqi4qF8ddvMJDdcGzoCjwed0xCRAsuLo4NNy2pQ5zbuuCF4bXVJGubcYrGqikZeBP
+	 7iS918OznUSXUI8GTnaXYYFxBylLiaD+LrBa0klTqMrpf41VfbL2x+GOhe/l+NnePxw==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.kernel.org (Postfix) with ESMTPS id C561A1F00893;
+	Fri, 27 Nov 2026 04:35:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795754122;
+	bh=9tyMkUr9+zYWv3mAdl+/oTYNIcjMUy1JAChBbK6vIio=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To;
+	b=jiiqhIQjyTeTxxZLPAR4cwLojifhRwKvaEI966qxcgObyn0n+7xthW+5PyRbmbWDD
+	 Zb3Cr1Dm+J1DrilIEQaEGcQM8oYzG3d2ToywPDVi2ljLKhU3SWzJ0jvEBiZS/jqpAA
+	 U1UninlUzRkoR6DP3hiH/MHkGCGqeZJTZTDYWP4ntdLENCrHzINyJIImxrKumsMvXH
+	 R73KiwXwRXiBqgoIk3KpDu5ibPo6iQfhWAJ3PqVINYWie63G799W7U7EiK5Y111h0t
+	 D6zdYzQ0bror0O6NXMcg8Rgjz+Tlnmevc/FWBWQVMjF6BqSrMjXdiFHJ5TrT3sDAD6
+	 Ep8M2x5f7/J1A==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id 59EEE4B576;
+	Fri, 27 Nov 2026 04:35:20 +0000 (UTC)
+From: Fil Dunsky via B4 Relay <devnull+filipp.dunsky.gmail.com@kernel.org>
+Date: Fri, 27 Nov 2026 07:35:19 +0300
+Subject: [PATCH v3 1/6] PCI: dwc: Export the multiplexed MSI interrupt
+ handler
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261126_214450_304944_B3243144 
-X-CRM114-Status: GOOD (  12.98  )
-X-Spam-Score: -0.2 (/)
+Message-Id: <20261127-b4-cs7542-pcie-v3-1-b067875c56da@gmail.com>
+References: <20261127-b4-cs7542-pcie-v3-0-b067875c56da@gmail.com>
+In-Reply-To: <20261127-b4-cs7542-pcie-v3-0-b067875c56da@gmail.com>
+To: Manivannan Sadhasivam <mani@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+Cc: Jingoo Han <jingoohan1@gmail.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ Krzysztof Wilczynski <kwilczynski@kernel.org>, 
+ Bjorn Helgaas <bhelgaas@google.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Stephen Boyd <sboyd@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, linux-pci@vger.kernel.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795754119; l=872;
+ i=filipp.dunsky@gmail.com; s=20260930; h=from:subject:message-id;
+ bh=Mna9V2FvctfGCov2fj28CrWMP+FmQdEcH5a5uq4pt5U=;
+ b=7kroQ7/sWAM6ZvMKi0YRIOONOSZbjpsXWWVqDT4YgFzGkzY7/3ZGQTzfKSsaw79LPe6o9iQ5X
+ exkHJuVQK1fA29EyrmMUJbgePoFEJGFcDJb+6WrTXCPs6OBgPXGcOYD
+X-Developer-Key: i=filipp.dunsky@gmail.com; a=ed25519;
+ pk=JAYP8e2rJ54DHOmhNtXud8rl1igAaAXoOHxtJmVXI1g=
+X-Endpoint-Received: by B4 Relay for filipp.dunsky@gmail.com/20260930 with
+ auth_id=1085
+X-Original-From: Fil Dunsky <filipp.dunsky@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,39 +112,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: filipp.dunsky@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-0.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Wed, 25 Nov 2026 20:16:25 -0500, Guodong Xu wrote:
-[...]
-> I noticed a corner case when testing module unload on v3.
-> spacemit_inno_dp can be removed while a process still has cardN open
-> (say Xorg or kmscube is running and somebody does rmmod
-> spacemit_inno_dp), and the DRM device then still holds references on
-> the bridge. When that process closes cardN later, the kernel oopses. On
-> a CoM260-IFX:
->
-> 	sleep 20 < /dev/dri/card0 &
-> 	rmmod spacemit_inno_dp
+From: Fil Dunsky <filipp.dunsky@gmail.com>
 
-Thanks for reporting this. I can reproduce it.
+Allow modular host glue with a combined application interrupt to dispatch
+the internal MSI receiver without installing a second chained handler.
 
-[...]
-> Other DRM drivers with the same structure, rockchipdrm for example,
-> put the bridge driver and the DRM driver into one module. I think doing
-> the same here (add spacemit_inno_dp.o to spacemit-drm) is the better
-> solution.
+Signed-off-by: Fil Dunsky <filipp.dunsky@gmail.com>
+---
+ drivers/pci/controller/dwc/pcie-designware-host.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-Agreed. Will fix in v4.
+diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
+index bbb02458a..1d076bb62 100644
+--- a/drivers/pci/controller/dwc/pcie-designware-host.c
++++ b/drivers/pci/controller/dwc/pcie-designware-host.c
+@@ -85,6 +85,7 @@ void dw_handle_msi_irq(struct dw_pcie_rp *pp)
+ 			generic_handle_demux_domain_irq(pp->msi_irq_domain, irq_off + pos);
+ 	}
+ }
++EXPORT_SYMBOL_GPL(dw_handle_msi_irq);
+ 
+ /* Chained MSI interrupt service routine */
+ static void dw_chained_msi_isr(struct irq_desc *desc)
 
-Cody
+-- 
+2.53.0
+
+
 
 -- 
 linux-phy mailing list
