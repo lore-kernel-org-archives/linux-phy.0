@@ -2,78 +2,116 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 3550A606A31C
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 15:23:11 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 5A4B4606A33C
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 15:28:40 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=Ggx1FEDB;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=LsyK15+z
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=07kfCpM7;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=ChKzJKDH
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:References:In-Reply-To:
-	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
+	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=786c/13+gg7Pox2kh1at7FZCu0iyFoL1sBQ7fk62oS8=; b=Ggx1FEDBK30kmNqVFJX0UOQAPB
-	LtUOETsMSAHuOPFutf4ysGC6W1sKwt5L4HUySY6R+g7fKjf9DXomLV/hBLDsP/hAksnUeIxGGxN05
-	4S5vUpocqc2AqV8vcHxjP+1qHvecPA2Bw32Zkk6/97EnDAgX5IIk/Bh0jGoWY302gz9DxnOu7hEak
-	4lJXl/BwWRfmhw7bJYH5YwZ+gJepjrds3Uq6rwNnbYBR70Ho6msnkyC8UcrbofKd++fM2wvZqWebw
-	9pKKtZtXFzRLLuCqRBTbx43KGJ2+w0MMzUNYUVI59JcxtHeWHamLaJVJ9bH26Nzznszb8zOvcg/RO
-	glEF37TQ==;
+	bh=5KDmhIdX3qSmoXbgB336HCrXvXt6Q3Al25LOs22LLuo=; b=07kfCpM71FZ9b1FKf3+HDmB2P5
+	u+RSzrWAzJ4QvuLHHdX2ZZFtxo43yTnIa/qIV+TFGlZ93By7cWSFFmmWyCVitWkL1eZ8HPxn+W2/n
+	JFgzGx0mLrtk9TRN4s/+e4ZkhjcxnujeeT3Kpxsp3BLANqoXc4M4GxPTcFtmnTpMV24gqgd6VQESm
+	IKg6B3vmO8I1T2YlMdNj4+su/G1/0nZ27EqWOPqulJG4GndYDd/nRfz96ckJFrxN+M+gGrraqG+ER
+	BDWfuCQ+ROwAhXO3lQpVq8+24wD/ipB6qIfCrymbr0EfquTEXFAOUbpep5z8Dy2FgOhEyjxdLg+XK
+	2aAJERxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWxn4-0000000Gkow-3PBn;
-	Fri, 27 Nov 2026 15:23:10 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xWxsN-0000000Gmav-44Du;
+	Fri, 27 Nov 2026 15:28:39 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWxmb-0000000GkZf-2FeI;
-	Fri, 27 Nov 2026 15:22:41 +0000
+	id 1xWxsM-0000000GmZp-1s5c;
+	Fri, 27 Nov 2026 15:28:38 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 23A744493A;
-	Fri, 27 Nov 2026 15:22:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B95F31F00893;
-	Fri, 27 Nov 2026 15:22:35 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id DEBFE447BA;
+	Fri, 27 Nov 2026 15:28:37 +0000 (UTC)
+Authentication-Results: smtp.kernel.org; arc=none smtp.remote-ip=100.80.115.77
+ARC-Seal: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256; cv=none;
+	t=1795793317;
+	b=n7xgwqO0NEPIkRmkSWa4LzvZMtI/WJquZ/7pF0Igm0JZBjJxVsqhxh6nGfvCUodFJ+mE
+	 spDCfiRtzoUpTL5gCb6uHjg3WGvwpZBy2fzDIja8GdgpC/OofU+iDn31m2j4LDs4xUZI5
+	 l6psv1vnD8HKTl1VzXZs2v1dMx38ATI5srx3HYftXVrqcTNEzpfosNY4/XXOLZ+P1I/TJ
+	 nSR0esmU2LIc7Qr1Ksoys2tVxiw6yxsTLYebWNimsaFsbfm924PXQgwBUAcHCPxbRAKed
+	 2ZQ9gPz+cxrgpEaNaG1wXYlMj4KH2ys9jwvkyyoTgYNY6KXCpCVBFF14+tR2k9UnpGA==
+ARC-Message-Signature: i=1; d=kernel.org; s=arc20260519; a=rsa-sha256;
+	c=relaxed/relaxed; t=1795793317;
+	h=DKIM-Signature:Received:From:Subject:Date:Message-Id:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:X-B4-Tracking:X-Change-ID:To:
+	 Cc:X-Mailer:X-Developer-Signature:X-Developer-Key:X-Endpoint-Received:
+	 X-Original-From:Reply-To;
+	bh=0rl7UJon57zyJ7ukhwyWnF3wDSX/ykxuKm3DMydZHss=;
+	b=SloIxA3esanJ+7VeLY7bn1D/L/TWc/TEG2OnZAXlTKBQAVeuvAGvpURlacIReKdc6D9q
+	 JjEXpHcrYlWuZDlYeug8DnlMxVTYKYSngnqn2tZ45bf4re1Num0ymjYqdIyftjCGST9qN
+	 Lee974tIvWpKTAQ9LVB31x4/gErPKhurkBhLi6/auI9mENiCBb/n7Y6vEVs7qwwLlrcYz
+	 AiKQleXKUTPuzsAc8kFExvIdbHtF9vW/EmmZoxccLVyfhXLpMQKuRvbuJgBNrLmpjUaFi
+	 sKAsqZppQBFfnQaEtiSpVMnXCAVAhP5tCXDJ9QlkVh9xwRKsfEoP7W7SSsP/iwAA9xA==
+ARC-Authentication-Results: i=1; smtp.kernel.org; 
+	arc=none smtp.remote-ip=100.80.115.77
+Received: from lkml.kernel.org (nexus.subspace.kernel.org [100.80.115.77])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by smtp.kernel.org (Postfix) with ESMTPS id 4B6511F0089B;
+	Fri, 27 Nov 2026 15:28:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795792960;
-	bh=Q4dVyA5jVsFxpaf/m2uJ94bDxkS8jUdcj0Roq+GgR9s=;
-	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=LsyK15+zonOeS9qdTFwuZpB9ZJtIK5b9c3ff4/Ch+R45ndu3MfNPIfXDdPpedY+0p
-	 ieIp9Bm47gt7hhTZBKBxkPxfl7WMEFU0cFgG79tbuZOQweLaJ85cnRXgOVuC54QJx2
-	 r/27TGEAZJaRysOSGGRpX0+XsptrLeNAL8ZKolZkGwL7th4uR8w/scoszvXKaolTJo
-	 D0BK/2Tke2jHHHb8P5jxbwduWmbjtIFQS4jl1tqLMZMux3uPf/2e7L0cMM7MKD2hkh
-	 5VUPV1qeee3bebY/s4qU7H2gIsjpTVBbo/+EdM1gIwYmv8bc+vT3PWDkJWC48DRAuh
-	 BTHywwVjy4lJg==
+	s=k20260515; t=1795793317;
+	bh=0rl7UJon57zyJ7ukhwyWnF3wDSX/ykxuKm3DMydZHss=;
+	h=From:Subject:Date:To:Cc:Reply-To;
+	b=ChKzJKDHshWasG0nytG1wiGqg9LyWRfus68fnZaU73FKq7wV04WvrAIXfz5CYABo7
+	 wnti8TBHCHgVEOrjpvA1tXMeb87lCNbkvIan9U6J8W9DqzXK/XLJvpgldKWscJh7sO
+	 YqeoA5g721Z9ML+lwXiTQiufPbv03GbJvxiQrPjKurj7YGogSXQLxjY+sXturzSs+N
+	 9FVB88ZXkvv3bG4cj+ZLzGc3jkwA9Z/P3K3TXF1LJCw8oFwEBLmoGdJnWZYQ49ypR1
+	 jIMM93+17wqNwFeS1szAFO5SAvvGp2EDpU1oJRwYBjTyLc+503N5lkYTnxlCsRhUlP
+	 WjdahZZIYUPnQ==
+Received: from nexus.subspace.kernel.org (localhost [IPv6:::1])
+	by lkml.kernel.org (Postfix) with ESMTP id BA91C4DC69;
+	Fri, 27 Nov 2026 15:28:28 +0000 (UTC)
+From: Ronald Claveau via B4 Relay <devnull+linux-kernel-dev.aliel.fr@kernel.org>
+Subject: [PATCH v5 00/12] phy/drm: amlogic: Extract Meson HDMI TX PHY into
+ a dedicated driver
+Date: Fri, 27 Nov 2026 16:27:01 +0100
+Message-Id: <20261127-meson-drm-create-hdmitx-phy-v5-0-88c43eb95468@aliel.fr>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH v8 2/2] phy: cix: Add CIX Sky1 USB3 PHY driver
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Hongliang Yang <hongliang.yang@cixtech.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
+X-B4-Tracking: v=1; b=H4sIAEWhCWsC/33NS2rDMBSF4a0EjXODnpbVUfdROpClq1ohtoPkm
+ oTgvVdKKJgMPDxw+P4HyZgiZvJxeJCES8xxGstQxwNxvR1/EKIvm3DKG8aYggHzNIJPA7iEdkb
+ o/RDnG1z7O0jrJLWNkp4aUoRrwhBvT/3r+7Xzb3dGN1eyPvqY5yndn/mF1d9/Se+WFgYUDFLrj
+ GCiZe7TXiJeTiGRGlr4huJ0n+KVEr7h3Juuo/qNEluK7VOiUKENUjPdtlQ3b5TcUmKfkoUSoTM
+ yKCWksxtqXdc/LIIGiLgBAAA=
+X-Change-ID: 20261115-meson-drm-create-hdmitx-phy-4ac40a654d09
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
- Gary Yang <Gary.Yang@cixtech.com>, Fugang Duan <fugang.duan@cixtech.com>, 
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- cix-kernel-upstream@cixtech.com
-In-Reply-To: <20261117022858.2210212-3-hongliang.yang@cixtech.com>
-References: <20261117022858.2210212-1-hongliang.yang@cixtech.com>
- <20261117022858.2210212-3-hongliang.yang@cixtech.com>
-Date: Fri, 27 Nov 2026 20:52:30 +0530
-Message-Id: <179579295051.13164.2928946553647011501.b4-reply@b4>
+ Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
+ Vinod Koul <vkoul@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+ Ulf Hansson <ulfh@kernel.org>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-phy@lists.infradead.org, dri-devel@lists.freedesktop.org, 
+ Ronald Claveau <linux-kernel-dev@aliel.fr>, linux-pm@vger.kernel.org
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=13651; i=mani@kernel.org;
- h=from:subject:message-id; bh=ztc1BZKiqbmnzHYCZIt02Sue+56DcZbYNwDm2xpMGpU=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBrCaA6uLEiqwmKmkkbfPcOqfLhgrCNqG2DLt0Q+
- CUorNx2D8KJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCawmgOgAKCRBVnxHm/pHO
- 9SfRB/4yH6adoeQdH2db6iqUG2mMx2+zB2D2BirRUaF9JJ/s6z76SkxarS81qiayGoza6LnUIsC
- 8fKbcRQX4MzJl/iChrBhZWmnmWORT81BQC+sFDD4pybO/YTeSRhhZ5OXEIKnJMlCtGpThXp9CQi
- 40jZoM3s19Uw+G9j1cjajBANLYHL4dNNWYT1+6xUIbYm1T7GUpr1zk3DWLjUsf4aCTNoo+/yaFc
- STYcwIKkcTworMQ8cp64hwX/I1KytsrPo5UCbqZq2E8aoV5aaLEVYAEW9MQMKcLsI76eEGeBwRF
- ka3VGDFJyWQjDlKWlxcqtsqu5uOJ3E5NCcHGZo31KGs9Pe0O
-X-Developer-Key: i=mani@kernel.org; a=openpgp;
- fpr=C668AEC3C3188E4C611465E7488550E901166008
+X-Developer-Signature: v=1; a=openpgp-sha256; l=7062;
+ i=linux-kernel-dev@aliel.fr; h=from:subject:message-id;
+ bh=tzep5bQgOzABYRXwtUuq6UjH6I1ZSpyjiLXwVAmYjCw=;
+ b=owGbwMvMwCWm1SvKXP3cUInxtFoSQzbnwlr/vN0vdopNedb3NeA/p1NlgZS99Bcx7yMWbinPp
+ whOdzXsKGVhEONikBVTZOmfa3ni3eWjZ77uUU+BmcPKBDKEgYtTACbirMfwz/6stG3PndQ/Ye6i
+ Zxkz+B9EPxC2zXmVn7dsyqPYuWk9Sgy/mPh3qNifPuK8X7lqUdrdjPTz1RuXzdr9NOrBArvTx0X
+ z2AE=
+X-Developer-Key: i=linux-kernel-dev@aliel.fr; a=openpgp;
+ fpr=DFD863F61375BF917F0012173953305EF1D0EC3E
+X-Endpoint-Received: by B4 Relay for linux-kernel-dev@aliel.fr/default with
+ auth_id=744
+X-Original-From: Ronald Claveau <linux-kernel-dev@aliel.fr>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,6 +121,7 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: linux-kernel-dev@aliel.fr
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
@@ -93,357 +132,149 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 2026-11-17 10:28 +0800, Hongliang Yang wrote:
-> Add a driver for the Cadence SD0803 USB3 PHY integrated in the CIX
-> Sky1 SoC. The driver enables the APB and reference clocks, releases the
-> resets, programs the register sequence of the PHY, and exports a single
-> PHY instance for the two lanes of the block. The PHY core reference
-> counts phy_init() and phy_exit(), so the sequence is programmed once and
-> the block stays powered while any of its consumers is active.
-> 
-> Signed-off-by: Hongliang Yang <hongliang.yang@cixtech.com>
-> ---
-> Changes in v8:
-> - Rely on the PHY core for serialization and reference counting instead
->   of a driver-local mutex and counter, and call the Sky1 init and exit
->   functions directly from the PHY operations: the per-SoC callback
->   structure and its duplicate error messages are gone.
-> - Drop the register macros that the initialization sequence does not use
->   from the private header.
-> 
-> Changes in v7:
-> - Rename the register header to phy-cix-usb3.h: it is the register map
->   of the USB3 PHY, and the old usbdp name suggested a USB/DP combo PHY.
-> - Fix the module description and the Kconfig help text.
-> 
-> Changes in v6:
-> - Select REGMAP in the Kconfig.
-> - Use dev_err_probe() for the reset, clock and regmap acquisition
->   failures in the probe path.
-> - Assert the resets before registering the PHY provider, disable the
->   clocks in LIFO order, and fix the error unroll path so that clocks
->   which were never enabled are not disabled.
-> ---
->  MAINTAINERS                    |   1 +
->  drivers/phy/Kconfig            |   1 +
->  drivers/phy/Makefile           |   1 +
->  drivers/phy/cix/Kconfig        |  21 +++
->  drivers/phy/cix/Makefile       |   6 +
->  drivers/phy/cix/phy-cix-usb3.c | 313 +++++++++++++++++++++++++++++++++
->  drivers/phy/cix/phy-cix-usb3.h | 180 +++++++++++++++++++
->  7 files changed, 523 insertions(+)
->  create mode 100644 drivers/phy/cix/Kconfig
->  create mode 100644 drivers/phy/cix/Makefile
->  create mode 100644 drivers/phy/cix/phy-cix-usb3.c
->  create mode 100644 drivers/phy/cix/phy-cix-usb3.h
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 73783abe027e..b857e529e5e2 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -2906,6 +2906,7 @@ F:	Documentation/devicetree/bindings/mailbox/cix,sky1-mbox.yaml
->  F:	Documentation/devicetree/bindings/phy/cix,sky1-usb3-phy.yaml
->  F:	arch/arm64/boot/dts/cix/
->  F:	drivers/mailbox/cix-mailbox.c
-> +F:	drivers/phy/cix/
->  K:	\bcix\b
->  
->  ARM/CLKDEV SUPPORT
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index 105fbe408aa2..876e5857634c 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -176,6 +176,7 @@ source "drivers/phy/axiado/Kconfig"
->  source "drivers/phy/broadcom/Kconfig"
->  source "drivers/phy/cadence/Kconfig"
->  source "drivers/phy/canaan/Kconfig"
-> +source "drivers/phy/cix/Kconfig"
->  source "drivers/phy/eswin/Kconfig"
->  source "drivers/phy/freescale/Kconfig"
->  source "drivers/phy/hisilicon/Kconfig"
-> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-> index c6dd02003bbe..5a31c5df1746 100644
-> --- a/drivers/phy/Makefile
-> +++ b/drivers/phy/Makefile
-> @@ -28,6 +28,7 @@ obj-$(CONFIG_GENERIC_PHY)		+= allwinner/	\
->  					   broadcom/	\
->  					   cadence/	\
->  					   canaan/	\
-> +					   cix/		\
->  					   eswin/	\
->  					   freescale/	\
->  					   hisilicon/	\
-> diff --git a/drivers/phy/cix/Kconfig b/drivers/phy/cix/Kconfig
-> new file mode 100644
-> index 000000000000..24452144ff78
-> --- /dev/null
-> +++ b/drivers/phy/cix/Kconfig
-> @@ -0,0 +1,21 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +#
-> +# PHY drivers for CIX PHYs
-> +#
-> +
-> +if ARCH_CIX || COMPILE_TEST
-> +
-> +config PHY_CIX_USB3
-> +	tristate "CIX Sky1 USB3 Type-A PHY support"
-> +	depends on OF && HAS_IOMEM
-> +	select GENERIC_PHY
-> +	select REGMAP
-> +	help
-> +	  Enable this to support the USB3 SuperSpeed PHY of the Type-A
-> +	  ports on CIX Sky1 SoCs. The PHY provides the SuperSpeed lanes
-> +	  used by the two Cadence USBSSP controllers (USB4 and USB5) of
-> +	  the SoC, and is shared between them.
-> +
-> +	  If unsure, say N.
-> +
-> +endif # ARCH_CIX || COMPILE_TEST
-> diff --git a/drivers/phy/cix/Makefile b/drivers/phy/cix/Makefile
-> new file mode 100644
-> index 000000000000..58ec925a4425
-> --- /dev/null
-> +++ b/drivers/phy/cix/Makefile
-> @@ -0,0 +1,6 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +#
-> +# Makefile for the CIX PHY drivers.
-> +#
-> +
-> +obj-$(CONFIG_PHY_CIX_USB3)	+= phy-cix-usb3.o
-> diff --git a/drivers/phy/cix/phy-cix-usb3.c b/drivers/phy/cix/phy-cix-usb3.c
-> new file mode 100644
-> index 000000000000..ca6a0e764e90
-> --- /dev/null
-> +++ b/drivers/phy/cix/phy-cix-usb3.c
-> @@ -0,0 +1,313 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * phy driver for cdn_sd0803_t7g_typea
+This series moves the Amlogic Meson HDMI TX PHY handling (covering GXBB,
+GXL, GXM, and G12A SoCs) out of the meson_dw_hdmi DRM driver and into a
+dedicated generic PHY driver.
 
-What is cdn_sd0803_t7g_typea?
+Until now, meson_dw_hdmi directly manipulated the HHI system controller
+registers (HHI_HDMI_PHY_CNTL0..5) to configure analog parameters, toggle
+resets, and manage power states, as well as manually ungating HDMI
+clocks and power domains already described in the DT.
 
-> + *
-> + * Author: Hongliang Yang <hongliang.yang@cixtech.com>
-> + */
-> +
-> +#include <linux/array_size.h>
-> +#include <linux/clk.h>
-> +#include <linux/io.h>
-> +#include <linux/module.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/regmap.h>
-> +#include <linux/reset.h>
-> +#include "phy-cix-usb3.h"
-> +
-> +/*
-> + * Cadence SD0803 Type-A USB3 PHY initialization sequence for the CIX
-> + * Sky1 SoC, taken from the vendor-provided PHY register programming
-> + * sequence for this SoC.
-> + */
-> +static const struct reg_sequence sky1_u3phy_conf[] = {
-> +	{CMN_SSM_BIAS_TMR,                  0x0018},
-> +	{CMN_PLLSM0_PLLPRE_TMR,             0x0030},
-> +	{CMN_PLLSM0_PLLLOCK_TMR,            0x00f0},
-> +	{CMN_PLLSM1_PLLPRE_TMR,             0x0030},
-> +	{CMN_PLLSM1_PLLLOCK_TMR,            0x00f0},
-> +	{CMN_BGCAL_INIT_TMR,                0x0078},
-> +	{CMN_BGCAL_ITER_TMR,                0x0078},
-> +	{CMN_IBCAL_INIT_TMR,                0x0018},
-> +	{CMN_TXPUCAL_INIT_TMR,              0x001d},
-> +	{CMN_TXPDCAL_INIT_TMR,              0x001d},
-> +	{CMN_RXCAL_INIT_TMR,                0x02d0},
-> +	{CMN_SD_CAL_PLLCNT_START,           0x0137},
-> +	{RX_SDCAL0_INIT_TMR_LANE0,          0x0018},
-> +	{RX_SDCAL0_INIT_TMR_LANE1,          0x0018},
-> +	{RX_SDCAL0_ITER_TMR_LANE0,          0x0078},
-> +	{RX_SDCAL0_ITER_TMR_LANE1,          0x0078},
-> +	{RX_SDCAL1_INIT_TMR_LANE0,          0x0018},
-> +	{RX_SDCAL1_INIT_TMR_LANE1,          0x0018},
-> +	{RX_SDCAL1_ITER_TMR_LANE0,          0x0078},
-> +	{RX_SDCAL1_ITER_TMR_LANE1,          0x0078},
-> +	{TX_RCVDET_ST_TMR_LANE0,            0x0960},
-> +	{TX_RCVDET_ST_TMR_LANE1,            0x0960},
-> +
-> +	{PHY_PLL_CFG_0803,                  0x0000},
-> +	{CMN_PDIAG_PLL0_CLK_SEL_M0,         0x8600},
-> +	{XCVR_DIAG_HSCLK_SEL_LANE0,         0x0000},
-> +	{XCVR_DIAG_HSCLK_SEL_LANE1,         0x0000},
-> +	{XCVR_DIAG_HSCLK_DIV_LANE0,         0x0001},
-> +	{XCVR_DIAG_HSCLK_DIV_LANE1,         0x0001},
-> +	{XCVR_DIAG_PLLDRC_CTRL_LANE0,       0x0041},
-> +	{XCVR_DIAG_PLLDRC_CTRL_LANE1,       0x0041},
-> +	{CMN_PLL0_DSM_DIAG_M0,              0x0004},
-> +	{CMN_PLL1_DSM_DIAG_M0,              0x0004},
-> +	{CMN_PDIAG_PLL1_ITRIM_M0,           0x003f},
-> +	{CMN_PDIAG_PLL0_CP_PADJ_M0,         0x0b17},
-> +	{CMN_PDIAG_PLL1_CP_PADJ_M0,         0x0b17},
-> +	{CMN_PDIAG_PLL0_CP_IADJ_M0,         0x0e01},
-> +	{CMN_PDIAG_PLL1_CP_IADJ_M0,         0x0e01},
-> +	{CMN_PDIAG_PLL0_FILT_PADJ_M0,       0x0d05},
-> +	{CMN_PDIAG_PLL1_FILT_PADJ_M0,       0x0d05},
-> +	{CMN_PLL0_INTDIV_M0,                0x01a0},
-> +	{CMN_PLL1_INTDIV_M0,                0x01a0},
-> +	{CMN_PLL0_FRACDIVL_M0,              0xaaab},
-> +	{CMN_PLL1_FRACDIVL_M0,              0xaaab},
-> +	{CMN_PLL0_FRACDIVH_M0,              0x0002},
-> +	{CMN_PLL1_FRACDIVH_M0,              0x0002},
-> +	{CMN_PLL0_HIGH_THR_M0,              0x0116},
-> +	{CMN_PLL1_HIGH_THR_M0,              0x0116},
-> +	{CMN_PDIAG_PLL0_CTRL_M0,            0x1002},
-> +	{CMN_PDIAG_PLL1_CTRL_M0,            0x1002},
-> +	{CMN_PLL0_SS_CTRL1_M0,		    0x0001}, /* SSC enabled */
-> +	{CMN_PLL0_VCOCAL_INIT_TMR,          0x00f0},
-> +	{CMN_PLL1_VCOCAL_INIT_TMR,          0x00f0},
-> +	{CMN_PLL0_VCOCAL_ITER_TMR,          0x0004},
-> +	{CMN_PLL1_VCOCAL_ITER_TMR,          0x0004},
-> +	{CMN_PLL0_VCOCAL_REFTIM_START,      0x02f8},
-> +	{CMN_PLL1_VCOCAL_REFTIM_START,      0x02f8},
-> +	{CMN_PLL0_VCOCAL_PLLCNT_START,      0x02f8},
-> +	{CMN_PLL1_VCOCAL_PLLCNT_START,      0x02f8},
-> +	{CMN_PLL0_VCOCAL_TCTRL,             0x0003},
-> +	{CMN_PLL1_VCOCAL_TCTRL,             0x0003},
-> +	{CMN_PLL0_LOCK_REFCNT_START,        0x00bf},
-> +	{CMN_PLL1_LOCK_REFCNT_START,        0x00bf},
-> +	{CMN_PLL0_LOCK_PLLCNT_START,        0x00bf},
-> +	{CMN_PLL1_LOCK_PLLCNT_START,        0x00bf},
-> +	{CMN_PLL0_LOCK_PLLCNT_THR,          0x0003},
-> +	{CMN_PLL1_LOCK_PLLCNT_THR,          0x0003},
-> +	{PHY_PIPE_USB3_GEN2_PRE_CFG0_0803,  0x0a0a},
-> +	{PHY_PIPE_USB3_GEN2_POST_CFG0_0803, 0x1000},
-> +	{PHY_PIPE_USB3_GEN2_POST_CFG1_0803, 0x0010},
-> +	{CMN_CDIAG_CDB_PWRI_OVRD,           0x8200},
-> +	{CMN_CDIAG_XCVRC_PWRI_OVRD,         0x8200},
-> +	{TX_PSC_A0_LANE0,                   0x02ff},
-> +	{TX_PSC_A0_LANE1,                   0x02ff},
-> +	{TX_PSC_A1_LANE0,                   0x06af},
-> +	{TX_PSC_A1_LANE1,                   0x06af},
-> +	{TX_PSC_A2_LANE0,                   0x06ae},
-> +	{TX_PSC_A2_LANE1,                   0x06ae},
-> +	{TX_PSC_A3_LANE0,                   0x06ae},
-> +	{TX_PSC_A3_LANE1,                   0x06ae},
-> +	{RX_PSC_A0_LANE0,                   0x0d1d},
-> +	{RX_PSC_A0_LANE1,                   0x0d1d},
-> +	{RX_PSC_A1_LANE0,                   0x0d1d},
-> +	{RX_PSC_A1_LANE1,                   0x0d1d},
-> +	{RX_PSC_A2_LANE0,                   0x0d00},
-> +	{RX_PSC_A2_LANE1,                   0x0d00},
-> +	{RX_PSC_A3_LANE0,                   0x0500},
-> +	{RX_PSC_A3_LANE1,                   0x0500},
-> +	{TX_TXCC_CTRL_LANE0,                0x2a82},
-> +	{TX_TXCC_CTRL_LANE1,                0x2a82},
-> +	{TX_TXCC_CPOST_MULT_01_LANE0,       0x0014},
-> +	{TX_TXCC_CPOST_MULT_01_LANE1,       0x0014},
-> +	{TX_TXCC_MGNFS_MULT_000_LANE0,      0x0002},
-> +	{TX_TXCC_MGNFS_MULT_000_LANE1,      0x0002},
-> +	{RX_SIGDET_HL_FILT_TMR_LANE0,       0x0013},
-> +	{RX_SIGDET_HL_FILT_TMR_LANE1,       0x0013},
-> +	{RX_REE_GCSM1_CTRL_LANE0,           0x0000},
-> +	{RX_REE_GCSM1_CTRL_LANE1,           0x0000},
-> +	{RX_REE_ATTEN_THR_LANE0,            0x0c02},
-> +	{RX_REE_ATTEN_THR_LANE1,            0x0c02},
-> +	{RX_REE_SMGM_CTRL1_LANE0,           0x0330},
-> +	{RX_REE_SMGM_CTRL1_LANE1,           0x0330},
-> +	{RX_REE_SMGM_CTRL2_LANE0,           0x0300},
-> +	{RX_REE_SMGM_CTRL2_LANE1,           0x0300},
-> +	{XCVR_DIAG_PSC_OVRD_LANE0,          0x0003},
-> +	{XCVR_DIAG_PSC_OVRD_LANE1,          0x0003},
-> +	{RX_DIAG_SIGDET_TUNE_LANE0,         0x1004},
-> +	{RX_DIAG_SIGDET_TUNE_LANE1,         0x1004},
-> +	{RX_DIAG_NQST_CTRL_LANE0,           0x00f9},
-> +	{RX_DIAG_NQST_CTRL_LANE1,           0x00f9},
-> +	{RX_DIAG_DFE_AMP_TUNE_2_LANE0,      0x0c01},
-> +	{RX_DIAG_DFE_AMP_TUNE_2_LANE1,      0x0c01},
-> +	{RX_DIAG_DFE_AMP_TUNE_3_LANE0,      0x0002},
-> +	{RX_DIAG_DFE_AMP_TUNE_3_LANE1,      0x0002},
-> +	{RX_DIAG_PI_CAP_LANE0,              0x0000},
-> +	{RX_DIAG_PI_CAP_LANE1,              0x0000},
-> +	{RX_DIAG_PI_RATE_LANE0,             0x0031},
-> +	{RX_DIAG_PI_RATE_LANE1,             0x0031},
-> +	{RX_CDRLF_CNFG_LANE0,               0x018c},
-> +	{RX_CDRLF_CNFG_LANE1,               0x018c},
-> +	{RX_CDRLF_CNFG3_LANE0,              0x0003},
-> +	{RX_CDRLF_CNFG3_LANE1,              0x0003}
-> +};
-> +
-> +struct cix_u3phy {
-> +	struct device *dev;
-> +	void __iomem *base;
-> +	struct regmap *phy_regmap;
-> +	struct reset_control *preset;
-> +	struct reset_control *reset;
-> +	struct clk *apb_clk;
-> +	struct clk *ref_clk;
+By extracting this logic into a standalone PHY driver under
+drivers/phy/amlogic/:
+- Hardware representation in the DT is cleaner, modeling the HDMI TX PHY
+  as a child node of the HHI syscon referenced via standard "phys"
+  properties.
+- The DRM bridge driver relies on the standard generic PHY API
+  (phy_init, phy_configure, phy_power_on/off, phy_exit) rather than
+  touching syscon registers directly.
+- Legacy DTs lacking the "phys" property remain supported via a
+  temporary fallback helper (meson_hdmi_phy_create_legacy) to preserve
+  backward compatibility to be removed on next phase of component
+  removal.
 
-The driver always handles these clocks at the same time. So switch to bulk APIs
-for simplicity.
+Overview of the series:
+- Patches 1-3: Fix compatible matching in meson-gx-hhi-sysctrl bindings,
+  add the new amlogic,meson-hdmi-tx-phy DT schema, and allow the
+  "hdmi-phy" child node under the HHI syscon.
+- Patch 4: Rename the Meson8 HDMI TX PHY driver to be more SoC generic.
+- Patch 5: Add GXBB, GXL, GXM and G12A SoCs to the Meson HDMI TX PHY
+  driver, implementing the HDMI PHY configuration ops, along with the
+  temporary legacy creation helper.
+- Patch 6: Document the optional "phys" and properties in the
+  amlogic,meson-dw-hdmi binding.
+- Patch 7: Make meson-ee-pwrc power up the domain memories when the
+  domain is already on at probe time, as this is a prerequisite for
+  dropping the explicit write from meson_dw_hdmi
+- Patches 8-9: Clean up manual HHI clock/power-domain writes in
+  meson_dw_hdmi (relying on runtime PM instead) and convert the driver
+  to use the generic PHY framework.
+- Patches 10-12: Add the "hdmi-phy" child node and wire up the "phys"
+  phandle for G12, GXBB, and GXL Device Trees.
 
-Nit: Use devm_clk_bulk_get_all().
+Tested on:
+- Khadas VIM1 (GXL)
+- dtbs_check and dt_binding_check run cleanly with no new warnings.
 
-> +};
-> +
-> +static int cix_u3phy_exit(struct phy *phy)
-> +{
-> +	struct cix_u3phy *u3phy = phy_get_drvdata(phy);
-> +
-> +	reset_control_assert(u3phy->reset);
-> +	reset_control_assert(u3phy->preset);
-> +	clk_disable_unprepare(u3phy->ref_clk);
-> +	clk_disable_unprepare(u3phy->apb_clk);
-> +	return 0;
-> +}
-> +
-> +static int cix_u3phy_init(struct phy *phy)
-> +{
-> +	struct cix_u3phy *u3phy = phy_get_drvdata(phy);
-> +	int ret;
-> +
-> +	/* usb rcsu reset is default deassert */
-> +	reset_control_assert(u3phy->reset);
-> +	reset_control_assert(u3phy->preset);
-> +
-> +	ret = clk_prepare_enable(u3phy->apb_clk);
-> +	if (ret) {
-> +		dev_err(u3phy->dev, "failed to enable the APB clock\n");
-> +		return ret;
-> +	}
-> +	ret = clk_prepare_enable(u3phy->ref_clk);
-> +	if (ret) {
-> +		dev_err(u3phy->dev, "failed to enable the reference clock\n");
-> +		goto disable_apb_clk;
-> +	}
-> +	reset_control_deassert(u3phy->preset);
-> +	ret = regmap_multi_reg_write(u3phy->phy_regmap, sky1_u3phy_conf,
-> +				     ARRAY_SIZE(sky1_u3phy_conf));
-> +	if (ret) {
-> +		dev_err(u3phy->dev, "failed to write the PHY register sequence\n");
-> +		goto assert_reset_preset;
-> +	}
-> +	reset_control_deassert(u3phy->reset);
+Signed-off-by: Ronald Claveau <linux-kernel-dev@aliel.fr>
+---
+Changes in v5:
+- Add Patch 4: Rename Meson8 HDMI TX driver to prepare other SoCs
+               integration. Martin's review.
+- Patch 5: Adapt the GXBB, GXL, GXM and G12A SoCs code to Patch 4.
+- Link to v4: https://patch.msgid.link/20261123-meson-drm-create-hdmitx-phy-v4-0-3fb94f5534ca@aliel.fr
 
-Newline before 'return' statement here and everywhere.
+Changes in v4:
+- Patch 2: Change commit title. Sashiko and Neil review.
+- Patch 4: Change the phy min_rate to 15.9 MHz mathematical limit.
+           Thanks to Sashiko's review.
+- Patch 8: Drop introduced double free with phy_destroy.
+           Add missing device_link_remove()
+           Change the device_link order and use prepare/complete in the
+           VPU drv for drm_mode_config_helper. Sashiko's review.
+- Link to v3: https://patch.msgid.link/20261121-meson-drm-create-hdmitx-phy-v3-0-f8f471788076@aliel.fr
 
-> +	return 0;
-> +
-> +assert_reset_preset:
-> +	reset_control_assert(u3phy->preset);
-> +	reset_control_assert(u3phy->reset);
-> +	clk_disable_unprepare(u3phy->ref_clk);
-> +disable_apb_clk:
-> +	clk_disable_unprepare(u3phy->apb_clk);
-> +	return ret;
-> +}
-> +
+Changes in v3:
+- Patch 6: reuse meson_ee_pwrc_mem_power_up() in meson_ee_pwrc_on()
+  function.
+- Patch 8: revert the code to v1 and add a device link to solve
+  suspend/resume order in dpm_list.
+- Link to v2: https://patch.msgid.link/20261120-meson-drm-create-hdmitx-phy-v2-0-93d622d9bb07@aliel.fr
 
-[...]
+Changes in v2:
+- Patches 5,9-11: Remove unecessary "phy-names" for uniq phy.
+                  Thanks to Neil's feedback.
+- Add Patch 6: Power up the memories when the domain is already on.
+               From Sashiko's feedback.
+- Patch 4: Add a 600MHz max_rate and a 25Mhz min_rate check and
+           exclude PHY_HDMI_MODE_FRL for phy_validate. Thx Sashiko.
+- Patch 8: Move phy_init in dw_hdmi_phy_init and phy_exit
+           in dw_hdmi_phy_disable. From Sashiko review.
+- Link to v1: https://patch.msgid.link/20261117-meson-drm-create-hdmitx-phy-v1-0-9e0ac931381c@aliel.fr
 
-> +#define PHY_PLL_CFG_0803              0xC00E
+To: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzk+dt@kernel.org>
+To: Conor Dooley <conor+dt@kernel.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+To: Kevin Hilman <khilman@baylibre.com>
+To: Jerome Brunet <jbrunet@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: Vinod Koul <vkoul@kernel.org>
+To: Manivannan Sadhasivam <mani@kernel.org>
+To: Ronald Claveau <linux-kernel-dev@aliel.fr>
+To: David Airlie <airlied@gmail.com>
+To: Simona Vetter <simona@ffwll.ch>
+To: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+To: Maxime Ripard <mripard@kernel.org>
+To: Thomas Zimmermann <tzimmermann@suse.de>
+To: Ulf Hansson <ulfh@kernel.org>
+Cc: devicetree@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-phy@lists.infradead.org
+Cc: dri-devel@lists.freedesktop.org
+Cc: linux-pm@vger.kernel.org
 
-Use lower case for hex please.
+---
+Ronald Claveau (12):
+      dt-bindings: soc: amlogic: meson-gx-hhi-sysctrl: Fix compatible matching in conditionals
+      dt-bindings: phy: amlogic: document the Amlogic Meson HDMI TX PHY
+      dt-bindings: soc: amlogic: meson-gx-hhi-sysctrl: Add hdmi-phy child node
+      phy: amlogic: rename Meson8 HDMI TX PHY driver to be SoC-generic
+      phy: amlogic: meson-hdmi-tx: Add GXBB, GXL, GXM and G12A support
+      dt-bindings: display: amlogic,meson-dw-hdmi: Add phys
+      pmdomain: amlogic: meson-ee-pwrc: power up memories for boot-enabled domains
+      drm/meson: dw-hdmi: Drop manual HHI clock and memory PD setup
+      drm/meson: dw-hdmi: Use the generic PHY framework for the HDMI TX PHY
+      arm64: dts: amlogic: Add HDMI TX PHY node for G12
+      arm64: dts: amlogic: Add HDMI TX PHY node for GXBB
+      arm64: dts: amlogic: Add HDMI TX PHY node for GXL
 
-- Mani
+ .../bindings/display/amlogic,meson-dw-hdmi.yaml    |   4 +
+ .../bindings/phy/amlogic,meson-hdmi-tx-phy.yaml    |  33 ++
+ .../soc/amlogic/amlogic,meson-gx-hhi-sysctrl.yaml  |  43 ++-
+ arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi  |   6 +
+ arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi        |   6 +
+ arch/arm64/boot/dts/amlogic/meson-gxl.dtsi         |   6 +
+ drivers/gpu/drm/meson/Kconfig                      |   2 +
+ drivers/gpu/drm/meson/meson_drv.c                  |  16 +-
+ drivers/gpu/drm/meson/meson_dw_hdmi.c              | 223 +++++-------
+ drivers/phy/amlogic/Kconfig                        |   9 +-
+ drivers/phy/amlogic/Makefile                       |   2 +-
+ drivers/phy/amlogic/phy-meson-hdmi-tx.c            | 391 +++++++++++++++++++++
+ drivers/phy/amlogic/phy-meson8-hdmi-tx.c           | 160 ---------
+ drivers/pmdomain/amlogic/meson-ee-pwrc.c           |  19 +-
+ include/linux/phy/phy-meson-hdmi-tx.h              |  19 +
+ 15 files changed, 627 insertions(+), 312 deletions(-)
+---
+base-commit: 6d582d78fad9d828e575ca0cdcff8ea47a77220b
+change-id: 20261115-meson-drm-create-hdmitx-phy-4ac40a654d09
+
+Best regards,
+--  
+Ronald Claveau <linux-kernel-dev@aliel.fr>
 
 
 
