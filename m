@@ -2,152 +2,74 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id AA621606A31C
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 09:49:51 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 24D84606A323
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 09:56:40 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=iwgJKQEQ;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=qualcomm.com header.i=@qualcomm.com header.a=rsa-sha256 header.s=qcppdkim1 header.b=UP1Dhxiy;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oss.qualcomm.com header.i=@oss.qualcomm.com header.a=rsa-sha256 header.s=google header.b=SmDXnwxe
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ZMXhfS4w;
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=arm.com header.i=@arm.com header.a=rsa-sha256 header.s=foss header.b=O5pnT0OT
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=FWopZ8vCY0JiromkgafXlFIR185F9HWs0TtX2bi8Ovg=; b=iwgJKQEQINhZjd4AheGQXwC6Ga
-	MyCkpG8f+lgM/4Ns58IGYI0U0XHcq3gkd3+hAv8/KSkzX9ymBsopero8JQITV+x3yGtpYW0W3GzLM
-	o0LhdUjVSMXtZC/qnqVPEcdjJKx5G/ZBszXO7RAMnWAZt6Tp6yfBY3mv/vE/NzjimC9eeVGMxs81l
-	vw/wWVaxptIe756n/tZYYoMD6aocr2d3cm23FKJ81ZE+02D/oCs6BXmD467XN6xyE0e2Qs3EasJ/v
-	ztR+ykr/M/8OQjk7/WRK/t9L7aYk5x4ppw29rKLtBqQKRh9pd5yJj9erP4jT5+POGLh7rLAUVRKNt
-	dRynorHQ==;
+	bh=Quod8h1RyVGPLOECgJwY03p36aDXFWY9rOaouOt1zlg=; b=ZMXhfS4w7nD2WNirfpv20qdPv6
+	rmZtNRuVSDqSeW7WYwULvu2J/gVcCJrreO+dvPloXFWBd818Cgq7LLlNPlk6Aeafgh+0ZBLCY16GM
+	ZeQ4s/phfYY35eX9QtTqMtYJdOq+wfcnBXrw3yehKoVUG+AsvBT3EvuzHBCK741Am7aggpO/SIhZ2
+	AJ/FHKvCu8WUPpsPsFirM18vc/DBoyfm6pOXc24HgXBev/Miq36lPcQB4KL0K87frcoRelYLFbixZ
+	t5LlaUHUMxLmsyJtvoBSpqJHmChZWUTNu7jyZPTOE5dgbULvJFyQvcENl0GGy9vPGRmlZUrNtRpph
+	NCvwIfJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWsaV-0000000FTrb-11LI;
-	Fri, 27 Nov 2026 09:49:51 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWsaS-0000000FTrB-43F2
-	for linux-phy@lists.infradead.org;
-	Fri, 27 Nov 2026 09:49:50 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6AR7GYYe1197409
-	for <linux-phy@lists.infradead.org>; Fri, 27 Nov 2026 09:49:47 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=g/dVMNRTOWVJS2h58fwl51
-	KhjKkHrbLZafbPNTqM9uc=; b=UP1Dhxiye4B2BdT7JAUE00JjbsZ4xmoBOUdQxG
-	hzWLQiu9txzZVxf2lpatCtuEaeLzgdzTqQwnnbMMcpUEcaXzpPCi0JVIYLZV34Zi
-	eQPjpzyZyFMVc1a+4Es7RL6O2nLgp6ejMHw2IJJtG3xgXShrrfO0ogsJ209NE0LC
-	k+cY+RCPcIZ7vDHIvdvG77cl0htHxEsHK9jVne4tNheqxEJB6kSimESMXi5wLuWl
-	6h3WljE7NGhsiOR1BOv0DY2gi9z048b3dZ04Ncj/EkxQlBVaGyQrpHmc4m4PrRTA
-	zSh8zlOujp1+uqGsx4Z0Ff0qYvMh1009eR3Z9NuLoKRU0aNg==
-Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4j756k8mq9-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 27 Nov 2026 09:49:47 +0000 (GMT)
-Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-386a0f79047so8514845eec.1
-        for <linux-phy@lists.infradead.org>; Fri, 27 Nov 2026 01:49:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1795772986; x=1796377786; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:content-type
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=g/dVMNRTOWVJS2h58fwl51KhjKkHrbLZafbPNTqM9uc=;
-        b=SmDXnwxe9A3CiWxMrXd6aoM5fOe+ra6i69My4z707UX0q0RfLtoS2eHD5c5GqlrBNs
-         47o8lyharzAGog6NsZaN1gwjuRQP0n0dSyvt9q5pusJYbrKQeCyyHCGpPen7UBtf+OcI
-         GeqkwPi0KNBBggw1ic6SFd5ijWG3ZFVdU80FcPi0HBK4BueGJl41aiw2aaaNyAeAGvx8
-         H99bjYN3nyOfYLmubhTxpjC4CDt8rVXuN8rVOa3ieOVxkYUDV4cAyPYzZ/mgcDl+r4h8
-         bCgXbq4QUNiGIFlPJfdjK2p0JkbHSPp2hwftn3YBPhpRWzHQdnmZAzrcifJvvq8TLu88
-         kH/w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795772986; x=1796377786;
-        h=cc:to:message-id:content-transfer-encoding:content-type
-         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to:content-type;
-        bh=g/dVMNRTOWVJS2h58fwl51KhjKkHrbLZafbPNTqM9uc=;
-        b=ptjRo2XrVF5iciz8lrcbURnc5VjA5irPkSsnByNg5UJgj+auSB43dPyhPW20IqEHzL
-         UpN+82VGwp3zO5dADJr7xGVnQzdWmJv4pjZ37Q8B2+FffLDdqI+W3AdBd1LHiPBAes54
-         apmoaPkeoGMRIJOzWz8vkw7vQK5WMOqylY8erRh25NSjPilhb8FeCBXpp3cqQzXrwyoH
-         ApxQaBSv/h/aLaSM5w+uieas9OOq0RDCYpatlqFFvhVfSG4i03umXOvblqyECDjwAtE8
-         YPGicMAl7z/m0Y8rqZIgn6eNZd5/rCTMGjNxSOBfXWR0vWBthw+yBO61w6/TH7UJNSiY
-         TvHA==
-X-Forwarded-Encrypted: i=1; AL+hErF5qkKLevFFJQeEX/msWCohUdqgSQvuJqGWNxQhPSCUg7U2B7LFPlSmv9EhxD76zwGQIAcIEKA0Q4I=@lists.infradead.org
-X-Gm-Message-State: APuU4Z9DD1LATLeDqHNzU6I+XjPyk2+MS9WFfwtOCq9NNkqEsIU4OUaZ
-	E5Gwuiv/Sf2dYaMI2+RRkxY1eOP/CPQdFkBy4v0KAyqbLoznJ06te5HhMBY+fGNj0clethKT/4C
-	F06UDh6XuWgkkh+TiH84BvlImTUtO/T5co6sPQu9MqhLzvtZHJriQ9Ayx7URrLrwGGm+3
-X-Gm-Gg: AZFdTZexx1ipzxcd/R22Vwmwb8E1BlVKjLK1AY9xGwvx2GJ2YllHfxAnIIlfzrlRvfu
-	5rbWJ2dHDqWHiFkiW9rb8+ddhts1m3Za9BGupBrB95ohgJytIGrH/VWNvdgHvANFeC2M0LMKdJs
-	mbDgst5CgEiPJQ3/NQxOn7JRydpeG0hE7bQZ2NgMDqEOwUiYe7yLQPN7lYGjg6795i3JEjdxJ1S
-	qilfqpijR1q2SHvvT9xbvpMg658KoIL/5AVDrFXIb4xpS9MfiSPhyHGRQ15iD9k5CylfQ0qmGRG
-	iEbEGJjpzUdar5yW/IHjtv4FrTHV7mVuRwz+SnoQiBbqDNxlnsxsN2VVNC68bOr+xaOqt/2wMl1
-	brl+2m+R57JS+XmqiPPdJ35pNvPF3PK+RptqzxmWcPd0KoXQ1QzS6QNCuCagJuGESMPK2s/xCn7
-	rU1X8FRGAiYgAcYg==
-X-Received: by 2002:a05:7301:26:b0:37f:d740:51d7 with SMTP id 5a478bee46e88-38571b1308dmr24670084eec.41.1795772986497;
-        Fri, 27 Nov 2026 01:49:46 -0800 (PST)
-X-Received: by 2002:a05:7301:26:b0:37f:d740:51d7 with SMTP id 5a478bee46e88-38571b1308dmr24670067eec.41.1795772986018;
-        Fri, 27 Nov 2026 01:49:46 -0800 (PST)
-Received: from hu-hsreedha-hyd.qualcomm.com ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-38567ea2cc5sm65178723eec.29.2026.11.27.01.49.42
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 27 Nov 2026 01:49:45 -0800 (PST)
-From: Hariharan Sreedhar <hariharan.sreedhar@oss.qualcomm.com>
-Date: Fri, 27 Nov 2026 15:19:40 +0530
-Subject: [PATCH] phy: qcom: qmp-pcie: Fix missing shared
- vdda-phy-a/vdda-pll-a votes on Nord
+	id 1xWsh5-0000000FUcB-3jXw;
+	Fri, 27 Nov 2026 09:56:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
+	id 1xWsgs-0000000FUYD-3B7B;
+	Fri, 27 Nov 2026 09:56:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 529671758;
+	Fri, 27 Nov 2026 01:56:22 -0800 (PST)
+Received: from [10.33.50.35] (e142021.arm.com [10.33.50.35])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1B3533F959;
+	Fri, 27 Nov 2026 01:56:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=arm.com; s=foss;
+	t=1795773385; bh=P0Ygt22URPNRtmd0Nyy4UP8exHQvtkyPWnL1LCnEUKg=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=O5pnT0OT1erQHzgvnkdXZbX3pSxTodazlHC5PpMaAS69pDc30zEVloGcAS0ARILJE
+	 EJ6elfFV7fPP+4Awmwe6erpmecbzlXZ/vZqUhbdC3Pc9n0pw5NMV6sMqnNPiuuI3BS
+	 U8uhoq+9hJd2gDbpHsVet5b0Cplqq3HA/0ZfQOvs=
+Message-ID: <114b03ba-914f-4494-be12-d967be62da00@arm.com>
+Date: Fri, 27 Nov 2026 09:56:18 +0000
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261127-nord_rc_fix-v1-1-2cddab95b91e@oss.qualcomm.com>
-X-B4-Tracking: v=1; b=H4sIADNSCWsC/x2MQQqAIBAAvyJ7TkgPJn0lQkzX2ovGChGIf086z
- sBMg4pMWGEVDRgfqlTyADUJCJfPJ0qKg0HP2iilF5kLR8fBJXqltdbbdCBGb2AUN+PQ/23be/8
- AaHguuF0AAAA=
-X-Change-ID: 20261127-nord_rc_fix-888a8fbeeda6
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        Maxime Chevallier <maxime.chevallier@bootlin.com>,
-        Shawn Guo <shengchao.guo@oss.qualcomm.com>,
-        Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        Hariharan Sreedhar <hariharan.sreedhar@oss.qualcomm.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795772982; l=2578;
- i=hariharan.sreedhar@oss.qualcomm.com; s=20261127; h=from:subject:message-id;
- bh=i3E5sBvhssKdtPLNwWnVHLoAWh3t7XDA7nSsvH84w8M=;
- b=pIYu8N2S6WQWDXwY8iAtxm/TQjS1WZ0sT640DDmji1Ad4y0AFY4BEZ1wyQ+DE2Bdk6oOB0KML
- OvxglYAX6y+D6x3ft9tn3MmXXixiENQiiwvcB2+Zz8AURSvQDDrDVV0
-X-Developer-Key: i=hariharan.sreedhar@oss.qualcomm.com; a=ed25519;
- pk=IQIpQ+cgN/94LwyXI6ZP0PWPyUZmrnRMQYkbY4j7yhs=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYxMTI3MDAzOCBTYWx0ZWRfX0BRYcL9JgN6S
- 7dYSuhl4EBrxTW0sgMX9AFNBryrxHboNzeN2hNxf+fKZD8JmV9vT6cTJ6fMLVi9UAo0i5kQytOY
- 2aBF1lf8zw9+uG40EKVGu3XmyLgurPy3o/XcAjFG0QDxSWQkzaSTXRFmZq3BfmGM6oS5xjEwj3o
- IrjNy+YiY05BqzcCl56cycZXhrn+kF6ynuKU1ED0EurohKHddISy0T7OO/VankLWJDQFdiUR53u
- F3crfEakfEJT9ECXFzJ7Q8z4nwmCf97VFvt0p3BRgbBDo5jGDJUiosn6aJitoJQUfqwSTTR3bYF
- SctWkAE3u2fO5q4L4l8rU4zmu3aU3n2TlHGgfeDBPsTqGXqmBPuQzBhqSeYOHrQvemJldwP9IYe
- cU1yMUYO/UPUCoRGa78Dot8ZHrVA8THjJQST6lOyff/rbJy2iB/7oZqdEvB/FiSRQzqIDurGees
- PZMs/WcxAcSHC5qX1Sg==
-X-Proofpoint-Spam-Info: AW1haW4tMjYxMTI3MDAzOCBTYWx0ZWRfX6Y68Za/uDknE
- EI2SJkduHP1fMy244qEN+9PfZNO2xV+zr/a4Am/B6zXqEGvN4r1c+cittBjvyY9Cc6DfCZfCodC
- MmTcVivAUQKV97SYkCQUciPaUkGQdXY=
-X-Authority-Analysis: v=2.4 cv=ebWo7LEH c=1 sm=1 tr=0 ts=6b09523b cx=c_pps
- a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=IkcTkHD0fZMA:10 a=zJRp6_cAMcgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
- a=EUspDBNiAAAA:8 a=N3CJI4e0y6JgIT0HOQYA:9 a=QEXdDO2ut3YA:10
- a=6Ab_bkdmUrQuMsNx7PHu:22
-X-Proofpoint-GUID: fzEt0Vq_sxnQ4BuvRAAa-8DejAdqvIV1
-X-Proofpoint-ORIG-GUID: fzEt0Vq_sxnQ4BuvRAAa-8DejAdqvIV1
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.138,FMLib:17.12.100.49
- definitions=2026-11-27_01,2026-11-26_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 spamscore=0 priorityscore=1501 malwarescore=0 clxscore=1011
- lowpriorityscore=0 phishscore=0 adultscore=0 impostorscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2611040001 definitions=main-2611270038
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 00/11] arm64: dts: allwinner: Add Allwinner A733 USB 3.0
+ support
+To: Alastair D'Silva <alastair@d-silva.org>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Chen-Yu Tsai <wens@kernel.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Samuel Holland <samuel@sholland.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney+clk@redhat.com>,
+ Jerome Brunet <jbrunet+clk@baylibre.com>,
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
+ Mathias Nyman <mathias.nyman@intel.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-usb@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20261127073231.1776847-1-alastair@d-silva.org>
+Content-Language: en-GB
+From: Andre Przywara <andre.przywara@arm.com>
+In-Reply-To: <20261127073231.1776847-1-alastair@d-silva.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261127_014949_146865_0AFDA834 
-X-CRM114-Status: GOOD (  11.77  )
-X-Spam-Score: -2.8 (--)
+X-CRM114-CacheID: sfid-20261127_015626_900356_35FE9A0F 
+X-CRM114-Status: GOOD (  17.79  )
+X-Spam-Score: -4.4 (----)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,80 +79,127 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-10.4 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_SANE_1 autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The regulator lists for port B, C, D, CD and BCD only contained the
-per-lane vdda-phy-x/vdda-pll-x supplies and never included the shared
-vdda-phy-a/vdda-pll-a rails that back the common PCS/common block.
+Hi Alastair,
 
-When a board enables only ports B, C or D (or a combination that does
-not include port A), the shared vdda-phy-a/vdda-pll-a regulators are
-never voted. The PHY common block, which backs the DBI register
-space, is therefore left improperly powered. Accessing the DBI
-registers from that under-voted rail during suspend/resume crashes.
+On 11/27/26 08:32, Alastair D'Silva wrote:
+> This series adds USB 3.0 host support for the Allwinner A733 SoC and
+> enables it on the Xunlong OrangePi 4 Pro.
 
-Add vdda-phy-a and vdda-pll-a to the port B/C/D/CD/BCD regulator
-lists so the shared supply is always voted whenever any of these
-ports is active.
+I think you should step on the brake for a bit, sending out (AI 
+generated?) patches like crazy is not going to make you friends with the 
+maintainers and reviewers. At the moment we are trying to get the basic 
+A733 DT merged (for v7.5), so anything non-essential has to wait. And 
+the list of out-of-tree dependencies below already shows that this is a 
+bit early.
 
-Fixes: e397c8507e36 ("phy: qcom: qmp-pcie: Add Nord Gen5x16 PCIe multi-PHY support")
-Signed-off-by: Hariharan Sreedhar <hariharan.sreedhar@oss.qualcomm.com>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie-multiphy.c | 13 +++++++------
- 1 file changed, 7 insertions(+), 6 deletions(-)
+So I'd say wait for v7.5-rc1, which is probably going to happen in early 
+January, then you have a much saner base, and we have more time for 
+reviewing more fancy features.
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-multiphy.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-multiphy.c
-index ccdb7748a9e1..90ff12faad0d 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-multiphy.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-multiphy.c
-@@ -280,24 +280,25 @@ static const char * const nord_pciephy_port_a_vreg_l[] = {
- };
- 
- static const char * const nord_pciephy_port_b_vreg_l[] = {
--	"vdda-phy-b", "vdda-pll-b",
-+	"vdda-phy-a", "vdda-pll-a", "vdda-phy-b", "vdda-pll-b",
- };
- 
- static const char * const nord_pciephy_port_c_vreg_l[] = {
--	"vdda-phy-c", "vdda-pll-c",
-+	"vdda-phy-a", "vdda-pll-a", "vdda-phy-c", "vdda-pll-c",
- };
- 
- static const char * const nord_pciephy_port_d_vreg_l[] = {
--	"vdda-phy-d", "vdda-pll-d",
-+	"vdda-phy-a", "vdda-pll-a", "vdda-phy-d", "vdda-pll-d",
- };
- 
- static const char * const nord_pciephy_port_cd_vreg_l[] = {
--	"vdda-phy-c", "vdda-pll-c", "vdda-phy-d", "vdda-pll-d",
-+	"vdda-phy-a", "vdda-pll-a", "vdda-phy-c", "vdda-pll-c",
-+	"vdda-phy-d", "vdda-pll-d",
- };
- 
- static const char * const nord_pciephy_port_bcd_vreg_l[] = {
--	"vdda-phy-b", "vdda-pll-b", "vdda-phy-c", "vdda-pll-c",
--	"vdda-phy-d", "vdda-pll-d",
-+	"vdda-phy-a", "vdda-pll-a", "vdda-phy-b", "vdda-pll-b",
-+	"vdda-phy-c", "vdda-pll-c", "vdda-phy-d", "vdda-pll-d",
- };
- 
- static const char * const nord_pciephy_port_abcd_vreg_l[] = {
+Oh, and also: please try to look beyond your particular board. It's not 
+just the OrangePi 4A that is out there, we have other well documented 
+boards as well. Peeking at their schematics should make it easy to add 
+the respective USB nodes to their DT.
+The OPi 4A is benefiting from work of other people as well, so it would 
+be nice to do the same for other boards. It's fine if you can't test it 
+there, just mention that and others can test. That has also the 
+practical benefit of keeping the dependencies together.
 
----
-base-commit: 9437ee8b6cf607e883b36e44bd755968daaebd48
-change-id: 20261127-nord_rc_fix-888a8fbeeda6
+Look at Jernej's H616 HDMI series[1], for instance, he just enables a 
+bunch of boards in the final patch.
 
-Best regards,
--- 
-Hariharan Sreedhar <hariharan.sreedhar@oss.qualcomm.com>
+Cheers,
+Andre
+
+[1]
+https://lore.kernel.org/linux-sunxi/20261126214433.3562326-1-jernej.skrabec@gmail.com/T/#m8df03e7de13c7152685c921605b000e0a7236bc5
+
+> It adds the USB 2.0 UTMI PHY driver, USB 3.0 mode for ComboPHY0, USB2
+> CCU gates, DWC3 glue support, an xHCI W1C port change quirk, and DT
+> nodes.
+> 
+> Verified on the Xunlong OrangePi 4 Pro with a SuperSpeed (5000M) USB
+> 3.0 flash drive.
+> 
+> Prerequisite series:
+> - arm64: dts: allwinner: Add Xunlong OrangePi 4 Pro support (v2):
+>    https://lore.kernel.org/r/20261127065343.1449675-1-alastair@d-silva.org
+> - Add Allwinner A733 (sun60i) PCIe and Combo PHY support:
+>    https://lore.kernel.org/r/20261125062948.1234677-1-alastair@d-silva.org
+> - Allwinner A733 PCK-600 power domain fix and DT node (included in
+>    prerequisite-patch-id below).
+> 
+> Alastair D'Silva (11):
+>    dt-bindings: phy: allwinner,sun60i-a733-u2phy: Add Allwinner A733 USB 2.0 PHY
+>    dt-bindings: phy: allwinner,sun60i-a733-combophy: Add combophy0 USB 3.0 support
+>    dt-bindings: clock: sun60i-a733: Add USB2 bus and sys clock IDs
+>    clk: sunxi-ng: sun60i-a733: Add USB2 bus and sys clocks
+>    dt-bindings: usb: allwinner,sun60i-a733-dwc3: Add Allwinner A733 DWC3
+>    phy: allwinner: Add Allwinner A733 USB 2.0 PHY driver
+>    phy: allwinner: sun60i-combophy: Add USB 3.0 PHY mode support
+>    usb: dwc3: Add Allwinner A733 DWC3 support
+>    usb: host: xhci: Add W1C port change quirk for Allwinner A733
+>    arm64: dts: allwinner: sun60i-a733: Add USB 3.0 controller and PHYs
+>    arm64: dts: allwinner: sun60i-a733-orangepi-4-pro: Enable USB 3.0
+> 
+>   .../phy/allwinner,sun60i-a733-combophy.yaml        |   5 +
+>   .../bindings/phy/allwinner,sun60i-a733-u2phy.yaml  |  58 +++
+>   .../bindings/usb/allwinner,sun60i-a733-dwc3.yaml   | 103 ++++
+>   .../dts/allwinner/sun60i-a733-orangepi-4-pro.dts   |  31 ++
+>   arch/arm64/boot/dts/allwinner/sun60i-a733.dtsi     |  61 +++
+>   drivers/clk/sunxi-ng/ccu-sun60i-a733.c             |  10 +-
+>   drivers/phy/allwinner/Kconfig                      |  17 +-
+>   drivers/phy/allwinner/Makefile                     |   1 +
+>   drivers/phy/allwinner/phy-sun60i-combophy.c        | 573 ++++++++++++++++++++-
+>   drivers/phy/allwinner/phy-sun60i-u2phy.c           | 233 +++++++++
+>   drivers/usb/dwc3/core.c                            |  18 +-
+>   drivers/usb/dwc3/core.h                            |   8 +
+>   drivers/usb/dwc3/dwc3-generic-plat.c               |  15 +-
+>   drivers/usb/dwc3/glue.h                            |   6 +
+>   drivers/usb/dwc3/host.c                            |  10 +
+>   drivers/usb/host/xhci-hub.c                        |  53 +-
+>   drivers/usb/host/xhci-plat.c                       |   3 +
+>   drivers/usb/host/xhci.h                            |   2 +
+>   .../dt-bindings/clock/allwinner,sun60i-a733-ccu.h  |   2 +
+>   19 files changed, 1177 insertions(+), 32 deletions(-)
+> 
+> base-commit: 9437046953b2fb3bf55b36582450ea0267df82a7
+> prerequisite-patch-id: 19691099774bd3dc41f56585c03ddefb7bdc6f9c
+> prerequisite-patch-id: 85db03df3394cdcb2780a0da122a74b2c1fe220d
+> prerequisite-patch-id: a3e883da50bf03e8f522444def66fec7f996ffbe
+> prerequisite-patch-id: c6889699a6dc13c336ce4cf4659e21b551e9a9fc
+> prerequisite-patch-id: ef2f0344452092edb2221b93c44a3e82cb896a2d
+> prerequisite-patch-id: c598480f753e36b7f6230129b864c559b9f185d5
+> prerequisite-patch-id: f86b468a896a40f132adfcba885700327dff1bc5
+> prerequisite-patch-id: 079d60101e1b9e5425458060314bde3e9cc2fe4c
+> prerequisite-patch-id: 090c5ff78d4e2150804aa8d294581cd338b1e971
+> prerequisite-patch-id: af0aebcae7c38d58354925119c412178b5821b5e
+> prerequisite-patch-id: beb8a098ba14724e316ff243bdf8e00e729243c1
+> prerequisite-patch-id: 63342c5ec38e8eb9e55c8c74d3c5a81a630d5f69
+> prerequisite-patch-id: 1dc8d70f80674c98b2b15d09556dd27f643b20da
+> prerequisite-patch-id: 4555860586ef50f27bf787a23f6ba693e9c3b0d6
+> prerequisite-patch-id: 0279f281cd59cf54bceee39b0fa4d0b6a7b87c48
+> prerequisite-patch-id: 14424bd8324b6cae2b8c4d6840df0db626d1385f
+> prerequisite-patch-id: 7b42728bc8271e5dfd57fffec47a7f5745eff357
+> prerequisite-patch-id: 74f5c7d066477024a374a789b3180e841398fb07
+> prerequisite-patch-id: 309a5a3ca5b216915907263dea7024263abf1d1c
+> prerequisite-patch-id: 55e543b9854c7ae2fa86969233d05ccadd3792e9
+> prerequisite-patch-id: cfcad85224e288ec2168e7f245b4a1c63e9a34a7
+> prerequisite-patch-id: 18dadb9c1e41141d015422b658b7dd0d153b7d69
+> prerequisite-patch-id: 47a863f533ee9ae1589e25618f27a7282a0f8d37
+> prerequisite-patch-id: 54181ce00a78f9f69031d3964f14bf800dd98e0f
+> prerequisite-patch-id: 5a6d6dac4f6b42edf911fbca2078508e977bdce9
+> prerequisite-patch-id: e919d9591e97e3b69fa86625a868583ee74d16db
 
 
 -- 
