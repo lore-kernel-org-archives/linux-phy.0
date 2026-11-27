@@ -2,92 +2,72 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 560EE606A31F
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 9F159606A324
 	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 16:05:08 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=mahmu3eN;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=collabora.com header.i=@collabora.com header.a=rsa-sha256 header.s=mail header.b=VTHSAgER
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=BAf/IXuZ;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=Tatk61U7
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:References:In-Reply-To:
+	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=GPG8jJZL25+Mr1VqX3V8AJXB+eF2+1gNofumi4ztWwE=; b=mahmu3eNTaF8Wf0pIV54m34s7t
-	2U1Ol+YBUFzF5a2s5ckbPmwKTZv92zWAxpTBExoeDQOeDiV1ldD2dN5zOX3kyEqqtlxmIGrp/awEO
-	/Pf9SXsBdqDa/D1feQd0ca5FFWzsUB08X6x+Jt0zM8ObK0nXEHKy5GdBbQDk9Mq6Ei418MPcxfCoy
-	VYG5qeVsth8HalFT+8MXLRNXq6C8S5T2KdMx+Py2cOhx5uS5OoFIPdZIqd+/m8eew1K51q/UfrYuh
-	V4VHiAIIvbSH4PpBcBUVePhAXe+xgEJJ/WFcWIct46gau7x6NWbZCxcqa1Rg/NLeOBFod4xKXj7Yj
-	3dF8eDBg==;
+	bh=oQX71NhyupY2gzrHlDhAmHvqqh2zjpyOlk1dwDkhWZ4=; b=BAf/IXuZQyrIxhPret4eXSb7b4
+	iMelkdO3fbfkoCtCs+HNPXGe/A67tAM+aQ6j8CSkrnpLGEjhaNm8hVeWvhbLnth5NBwtsOXMhQQ3T
+	K3Fil0UJQXn2kgQEXJOegAURFjiCds3QYu63jQYL4mEOKuxDD6w3Jw0EDxrGMrzUhnrccO48Us3mr
+	gqh8WjDjBk2rEUQzSP2sRV+HHsNEel0tWvgERfx6sgoulkQ0qwCRlKdr34xRjyQk95M6eOjt7aEeI
+	HlgtcfGJWfaGiKXqkBE46oMu4uzkUecuBn/PVHnCjlvitODWOKmKChte/UDh59G4JZvNCpIbBGY4u
+	avpDNF6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWyRg-0000000GznF-0GOK;
+	id 1xWyRg-0000000Gzo2-1NCM;
 	Fri, 27 Nov 2026 16:05:08 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWyNc-0000000GxM9-3XXc;
-	Fri, 27 Nov 2026 16:00:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1795795254;
-	bh=yHEPc9SkCperUq2H+yblKT0WinHaz9Qyg0VM8DkDmis=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=VTHSAgERASeLFCgp5nF6VY2s5zsL6XOXkKYsnE/SwYBoVw7nDVrEZnQnTWB6IOxe+
-	 0HBMVtqhywvqMNvA2ZUv08QA0mA0JijLe7ww3R/w3qGaLQ1h/L9qcy1RSaEMcr4vmK
-	 XCfutEd21UcstmF1iG8nscrZ5o8fNqpzcbZUgo5+JQy1+6pN/t/siJNpxBz809Sjfe
-	 Bhk4+IcrUEC5yxqSYgp3ihs5kBIZ5uhUYJeNO3H0m2S+bxML32sQdwQ69W9H1Jg3U/
-	 tK3XsxB3BJevc1EOsrAqo92IBhkeYcn4tqsb/cBmNQZSqXHltK7cphHayjTeSzVmhO
-	 UCpW4JlkwB3BA==
-Received: from yukiji.home (unknown [100.64.0.131])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id B658417E0E37;
-	Fri, 27 Nov 2026 17:00:53 +0100 (CET)
-From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Fri, 27 Nov 2026 17:00:26 +0100
-Subject: [PATCH v16 23/23] scsi: ufs: mediatek: Add MT8196 compatible,
- update copyright
+	id 1xWyQV-0000000GzB8-3RZY;
+	Fri, 27 Nov 2026 16:03:55 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 7A0664338F;
+	Fri, 27 Nov 2026 16:03:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 686461F000C1;
+	Fri, 27 Nov 2026 16:03:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795795435;
+	bh=wtVEXrF7PDLdob07RHXl5wJ+Psj2mWm2urShu9UZE9M=;
+	h=Subject:From:To:Cc:In-Reply-To:References:Date;
+	b=Tatk61U76lqiOESNFnTt0uo9+grvZOcfVkftvVc/AKPTdDhSlYKQuP4NzkeBFTR2h
+	 8nDvzvbwoXde+P20jaKhtfmUz8lyfQ/FIUlnYijgzDohJooAoIsx55AUR2nEVmpP6T
+	 4XPaxQrvNrZTz1jC+KpG3HFrs7VXepNG4Y0fwTgSM7uckaoFRnlrgHWewRk1vQUqaD
+	 5cYP6lwMyyXD7u+afMt2dUGhS6crF48qlRSgLkFeFqNxP6PzouQa74S7Az/nvtepDa
+	 qEnGkKuoZGlqfNJlRXs88yERql1yRYMsQoPnSkTaxCyMoTJmUcYepNNW7XiAXwl5bV
+	 jLOiG1S2oMEoA==
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261127-mt8196-ufs-v16-23-6f2568f7c119@collabora.com>
-References: <20261127-mt8196-ufs-v16-0-6f2568f7c119@collabora.com>
-In-Reply-To: <20261127-mt8196-ufs-v16-0-6f2568f7c119@collabora.com>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Peter Wang <peter.wang@mediatek.com>, 
- Chaotian Jing <chaotian.jing@mediatek.com>, 
- Alim Akhtar <alim.akhtar@samsung.com>, Bart Van Assche <bvanassche@acm.org>, 
- Bean Huo <beanhuo@micron.com>, Stanley Jhu <stanleyjhu@google.com>, 
- Stanley Jhu <chu.stanley@gmail.com>, 
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>, 
- "Martin K. Petersen" <mkp@kernel.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>, 
- Mark Brown <broonie@kernel.org>, Chun-Hung Wu <chun-hung.wu@mediatek.com>
-Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org, 
- linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-scsi@vger.kernel.org, 
- Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
- Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795795222; l=2479;
- i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=ng8074+Xw5koEENCrcN0XOyaB5QdfK4doK2YMnCe4lE=;
- b=KVukKp/RT+P7D5ALPKGHtOnnnFJHPcg8DqXicg37NF+bsKZkNJmKoATzH9pgN58tbLFQ0M1rg
- oLtIFhpvK8fC1inKEz0DikAAHFsxuFiNDYPZrjjGrOKqXDHOEDhgUyt
-X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
- pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261127_080057_085488_AC115DE9 
-X-CRM114-Status: GOOD (  11.57  )
-X-Spam-Score: -2.1 (--)
+Subject: Re: [PATCH v3] phy: rockchip: inno-dsidphy: Fix 1.5GHz timing
+ table rate units
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Xiangyu Zhu <jerrytech92@163.com>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, mani@kernel.org, 
+ heiko@sntech.de, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
+In-Reply-To: <20261124092154.2280807-1-jerrytech92@163.com>
+References: <20261124092154.2280807-1-jerrytech92@163.com>
+Date: Fri, 27 Nov 2026 21:33:48 +0530
+Message-Id: <179579542861.13164.10889997089822321805.b4-reply@b4>
+X-Mailer: b4 0.16.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=975; i=mani@kernel.org;
+ h=from:subject:message-id; bh=fqhy0jTAmYLSiPQeXBdoCC/NsqaLflMfCK0DiJd7z00=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBrCannhwo7BH8kdLwZBak4s8F3AlxwM0HxDBW9h
+ St7b+H6HEqJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCawmp5wAKCRBVnxHm/pHO
+ 9RtRB/42BG60xUYUb5E53oEI4AA7CqyGQ7AovZH+QzrKyDt+7Q/2TvppRwuSS6cD2I15x8EGkAa
+ zvtOhyw3U3kXgqkUjNTCIZ8JA6CwDichviSwJd3pi9yegk946fdARYH4YYHbkeQ06tDEKnFiWkz
+ nyOLdMErq2WRNgEvr4upPaUGpzHgBMfANaWYhbNL2xzQZiGk04ACqVeeAWYFdg4oPVzcJXvmWYG
+ JP95/+nyejhzMKtAPHs6DRGEfJnkWIwe+46Xo0oeXPtjPsPUe+Ltr/wjY0Zx0i0UyY3kIn59ykA
+ 4b4JwJ9GsrMOJAXni1USepexj0fYm1f9V2Pd+qNqlm9Sd2Ty
+X-Developer-Key: i=mani@kernel.org; a=openpgp;
+ fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,81 +80,35 @@ List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+On 2026-11-24 17:21 +0800, Xiangyu Zhu wrote:
+> The 1.5 GHz Innosilicon DSI PHY timing table stores its rates in Mbps,
+> whereas the other timing tables and the lookup loop use Hz. When
+> enabling a mode, the driver compares inno->pll.rate in Hz (e.g.
+> 372000000) against timings[].rate in Mbps (e.g. 400), so no entry
+> matches. The loop falls through to the last, fastest entry and programs
+> an excessively large TLPX/LPX counter, preventing panels from decoding
+> low-power DCS initialization commands.
+> 
+> Convert the 1.5 GHz timing table rate values to Hz so the lookup
+> selects the matching entry.
+> 
+> Tested on an RK3506B board: the panel receives the low-power init
+> sequence and the framebuffer console displays properly.
+> 
+> Fixes: 785a9d5bb145 ("phy: rockchip: inno-dsidphy: Add support for rk3506")
+> Signed-off-by: Xiangyu Zhu <jerrytech92@163.com>
 
-The MT8196's UFS controller has a new compatible. Add the necessary
-struct definitions to support it.
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
-Also update the copyrights and authors, without tabs following spaces to
-avoid checkpatch errors, to list myself as having contributed to this
-driver after the preceding rework patches.
+- Mani
 
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Reviewed-by: Peter Wang <peter.wang@mediatek.com>
-Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
----
- drivers/ufs/host/ufs-mediatek.c | 18 ++++++++++++++++--
- 1 file changed, 16 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/ufs/host/ufs-mediatek.c b/drivers/ufs/host/ufs-mediatek.c
-index a16c67559712..a9bbb89cfad5 100644
---- a/drivers/ufs/host/ufs-mediatek.c
-+++ b/drivers/ufs/host/ufs-mediatek.c
-@@ -1,9 +1,11 @@
- // SPDX-License-Identifier: GPL-2.0
- /*
-  * Copyright (C) 2019 MediaTek Inc.
-+ * Copyright (C) 2026 Collabora Ltd.
-  * Authors:
-- *	Stanley Chu <stanley.chu@mediatek.com>
-- *	Peter Wang <peter.wang@mediatek.com>
-+ *      Stanley Chu <stanley.chu@mediatek.com>
-+ *      Peter Wang <peter.wang@mediatek.com>
-+ *      Nicolas Frattaroli <nicolas.frattaroli@collabora.com> (Major cleanups)
-  */
- 
- #include <linux/arm-smccc.h>
-@@ -2291,6 +2293,10 @@ static const char *const ufs_mtk_regs_avdd12_ckbuf_avdd18[] = {
- 	"avdd12", "avdd12-ckbuf", "avdd18"
- };
- 
-+static const char *const ufs_mtk_regs_avdd12_ckbuf[] = {
-+	"avdd12", "avdd12-ckbuf"
-+};
-+
- static const struct ufs_mtk_soc_data mt8183_data = {
- 	.has_avdd09 = true,
- 	.reg_names = ufs_mtk_regs_avdd12_avdd18,
-@@ -2303,10 +2309,18 @@ static const struct ufs_mtk_soc_data mt8192_8195_data = {
- 	.num_reg_names = ARRAY_SIZE(ufs_mtk_regs_avdd12_ckbuf_avdd18),
- };
- 
-+static const struct ufs_mtk_soc_data mt8196_data = {
-+	.has_avdd09 = true,
-+	.has_avdd09_1 = true,
-+	.reg_names = ufs_mtk_regs_avdd12_ckbuf,
-+	.num_reg_names = ARRAY_SIZE(ufs_mtk_regs_avdd12_ckbuf),
-+};
-+
- static const struct of_device_id ufs_mtk_of_match[] = {
- 	{ .compatible = "mediatek,mt8183-ufshci", .data = &mt8183_data },
- 	{ .compatible = "mediatek,mt8192-ufshci", .data = &mt8192_8195_data },
- 	{ .compatible = "mediatek,mt8195-ufshci", .data = &mt8192_8195_data },
-+	{ .compatible = "mediatek,mt8196-ufshci", .data = &mt8196_data },
- 	{},
- };
- MODULE_DEVICE_TABLE(of, ufs_mtk_of_match);
-
--- 
-2.56.1
 
 
 -- 
