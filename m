@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 90E15606A31C
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 07:48:18 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 7E0D8606A336
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 07:48:19 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=MTy3vWCJ;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=J73yRkCA
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=uNp+rDgh;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=AElDRGdB
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,74 +14,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=2+agwmzvVfDVeTR5OmH97jdJroe2aCaNVGnitk5yn6k=; b=MTy3vWCJc5nK3ZXKPIUfUFVHWX
-	rQeRnNrHiLS7x38WKtfxQ8rCgkpwXQQYQN5qvQbNUv7K1gBvsbkv3XzxpHFi/WXw0+MvkD7x9Eurm
-	H9Hln/sms9itEs08cYILdRrLTtCYA/wk7JyNo5Ua2IuviNZUdEF8HLfU1ONdOkpwRbSkirfZTx+pw
-	QBiHXvVrqXQ5W8wMWzQTMb896rVsgpMi+QuDrNpt44UE2nFw9lbGFPp+qupUuNUOf1UnkqrW2Ro1i
-	DJ1X48usFgbFLFXCX8/kcYfu3acKf+3UluYlBbEyH6MJdKK5ouAqGxoNIB3IUXpOIMvs4x0lZ/0E/
-	pFwkAnuA==;
+	bh=ZlaRm0pQMTLMN1I4zyaSqVUlM2YvzxzBwfJtBf3xKvg=; b=uNp+rDghBoC+JmrPa4JtKz/FKX
+	97Pl/FX1fbrWCNco1ywINrAYqtWukfLExCbvJ/wLnmqiZRVBfxPe8/t5JMr5lXCJz9yP1QVk1GTmO
+	eEK2knjUB2Bhh9jEnYrClNr5IE85Eaw2wLim8lSeD7mrARDql28/41bZZXBssVPwZJO4asbcwZliA
+	F6HTZV8M4u8JcjchXQfWEeAUcEaQiW9tnuqU0YOKAsf8E0qb+ESqOH5/+p+UZFiTPs17DzxwEL72o
+	SDbyKSTLXnChA642Gl+He4YAcViyuf9DIse7iKDCnwXxEDxT/zc6wM4bE0Mn6RBseoX3cfx873ULV
+	4drKf6Ig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWqgs-0000000FBww-0Djh;
-	Fri, 27 Nov 2026 07:48:18 +0000
-Received: from mail-dy1-x132d.google.com ([2607:f8b0:4864:20::132d])
+	id 1xWqgt-0000000FByu-0KxS;
+	Fri, 27 Nov 2026 07:48:19 +0000
+Received: from mail-dy1-x1331.google.com ([2607:f8b0:4864:20::1331])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWqgf-0000000FBgq-0TNQ
+	id 1xWqgj-0000000FBm8-0Lf9
 	for linux-phy@lists.infradead.org;
-	Fri, 27 Nov 2026 07:48:07 +0000
-Received: by mail-dy1-x132d.google.com with SMTP id 5a478bee46e88-384d74c9dfdso1252943eec.1
-        for <linux-phy@lists.infradead.org>; Thu, 26 Nov 2026 23:48:05 -0800 (PST)
+	Fri, 27 Nov 2026 07:48:10 +0000
+Received: by mail-dy1-x1331.google.com with SMTP id 5a478bee46e88-386b3524415so852030eec.0
+        for <linux-phy@lists.infradead.org>; Thu, 26 Nov 2026 23:48:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795765684; x=1796370484; darn=lists.infradead.org;
+        d=gmail.com; s=20260707; t=1795765688; x=1796370488; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=iHpEgxPbFinlelTShydiqMdXL6WmYaYuO85mjvtFPkY=;
-        b=J73yRkCA0keCP9KWY1XSn7fOYY/yvT6ODres2n7Qbl2eJ3AR8UNCCZU1DNwjdpLutO
-         0c1QOptrZUGHeOcryh4ccZt7PdiPH+LbhqhpNMIkIpgQjZAH2Tl912zuGDtVjFB0iWNr
-         fKf8iQaXqzeZ+D9/8PfD3yUKRBPQK90MPuYPN14aEPvFyJp0mkLb8F4zWDYrQ6Z0GMe3
-         N+or6ElTa+vDtdmi1kzGq41cbvFuJZ3CfVOO3GVQd4MpXUGAfCa0dfGxUUN7sVyjdVSJ
-         fUwzr1fxsX2b90IunO+G8HM3LisL+LGrLB4epvFH2NwVE0d1Z9sE7zccn958AAyj2q0c
-         9GpQ==
+        bh=Px927uPzL0G0bD9p/DBHwmNAaSmtnfAuqfR/vrK6L/E=;
+        b=AElDRGdB+G/txAp9jpyUVQMMHD2qaWe4GM5agHpYAbuIYjf7jDS0kb+AZZw5d8oKuv
+         xJsSSHKuYJcsbqZtmVA94TM6kXTyNfGvFn3aXzQDdX9jVid1ijOEGV3iiM9ZAffLaZlB
+         5OBFncn93V259pwna5g8Nmc3NjtPT1P/VGOauHrjvbxvWf21nLIhlYCCGZ44Cc1q9UCi
+         8+sRmHqll6GaQJ76jm8tQ6rZBImW/dxMlQ8PkYAl2sb6LD87irpvPJz+RZGVluIfp6fr
+         0UMRKmjHko4H7VDrXLSzNkFyvjVR1P5jd6qOFuPtl9LTmU9GgQplGpLDu+9cDOnSwbE0
+         wJhA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795765684; x=1796370484;
+        d=1e100.net; s=20260707; t=1795765688; x=1796370488;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :content-type:mime-version:subject:date:from:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=iHpEgxPbFinlelTShydiqMdXL6WmYaYuO85mjvtFPkY=;
-        b=2IMix3ZbuMhUiyFjngOlDXyFOCA0ZVU7/mpX2rBxgKJBbBNIINaTIqaA16KSKzyPGR
-         vT8PHlFFqKc+J5r4hrMCer9X8CpnPbNkOVQKVlKmTjmMtjICplo/S8sxn2Ml9D/EARXt
-         6cILER4HyQUpvEFvDkFb7UFqLDqQ/JJ0y6Df0PggZJHxGoSbcL2ON5rLkj9UiWqcCGMr
-         YNFYqpfczsboNr1SlYiookdtHBmPTCO2zTwyjgLbsBVpvKA8j2FJcXR8oAppLkqOrGs/
-         TUd8YPcfwXDWbjbPndyvAK71IofLIvTJS74Mj0tiMrjrxzAy7DbnjbuHCBS4/S6eDmOj
-         N3uA==
-X-Forwarded-Encrypted: i=1; AL+hErH4dIFBhH4uATUrFHI+KVm7VxyPFVQl/ejW/GkwrhYSYwPSd1UyCxA3Aj8LT83s3s74+Fssi2Cr7wg=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/Taq5eb/cKOw6NLR7USfaaVbSvUqfSRQs5qykMFWhGWDFXdD2h
-	bEfCiYFDmy58zf+FOw5iQYlaxuJlLpv28KIQCsCCfd+FTUbPsQ2HVeu8
-X-Gm-Gg: AZFdTZc3z2x1C3GtwqlRSec3fRXroT9mYM8Ezqg+z/HB2VJ8lGIAoy1zZGrgEKWLsms
-	48LO1XvOsRcLr10Poo29/cV1zeQJpq2pYdmNbXc1eTn77D3F8XDIBX7Z2RR3zP+uDuQUJ1ChwWC
-	qpNVj8RLyDJH+ppc/aRezj/11QjrHo0DS+gUl4+Jn3KOG2nh3P4QFZ22oMg/k1PoCpqdyC3yzxN
-	hlvRvcXAcVUHVTX2l5xj/1YwNDtKJZdrMhoeRYk/Jps2ObDBjps+kDgmBk9a3UrAfCG3YiEs7x0
-	9zJ80uanX0S/Ro3Wql+R9LKIUUjl55VDn2VMlk2Q4qkW5zBdV6njrDlTQIdxtBEKhmjRBXj6Nmj
-	4IGBNZsRrwg/MxIACa41h3mtK28ji23+jZVJ5mrX0Py35DnZFHSDfG957gZ+YFdsh6/fTAqTJJV
-	e35dhl3HACCZgUHGow0+imQ9G5MPuwUM4frJNck444lW+k3dETJYymcoM+XNFPfoZsXShFcFWlU
-	+LgRTeEiNJ/lNKnErteCzg/Sj/Rb6a8Ss7XAcXa88EZZWtoDsBQ+3crsvNXhCouBIQBSfjkuGmL
-	xn3YStaIxuTfvVNaC1LGRWmQd1m3QMBJnkI5kNPcUDGbWyoevIYRSmmNw4ByNvnRmshb2/F1d8z
-	V7JDe0dYqsRmrzNpoKK/+qH/Px2X1Tt1x0/chqx5XRA==
-X-Received: by 2002:a05:7300:16a3:b0:36d:5fbc:8c8d with SMTP id 5a478bee46e88-3856ef457b6mr33768253eec.2.1795765684101;
-        Thu, 26 Nov 2026 23:48:04 -0800 (PST)
+        bh=Px927uPzL0G0bD9p/DBHwmNAaSmtnfAuqfR/vrK6L/E=;
+        b=bo+IhFVKrXvuSIr2P8oNrVuOBdV+NPht6lhqCzBElvO87mdfLhysAoZvG9qAGtCzQt
+         QOGNVHYQ86NcUyPFQzFYRGCMG8FdpXzJZenABWzXr8BHH9fct2IUnbHbVDD59qwHoNGP
+         jPnlBMb5jQP0gAJ5VBHC8rjkP+Ypfpb5qyEgWDuXKyy/5Px9ddd6ihJsXQ7KL1wGTqoc
+         lJXbvXSWnVJS7A34uKDac+oTMQoKxaRLuz/pug4Anz8thDfK+wiM7Y6fQCmtcoCv4JWG
+         um0+/5FokPynlwMcfaFEYpAuqR6eHijsrq9YIq13WJMIDQoPMgo5gPa5KfNpgdwurt+o
+         pIvw==
+X-Forwarded-Encrypted: i=1; AL+hErHZxf1dNTy7GVQ0aBRf8jCjF31gon/l4l+Urenn3wZ/VXl3QuJJ/mHM5PepNZmTWxyg5dq7350plJs=@lists.infradead.org
+X-Gm-Message-State: APuU4Z/ti5mkbZXgvvTlzHZnvHkeNckVd3xJhlAPKQINWp5jz4ITENK9
+	5RX0SqTZ9fbq6SjBY+3hgtPyGn5D/Vb1WboJca2cFjsfNW4nqXbNqpBc
+X-Gm-Gg: AZFdTZdOqIjJH6/aiW1qmonA5HYMYvoxPZg3USgyTkf2fLlp0uwGLl24oG+5wD+Y/rX
+	KAdDLlVkXxjMIu5om8maqmAOgbco+ubNAlAMiGmbp1TT4OgpiIQLFapKSjniHROlMfzHw3Jnj8s
+	59+xmL6hyMfWhqtlJ19lnoceMHbPGHBxUXoQdj2rNywiP6CLdess1esdZUHR1PZeIsZVsXncmUk
+	vPM7kIpjK4r0fbMBY4tSDERdTggy0v7s9eYtxhRj2qaFMa0/11nuRQopOpWiAJlwoDOMlYxmtNS
+	st+tlNOjvnjFpX1Z+CRor6ACPLSFFjzXE45LrGOCQ5Gxun2IEhVSvhsi9n+4Yo+Bl/GyTcSWekz
+	NihhZ28b++lNWRHypqbXDlRWHc10NquxxlzoApAJu6fv4EJBaGCup34A2b5E4Mlxpxg+ZoZY32K
+	BsYuG9vZcAU2L+BQhWAmCT/BSblq9jolT+rB+lrbo8nPYf82zHEQj0l5lXnhgqHbSfmGVn7GuPb
+	wtNgV2n7mzjuK6PDwKRaUeNEh8/MWl9P+0HQ3eIvOpqgG+Ikx1XLpA97vpWsJ5DDu/t1sDByGsA
+	62ztfCHTPcAMFsOWp3bWtMkSgMncdTxuDdFIxjYOZFbDxLof/LRdgcCJrRV6o2xQKOhkKcIG6pK
+	D81uIwZKShlDVOQOUL2lR4w==
+X-Received: by 2002:a05:7301:b8e:b0:377:d6e5:e642 with SMTP id 5a478bee46e88-3856e245b2fmr30879256eec.1.1795765687873;
+        Thu, 26 Nov 2026 23:48:07 -0800 (PST)
 Received: from [127.0.1.1] (211-23-39-77.hinet-ip.hinet.net. [211.23.39.77])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385672c6f31sm68098252eec.15.2026.11.26.23.48.00
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-385672c6f31sm68098252eec.15.2026.11.26.23.48.04
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Nov 2026 23:48:03 -0800 (PST)
+        Thu, 26 Nov 2026 23:48:07 -0800 (PST)
 From: Jason Yang <jason98166@gmail.com>
-Date: Fri, 27 Nov 2026 15:47:40 +0800
-Subject: [PATCH v8 4/9] phy: rockchip-samsung-dcphy: Always write the
- rate-dependent registers
+Date: Fri, 27 Nov 2026 15:47:41 +0800
+Subject: [PATCH v8 5/9] phy: rockchip-samsung-dcphy: Move block-level setup
+ to runtime resume
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20261127-dcphy-rx-v1-v8-4-9ddfef99221d@gmail.com>
+Message-Id: <20261127-dcphy-rx-v1-v8-5-9ddfef99221d@gmail.com>
 References: <20261127-dcphy-rx-v1-v8-0-9ddfef99221d@gmail.com>
 In-Reply-To: <20261127-dcphy-rx-v1-v8-0-9ddfef99221d@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -99,16 +99,16 @@ Cc: Michael Riesch <michael.riesch@collabora.com>,
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
  Jason Yang <jason98166@gmail.com>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1795765664; l=2791;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1795765664; l=2576;
  i=jason98166@gmail.com; s=20260721; h=from:subject:message-id;
- bh=jOoW884/QWxzl0iQgg361AUaX2tfS/RGrsDEUvgeOSs=;
- b=hPBLNjjuOTIc3cBAJzDu1xkrkYERbeogg9sjLO6cYL/B/adWhR2voAT0ohi5o9AAmx4T2DAYQ
- BnLtae7WCVIAWy0E6nd+AST0xO5XR/T4q9VdBMPusYv2+uqF2hwOj7t
+ bh=jtUxPRys/dBRdscqaMmdtwL+bhADXEXJWj8FzO882mw=;
+ b=jkc37NZ76qcvOYh5agQApQZtcQNReG1ovWyKUO8AV4O6rA0hn5+ykfSDc3v6dCTbakuw3whoa
+ RZekMTnabqABs36D1Fvx+n0lqo98RCypPDEV8yvtWa2Bk4UHKNDLy2M
 X-Developer-Key: i=jason98166@gmail.com; a=ed25519;
  pk=xQmD001Q/ooHl39PxyQtusbUQmgbOsSfpFryRVWZ/k4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261126_234805_338453_7D8F382B 
-X-CRM114-Status: GOOD (  10.83  )
+X-CRM114-CacheID: sfid-20261126_234809_136391_375768D3 
+X-CRM114-Status: GOOD (  11.71  )
 X-Spam-Score: -1.9 (-)
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -130,76 +130,69 @@ X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-The lane timing init functions write DPHY_MC_ANA_CON1, the four data
-lane ANA_CON1 registers and DPHY_MC_DESKEW_CON0 only above a data
-rate threshold, and the registers have to be zero below it [1].
+The APB reset and the BIAS references have to be treated as block-level
+[1]: both the transmitter and the receiver need them, and they only have
+to be programmed once. They are programmed from the transmitter's
+power-on path today.
 
-Today the APB reset at the start of every power_on provides the zero.
+A later change registers one struct phy for each of them, and a second
+consumer coming up would then reset the block underneath a PHY that is
+already running.
 
-A later change moves that reset to runtime resume, so a power_on at a
-lower rate after a higher one would keep the old values.
+Program them from runtime resume instead, where whichever of the two
+comes up first brings the block up and a second one no longer resets it.
 
-Write the registers on every power_on, with zero below the threshold.
+This puts the BIAS writes ahead of the per-PHY reset assert, where the
+TRM's worked example has them after [1]. That is safe: neither M_RESETN
+nor S_RESETN covers the BIAS registers, and the values written are those
+registers' reset defaults.
 
-[1] RK3588 TRM: sections 22.4.2 (reset values) and 22.4.3
-    (DPHY_MC_ANA_CON1, DPHY_MC_DESKEW_CON0)
+[1] RK3588 TRM: sections 22.4.1 (address map), 22.4.2 (reset values),
+    22.6.1.2 (reset) and 22.6.4.1 (D-PHY transmitter start-up)
 
 Signed-off-by: Jason Yang <jason98166@gmail.com>
 Reviewed-by: Michael Riesch <michael.riesch@collabora.com>
 Tested-by: Quentin Schulz <quentin.schulz@cherry.de> # RK3588 Tiger CSI1 2-lane IMX219, CSI0 2-lane OV5675+DSI
 ---
- drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 24 +++++++++++++++--------
- 1 file changed, 16 insertions(+), 8 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-index ce1bc62497c5..7a009d87a665 100644
+index 7a009d87a665..d6acc3e2d448 100644
 --- a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
 +++ b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-@@ -1228,7 +1228,10 @@ samsung_mipi_dphy_clk_lane_timing_init(struct samsung_mipi_dcphy *samsung)
- 	regmap_write(samsung->regmap, DPHY_MC_ANA_CON0, val);
+@@ -1346,7 +1346,6 @@ static int samsung_mipi_dphy_power_on(struct samsung_mipi_dcphy *samsung)
  
- 	if (lane_hs_rate >= 4500)
--		regmap_write(samsung->regmap, DPHY_MC_ANA_CON1, 0x0001);
-+		val = 0x0001;
-+	else
-+		val = 0;
-+	regmap_write(samsung->regmap, DPHY_MC_ANA_CON1, val);
+ 	reset_control_assert(samsung->m_phy_rst);
  
- 	val = 0;
- 	/*
-@@ -1259,7 +1262,10 @@ samsung_mipi_dphy_clk_lane_timing_init(struct samsung_mipi_dcphy *samsung)
- 	 * under 1.5Gbps or equal to 1.5Gbps.
- 	 */
- 	if (lane_hs_rate > 1500)
--		regmap_write(samsung->regmap, DPHY_MC_DESKEW_CON0, 0x9cb1);
-+		val = 0x9cb1;
-+	else
-+		val = 0;
-+	regmap_write(samsung->regmap, DPHY_MC_DESKEW_CON0, val);
+-	samsung_mipi_dcphy_bias_block_enable(samsung);
+ 	samsung_mipi_dcphy_pll_configure(samsung);
+ 	samsung_mipi_dphy_clk_lane_timing_init(samsung);
+ 	samsung_mipi_dphy_data_lane_timing_init(samsung);
+@@ -1373,10 +1372,6 @@ static int samsung_mipi_dcphy_power_on(struct phy *phy)
+ {
+ 	struct samsung_mipi_dcphy *samsung = phy_get_drvdata(phy);
+ 
+-	reset_control_assert(samsung->apb_rst);
+-	udelay(1);
+-	reset_control_deassert(samsung->apb_rst);
+-
+ 	switch (samsung->type) {
+ 	case PHY_TYPE_DPHY:
+ 		return samsung_mipi_dphy_power_on(samsung);
+@@ -1667,6 +1662,12 @@ static __maybe_unused int samsung_mipi_dcphy_runtime_resume(struct device *dev)
+ 		return ret;
+ 	}
+ 
++	reset_control_assert(samsung->apb_rst);
++	udelay(1);
++	reset_control_deassert(samsung->apb_rst);
++
++	samsung_mipi_dcphy_bias_block_enable(samsung);
++
+ 	return 0;
  }
  
- static void
-@@ -1284,12 +1290,14 @@ samsung_mipi_dphy_data_lane_timing_init(struct samsung_mipi_dcphy *samsung)
- 	regmap_write(samsung->regmap, COMBO_MD2_ANA_CON0, val);
- 	regmap_write(samsung->regmap, DPHY_MD3_ANA_CON0, val);
- 
--	if (lane_hs_rate >= 4500) {
--		regmap_write(samsung->regmap, COMBO_MD0_ANA_CON1, 0x0001);
--		regmap_write(samsung->regmap, COMBO_MD1_ANA_CON1, 0x0001);
--		regmap_write(samsung->regmap, COMBO_MD2_ANA_CON1, 0x0001);
--		regmap_write(samsung->regmap, DPHY_MD3_ANA_CON1, 0x0001);
--	}
-+	if (lane_hs_rate >= 4500)
-+		val = 0x0001;
-+	else
-+		val = 0;
-+	regmap_write(samsung->regmap, COMBO_MD0_ANA_CON1, val);
-+	regmap_write(samsung->regmap, COMBO_MD1_ANA_CON1, val);
-+	regmap_write(samsung->regmap, COMBO_MD2_ANA_CON1, val);
-+	regmap_write(samsung->regmap, DPHY_MD3_ANA_CON1, val);
- 
- 	val = 0;
- 	/*
 
 -- 
 2.43.0
