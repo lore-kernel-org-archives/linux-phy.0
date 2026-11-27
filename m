@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A5EFA606A32F
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 11:30:21 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 574D8606A33D
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 11:38:04 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=1BFSP4WI;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=eRpJ3oiJ
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=BZx3JfQV;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=ksVHr6FO
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -14,64 +14,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Cc:To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=4XeAo0bWDP54taPQ1H1gEzd9U0mUgG7+2CpL47I+V2Q=; b=1BFSP4WIWJEwkOpGu3jhQmouqx
-	iaFOyL5PyUHxWTQLT24qIj713NPrkzkT9IR7yfJFw+g5HnVy9Rw4+iTu8v1p1g1ZCvkcDu9NLlJ9F
-	3pkWQ8U8DbX+kMx8CDh85g8CbJwx/hR6UdRNII30L+iTykfiPLFm5H8dWCTZEKvOiKq/iH9EYlp2r
-	9+ooI7d6mQwI4ISOtiRB8PlTIFlYgVKX/ZzVSFdXdGzzD6pS6x+0enjXkt2fr0jZR+/iWt1Zc64uD
-	YN8bafW8fh/WXcGoTrgIi/UGFAR5e8gFAqhfBolwz+lsfGJ9XMkIICakoJvKrSvtb3+FwwZ/zSmgC
-	s5L2jiYg==;
+	bh=7SjZh06cPShAWqP5uQoVKVosKqq1YcbOWo32/ys9b+A=; b=BZx3JfQVXCr8/OmtddpA4a5AVB
+	gLXOVOe26r6xBgCU5fiiqz1XH+yoJiqwrQdm/mmszLp58IhK1i4bL2ewnl5tihfJQM5AkOhbYT2pL
+	EQ7lfzkvEc6FlmpPDgiRQukNkz1Lpm/dcp5Zu+0P+LAMPNrZyaJZiI5xDzmwo+mIaqtD8BNQyoOju
+	qfTIBiJJ0EWHPC/XtWCty6M30t3wkMex5++HTL1mw4PqhbLXAdedFmVlGXgTYcUI8b9vGxm0p4iA1
+	GJMI9ScQj68BgKsjBA1zZBvaqMW9B6Qg4DuoT0zAh7Ig/PuUuLafgnUfKyL6FWvMNYXcXCO3Nc+LK
+	sKSVQjsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWu9l-0000000FoNz-0hLh;
-	Fri, 27 Nov 2026 11:30:21 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xWuHE-0000000FrFp-0MrF;
+	Fri, 27 Nov 2026 11:38:04 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xWu9k-0000000FoNe-1PfZ;
-	Fri, 27 Nov 2026 11:30:20 +0000
+	id 1xWuHD-0000000FrFg-0oCl
+	for linux-phy@lists.infradead.org;
+	Fri, 27 Nov 2026 11:38:03 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D437F453A5;
-	Fri, 27 Nov 2026 11:30:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2E1B91F000C1;
-	Fri, 27 Nov 2026 11:30:13 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 64260613A9;
+	Fri, 27 Nov 2026 11:38:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F06691F00893;
+	Fri, 27 Nov 2026 11:37:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795779019;
-	bh=15lHObMmyGPpj6YoAIfUZKJfHfZrP3j6tm+aE9QITgc=;
+	s=k20260515; t=1795779482;
+	bh=SKvLV9gGAFbmLUUfmaY/EwUbblYGlJIfsU7Qw4vYhH0=;
 	h=Subject:From:To:Cc:In-Reply-To:References:Date;
-	b=eRpJ3oiJWlSUirmaD+LmxhuRi1qhGdFgQgOJ16JgA7cDHI6z8NvWcNJjrCMheJKYB
-	 8idaGg+O5UwqD9w2E7Ctps4fkioj/O+VAUrWDx/FM51PbVFI/1FO88txl0AaIdu8Ub
-	 CFiSeSjIVR3SFkT2BeFCV/RRj/nUNkzxPGC08cRFZXoco0Ld9g4DfPnbUR4QNeWd6m
-	 uU+ybC4a7Pu530Z2z7h2A6pioyF+wpnTkuR8PC5it6Ftrag2l/snSfFLGxF/KM74K6
-	 jTVhaImUjQTSJQb+DLbqhaWqUqnGdsyUPO5SvDBB+YNnQFyDGwu/ZDlPlhGMrlM6Qm
-	 t8OCaNmNBHFNQ==
+	b=ksVHr6FOrjnzTw99X6BvVj0kvkAnLZtb/k30MIzf2UV5DXw3rvGcfhxMrrs8yinZZ
+	 24mImNv0ISXZXlPLZG6Yitoxn3SXe3XAuie8089wVylTmvJxP4pp4QgYgMNkoF/3PE
+	 CxM0IyW3QB9u+yaGh3AZX3ybpxu/wsbOLOgzF1e7zr5YHz8QnyM4slyvfdMTcKcKJO
+	 06vQsHb1P4YespcEYc1yGohArWj9HaT7QTfgGGOs7WScwElrfekINtvVlf+BE6ls4m
+	 Rj7tacZyPy5YAyHMnitu0SKZJB9LG7O2bCLqgBilCxRJQCD34LQlSIkXH3wum5LT/7
+	 xzUR9LpNlU9jQ==
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH v4 2/2] phy: add a driver for T-Head TH1520 USB PHY
+Subject: Re: [PATCH] phy: realtek: usb: fix the USB 2.0 PHY's port range
+ check
 From: Manivannan Sadhasivam <mani@kernel.org>
-To: Icenowy Zheng <zhengxingda@iscas.ac.cn>
-Cc: Vinod Koul <vkoul@kernel.org>, 
+To: Joshua Scott <joshua.scott@alliedtelesis.co.nz>
+Cc: Vinod Koul <vkoul@kernel.org>, linux-phy@lists.infradead.org, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
- Wei Fu <wefu@redhat.com>, Drew Fustini <dfustini@tenstorrent.com>, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org, 
- Icenowy Zheng <uwu@icenowy.me>, Han Gao <rabenda.cn@gmail.com>
-In-Reply-To: <20261103081444.1983071-3-zhengxingda@iscas.ac.cn>
-References: <20261103081444.1983071-1-zhengxingda@iscas.ac.cn>
- <20261103081444.1983071-3-zhengxingda@iscas.ac.cn>
-Date: Fri, 27 Nov 2026 17:00:10 +0530
-Message-Id: <179577901023.3421.16085123878298234680.b4-reply@b4>
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Stanley Chang <stanley_chang@realtek.com>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org
+In-Reply-To: <20261103221441.1550058-1-joshua.scott@alliedtelesis.co.nz>
+References: <20261103221441.1550058-1-joshua.scott@alliedtelesis.co.nz>
+Date: Fri, 27 Nov 2026 17:07:55 +0530
+Message-Id: <179577947506.3421.11993830398629700569.b4-reply@b4>
 X-Mailer: b4 0.16.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=524; i=mani@kernel.org;
- h=from:subject:message-id; bh=YyFV7s9af4kC0Pv/cS0wCU3OEWYq0SK2owkuNnqdByk=;
- b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBrCWnFEFB/4u8peT3P9un5fE8fPPjIzxZqIShYF
- I4eaeQlYgOJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCawlpxQAKCRBVnxHm/pHO
- 9anGB/9aTf3MYaPlIVjysYpZxYxQ5CPAVDm2b4edKul/qVV3rgG86keiI9l31FOXdhjTwatY5uM
- xrC1jCFsbIXOtoCqPe3I1HAaZHVY/HwMeMEQL/e4gm2WU45ECc+ivWDqr6BDuMZB72kN86ZDuix
- 4zCwxiUAWNaEmA6Qw0ct45dJ+e4UnnWfimEn3qz+YoApLyfe24Ln6RrsyRID113YOiKheLtWesY
- nCq6mYfWH42PWHJs7Vg4aCMq/CmFb+yn2joXP+43kz+Km7iFMvulvYL/+eFEw1o3HB0ihb0vHdJ
- G01z4bsKP4J6DtRE17MMqKtu69l3qmp5rhrYsJPl8XICrerr
+X-Developer-Signature: v=1; a=openpgp-sha256; l=638; i=mani@kernel.org;
+ h=from:subject:message-id; bh=9vNm3HiCCMKNQqyehmMLyhBFKEwiLfnCLd7GeztsIEM=;
+ b=owEBbQGS/pANAwAKAVWfEeb+kc71AcsmYgBrCWuVmXbTvvWQmfQnxDa60Zr7MxL7+figYjcy7
+ oENWz4JEXGJATMEAAEKAB0WIQRnpUMqgUjL2KRYJ5dVnxHm/pHO9QUCawlrlQAKCRBVnxHm/pHO
+ 9X62CACokLNvKoChF5S8oU8W12pOBBYIdXu3Lydn4eWkpsrN2j7yi/Ymv+jENIaIUTBgSazWVZa
+ +L1JKpFbFN4undeQv3hNkZC7zWoGsqTgW6YCBBCnedEYb50F+zlF6mvI6e1lUOzdHpT6SiJIHo2
+ WIXpchCFbi+nN3NbGQMHwJGdy2L7/lJpDP9R8nBqZm294NBNqCchxZDrG8AcvKfPTAY30y2NCP5
+ qHTJzCkPo1FwgTB+F5TUEU5GNi8Nv6a+e9ZO/jyYuljsdmZFIv68Q0/pgC4PigfBFiHWO/+nTlf
+ GGVf8GSg00eRGS/M3q0OlIAGV+bkgFIOKg/8Xo/sKJ4hYMh1
 X-Developer-Key: i=mani@kernel.org; a=openpgp;
  fpr=C668AEC3C3188E4C611465E7488550E901166008
 X-BeenThere: linux-phy@lists.infradead.org
@@ -93,15 +91,17 @@ X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On 2026-11-03 16:14 +0800, Icenowy Zheng wrote:
-> The USB PHY on T-Head TH1520 SoC is a Synopsys USB 3.0 FemtoPHY, with
-> some PHY parameters exported as another system controller along with it.
+On 2026-11-04 11:14 +1300, Joshua Scott wrote:
+> rtk_phy_toggle() checks the port number before using it to index the
+> phy_parameter array, which has num_phy entries. Ports are numbered from
+> zero, so the check should reject port == num_phy, but it only rejects
+> ports greater than num_phy. Fix the off-by-one.
 > 
-> A few PHY parameters have unusable defaults. Add a driver that programs
-> them before releasing the PHY from reset in addition to
-> clock/reset/regulator management.
+> Found by code inspection.
 > 
-> Signed-off-by: Icenowy Zheng <zhengxingda@iscas.ac.cn>
+> Fixes: eeda494542e5 ("phy: realtek: usb: add new driver for the Realtek RTD SoC USB 2.0 PHY")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Joshua Scott <joshua.scott@alliedtelesis.co.nz>
 
 Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
 
