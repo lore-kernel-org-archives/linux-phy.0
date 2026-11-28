@@ -2,134 +2,103 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6491C606A329
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Nov 2026 23:15:11 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 6ABBF606A31C
+	for <linux-phy@archiver.kernel.org>; Sat, 28 Nov 2026 08:02:25 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=I0R6q5KS;
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=KH9yeOBa
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=ITxP8J5X;
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=baylibre.com header.i=@baylibre.com header.a=rsa-sha256 header.s=google header.b=W1NGAgHz
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=r6UOYehHlG/bs9GRyLzA3Chg14TWMQdSrMH9FGu9BnI=; b=I0R6q5KSKcBhA2CL64n2879dBV
-	DmVgeF/7fxme7Rf1tgePGfs5ZYjCpSOa180usFyrqRxFZLUDEpvdeRBVMV7HyrQtWu0C7SHjbsGWc
-	U3RtJofvVTGF/3u7QUv7gVrhnFUOEAppVRhak9QC9Jp/FAUC04KWk9H2oeX9+ZSaKaUinVPqqZ8b/
-	/0FH/eZyyByWhi9skiNvIw3ZKJo4X4l7PkJakwj1UsxXo2cxqHK2y8t8SgnYkbVgekSdChDe3zXvV
-	TuV1ZinxIJ8511lraiYHEwRRJDw1fc0Oeb8TET6MLj4tOuy0rxVyDBrM5SINTNwlVBT2Nxh488r4Q
-	VRHKBlsQ==;
+	bh=1d6Ddkzx7PQXBvG94ZMYeh8AGlmkkrC9eHcpxH6PopY=; b=ITxP8J5XXQX2gnm5+OPBkcj0eg
+	OF/U34PmZaxk3b9Vw0cDlxZ5qqYYII84+xDVK8G1EU1RG9C53J9FVN2doHm9r6gtKa+aFMj5+3H7Q
+	eGzTOiSnFUMwKvFeHB4esQ0cbpeMjQ6hcb9yDlKOOlQtL5UBg1Ahj/e1CuF1mS9XRv5A6aQmJhDbN
+	VeLlktE5XZ1FSLIy63mpkV4dxayjyu2kfc+zFSxY7ucHPLxU7u1i2ooz5Ife5bhSsv2Rjfz93lW2i
+	jDHwr2q/NRe82xtcPe+a/E1YiS7b8YATNs0G3m+33zzUDEOLZtoLrdTf387e2h1nTYYCfcpAhDuz0
+	uvQiFujw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xX59q-00000000BGJ-2mWJ;
-	Fri, 27 Nov 2026 23:15:10 +0000
-Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
+	id 1xXDO4-00000000Vxh-3Jyo;
+	Sat, 28 Nov 2026 08:02:24 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xX59n-00000000BFS-3cLb
+	id 1xXDO0-00000000Vx4-3zpA
 	for linux-phy@lists.infradead.org;
-	Fri, 27 Nov 2026 23:15:09 +0000
-Received: by mail-wr1-x431.google.com with SMTP id ffacd0b85a97d-48dfc0421d9so7810216f8f.1
-        for <linux-phy@lists.infradead.org>; Fri, 27 Nov 2026 15:15:07 -0800 (PST)
+	Sat, 28 Nov 2026 08:02:23 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-4bb77a462c6so70008625e9.1
+        for <linux-phy@lists.infradead.org>; Sat, 28 Nov 2026 00:02:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20260707; t=1795821306; x=1796426106; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=U1M+MDeqlkODjZ50qKjXMO75f40J30DxxF3l7NYSGEM=;
-        b=KH9yeOBaaZ/ekVBYe//xEGGbm55Avq8808MwFwRhmpAd+Ct6kCgxqftkx3A8R674FQ
-         vHbcPI2RuB8p1KNKykmtFT57bWa8MdNO/39iQA5GOudntJ/l5eFkPitaEdl8TRTF5Kbi
-         H//X4pQpjHrWl9hO/2lUPUA2Eqjp5lSApMYCUxS1ZcrsLXsihEh58unXNCkdpAeH3nCH
-         NZWJCqSOkvMyZ1GIqrDKCWgr9Sj93tbC4HKY2Ujg3Iy5WV5JrMlg5fzi45Aiwrlt+4N4
-         RrrRlL8Yag6Bpjp60gqU2sjsjZpvJ3ALkYxJx1Lhm75Cw/3Ps9/nMSxOzS6IfUlpxivU
-         Axdg==
+        d=baylibre.com; s=google; t=1795852939; x=1796457739; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=uvYCv8hY4UfHhfetpozuse+xYZWS5m8FKY73N24xD70=;
+        b=W1NGAgHzwd127jM/hJ020ZSM5fIf3xsz8KmeEoUe635/vcc2uEkG+TTUHpx4cJYYjx
+         tiT2kero3B02lOAraIQN7TBdyHGYLJGOudwT53FdUEWSCu6tDU0AexuwGEYtaWeNNDb/
+         ayUmucI7sOT4oQKKeZpwO+Kj2uasBPUC4lucu32xD9ZmHZCawroZ6b0nrRKnL/hgYIey
+         vN6DObnmisOs9YXS66T1mKyp5QtwTjnz7CE57Ymx3+3yWusH7z+GBrTsWhijWAB3E7ER
+         LvHPe313Nh8uamJDvF9LhYykqh9vHcoM7A4WH5vPZb//QyxdloQZmb8f6qXJCcMxo79p
+         uppA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1795821306; x=1796426106;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=U1M+MDeqlkODjZ50qKjXMO75f40J30DxxF3l7NYSGEM=;
-        b=aPQUnmwLzDSIuY/u+6cnZg3jIeqFMWk0A1ETc4otPERVvvaY9kmHEfrNcGNJCMhIeQ
-         sCf42SbzUoA9HAYWhRET6x7Q0xt9dExS1tW8qy4ECllPTcmxRetZdiTpIboTuhG/AsZi
-         kysQt6/gj+OElEn9p7Vt/9VhbweqQOoIWZ1EGCa44J1frth7jF5Fm9nCjWMZzjJjzkPI
-         0YqOHhupzR/4+Q0nxRs5eU8IiMP9rJhB5C+5moJrXdn7LE93GyDsPDYznE+7CC8gQvgI
-         8nvW6gvwsaYEjWBMfgT2FcyL9eWlA4kA5hSpmwsuoEHhdU+PO9zW6kspc3b0m84LG+71
-         pXfA==
-X-Forwarded-Encrypted: i=1; AL+hErGHgPTRYw4kfbphbiodetkd5taPdccr4y9rf5TqIJ7bwlS8I61rnmt1OUeCZV/Zhkg/+dscAvZhrE0=@lists.infradead.org
-X-Gm-Message-State: APuU4Z/+Jk45/H8jiBPW/5voZsdEDVxmW3kCrr3xOzCXGMktlqPZ0X74
-	czPs7m5KTpk86CVwHbc+K9kO1zizD5SKCxpYdmnTslBbYF/qnpLVnPk4
-X-Gm-Gg: AZFdTZe4vLTqqw/Pd7cDa2w4FdOLoROPjqraDdhJdTLYELGUZbJrDftpwep04wtmtPX
-	2ra6qd+BfRchLEJGZaD/W9jf1nkYjobOXhS/25tPT8qZKBWSyQFHxSvIu8jinNd+/ao+iuDtz+f
-	s85RYx5a5B1iJGI821Tbn87fprwFURpfA2sFR3orIOTZiEbNL0z9PQevacOgmNaXQE4Cs5zybfJ
-	mg/FANG6JHibIV1O7ZqjgGkWzudBpwUOKFZd6XP5jHG5Qz5HTqziyG4x5P+uSWoYh5elwIsyMHl
-	BS4sm1Iu+s320skglG5Lch3zGyNDE4cnK53AyQeB/CviuidkgO6WPFhUtAklK5TH3UTRm0vjow7
-	Vv9fdw/unoU4NzaygiRkMz8snm0WRAeZTmxN3+AcDZakLXtQPdYBxJF4sbmfV5+GsBqLRwNpjvE
-	2N9yyBD4Eq1SH6C4fjxj+PoNZcPrIsTjzNf+sMtS5zZ+0gcozCVDTQdP9knI/nmHd/ywdUmnC0L
-	mB0E3b0IDfnwbvacJIiF4l4oAcu9Pk9hoqKfpZp0nB2nKknAQiSoG9uAqcuNtpAR6ycytPKgMsZ
-	YetsLOywI9+GuOk9/Ttyb6ha9SA=
-X-Received: by 2002:a05:6000:178f:b0:4bb:c85e:d565 with SMTP id ffacd0b85a97d-4bbc86e17b5mr14733028f8f.55.1795821305534;
-        Fri, 27 Nov 2026 15:15:05 -0800 (PST)
-Received: from flare5 ([212.58.121.92])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4ab6a67fe48sm45269880f8f.23.2026.11.27.15.14.57
+        d=1e100.net; s=20260707; t=1795852939; x=1796457739;
+        h=in-reply-to:content-disposition:content-type:mime-version
+         :references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=uvYCv8hY4UfHhfetpozuse+xYZWS5m8FKY73N24xD70=;
+        b=hg7/HHqbjuv/EX4oz/1bXjXtIslezTBQ/jybY3BXtc6BnLd1DxN8IsIQt2nVlK4sqT
+         DOZcDtvkncHlkzUVusHdthLvn0MFi3BVwXg6trZlgsIWmDFRr3en/WK/U4fKQ/vtb0zY
+         FJ3M34DvhLo0Ht/LFgBygy8U4guQxDBC65FxtsUzsR/sRkbfazWqHZPk1F4Ni8OgziW3
+         4KwlNxcaffnkWr5kN5e0PRzUfymeqQflsSFQL1wEpT9sG4kDfNrbx+pVCCYFihPujwTv
+         IgiPybM3DpG28ccYpezSJcX+/supl2oHyLv8udlXjT1JN/fudwbdmqxGq9+qmvb60RdJ
+         JkqQ==
+X-Forwarded-Encrypted: i=1; AL+hErEg8sYT//wgmExT9CZHsGiOMNCFT0xJYHEKeAU5f3gOCp+ioqNIr1DbOxlS/0WFgdL22bhw6swXFi8=@lists.infradead.org
+X-Gm-Message-State: APuU4Z83x8D81R+BcwRNt12ZtHk1GAZ4VoDnbOQ3Iy4Rs4rd0LaEPKTW
+	QpJELmZdNunrvhYlIwgXn9hYmFiyzxxPBQPgtumIWawdknmwqWap0BgfUZWONEPrSpE=
+X-Gm-Gg: AZFdTZcEJPk3VRM2Cmu0XuPuTAAgkZPpLVDmZqX44qZIJpubcmbcMfKxjRt+MzBFVCE
+	ofWJZbfqnJrydA+7eAwtqyQcTTMyE7fi+aouh+nahuY30pDJUUHsJLDzEafdIcH7fZBRgo6Xh/4
+	RNKVeABoIX7wHFQRhSmZ4EdTfQ1BBGQOAneUfNBDyieNlAkgI4Gx4xXBUejnpr3AHbK6nrUJV+i
+	YnFLTvYgl3HvYbFRfghA4pnG9S2+n1aGu9jGwaY/G8a4OinDsEw3GoD3L7xPfSndvoiJ6Y+0JAE
+	97khIrmmSBXqDgPbFYwSviIsg4HorU/5GPlgccMXZSc//Etv/2cg6pGCuxBFa1hH5dlcYFDQIPU
+	jaEBvJgf7uNMqQvQ46DnrbQzzfJWEbncPoFl/Y412Fp+MVGTGX8A1vogLOGkOSSzHZ1XLO2AqKY
+	RbMS4GcUkllGH6V8jti0iI7Obou5phC/AR/zwuZpaMQ55AffkcgZd0eCNhYPo9s98tkPFIxkiNG
+	90PdPKgDXDFiGEjMiOzAd5n902S2obEDCwHXum24uOnoXPi8MvrDp2xwptmpayVSEJLeyBHZBtM
+	68I5QJSIgLDEKFAzBR6dBYJickGkGrMnNVJQ3e1NVOImtdImSkO+ValyDejtwlOCJeflNqlWpvc
+	=
+X-Received: by 2002:a05:600c:5303:b0:4ba:4928:8aec with SMTP id 5b1f17b1804b1-4bb88807d7cmr505581765e9.9.1795852938637;
+        Sat, 28 Nov 2026 00:02:18 -0800 (PST)
+Received: from localhost (ip-005-146-085-079.um05.pools.vodafone-ip.de. [5.146.85.79])
+        by smtp.gmail.com with UTF8SMTPSA id ffacd0b85a97d-4ab69bf680fsm59330195f8f.14.2026.11.28.00.02.17
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 27 Nov 2026 15:15:03 -0800 (PST)
-From: Stanislav Aleksandrov <lightofmysoul@gmail.com>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Abel Vesa <abelvesa@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Robert Marko <robimarko@gmail.com>,
-	Guru Das Srinagesh <linux@gurudas.dev>,
-	Thomas Gleixner <tglx@kernel.org>,
-	Radu Rendec <radu@rendec.net>,
-	Will Deacon <will@kernel.org>,
-	Robin Murphy <robin.murphy@arm.com>,
-	"Joerg Roedel (AMD)" <joro@8bytes.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Bart Van Assche <bvanassche@acm.org>,
-	Bean Huo <beanhuo@micron.com>,
-	Stanley Jhu <stanleyjhu@google.com>,
-	Herbert Xu <herbert@gondor.apana.org.au>,
-	"David S. Miller" <davem@davemloft.net>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Viresh Kumar <viresh.kumar@linaro.org>,
-	Amit Kucheria <amitk@kernel.org>,
-	Thara Gopinath <thara.gopinath@gmail.com>,
-	Daniel Lezcano <daniel.lezcano@kernel.org>,
-	Zhang Rui <rui.zhang@intel.com>,
-	Lukasz Luba <lukasz.luba@arm.com>,
-	Georgi Djakov <djakov@kernel.org>,
-	Sibi Sankar <sibi.sankar@oss.qualcomm.com>,
-	Ulf Hansson <ulfh@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	iommu@lists.linux.dev,
-	linux-usb@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-scsi@vger.kernel.org,
-	linux-crypto@vger.kernel.org,
-	linux-pm@vger.kernel.org
-Subject: Re: [PATCH v3 14/14] arm64: dts: qcom: Add Samsung Galaxy XR
-Date: Fri, 27 Nov 2026 23:14:45 +0000
-Message-ID: <20261127231445.3623202-1-lightofmysoul@gmail.com>
-X-Mailer: git-send-email 2.55.0
-In-Reply-To: <87280d80-9047-405b-8dcc-11276d34d2dd@oss.qualcomm.com>
-References: <20261125-halliday-dts-v3-0-5c8311c0b70b@gmail.com> <20261125-halliday-dts-v3-14-5c8311c0b70b@gmail.com> <87280d80-9047-405b-8dcc-11276d34d2dd@oss.qualcomm.com>
+        Sat, 28 Nov 2026 00:02:17 -0800 (PST)
+Date: Sat, 28 Nov 2026 09:02:17 +0100
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+To: Alastair D'Silva <alastair@d-silva.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Chen-Yu Tsai <wens@kernel.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
+	Samuel Holland <samuel@sholland.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney+clk@redhat.com>, 
+	Jerome Brunet <jbrunet+clk@baylibre.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
+	Mathias Nyman <mathias.nyman@intel.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, linux-usb@vger.kernel.org, 
+	linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 06/11] phy: allwinner: Add Allwinner A733 USB 2.0 PHY
+ driver
+Message-ID: <awqKD6EufgpjsjP8@monoceros>
+References: <20261127073231.1776847-1-alastair@d-silva.org>
+ <20261127073231.1776847-7-alastair@d-silva.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
+In-Reply-To: <20261127073231.1776847-7-alastair@d-silva.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261127_151507_970539_D89CBF60 
-X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-CacheID: sfid-20261128_000221_011374_B9F8EC9B 
+X-CRM114-Status: UNSURE (   7.59  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-BeenThere: linux-phy@lists.infradead.org
@@ -141,44 +110,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7352678703216440656=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-8.8 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
-	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
 	autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Fri, Nov 27, 2026 at 02:58:40PM +0100, Konrad Dybcio wrote:
-> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-Thanks for the review.
+--===============7352678703216440656==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="6xgu3d2pgo3fouvi"
+Content-Disposition: inline
 
-I've implemented support for almost all of the hardware in my
-local branch and I have found that the headset exists in multiple
-revisions.
 
-So, I'd like to make a split:
+--6xgu3d2pgo3fouvi
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Subject: Re: [PATCH 06/11] phy: allwinner: Add Allwinner A733 USB 2.0 PHY
+ driver
+MIME-Version: 1.0
 
-rename: halliday-samsung-xrvst2.dts -> halliday-samsung-xrvst2.dtsi
-add: halliday-samsung-xrvst2-rev22.dts
-add: halliday-samsung-xrvst2-rev25.dts
+On Fri, Nov 27, 2026 at 06:32:26PM +1100, Alastair D'Silva wrote:
+> +#include <linux/mod_devicetable.h>
+> [...]
+> +#include <linux/platform_device.h>
 
-The .dts files will initially contain only compatibles.
-The real differences between the revisions are the DMIC drive
-strength, the display panels and their supply voltage, so the files
-will be 'empty' until I send my sound and display series.
+<linux/platform_device.h> provides of_device_id already without the
+unneeded build dependencies that <linux/mod_devicetable.h> comes with.
+So please drop <linux/mod_devicetable.h>.
 
-Is it OK if I send the split in a v4, or is it better
-to do it in a follow-up?
+There is no need to Cc: me for the next revisions of your series.
 
-Best regards,
-Stanislav
+Best regards
+Uwe
+
+--6xgu3d2pgo3fouvi
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmsKioUACgkQj4D7WH0S
+/k7jYAf/QI/UwQ7qh2BbAqLJFatOOEv5i4Gi+vBVMqy7v16wMvrk3u7U4/ECqS/O
+C2/R+NZfyAK6CTe/5t37K/v9LeyvsEN4IbMSK3b5rwXFErl5KgfUZIBdgbD/1BJJ
+UP2X0g6ABsQZ5fNkNJXk8nerljU4Pxf7OUuWsz42+HHHKiq9AcZwAZgrS/TttgCN
+xeKamMt2XFYPMdjOhAhO57r/l3qPChmlWbT2bDdzM4i9nTyLBXrDRghnJWItoaN4
+puwi4x03yymrmDrp7IH2TYfNTOy/Lcc0OcjvpqxxhIG18CeOOMBMdMXQofE0HdQ6
+Htyr2kbi6xiqECUEVFTnuPE7uy+hvw==
+=iKhd
+-----END PGP SIGNATURE-----
+
+--6xgu3d2pgo3fouvi--
+
+
+--===============7352678703216440656==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7352678703216440656==--
+
